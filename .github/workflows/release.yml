@@ -8,11 +8,12 @@ on:
 permissions:
   contents: read
   packages: write # GitHub Packages (gem registry)
-  id-token: write # RubyGems trusted publishing (OIDC), when enabled
 
 jobs:
   publish:
     runs-on: ubuntu-latest
+    env:
+      RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
@@ -53,10 +54,19 @@ jobs:
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # Public RubyGems publication is opt-in: set repository variable
-      # PUBLISH_RUBYGEMS=true once the `crawlora` gem owner + trusted publisher
-      # (OIDC) are configured. Until then this step is skipped so the release
-      # stays green.
+      # Public RubyGems publication via the gem API key (secret RUBYGEMS_API_KEY).
+      # Skips cleanly when the secret is absent or the version already exists, so
+      # the release stays green. The account must keep MFA "UI only" (no OTP for
+      # API). To switch to OIDC trusted publishing instead, drop this step's
+      # GEM_HOST_API_KEY and use `rubygems/release-gem@v1` with id-token: write.
       - name: Publish to RubyGems
-        if: ${{ vars.PUBLISH_RUBYGEMS == 'true' }}
-        uses: rubygems/release-gem@v1
+        if: ${{ env.RUBYGEMS_API_KEY != '' }}
+        env:
+          GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
+        run: |
+          gem=$(ls crawlora-*.gem | head -1)
+          if gem push "$gem"; then
+            echo "published $gem to RubyGems"
+          else
+            echo "gem push to RubyGems failed (already published?); continuing" >&2
+          fi
