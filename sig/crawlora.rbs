@@ -63,6 +63,11 @@ module Crawlora
     def videos: (?q: String, ?page: Integer, ?count: Integer, ?country: String, ?lang: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class BrandGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def retrieve: (?domain: String, ?force_language: String, ?maxSpeed: bool, ?maxAgeMs: Integer, ?timeoutMS: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class BraveGroup
     def initialize: (Client, Hash[String, String]) -> void
     def images: (?q: String, ?offset: Integer, ?count: Integer, ?country: "all" | "ar" | "at" | "au" | "be" | "br" | "ca" | "ch" | "cl" | "cn" | "de" | "dk" | "es" | "fi" | "fr" | "gb" | "gr" | "hk" | "id" | "in" | "it" | "jp" | "kr" | "mx" | "my" | "nl" | "no" | "nz" | "ph" | "pl" | "pt" | "ru" | "sa" | "se" | "sg" | "tr" | "tw" | "us" | "za", ?lang: "de-de" | "en-ca" | "en-gb" | "en-in" | "en-us" | "fi-fi" | "fr-ca" | "fr-fr" | "ja-jp" | "pt-br" | "sq-al" | "sw-ke" | "zh-tw", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -237,6 +242,14 @@ module Crawlora
     def search: (?query: String, ?type: "product" | "user" | "launch", ?page: Integer, ?featured: bool, ?topics: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class RedditGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def comments: (?id: String, ?sort: "confidence" | "top" | "new" | "controversial" | "old" | "qa", ?limit: Integer, ?depth: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def post: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?q: String, ?subreddit: String, ?sort: "relevance" | "hot" | "new" | "top" | "comments", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def subreddit_posts: (?subreddit: String, ?sort: "hot" | "new" | "top" | "rising", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class ReferralsGroup
     def initialize: (Client, Hash[String, String]) -> void
     def click: (?request: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -403,6 +416,7 @@ module Crawlora
     def download: (?request: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def industries: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def industry: (?key: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def lookup: (?query: String, ?type: "all" | "equity" | "etf" | "mutualfund" | "index" | "future" | "currency" | "cryptocurrency", ?count: Integer, ?start: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def market_status: (?market: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def market_summary: (?market: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def screener_custom: (?request: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped

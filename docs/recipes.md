@@ -17,6 +17,15 @@ Crawlora.client(jwt_token: "eyJ…")
 Both fall back to environment variables: `CRAWLORA_API_KEY` and
 `CRAWLORA_BASE_URL`.
 
+## Reddit and Brand
+
+Newer platforms are grouped like every other endpoint:
+
+```ruby
+posts = client.reddit.search(q: "ruby", subreddit: "programming")
+brand = client.brand.retrieve(domain: "stripe.com")
+```
+
 ## Retries and Retry-After
 
 ```ruby

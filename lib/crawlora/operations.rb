@@ -1300,6 +1300,52 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "brand-retrieve" => {
+      "id" => "brand-retrieve",
+      "method" => "GET",
+      "path" => "/brand/retrieve",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "domain",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "force_language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "maxSpeed",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "maxAgeMs",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "timeoutMS",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "brave-images" => {
       "id" => "brave-images",
       "method" => "GET",
@@ -7209,6 +7255,194 @@ module Crawlora
       ],
       "security" => []
     },
+    "reddit-comments" => {
+      "id" => "reddit-comments",
+      "method" => "GET",
+      "path" => "/reddit/comments/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "confidence",
+            "top",
+            "new",
+            "controversial",
+            "old",
+            "qa"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "depth",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "reddit-post" => {
+      "id" => "reddit-post",
+      "method" => "GET",
+      "path" => "/reddit/post/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "reddit-search" => {
+      "id" => "reddit-search",
+      "method" => "GET",
+      "path" => "/reddit/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "subreddit",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "hot",
+            "new",
+            "top",
+            "comments"
+          ]
+        },
+        {
+          "name" => "time",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "hour",
+            "day",
+            "week",
+            "month",
+            "year",
+            "all"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "reddit-subreddit-posts" => {
+      "id" => "reddit-subreddit-posts",
+      "method" => "GET",
+      "path" => "/reddit/subreddit/{subreddit}/posts",
+      "pathParams" => [
+        "subreddit"
+      ],
+      "queryParams" => [
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "hot",
+            "new",
+            "top",
+            "rising"
+          ]
+        },
+        {
+          "name" => "time",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "hour",
+            "day",
+            "week",
+            "month",
+            "year",
+            "all"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "referrals-click" => {
       "id" => "referrals-click",
       "method" => "POST",
@@ -11345,7 +11579,7 @@ module Crawlora
         "application/json"
       ],
       "security" => [
-        "JWTAuth"
+        "ApiKeyAuth"
       ]
     },
     "usage-me-overview" => {
@@ -11387,7 +11621,7 @@ module Crawlora
         "application/json"
       ],
       "security" => [
-        "JWTAuth"
+        "ApiKeyAuth"
       ]
     },
     "usage-me-recent-ips" => {
@@ -11434,7 +11668,7 @@ module Crawlora
         "application/json"
       ],
       "security" => [
-        "JWTAuth"
+        "ApiKeyAuth"
       ]
     },
     "usage-me-timeseries" => {
@@ -11490,7 +11724,7 @@ module Crawlora
         "application/json"
       ],
       "security" => [
-        "JWTAuth"
+        "ApiKeyAuth"
       ]
     },
     "user-me" => {
@@ -11703,6 +11937,61 @@ module Crawlora
       ],
       "security" => [
         "ApiKeyAuth"
+      ]
+    },
+    "yahoo-finance-lookup" => {
+      "id" => "yahoo-finance-lookup",
+      "method" => "GET",
+      "path" => "/yahoo-finance/lookup",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "equity",
+            "etf",
+            "mutualfund",
+            "index",
+            "future",
+            "currency",
+            "cryptocurrency"
+          ]
+        },
+        {
+          "name" => "count",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "start",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "start"
       ]
     },
     "yahoo-finance-market-status" => {
@@ -13155,6 +13444,9 @@ module Crawlora
       "suggest" => "bing-suggest",
       "videos" => "bing-videos"
     },
+    "brand" => {
+      "retrieve" => "brand-retrieve"
+    },
     "brave" => {
       "images" => "brave-images",
       "news" => "brave-news",
@@ -13305,6 +13597,12 @@ module Crawlora
       "reviews" => "producthunt-reviews",
       "search" => "producthunt-search"
     },
+    "reddit" => {
+      "comments" => "reddit-comments",
+      "post" => "reddit-post",
+      "search" => "reddit-search",
+      "subreddit_posts" => "reddit-subreddit-posts"
+    },
     "referrals" => {
       "click" => "referrals-click",
       "me" => "referrals-me",
@@ -13448,6 +13746,7 @@ module Crawlora
       "download" => "yahoo-finance-download",
       "industries" => "yahoo-finance-industries",
       "industry" => "yahoo-finance-industry",
+      "lookup" => "yahoo-finance-lookup",
       "market_status" => "yahoo-finance-market-status",
       "market_summary" => "yahoo-finance-market-summary",
       "screener_custom" => "yahoo-finance-screener-custom",
@@ -13504,7 +13803,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 330
+  OPERATION_COUNT = 336
 
   module OperationId
     AIRBNB_ROOM = "airbnb-room"
@@ -13542,6 +13841,7 @@ module Crawlora
     BING_SEARCH = "bing-search"
     BING_SUGGEST = "bing-suggest"
     BING_VIDEOS = "bing-videos"
+    BRAND_RETRIEVE = "brand-retrieve"
     BRAVE_IMAGES = "brave-images"
     BRAVE_NEWS = "brave-news"
     BRAVE_SEARCH = "brave-search"
@@ -13668,6 +13968,10 @@ module Crawlora
     PRODUCT_HUNT_PRODUCT = "producthunt-product"
     PRODUCT_HUNT_REVIEWS = "producthunt-reviews"
     PRODUCT_HUNT_SEARCH = "producthunt-search"
+    REDDIT_COMMENTS = "reddit-comments"
+    REDDIT_POST = "reddit-post"
+    REDDIT_SEARCH = "reddit-search"
+    REDDIT_SUBREDDIT_POSTS = "reddit-subreddit-posts"
     REFERRALS_CLICK = "referrals-click"
     REFERRALS_ME = "referrals-me"
     REFERRALS_ME_EVENTS = "referrals-me-events"
@@ -13788,6 +14092,7 @@ module Crawlora
     YAHOO_FINANCE_DOWNLOAD = "yahoo-finance-download"
     YAHOO_FINANCE_INDUSTRIES = "yahoo-finance-industries"
     YAHOO_FINANCE_INDUSTRY = "yahoo-finance-industry"
+    YAHOO_FINANCE_LOOKUP = "yahoo-finance-lookup"
     YAHOO_FINANCE_MARKET_STATUS = "yahoo-finance-market-status"
     YAHOO_FINANCE_MARKET_SUMMARY = "yahoo-finance-market-summary"
     YAHOO_FINANCE_SCREENER = "yahoo-finance-screener"
