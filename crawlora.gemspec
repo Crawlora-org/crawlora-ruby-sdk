@@ -6,18 +6,28 @@ Gem::Specification.new do |spec|
   spec.name = "crawlora"
   spec.version = Crawlora::VERSION
   spec.authors = ["Crawlora"]
-  spec.summary = "Ruby SDK for the public Crawlora API."
-  spec.description = "Typed, batteries-included Ruby client for the Crawlora web-scraping API: " \
-                     "grouped and dynamic operation calls, retries, pagination, hooks, and rate limiting."
-  spec.homepage = "https://github.com/Crawlora-org/crawlora-ruby-sdk"
+  spec.email = ["support@crawlora.net"]
+  spec.summary = "Official Ruby SDK for the Crawlora web-scraping API"
+  spec.description = <<~DESC.gsub("\n", " ").strip
+    Crawlora is a web-scraping API for structured public web data — search,
+    marketplace, social, finance, media, reviews, and geodata — without running
+    your own scrapers. This gem is the official, typed, batteries-included Ruby
+    client: grouped helpers (client.bing.search) and dynamic operation calls for
+    every endpoint, API-key and JWT auth, automatic retries with exponential
+    backoff and Retry-After, numeric and cursor pagination, before/after
+    middleware hooks, and client-side rate limiting.
+  DESC
+  spec.homepage = "https://crawlora.net/"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0"
 
+  repo = "https://github.com/Crawlora-org/crawlora-ruby-sdk"
   spec.metadata = {
-    "homepage_uri" => spec.homepage,
-    "source_code_uri" => spec.homepage,
-    "bug_tracker_uri" => "#{spec.homepage}/issues",
-    "changelog_uri" => "#{spec.homepage}/blob/main/CHANGELOG.md",
+    "homepage_uri" => "https://crawlora.net/",
+    "source_code_uri" => repo,
+    "documentation_uri" => "https://crawlora.net/docs",
+    "changelog_uri" => "#{repo}/blob/main/CHANGELOG.md",
+    "bug_tracker_uri" => "#{repo}/issues",
     "rubygems_mfa_required" => "true"
   }
 

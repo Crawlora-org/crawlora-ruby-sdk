@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.0-sdk.2
+
+- Packaging: point the gem homepage at https://crawlora.net/, expand the gem
+  description, and add `documentation_uri` / `source_code_uri` / `bug_tracker_uri`
+  metadata for a richer RubyGems listing. No client or API changes.
+
 ## 1.5.0-sdk.1
 
 - Initial release of the Crawlora Ruby SDK.
