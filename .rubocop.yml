@@ -1,0 +1,34 @@
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - "lib/crawlora/operations.rb" # generated
+    - "vendor/**/*"
+    - "scripts/**/*"
+
+# The client deliberately mirrors the other Crawlora SDKs; relax metric cops
+# that fight a faithful single-file port rather than improving it.
+Metrics:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Layout/LineLength:
+  Max: 140
+
+Lint/MissingSuper:
+  Enabled: false
+
+Naming/AccessorMethodName:
+  Enabled: false

@@ -1,0 +1,9 @@
+/.bundle/
+/vendor/bundle/
+/pkg/
+/tmp/
+*.gem
+Gemfile.lock
+.DS_Store
+__pycache__/
+*.pyc

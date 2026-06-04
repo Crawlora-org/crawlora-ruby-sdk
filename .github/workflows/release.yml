@@ -1,0 +1,40 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write # RubyGems trusted publishing (OIDC)
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: rubygems
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - name: Verify tag matches VERSION
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          tag="${GITHUB_REF_NAME#v}"           # e.g. 1.5.0-sdk.1
+          gem_version="$(ruby -Ilib -rcrawlora/version -e 'print Crawlora::VERSION')"
+          # The git tag uses the -sdk.N form; the gem uses the .devN prerelease form.
+          expected="$(echo "$tag" | sed -E 's/-sdk\.([0-9]+)$/.dev\1/')"
+          if [ "$gem_version" != "$expected" ]; then
+            echo "tag $tag -> expected gem version $expected but Crawlora::VERSION is $gem_version" >&2
+            exit 1
+          fi
+      - name: Regenerate and verify
+        run: |
+          python3 scripts/generate.py
+          git diff --exit-code
+      - name: Test
+        run: bundle exec rake test
+      - name: Publish to RubyGems
+        uses: rubygems/release-gem@v1
