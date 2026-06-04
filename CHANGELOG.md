@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.0-sdk.3
+
+- Richer RBS: generated `sig/crawlora.rbs` now declares typed keyword parameters
+  per operation (Steep/Sorbet users get real signatures instead of `**untyped`).
+- Internal cleanups: split the request and pagination methods into focused
+  private helpers, enabled tuned rubocop metric budgets, and hardened multipart
+  `Content-Disposition` field/filename escaping. No public API changes.
+
 ## 1.5.0-sdk.2
 
 - Packaging: point the gem homepage at https://crawlora.net/, expand the gem

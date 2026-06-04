@@ -7,10 +7,35 @@ AllCops:
     - "vendor/**/*"
     - "scripts/**/*"
 
-# The client deliberately mirrors the other Crawlora SDKs; relax metric cops
-# that fight a faithful single-file port rather than improving it.
-Metrics:
+# Metric cops are enabled with generous-but-real budgets. The Client is a single
+# cohesive HTTP client (large by nature), and its constructor takes many keyword
+# options, so ClassLength is off and keyword args don't count toward arg lists.
+Metrics/ClassLength:
   Enabled: false
+
+Metrics/ParameterLists:
+  CountKeywordArgs: false
+
+Metrics/MethodLength:
+  Max: 45
+
+Metrics/AbcSize:
+  Max: 55
+
+Metrics/CyclomaticComplexity:
+  Max: 16
+
+Metrics/PerceivedComplexity:
+  Max: 18
+
+# Require parentheses around compound ternary conditions (e.g. `(a || b) ? …`).
+Style/TernaryParentheses:
+  EnforcedStyle: require_parentheses_when_complex
+
+Metrics/BlockLength:
+  Exclude:
+    - "test/**/*"
+    - "*.gemspec"
 
 Style/Documentation:
   Enabled: false

@@ -256,6 +256,51 @@ class ClientTest < Minitest::Test
     server&.close
   end
 
+  def test_header_merge_is_case_insensitive
+    transport = RecordingTransport.new([ok({})])
+    c = Crawlora::Client.new(api_key: "k", transport: transport, headers: { "X-Trace" => "1" })
+    c.bing.search(q: "x", _headers: { "x-trace" => "2" })
+    sent = transport.calls.first[:headers]
+    trace_keys = sent.keys.select { |key| key.downcase == "x-trace" }
+    assert_equal 1, trace_keys.size, "expected a single x-trace header, got #{trace_keys.inspect}"
+    assert_equal "2", sent[trace_keys.first]
+  end
+
+  def test_custom_retry_predicate_overrides_statuses
+    # Predicate retries only on 503; a 500 (normally retryable) must NOT retry.
+    transport = RecordingTransport.new([[500, JSON_HEADERS, JSON.generate({ "msg" => "boom" })]])
+    c = Crawlora::Client.new(api_key: "k", transport: transport, retries: 3, retry_delay: 0,
+                             retry_predicate: ->(status, _err) { status == 503 })
+    assert_raises(Crawlora::ServerError) { c.bing.search(q: "x") }
+    assert_equal 1, transport.calls.size
+
+    # And it DOES retry a 503 the default set wouldn't necessarily prioritize.
+    transport2 = RecordingTransport.new([[503, JSON_HEADERS, JSON.generate({ "msg" => "down" })], ok([])])
+    c2 = Crawlora::Client.new(api_key: "k", transport: transport2, retries: 1, retry_delay: 0,
+                              retry_predicate: ->(status, _err) { status == 503 })
+    c2.bing.search(q: "x")
+    assert_equal 2, transport2.calls.size
+  end
+
+  def test_rate_limiter_caps_concurrency
+    mutex = Mutex.new
+    active = 0
+    peak = 0
+    transport = lambda do |**_|
+      mutex.synchronize do
+        active += 1
+        peak = [peak, active].max
+      end
+      sleep 0.05
+      mutex.synchronize { active -= 1 }
+      Crawlora::Response.new(200, JSON_HEADERS, JSON.generate({ "data" => [] }))
+    end
+    c = Crawlora::Client.new(api_key: "k", transport: transport, max_concurrency: 2)
+    threads = Array.new(6) { Thread.new { c.bing.search(q: "x") } }
+    threads.each(&:join)
+    assert_operator peak, :<=, 2, "max in-flight exceeded the concurrency cap (peak=#{peak})"
+  end
+
   private
 
   # Build the minimal required params for an arbitrary operation so we can call

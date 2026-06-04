@@ -167,7 +167,7 @@ module Crawlora
       @on_retry = on_retry
       @request_id = request_id
       @idempotency_keys = idempotency_keys
-      @rate_limiter = rate_limit || max_concurrency ? RateLimiter.new(rate_limit, max_concurrency) : nil
+      @rate_limiter = (rate_limit || max_concurrency) ? RateLimiter.new(rate_limit, max_concurrency) : nil
       @logger = logger
       @before_request = as_hook_list(before_request)
       @after_response = as_hook_list(after_response)
@@ -200,7 +200,7 @@ module Crawlora
       log(event: "request", operation: operation_id)
       max_retries = retries.nil? ? @retries : [0, retries.to_i].max
       idempotency_key =
-        @idempotency_keys && %w[POST PATCH].include?(operation["method"]) ? SecureRandom.hex(16) : nil
+        (@idempotency_keys && %w[POST PATCH].include?(operation["method"])) ? SecureRandom.hex(16) : nil
 
       attempt = 0
       loop do
@@ -225,8 +225,8 @@ module Crawlora
     # +next_cursor+ extractor) sends the cursor parameter and stops when
     # +next_cursor+ returns a falsy value.
     def paginate(operation_id, params = {}, page_param: nil, cursor_param: nil, next_cursor: nil,
-                 start: nil, step: 1, max_pages: nil, response_type: "auto", timeout: nil, headers: nil)
-      unless block_given?
+                 start: nil, step: 1, max_pages: nil, response_type: "auto", timeout: nil, headers: nil, &block)
+      unless block
         return enum_for(:paginate, operation_id, params, page_param: page_param, cursor_param: cursor_param,
                                                          next_cursor: next_cursor, start: start, step: step, max_pages: max_pages,
                                                          response_type: response_type, timeout: timeout, headers: headers)
@@ -236,42 +236,14 @@ module Crawlora
       raise ArgumentError, "unknown Crawlora operation: #{operation_id}" if operation.nil?
 
       base_params = stringify_keys(params)
+      opts = { response_type: response_type, timeout: timeout, headers: headers }
 
       if cursor_param || next_cursor
-        raise ArgumentError, "cursor pagination requires both cursor_param and next_cursor" unless cursor_param && next_cursor
-
-        query_names = (operation["queryParams"] || []).map { |p| p["name"] }
-        unless query_names.include?(cursor_param)
-          raise ArgumentError, "cursor_param #{cursor_param.inspect} is not a query parameter of operation #{operation_id}"
-        end
-
-        cursor = start
-        fetched = 0
-        while max_pages.nil? || fetched < max_pages
-          page_params = base_params.dup
-          page_params[cursor_param] = cursor unless cursor.nil?
-          response = request(operation_id, page_params, response_type: response_type, timeout: timeout, headers: headers)
-          yield response
-          fetched += 1
-          cursor = next_cursor.call(response)
-          break unless cursor && !(cursor.respond_to?(:empty?) && cursor.empty?)
-        end
-        return
-      end
-
-      page_param ||= Pagination.detect_page_param(operation)
-      raise ArgumentError, "operation #{operation_id} has no page or offset query parameter to paginate" unless page_param
-
-      page_value = start.nil? ? Pagination.default_start(page_param) : start
-      fetched = 0
-      while max_pages.nil? || fetched < max_pages
-        page_params = base_params.merge(page_param => page_value)
-        response = request(operation_id, page_params, response_type: response_type, timeout: timeout, headers: headers)
-        yield response
-        fetched += 1
-        break if Pagination.page_empty?(response)
-
-        page_value += step
+        paginate_cursor(operation_id, operation, base_params, cursor_param: cursor_param, next_cursor: next_cursor,
+                                                              start: start, max_pages: max_pages, opts: opts, &block)
+      else
+        paginate_numeric(operation_id, operation, base_params, page_param: page_param, start: start, step: step,
+                                                               max_pages: max_pages, opts: opts, &block)
       end
     end
 
@@ -288,8 +260,72 @@ module Crawlora
 
     private
 
+    # Yield successive pages by advancing a cursor query parameter until
+    # +next_cursor+ returns a blank value.
+    def paginate_cursor(operation_id, operation, base_params, cursor_param:, next_cursor:, start:, max_pages:, opts:)
+      raise ArgumentError, "cursor pagination requires both cursor_param and next_cursor" unless cursor_param && next_cursor
+
+      query_names = (operation["queryParams"] || []).map { |p| p["name"] }
+      unless query_names.include?(cursor_param)
+        raise ArgumentError, "cursor_param #{cursor_param.inspect} is not a query parameter of operation #{operation_id}"
+      end
+
+      cursor = start
+      fetched = 0
+      while max_pages.nil? || fetched < max_pages
+        page_params = base_params.dup
+        page_params[cursor_param] = cursor unless cursor.nil?
+        response = request(operation_id, page_params, **opts)
+        yield response
+        fetched += 1
+        cursor = next_cursor.call(response)
+        break unless cursor && !(cursor.respond_to?(:empty?) && cursor.empty?)
+      end
+    end
+
+    # Yield successive pages by advancing the page/offset query parameter until
+    # a page comes back empty.
+    def paginate_numeric(operation_id, operation, base_params, page_param:, start:, step:, max_pages:, opts:)
+      page_param ||= Pagination.detect_page_param(operation)
+      raise ArgumentError, "operation #{operation_id} has no page or offset query parameter to paginate" unless page_param
+
+      page_value = start.nil? ? Pagination.default_start(page_param) : start
+      fetched = 0
+      while max_pages.nil? || fetched < max_pages
+        page_params = base_params.merge(page_param => page_value)
+        response = request(operation_id, page_params, **opts)
+        yield response
+        fetched += 1
+        break if Pagination.page_empty?(response)
+
+        page_value += step
+      end
+    end
+
     def send_request(operation, params, response_type:, timeout:, headers:, idempotency_key: nil)
       url, body, body_headers = build_request(@base_url, operation, params)
+      request_headers, req_id = prepare_request(operation, body_headers, headers, idempotency_key)
+      unless @before_request.empty?
+        ctx = { operation: operation["id"], method: operation["method"], url: url, headers: request_headers }
+        @before_request.each { |hook| hook.call(ctx) }
+        url = ctx[:url]
+        request_headers = ctx[:headers]
+      end
+
+      request_timeout = timeout.nil? ? @timeout : timeout
+      begin
+        response = call_transport(method: operation["method"], url: url, headers: request_headers, body: body, timeout: request_timeout)
+      rescue StandardError => e
+        message = timeout_error?(e) ? "Crawlora request timed out" : "Crawlora transport error"
+        raise NetworkError.new(message, request_id: req_id, cause: e)
+      end
+
+      handle_response(operation, response, response_type, req_id)
+    end
+
+    # Build the merged request headers and resolve the request id, attaching an
+    # idempotency key when one was generated.
+    def prepare_request(operation, body_headers, headers, idempotency_key)
       request_headers = merge_headers(
         @headers,
         auth_headers(operation["security"] || [], @api_key, @jwt_token),
@@ -301,53 +337,47 @@ module Crawlora
         if @request_id
           ensure_request_id(request_headers)
         else
-          v = header_value(request_headers, "x-request-id")
-          v.empty? ? nil : v
+          existing = header_value(request_headers, "x-request-id")
+          existing.empty? ? nil : existing
         end
       request_headers["Idempotency-Key"] = idempotency_key if idempotency_key && header_value(request_headers, "idempotency-key").empty?
-      unless @before_request.empty?
-        ctx = { operation: operation["id"], method: operation["method"], url: url, headers: request_headers }
-        @before_request.each { |hook| hook.call(ctx) }
-        url = ctx[:url]
-        request_headers = ctx[:headers]
-      end
+      [request_headers, req_id]
+    end
 
-      request_timeout = timeout.nil? ? @timeout : timeout
-      begin
-        response =
-          if @rate_limiter
-            @rate_limiter.run do
-              @transport.call(method: operation["method"], url: url, headers: request_headers, body: body, timeout: request_timeout)
-            end
-          else
-            @transport.call(method: operation["method"], url: url, headers: request_headers, body: body, timeout: request_timeout)
-          end
-      rescue StandardError => e
-        message = timeout_error?(e) ? "Crawlora request timed out" : "Crawlora transport error"
-        raise NetworkError.new(message, request_id: req_id, cause: e)
-      end
+    def call_transport(method:, url:, headers:, body:, timeout:)
+      call = -> { @transport.call(method: method, url: url, headers: headers, body: body, timeout: timeout) }
+      @rate_limiter ? @rate_limiter.run(&call) : call.call
+    end
 
+    # Parse the response, raise the typed API error on non-2xx, and run the
+    # after_response hooks on success.
+    def handle_response(operation, response, response_type, req_id)
       raw_body = response.body.to_s
       is_error = response.status < 200 || response.status >= 300
-      return StringIO.new(response.body.to_s) if response_type == "stream" && !is_error
+      return StringIO.new(raw_body) if response_type == "stream" && !is_error
 
-      parse_mode = response_type == "stream" ? "auto" : response_type
+      parse_mode = (response_type == "stream") ? "auto" : response_type
       begin
-        parsed = parse_response(response.body.to_s, header_value(response.headers, "content-type"), parse_mode)
+        parsed = parse_response(raw_body, header_value(response.headers, "content-type"), parse_mode)
       rescue JSON::ParserError => e
         raise Error.new("Crawlora JSON parse error", status: response.status, raw_body: raw_body,
                                                      headers: response.headers, request_id: req_id, cause: e)
       end
 
-      if is_error
-        code = parsed.is_a?(Hash) ? parsed["code"] : nil
-        message = parsed.is_a?(Hash) && parsed["msg"] && !parsed["msg"].to_s.empty? ? parsed["msg"] : "HTTP #{response.status}"
-        raise Crawlora.error_class_for(response.status).new(
-          message, status: response.status, code: code, body: parsed,
-                   raw_body: raw_body, headers: response.headers, request_id: req_id
-        )
-      end
+      raise_api_error(response, parsed, raw_body, req_id) if is_error
+      run_after_response(operation, response, parsed)
+    end
 
+    def raise_api_error(response, parsed, raw_body, req_id)
+      code = parsed.is_a?(Hash) ? parsed["code"] : nil
+      message = (parsed.is_a?(Hash) && parsed["msg"] && !parsed["msg"].to_s.empty?) ? parsed["msg"] : "HTTP #{response.status}"
+      raise Crawlora.error_class_for(response.status).new(
+        message, status: response.status, code: code, body: parsed,
+                 raw_body: raw_body, headers: response.headers, request_id: req_id
+      )
+    end
+
+    def run_after_response(operation, response, parsed)
       @after_response.each do |hook|
         result = hook.call(operation["id"], response.status, response.headers, parsed)
         parsed = result unless result.nil?
@@ -476,16 +506,21 @@ module Crawlora
         chunks << "--#{boundary}\r\n"
         if parameter["type"] == "file"
           filename, data = read_file_value(value)
-          chunks << %(Content-Disposition: form-data; name="#{name}"; filename="#{filename}"\r\n)
+          chunks << %(Content-Disposition: form-data; name="#{quote_escape(name)}"; filename="#{quote_escape(filename)}"\r\n)
           chunks << "Content-Type: application/octet-stream\r\n\r\n"
           chunks << data
           chunks << "\r\n"
         else
-          chunks << %(Content-Disposition: form-data; name="#{name}"\r\n\r\n#{value}\r\n)
+          chunks << %(Content-Disposition: form-data; name="#{quote_escape(name)}"\r\n\r\n#{value}\r\n)
         end
       end
       chunks << "--#{boundary}--\r\n"
       [chunks, { "content-type" => "multipart/form-data; boundary=#{boundary}" }]
+    end
+
+    # Escape characters that would break a multipart Content-Disposition header.
+    def quote_escape(value)
+      value.to_s.gsub("\\", "\\\\\\\\").gsub('"', '\\"').gsub(/[\r\n]/, " ")
     end
 
     def read_file_value(value)

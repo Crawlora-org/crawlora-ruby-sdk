@@ -16,7 +16,7 @@ module Crawlora
     # A page is empty when its `data` array (Crawlora envelope) or the page
     # itself is empty/blank.
     def page_empty?(response)
-      data = response.is_a?(Hash) && response.key?("data") ? response["data"] : response
+      data = (response.is_a?(Hash) && response.key?("data")) ? response["data"] : response
       return true if data.nil?
       return data.empty? if data.respond_to?(:empty?)
 
@@ -24,7 +24,7 @@ module Crawlora
     end
 
     def default_start(page_param)
-      page_param == "offset" ? 0 : 1
+      (page_param == "offset") ? 0 : 1
     end
 
     # Default item extractor: the response's `data` list (Crawlora envelope), or
