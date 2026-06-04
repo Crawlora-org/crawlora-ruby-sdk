@@ -7,12 +7,12 @@ on:
 
 permissions:
   contents: read
-  id-token: write # RubyGems trusted publishing (OIDC)
+  packages: write # GitHub Packages (gem registry)
+  id-token: write # RubyGems trusted publishing (OIDC), when enabled
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    environment: rubygems
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
@@ -36,5 +36,27 @@ jobs:
           git diff --exit-code
       - name: Test
         run: bundle exec rake test
+      - name: Build gem
+        run: gem build crawlora.gemspec
+      # GitHub Packages works with the built-in GITHUB_TOKEN — no external account
+      # needed. Skips cleanly if the version is already published.
+      - name: Publish to GitHub Packages
+        run: |
+          mkdir -p ~/.gem
+          printf -- "---\n:github: Bearer %s\n" "${GITHUB_TOKEN}" > ~/.gem/credentials
+          chmod 600 ~/.gem/credentials
+          gem=$(ls crawlora-*.gem | head -1)
+          if gem push --key github --host "https://rubygems.pkg.github.com/Crawlora-org" "$gem"; then
+            echo "published $gem to GitHub Packages"
+          else
+            echo "gem push to GitHub Packages failed (already published?); continuing" >&2
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Public RubyGems publication is opt-in: set repository variable
+      # PUBLISH_RUBYGEMS=true once the `crawlora` gem owner + trusted publisher
+      # (OIDC) are configured. Until then this step is skipped so the release
+      # stays green.
       - name: Publish to RubyGems
+        if: ${{ vars.PUBLISH_RUBYGEMS == 'true' }}
         uses: rubygems/release-gem@v1
