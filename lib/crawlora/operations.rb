@@ -4810,6 +4810,53 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "google-news" => {
+      "id" => "google-news",
+      "method" => "GET",
+      "path" => "/google/news",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "count",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "google-search" => {
       "id" => "google-search",
       "method" => "POST",
@@ -5421,6 +5468,53 @@ module Crawlora
       "security" => [
         "ApiKeyAuth"
       ]
+    },
+    "google-videos" => {
+      "id" => "google-videos",
+      "method" => "GET",
+      "path" => "/google/videos",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "count",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
     },
     "googleplay-app" => {
       "id" => "googleplay-app",
@@ -13521,6 +13615,7 @@ module Crawlora
       "jobs" => "google-jobs",
       "map_place" => "google-map-place",
       "map_search" => "google-map-search",
+      "news" => "google-news",
       "search" => "google-search",
       "suggest" => "google-suggest",
       "trends_categories" => "google-trends-categories",
@@ -13533,7 +13628,8 @@ module Crawlora
       "trends_explore_top_queries" => "google-trends-explore-top-queries",
       "trends_locations" => "google-trends-locations",
       "trends_trending" => "google-trends-trending",
-      "trends_trending_detail" => "google-trends-trending-detail"
+      "trends_trending_detail" => "google-trends-trending-detail",
+      "videos" => "google-videos"
     },
     "google_play" => {
       "app" => "googleplay-app",
@@ -13803,7 +13899,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 336
+  OPERATION_COUNT = 338
 
   module OperationId
     AIRBNB_ROOM = "airbnb-room"
@@ -13905,6 +14001,7 @@ module Crawlora
     GOOGLE_JOBS = "google-jobs"
     GOOGLE_MAP_PLACE = "google-map-place"
     GOOGLE_MAP_SEARCH = "google-map-search"
+    GOOGLE_NEWS = "google-news"
     GOOGLE_PLAY_APP = "googleplay-app"
     GOOGLE_PLAY_CATEGORIES = "googleplay-categories"
     GOOGLE_PLAY_DATASAFETY = "googleplay-datasafety"
@@ -13928,6 +14025,7 @@ module Crawlora
     GOOGLE_TRENDS_LOCATIONS = "google-trends-locations"
     GOOGLE_TRENDS_TRENDING = "google-trends-trending"
     GOOGLE_TRENDS_TRENDING_DETAIL = "google-trends-trending-detail"
+    GOOGLE_VIDEOS = "google-videos"
     INSTAGRAM_POST = "instagram-post"
     INSTAGRAM_PROFILE = "instagram-profile"
     INSTAGRAM_REELS = "instagram-reels"
