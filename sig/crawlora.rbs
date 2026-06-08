@@ -63,6 +63,31 @@ module Crawlora
     def videos: (?q: String, ?page: Integer, ?count: Integer, ?country: String, ?lang: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class BoxOfficeMojoGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def boxofficemojo_brand: (?id: String, ?path: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_brands: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_calendar: (?year: Integer, ?month: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_calendar_changes: (?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_calendar_date: (?date: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_date_domestic: (?date: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_franchise: (?id: String, ?path: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_franchises: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_genre: (?id: String, ?path: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_genres: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_lifetime_grosses: (?area: "worldwide" | "domestic", ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_release: (?id: String, ?path: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_release_group: (?id: String, ?path: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_showdown: (?id: String, ?path: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_showdowns: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_title: (?id: String, ?path: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_weekend_domestic: (?year: Integer, ?week: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_weekend_domestic_by_distributor: (?year: Integer, ?week: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_weekend_domestic_estimates: (?year: Integer, ?week: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_year_domestic: (?year: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def boxofficemojo_year_worldwide: (?year: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class BrandGroup
     def initialize: (Client, Hash[String, String]) -> void
     def retrieve: (?domain: String, ?force_language: String, ?maxSpeed: bool, ?maxAgeMs: Integer, ?timeoutMS: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -184,6 +209,29 @@ module Crawlora
     def suggest: (?term: String, ?country: String, ?lang: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class ImdbGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def name: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def name_awards: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def name_credits: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?query: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_awards: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_company_credits: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_credits: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_episodes: (?id: String, ?url: String, ?season: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_filming_locations: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_goofs: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_keywords: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_parental_guide: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_public_facts_analysis: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_quotes: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_release_info: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_reviews: (?id: String, ?url: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_technical_specs: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_trivia: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class InstagramGroup
     def initialize: (Client, Hash[String, String]) -> void
     def post: (?id: String, ?post_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -216,6 +264,31 @@ module Crawlora
     def justwatch_title_similar: (?id: String, ?country: String, ?language: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class KalshiGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def event: (?event_ticker: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def event_history: (?event_ticker: String, ?series_ticker: String, ?start_ts: Integer, ?end_ts: Integer, ?period_interval: Integer, ?include_latest_before_start: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def event_metadata: (?event_ticker: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def events: (?limit: Integer, ?cursor: String, ?series_ticker: String, ?category: String, ?status: "open" | "closed" | "settled", ?with_nested_markets: bool, ?with_milestones: bool, ?min_close_ts: Integer, ?min_updated_ts: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def multivariate_events: (?limit: Integer, ?cursor: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def exchange_schedule: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def exchange_status: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def historical_cutoff: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def historical_market: (?ticker: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def historical_market_history: (?ticker: String, ?start_ts: Integer, ?end_ts: Integer, ?period_interval: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def historical_markets: (?limit: Integer, ?cursor: String, ?tickers: String, ?event_ticker: String, ?series_ticker: String, ?mve_filter: "exclude", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def historical_trades: (?limit: Integer, ?cursor: String, ?ticker: String, ?min_ts: Integer, ?max_ts: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def market: (?ticker: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def market_history: (?ticker: String, ?series_ticker: String, ?start_ts: Integer, ?end_ts: Integer, ?period_interval: Integer, ?include_latest_before_start: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def market_orderbook: (?ticker: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def markets: (?limit: Integer, ?cursor: String, ?event_ticker: String, ?series_ticker: String, ?status: "unopened" | "open" | "closed" | "settled", ?ticker: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def markets_history: (?market_tickers: String, ?start_ts: Integer, ?end_ts: Integer, ?period_interval: Integer, ?include_latest_before_start: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def markets_orderbooks: (?tickers: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def series: (?limit: Integer, ?cursor: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def series_detail: (?series_ticker: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def trades: (?limit: Integer, ?cursor: String, ?ticker: String, ?min_ts: Integer, ?max_ts: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class LinkedInGroup
     def initialize: (Client, Hash[String, String]) -> void
     def linkedin_company: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -223,10 +296,94 @@ module Crawlora
     def linkedin_showcase: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class MetaculusGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def category_questions: (?slug: "artificial-intelligence" | "computing-and-math" | "cryptocurrencies" | "economy-business" | "elections" | "environment-climate" | "geopolitics" | "health-pandemics" | "law" | "metaculus" | "natural-sciences" | "nuclear" | "politics" | "social-sciences" | "space" | "sports-entertainment" | "technology", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def comments_feed: (?limit: Integer, ?topic: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def project_questions: (?slug: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def question: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def question_forecast_history: (?id: String, ?method: "recency_weighted" | "unweighted" | "single_aggregation", ?max_points: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def question_forecasts: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def question_metadata: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def question_options: (?id: String, ?method: "recency_weighted" | "unweighted" | "single_aggregation", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def questions: (?limit: Integer, ?topic: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def top_comments: (?limit: Integer, ?topic: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tournament_questions: (?slug: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class MetaGroup
     def initialize: (Client, Hash[String, String]) -> void
     def ping: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def ready: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class PolymarketGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def activity_trades: (?limit: Integer, ?offset: Integer, ?taker_only: "true" | "false", ?filter_type: "CASH", ?filter_amount: "1" | "5" | "10" | "100" | "1000" | "10000" | "100000", ?event_id: String, ?market: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def clob_market: (?condition_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def dashboard_macro: (?limit: Integer, ?cursor: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def data_followers: (?address: String, ?limit: Integer, ?offset: Integer, ?order: String, ?ascending: bool, ?after_cursor: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def data_following: (?address: String, ?limit: Integer, ?offset: Integer, ?order: String, ?ascending: bool, ?after_cursor: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def data_follows_counts: (?address: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def event_detail_by_id: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def event_activity_by_id: (?id: String, ?limit: Integer, ?offset: Integer, ?taker_only: "true" | "false", ?filter_type: "CASH", ?filter_amount: "1" | "5" | "10" | "100" | "1000" | "10000" | "100000", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def event_detail: (?slug: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def event_activity: (?slug: String, ?limit: Integer, ?offset: Integer, ?taker_only: "true" | "false", ?filter_type: "CASH", ?filter_amount: "1" | "5" | "10" | "100" | "1000" | "10000" | "100000", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def events: (?limit: Integer, ?offset: Integer, ?order: "volume24hr" | "volume" | "liquidity" | "endDate" | "updatedAt" | "createdAt" | "id" | "slug" | "title" | "question" | "label", ?ascending: bool, ?closed: "true" | "false", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def events_similar: (?id: Integer, ?event_title: String, ?event_slug: String, ?market_title: String, ?market_slug: String, ?limit: Integer, ?closed: "true" | "false", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def event_tags: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fee_types: (?active: "true" | "false", ?search: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def games: (?sport: String, ?ticker: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def homepage_feed: (?feed: "trending" | "breaking" | "new" | "politics" | "sports" | "crypto" | "esports" | "iran" | "finance" | "geopolitics" | "tech" | "culture" | "economy" | "weather" | "mentions" | "elections", ?limit: Integer, ?cursor: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def leaderboard: (?window: "1d" | "7d" | "30d" | "all", ?sort_by: "profit" | "volume", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def market_clarifications: (?market_id: String, ?event_id: String, ?state: String, ?question_id: String, ?tx_hash: String, ?limit: Integer, ?offset: Integer, ?order: String, ?ascending: bool, ?after_cursor: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def market_detail_by_condition: (?condition_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def market_activity_by_condition: (?condition_id: String, ?limit: Integer, ?offset: Integer, ?taker_only: "true" | "false", ?filter_type: "CASH", ?filter_amount: "1" | "5" | "10" | "100" | "1000" | "10000" | "100000", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def market_liquidity_by_condition: (?condition_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def market_detail_by_slug: (?slug: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def market_liquidity_by_slug: (?slug: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def market_detail: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def market_liquidity: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def market_tags: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def markets: (?limit: Integer, ?offset: Integer, ?order: "volume24hr" | "volume" | "liquidity" | "endDate" | "updatedAt" | "createdAt" | "id" | "slug" | "title" | "question" | "label", ?ascending: bool, ?closed: "true" | "false", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def predictions: (?status: "active" | "resolved" | "all", ?sort: "competitive" | "volume" | "volume_24hr" | "ending_soon" | "liquidity" | "newest" | "closed_time", ?tag: String, ?recurrence: "hourly" | "daily" | "weekly" | "monthly" | "yearly", ?limit: Integer, ?cursor: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rewards_market: (?condition_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rewards_markets: (?order_by: "market" | "earnings" | "max_spread" | "min_size" | "rate_per_day" | "price" | "earning_percentage" | "spread", ?position: "asc" | "desc", ?date: String, ?q: String, ?tag_slug: "all" | "politics" | "sports" | "crypto" | "pop-culture" | "middle-east" | "business" | "science", ?cursor: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?q: String, ?limit: Integer, ?status: "open" | "closed" | "all", ?sort: "relevance" | "volume24hr" | "volume" | "liquidity" | "endDate", ?ascending: bool, ?include_tags: bool, ?include_profiles: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sports: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sports_by_partner: (?partner: String, ?external_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sports_market_types: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sports_summary: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sport: (?id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sport_external_partners: (?id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sport_external_partner: (?id: Integer, ?partner_ref: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def spotlights: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def spotlights_keyset: (?limit: Integer, ?offset: Integer, ?order: String, ?ascending: bool, ?after_cursor: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def spotlight: (?slug: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def status: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tag_by_slug: (?slug: String, ?locale: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def related_tags_by_slug: (?slug: String, ?omit_empty: "true" | "false", ?status: String, ?locale: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def related_tag_rows_by_slug: (?slug: String, ?omit_empty: "true" | "false", ?status: String, ?locale: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tag: (?id: String, ?include_template: bool, ?locale: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def related_tags: (?id: String, ?omit_empty: "true" | "false", ?status: String, ?locale: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def related_tag_rows: (?id: String, ?omit_empty: "true" | "false", ?status: String, ?locale: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tags: (?limit: Integer, ?offset: Integer, ?order: "volume24hr" | "volume" | "liquidity" | "endDate" | "updatedAt" | "createdAt" | "id" | "slug" | "title" | "question" | "label", ?ascending: "true" | "false", ?locale: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def teams: (?league: String, ?name: String, ?abbreviation: String, ?provider_id: String, ?limit: Integer, ?offset: Integer, ?order: String, ?ascending: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def teams_by_partner: (?partner: String, ?external_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team: (?id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team_external_partners: (?id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team_external_partner: (?id: Integer, ?partner_ref: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def token_midpoint: (?token_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def token_orderbook: (?token_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def token_price: (?token_id: String, ?side: "buy" | "sell", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def token_price_history: (?token_id: String, ?interval: "1m" | "1h" | "6h" | "1d" | "1w" | "all" | "max", ?fidelity: Integer, ?start_ts: Integer, ?end_ts: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def token_spread: (?token_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tokens_midpoints: (?body: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tokens_orderbooks: (?body: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tokens_prices: (?body: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tokens_spreads: (?body: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tournaments: (?limit: Integer, ?offset: Integer, ?order: String, ?ascending: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tournament: (?id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class ProductHuntGroup
@@ -247,9 +404,16 @@ module Crawlora
   class RedditGroup
     def initialize: (Client, Hash[String, String]) -> void
     def comments: (?id: String, ?sort: "confidence" | "top" | "new" | "controversial" | "old" | "qa", ?limit: Integer, ?depth: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def domain_posts: (?domain: String, ?sort: "hot" | "new" | "top" | "rising", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def post: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search: (?q: String, ?subreddit: String, ?sort: "relevance" | "hot" | "new" | "top" | "comments", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def subreddit_about: (?subreddit: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def subreddit_comments: (?subreddit: String, ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def subreddit_posts: (?subreddit: String, ?sort: "hot" | "new" | "top" | "rising", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def subreddits_posts: (?subreddits: String, ?sort: "hot" | "new" | "top" | "rising", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def trends: (?sort: "hot" | "new" | "rising" | "top", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def user_comments: (?username: String, ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def user_posts: (?username: String, ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class ReferralsGroup
@@ -257,6 +421,19 @@ module Crawlora
     def click: (?request: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def me: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def me_events: (?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class RottenTomatoesGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def rottentomatoes_browse_movies: (?list: "movies_in_theaters" | "movies_at_home" | "movies_coming_soon", ?sort: "popular" | "newest" | "top_box_office", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rottentomatoes_browse_tv: (?list: "tv_series_browse", ?sort: "popular" | "newest", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rottentomatoes_episode: (?path: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rottentomatoes_movie: (?path: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rottentomatoes_movie_reviews: (?path: String, ?url: String, ?type: "critics" | "top-critics" | "audience" | "verified-audience", ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rottentomatoes_person: (?path: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rottentomatoes_search: (?query: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rottentomatoes_season: (?path: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rottentomatoes_series: (?path: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class ShopAppGroup

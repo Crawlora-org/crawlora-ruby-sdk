@@ -1300,6 +1300,620 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "boxofficemojo-brand" => {
+      "id" => "boxofficemojo-brand",
+      "method" => "GET",
+      "path" => "/boxofficemojo/brand",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-brands" => {
+      "id" => "boxofficemojo-brands",
+      "method" => "GET",
+      "path" => "/boxofficemojo/brands",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-calendar" => {
+      "id" => "boxofficemojo-calendar",
+      "method" => "GET",
+      "path" => "/boxofficemojo/calendar",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "month",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-calendar-changes" => {
+      "id" => "boxofficemojo-calendar-changes",
+      "method" => "GET",
+      "path" => "/boxofficemojo/calendar/changes",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "boxofficemojo-calendar-date" => {
+      "id" => "boxofficemojo-calendar-date",
+      "method" => "GET",
+      "path" => "/boxofficemojo/calendar/date",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-date-domestic" => {
+      "id" => "boxofficemojo-date-domestic",
+      "method" => "GET",
+      "path" => "/boxofficemojo/date/domestic",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-franchise" => {
+      "id" => "boxofficemojo-franchise",
+      "method" => "GET",
+      "path" => "/boxofficemojo/franchise",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-franchises" => {
+      "id" => "boxofficemojo-franchises",
+      "method" => "GET",
+      "path" => "/boxofficemojo/franchises",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-genre" => {
+      "id" => "boxofficemojo-genre",
+      "method" => "GET",
+      "path" => "/boxofficemojo/genre",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-genres" => {
+      "id" => "boxofficemojo-genres",
+      "method" => "GET",
+      "path" => "/boxofficemojo/genres",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-lifetime-grosses" => {
+      "id" => "boxofficemojo-lifetime-grosses",
+      "method" => "GET",
+      "path" => "/boxofficemojo/lifetime-grosses",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "area",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "worldwide",
+            "domestic"
+          ]
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "boxofficemojo-release" => {
+      "id" => "boxofficemojo-release",
+      "method" => "GET",
+      "path" => "/boxofficemojo/release",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-release-group" => {
+      "id" => "boxofficemojo-release-group",
+      "method" => "GET",
+      "path" => "/boxofficemojo/release-group",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-showdown" => {
+      "id" => "boxofficemojo-showdown",
+      "method" => "GET",
+      "path" => "/boxofficemojo/showdown",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-showdowns" => {
+      "id" => "boxofficemojo-showdowns",
+      "method" => "GET",
+      "path" => "/boxofficemojo/showdowns",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-title" => {
+      "id" => "boxofficemojo-title",
+      "method" => "GET",
+      "path" => "/boxofficemojo/title",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-weekend-domestic" => {
+      "id" => "boxofficemojo-weekend-domestic",
+      "method" => "GET",
+      "path" => "/boxofficemojo/weekend/domestic",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "week",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-weekend-domestic-by-distributor" => {
+      "id" => "boxofficemojo-weekend-domestic-by-distributor",
+      "method" => "GET",
+      "path" => "/boxofficemojo/weekend/domestic/by-distributor",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "week",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-weekend-domestic-estimates" => {
+      "id" => "boxofficemojo-weekend-domestic-estimates",
+      "method" => "GET",
+      "path" => "/boxofficemojo/weekend/domestic/estimates",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "week",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-year-domestic" => {
+      "id" => "boxofficemojo-year-domestic",
+      "method" => "GET",
+      "path" => "/boxofficemojo/year/domestic",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boxofficemojo-year-worldwide" => {
+      "id" => "boxofficemojo-year-worldwide",
+      "method" => "GET",
+      "path" => "/boxofficemojo/year/worldwide",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "brand-retrieve" => {
       "id" => "brand-retrieve",
       "method" => "GET",
@@ -5936,6 +6550,592 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "imdb-name" => {
+      "id" => "imdb-name",
+      "method" => "GET",
+      "path" => "/imdb/name",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-name-awards" => {
+      "id" => "imdb-name-awards",
+      "method" => "GET",
+      "path" => "/imdb/name/awards",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-name-credits" => {
+      "id" => "imdb-name-credits",
+      "method" => "GET",
+      "path" => "/imdb/name/credits",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-search" => {
+      "id" => "imdb-search",
+      "method" => "GET",
+      "path" => "/imdb/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title" => {
+      "id" => "imdb-title",
+      "method" => "GET",
+      "path" => "/imdb/title",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-awards" => {
+      "id" => "imdb-title-awards",
+      "method" => "GET",
+      "path" => "/imdb/title/awards",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-company-credits" => {
+      "id" => "imdb-title-company-credits",
+      "method" => "GET",
+      "path" => "/imdb/title/company-credits",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-credits" => {
+      "id" => "imdb-title-credits",
+      "method" => "GET",
+      "path" => "/imdb/title/credits",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-episodes" => {
+      "id" => "imdb-title-episodes",
+      "method" => "GET",
+      "path" => "/imdb/title/episodes",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-filming-locations" => {
+      "id" => "imdb-title-filming-locations",
+      "method" => "GET",
+      "path" => "/imdb/title/filming-locations",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-goofs" => {
+      "id" => "imdb-title-goofs",
+      "method" => "GET",
+      "path" => "/imdb/title/goofs",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-keywords" => {
+      "id" => "imdb-title-keywords",
+      "method" => "GET",
+      "path" => "/imdb/title/keywords",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-parental-guide" => {
+      "id" => "imdb-title-parental-guide",
+      "method" => "GET",
+      "path" => "/imdb/title/parental-guide",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-public-facts-analysis" => {
+      "id" => "imdb-title-public-facts-analysis",
+      "method" => "GET",
+      "path" => "/imdb/title/public-facts-analysis",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-quotes" => {
+      "id" => "imdb-title-quotes",
+      "method" => "GET",
+      "path" => "/imdb/title/quotes",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-release-info" => {
+      "id" => "imdb-title-release-info",
+      "method" => "GET",
+      "path" => "/imdb/title/release-info",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-reviews" => {
+      "id" => "imdb-title-reviews",
+      "method" => "GET",
+      "path" => "/imdb/title/reviews",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-technical-specs" => {
+      "id" => "imdb-title-technical-specs",
+      "method" => "GET",
+      "path" => "/imdb/title/technical-specs",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-trivia" => {
+      "id" => "imdb-title-trivia",
+      "method" => "GET",
+      "path" => "/imdb/title/trivia",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "instagram-post" => {
       "id" => "instagram-post",
       "method" => "GET",
@@ -6838,6 +8038,749 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "kalshi-event" => {
+      "id" => "kalshi-event",
+      "method" => "GET",
+      "path" => "/kalshi/event/{event_ticker}",
+      "pathParams" => [
+        "event_ticker"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kalshi-event-history" => {
+      "id" => "kalshi-event-history",
+      "method" => "GET",
+      "path" => "/kalshi/event/{event_ticker}/history",
+      "pathParams" => [
+        "event_ticker"
+      ],
+      "queryParams" => [
+        {
+          "name" => "series_ticker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "start_ts",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end_ts",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "period_interval",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "include_latest_before_start",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kalshi-event-metadata" => {
+      "id" => "kalshi-event-metadata",
+      "method" => "GET",
+      "path" => "/kalshi/event/{event_ticker}/metadata",
+      "pathParams" => [
+        "event_ticker"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kalshi-events" => {
+      "id" => "kalshi-events",
+      "method" => "GET",
+      "path" => "/kalshi/events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "series_ticker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "open",
+            "closed",
+            "settled"
+          ]
+        },
+        {
+          "name" => "with_nested_markets",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "with_milestones",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_close_ts",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_updated_ts",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "kalshi-multivariate-events" => {
+      "id" => "kalshi-multivariate-events",
+      "method" => "GET",
+      "path" => "/kalshi/events/multivariate",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "kalshi-exchange-schedule" => {
+      "id" => "kalshi-exchange-schedule",
+      "method" => "GET",
+      "path" => "/kalshi/exchange/schedule",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kalshi-exchange-status" => {
+      "id" => "kalshi-exchange-status",
+      "method" => "GET",
+      "path" => "/kalshi/exchange/status",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kalshi-historical-cutoff" => {
+      "id" => "kalshi-historical-cutoff",
+      "method" => "GET",
+      "path" => "/kalshi/historical/cutoff",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kalshi-historical-market" => {
+      "id" => "kalshi-historical-market",
+      "method" => "GET",
+      "path" => "/kalshi/historical/market/{ticker}",
+      "pathParams" => [
+        "ticker"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kalshi-historical-market-history" => {
+      "id" => "kalshi-historical-market-history",
+      "method" => "GET",
+      "path" => "/kalshi/historical/market/{ticker}/history",
+      "pathParams" => [
+        "ticker"
+      ],
+      "queryParams" => [
+        {
+          "name" => "start_ts",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end_ts",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "period_interval",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kalshi-historical-markets" => {
+      "id" => "kalshi-historical-markets",
+      "method" => "GET",
+      "path" => "/kalshi/historical/markets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tickers",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "event_ticker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "series_ticker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "mve_filter",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "exclude"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "kalshi-historical-trades" => {
+      "id" => "kalshi-historical-trades",
+      "method" => "GET",
+      "path" => "/kalshi/historical/trades",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ticker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_ts",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_ts",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "kalshi-market" => {
+      "id" => "kalshi-market",
+      "method" => "GET",
+      "path" => "/kalshi/market/{ticker}",
+      "pathParams" => [
+        "ticker"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kalshi-market-history" => {
+      "id" => "kalshi-market-history",
+      "method" => "GET",
+      "path" => "/kalshi/market/{ticker}/history",
+      "pathParams" => [
+        "ticker"
+      ],
+      "queryParams" => [
+        {
+          "name" => "series_ticker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "start_ts",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end_ts",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "period_interval",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "include_latest_before_start",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kalshi-market-orderbook" => {
+      "id" => "kalshi-market-orderbook",
+      "method" => "GET",
+      "path" => "/kalshi/market/{ticker}/orderbook",
+      "pathParams" => [
+        "ticker"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kalshi-markets" => {
+      "id" => "kalshi-markets",
+      "method" => "GET",
+      "path" => "/kalshi/markets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "event_ticker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "series_ticker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "unopened",
+            "open",
+            "closed",
+            "settled"
+          ]
+        },
+        {
+          "name" => "ticker",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "kalshi-markets-history" => {
+      "id" => "kalshi-markets-history",
+      "method" => "GET",
+      "path" => "/kalshi/markets/history",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "market_tickers",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "start_ts",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end_ts",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "period_interval",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "include_latest_before_start",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kalshi-markets-orderbooks" => {
+      "id" => "kalshi-markets-orderbooks",
+      "method" => "GET",
+      "path" => "/kalshi/markets/orderbooks",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tickers",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kalshi-series" => {
+      "id" => "kalshi-series",
+      "method" => "GET",
+      "path" => "/kalshi/series",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "kalshi-series-detail" => {
+      "id" => "kalshi-series-detail",
+      "method" => "GET",
+      "path" => "/kalshi/series/{series_ticker}",
+      "pathParams" => [
+        "series_ticker"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kalshi-trades" => {
+      "id" => "kalshi-trades",
+      "method" => "GET",
+      "path" => "/kalshi/trades",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ticker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_ts",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_ts",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
     "linkedin-company" => {
       "id" => "linkedin-company",
       "method" => "GET",
@@ -6901,6 +8844,309 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "metaculus-category-questions" => {
+      "id" => "metaculus-category-questions",
+      "method" => "GET",
+      "path" => "/metaculus/category/{slug}/questions",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "metaculus-comments-feed" => {
+      "id" => "metaculus-comments-feed",
+      "method" => "GET",
+      "path" => "/metaculus/comments-feed",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "topic",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "metaculus-project-questions" => {
+      "id" => "metaculus-project-questions",
+      "method" => "GET",
+      "path" => "/metaculus/project/{slug}/questions",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "metaculus-question" => {
+      "id" => "metaculus-question",
+      "method" => "GET",
+      "path" => "/metaculus/question/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "metaculus-question-forecast-history" => {
+      "id" => "metaculus-question-forecast-history",
+      "method" => "GET",
+      "path" => "/metaculus/question/{id}/forecast-history",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "method",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "recency_weighted",
+            "unweighted",
+            "single_aggregation"
+          ]
+        },
+        {
+          "name" => "max_points",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "metaculus-question-forecasts" => {
+      "id" => "metaculus-question-forecasts",
+      "method" => "GET",
+      "path" => "/metaculus/question/{id}/forecasts",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "metaculus-question-metadata" => {
+      "id" => "metaculus-question-metadata",
+      "method" => "GET",
+      "path" => "/metaculus/question/{id}/metadata",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "metaculus-question-options" => {
+      "id" => "metaculus-question-options",
+      "method" => "GET",
+      "path" => "/metaculus/question/{id}/options",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "method",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "recency_weighted",
+            "unweighted",
+            "single_aggregation"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "metaculus-questions" => {
+      "id" => "metaculus-questions",
+      "method" => "GET",
+      "path" => "/metaculus/questions",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "topic",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "metaculus-top-comments" => {
+      "id" => "metaculus-top-comments",
+      "method" => "GET",
+      "path" => "/metaculus/top-comments",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "topic",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "metaculus-tournament-questions" => {
+      "id" => "metaculus-tournament-questions",
+      "method" => "GET",
+      "path" => "/metaculus/tournament/{slug}/questions",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "ping" => {
       "id" => "ping",
       "method" => "GET",
@@ -6917,6 +9163,2301 @@ module Crawlora
         "application/json"
       ],
       "security" => []
+    },
+    "polymarket-activity-trades" => {
+      "id" => "polymarket-activity-trades",
+      "method" => "GET",
+      "path" => "/polymarket/activity/trades",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "taker_only",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name" => "filter_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "CASH"
+          ]
+        },
+        {
+          "name" => "filter_amount",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "5",
+            "10",
+            "100",
+            "1000",
+            "10000",
+            "100000"
+          ]
+        },
+        {
+          "name" => "event_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "market",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "polymarket-clob-market" => {
+      "id" => "polymarket-clob-market",
+      "method" => "GET",
+      "path" => "/polymarket/clob/market/{condition_id}",
+      "pathParams" => [
+        "condition_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-dashboard-macro" => {
+      "id" => "polymarket-dashboard-macro",
+      "method" => "GET",
+      "path" => "/polymarket/dashboards/macro",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "polymarket-data-followers" => {
+      "id" => "polymarket-data-followers",
+      "method" => "GET",
+      "path" => "/polymarket/data/followers/{address}",
+      "pathParams" => [
+        "address"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ascending",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "after_cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "polymarket-data-following" => {
+      "id" => "polymarket-data-following",
+      "method" => "GET",
+      "path" => "/polymarket/data/following/{address}",
+      "pathParams" => [
+        "address"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ascending",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "after_cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "polymarket-data-follows-counts" => {
+      "id" => "polymarket-data-follows-counts",
+      "method" => "GET",
+      "path" => "/polymarket/data/follows/counts/{address}",
+      "pathParams" => [
+        "address"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-event-detail-by-id" => {
+      "id" => "polymarket-event-detail-by-id",
+      "method" => "GET",
+      "path" => "/polymarket/event/id/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-event-activity-by-id" => {
+      "id" => "polymarket-event-activity-by-id",
+      "method" => "GET",
+      "path" => "/polymarket/event/id/{id}/activity",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "taker_only",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name" => "filter_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "CASH"
+          ]
+        },
+        {
+          "name" => "filter_amount",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "5",
+            "10",
+            "100",
+            "1000",
+            "10000",
+            "100000"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "polymarket-event-detail" => {
+      "id" => "polymarket-event-detail",
+      "method" => "GET",
+      "path" => "/polymarket/event/{slug}",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-event-activity" => {
+      "id" => "polymarket-event-activity",
+      "method" => "GET",
+      "path" => "/polymarket/event/{slug}/activity",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "taker_only",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name" => "filter_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "CASH"
+          ]
+        },
+        {
+          "name" => "filter_amount",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "5",
+            "10",
+            "100",
+            "1000",
+            "10000",
+            "100000"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "polymarket-events" => {
+      "id" => "polymarket-events",
+      "method" => "GET",
+      "path" => "/polymarket/events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "volume24hr",
+            "volume",
+            "liquidity",
+            "endDate",
+            "updatedAt",
+            "createdAt",
+            "id",
+            "slug",
+            "title",
+            "question",
+            "label"
+          ]
+        },
+        {
+          "name" => "ascending",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "closed",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "true",
+            "false"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "polymarket-events-similar" => {
+      "id" => "polymarket-events-similar",
+      "method" => "GET",
+      "path" => "/polymarket/events/similar",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "event_title",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "event_slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "market_title",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "market_slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "closed",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "true",
+            "false"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-event-tags" => {
+      "id" => "polymarket-event-tags",
+      "method" => "GET",
+      "path" => "/polymarket/events/{id}/tags",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-fee-types" => {
+      "id" => "polymarket-fee-types",
+      "method" => "GET",
+      "path" => "/polymarket/fee-types",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "active",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name" => "search",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-games" => {
+      "id" => "polymarket-games",
+      "method" => "GET",
+      "path" => "/polymarket/games",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "sport",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ticker",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-homepage-feed" => {
+      "id" => "polymarket-homepage-feed",
+      "method" => "GET",
+      "path" => "/polymarket/homepage/feed",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "feed",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "trending",
+            "breaking",
+            "new",
+            "politics",
+            "sports",
+            "crypto",
+            "esports",
+            "iran",
+            "finance",
+            "geopolitics",
+            "tech",
+            "culture",
+            "economy",
+            "weather",
+            "mentions",
+            "elections"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "polymarket-leaderboard" => {
+      "id" => "polymarket-leaderboard",
+      "method" => "GET",
+      "path" => "/polymarket/leaderboard",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "window",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1d",
+            "7d",
+            "30d",
+            "all"
+          ]
+        },
+        {
+          "name" => "sort_by",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "profit",
+            "volume"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-market-clarifications" => {
+      "id" => "polymarket-market-clarifications",
+      "method" => "GET",
+      "path" => "/polymarket/market-clarifications",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "market_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "event_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "question_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tx_hash",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ascending",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "after_cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "polymarket-market-detail-by-condition" => {
+      "id" => "polymarket-market-detail-by-condition",
+      "method" => "GET",
+      "path" => "/polymarket/market/condition/{condition_id}",
+      "pathParams" => [
+        "condition_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-market-activity-by-condition" => {
+      "id" => "polymarket-market-activity-by-condition",
+      "method" => "GET",
+      "path" => "/polymarket/market/condition/{condition_id}/activity",
+      "pathParams" => [
+        "condition_id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "taker_only",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name" => "filter_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "CASH"
+          ]
+        },
+        {
+          "name" => "filter_amount",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "5",
+            "10",
+            "100",
+            "1000",
+            "10000",
+            "100000"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "polymarket-market-liquidity-by-condition" => {
+      "id" => "polymarket-market-liquidity-by-condition",
+      "method" => "GET",
+      "path" => "/polymarket/market/condition/{condition_id}/liquidity",
+      "pathParams" => [
+        "condition_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-market-detail-by-slug" => {
+      "id" => "polymarket-market-detail-by-slug",
+      "method" => "GET",
+      "path" => "/polymarket/market/slug/{slug}",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-market-liquidity-by-slug" => {
+      "id" => "polymarket-market-liquidity-by-slug",
+      "method" => "GET",
+      "path" => "/polymarket/market/slug/{slug}/liquidity",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-market-detail" => {
+      "id" => "polymarket-market-detail",
+      "method" => "GET",
+      "path" => "/polymarket/market/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-market-liquidity" => {
+      "id" => "polymarket-market-liquidity",
+      "method" => "GET",
+      "path" => "/polymarket/market/{id}/liquidity",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-market-tags" => {
+      "id" => "polymarket-market-tags",
+      "method" => "GET",
+      "path" => "/polymarket/market/{id}/tags",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-markets" => {
+      "id" => "polymarket-markets",
+      "method" => "GET",
+      "path" => "/polymarket/markets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "volume24hr",
+            "volume",
+            "liquidity",
+            "endDate",
+            "updatedAt",
+            "createdAt",
+            "id",
+            "slug",
+            "title",
+            "question",
+            "label"
+          ]
+        },
+        {
+          "name" => "ascending",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "closed",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "true",
+            "false"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "polymarket-predictions" => {
+      "id" => "polymarket-predictions",
+      "method" => "GET",
+      "path" => "/polymarket/predictions",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "active",
+            "resolved",
+            "all"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "competitive",
+            "volume",
+            "volume_24hr",
+            "ending_soon",
+            "liquidity",
+            "newest",
+            "closed_time"
+          ]
+        },
+        {
+          "name" => "tag",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "recurrence",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "hourly",
+            "daily",
+            "weekly",
+            "monthly",
+            "yearly"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "polymarket-rewards-market" => {
+      "id" => "polymarket-rewards-market",
+      "method" => "GET",
+      "path" => "/polymarket/rewards/market/{condition_id}",
+      "pathParams" => [
+        "condition_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-rewards-markets" => {
+      "id" => "polymarket-rewards-markets",
+      "method" => "GET",
+      "path" => "/polymarket/rewards/markets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "order_by",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "market",
+            "earnings",
+            "max_spread",
+            "min_size",
+            "rate_per_day",
+            "price",
+            "earning_percentage",
+            "spread"
+          ]
+        },
+        {
+          "name" => "position",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tag_slug",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "politics",
+            "sports",
+            "crypto",
+            "pop-culture",
+            "middle-east",
+            "business",
+            "science"
+          ]
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "polymarket-search" => {
+      "id" => "polymarket-search",
+      "method" => "GET",
+      "path" => "/polymarket/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "open",
+            "closed",
+            "all"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "volume24hr",
+            "volume",
+            "liquidity",
+            "endDate"
+          ]
+        },
+        {
+          "name" => "ascending",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "include_tags",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "include_profiles",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-sports" => {
+      "id" => "polymarket-sports",
+      "method" => "GET",
+      "path" => "/polymarket/sports",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-sports-by-partner" => {
+      "id" => "polymarket-sports-by-partner",
+      "method" => "GET",
+      "path" => "/polymarket/sports/by-partner",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "partner",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "external_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-sports-market-types" => {
+      "id" => "polymarket-sports-market-types",
+      "method" => "GET",
+      "path" => "/polymarket/sports/market-types",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-sports-summary" => {
+      "id" => "polymarket-sports-summary",
+      "method" => "GET",
+      "path" => "/polymarket/sports/summary",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-sport" => {
+      "id" => "polymarket-sport",
+      "method" => "GET",
+      "path" => "/polymarket/sports/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-sport-external-partners" => {
+      "id" => "polymarket-sport-external-partners",
+      "method" => "GET",
+      "path" => "/polymarket/sports/{id}/external-partners",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-sport-external-partner" => {
+      "id" => "polymarket-sport-external-partner",
+      "method" => "GET",
+      "path" => "/polymarket/sports/{id}/external-partners/{partner_ref}",
+      "pathParams" => [
+        "id",
+        "partner_ref"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-spotlights" => {
+      "id" => "polymarket-spotlights",
+      "method" => "GET",
+      "path" => "/polymarket/spotlights",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-spotlights-keyset" => {
+      "id" => "polymarket-spotlights-keyset",
+      "method" => "GET",
+      "path" => "/polymarket/spotlights/keyset",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ascending",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "after_cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "polymarket-spotlight" => {
+      "id" => "polymarket-spotlight",
+      "method" => "GET",
+      "path" => "/polymarket/spotlights/{slug}",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-status" => {
+      "id" => "polymarket-status",
+      "method" => "GET",
+      "path" => "/polymarket/status",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-tag-by-slug" => {
+      "id" => "polymarket-tag-by-slug",
+      "method" => "GET",
+      "path" => "/polymarket/tag/slug/{slug}",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [
+        {
+          "name" => "locale",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-related-tags-by-slug" => {
+      "id" => "polymarket-related-tags-by-slug",
+      "method" => "GET",
+      "path" => "/polymarket/tag/slug/{slug}/related-tags",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [
+        {
+          "name" => "omit_empty",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "locale",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-related-tag-rows-by-slug" => {
+      "id" => "polymarket-related-tag-rows-by-slug",
+      "method" => "GET",
+      "path" => "/polymarket/tag/slug/{slug}/related-tags/tags",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [
+        {
+          "name" => "omit_empty",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "locale",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-tag" => {
+      "id" => "polymarket-tag",
+      "method" => "GET",
+      "path" => "/polymarket/tag/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "include_template",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "locale",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-related-tags" => {
+      "id" => "polymarket-related-tags",
+      "method" => "GET",
+      "path" => "/polymarket/tag/{id}/related-tags",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "omit_empty",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "locale",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-related-tag-rows" => {
+      "id" => "polymarket-related-tag-rows",
+      "method" => "GET",
+      "path" => "/polymarket/tag/{id}/related-tags/tags",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "omit_empty",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "locale",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-tags" => {
+      "id" => "polymarket-tags",
+      "method" => "GET",
+      "path" => "/polymarket/tags",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "volume24hr",
+            "volume",
+            "liquidity",
+            "endDate",
+            "updatedAt",
+            "createdAt",
+            "id",
+            "slug",
+            "title",
+            "question",
+            "label"
+          ]
+        },
+        {
+          "name" => "ascending",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name" => "locale",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "polymarket-teams" => {
+      "id" => "polymarket-teams",
+      "method" => "GET",
+      "path" => "/polymarket/teams",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "abbreviation",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "provider_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ascending",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "polymarket-teams-by-partner" => {
+      "id" => "polymarket-teams-by-partner",
+      "method" => "GET",
+      "path" => "/polymarket/teams/by-partner",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "partner",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "external_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-team" => {
+      "id" => "polymarket-team",
+      "method" => "GET",
+      "path" => "/polymarket/teams/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-team-external-partners" => {
+      "id" => "polymarket-team-external-partners",
+      "method" => "GET",
+      "path" => "/polymarket/teams/{id}/external-partners",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-team-external-partner" => {
+      "id" => "polymarket-team-external-partner",
+      "method" => "GET",
+      "path" => "/polymarket/teams/{id}/external-partners/{partner_ref}",
+      "pathParams" => [
+        "id",
+        "partner_ref"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-token-midpoint" => {
+      "id" => "polymarket-token-midpoint",
+      "method" => "GET",
+      "path" => "/polymarket/token/{token_id}/midpoint",
+      "pathParams" => [
+        "token_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-token-orderbook" => {
+      "id" => "polymarket-token-orderbook",
+      "method" => "GET",
+      "path" => "/polymarket/token/{token_id}/orderbook",
+      "pathParams" => [
+        "token_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-token-price" => {
+      "id" => "polymarket-token-price",
+      "method" => "GET",
+      "path" => "/polymarket/token/{token_id}/price",
+      "pathParams" => [
+        "token_id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "side",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "buy",
+            "sell"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-token-price-history" => {
+      "id" => "polymarket-token-price-history",
+      "method" => "GET",
+      "path" => "/polymarket/token/{token_id}/price-history",
+      "pathParams" => [
+        "token_id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "interval",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1m",
+            "1h",
+            "6h",
+            "1d",
+            "1w",
+            "all",
+            "max"
+          ]
+        },
+        {
+          "name" => "fidelity",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "start_ts",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end_ts",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-token-spread" => {
+      "id" => "polymarket-token-spread",
+      "method" => "GET",
+      "path" => "/polymarket/token/{token_id}/spread",
+      "pathParams" => [
+        "token_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-tokens-midpoints" => {
+      "id" => "polymarket-tokens-midpoints",
+      "method" => "POST",
+      "path" => "/polymarket/tokens/midpoints",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "body",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-tokens-orderbooks" => {
+      "id" => "polymarket-tokens-orderbooks",
+      "method" => "POST",
+      "path" => "/polymarket/tokens/orderbooks",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "body",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-tokens-prices" => {
+      "id" => "polymarket-tokens-prices",
+      "method" => "POST",
+      "path" => "/polymarket/tokens/prices",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "body",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-tokens-spreads" => {
+      "id" => "polymarket-tokens-spreads",
+      "method" => "POST",
+      "path" => "/polymarket/tokens/spreads",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "body",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "polymarket-tournaments" => {
+      "id" => "polymarket-tournaments",
+      "method" => "GET",
+      "path" => "/polymarket/tournaments",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ascending",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "polymarket-tournament" => {
+      "id" => "polymarket-tournament",
+      "method" => "GET",
+      "path" => "/polymarket/tournaments/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "producthunt-category" => {
       "id" => "producthunt-category",
@@ -7394,6 +11935,62 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "reddit-domain-posts" => {
+      "id" => "reddit-domain-posts",
+      "method" => "GET",
+      "path" => "/reddit/domain/{domain}/posts",
+      "pathParams" => [
+        "domain"
+      ],
+      "queryParams" => [
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "hot",
+            "new",
+            "top",
+            "rising"
+          ]
+        },
+        {
+          "name" => "time",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "hour",
+            "day",
+            "week",
+            "month",
+            "year",
+            "all"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "reddit-post" => {
       "id" => "reddit-post",
       "method" => "GET",
@@ -7481,6 +12078,65 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "reddit-subreddit-about" => {
+      "id" => "reddit-subreddit-about",
+      "method" => "GET",
+      "path" => "/reddit/subreddit/{subreddit}/about",
+      "pathParams" => [
+        "subreddit"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "reddit-subreddit-comments" => {
+      "id" => "reddit-subreddit-comments",
+      "method" => "GET",
+      "path" => "/reddit/subreddit/{subreddit}/comments",
+      "pathParams" => [
+        "subreddit"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "reddit-subreddit-posts" => {
       "id" => "reddit-subreddit-posts",
       "method" => "GET",
@@ -7513,6 +12169,184 @@ module Crawlora
             "all"
           ]
         },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "reddit-subreddits-posts" => {
+      "id" => "reddit-subreddits-posts",
+      "method" => "GET",
+      "path" => "/reddit/subreddits/posts",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "subreddits",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "hot",
+            "new",
+            "top",
+            "rising"
+          ]
+        },
+        {
+          "name" => "time",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "hour",
+            "day",
+            "week",
+            "month",
+            "year",
+            "all"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "reddit-trends" => {
+      "id" => "reddit-trends",
+      "method" => "GET",
+      "path" => "/reddit/trends",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "hot",
+            "new",
+            "rising",
+            "top"
+          ]
+        },
+        {
+          "name" => "time",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "hour",
+            "day",
+            "week",
+            "month",
+            "year",
+            "all"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "reddit-user-comments" => {
+      "id" => "reddit-user-comments",
+      "method" => "GET",
+      "path" => "/reddit/user/{username}/comments",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "reddit-user-posts" => {
+      "id" => "reddit-user-posts",
+      "method" => "GET",
+      "path" => "/reddit/user/{username}/posts",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [
         {
           "name" => "limit",
           "in" => "query",
@@ -7596,6 +12430,325 @@ module Crawlora
       ],
       "security" => [
         "JWTAuth"
+      ]
+    },
+    "rottentomatoes-browse-movies" => {
+      "id" => "rottentomatoes-browse-movies",
+      "method" => "GET",
+      "path" => "/rottentomatoes/browse/movies",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "list",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "movies_in_theaters",
+            "movies_at_home",
+            "movies_coming_soon"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "popular",
+            "newest",
+            "top_box_office"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rottentomatoes-browse-tv" => {
+      "id" => "rottentomatoes-browse-tv",
+      "method" => "GET",
+      "path" => "/rottentomatoes/browse/tv",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "list",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "tv_series_browse"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "popular",
+            "newest"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rottentomatoes-episode" => {
+      "id" => "rottentomatoes-episode",
+      "method" => "GET",
+      "path" => "/rottentomatoes/episode",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rottentomatoes-movie" => {
+      "id" => "rottentomatoes-movie",
+      "method" => "GET",
+      "path" => "/rottentomatoes/movie",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rottentomatoes-movie-reviews" => {
+      "id" => "rottentomatoes-movie-reviews",
+      "method" => "GET",
+      "path" => "/rottentomatoes/movie/reviews",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "critics",
+            "top-critics",
+            "audience",
+            "verified-audience"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rottentomatoes-person" => {
+      "id" => "rottentomatoes-person",
+      "method" => "GET",
+      "path" => "/rottentomatoes/person",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rottentomatoes-search" => {
+      "id" => "rottentomatoes-search",
+      "method" => "GET",
+      "path" => "/rottentomatoes/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rottentomatoes-season" => {
+      "id" => "rottentomatoes-season",
+      "method" => "GET",
+      "path" => "/rottentomatoes/season",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rottentomatoes-series" => {
+      "id" => "rottentomatoes-series",
+      "method" => "GET",
+      "path" => "/rottentomatoes/series",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
       ]
     },
     "shop-app-analysis" => {
@@ -13538,6 +18691,29 @@ module Crawlora
       "suggest" => "bing-suggest",
       "videos" => "bing-videos"
     },
+    "box_office_mojo" => {
+      "boxofficemojo_brand" => "boxofficemojo-brand",
+      "boxofficemojo_brands" => "boxofficemojo-brands",
+      "boxofficemojo_calendar" => "boxofficemojo-calendar",
+      "boxofficemojo_calendar_changes" => "boxofficemojo-calendar-changes",
+      "boxofficemojo_calendar_date" => "boxofficemojo-calendar-date",
+      "boxofficemojo_date_domestic" => "boxofficemojo-date-domestic",
+      "boxofficemojo_franchise" => "boxofficemojo-franchise",
+      "boxofficemojo_franchises" => "boxofficemojo-franchises",
+      "boxofficemojo_genre" => "boxofficemojo-genre",
+      "boxofficemojo_genres" => "boxofficemojo-genres",
+      "boxofficemojo_lifetime_grosses" => "boxofficemojo-lifetime-grosses",
+      "boxofficemojo_release" => "boxofficemojo-release",
+      "boxofficemojo_release_group" => "boxofficemojo-release-group",
+      "boxofficemojo_showdown" => "boxofficemojo-showdown",
+      "boxofficemojo_showdowns" => "boxofficemojo-showdowns",
+      "boxofficemojo_title" => "boxofficemojo-title",
+      "boxofficemojo_weekend_domestic" => "boxofficemojo-weekend-domestic",
+      "boxofficemojo_weekend_domestic_by_distributor" => "boxofficemojo-weekend-domestic-by-distributor",
+      "boxofficemojo_weekend_domestic_estimates" => "boxofficemojo-weekend-domestic-estimates",
+      "boxofficemojo_year_domestic" => "boxofficemojo-year-domestic",
+      "boxofficemojo_year_worldwide" => "boxofficemojo-year-worldwide"
+    },
     "brand" => {
       "retrieve" => "brand-retrieve"
     },
@@ -13643,6 +18819,27 @@ module Crawlora
       "similar" => "googleplay-similar",
       "suggest" => "googleplay-suggest"
     },
+    "imdb" => {
+      "name" => "imdb-name",
+      "name_awards" => "imdb-name-awards",
+      "name_credits" => "imdb-name-credits",
+      "search" => "imdb-search",
+      "title" => "imdb-title",
+      "title_awards" => "imdb-title-awards",
+      "title_company_credits" => "imdb-title-company-credits",
+      "title_credits" => "imdb-title-credits",
+      "title_episodes" => "imdb-title-episodes",
+      "title_filming_locations" => "imdb-title-filming-locations",
+      "title_goofs" => "imdb-title-goofs",
+      "title_keywords" => "imdb-title-keywords",
+      "title_parental_guide" => "imdb-title-parental-guide",
+      "title_public_facts_analysis" => "imdb-title-public-facts-analysis",
+      "title_quotes" => "imdb-title-quotes",
+      "title_release_info" => "imdb-title-release-info",
+      "title_reviews" => "imdb-title-reviews",
+      "title_technical_specs" => "imdb-title-technical-specs",
+      "title_trivia" => "imdb-title-trivia"
+    },
     "instagram" => {
       "post" => "instagram-post",
       "profile" => "instagram-profile",
@@ -13671,14 +18868,117 @@ module Crawlora
       "justwatch_title_offers" => "justwatch-title-offers",
       "justwatch_title_similar" => "justwatch-title-similar"
     },
+    "kalshi" => {
+      "event" => "kalshi-event",
+      "event_history" => "kalshi-event-history",
+      "event_metadata" => "kalshi-event-metadata",
+      "events" => "kalshi-events",
+      "multivariate_events" => "kalshi-multivariate-events",
+      "exchange_schedule" => "kalshi-exchange-schedule",
+      "exchange_status" => "kalshi-exchange-status",
+      "historical_cutoff" => "kalshi-historical-cutoff",
+      "historical_market" => "kalshi-historical-market",
+      "historical_market_history" => "kalshi-historical-market-history",
+      "historical_markets" => "kalshi-historical-markets",
+      "historical_trades" => "kalshi-historical-trades",
+      "market" => "kalshi-market",
+      "market_history" => "kalshi-market-history",
+      "market_orderbook" => "kalshi-market-orderbook",
+      "markets" => "kalshi-markets",
+      "markets_history" => "kalshi-markets-history",
+      "markets_orderbooks" => "kalshi-markets-orderbooks",
+      "series" => "kalshi-series",
+      "series_detail" => "kalshi-series-detail",
+      "trades" => "kalshi-trades"
+    },
     "linked_in" => {
       "linkedin_company" => "linkedin-company",
       "linkedin_product" => "linkedin-product",
       "linkedin_showcase" => "linkedin-showcase"
     },
+    "metaculus" => {
+      "category_questions" => "metaculus-category-questions",
+      "comments_feed" => "metaculus-comments-feed",
+      "project_questions" => "metaculus-project-questions",
+      "question" => "metaculus-question",
+      "question_forecast_history" => "metaculus-question-forecast-history",
+      "question_forecasts" => "metaculus-question-forecasts",
+      "question_metadata" => "metaculus-question-metadata",
+      "question_options" => "metaculus-question-options",
+      "questions" => "metaculus-questions",
+      "top_comments" => "metaculus-top-comments",
+      "tournament_questions" => "metaculus-tournament-questions"
+    },
     "meta" => {
       "ping" => "ping",
       "ready" => "ready"
+    },
+    "polymarket" => {
+      "activity_trades" => "polymarket-activity-trades",
+      "clob_market" => "polymarket-clob-market",
+      "dashboard_macro" => "polymarket-dashboard-macro",
+      "data_followers" => "polymarket-data-followers",
+      "data_following" => "polymarket-data-following",
+      "data_follows_counts" => "polymarket-data-follows-counts",
+      "event_detail_by_id" => "polymarket-event-detail-by-id",
+      "event_activity_by_id" => "polymarket-event-activity-by-id",
+      "event_detail" => "polymarket-event-detail",
+      "event_activity" => "polymarket-event-activity",
+      "events" => "polymarket-events",
+      "events_similar" => "polymarket-events-similar",
+      "event_tags" => "polymarket-event-tags",
+      "fee_types" => "polymarket-fee-types",
+      "games" => "polymarket-games",
+      "homepage_feed" => "polymarket-homepage-feed",
+      "leaderboard" => "polymarket-leaderboard",
+      "market_clarifications" => "polymarket-market-clarifications",
+      "market_detail_by_condition" => "polymarket-market-detail-by-condition",
+      "market_activity_by_condition" => "polymarket-market-activity-by-condition",
+      "market_liquidity_by_condition" => "polymarket-market-liquidity-by-condition",
+      "market_detail_by_slug" => "polymarket-market-detail-by-slug",
+      "market_liquidity_by_slug" => "polymarket-market-liquidity-by-slug",
+      "market_detail" => "polymarket-market-detail",
+      "market_liquidity" => "polymarket-market-liquidity",
+      "market_tags" => "polymarket-market-tags",
+      "markets" => "polymarket-markets",
+      "predictions" => "polymarket-predictions",
+      "rewards_market" => "polymarket-rewards-market",
+      "rewards_markets" => "polymarket-rewards-markets",
+      "search" => "polymarket-search",
+      "sports" => "polymarket-sports",
+      "sports_by_partner" => "polymarket-sports-by-partner",
+      "sports_market_types" => "polymarket-sports-market-types",
+      "sports_summary" => "polymarket-sports-summary",
+      "sport" => "polymarket-sport",
+      "sport_external_partners" => "polymarket-sport-external-partners",
+      "sport_external_partner" => "polymarket-sport-external-partner",
+      "spotlights" => "polymarket-spotlights",
+      "spotlights_keyset" => "polymarket-spotlights-keyset",
+      "spotlight" => "polymarket-spotlight",
+      "status" => "polymarket-status",
+      "tag_by_slug" => "polymarket-tag-by-slug",
+      "related_tags_by_slug" => "polymarket-related-tags-by-slug",
+      "related_tag_rows_by_slug" => "polymarket-related-tag-rows-by-slug",
+      "tag" => "polymarket-tag",
+      "related_tags" => "polymarket-related-tags",
+      "related_tag_rows" => "polymarket-related-tag-rows",
+      "tags" => "polymarket-tags",
+      "teams" => "polymarket-teams",
+      "teams_by_partner" => "polymarket-teams-by-partner",
+      "team" => "polymarket-team",
+      "team_external_partners" => "polymarket-team-external-partners",
+      "team_external_partner" => "polymarket-team-external-partner",
+      "token_midpoint" => "polymarket-token-midpoint",
+      "token_orderbook" => "polymarket-token-orderbook",
+      "token_price" => "polymarket-token-price",
+      "token_price_history" => "polymarket-token-price-history",
+      "token_spread" => "polymarket-token-spread",
+      "tokens_midpoints" => "polymarket-tokens-midpoints",
+      "tokens_orderbooks" => "polymarket-tokens-orderbooks",
+      "tokens_prices" => "polymarket-tokens-prices",
+      "tokens_spreads" => "polymarket-tokens-spreads",
+      "tournaments" => "polymarket-tournaments",
+      "tournament" => "polymarket-tournament"
     },
     "product_hunt" => {
       "category" => "producthunt-category",
@@ -13695,14 +18995,32 @@ module Crawlora
     },
     "reddit" => {
       "comments" => "reddit-comments",
+      "domain_posts" => "reddit-domain-posts",
       "post" => "reddit-post",
       "search" => "reddit-search",
-      "subreddit_posts" => "reddit-subreddit-posts"
+      "subreddit_about" => "reddit-subreddit-about",
+      "subreddit_comments" => "reddit-subreddit-comments",
+      "subreddit_posts" => "reddit-subreddit-posts",
+      "subreddits_posts" => "reddit-subreddits-posts",
+      "trends" => "reddit-trends",
+      "user_comments" => "reddit-user-comments",
+      "user_posts" => "reddit-user-posts"
     },
     "referrals" => {
       "click" => "referrals-click",
       "me" => "referrals-me",
       "me_events" => "referrals-me-events"
+    },
+    "rotten_tomatoes" => {
+      "rottentomatoes_browse_movies" => "rottentomatoes-browse-movies",
+      "rottentomatoes_browse_tv" => "rottentomatoes-browse-tv",
+      "rottentomatoes_episode" => "rottentomatoes-episode",
+      "rottentomatoes_movie" => "rottentomatoes-movie",
+      "rottentomatoes_movie_reviews" => "rottentomatoes-movie-reviews",
+      "rottentomatoes_person" => "rottentomatoes-person",
+      "rottentomatoes_search" => "rottentomatoes-search",
+      "rottentomatoes_season" => "rottentomatoes-season",
+      "rottentomatoes_series" => "rottentomatoes-series"
     },
     "shop_app" => {
       "analysis" => "shop-app-analysis",
@@ -13899,7 +19217,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 338
+  OPERATION_COUNT = 491
 
   module OperationId
     AIRBNB_ROOM = "airbnb-room"
@@ -13937,6 +19255,27 @@ module Crawlora
     BING_SEARCH = "bing-search"
     BING_SUGGEST = "bing-suggest"
     BING_VIDEOS = "bing-videos"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_BRAND = "boxofficemojo-brand"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_BRANDS = "boxofficemojo-brands"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_CALENDAR = "boxofficemojo-calendar"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_CALENDAR_CHANGES = "boxofficemojo-calendar-changes"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_CALENDAR_DATE = "boxofficemojo-calendar-date"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_DATE_DOMESTIC = "boxofficemojo-date-domestic"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_FRANCHISE = "boxofficemojo-franchise"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_FRANCHISES = "boxofficemojo-franchises"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_GENRE = "boxofficemojo-genre"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_GENRES = "boxofficemojo-genres"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_LIFETIME_GROSSES = "boxofficemojo-lifetime-grosses"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_RELEASE = "boxofficemojo-release"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_RELEASE_GROUP = "boxofficemojo-release-group"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_SHOWDOWN = "boxofficemojo-showdown"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_SHOWDOWNS = "boxofficemojo-showdowns"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_TITLE = "boxofficemojo-title"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_WEEKEND_DOMESTIC = "boxofficemojo-weekend-domestic"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_WEEKEND_DOMESTIC_BY_DISTRIBUTOR = "boxofficemojo-weekend-domestic-by-distributor"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_WEEKEND_DOMESTIC_ESTIMATES = "boxofficemojo-weekend-domestic-estimates"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_YEAR_DOMESTIC = "boxofficemojo-year-domestic"
+    BOX_OFFICE_MOJO_BOXOFFICEMOJO_YEAR_WORLDWIDE = "boxofficemojo-year-worldwide"
     BRAND_RETRIEVE = "brand-retrieve"
     BRAVE_IMAGES = "brave-images"
     BRAVE_NEWS = "brave-news"
@@ -14026,6 +19365,25 @@ module Crawlora
     GOOGLE_TRENDS_TRENDING = "google-trends-trending"
     GOOGLE_TRENDS_TRENDING_DETAIL = "google-trends-trending-detail"
     GOOGLE_VIDEOS = "google-videos"
+    IMDB_NAME = "imdb-name"
+    IMDB_NAME_AWARDS = "imdb-name-awards"
+    IMDB_NAME_CREDITS = "imdb-name-credits"
+    IMDB_SEARCH = "imdb-search"
+    IMDB_TITLE = "imdb-title"
+    IMDB_TITLE_AWARDS = "imdb-title-awards"
+    IMDB_TITLE_COMPANY_CREDITS = "imdb-title-company-credits"
+    IMDB_TITLE_CREDITS = "imdb-title-credits"
+    IMDB_TITLE_EPISODES = "imdb-title-episodes"
+    IMDB_TITLE_FILMING_LOCATIONS = "imdb-title-filming-locations"
+    IMDB_TITLE_GOOFS = "imdb-title-goofs"
+    IMDB_TITLE_KEYWORDS = "imdb-title-keywords"
+    IMDB_TITLE_PARENTAL_GUIDE = "imdb-title-parental-guide"
+    IMDB_TITLE_PUBLIC_FACTS_ANALYSIS = "imdb-title-public-facts-analysis"
+    IMDB_TITLE_QUOTES = "imdb-title-quotes"
+    IMDB_TITLE_RELEASE_INFO = "imdb-title-release-info"
+    IMDB_TITLE_REVIEWS = "imdb-title-reviews"
+    IMDB_TITLE_TECHNICAL_SPECS = "imdb-title-technical-specs"
+    IMDB_TITLE_TRIVIA = "imdb-title-trivia"
     INSTAGRAM_POST = "instagram-post"
     INSTAGRAM_PROFILE = "instagram-profile"
     INSTAGRAM_REELS = "instagram-reels"
@@ -14050,11 +19408,108 @@ module Crawlora
     JUST_WATCH_JUSTWATCH_TITLE_MEDIA = "justwatch-title-media"
     JUST_WATCH_JUSTWATCH_TITLE_OFFERS = "justwatch-title-offers"
     JUST_WATCH_JUSTWATCH_TITLE_SIMILAR = "justwatch-title-similar"
+    KALSHI_EVENT = "kalshi-event"
+    KALSHI_EVENT_HISTORY = "kalshi-event-history"
+    KALSHI_EVENT_METADATA = "kalshi-event-metadata"
+    KALSHI_EVENTS = "kalshi-events"
+    KALSHI_EXCHANGE_SCHEDULE = "kalshi-exchange-schedule"
+    KALSHI_EXCHANGE_STATUS = "kalshi-exchange-status"
+    KALSHI_HISTORICAL_CUTOFF = "kalshi-historical-cutoff"
+    KALSHI_HISTORICAL_MARKET = "kalshi-historical-market"
+    KALSHI_HISTORICAL_MARKET_HISTORY = "kalshi-historical-market-history"
+    KALSHI_HISTORICAL_MARKETS = "kalshi-historical-markets"
+    KALSHI_HISTORICAL_TRADES = "kalshi-historical-trades"
+    KALSHI_MARKET = "kalshi-market"
+    KALSHI_MARKET_HISTORY = "kalshi-market-history"
+    KALSHI_MARKET_ORDERBOOK = "kalshi-market-orderbook"
+    KALSHI_MARKETS = "kalshi-markets"
+    KALSHI_MARKETS_HISTORY = "kalshi-markets-history"
+    KALSHI_MARKETS_ORDERBOOKS = "kalshi-markets-orderbooks"
+    KALSHI_MULTIVARIATE_EVENTS = "kalshi-multivariate-events"
+    KALSHI_SERIES = "kalshi-series"
+    KALSHI_SERIES_DETAIL = "kalshi-series-detail"
+    KALSHI_TRADES = "kalshi-trades"
     LINKED_IN_LINKEDIN_COMPANY = "linkedin-company"
     LINKED_IN_LINKEDIN_PRODUCT = "linkedin-product"
     LINKED_IN_LINKEDIN_SHOWCASE = "linkedin-showcase"
     META_PING = "ping"
     META_READY = "ready"
+    METACULUS_CATEGORY_QUESTIONS = "metaculus-category-questions"
+    METACULUS_COMMENTS_FEED = "metaculus-comments-feed"
+    METACULUS_PROJECT_QUESTIONS = "metaculus-project-questions"
+    METACULUS_QUESTION = "metaculus-question"
+    METACULUS_QUESTION_FORECAST_HISTORY = "metaculus-question-forecast-history"
+    METACULUS_QUESTION_FORECASTS = "metaculus-question-forecasts"
+    METACULUS_QUESTION_METADATA = "metaculus-question-metadata"
+    METACULUS_QUESTION_OPTIONS = "metaculus-question-options"
+    METACULUS_QUESTIONS = "metaculus-questions"
+    METACULUS_TOP_COMMENTS = "metaculus-top-comments"
+    METACULUS_TOURNAMENT_QUESTIONS = "metaculus-tournament-questions"
+    POLYMARKET_ACTIVITY_TRADES = "polymarket-activity-trades"
+    POLYMARKET_CLOB_MARKET = "polymarket-clob-market"
+    POLYMARKET_DASHBOARD_MACRO = "polymarket-dashboard-macro"
+    POLYMARKET_DATA_FOLLOWERS = "polymarket-data-followers"
+    POLYMARKET_DATA_FOLLOWING = "polymarket-data-following"
+    POLYMARKET_DATA_FOLLOWS_COUNTS = "polymarket-data-follows-counts"
+    POLYMARKET_EVENT_ACTIVITY = "polymarket-event-activity"
+    POLYMARKET_EVENT_ACTIVITY_BY_ID = "polymarket-event-activity-by-id"
+    POLYMARKET_EVENT_DETAIL = "polymarket-event-detail"
+    POLYMARKET_EVENT_DETAIL_BY_ID = "polymarket-event-detail-by-id"
+    POLYMARKET_EVENT_TAGS = "polymarket-event-tags"
+    POLYMARKET_EVENTS = "polymarket-events"
+    POLYMARKET_EVENTS_SIMILAR = "polymarket-events-similar"
+    POLYMARKET_FEE_TYPES = "polymarket-fee-types"
+    POLYMARKET_GAMES = "polymarket-games"
+    POLYMARKET_HOMEPAGE_FEED = "polymarket-homepage-feed"
+    POLYMARKET_LEADERBOARD = "polymarket-leaderboard"
+    POLYMARKET_MARKET_ACTIVITY_BY_CONDITION = "polymarket-market-activity-by-condition"
+    POLYMARKET_MARKET_CLARIFICATIONS = "polymarket-market-clarifications"
+    POLYMARKET_MARKET_DETAIL = "polymarket-market-detail"
+    POLYMARKET_MARKET_DETAIL_BY_CONDITION = "polymarket-market-detail-by-condition"
+    POLYMARKET_MARKET_DETAIL_BY_SLUG = "polymarket-market-detail-by-slug"
+    POLYMARKET_MARKET_LIQUIDITY = "polymarket-market-liquidity"
+    POLYMARKET_MARKET_LIQUIDITY_BY_CONDITION = "polymarket-market-liquidity-by-condition"
+    POLYMARKET_MARKET_LIQUIDITY_BY_SLUG = "polymarket-market-liquidity-by-slug"
+    POLYMARKET_MARKET_TAGS = "polymarket-market-tags"
+    POLYMARKET_MARKETS = "polymarket-markets"
+    POLYMARKET_PREDICTIONS = "polymarket-predictions"
+    POLYMARKET_RELATED_TAG_ROWS = "polymarket-related-tag-rows"
+    POLYMARKET_RELATED_TAG_ROWS_BY_SLUG = "polymarket-related-tag-rows-by-slug"
+    POLYMARKET_RELATED_TAGS = "polymarket-related-tags"
+    POLYMARKET_RELATED_TAGS_BY_SLUG = "polymarket-related-tags-by-slug"
+    POLYMARKET_REWARDS_MARKET = "polymarket-rewards-market"
+    POLYMARKET_REWARDS_MARKETS = "polymarket-rewards-markets"
+    POLYMARKET_SEARCH = "polymarket-search"
+    POLYMARKET_SPORT = "polymarket-sport"
+    POLYMARKET_SPORT_EXTERNAL_PARTNER = "polymarket-sport-external-partner"
+    POLYMARKET_SPORT_EXTERNAL_PARTNERS = "polymarket-sport-external-partners"
+    POLYMARKET_SPORTS = "polymarket-sports"
+    POLYMARKET_SPORTS_BY_PARTNER = "polymarket-sports-by-partner"
+    POLYMARKET_SPORTS_MARKET_TYPES = "polymarket-sports-market-types"
+    POLYMARKET_SPORTS_SUMMARY = "polymarket-sports-summary"
+    POLYMARKET_SPOTLIGHT = "polymarket-spotlight"
+    POLYMARKET_SPOTLIGHTS = "polymarket-spotlights"
+    POLYMARKET_SPOTLIGHTS_KEYSET = "polymarket-spotlights-keyset"
+    POLYMARKET_STATUS = "polymarket-status"
+    POLYMARKET_TAG = "polymarket-tag"
+    POLYMARKET_TAG_BY_SLUG = "polymarket-tag-by-slug"
+    POLYMARKET_TAGS = "polymarket-tags"
+    POLYMARKET_TEAM = "polymarket-team"
+    POLYMARKET_TEAM_EXTERNAL_PARTNER = "polymarket-team-external-partner"
+    POLYMARKET_TEAM_EXTERNAL_PARTNERS = "polymarket-team-external-partners"
+    POLYMARKET_TEAMS = "polymarket-teams"
+    POLYMARKET_TEAMS_BY_PARTNER = "polymarket-teams-by-partner"
+    POLYMARKET_TOKEN_MIDPOINT = "polymarket-token-midpoint"
+    POLYMARKET_TOKEN_ORDERBOOK = "polymarket-token-orderbook"
+    POLYMARKET_TOKEN_PRICE = "polymarket-token-price"
+    POLYMARKET_TOKEN_PRICE_HISTORY = "polymarket-token-price-history"
+    POLYMARKET_TOKEN_SPREAD = "polymarket-token-spread"
+    POLYMARKET_TOKENS_MIDPOINTS = "polymarket-tokens-midpoints"
+    POLYMARKET_TOKENS_ORDERBOOKS = "polymarket-tokens-orderbooks"
+    POLYMARKET_TOKENS_PRICES = "polymarket-tokens-prices"
+    POLYMARKET_TOKENS_SPREADS = "polymarket-tokens-spreads"
+    POLYMARKET_TOURNAMENT = "polymarket-tournament"
+    POLYMARKET_TOURNAMENTS = "polymarket-tournaments"
     PRODUCT_HUNT_ABOUT = "producthunt-about"
     PRODUCT_HUNT_ALTERNATIVES = "producthunt-alternatives"
     PRODUCT_HUNT_CATEGORY = "producthunt-category"
@@ -14067,12 +19522,28 @@ module Crawlora
     PRODUCT_HUNT_REVIEWS = "producthunt-reviews"
     PRODUCT_HUNT_SEARCH = "producthunt-search"
     REDDIT_COMMENTS = "reddit-comments"
+    REDDIT_DOMAIN_POSTS = "reddit-domain-posts"
     REDDIT_POST = "reddit-post"
     REDDIT_SEARCH = "reddit-search"
+    REDDIT_SUBREDDIT_ABOUT = "reddit-subreddit-about"
+    REDDIT_SUBREDDIT_COMMENTS = "reddit-subreddit-comments"
     REDDIT_SUBREDDIT_POSTS = "reddit-subreddit-posts"
+    REDDIT_SUBREDDITS_POSTS = "reddit-subreddits-posts"
+    REDDIT_TRENDS = "reddit-trends"
+    REDDIT_USER_COMMENTS = "reddit-user-comments"
+    REDDIT_USER_POSTS = "reddit-user-posts"
     REFERRALS_CLICK = "referrals-click"
     REFERRALS_ME = "referrals-me"
     REFERRALS_ME_EVENTS = "referrals-me-events"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_MOVIES = "rottentomatoes-browse-movies"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_TV = "rottentomatoes-browse-tv"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_EPISODE = "rottentomatoes-episode"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_MOVIE = "rottentomatoes-movie"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_MOVIE_REVIEWS = "rottentomatoes-movie-reviews"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_PERSON = "rottentomatoes-person"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_SEARCH = "rottentomatoes-search"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_SEASON = "rottentomatoes-season"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_SERIES = "rottentomatoes-series"
     SHOP_APP_ANALYSIS = "shop-app-analysis"
     SHOP_APP_CATEGORIES = "shop-app-categories"
     SHOP_APP_COLLECTION_PRODUCTS = "shop-app-collection-products"
