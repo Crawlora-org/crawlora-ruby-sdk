@@ -12,12 +12,12 @@ plus retries, pagination, middleware hooks, and client-side rate limiting.
 ## Install
 
 Published on [RubyGems](https://rubygems.org/gems/crawlora). The current release
-is a prerelease (`1.5.0.pre.sdk.3`), so install it with `--pre` or pin the
+is a prerelease (`1.7.0.pre.sdk.1`), so install it with `--pre` or pin the
 version:
 
 ```ruby
 # Gemfile
-gem "crawlora", "1.5.0.pre.sdk.3"
+gem "crawlora", "1.7.0.pre.sdk.1"
 ```
 
 ```sh
