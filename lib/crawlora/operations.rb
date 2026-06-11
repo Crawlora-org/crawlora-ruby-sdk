@@ -4235,6 +4235,25 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "contact" => {
+      "id" => "contact",
+      "method" => "POST",
+      "path" => "/contact",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "option",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "datasets-list" => {
       "id" => "datasets-list",
       "method" => "GET",
@@ -4545,6 +4564,25 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "antibot-check" => {
+      "id" => "antibot-check",
+      "method" => "POST",
+      "path" => "/diagnostics/antibot-check",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "request",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "ebay-item" => {
       "id" => "ebay-item",
@@ -12371,6 +12409,190 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "redfin-estimate" => {
+      "id" => "redfin-estimate",
+      "method" => "GET",
+      "path" => "/redfin/estimate",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "property_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "redfin-property" => {
+      "id" => "redfin-property",
+      "method" => "GET",
+      "path" => "/redfin/property",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "property_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "listing_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "redfin-region-trends" => {
+      "id" => "redfin-region-trends",
+      "method" => "GET",
+      "path" => "/redfin/region-trends",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "region_type",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "redfin-search" => {
+      "id" => "redfin-search",
+      "method" => "GET",
+      "path" => "/redfin/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "region_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "region_type",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_price",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_price",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_beds",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_baths",
+          "in" => "query",
+          "type" => "number"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "redfin-similar" => {
+      "id" => "redfin-similar",
+      "method" => "GET",
+      "path" => "/redfin/similar",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "property_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "referrals-click" => {
       "id" => "referrals-click",
       "method" => "POST",
@@ -17052,6 +17274,25 @@ module Crawlora
         "JWTAuth"
       ]
     },
+    "web-scrape" => {
+      "id" => "web-scrape",
+      "method" => "POST",
+      "path" => "/web/scrape",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "scrapeOption",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "yahoo-finance-calendars" => {
       "id" => "yahoo-finance-calendars",
       "method" => "GET",
@@ -18747,6 +18988,11 @@ module Crawlora
       "treasuries" => "coingecko-treasuries",
       "trending" => "coingecko-trending"
     },
+    "web" => {
+      "contact" => "contact",
+      "antibot_check" => "antibot-check",
+      "scrape" => "web-scrape"
+    },
     "datasets" => {
       "list" => "datasets-list",
       "google_map_businesses_facets" => "datasets-google-map-businesses-facets",
@@ -19006,6 +19252,13 @@ module Crawlora
       "user_comments" => "reddit-user-comments",
       "user_posts" => "reddit-user-posts"
     },
+    "redfin" => {
+      "estimate" => "redfin-estimate",
+      "property" => "redfin-property",
+      "region_trends" => "redfin-region-trends",
+      "search" => "redfin-search",
+      "similar" => "redfin-similar"
+    },
     "referrals" => {
       "click" => "referrals-click",
       "me" => "referrals-me",
@@ -19217,7 +19470,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 491
+  OPERATION_COUNT = 499
 
   module OperationId
     AIRBNB_ROOM = "airbnb-room"
@@ -19532,6 +19785,11 @@ module Crawlora
     REDDIT_TRENDS = "reddit-trends"
     REDDIT_USER_COMMENTS = "reddit-user-comments"
     REDDIT_USER_POSTS = "reddit-user-posts"
+    REDFIN_ESTIMATE = "redfin-estimate"
+    REDFIN_PROPERTY = "redfin-property"
+    REDFIN_REGION_TRENDS = "redfin-region-trends"
+    REDFIN_SEARCH = "redfin-search"
+    REDFIN_SIMILAR = "redfin-similar"
     REFERRALS_CLICK = "referrals-click"
     REFERRALS_ME = "referrals-me"
     REFERRALS_ME_EVENTS = "referrals-me-events"
@@ -19656,6 +19914,9 @@ module Crawlora
     USER_ME_API_KEYS = "user-me-api-keys"
     USER_ME_API_KEYS_REVEAL = "user-me-api-keys-reveal"
     USER_ME_API_KEYS_ROTATE = "user-me-api-keys-rotate"
+    WEB_ANTIBOT_CHECK = "antibot-check"
+    WEB_CONTACT = "contact"
+    WEB_SCRAPE = "web-scrape"
     YAHOO_FINANCE_CALENDAR = "yahoo-finance-calendar"
     YAHOO_FINANCE_CALENDARS = "yahoo-finance-calendars"
     YAHOO_FINANCE_DOWNLOAD = "yahoo-finance-download"

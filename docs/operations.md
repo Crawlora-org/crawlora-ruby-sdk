@@ -2,7 +2,7 @@
 
 Generated from `openapi/public.json`. Deprecated, admin, and internal operations are excluded from this SDK contract.
 
-Total operations: `491`
+Total operations: `499`
 
 | Group | SDK method | Operation ID | HTTP | Params | Auth | Response | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -89,6 +89,9 @@ Total operations: `491`
 | coin_gecko | `coin_gecko.token_unlocks` | `coingecko-token-unlocks` | `GET /coingecko/token-unlocks` | `limit` (query Integer) | `ApiKeyAuth` | `CoinGeckoTokenUnlocksResponse` |  |
 | coin_gecko | `coin_gecko.treasuries` | `coingecko-treasuries` | `GET /coingecko/treasuries` | `asset` (query "all" \| "bitcoin" \| "ethereum" \| "solana" \| "bnb" \| "xrp" \| "tron")<br>`holder_type` (query "all" \| "companies" \| "governments")<br>`limit` (query Integer)<br>`vs_currency` (query "btc" \| "eth" \| "ltc" \| "bch" \| "bnb" \| "eos" \| "xrp" \| "xlm" \| "link" \| "dot" \| "yfi" \| "sol" \| "usd" \| "aed" \| "ars" \| "aud" \| "bdt" \| "bhd" \| "bmd" \| "brl" \| "cad" \| "chf" \| "clp" \| "cny" \| "czk" \| "dkk" \| "eur" \| "gbp" \| "gel" \| "hkd" \| "huf" \| "idr" \| "ils" \| "inr" \| "jpy" \| "krw" \| "kwd" \| "lkr" \| "mmk" \| "mxn" \| "myr" \| "ngn" \| "nok" \| "nzd" \| "php" \| "pkr" \| "pln" \| "rub" \| "sar" \| "sek" \| "sgd" \| "thb" \| "try" \| "twd" \| "uah" \| "vef" \| "vnd" \| "zar" \| "xdr" \| "xag" \| "xau" \| "bits" \| "sats") | `ApiKeyAuth` | `CoinGeckoTreasuriesResponse` |  |
 | coin_gecko | `coin_gecko.trending` | `coingecko-trending` | `GET /coingecko/trending` | `limit` (query Integer)<br>`vs_currency` (query "btc" \| "eth" \| "ltc" \| "bch" \| "bnb" \| "eos" \| "xrp" \| "xlm" \| "link" \| "dot" \| "yfi" \| "sol" \| "usd" \| "aed" \| "ars" \| "aud" \| "bdt" \| "bhd" \| "bmd" \| "brl" \| "cad" \| "chf" \| "clp" \| "cny" \| "czk" \| "dkk" \| "eur" \| "gbp" \| "gel" \| "hkd" \| "huf" \| "idr" \| "ils" \| "inr" \| "jpy" \| "krw" \| "kwd" \| "lkr" \| "mmk" \| "mxn" \| "myr" \| "ngn" \| "nok" \| "nzd" \| "php" \| "pkr" \| "pln" \| "rub" \| "sar" \| "sek" \| "sgd" \| "thb" \| "try" \| "twd" \| "uah" \| "vef" \| "vnd" \| "zar" \| "xdr" \| "xag" \| "xau" \| "bits" \| "sats") | `ApiKeyAuth` | `CoinGeckoTrendingResponse` |  |
+| web | `web.contact` | `contact` | `POST /contact` | `option` (body String required) | `ApiKeyAuth` | `WebContactResponse` |  |
+| web | `web.antibot_check` | `antibot-check` | `POST /diagnostics/antibot-check` | `request` (body String required) | `ApiKeyAuth` | `WebAntibotCheckResponse` |  |
+| web | `web.scrape` | `web-scrape` | `POST /web/scrape` | `scrapeOption` (body String required) | `ApiKeyAuth` | `WebScrapeResponse` |  |
 | datasets | `datasets.list` | `datasets-list` | `GET /datasets` | none | `ApiKeyAuth` | `DatasetsListResponse` |  |
 | datasets | `datasets.google_map_businesses_facets` | `datasets-google-map-businesses-facets` | `GET /datasets/google-map-businesses/facets` | `facet` (query String required)<br>`q` (query String)<br>`category` (query String)<br>`country` (query String)<br>`state` (query String)<br>`county` (query String)<br>`city` (query String)<br>`town` (query String)<br>`min_rating` (query Float)<br>`min_review_count` (query Integer)<br>`has_website` (query bool)<br>`has_phone` (query bool)<br>`lat` (query Float)<br>`lon` (query Float)<br>`radius_m` (query Integer)<br>`sort` (query String) | `ApiKeyAuth` | `DatasetsGoogleMapBusinessesFacetsResponse` |  |
 | datasets | `datasets.google_map_businesses_item` | `datasets-google-map-businesses-item` | `GET /datasets/google-map-businesses/items/{place_id}` | `place_id` (path String required) | `ApiKeyAuth` | `DatasetsGoogleMapBusinessesItemResponse` |  |
@@ -318,6 +321,11 @@ Total operations: `491`
 | reddit | `reddit.trends` | `reddit-trends` | `GET /reddit/trends` | `sort` (query "hot" \| "new" \| "rising" \| "top")<br>`time` (query "hour" \| "day" \| "week" \| "month" \| "year" \| "all")<br>`limit` (query Integer)<br>`after` (query String) | `ApiKeyAuth` | `RedditTrendsResponse` |  |
 | reddit | `reddit.user_comments` | `reddit-user-comments` | `GET /reddit/user/{username}/comments` | `username` (path String required)<br>`limit` (query Integer)<br>`after` (query String) | `ApiKeyAuth` | `RedditUserCommentsResponse` |  |
 | reddit | `reddit.user_posts` | `reddit-user-posts` | `GET /reddit/user/{username}/posts` | `username` (path String required)<br>`limit` (query Integer)<br>`after` (query String) | `ApiKeyAuth` | `RedditUserPostsResponse` |  |
+| redfin | `redfin.estimate` | `redfin-estimate` | `GET /redfin/estimate` | `property_id` (query String required) | `ApiKeyAuth` | `RedfinEstimateResponse` |  |
+| redfin | `redfin.property` | `redfin-property` | `GET /redfin/property` | `url` (query String)<br>`property_id` (query String)<br>`listing_id` (query String) | `ApiKeyAuth` | `RedfinPropertyResponse` |  |
+| redfin | `redfin.region_trends` | `redfin-region-trends` | `GET /redfin/region-trends` | `region_id` (query Integer required)<br>`region_type` (query Integer) | `ApiKeyAuth` | `RedfinRegionTrendsResponse` |  |
+| redfin | `redfin.search` | `redfin-search` | `GET /redfin/search` | `location` (query String)<br>`page` (query Integer)<br>`region_id` (query Integer)<br>`region_type` (query Integer)<br>`status` (query String)<br>`min_price` (query Integer)<br>`max_price` (query Integer)<br>`min_beds` (query Integer)<br>`min_baths` (query Float) | `ApiKeyAuth` | `RedfinSearchResponse` |  |
+| redfin | `redfin.similar` | `redfin-similar` | `GET /redfin/similar` | `property_id` (query String required) | `ApiKeyAuth` | `RedfinSimilarResponse` |  |
 | referrals | `referrals.click` | `referrals-click` | `POST /referrals/click` | `request` (body String required) | none | `ReferralsClickResponse` |  |
 | referrals | `referrals.me` | `referrals-me` | `GET /referrals/me` | none | `JWTAuth` | `ReferralsMeResponse` |  |
 | referrals | `referrals.me_events` | `referrals-me-events` | `GET /referrals/me/events` | `limit` (query Integer) | `JWTAuth` | `ReferralsMeEventsResponse` |  |
