@@ -4273,6 +4273,237 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "datasets-airbnb-markets-facets" => {
+      "id" => "datasets-airbnb-markets-facets",
+      "method" => "GET",
+      "path" => "/datasets/airbnb-markets/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "group_by",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "market",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "superhost",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_review_count",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "active_since",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_listings",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-airbnb-markets-item" => {
+      "id" => "datasets-airbnb-markets-item",
+      "method" => "GET",
+      "path" => "/datasets/airbnb-markets/items/{country}",
+      "pathParams" => [
+        "country"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-airbnb-markets-nearby" => {
+      "id" => "datasets-airbnb-markets-nearby",
+      "method" => "GET",
+      "path" => "/datasets/airbnb-markets/nearby",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "lat",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "lon",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "radius_m",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "precision",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_listings",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "superhost",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "active_since",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-airbnb-markets-search" => {
+      "id" => "datasets-airbnb-markets-search",
+      "method" => "GET",
+      "path" => "/datasets/airbnb-markets/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "group_by",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "market",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "superhost",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_review_count",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "active_since",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_listings",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "datasets-apps-charts-search" => {
       "id" => "datasets-apps-charts-search",
       "method" => "GET",
@@ -20368,6 +20599,10 @@ module Crawlora
     },
     "datasets" => {
       "list" => "datasets-list",
+      "airbnb_markets_facets" => "datasets-airbnb-markets-facets",
+      "airbnb_markets_item" => "datasets-airbnb-markets-item",
+      "airbnb_markets_nearby" => "datasets-airbnb-markets-nearby",
+      "airbnb_markets_search" => "datasets-airbnb-markets-search",
       "apps_charts_search" => "datasets-apps-charts-search",
       "apps_reviews_search" => "datasets-apps-reviews-search",
       "apps_search" => "datasets-apps-search",
@@ -20873,7 +21108,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 525
+  OPERATION_COUNT = 529
 
   module OperationId
     AIRBNB_ROOM = "airbnb-room"
@@ -20959,6 +21194,10 @@ module Crawlora
     COIN_GECKO_TOKEN_UNLOCKS = "coingecko-token-unlocks"
     COIN_GECKO_TREASURIES = "coingecko-treasuries"
     COIN_GECKO_TRENDING = "coingecko-trending"
+    DATASETS_AIRBNB_MARKETS_FACETS = "datasets-airbnb-markets-facets"
+    DATASETS_AIRBNB_MARKETS_ITEM = "datasets-airbnb-markets-item"
+    DATASETS_AIRBNB_MARKETS_NEARBY = "datasets-airbnb-markets-nearby"
+    DATASETS_AIRBNB_MARKETS_SEARCH = "datasets-airbnb-markets-search"
     DATASETS_APPS_CHARTS_SEARCH = "datasets-apps-charts-search"
     DATASETS_APPS_REVIEWS_SEARCH = "datasets-apps-reviews-search"
     DATASETS_APPS_SEARCH = "datasets-apps-search"
