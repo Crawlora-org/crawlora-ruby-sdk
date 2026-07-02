@@ -4273,6 +4273,707 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "datasets-apps-charts-search" => {
+      "id" => "datasets-apps-charts-search",
+      "method" => "GET",
+      "path" => "/datasets/apps-charts/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "store",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "chart_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "collection",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "app_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-apps-reviews-search" => {
+      "id" => "datasets-apps-reviews-search",
+      "method" => "GET",
+      "path" => "/datasets/apps-reviews/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "store",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "app_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_score",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-apps-search" => {
+      "id" => "datasets-apps-search",
+      "method" => "GET",
+      "path" => "/datasets/apps/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "store",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "developer",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "free",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_reviews",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-creators-search" => {
+      "id" => "datasets-creators-search",
+      "method" => "GET",
+      "path" => "/datasets/creators/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "handle",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "niche",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "verified",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "has_email",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "include_inactive",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-github-users-facets" => {
+      "id" => "datasets-github-users-facets",
+      "method" => "GET",
+      "path" => "/datasets/github-users/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "login",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "company",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "influence_tier",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country_code",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "domain",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "has_email",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_twitter",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_blog",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "reachable",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "active_90d",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "hireable",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "is_org",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "is_bot",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_repos",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_rank_score",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_account_age_years",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_account_age_years",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "lat",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "lon",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "radius_m",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-github-users-item" => {
+      "id" => "datasets-github-users-item",
+      "method" => "GET",
+      "path" => "/datasets/github-users/items/{login}",
+      "pathParams" => [
+        "login"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-github-users-nearby" => {
+      "id" => "datasets-github-users-nearby",
+      "method" => "GET",
+      "path" => "/datasets/github-users/nearby",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "lat",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "lon",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "radius_m",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "influence_tier",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "reachable",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-github-users-search" => {
+      "id" => "datasets-github-users-search",
+      "method" => "GET",
+      "path" => "/datasets/github-users/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "login",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "company",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "influence_tier",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country_code",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "domain",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "has_email",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_twitter",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_blog",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "reachable",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "active_90d",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "hireable",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "is_org",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "is_bot",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_repos",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_rank_score",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_account_age_years",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_account_age_years",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "lat",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "lon",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "radius_m",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "datasets-google-map-businesses-facets" => {
       "id" => "datasets-google-map-businesses-facets",
       "method" => "GET",
@@ -4919,6 +5620,604 @@ module Crawlora
       "security" => [
         "ApiKeyAuth"
       ]
+    },
+    "github-org" => {
+      "id" => "github-org",
+      "method" => "GET",
+      "path" => "/github/org/{org}",
+      "pathParams" => [
+        "org"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "github-org-repos" => {
+      "id" => "github-org-repos",
+      "method" => "GET",
+      "path" => "/github/org/{org}/repos",
+      "pathParams" => [
+        "org"
+      ],
+      "queryParams" => [
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "created",
+            "updated",
+            "pushed",
+            "full_name"
+          ]
+        },
+        {
+          "name" => "direction",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "public",
+            "forks",
+            "sources",
+            "member"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "github-repo" => {
+      "id" => "github-repo",
+      "method" => "GET",
+      "path" => "/github/repo/{owner}/{repo}",
+      "pathParams" => [
+        "owner",
+        "repo"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "github-repo-contributors" => {
+      "id" => "github-repo-contributors",
+      "method" => "GET",
+      "path" => "/github/repo/{owner}/{repo}/contributors",
+      "pathParams" => [
+        "owner",
+        "repo"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "github-repo-forks" => {
+      "id" => "github-repo-forks",
+      "method" => "GET",
+      "path" => "/github/repo/{owner}/{repo}/forks",
+      "pathParams" => [
+        "owner",
+        "repo"
+      ],
+      "queryParams" => [
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "newest",
+            "oldest",
+            "stargazers",
+            "watchers"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "github-repo-languages" => {
+      "id" => "github-repo-languages",
+      "method" => "GET",
+      "path" => "/github/repo/{owner}/{repo}/languages",
+      "pathParams" => [
+        "owner",
+        "repo"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "github-repo-releases" => {
+      "id" => "github-repo-releases",
+      "method" => "GET",
+      "path" => "/github/repo/{owner}/{repo}/releases",
+      "pathParams" => [
+        "owner",
+        "repo"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "github-repo-stargazers" => {
+      "id" => "github-repo-stargazers",
+      "method" => "GET",
+      "path" => "/github/repo/{owner}/{repo}/stargazers",
+      "pathParams" => [
+        "owner",
+        "repo"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "github-search-repositories" => {
+      "id" => "github-search-repositories",
+      "method" => "GET",
+      "path" => "/github/search/repositories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "stars",
+            "forks",
+            "help-wanted-issues",
+            "updated"
+          ]
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "github-search-users" => {
+      "id" => "github-search-users",
+      "method" => "GET",
+      "path" => "/github/search/users",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "followers",
+            "repositories",
+            "joined"
+          ]
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "github-trending" => {
+      "id" => "github-trending",
+      "method" => "GET",
+      "path" => "/github/trending",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "since",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "daily",
+            "weekly",
+            "monthly"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "github-trending-developers" => {
+      "id" => "github-trending-developers",
+      "method" => "GET",
+      "path" => "/github/trending/developers",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "since",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "daily",
+            "weekly",
+            "monthly"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "github-user" => {
+      "id" => "github-user",
+      "method" => "GET",
+      "path" => "/github/user/{username}",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "github-user-events" => {
+      "id" => "github-user-events",
+      "method" => "GET",
+      "path" => "/github/user/{username}/events",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "github-user-pinned" => {
+      "id" => "github-user-pinned",
+      "method" => "GET",
+      "path" => "/github/user/{username}/pinned",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "github-user-repos" => {
+      "id" => "github-user-repos",
+      "method" => "GET",
+      "path" => "/github/user/{username}/repos",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "created",
+            "updated",
+            "pushed",
+            "full_name"
+          ]
+        },
+        {
+          "name" => "direction",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "owner",
+            "member"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
     },
     "google-finance-analyst-articles" => {
       "id" => "google-finance-analyst-articles",
@@ -11958,6 +13257,11 @@ module Crawlora
           "name" => "depth",
           "in" => "query",
           "type" => "integer"
+        },
+        {
+          "name" => "with_scores",
+          "in" => "query",
+          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -12014,6 +13318,11 @@ module Crawlora
           "name" => "after",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "with_scores",
+          "in" => "query",
+          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -12036,7 +13345,13 @@ module Crawlora
       "pathParams" => [
         "id"
       ],
-      "queryParams" => [],
+      "queryParams" => [
+        {
+          "name" => "with_scores",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -12101,6 +13416,11 @@ module Crawlora
           "name" => "after",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "with_scores",
+          "in" => "query",
+          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -12128,6 +13448,11 @@ module Crawlora
           "name" => "limit",
           "in" => "query",
           "type" => "integer"
+        },
+        {
+          "name" => "with_scores",
+          "in" => "query",
+          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -12160,6 +13485,11 @@ module Crawlora
           "name" => "after",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "with_scores",
+          "in" => "query",
+          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -12216,6 +13546,11 @@ module Crawlora
           "name" => "after",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "with_scores",
+          "in" => "query",
+          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -12276,6 +13611,11 @@ module Crawlora
           "name" => "after",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "with_scores",
+          "in" => "query",
+          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -12330,6 +13670,11 @@ module Crawlora
           "name" => "after",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "with_scores",
+          "in" => "query",
+          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -12362,6 +13707,11 @@ module Crawlora
           "name" => "after",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "with_scores",
+          "in" => "query",
+          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -12394,6 +13744,11 @@ module Crawlora
           "name" => "after",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "with_scores",
+          "in" => "query",
+          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -15724,63 +17079,6 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
-    "tiktok-popular-trend-creator" => {
-      "id" => "tiktok-popular-trend-creator",
-      "method" => "GET",
-      "path" => "/tiktok/popular-trend/creator",
-      "pathParams" => [],
-      "queryParams" => [
-        {
-          "name" => "page",
-          "in" => "query",
-          "type" => "integer"
-        },
-        {
-          "name" => "limit",
-          "in" => "query",
-          "type" => "integer"
-        },
-        {
-          "name" => "sort_by",
-          "in" => "query",
-          "type" => "string",
-          "enum" => [
-            "follower",
-            "engagement",
-            "avg_views"
-          ]
-        },
-        {
-          "name" => "creator_country",
-          "in" => "query",
-          "type" => "string"
-        },
-        {
-          "name" => "audience_count",
-          "in" => "query",
-          "type" => "integer",
-          "enum" => [
-            "1",
-            "2",
-            "3",
-            "4"
-          ]
-        }
-      ],
-      "formParams" => [],
-      "bodyParam" => nil,
-      "bodyRequired" => false,
-      "consumes" => [
-        "application/json"
-      ],
-      "produces" => [
-        "application/json"
-      ],
-      "security" => [
-        "ApiKeyAuth"
-      ],
-      "paginatable" => true
-    },
     "tiktok-post" => {
       "id" => "tiktok-post",
       "method" => "GET",
@@ -17283,6 +18581,81 @@ module Crawlora
       "formParams" => [],
       "bodyParam" => "scrapeOption",
       "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "x-post" => {
+      "id" => "x-post",
+      "method" => "GET",
+      "path" => "/x/post/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "username",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "x-profile" => {
+      "id" => "x-profile",
+      "method" => "GET",
+      "path" => "/x/profile/{username}",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "x-profile-posts" => {
+      "id" => "x-profile-posts",
+      "method" => "GET",
+      "path" => "/x/profile/{username}/posts",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
       "consumes" => [
         "application/json"
       ],
@@ -18995,6 +20368,14 @@ module Crawlora
     },
     "datasets" => {
       "list" => "datasets-list",
+      "apps_charts_search" => "datasets-apps-charts-search",
+      "apps_reviews_search" => "datasets-apps-reviews-search",
+      "apps_search" => "datasets-apps-search",
+      "creators_search" => "datasets-creators-search",
+      "github_users_facets" => "datasets-github-users-facets",
+      "github_users_item" => "datasets-github-users-item",
+      "github_users_nearby" => "datasets-github-users-nearby",
+      "github_users_search" => "datasets-github-users-search",
       "google_map_businesses_facets" => "datasets-google-map-businesses-facets",
       "google_map_businesses_item" => "datasets-google-map-businesses-item",
       "google_map_businesses_nearby" => "datasets-google-map-businesses-nearby",
@@ -19012,6 +20393,24 @@ module Crawlora
       "lookup" => "geocoding-lookup",
       "reverse" => "geocoding-reverse",
       "search" => "geocoding-search"
+    },
+    "git_hub" => {
+      "github_org" => "github-org",
+      "github_org_repos" => "github-org-repos",
+      "github_repo" => "github-repo",
+      "github_repo_contributors" => "github-repo-contributors",
+      "github_repo_forks" => "github-repo-forks",
+      "github_repo_languages" => "github-repo-languages",
+      "github_repo_releases" => "github-repo-releases",
+      "github_repo_stargazers" => "github-repo-stargazers",
+      "github_search_repositories" => "github-search-repositories",
+      "github_search_users" => "github-search-users",
+      "github_trending" => "github-trending",
+      "github_trending_developers" => "github-trending-developers",
+      "github_user" => "github-user",
+      "github_user_events" => "github-user-events",
+      "github_user_pinned" => "github-user-pinned",
+      "github_user_repos" => "github-user-repos"
     },
     "google" => {
       "finance_analyst_articles" => "google-finance-analyst-articles",
@@ -19359,7 +20758,6 @@ module Crawlora
       "challenge" => "tiktok-challenge",
       "challenge_list" => "tiktok-challenge-list",
       "popular_trend_country_industry_meta" => "tiktok-popular-trend-country-industry-meta",
-      "popular_trend_creator" => "tiktok-popular-trend-creator",
       "post" => "tiktok-post",
       "profile_post" => "tiktok-profile-post",
       "profile" => "tiktok-profile",
@@ -19406,6 +20804,11 @@ module Crawlora
       "me_api_keys" => "user-me-api-keys",
       "me_api_keys_rotate" => "user-me-api-keys-rotate",
       "me_api_keys_reveal" => "user-me-api-keys-reveal"
+    },
+    "x" => {
+      "post" => "x-post",
+      "profile" => "x-profile",
+      "profile_posts" => "x-profile-posts"
     },
     "yahoo_finance" => {
       "calendars" => "yahoo-finance-calendars",
@@ -19470,7 +20873,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 499
+  OPERATION_COUNT = 525
 
   module OperationId
     AIRBNB_ROOM = "airbnb-room"
@@ -19556,6 +20959,14 @@ module Crawlora
     COIN_GECKO_TOKEN_UNLOCKS = "coingecko-token-unlocks"
     COIN_GECKO_TREASURIES = "coingecko-treasuries"
     COIN_GECKO_TRENDING = "coingecko-trending"
+    DATASETS_APPS_CHARTS_SEARCH = "datasets-apps-charts-search"
+    DATASETS_APPS_REVIEWS_SEARCH = "datasets-apps-reviews-search"
+    DATASETS_APPS_SEARCH = "datasets-apps-search"
+    DATASETS_CREATORS_SEARCH = "datasets-creators-search"
+    DATASETS_GITHUB_USERS_FACETS = "datasets-github-users-facets"
+    DATASETS_GITHUB_USERS_ITEM = "datasets-github-users-item"
+    DATASETS_GITHUB_USERS_NEARBY = "datasets-github-users-nearby"
+    DATASETS_GITHUB_USERS_SEARCH = "datasets-github-users-search"
     DATASETS_GOOGLE_MAP_BUSINESSES_FACETS = "datasets-google-map-businesses-facets"
     DATASETS_GOOGLE_MAP_BUSINESSES_ITEM = "datasets-google-map-businesses-item"
     DATASETS_GOOGLE_MAP_BUSINESSES_NEARBY = "datasets-google-map-businesses-nearby"
@@ -19570,6 +20981,22 @@ module Crawlora
     GEOCODING_LOOKUP = "geocoding-lookup"
     GEOCODING_REVERSE = "geocoding-reverse"
     GEOCODING_SEARCH = "geocoding-search"
+    GIT_HUB_GITHUB_ORG = "github-org"
+    GIT_HUB_GITHUB_ORG_REPOS = "github-org-repos"
+    GIT_HUB_GITHUB_REPO = "github-repo"
+    GIT_HUB_GITHUB_REPO_CONTRIBUTORS = "github-repo-contributors"
+    GIT_HUB_GITHUB_REPO_FORKS = "github-repo-forks"
+    GIT_HUB_GITHUB_REPO_LANGUAGES = "github-repo-languages"
+    GIT_HUB_GITHUB_REPO_RELEASES = "github-repo-releases"
+    GIT_HUB_GITHUB_REPO_STARGAZERS = "github-repo-stargazers"
+    GIT_HUB_GITHUB_SEARCH_REPOSITORIES = "github-search-repositories"
+    GIT_HUB_GITHUB_SEARCH_USERS = "github-search-users"
+    GIT_HUB_GITHUB_TRENDING = "github-trending"
+    GIT_HUB_GITHUB_TRENDING_DEVELOPERS = "github-trending-developers"
+    GIT_HUB_GITHUB_USER = "github-user"
+    GIT_HUB_GITHUB_USER_EVENTS = "github-user-events"
+    GIT_HUB_GITHUB_USER_PINNED = "github-user-pinned"
+    GIT_HUB_GITHUB_USER_REPOS = "github-user-repos"
     GOOGLE_FINANCE_ANALYST_ARTICLES = "google-finance-analyst-articles"
     GOOGLE_FINANCE_CHART = "google-finance-chart"
     GOOGLE_FINANCE_CLASSIFICATION = "google-finance-classification"
@@ -19874,7 +21301,6 @@ module Crawlora
     TIKTOK_CHALLENGE_LIST = "tiktok-challenge-list"
     TIKTOK_EXPLORE = "tiktok-explore"
     TIKTOK_POPULAR_TREND_COUNTRY_INDUSTRY_META = "tiktok-popular-trend-country-industry-meta"
-    TIKTOK_POPULAR_TREND_CREATOR = "tiktok-popular-trend-creator"
     TIKTOK_POST = "tiktok-post"
     TIKTOK_PROFILE = "tiktok-profile"
     TIKTOK_PROFILE_POST = "tiktok-profile-post"
@@ -19917,6 +21343,9 @@ module Crawlora
     WEB_ANTIBOT_CHECK = "antibot-check"
     WEB_CONTACT = "contact"
     WEB_SCRAPE = "web-scrape"
+    XPOST = "x-post"
+    XPROFILE = "x-profile"
+    XPROFILE_POSTS = "x-profile-posts"
     YAHOO_FINANCE_CALENDAR = "yahoo-finance-calendar"
     YAHOO_FINANCE_CALENDARS = "yahoo-finance-calendars"
     YAHOO_FINANCE_DOWNLOAD = "yahoo-finance-download"

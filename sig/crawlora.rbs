@@ -137,6 +137,14 @@ module Crawlora
   class DatasetsGroup
     def initialize: (Client, Hash[String, String]) -> void
     def list: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def apps_charts_search: (?q: String, ?store: String, ?chart_type: String, ?collection: String, ?category: String, ?country: String, ?app_id: String, ?date: String, ?sort: String, ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def apps_reviews_search: (?q: String, ?store: String, ?app_id: String, ?country: String, ?min_score: Integer, ?sort: String, ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def apps_search: (?q: String, ?store: String, ?category: String, ?country: String, ?developer: String, ?free: bool, ?min_rating: Float, ?min_reviews: Integer, ?sort: String, ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def creators_search: (?q: String, ?handle: String, ?niche: String, ?country: String, ?verified: bool, ?min_followers: Integer, ?has_email: bool, ?include_inactive: bool, ?sort: String, ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_users_facets: (?facet: String, ?q: String, ?login: String, ?company: String, ?influence_tier: String, ?country: String, ?country_code: String, ?state: String, ?city: String, ?domain: String, ?has_email: bool, ?has_twitter: bool, ?has_blog: bool, ?reachable: bool, ?active_90d: bool, ?hireable: bool, ?is_org: bool, ?is_bot: bool, ?min_followers: Integer, ?max_followers: Integer, ?min_repos: Integer, ?min_rank_score: Integer, ?min_account_age_years: Float, ?max_account_age_years: Float, ?lat: Float, ?lon: Float, ?radius_m: Integer, ?sort: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_users_item: (?login: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_users_nearby: (?lat: Float, ?lon: Float, ?radius_m: Integer, ?influence_tier: String, ?reachable: bool, ?min_followers: Integer, ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_users_search: (?q: String, ?login: String, ?company: String, ?influence_tier: String, ?country: String, ?country_code: String, ?state: String, ?city: String, ?domain: String, ?has_email: bool, ?has_twitter: bool, ?has_blog: bool, ?reachable: bool, ?active_90d: bool, ?hireable: bool, ?is_org: bool, ?is_bot: bool, ?min_followers: Integer, ?max_followers: Integer, ?min_repos: Integer, ?min_rank_score: Integer, ?min_account_age_years: Float, ?max_account_age_years: Float, ?lat: Float, ?lon: Float, ?radius_m: Integer, ?sort: String, ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def google_map_businesses_facets: (?facet: String, ?q: String, ?category: String, ?country: String, ?state: String, ?county: String, ?city: String, ?town: String, ?min_rating: Float, ?min_review_count: Integer, ?has_website: bool, ?has_phone: bool, ?lat: Float, ?lon: Float, ?radius_m: Integer, ?sort: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def google_map_businesses_item: (?place_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def google_map_businesses_nearby: (?lat: Float, ?lon: Float, ?radius_m: Integer, ?category: String, ?min_rating: Float, ?min_review_count: Integer, ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -158,6 +166,26 @@ module Crawlora
     def lookup: (?osm_ids: String, ?accept_language: String, ?addressdetails: bool, ?extratags: bool, ?namedetails: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def reverse: (?lat: Float, ?lon: Float, ?zoom: Integer, ?accept_language: String, ?addressdetails: bool, ?extratags: bool, ?namedetails: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search: (?q: String, ?street: String, ?city: String, ?county: String, ?state: String, ?country: String, ?postalcode: String, ?limit: Integer, ?countrycodes: String, ?accept_language: String, ?addressdetails: bool, ?extratags: bool, ?namedetails: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class GitHubGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def github_org: (?org: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_org_repos: (?org: String, ?sort: "created" | "updated" | "pushed" | "full_name", ?direction: "asc" | "desc", ?type: "all" | "public" | "forks" | "sources" | "member", ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_repo: (?owner: String, ?repo: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_repo_contributors: (?owner: String, ?repo: String, ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_repo_forks: (?owner: String, ?repo: String, ?sort: "newest" | "oldest" | "stargazers" | "watchers", ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_repo_languages: (?owner: String, ?repo: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_repo_releases: (?owner: String, ?repo: String, ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_repo_stargazers: (?owner: String, ?repo: String, ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_search_repositories: (?q: String, ?sort: "stars" | "forks" | "help-wanted-issues" | "updated", ?order: "asc" | "desc", ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_search_users: (?q: String, ?sort: "followers" | "repositories" | "joined", ?order: "asc" | "desc", ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_trending: (?language: String, ?since: "daily" | "weekly" | "monthly", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_trending_developers: (?language: String, ?since: "daily" | "weekly" | "monthly", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_user: (?username: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_user_events: (?username: String, ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_user_pinned: (?username: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def github_user_repos: (?username: String, ?sort: "created" | "updated" | "pushed" | "full_name", ?direction: "asc" | "desc", ?type: "all" | "owner" | "member", ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class GoogleGroup
@@ -410,17 +438,17 @@ module Crawlora
 
   class RedditGroup
     def initialize: (Client, Hash[String, String]) -> void
-    def comments: (?id: String, ?sort: "confidence" | "top" | "new" | "controversial" | "old" | "qa", ?limit: Integer, ?depth: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def domain_posts: (?domain: String, ?sort: "hot" | "new" | "top" | "rising", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def post: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def search: (?q: String, ?subreddit: String, ?sort: "relevance" | "hot" | "new" | "top" | "comments", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def subreddit_about: (?subreddit: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def subreddit_comments: (?subreddit: String, ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def subreddit_posts: (?subreddit: String, ?sort: "hot" | "new" | "top" | "rising", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def subreddits_posts: (?subreddits: String, ?sort: "hot" | "new" | "top" | "rising", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def trends: (?sort: "hot" | "new" | "rising" | "top", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def user_comments: (?username: String, ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def user_posts: (?username: String, ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def comments: (?id: String, ?sort: "confidence" | "top" | "new" | "controversial" | "old" | "qa", ?limit: Integer, ?depth: Integer, ?with_scores: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def domain_posts: (?domain: String, ?sort: "hot" | "new" | "top" | "rising", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?with_scores: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def post: (?id: String, ?with_scores: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?q: String, ?subreddit: String, ?sort: "relevance" | "hot" | "new" | "top" | "comments", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?with_scores: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def subreddit_about: (?subreddit: String, ?limit: Integer, ?with_scores: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def subreddit_comments: (?subreddit: String, ?limit: Integer, ?after: String, ?with_scores: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def subreddit_posts: (?subreddit: String, ?sort: "hot" | "new" | "top" | "rising", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?with_scores: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def subreddits_posts: (?subreddits: String, ?sort: "hot" | "new" | "top" | "rising", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?with_scores: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def trends: (?sort: "hot" | "new" | "rising" | "top", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?with_scores: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def user_comments: (?username: String, ?limit: Integer, ?after: String, ?with_scores: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def user_posts: (?username: String, ?limit: Integer, ?after: String, ?with_scores: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class RedfinGroup
@@ -547,7 +575,6 @@ module Crawlora
     def challenge: (?name: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def challenge_list: (?id: String, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def popular_trend_country_industry_meta: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def popular_trend_creator: (?page: Integer, ?limit: Integer, ?sort_by: "follower" | "engagement" | "avg_views", ?creator_country: String, ?audience_count: "1" | "2" | "3" | "4", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def post: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def profile_post: (?secUid: String, ?cursor: Integer, ?sort_type: "0" | "1" | "2", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def profile: (?handler: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -602,6 +629,13 @@ module Crawlora
     def me_api_keys: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def me_api_keys_rotate: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def me_api_keys_reveal: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class XGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def post: (?id: String, ?username: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def profile: (?username: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def profile_posts: (?username: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class YahooFinanceGroup
