@@ -3,6 +3,83 @@
 
 module Crawlora
   OPERATIONS = {
+    "airbnb-host" => {
+      "id" => "airbnb-host",
+      "method" => "GET",
+      "path" => "/airbnb/host/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "airbnb-host-listings" => {
+      "id" => "airbnb-host-listings",
+      "method" => "GET",
+      "path" => "/airbnb/host/{id}/listings",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "airbnb-host-reviews" => {
+      "id" => "airbnb-host-reviews",
+      "method" => "GET",
+      "path" => "/airbnb/host/{id}/reviews",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "airbnb-room" => {
       "id" => "airbnb-room",
       "method" => "GET",
@@ -5273,6 +5350,11 @@ module Crawlora
           "type" => "boolean"
         },
         {
+          "name" => "has_geo",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
           "name" => "lat",
           "in" => "query",
           "type" => "number"
@@ -5449,6 +5531,11 @@ module Crawlora
         },
         {
           "name" => "has_phone",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_geo",
           "in" => "query",
           "type" => "boolean"
         },
@@ -20490,6 +20577,9 @@ module Crawlora
 
   GROUPS = {
     "airbnb" => {
+      "host" => "airbnb-host",
+      "host_listings" => "airbnb-host-listings",
+      "host_reviews" => "airbnb-host-reviews",
       "room" => "airbnb-room",
       "room_calendar" => "airbnb-room-calendar",
       "room_reviews" => "airbnb-room-reviews",
@@ -21108,9 +21198,12 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 529
+  OPERATION_COUNT = 532
 
   module OperationId
+    AIRBNB_HOST = "airbnb-host"
+    AIRBNB_HOST_LISTINGS = "airbnb-host-listings"
+    AIRBNB_HOST_REVIEWS = "airbnb-host-reviews"
     AIRBNB_ROOM = "airbnb-room"
     AIRBNB_ROOM_CALENDAR = "airbnb-room-calendar"
     AIRBNB_ROOM_REVIEWS = "airbnb-room-reviews"
