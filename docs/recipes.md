@@ -26,6 +26,16 @@ posts = client.reddit.search(q: "ruby", subreddit: "programming")
 brand = client.brand.retrieve(domain: "stripe.com")
 ```
 
+## Airbnb Host Profiles
+
+Look up a public Airbnb host, then page through their listings and guest reviews.
+
+```ruby
+host = client.airbnb.host(id: "65056940")
+listings = client.airbnb.host_listings(id: "65056940", page: 1)
+reviews = client.airbnb.host_reviews(id: "65056940", page: 1)
+```
+
 ## Retries and Retry-After
 
 ```ruby
