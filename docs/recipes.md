@@ -36,6 +36,18 @@ listings = client.airbnb.host_listings(id: "65056940", page: 1)
 reviews = client.airbnb.host_reviews(id: "65056940", page: 1)
 ```
 
+## TrustMRR Verified Startup Revenues
+
+Browse verified startup revenues and the acquisition marketplace on TrustMRR: the marketplace snapshot, the revenue leaderboard, startup detail, and categories.
+
+```ruby
+deals = client.trust_mrr.trustmrr_marketplace
+board = client.trust_mrr.trustmrr_leaderboard(metric: "mrr")
+startup = client.trust_mrr.trustmrr_startup(slug: "stan")
+cats = client.trust_mrr.trustmrr_categories
+saas = client.trust_mrr.trustmrr_category(slug: "saas")
+```
+
 ## Retries and Retry-After
 
 ```ruby
