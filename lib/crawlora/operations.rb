@@ -2610,6 +2610,347 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "chromewebstore-categories" => {
+      "id" => "chromewebstore-categories",
+      "method" => "GET",
+      "path" => "/chromewebstore/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "chromewebstore-category" => {
+      "id" => "chromewebstore-category",
+      "method" => "GET",
+      "path" => "/chromewebstore/category",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "num",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "chromewebstore-charts" => {
+      "id" => "chromewebstore-charts",
+      "method" => "GET",
+      "path" => "/chromewebstore/charts",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "chart",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "trending",
+            "popular",
+            "notable"
+          ]
+        },
+        {
+          "name" => "num",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "chromewebstore-collection" => {
+      "id" => "chromewebstore-collection",
+      "method" => "GET",
+      "path" => "/chromewebstore/collection",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "collection",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "num",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "chromewebstore-item" => {
+      "id" => "chromewebstore-item",
+      "method" => "GET",
+      "path" => "/chromewebstore/item",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "chromewebstore-reviews" => {
+      "id" => "chromewebstore-reviews",
+      "method" => "GET",
+      "path" => "/chromewebstore/reviews",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "num",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "chromewebstore-search" => {
+      "id" => "chromewebstore-search",
+      "method" => "GET",
+      "path" => "/chromewebstore/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "term",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "num",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "chromewebstore-similar" => {
+      "id" => "chromewebstore-similar",
+      "method" => "GET",
+      "path" => "/chromewebstore/similar",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "chromewebstore-suggest" => {
+      "id" => "chromewebstore-suggest",
+      "method" => "GET",
+      "path" => "/chromewebstore/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "term",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "num",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "coingecko-categories" => {
       "id" => "coingecko-categories",
       "method" => "GET",
@@ -4383,6 +4724,11 @@ module Crawlora
           "type" => "boolean"
         },
         {
+          "name" => "guest_favorite",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
           "name" => "min_rating",
           "in" => "query",
           "type" => "number"
@@ -4528,6 +4874,11 @@ module Crawlora
         },
         {
           "name" => "superhost",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "guest_favorite",
           "in" => "query",
           "type" => "boolean"
         },
@@ -4968,6 +5319,11 @@ module Crawlora
           "type" => "boolean"
         },
         {
+          "name" => "is_suspected_automation",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
           "name" => "min_followers",
           "in" => "query",
           "type" => "integer"
@@ -5204,6 +5560,11 @@ module Crawlora
         },
         {
           "name" => "is_bot",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "is_suspected_automation",
           "in" => "query",
           "type" => "boolean"
         },
@@ -5584,6 +5945,434 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "datasets-producthunt-makers-facets" => {
+      "id" => "datasets-producthunt-makers-facets",
+      "method" => "GET",
+      "path" => "/datasets/producthunt-makers/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "topic",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_products",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_total_votes",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-producthunt-makers-item" => {
+      "id" => "datasets-producthunt-makers-item",
+      "method" => "GET",
+      "path" => "/datasets/producthunt-makers/items/{username}",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-producthunt-makers-search" => {
+      "id" => "datasets-producthunt-makers-search",
+      "method" => "GET",
+      "path" => "/datasets/producthunt-makers/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "topic",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_products",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_total_votes",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-producthunt-products-facets" => {
+      "id" => "datasets-producthunt-products-facets",
+      "method" => "GET",
+      "path" => "/datasets/producthunt-products/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "topic",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "maker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "launched_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "launched_before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_votes",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "pricing_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "has_website",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "is_online",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-producthunt-products-item" => {
+      "id" => "datasets-producthunt-products-item",
+      "method" => "GET",
+      "path" => "/datasets/producthunt-products/items/{slug}",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-producthunt-products-search" => {
+      "id" => "datasets-producthunt-products-search",
+      "method" => "GET",
+      "path" => "/datasets/producthunt-products/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "topic",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "maker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "launched_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "launched_before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_votes",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "pricing_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "has_website",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "is_online",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-producthunt-trends-facets" => {
+      "id" => "datasets-producthunt-trends-facets",
+      "method" => "GET",
+      "path" => "/datasets/producthunt-trends/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "group_by",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "topic",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "launched_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "launched_before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_votes",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_launches",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-producthunt-trends-search" => {
+      "id" => "datasets-producthunt-trends-search",
+      "method" => "GET",
+      "path" => "/datasets/producthunt-trends/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "group_by",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "topic",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "launched_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "launched_before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_votes",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_launches",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "antibot-check" => {
       "id" => "antibot-check",
       "method" => "POST",
@@ -5750,6 +6539,555 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "espn-athlete" => {
+      "id" => "espn-athlete",
+      "method" => "GET",
+      "path" => "/espn/athlete",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "sport",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "football",
+            "basketball",
+            "baseball",
+            "hockey",
+            "soccer"
+          ]
+        },
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "college-football",
+            "nba",
+            "wnba",
+            "mens-college-basketball",
+            "womens-college-basketball",
+            "mlb",
+            "nhl",
+            "eng.1",
+            "esp.1",
+            "ita.1",
+            "ger.1",
+            "fra.1",
+            "usa.1",
+            "uefa.champions"
+          ]
+        },
+        {
+          "name" => "athlete",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "espn-game-summary" => {
+      "id" => "espn-game-summary",
+      "method" => "GET",
+      "path" => "/espn/game-summary",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "sport",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "football",
+            "basketball",
+            "baseball",
+            "hockey",
+            "soccer"
+          ]
+        },
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "college-football",
+            "nba",
+            "wnba",
+            "mens-college-basketball",
+            "womens-college-basketball",
+            "mlb",
+            "nhl",
+            "eng.1",
+            "esp.1",
+            "ita.1",
+            "ger.1",
+            "fra.1",
+            "usa.1",
+            "uefa.champions"
+          ]
+        },
+        {
+          "name" => "event",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "espn-news" => {
+      "id" => "espn-news",
+      "method" => "GET",
+      "path" => "/espn/news",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "sport",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "football",
+            "basketball",
+            "baseball",
+            "hockey",
+            "soccer"
+          ]
+        },
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "college-football",
+            "nba",
+            "wnba",
+            "mens-college-basketball",
+            "womens-college-basketball",
+            "mlb",
+            "nhl",
+            "eng.1",
+            "esp.1",
+            "ita.1",
+            "ger.1",
+            "fra.1",
+            "usa.1",
+            "uefa.champions"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "espn-rankings" => {
+      "id" => "espn-rankings",
+      "method" => "GET",
+      "path" => "/espn/rankings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "sport",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "football",
+            "basketball"
+          ]
+        },
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "college-football",
+            "mens-college-basketball",
+            "womens-college-basketball"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "espn-scoreboard" => {
+      "id" => "espn-scoreboard",
+      "method" => "GET",
+      "path" => "/espn/scoreboard",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "sport",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "football",
+            "basketball",
+            "baseball",
+            "hockey",
+            "soccer"
+          ]
+        },
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "college-football",
+            "nba",
+            "wnba",
+            "mens-college-basketball",
+            "womens-college-basketball",
+            "mlb",
+            "nhl",
+            "eng.1",
+            "esp.1",
+            "ita.1",
+            "ger.1",
+            "fra.1",
+            "usa.1",
+            "uefa.champions"
+          ]
+        },
+        {
+          "name" => "dates",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "week",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "seasontype",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "espn-standings" => {
+      "id" => "espn-standings",
+      "method" => "GET",
+      "path" => "/espn/standings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "sport",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "football",
+            "basketball",
+            "baseball",
+            "hockey",
+            "soccer"
+          ]
+        },
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "college-football",
+            "nba",
+            "wnba",
+            "mens-college-basketball",
+            "womens-college-basketball",
+            "mlb",
+            "nhl",
+            "eng.1",
+            "esp.1",
+            "ita.1",
+            "ger.1",
+            "fra.1",
+            "usa.1",
+            "uefa.champions"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "seasontype",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "1",
+            "2",
+            "3"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "espn-team" => {
+      "id" => "espn-team",
+      "method" => "GET",
+      "path" => "/espn/team",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "sport",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "football",
+            "basketball",
+            "baseball",
+            "hockey",
+            "soccer"
+          ]
+        },
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "college-football",
+            "nba",
+            "wnba",
+            "mens-college-basketball",
+            "womens-college-basketball",
+            "mlb",
+            "nhl",
+            "eng.1",
+            "esp.1",
+            "ita.1",
+            "ger.1",
+            "fra.1",
+            "usa.1",
+            "uefa.champions"
+          ]
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "espn-team-roster" => {
+      "id" => "espn-team-roster",
+      "method" => "GET",
+      "path" => "/espn/team-roster",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "sport",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "football",
+            "basketball",
+            "baseball",
+            "hockey",
+            "soccer"
+          ]
+        },
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "college-football",
+            "nba",
+            "wnba",
+            "mens-college-basketball",
+            "womens-college-basketball",
+            "mlb",
+            "nhl",
+            "eng.1",
+            "esp.1",
+            "ita.1",
+            "ger.1",
+            "fra.1",
+            "usa.1",
+            "uefa.champions"
+          ]
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "espn-teams" => {
+      "id" => "espn-teams",
+      "method" => "GET",
+      "path" => "/espn/teams",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "sport",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "football",
+            "basketball",
+            "baseball",
+            "hockey",
+            "soccer"
+          ]
+        },
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "college-football",
+            "nba",
+            "wnba",
+            "mens-college-basketball",
+            "womens-college-basketball",
+            "mlb",
+            "nhl",
+            "eng.1",
+            "esp.1",
+            "ita.1",
+            "ger.1",
+            "fra.1",
+            "usa.1",
+            "uefa.champions"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "geocoding-lookup" => {
       "id" => "geocoding-lookup",
@@ -13144,6 +14482,16 @@ module Crawlora
       ],
       "queryParams" => [
         {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
           "name" => "featured_only",
           "in" => "query",
           "type" => "boolean"
@@ -13155,11 +14503,6 @@ module Crawlora
         },
         {
           "name" => "page",
-          "in" => "query",
-          "type" => "integer"
-        },
-        {
-          "name" => "page_size",
           "in" => "query",
           "type" => "integer"
         },
@@ -13181,7 +14524,10 @@ module Crawlora
       "security" => [
         "ApiKeyAuth"
       ],
-      "paginatable" => true
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
     },
     "producthunt-leaderboard" => {
       "id" => "producthunt-leaderboard",
@@ -13575,11 +14921,6 @@ module Crawlora
           "name" => "depth",
           "in" => "query",
           "type" => "integer"
-        },
-        {
-          "name" => "with_scores",
-          "in" => "query",
-          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -13636,11 +14977,6 @@ module Crawlora
           "name" => "after",
           "in" => "query",
           "type" => "string"
-        },
-        {
-          "name" => "with_scores",
-          "in" => "query",
-          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -13663,13 +14999,7 @@ module Crawlora
       "pathParams" => [
         "id"
       ],
-      "queryParams" => [
-        {
-          "name" => "with_scores",
-          "in" => "query",
-          "type" => "boolean"
-        }
-      ],
+      "queryParams" => [],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -13734,11 +15064,6 @@ module Crawlora
           "name" => "after",
           "in" => "query",
           "type" => "string"
-        },
-        {
-          "name" => "with_scores",
-          "in" => "query",
-          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -13766,11 +15091,6 @@ module Crawlora
           "name" => "limit",
           "in" => "query",
           "type" => "integer"
-        },
-        {
-          "name" => "with_scores",
-          "in" => "query",
-          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -13803,11 +15123,6 @@ module Crawlora
           "name" => "after",
           "in" => "query",
           "type" => "string"
-        },
-        {
-          "name" => "with_scores",
-          "in" => "query",
-          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -13864,11 +15179,6 @@ module Crawlora
           "name" => "after",
           "in" => "query",
           "type" => "string"
-        },
-        {
-          "name" => "with_scores",
-          "in" => "query",
-          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -13929,11 +15239,6 @@ module Crawlora
           "name" => "after",
           "in" => "query",
           "type" => "string"
-        },
-        {
-          "name" => "with_scores",
-          "in" => "query",
-          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -13988,11 +15293,6 @@ module Crawlora
           "name" => "after",
           "in" => "query",
           "type" => "string"
-        },
-        {
-          "name" => "with_scores",
-          "in" => "query",
-          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -14025,11 +15325,6 @@ module Crawlora
           "name" => "after",
           "in" => "query",
           "type" => "string"
-        },
-        {
-          "name" => "with_scores",
-          "in" => "query",
-          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -14062,11 +15357,6 @@ module Crawlora
           "name" => "after",
           "in" => "query",
           "type" => "string"
-        },
-        {
-          "name" => "with_scores",
-          "in" => "query",
-          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -18909,6 +20199,25 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "web-techstack" => {
+      "id" => "web-techstack",
+      "method" => "POST",
+      "path" => "/web/techstack",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "request",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "x-post" => {
       "id" => "x-post",
       "method" => "GET",
@@ -20659,6 +21968,17 @@ module Crawlora
       "suggest" => "brave-suggest",
       "videos" => "brave-videos"
     },
+    "chrome_web_store" => {
+      "chromewebstore_categories" => "chromewebstore-categories",
+      "chromewebstore_category" => "chromewebstore-category",
+      "chromewebstore_charts" => "chromewebstore-charts",
+      "chromewebstore_collection" => "chromewebstore-collection",
+      "chromewebstore_item" => "chromewebstore-item",
+      "chromewebstore_reviews" => "chromewebstore-reviews",
+      "chromewebstore_search" => "chromewebstore-search",
+      "chromewebstore_similar" => "chromewebstore-similar",
+      "chromewebstore_suggest" => "chromewebstore-suggest"
+    },
     "coin_gecko" => {
       "categories" => "coingecko-categories",
       "category_coins" => "coingecko-category-coins",
@@ -20685,7 +22005,8 @@ module Crawlora
     "web" => {
       "contact" => "contact",
       "antibot_check" => "antibot-check",
-      "scrape" => "web-scrape"
+      "scrape" => "web-scrape",
+      "techstack" => "web-techstack"
     },
     "datasets" => {
       "list" => "datasets-list",
@@ -20704,7 +22025,15 @@ module Crawlora
       "google_map_businesses_facets" => "datasets-google-map-businesses-facets",
       "google_map_businesses_item" => "datasets-google-map-businesses-item",
       "google_map_businesses_nearby" => "datasets-google-map-businesses-nearby",
-      "google_map_businesses_search" => "datasets-google-map-businesses-search"
+      "google_map_businesses_search" => "datasets-google-map-businesses-search",
+      "producthunt_makers_facets" => "datasets-producthunt-makers-facets",
+      "producthunt_makers_item" => "datasets-producthunt-makers-item",
+      "producthunt_makers_search" => "datasets-producthunt-makers-search",
+      "producthunt_products_facets" => "datasets-producthunt-products-facets",
+      "producthunt_products_item" => "datasets-producthunt-products-item",
+      "producthunt_products_search" => "datasets-producthunt-products-search",
+      "producthunt_trends_facets" => "datasets-producthunt-trends-facets",
+      "producthunt_trends_search" => "datasets-producthunt-trends-search"
     },
     "e_bay" => {
       "ebay_item" => "ebay-item",
@@ -20713,6 +22042,17 @@ module Crawlora
       "ebay_seller_about" => "ebay-seller-about",
       "ebay_seller_feedback" => "ebay-seller-feedback",
       "ebay_seller_shop" => "ebay-seller-shop"
+    },
+    "espn" => {
+      "athlete" => "espn-athlete",
+      "game_summary" => "espn-game-summary",
+      "news" => "espn-news",
+      "rankings" => "espn-rankings",
+      "scoreboard" => "espn-scoreboard",
+      "standings" => "espn-standings",
+      "team" => "espn-team",
+      "team_roster" => "espn-team-roster",
+      "teams" => "espn-teams"
     },
     "geocoding" => {
       "lookup" => "geocoding-lookup",
@@ -21198,7 +22538,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 532
+  OPERATION_COUNT = 559
 
   module OperationId
     AIRBNB_HOST = "airbnb-host"
@@ -21266,6 +22606,15 @@ module Crawlora
     BRAVE_SEARCH = "brave-search"
     BRAVE_SUGGEST = "brave-suggest"
     BRAVE_VIDEOS = "brave-videos"
+    CHROME_WEB_STORE_CHROMEWEBSTORE_CATEGORIES = "chromewebstore-categories"
+    CHROME_WEB_STORE_CHROMEWEBSTORE_CATEGORY = "chromewebstore-category"
+    CHROME_WEB_STORE_CHROMEWEBSTORE_CHARTS = "chromewebstore-charts"
+    CHROME_WEB_STORE_CHROMEWEBSTORE_COLLECTION = "chromewebstore-collection"
+    CHROME_WEB_STORE_CHROMEWEBSTORE_ITEM = "chromewebstore-item"
+    CHROME_WEB_STORE_CHROMEWEBSTORE_REVIEWS = "chromewebstore-reviews"
+    CHROME_WEB_STORE_CHROMEWEBSTORE_SEARCH = "chromewebstore-search"
+    CHROME_WEB_STORE_CHROMEWEBSTORE_SIMILAR = "chromewebstore-similar"
+    CHROME_WEB_STORE_CHROMEWEBSTORE_SUGGEST = "chromewebstore-suggest"
     COIN_GECKO_CATEGORIES = "coingecko-categories"
     COIN_GECKO_CATEGORY_COINS = "coingecko-category-coins"
     COIN_GECKO_CHAIN = "coingecko-chain"
@@ -21304,12 +22653,29 @@ module Crawlora
     DATASETS_GOOGLE_MAP_BUSINESSES_NEARBY = "datasets-google-map-businesses-nearby"
     DATASETS_GOOGLE_MAP_BUSINESSES_SEARCH = "datasets-google-map-businesses-search"
     DATASETS_LIST = "datasets-list"
+    DATASETS_PRODUCTHUNT_MAKERS_FACETS = "datasets-producthunt-makers-facets"
+    DATASETS_PRODUCTHUNT_MAKERS_ITEM = "datasets-producthunt-makers-item"
+    DATASETS_PRODUCTHUNT_MAKERS_SEARCH = "datasets-producthunt-makers-search"
+    DATASETS_PRODUCTHUNT_PRODUCTS_FACETS = "datasets-producthunt-products-facets"
+    DATASETS_PRODUCTHUNT_PRODUCTS_ITEM = "datasets-producthunt-products-item"
+    DATASETS_PRODUCTHUNT_PRODUCTS_SEARCH = "datasets-producthunt-products-search"
+    DATASETS_PRODUCTHUNT_TRENDS_FACETS = "datasets-producthunt-trends-facets"
+    DATASETS_PRODUCTHUNT_TRENDS_SEARCH = "datasets-producthunt-trends-search"
     EBAY_EBAY_ITEM = "ebay-item"
     EBAY_EBAY_SEARCH = "ebay-search"
     EBAY_EBAY_SELLER = "ebay-seller"
     EBAY_EBAY_SELLER_ABOUT = "ebay-seller-about"
     EBAY_EBAY_SELLER_FEEDBACK = "ebay-seller-feedback"
     EBAY_EBAY_SELLER_SHOP = "ebay-seller-shop"
+    ESPN_ATHLETE = "espn-athlete"
+    ESPN_GAME_SUMMARY = "espn-game-summary"
+    ESPN_NEWS = "espn-news"
+    ESPN_RANKINGS = "espn-rankings"
+    ESPN_SCOREBOARD = "espn-scoreboard"
+    ESPN_STANDINGS = "espn-standings"
+    ESPN_TEAM = "espn-team"
+    ESPN_TEAM_ROSTER = "espn-team-roster"
+    ESPN_TEAMS = "espn-teams"
     GEOCODING_LOOKUP = "geocoding-lookup"
     GEOCODING_REVERSE = "geocoding-reverse"
     GEOCODING_SEARCH = "geocoding-search"
@@ -21675,6 +23041,7 @@ module Crawlora
     WEB_ANTIBOT_CHECK = "antibot-check"
     WEB_CONTACT = "contact"
     WEB_SCRAPE = "web-scrape"
+    WEB_TECHSTACK = "web-techstack"
     XPOST = "x-post"
     XPROFILE = "x-profile"
     XPROFILE_POSTS = "x-profile-posts"
