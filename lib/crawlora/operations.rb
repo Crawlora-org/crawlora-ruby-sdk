@@ -2756,10 +2756,123 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "chromewebstore-developer" => {
+      "id" => "chromewebstore-developer",
+      "method" => "GET",
+      "path" => "/chromewebstore/developer",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "num",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "chromewebstore-item" => {
       "id" => "chromewebstore-item",
       "method" => "GET",
       "path" => "/chromewebstore/item",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "chromewebstore-permissions" => {
+      "id" => "chromewebstore-permissions",
+      "method" => "GET",
+      "path" => "/chromewebstore/permissions",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "chromewebstore-privacy" => {
+      "id" => "chromewebstore-privacy",
+      "method" => "GET",
+      "path" => "/chromewebstore/privacy",
       "pathParams" => [],
       "queryParams" => [
         {
@@ -2808,6 +2921,15 @@ module Crawlora
           "name" => "num",
           "in" => "query",
           "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "recent",
+            "helpful"
+          ]
         },
         {
           "name" => "country",
@@ -6340,6 +6462,493 @@ module Crawlora
         },
         {
           "name" => "min_launches",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-techstack-facets" => {
+      "id" => "datasets-techstack-facets",
+      "method" => "GET",
+      "path" => "/datasets/techstack/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "technology",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "any_of",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "not",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "cms",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ecommerce",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "cdn",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "web_server",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "server_language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tld",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "render_tier",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "seed_source",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "has_captcha",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "reachable",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_tech_count",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "run_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-techstack-item" => {
+      "id" => "datasets-techstack-item",
+      "method" => "GET",
+      "path" => "/datasets/techstack/items/{domain}",
+      "pathParams" => [
+        "domain"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-techstack-search" => {
+      "id" => "datasets-techstack-search",
+      "method" => "GET",
+      "path" => "/datasets/techstack/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "technology",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "any_of",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "not",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "cms",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ecommerce",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "cdn",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "web_server",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "server_language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tld",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "render_tier",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "seed_source",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "has_captcha",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "reachable",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_tech_count",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "run_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-trustmrr-facets" => {
+      "id" => "datasets-trustmrr-facets",
+      "method" => "GET",
+      "path" => "/datasets/trustmrr/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "payment_provider",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "on_sale",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_mrr",
+          "in" => "query",
+          "type" => "number"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-trustmrr-item" => {
+      "id" => "datasets-trustmrr-item",
+      "method" => "GET",
+      "path" => "/datasets/trustmrr/items/{slug}",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-trustmrr-search" => {
+      "id" => "datasets-trustmrr-search",
+      "method" => "GET",
+      "path" => "/datasets/trustmrr/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "payment_provider",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "target_audience",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "business_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tech",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "channel",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "listing_tier",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "on_sale",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "is_sponsored",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_mrr",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_mrr",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_revenue",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_revenue_30d",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_traffic",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_growth",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_multiple",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_asking_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_asking_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_ahrefs_dr",
           "in" => "query",
           "type" => "integer"
         },
@@ -12157,6 +12766,96 @@ module Crawlora
       ],
       "security" => []
     },
+    "pitchbook-company" => {
+      "id" => "pitchbook-company",
+      "method" => "GET",
+      "path" => "/pitchbook/company",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pitchbook-fund" => {
+      "id" => "pitchbook-fund",
+      "method" => "GET",
+      "path" => "/pitchbook/fund",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pitchbook-investor" => {
+      "id" => "pitchbook-investor",
+      "method" => "GET",
+      "path" => "/pitchbook/investor",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "polymarket-activity-trades" => {
       "id" => "polymarket-activity-trades",
       "method" => "GET",
@@ -15936,6 +16635,419 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "sec-company-intelligence" => {
+      "id" => "sec-company-intelligence",
+      "method" => "GET",
+      "path" => "/sec/company/intelligence",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "cik",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ticker",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sec-company-search" => {
+      "id" => "sec-company-search",
+      "method" => "GET",
+      "path" => "/sec/company/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sec-company-submissions" => {
+      "id" => "sec-company-submissions",
+      "method" => "GET",
+      "path" => "/sec/company/submissions",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "cik",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ticker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "form",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sec-filing" => {
+      "id" => "sec-filing",
+      "method" => "GET",
+      "path" => "/sec/filing",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "cik",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ticker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "accession",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sec-filing-sections" => {
+      "id" => "sec-filing-sections",
+      "method" => "GET",
+      "path" => "/sec/filing/sections",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "cik",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ticker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "accession",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "items",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "max_chars",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sec-financials" => {
+      "id" => "sec-financials",
+      "method" => "GET",
+      "path" => "/sec/financials",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "cik",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ticker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "statement",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "income",
+            "balance",
+            "cash_flow"
+          ]
+        },
+        {
+          "name" => "period",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "annual",
+            "quarterly"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sec-frames" => {
+      "id" => "sec-frames",
+      "method" => "GET",
+      "path" => "/sec/frames",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "concept",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "period",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "unit",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "taxonomy",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "dei",
+            "ifrs-full",
+            "srt",
+            "us-gaap"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sec-full-text-search" => {
+      "id" => "sec-full-text-search",
+      "method" => "GET",
+      "path" => "/sec/full-text-search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "forms",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "sec-insider" => {
+      "id" => "sec-insider",
+      "method" => "GET",
+      "path" => "/sec/insider",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "cik",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ticker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sec-institutional-holdings" => {
+      "id" => "sec-institutional-holdings",
+      "method" => "GET",
+      "path" => "/sec/institutional-holdings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "cik",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "shop-app-analysis" => {
       "id" => "shop-app-analysis",
       "method" => "GET",
@@ -16855,6 +17967,446 @@ module Crawlora
         "domain"
       ],
       "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sofascore-event" => {
+      "id" => "sofascore-event",
+      "method" => "GET",
+      "path" => "/sofascore/event",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sofascore-event-h2h" => {
+      "id" => "sofascore-event-h2h",
+      "method" => "GET",
+      "path" => "/sofascore/event-h2h",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sofascore-event-incidents" => {
+      "id" => "sofascore-event-incidents",
+      "method" => "GET",
+      "path" => "/sofascore/event-incidents",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sofascore-event-lineups" => {
+      "id" => "sofascore-event-lineups",
+      "method" => "GET",
+      "path" => "/sofascore/event-lineups",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sofascore-event-odds" => {
+      "id" => "sofascore-event-odds",
+      "method" => "GET",
+      "path" => "/sofascore/event-odds",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sofascore-event-statistics" => {
+      "id" => "sofascore-event-statistics",
+      "method" => "GET",
+      "path" => "/sofascore/event-statistics",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sofascore-live-events" => {
+      "id" => "sofascore-live-events",
+      "method" => "GET",
+      "path" => "/sofascore/live-events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "sport",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "football",
+            "basketball",
+            "tennis"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sofascore-player" => {
+      "id" => "sofascore-player",
+      "method" => "GET",
+      "path" => "/sofascore/player",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sofascore-round-events" => {
+      "id" => "sofascore-round-events",
+      "method" => "GET",
+      "path" => "/sofascore/round-events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "round",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sofascore-search" => {
+      "id" => "sofascore-search",
+      "method" => "GET",
+      "path" => "/sofascore/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sofascore-standings" => {
+      "id" => "sofascore-standings",
+      "method" => "GET",
+      "path" => "/sofascore/standings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "total",
+            "home",
+            "away"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sofascore-team" => {
+      "id" => "sofascore-team",
+      "method" => "GET",
+      "path" => "/sofascore/team",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sofascore-team-events" => {
+      "id" => "sofascore-team-events",
+      "method" => "GET",
+      "path" => "/sofascore/team-events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "direction",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "next",
+            "last"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "sofascore-team-players" => {
+      "id" => "sofascore-team-players",
+      "method" => "GET",
+      "path" => "/sofascore/team-players",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sofascore-tournament-seasons" => {
+      "id" => "sofascore-tournament-seasons",
+      "method" => "GET",
+      "path" => "/sofascore/tournament-seasons",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -19675,6 +21227,169 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "trustmrr-acquire" => {
+      "id" => "trustmrr-acquire",
+      "method" => "GET",
+      "path" => "/trustmrr/acquire",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "trustmrr-categories" => {
+      "id" => "trustmrr-categories",
+      "method" => "GET",
+      "path" => "/trustmrr/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "trustmrr-category" => {
+      "id" => "trustmrr-category",
+      "method" => "GET",
+      "path" => "/trustmrr/category/{slug}",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "trustmrr-leaderboard" => {
+      "id" => "trustmrr-leaderboard",
+      "method" => "GET",
+      "path" => "/trustmrr/leaderboard",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "metric",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "mrr",
+            "last_30_days_revenue",
+            "all_time_revenue",
+            "growth",
+            "traffic",
+            "revenue_per_visitor"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "trustmrr-marketplace" => {
+      "id" => "trustmrr-marketplace",
+      "method" => "GET",
+      "path" => "/trustmrr/marketplace",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "trustmrr-startup" => {
+      "id" => "trustmrr-startup",
+      "method" => "GET",
+      "path" => "/trustmrr/startup/{slug}",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "trustmrr-startups" => {
+      "id" => "trustmrr-startups",
+      "method" => "GET",
+      "path" => "/trustmrr/startups",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "trustpilot-business-search" => {
       "id" => "trustpilot-business-search",
       "method" => "GET",
@@ -21973,7 +23688,10 @@ module Crawlora
       "chromewebstore_category" => "chromewebstore-category",
       "chromewebstore_charts" => "chromewebstore-charts",
       "chromewebstore_collection" => "chromewebstore-collection",
+      "chromewebstore_developer" => "chromewebstore-developer",
       "chromewebstore_item" => "chromewebstore-item",
+      "chromewebstore_permissions" => "chromewebstore-permissions",
+      "chromewebstore_privacy" => "chromewebstore-privacy",
       "chromewebstore_reviews" => "chromewebstore-reviews",
       "chromewebstore_search" => "chromewebstore-search",
       "chromewebstore_similar" => "chromewebstore-similar",
@@ -22033,7 +23751,13 @@ module Crawlora
       "producthunt_products_item" => "datasets-producthunt-products-item",
       "producthunt_products_search" => "datasets-producthunt-products-search",
       "producthunt_trends_facets" => "datasets-producthunt-trends-facets",
-      "producthunt_trends_search" => "datasets-producthunt-trends-search"
+      "producthunt_trends_search" => "datasets-producthunt-trends-search",
+      "techstack_facets" => "datasets-techstack-facets",
+      "techstack_item" => "datasets-techstack-item",
+      "techstack_search" => "datasets-techstack-search",
+      "trustmrr_facets" => "datasets-trustmrr-facets",
+      "trustmrr_item" => "datasets-trustmrr-item",
+      "trustmrr_search" => "datasets-trustmrr-search"
     },
     "e_bay" => {
       "ebay_item" => "ebay-item",
@@ -22223,6 +23947,11 @@ module Crawlora
       "ping" => "ping",
       "ready" => "ready"
     },
+    "pitch_book" => {
+      "pitchbook_company" => "pitchbook-company",
+      "pitchbook_fund" => "pitchbook-fund",
+      "pitchbook_investor" => "pitchbook-investor"
+    },
     "polymarket" => {
       "activity_trades" => "polymarket-activity-trades",
       "clob_market" => "polymarket-clob-market",
@@ -22339,6 +24068,18 @@ module Crawlora
       "rottentomatoes_season" => "rottentomatoes-season",
       "rottentomatoes_series" => "rottentomatoes-series"
     },
+    "sec_edgar" => {
+      "sec_company_intelligence" => "sec-company-intelligence",
+      "sec_company_search" => "sec-company-search",
+      "sec_company_submissions" => "sec-company-submissions",
+      "sec_filing" => "sec-filing",
+      "sec_filing_sections" => "sec-filing-sections",
+      "sec_financials" => "sec-financials",
+      "sec_frames" => "sec-frames",
+      "sec_full_text_search" => "sec-full-text-search",
+      "sec_insider" => "sec-insider",
+      "sec_institutional_holdings" => "sec-institutional-holdings"
+    },
     "shop_app" => {
       "analysis" => "shop-app-analysis",
       "categories" => "shop-app-categories",
@@ -22373,6 +24114,23 @@ module Crawlora
     "similar_web" => {
       "search" => "similarweb-search",
       "web" => "similarweb-web"
+    },
+    "sofa_score" => {
+      "sofascore_event" => "sofascore-event",
+      "sofascore_event_h2h" => "sofascore-event-h2h",
+      "sofascore_event_incidents" => "sofascore-event-incidents",
+      "sofascore_event_lineups" => "sofascore-event-lineups",
+      "sofascore_event_odds" => "sofascore-event-odds",
+      "sofascore_event_statistics" => "sofascore-event-statistics",
+      "sofascore_live_events" => "sofascore-live-events",
+      "sofascore_player" => "sofascore-player",
+      "sofascore_round_events" => "sofascore-round-events",
+      "sofascore_search" => "sofascore-search",
+      "sofascore_standings" => "sofascore-standings",
+      "sofascore_team" => "sofascore-team",
+      "sofascore_team_events" => "sofascore-team-events",
+      "sofascore_team_players" => "sofascore-team-players",
+      "sofascore_tournament_seasons" => "sofascore-tournament-seasons"
     },
     "spotify_podcasts" => {
       "categories" => "spotify-podcasts-categories",
@@ -22448,6 +24206,15 @@ module Crawlora
       "tripadvisor_place" => "tripadvisor-place",
       "tripadvisor_reviews" => "tripadvisor-reviews",
       "tripadvisor_search" => "tripadvisor-search"
+    },
+    "trust_mrr" => {
+      "trustmrr_acquire" => "trustmrr-acquire",
+      "trustmrr_categories" => "trustmrr-categories",
+      "trustmrr_category" => "trustmrr-category",
+      "trustmrr_leaderboard" => "trustmrr-leaderboard",
+      "trustmrr_marketplace" => "trustmrr-marketplace",
+      "trustmrr_startup" => "trustmrr-startup",
+      "trustmrr_startups" => "trustmrr-startups"
     },
     "trustpilot" => {
       "business_search" => "trustpilot-business-search",
@@ -22538,7 +24305,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 559
+  OPERATION_COUNT = 603
 
   module OperationId
     AIRBNB_HOST = "airbnb-host"
@@ -22610,7 +24377,10 @@ module Crawlora
     CHROME_WEB_STORE_CHROMEWEBSTORE_CATEGORY = "chromewebstore-category"
     CHROME_WEB_STORE_CHROMEWEBSTORE_CHARTS = "chromewebstore-charts"
     CHROME_WEB_STORE_CHROMEWEBSTORE_COLLECTION = "chromewebstore-collection"
+    CHROME_WEB_STORE_CHROMEWEBSTORE_DEVELOPER = "chromewebstore-developer"
     CHROME_WEB_STORE_CHROMEWEBSTORE_ITEM = "chromewebstore-item"
+    CHROME_WEB_STORE_CHROMEWEBSTORE_PERMISSIONS = "chromewebstore-permissions"
+    CHROME_WEB_STORE_CHROMEWEBSTORE_PRIVACY = "chromewebstore-privacy"
     CHROME_WEB_STORE_CHROMEWEBSTORE_REVIEWS = "chromewebstore-reviews"
     CHROME_WEB_STORE_CHROMEWEBSTORE_SEARCH = "chromewebstore-search"
     CHROME_WEB_STORE_CHROMEWEBSTORE_SIMILAR = "chromewebstore-similar"
@@ -22661,6 +24431,12 @@ module Crawlora
     DATASETS_PRODUCTHUNT_PRODUCTS_SEARCH = "datasets-producthunt-products-search"
     DATASETS_PRODUCTHUNT_TRENDS_FACETS = "datasets-producthunt-trends-facets"
     DATASETS_PRODUCTHUNT_TRENDS_SEARCH = "datasets-producthunt-trends-search"
+    DATASETS_TECHSTACK_FACETS = "datasets-techstack-facets"
+    DATASETS_TECHSTACK_ITEM = "datasets-techstack-item"
+    DATASETS_TECHSTACK_SEARCH = "datasets-techstack-search"
+    DATASETS_TRUSTMRR_FACETS = "datasets-trustmrr-facets"
+    DATASETS_TRUSTMRR_ITEM = "datasets-trustmrr-item"
+    DATASETS_TRUSTMRR_SEARCH = "datasets-trustmrr-search"
     EBAY_EBAY_ITEM = "ebay-item"
     EBAY_EBAY_SEARCH = "ebay-search"
     EBAY_EBAY_SELLER = "ebay-seller"
@@ -22823,6 +24599,9 @@ module Crawlora
     METACULUS_QUESTIONS = "metaculus-questions"
     METACULUS_TOP_COMMENTS = "metaculus-top-comments"
     METACULUS_TOURNAMENT_QUESTIONS = "metaculus-tournament-questions"
+    PITCH_BOOK_PITCHBOOK_COMPANY = "pitchbook-company"
+    PITCH_BOOK_PITCHBOOK_FUND = "pitchbook-fund"
+    PITCH_BOOK_PITCHBOOK_INVESTOR = "pitchbook-investor"
     POLYMARKET_ACTIVITY_TRADES = "polymarket-activity-trades"
     POLYMARKET_CLOB_MARKET = "polymarket-clob-market"
     POLYMARKET_DASHBOARD_MACRO = "polymarket-dashboard-macro"
@@ -22927,6 +24706,16 @@ module Crawlora
     ROTTEN_TOMATOES_ROTTENTOMATOES_SEARCH = "rottentomatoes-search"
     ROTTEN_TOMATOES_ROTTENTOMATOES_SEASON = "rottentomatoes-season"
     ROTTEN_TOMATOES_ROTTENTOMATOES_SERIES = "rottentomatoes-series"
+    SEC_EDGAR_SEC_COMPANY_INTELLIGENCE = "sec-company-intelligence"
+    SEC_EDGAR_SEC_COMPANY_SEARCH = "sec-company-search"
+    SEC_EDGAR_SEC_COMPANY_SUBMISSIONS = "sec-company-submissions"
+    SEC_EDGAR_SEC_FILING = "sec-filing"
+    SEC_EDGAR_SEC_FILING_SECTIONS = "sec-filing-sections"
+    SEC_EDGAR_SEC_FINANCIALS = "sec-financials"
+    SEC_EDGAR_SEC_FRAMES = "sec-frames"
+    SEC_EDGAR_SEC_FULL_TEXT_SEARCH = "sec-full-text-search"
+    SEC_EDGAR_SEC_INSIDER = "sec-insider"
+    SEC_EDGAR_SEC_INSTITUTIONAL_HOLDINGS = "sec-institutional-holdings"
     SHOP_APP_ANALYSIS = "shop-app-analysis"
     SHOP_APP_CATEGORIES = "shop-app-categories"
     SHOP_APP_COLLECTION_PRODUCTS = "shop-app-collection-products"
@@ -22956,6 +24745,21 @@ module Crawlora
     SHOPIFY_STORE = "shopify-store"
     SIMILAR_WEB_SEARCH = "similarweb-search"
     SIMILAR_WEB_WEB = "similarweb-web"
+    SOFA_SCORE_SOFASCORE_EVENT = "sofascore-event"
+    SOFA_SCORE_SOFASCORE_EVENT_H2H = "sofascore-event-h2h"
+    SOFA_SCORE_SOFASCORE_EVENT_INCIDENTS = "sofascore-event-incidents"
+    SOFA_SCORE_SOFASCORE_EVENT_LINEUPS = "sofascore-event-lineups"
+    SOFA_SCORE_SOFASCORE_EVENT_ODDS = "sofascore-event-odds"
+    SOFA_SCORE_SOFASCORE_EVENT_STATISTICS = "sofascore-event-statistics"
+    SOFA_SCORE_SOFASCORE_LIVE_EVENTS = "sofascore-live-events"
+    SOFA_SCORE_SOFASCORE_PLAYER = "sofascore-player"
+    SOFA_SCORE_SOFASCORE_ROUND_EVENTS = "sofascore-round-events"
+    SOFA_SCORE_SOFASCORE_SEARCH = "sofascore-search"
+    SOFA_SCORE_SOFASCORE_STANDINGS = "sofascore-standings"
+    SOFA_SCORE_SOFASCORE_TEAM = "sofascore-team"
+    SOFA_SCORE_SOFASCORE_TEAM_EVENTS = "sofascore-team-events"
+    SOFA_SCORE_SOFASCORE_TEAM_PLAYERS = "sofascore-team-players"
+    SOFA_SCORE_SOFASCORE_TOURNAMENT_SEASONS = "sofascore-tournament-seasons"
     SPOTIFY_ALBUM = "spotify-album"
     SPOTIFY_ALBUM_TRACKS = "spotify-album-tracks"
     SPOTIFY_ALBUMS_SEARCH = "spotify-albums-search"
@@ -23023,6 +24827,13 @@ module Crawlora
     TRIP_ADVISOR_TRIPADVISOR_PLACE = "tripadvisor-place"
     TRIP_ADVISOR_TRIPADVISOR_REVIEWS = "tripadvisor-reviews"
     TRIP_ADVISOR_TRIPADVISOR_SEARCH = "tripadvisor-search"
+    TRUST_MRR_TRUSTMRR_ACQUIRE = "trustmrr-acquire"
+    TRUST_MRR_TRUSTMRR_CATEGORIES = "trustmrr-categories"
+    TRUST_MRR_TRUSTMRR_CATEGORY = "trustmrr-category"
+    TRUST_MRR_TRUSTMRR_LEADERBOARD = "trustmrr-leaderboard"
+    TRUST_MRR_TRUSTMRR_MARKETPLACE = "trustmrr-marketplace"
+    TRUST_MRR_TRUSTMRR_STARTUP = "trustmrr-startup"
+    TRUST_MRR_TRUSTMRR_STARTUPS = "trustmrr-startups"
     TRUSTPILOT_BUSINESS = "trustpilot-business"
     TRUSTPILOT_BUSINESS_RELATED = "trustpilot-business-related"
     TRUSTPILOT_BUSINESS_REVIEWS = "trustpilot-business-reviews"
