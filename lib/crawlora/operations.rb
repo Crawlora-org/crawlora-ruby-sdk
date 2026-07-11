@@ -8129,40 +8129,6 @@ module Crawlora
       ],
       "paginatable" => true
     },
-    "github-repo-stargazers" => {
-      "id" => "github-repo-stargazers",
-      "method" => "GET",
-      "path" => "/github/repo/{owner}/{repo}/stargazers",
-      "pathParams" => [
-        "owner",
-        "repo"
-      ],
-      "queryParams" => [
-        {
-          "name" => "page",
-          "in" => "query",
-          "type" => "integer"
-        },
-        {
-          "name" => "per_page",
-          "in" => "query",
-          "type" => "integer"
-        }
-      ],
-      "formParams" => [],
-      "bodyParam" => nil,
-      "bodyRequired" => false,
-      "consumes" => [
-        "application/json"
-      ],
-      "produces" => [
-        "application/json"
-      ],
-      "security" => [
-        "ApiKeyAuth"
-      ],
-      "paginatable" => true
-    },
     "github-search-repositories" => {
       "id" => "github-search-repositories",
       "method" => "GET",
@@ -10793,6 +10759,429 @@ module Crawlora
           "name" => "max_id",
           "in" => "query",
           "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jobs-ashby-board" => {
+      "id" => "jobs-ashby-board",
+      "method" => "GET",
+      "path" => "/jobs/ashby/board",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "org",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "include_compensation",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jobs-company-search" => {
+      "id" => "jobs-company-search",
+      "method" => "GET",
+      "path" => "/jobs/company-search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jobs-greenhouse-board" => {
+      "id" => "jobs-greenhouse-board",
+      "method" => "GET",
+      "path" => "/jobs/greenhouse/board",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "token",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "content",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jobs-greenhouse-job" => {
+      "id" => "jobs-greenhouse-job",
+      "method" => "GET",
+      "path" => "/jobs/greenhouse/job",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "token",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jobs-hiring-signals" => {
+      "id" => "jobs-hiring-signals",
+      "method" => "GET",
+      "path" => "/jobs/hiring-signals",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "provider",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "greenhouse",
+            "lever",
+            "ashby",
+            "workday",
+            "smartrecruiters"
+          ]
+        },
+        {
+          "name" => "token",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "company",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "org",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tenant",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "datacenter",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "site",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jobs-lever-posting" => {
+      "id" => "jobs-lever-posting",
+      "method" => "GET",
+      "path" => "/jobs/lever/posting",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "company",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jobs-lever-postings" => {
+      "id" => "jobs-lever-postings",
+      "method" => "GET",
+      "path" => "/jobs/lever/postings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "company",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "department",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "remote",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jobs-smartrecruiters-posting" => {
+      "id" => "jobs-smartrecruiters-posting",
+      "method" => "GET",
+      "path" => "/jobs/smartrecruiters/posting",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "company",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jobs-smartrecruiters-postings" => {
+      "id" => "jobs-smartrecruiters-postings",
+      "method" => "GET",
+      "path" => "/jobs/smartrecruiters/postings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "company",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "jobs-workday-board" => {
+      "id" => "jobs-workday-board",
+      "method" => "GET",
+      "path" => "/jobs/workday/board",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tenant",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "datacenter",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "site",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "search",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "jobs-workday-job" => {
+      "id" => "jobs-workday-job",
+      "method" => "GET",
+      "path" => "/jobs/workday/job",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tenant",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "datacenter",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "site",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
         }
       ],
       "formParams" => [],
@@ -16650,6 +17039,48 @@ module Crawlora
           "name" => "ticker",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "enrich",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "market",
+            "news",
+            "hiring"
+          ]
+        },
+        {
+          "name" => "ats",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "greenhouse",
+            "lever",
+            "ashby",
+            "workday",
+            "smartrecruiters"
+          ]
+        },
+        {
+          "name" => "careers_slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tenant",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "datacenter",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "site",
+          "in" => "query",
+          "type" => "string"
         }
       ],
       "formParams" => [],
@@ -20088,6 +20519,467 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "steam-achievements" => {
+      "id" => "steam-achievements",
+      "method" => "GET",
+      "path" => "/steam/achievements",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "appid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "steam-app" => {
+      "id" => "steam-app",
+      "method" => "GET",
+      "path" => "/steam/app",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "appid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "cc",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "l",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "filters",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "steam-featured" => {
+      "id" => "steam-featured",
+      "method" => "GET",
+      "path" => "/steam/featured",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "cc",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "l",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "steam-featured-categories" => {
+      "id" => "steam-featured-categories",
+      "method" => "GET",
+      "path" => "/steam/featured-categories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "cc",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "l",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "steam-news" => {
+      "id" => "steam-news",
+      "method" => "GET",
+      "path" => "/steam/news",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "appid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "count",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "maxlength",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "steam-package" => {
+      "id" => "steam-package",
+      "method" => "GET",
+      "path" => "/steam/package",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "packageid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "cc",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "l",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "steam-players" => {
+      "id" => "steam-players",
+      "method" => "GET",
+      "path" => "/steam/players",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "appid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "steam-reviews" => {
+      "id" => "steam-reviews",
+      "method" => "GET",
+      "path" => "/steam/reviews",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "appid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "recent",
+            "updated",
+            "all"
+          ]
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "review_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "positive",
+            "negative"
+          ]
+        },
+        {
+          "name" => "purchase_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "steam",
+            "non_steam_purchase"
+          ]
+        },
+        {
+          "name" => "day_range",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "num_per_page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "steam-reviews-histogram" => {
+      "id" => "steam-reviews-histogram",
+      "method" => "GET",
+      "path" => "/steam/reviews/histogram",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "appid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "steam-search" => {
+      "id" => "steam-search",
+      "method" => "GET",
+      "path" => "/steam/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "term",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "cc",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "l",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "steam-search-results" => {
+      "id" => "steam-search-results",
+      "method" => "GET",
+      "path" => "/steam/search/results",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "term",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "start",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "count",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort_by",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Relevance",
+            "Released_DESC",
+            "Name_ASC",
+            "Price_ASC",
+            "Price_DESC",
+            "Reviews_DESC"
+          ]
+        },
+        {
+          "name" => "cc",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "l",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "start"
+      ]
+    },
+    "steam-steamspy" => {
+      "id" => "steam-steamspy",
+      "method" => "GET",
+      "path" => "/steam/steamspy",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "appid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "tiktok-category" => {
       "id" => "tiktok-category",
@@ -23791,7 +24683,6 @@ module Crawlora
       "github_repo_forks" => "github-repo-forks",
       "github_repo_languages" => "github-repo-languages",
       "github_repo_releases" => "github-repo-releases",
-      "github_repo_stargazers" => "github-repo-stargazers",
       "github_search_repositories" => "github-search-repositories",
       "github_search_users" => "github-search-users",
       "github_trending" => "github-trending",
@@ -23878,6 +24769,19 @@ module Crawlora
       "post" => "instagram-post",
       "profile" => "instagram-profile",
       "reels" => "instagram-reels"
+    },
+    "jobs" => {
+      "ashby_board" => "jobs-ashby-board",
+      "company_search" => "jobs-company-search",
+      "greenhouse_board" => "jobs-greenhouse-board",
+      "greenhouse_job" => "jobs-greenhouse-job",
+      "hiring_signals" => "jobs-hiring-signals",
+      "lever_posting" => "jobs-lever-posting",
+      "lever_postings" => "jobs-lever-postings",
+      "smartrecruiters_posting" => "jobs-smartrecruiters-posting",
+      "smartrecruiters_postings" => "jobs-smartrecruiters-postings",
+      "workday_board" => "jobs-workday-board",
+      "workday_job" => "jobs-workday-job"
     },
     "just_watch" => {
       "justwatch_age_certifications" => "justwatch-age-certifications",
@@ -24174,6 +25078,20 @@ module Crawlora
       "track_similar_albums" => "spotify-track-similar-albums",
       "tracks_search" => "spotify-tracks-search"
     },
+    "steam" => {
+      "achievements" => "steam-achievements",
+      "app" => "steam-app",
+      "featured" => "steam-featured",
+      "featured_categories" => "steam-featured-categories",
+      "news" => "steam-news",
+      "package" => "steam-package",
+      "players" => "steam-players",
+      "reviews" => "steam-reviews",
+      "reviews_histogram" => "steam-reviews-histogram",
+      "search" => "steam-search",
+      "search_results" => "steam-search-results",
+      "steamspy" => "steam-steamspy"
+    },
     "tiktok" => {
       "category" => "tiktok-category",
       "video_comments" => "tiktok-video-comments",
@@ -24305,7 +25223,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 603
+  OPERATION_COUNT = 625
 
   module OperationId
     AIRBNB_HOST = "airbnb-host"
@@ -24462,7 +25380,6 @@ module Crawlora
     GIT_HUB_GITHUB_REPO_FORKS = "github-repo-forks"
     GIT_HUB_GITHUB_REPO_LANGUAGES = "github-repo-languages"
     GIT_HUB_GITHUB_REPO_RELEASES = "github-repo-releases"
-    GIT_HUB_GITHUB_REPO_STARGAZERS = "github-repo-stargazers"
     GIT_HUB_GITHUB_SEARCH_REPOSITORIES = "github-search-repositories"
     GIT_HUB_GITHUB_SEARCH_USERS = "github-search-users"
     GIT_HUB_GITHUB_TRENDING = "github-trending"
@@ -24541,6 +25458,17 @@ module Crawlora
     INSTAGRAM_POST = "instagram-post"
     INSTAGRAM_PROFILE = "instagram-profile"
     INSTAGRAM_REELS = "instagram-reels"
+    JOBS_ASHBY_BOARD = "jobs-ashby-board"
+    JOBS_COMPANY_SEARCH = "jobs-company-search"
+    JOBS_GREENHOUSE_BOARD = "jobs-greenhouse-board"
+    JOBS_GREENHOUSE_JOB = "jobs-greenhouse-job"
+    JOBS_HIRING_SIGNALS = "jobs-hiring-signals"
+    JOBS_LEVER_POSTING = "jobs-lever-posting"
+    JOBS_LEVER_POSTINGS = "jobs-lever-postings"
+    JOBS_SMARTRECRUITERS_POSTING = "jobs-smartrecruiters-posting"
+    JOBS_SMARTRECRUITERS_POSTINGS = "jobs-smartrecruiters-postings"
+    JOBS_WORKDAY_BOARD = "jobs-workday-board"
+    JOBS_WORKDAY_JOB = "jobs-workday-job"
     JUST_WATCH_JUSTWATCH_AGE_CERTIFICATIONS = "justwatch-age-certifications"
     JUST_WATCH_JUSTWATCH_DISCOVER = "justwatch-discover"
     JUST_WATCH_JUSTWATCH_EPISODE_BY_ID = "justwatch-episode-by-id"
@@ -24798,6 +25726,18 @@ module Crawlora
     SPOTIFY_TRACK_RECOMMENDED = "spotify-track-recommended"
     SPOTIFY_TRACK_SIMILAR_ALBUMS = "spotify-track-similar-albums"
     SPOTIFY_TRACKS_SEARCH = "spotify-tracks-search"
+    STEAM_ACHIEVEMENTS = "steam-achievements"
+    STEAM_APP = "steam-app"
+    STEAM_FEATURED = "steam-featured"
+    STEAM_FEATURED_CATEGORIES = "steam-featured-categories"
+    STEAM_NEWS = "steam-news"
+    STEAM_PACKAGE = "steam-package"
+    STEAM_PLAYERS = "steam-players"
+    STEAM_REVIEWS = "steam-reviews"
+    STEAM_REVIEWS_HISTOGRAM = "steam-reviews-histogram"
+    STEAM_SEARCH = "steam-search"
+    STEAM_SEARCH_RESULTS = "steam-search-results"
+    STEAM_STEAMSPY = "steam-steamspy"
     TIKTOK_CATEGORY = "tiktok-category"
     TIKTOK_CHALLENGE = "tiktok-challenge"
     TIKTOK_CHALLENGE_LIST = "tiktok-challenge-list"
