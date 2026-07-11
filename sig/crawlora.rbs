@@ -228,7 +228,6 @@ module Crawlora
     def github_repo_forks: (?owner: String, ?repo: String, ?sort: "newest" | "oldest" | "stargazers" | "watchers", ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def github_repo_languages: (?owner: String, ?repo: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def github_repo_releases: (?owner: String, ?repo: String, ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def github_repo_stargazers: (?owner: String, ?repo: String, ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def github_search_repositories: (?q: String, ?sort: "stars" | "forks" | "help-wanted-issues" | "updated", ?order: "asc" | "desc", ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def github_search_users: (?q: String, ?sort: "followers" | "repositories" | "joined", ?order: "asc" | "desc", ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def github_trending: (?language: String, ?since: "daily" | "weekly" | "monthly", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -323,6 +322,21 @@ module Crawlora
     def post: (?id: String, ?post_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def profile: (?username: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def reels: (?id: String, ?max_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class JobsGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def ashby_board: (?org: String, ?include_compensation: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def company_search: (?slug: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def greenhouse_board: (?token: String, ?content: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def greenhouse_job: (?token: String, ?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def hiring_signals: (?provider: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters", ?token: String, ?company: String, ?org: String, ?tenant: String, ?datacenter: String, ?site: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def lever_posting: (?company: String, ?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def lever_postings: (?company: String, ?department: String, ?location: String, ?remote: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def smartrecruiters_posting: (?company: String, ?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def smartrecruiters_postings: (?company: String, ?limit: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def workday_board: (?tenant: String, ?datacenter: String, ?site: String, ?search: String, ?limit: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def workday_job: (?tenant: String, ?datacenter: String, ?site: String, ?path: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class JustWatchGroup
@@ -540,7 +554,7 @@ module Crawlora
 
   class SecEdgarGroup
     def initialize: (Client, Hash[String, String]) -> void
-    def sec_company_intelligence: (?cik: String, ?ticker: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sec_company_intelligence: (?cik: String, ?ticker: String, ?enrich: "market" | "news" | "hiring", ?ats: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters", ?careers_slug: String, ?tenant: String, ?datacenter: String, ?site: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def sec_company_search: (?q: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def sec_company_submissions: (?cik: String, ?ticker: String, ?form: String, ?from: String, ?to: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def sec_filing: (?cik: String, ?ticker: String, ?accession: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -656,6 +670,22 @@ module Crawlora
     def track_recommended: (?uri: String, ?id: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def track_similar_albums: (?uri: String, ?id: String, ?limit: Integer, ?albums_only: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def tracks_search: (?q: String, ?offset: Integer, ?limit: Integer, ?number_of_top_results: Integer, ?include_audiobooks: bool, ?include_pre_releases: bool, ?include_album_pre_releases: bool, ?include_authors: bool, ?include_episode_content_ratings_v2: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class SteamGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def achievements: (?appid: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def app: (?appid: String, ?cc: String, ?l: String, ?filters: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def featured: (?cc: String, ?l: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def featured_categories: (?cc: String, ?l: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def news: (?appid: String, ?count: Integer, ?maxlength: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def package: (?packageid: String, ?cc: String, ?l: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def players: (?appid: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def reviews: (?appid: String, ?filter: "recent" | "updated" | "all", ?language: String, ?review_type: "all" | "positive" | "negative", ?purchase_type: "all" | "steam" | "non_steam_purchase", ?day_range: Integer, ?num_per_page: Integer, ?cursor: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def reviews_histogram: (?appid: String, ?language: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?term: String, ?cc: String, ?l: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search_results: (?term: String, ?start: Integer, ?count: Integer, ?sort_by: "Relevance" | "Released_DESC" | "Name_ASC" | "Price_ASC" | "Price_DESC" | "Reviews_DESC", ?cc: String, ?l: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def steamspy: (?appid: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class TiktokGroup
