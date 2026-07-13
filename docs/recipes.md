@@ -28,8 +28,17 @@ brand = client.brand.retrieve(domain: "stripe.com")
 
 ## Software, Reviews, And Market Datasets
 
+Build a Chrome extension competitive-intelligence view without downloading the
+whole catalog: create a high-adoption shortlist, load chart-ready market
+metrics, watch movers, and audit permission changes or one item's history.
+
 ```ruby
-extensions = client.datasets.chrome_extensions_search(q: "productivity", min_users: 10_000)
+extensions = client.datasets.chrome_extensions_search(q: "productivity", min_users: 10_000, sort: "users_desc", page_size: 20)
+metrics = client.datasets.chrome_extensions_metrics(days: 30, limit: 10)
+movers = client.datasets.chrome_extensions_trending(item_type: "extension", page_size: 20)
+permission_changes = client.datasets.chrome_extensions_changes(change_type: "permissions", limit: 25)
+history = client.datasets.chrome_extensions_history(id: "fjgncogppolhfdpijihbpfmeohpaadpc", limit: 90)
+
 cities = client.datasets.numbeo_cities_search(country: "Portugal", sort: "quality_of_life_desc")
 software = client.capterra.search(q: "project management")
 games = client.metacritic.browse(type: "game", sort: "score")
