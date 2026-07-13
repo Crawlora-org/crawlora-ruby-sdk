@@ -26,6 +26,15 @@ posts = client.reddit.search(q: "ruby", subreddit: "programming")
 brand = client.brand.retrieve(domain: "stripe.com")
 ```
 
+## Software, Reviews, And Market Datasets
+
+```ruby
+extensions = client.datasets.chrome_extensions_search(q: "productivity", min_users: 10_000)
+cities = client.datasets.numbeo_cities_search(country: "Portugal", sort: "quality_of_life_desc")
+software = client.capterra.search(q: "project management")
+games = client.metacritic.browse(type: "game", sort: "score")
+```
+
 ## Airbnb Host Profiles
 
 Look up a public Airbnb host, then page through their listings and guest reviews.

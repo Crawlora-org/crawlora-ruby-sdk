@@ -5,5 +5,5 @@ module Crawlora
   # as the Go/Java/PHP SDKs). RubyGems treats it as a prerelease and normalizes
   # the published gem version (the `-` becomes `.pre.`, e.g. `1.5.0.pre.sdk.N`).
   # Bumped across all SDK repos by the API repo's tools/sdkgen/bump_version.py.
-  VERSION = "1.17.0-sdk.1"
+  VERSION = "1.18.0-sdk.1"
 end
