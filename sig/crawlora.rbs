@@ -22,6 +22,19 @@ module Crawlora
     def suggest: (?keyword: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class AnimeGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def airing_schedule: (?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def character_search: (?query: String, ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def character: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rankings: (?sort: String, ?season: String, ?season_year: Integer, ?format: String, ?genre: String, ?status: String, ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?query: String, ?sort: String, ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_characters: (?id: String, ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_recommendations: (?id: String, ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_staff: (?id: String, ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class ApplePodcastsGroup
     def initialize: (Client, Hash[String, String]) -> void
     def charts: (?collection: String, ?category: Integer, ?country: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -443,6 +456,13 @@ module Crawlora
     def linkedin_company: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def linkedin_product: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def linkedin_showcase: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class MangaGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def rankings: (?sort: String, ?format: String, ?genre: String, ?status: String, ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?query: String, ?sort: String, ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class MetaculusGroup
