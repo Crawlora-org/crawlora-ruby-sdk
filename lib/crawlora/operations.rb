@@ -5730,6 +5730,11 @@ module Crawlora
           "type" => "string"
         },
         {
+          "name" => "developer_email",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
           "name" => "permission",
           "in" => "query",
           "type" => "string"
@@ -5895,6 +5900,11 @@ module Crawlora
           "type" => "string"
         },
         {
+          "name" => "developer_email",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
           "name" => "permission",
           "in" => "query",
           "type" => "string"
@@ -5985,6 +5995,11 @@ module Crawlora
         },
         {
           "name" => "developer",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "developer_email",
           "in" => "query",
           "type" => "string"
         },
@@ -7130,6 +7145,184 @@ module Crawlora
           "name" => "min_homes_sold",
           "in" => "query",
           "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-jobs-companies" => {
+      "id" => "datasets-jobs-companies",
+      "method" => "GET",
+      "path" => "/datasets/jobs/companies",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "provider",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_open_roles",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-jobs-facets" => {
+      "id" => "datasets-jobs-facets",
+      "method" => "GET",
+      "path" => "/datasets/jobs/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-jobs-item" => {
+      "id" => "datasets-jobs-item",
+      "method" => "GET",
+      "path" => "/datasets/jobs/items/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-jobs-search" => {
+      "id" => "datasets-jobs-search",
+      "method" => "GET",
+      "path" => "/datasets/jobs/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "company",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "provider",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "department",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "employment_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "remote",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "include_closed",
+          "in" => "query",
+          "type" => "boolean"
         },
         {
           "name" => "sort",
@@ -8356,6 +8549,380 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "datasets-sec-companies-facets" => {
+      "id" => "datasets-sec-companies-facets",
+      "method" => "GET",
+      "path" => "/datasets/sec-companies/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ticker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sic",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "exchange",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state_of_incorporation",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "entity_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_revenue",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "form_filed",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-sec-companies-financials" => {
+      "id" => "datasets-sec-companies-financials",
+      "method" => "GET",
+      "path" => "/datasets/sec-companies/financials/{cik}",
+      "pathParams" => [
+        "cik"
+      ],
+      "queryParams" => [
+        {
+          "name" => "statement",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "period",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-sec-companies-insider" => {
+      "id" => "datasets-sec-companies-insider",
+      "method" => "GET",
+      "path" => "/datasets/sec-companies/insider/{cik}",
+      "pathParams" => [
+        "cik"
+      ],
+      "queryParams" => [
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "code",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-sec-companies-item" => {
+      "id" => "datasets-sec-companies-item",
+      "method" => "GET",
+      "path" => "/datasets/sec-companies/items/{cik}",
+      "pathParams" => [
+        "cik"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-sec-companies-search" => {
+      "id" => "datasets-sec-companies-search",
+      "method" => "GET",
+      "path" => "/datasets/sec-companies/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ticker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "cik",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sic",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sic_description",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "exchange",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state_of_incorporation",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "entity_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_revenue",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_revenue",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_net_income",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_total_assets",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "form_filed",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_insider_txn_count_90d",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-sec-institutional-positions-facets" => {
+      "id" => "datasets-sec-institutional-positions-facets",
+      "method" => "GET",
+      "path" => "/datasets/sec-institutional-positions/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "manager_cik",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "issuer_name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "cusip",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-sec-institutional-positions-search" => {
+      "id" => "datasets-sec-institutional-positions-search",
+      "method" => "GET",
+      "path" => "/datasets/sec-institutional-positions/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "manager_cik",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "issuer_name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "cusip",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "datasets-steam-achievements-search" => {
       "id" => "datasets-steam-achievements-search",
       "method" => "GET",
@@ -9488,6 +10055,234 @@ module Crawlora
           "name" => "min_ahrefs_dr",
           "in" => "query",
           "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-x-users-facets" => {
+      "id" => "datasets-x-users-facets",
+      "method" => "GET",
+      "path" => "/datasets/x-users/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "username",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "source_tier",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "is_blue_verified",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_bio",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_external_url",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_ratio",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_ratio",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "created_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "created_before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "crawled_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "crawled_before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-x-users-item" => {
+      "id" => "datasets-x-users-item",
+      "method" => "GET",
+      "path" => "/datasets/x-users/items/{username}",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-x-users-search" => {
+      "id" => "datasets-x-users-search",
+      "method" => "GET",
+      "path" => "/datasets/x-users/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "username",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "source_tier",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "is_blue_verified",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_bio",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_external_url",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_ratio",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_ratio",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "created_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "created_before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "crawled_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "crawled_before",
+          "in" => "query",
+          "type" => "string"
         },
         {
           "name" => "sort",
@@ -11091,6 +11886,72 @@ module Crawlora
       "id" => "github-user-events",
       "method" => "GET",
       "path" => "/github/user/{username}/events",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "github-user-followers" => {
+      "id" => "github-user-followers",
+      "method" => "GET",
+      "path" => "/github/user/{username}/followers",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "github-user-following" => {
+      "id" => "github-user-following",
+      "method" => "GET",
+      "path" => "/github/user/{username}/following",
       "pathParams" => [
         "username"
       ],
@@ -13820,7 +14681,14 @@ module Crawlora
             "lever",
             "ashby",
             "workday",
-            "smartrecruiters"
+            "smartrecruiters",
+            "workable",
+            "recruitee",
+            "rippling",
+            "personio",
+            "teamtailor",
+            "oracle",
+            "ukg"
           ]
         },
         {
@@ -13850,6 +14718,16 @@ module Crawlora
         },
         {
           "name" => "site",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "host",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "board",
           "in" => "query",
           "type" => "string"
         }
@@ -13940,6 +14818,279 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "jobs-oracle-board" => {
+      "id" => "jobs-oracle-board",
+      "method" => "GET",
+      "path" => "/jobs/oracle/board",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "host",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "site",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "search",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "jobs-oracle-job" => {
+      "id" => "jobs-oracle-job",
+      "method" => "GET",
+      "path" => "/jobs/oracle/job",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "host",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "site",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jobs-personio-feed" => {
+      "id" => "jobs-personio-feed",
+      "method" => "GET",
+      "path" => "/jobs/personio/feed",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "company",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "department",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "remote",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jobs-recruitee-offer" => {
+      "id" => "jobs-recruitee-offer",
+      "method" => "GET",
+      "path" => "/jobs/recruitee/offer",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "company",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jobs-recruitee-offers" => {
+      "id" => "jobs-recruitee-offers",
+      "method" => "GET",
+      "path" => "/jobs/recruitee/offers",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "company",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "department",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "remote",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jobs-rippling-board" => {
+      "id" => "jobs-rippling-board",
+      "method" => "GET",
+      "path" => "/jobs/rippling/board",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "company",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "department",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "remote",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jobs-rippling-job" => {
+      "id" => "jobs-rippling-job",
+      "method" => "GET",
+      "path" => "/jobs/rippling/job",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "company",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "jobs-smartrecruiters-posting" => {
       "id" => "jobs-smartrecruiters-posting",
       "method" => "GET",
@@ -14008,6 +15159,173 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "jobs-teamtailor-jobs" => {
+      "id" => "jobs-teamtailor-jobs",
+      "method" => "GET",
+      "path" => "/jobs/teamtailor/jobs",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "company",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "department",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "remote",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jobs-ukg-board" => {
+      "id" => "jobs-ukg-board",
+      "method" => "GET",
+      "path" => "/jobs/ukg/board",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tenant",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "board",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "search",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "jobs-workable-posting" => {
+      "id" => "jobs-workable-posting",
+      "method" => "GET",
+      "path" => "/jobs/workable/posting",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "company",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jobs-workable-postings" => {
+      "id" => "jobs-workable-postings",
+      "method" => "GET",
+      "path" => "/jobs/workable/postings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "company",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "search",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "department",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "remote",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "jobs-workday-board" => {
       "id" => "jobs-workday-board",
@@ -25608,6 +26926,463 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "tcdb-birthdays" => {
+      "id" => "tcdb-birthdays",
+      "method" => "GET",
+      "path" => "/tcdb/birthdays",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "month",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "day",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => []
+    },
+    "tcdb-card" => {
+      "id" => "tcdb-card",
+      "method" => "GET",
+      "path" => "/tcdb/card",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "set_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "card_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => []
+    },
+    "tcdb-card-of-the-day" => {
+      "id" => "tcdb-card-of-the-day",
+      "method" => "GET",
+      "path" => "/tcdb/card-of-the-day",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [],
+      "paginatable" => true
+    },
+    "tcdb-companies" => {
+      "id" => "tcdb-companies",
+      "method" => "GET",
+      "path" => "/tcdb/companies",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => []
+    },
+    "tcdb-person" => {
+      "id" => "tcdb-person",
+      "method" => "GET",
+      "path" => "/tcdb/person",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => []
+    },
+    "tcdb-releases" => {
+      "id" => "tcdb-releases",
+      "method" => "GET",
+      "path" => "/tcdb/releases",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => []
+    },
+    "tcdb-search" => {
+      "id" => "tcdb-search",
+      "method" => "GET",
+      "path" => "/tcdb/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Baseball",
+            "Basketball",
+            "Boxing",
+            "Cricket",
+            "Football",
+            "Gaming",
+            "Golf",
+            "Hockey",
+            "Misc Sports",
+            "MMA",
+            "Multi-Sport",
+            "Non-Sport",
+            "Racing",
+            "Soccer",
+            "Tennis",
+            "Wrestling"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => []
+    },
+    "tcdb-set" => {
+      "id" => "tcdb-set",
+      "method" => "GET",
+      "path" => "/tcdb/set",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => []
+    },
+    "tcdb-sets" => {
+      "id" => "tcdb-sets",
+      "method" => "GET",
+      "path" => "/tcdb/sets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "sport",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "Baseball",
+            "Basketball",
+            "Boxing",
+            "Cricket",
+            "Football",
+            "Gaming",
+            "Golf",
+            "Hockey",
+            "Misc Sports",
+            "MMA",
+            "Multi-Sport",
+            "Non-Sport",
+            "Racing",
+            "Soccer",
+            "Tennis",
+            "Wrestling"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => []
+    },
+    "tcdb-tagged" => {
+      "id" => "tcdb-tagged",
+      "method" => "GET",
+      "path" => "/tcdb/tagged",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sport",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Baseball",
+            "Basketball",
+            "Boxing",
+            "Cricket",
+            "Football",
+            "Gaming",
+            "Golf",
+            "Hockey",
+            "Misc Sports",
+            "MMA",
+            "Multi-Sport",
+            "Non-Sport",
+            "Racing",
+            "Soccer",
+            "Tennis",
+            "Wrestling"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [],
+      "paginatable" => true
+    },
+    "tcdb-team" => {
+      "id" => "tcdb-team",
+      "method" => "GET",
+      "path" => "/tcdb/team",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => []
+    },
+    "tcdb-top-sets" => {
+      "id" => "tcdb-top-sets",
+      "method" => "GET",
+      "path" => "/tcdb/top-sets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => []
+    },
     "tiktok-category" => {
       "id" => "tiktok-category",
       "method" => "GET",
@@ -29559,6 +31334,10 @@ module Crawlora
       "housing_markets_facets" => "datasets-housing-markets-facets",
       "housing_markets_item" => "datasets-housing-markets-item",
       "housing_markets_search" => "datasets-housing-markets-search",
+      "jobs_companies" => "datasets-jobs-companies",
+      "jobs_facets" => "datasets-jobs-facets",
+      "jobs_item" => "datasets-jobs-item",
+      "jobs_search" => "datasets-jobs-search",
       "journalists_facets" => "datasets-journalists-facets",
       "journalists_item" => "datasets-journalists-item",
       "journalists_search" => "datasets-journalists-search",
@@ -29578,6 +31357,13 @@ module Crawlora
       "producthunt_products_search" => "datasets-producthunt-products-search",
       "producthunt_trends_facets" => "datasets-producthunt-trends-facets",
       "producthunt_trends_search" => "datasets-producthunt-trends-search",
+      "sec_companies_facets" => "datasets-sec-companies-facets",
+      "sec_companies_financials" => "datasets-sec-companies-financials",
+      "sec_companies_insider" => "datasets-sec-companies-insider",
+      "sec_companies_item" => "datasets-sec-companies-item",
+      "sec_companies_search" => "datasets-sec-companies-search",
+      "sec_institutional_positions_facets" => "datasets-sec-institutional-positions-facets",
+      "sec_institutional_positions_search" => "datasets-sec-institutional-positions-search",
       "steam_achievements_search" => "datasets-steam-achievements-search",
       "steam_charts_search" => "datasets-steam-charts-search",
       "steam_games_facets" => "datasets-steam-games-facets",
@@ -29593,7 +31379,10 @@ module Crawlora
       "trustmrr_facets" => "datasets-trustmrr-facets",
       "trustmrr_history" => "datasets-trustmrr-history",
       "trustmrr_item" => "datasets-trustmrr-item",
-      "trustmrr_search" => "datasets-trustmrr-search"
+      "trustmrr_search" => "datasets-trustmrr-search",
+      "x_users_facets" => "datasets-x-users-facets",
+      "x_users_item" => "datasets-x-users-item",
+      "x_users_search" => "datasets-x-users-search"
     },
     "discogs" => {
       "artist" => "discogs-artist",
@@ -29642,6 +31431,8 @@ module Crawlora
       "github_trending_developers" => "github-trending-developers",
       "github_user" => "github-user",
       "github_user_events" => "github-user-events",
+      "github_user_followers" => "github-user-followers",
+      "github_user_following" => "github-user-following",
       "github_user_pinned" => "github-user-pinned",
       "github_user_repos" => "github-user-repos"
     },
@@ -29739,8 +31530,19 @@ module Crawlora
       "hiring_signals" => "jobs-hiring-signals",
       "lever_posting" => "jobs-lever-posting",
       "lever_postings" => "jobs-lever-postings",
+      "oracle_board" => "jobs-oracle-board",
+      "oracle_job" => "jobs-oracle-job",
+      "personio_feed" => "jobs-personio-feed",
+      "recruitee_offer" => "jobs-recruitee-offer",
+      "recruitee_offers" => "jobs-recruitee-offers",
+      "rippling_board" => "jobs-rippling-board",
+      "rippling_job" => "jobs-rippling-job",
       "smartrecruiters_posting" => "jobs-smartrecruiters-posting",
       "smartrecruiters_postings" => "jobs-smartrecruiters-postings",
+      "teamtailor_jobs" => "jobs-teamtailor-jobs",
+      "ukg_board" => "jobs-ukg-board",
+      "workable_posting" => "jobs-workable-posting",
+      "workable_postings" => "jobs-workable-postings",
       "workday_board" => "jobs-workday-board",
       "workday_job" => "jobs-workday-job"
     },
@@ -30109,6 +31911,20 @@ module Crawlora
       "tags_list" => "steam-tags-list",
       "top_sellers" => "steam-top-sellers"
     },
+    "tcdb" => {
+      "birthdays" => "tcdb-birthdays",
+      "card" => "tcdb-card",
+      "card_of_the_day" => "tcdb-card-of-the-day",
+      "companies" => "tcdb-companies",
+      "person" => "tcdb-person",
+      "releases" => "tcdb-releases",
+      "search" => "tcdb-search",
+      "set" => "tcdb-set",
+      "sets" => "tcdb-sets",
+      "tagged" => "tcdb-tagged",
+      "team" => "tcdb-team",
+      "top_sets" => "tcdb-top-sets"
+    },
     "tiktok" => {
       "category" => "tiktok-category",
       "video_comments" => "tiktok-video-comments",
@@ -30253,7 +32069,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 737
+  OPERATION_COUNT = 776
 
   module OperationId
     AIRBNB_HOST = "airbnb-host"
@@ -30392,6 +32208,10 @@ module Crawlora
     DATASETS_HOUSING_MARKETS_FACETS = "datasets-housing-markets-facets"
     DATASETS_HOUSING_MARKETS_ITEM = "datasets-housing-markets-item"
     DATASETS_HOUSING_MARKETS_SEARCH = "datasets-housing-markets-search"
+    DATASETS_JOBS_COMPANIES = "datasets-jobs-companies"
+    DATASETS_JOBS_FACETS = "datasets-jobs-facets"
+    DATASETS_JOBS_ITEM = "datasets-jobs-item"
+    DATASETS_JOBS_SEARCH = "datasets-jobs-search"
     DATASETS_JOURNALISTS_FACETS = "datasets-journalists-facets"
     DATASETS_JOURNALISTS_ITEM = "datasets-journalists-item"
     DATASETS_JOURNALISTS_SEARCH = "datasets-journalists-search"
@@ -30412,6 +32232,13 @@ module Crawlora
     DATASETS_PRODUCTHUNT_PRODUCTS_SEARCH = "datasets-producthunt-products-search"
     DATASETS_PRODUCTHUNT_TRENDS_FACETS = "datasets-producthunt-trends-facets"
     DATASETS_PRODUCTHUNT_TRENDS_SEARCH = "datasets-producthunt-trends-search"
+    DATASETS_SEC_COMPANIES_FACETS = "datasets-sec-companies-facets"
+    DATASETS_SEC_COMPANIES_FINANCIALS = "datasets-sec-companies-financials"
+    DATASETS_SEC_COMPANIES_INSIDER = "datasets-sec-companies-insider"
+    DATASETS_SEC_COMPANIES_ITEM = "datasets-sec-companies-item"
+    DATASETS_SEC_COMPANIES_SEARCH = "datasets-sec-companies-search"
+    DATASETS_SEC_INSTITUTIONAL_POSITIONS_FACETS = "datasets-sec-institutional-positions-facets"
+    DATASETS_SEC_INSTITUTIONAL_POSITIONS_SEARCH = "datasets-sec-institutional-positions-search"
     DATASETS_STEAM_ACHIEVEMENTS_SEARCH = "datasets-steam-achievements-search"
     DATASETS_STEAM_CHARTS_SEARCH = "datasets-steam-charts-search"
     DATASETS_STEAM_GAMES_FACETS = "datasets-steam-games-facets"
@@ -30428,6 +32255,9 @@ module Crawlora
     DATASETS_TRUSTMRR_HISTORY = "datasets-trustmrr-history"
     DATASETS_TRUSTMRR_ITEM = "datasets-trustmrr-item"
     DATASETS_TRUSTMRR_SEARCH = "datasets-trustmrr-search"
+    DATASETS_XUSERS_FACETS = "datasets-x-users-facets"
+    DATASETS_XUSERS_ITEM = "datasets-x-users-item"
+    DATASETS_XUSERS_SEARCH = "datasets-x-users-search"
     DISCOGS_ARTIST = "discogs-artist"
     DISCOGS_ARTIST_RELEASES = "discogs-artist-releases"
     DISCOGS_LABEL = "discogs-label"
@@ -30466,6 +32296,8 @@ module Crawlora
     GIT_HUB_GITHUB_TRENDING_DEVELOPERS = "github-trending-developers"
     GIT_HUB_GITHUB_USER = "github-user"
     GIT_HUB_GITHUB_USER_EVENTS = "github-user-events"
+    GIT_HUB_GITHUB_USER_FOLLOWERS = "github-user-followers"
+    GIT_HUB_GITHUB_USER_FOLLOWING = "github-user-following"
     GIT_HUB_GITHUB_USER_PINNED = "github-user-pinned"
     GIT_HUB_GITHUB_USER_REPOS = "github-user-repos"
     GOODREADS_AUTHOR = "goodreads-author"
@@ -30551,8 +32383,19 @@ module Crawlora
     JOBS_HIRING_SIGNALS = "jobs-hiring-signals"
     JOBS_LEVER_POSTING = "jobs-lever-posting"
     JOBS_LEVER_POSTINGS = "jobs-lever-postings"
+    JOBS_ORACLE_BOARD = "jobs-oracle-board"
+    JOBS_ORACLE_JOB = "jobs-oracle-job"
+    JOBS_PERSONIO_FEED = "jobs-personio-feed"
+    JOBS_RECRUITEE_OFFER = "jobs-recruitee-offer"
+    JOBS_RECRUITEE_OFFERS = "jobs-recruitee-offers"
+    JOBS_RIPPLING_BOARD = "jobs-rippling-board"
+    JOBS_RIPPLING_JOB = "jobs-rippling-job"
     JOBS_SMARTRECRUITERS_POSTING = "jobs-smartrecruiters-posting"
     JOBS_SMARTRECRUITERS_POSTINGS = "jobs-smartrecruiters-postings"
+    JOBS_TEAMTAILOR_JOBS = "jobs-teamtailor-jobs"
+    JOBS_UKG_BOARD = "jobs-ukg-board"
+    JOBS_WORKABLE_POSTING = "jobs-workable-posting"
+    JOBS_WORKABLE_POSTINGS = "jobs-workable-postings"
     JOBS_WORKDAY_BOARD = "jobs-workday-board"
     JOBS_WORKDAY_JOB = "jobs-workday-job"
     JUST_WATCH_JUSTWATCH_AGE_CERTIFICATIONS = "justwatch-age-certifications"
@@ -30870,6 +32713,18 @@ module Crawlora
     STEAM_TAGS = "steam-tags"
     STEAM_TAGS_LIST = "steam-tags-list"
     STEAM_TOP_SELLERS = "steam-top-sellers"
+    TCDB_BIRTHDAYS = "tcdb-birthdays"
+    TCDB_CARD = "tcdb-card"
+    TCDB_CARD_OF_THE_DAY = "tcdb-card-of-the-day"
+    TCDB_COMPANIES = "tcdb-companies"
+    TCDB_PERSON = "tcdb-person"
+    TCDB_RELEASES = "tcdb-releases"
+    TCDB_SEARCH = "tcdb-search"
+    TCDB_SET = "tcdb-set"
+    TCDB_SETS = "tcdb-sets"
+    TCDB_TAGGED = "tcdb-tagged"
+    TCDB_TEAM = "tcdb-team"
+    TCDB_TOP_SETS = "tcdb-top-sets"
     TIKTOK_CATEGORY = "tiktok-category"
     TIKTOK_CHALLENGE = "tiktok-challenge"
     TIKTOK_CHALLENGE_LIST = "tiktok-challenge-list"
