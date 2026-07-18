@@ -7232,6 +7232,27 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "datasets-jobs-company-item" => {
+      "id" => "datasets-jobs-company-item",
+      "method" => "GET",
+      "path" => "/datasets/jobs/companies/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "datasets-jobs-facets" => {
       "id" => "datasets-jobs-facets",
       "method" => "GET",
@@ -7277,6 +7298,64 @@ module Crawlora
       "security" => [
         "ApiKeyAuth"
       ]
+    },
+    "datasets-jobs-nearby" => {
+      "id" => "datasets-jobs-nearby",
+      "method" => "GET",
+      "path" => "/datasets/jobs/nearby",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "lat",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "lon",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "radius_km",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "provider",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "include_closed",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
     },
     "datasets-jobs-search" => {
       "id" => "datasets-jobs-search",
@@ -8592,6 +8671,16 @@ module Crawlora
           "type" => "string"
         },
         {
+          "name" => "reporting_currency",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "has_financials",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
           "name" => "min_revenue",
           "in" => "query",
           "type" => "number"
@@ -8770,6 +8859,16 @@ module Crawlora
           "name" => "entity_type",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "reporting_currency",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "has_financials",
+          "in" => "query",
+          "type" => "boolean"
         },
         {
           "name" => "min_revenue",
@@ -14602,6 +14701,97 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "jobs-eightfold-board" => {
+      "id" => "jobs-eightfold-board",
+      "method" => "GET",
+      "path" => "/jobs/eightfold/board",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tenant",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "domain",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "jobs-eightfold-job" => {
+      "id" => "jobs-eightfold-job",
+      "method" => "GET",
+      "path" => "/jobs/eightfold/job",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tenant",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "domain",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "jobs-greenhouse-board" => {
       "id" => "jobs-greenhouse-board",
       "method" => "GET",
@@ -14688,7 +14878,9 @@ module Crawlora
             "personio",
             "teamtailor",
             "oracle",
-            "ukg"
+            "ukg",
+            "icims",
+            "eightfold"
           ]
         },
         {
@@ -14728,6 +14920,95 @@ module Crawlora
         },
         {
           "name" => "board",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "domain",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jobs-icims-board" => {
+      "id" => "jobs-icims-board",
+      "method" => "GET",
+      "path" => "/jobs/icims/board",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "domain",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "keywords",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "jobs-icims-job" => {
+      "id" => "jobs-icims-job",
+      "method" => "GET",
+      "path" => "/jobs/icims/job",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "domain",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "lang",
           "in" => "query",
           "type" => "string"
         }
@@ -26959,7 +27240,9 @@ module Crawlora
       "produces" => [
         "application/json"
       ],
-      "security" => []
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "tcdb-card" => {
       "id" => "tcdb-card",
@@ -26997,7 +27280,9 @@ module Crawlora
       "produces" => [
         "application/json"
       ],
-      "security" => []
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "tcdb-card-of-the-day" => {
       "id" => "tcdb-card-of-the-day",
@@ -27025,7 +27310,9 @@ module Crawlora
       "produces" => [
         "application/json"
       ],
-      "security" => [],
+      "security" => [
+        "ApiKeyAuth"
+      ],
       "paginatable" => true
     },
     "tcdb-companies" => {
@@ -27049,7 +27336,9 @@ module Crawlora
       "produces" => [
         "application/json"
       ],
-      "security" => []
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "tcdb-person" => {
       "id" => "tcdb-person",
@@ -27087,7 +27376,9 @@ module Crawlora
       "produces" => [
         "application/json"
       ],
-      "security" => []
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "tcdb-releases" => {
       "id" => "tcdb-releases",
@@ -27110,7 +27401,9 @@ module Crawlora
       "produces" => [
         "application/json"
       ],
-      "security" => []
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "tcdb-search" => {
       "id" => "tcdb-search",
@@ -27162,7 +27455,9 @@ module Crawlora
       "produces" => [
         "application/json"
       ],
-      "security" => []
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "tcdb-set" => {
       "id" => "tcdb-set",
@@ -27200,7 +27495,9 @@ module Crawlora
       "produces" => [
         "application/json"
       ],
-      "security" => []
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "tcdb-sets" => {
       "id" => "tcdb-sets",
@@ -27253,7 +27550,9 @@ module Crawlora
       "produces" => [
         "application/json"
       ],
-      "security" => []
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "tcdb-tagged" => {
       "id" => "tcdb-tagged",
@@ -27319,7 +27618,9 @@ module Crawlora
       "produces" => [
         "application/json"
       ],
-      "security" => [],
+      "security" => [
+        "ApiKeyAuth"
+      ],
       "paginatable" => true
     },
     "tcdb-team" => {
@@ -27358,7 +27659,9 @@ module Crawlora
       "produces" => [
         "application/json"
       ],
-      "security" => []
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "tcdb-top-sets" => {
       "id" => "tcdb-top-sets",
@@ -27381,7 +27684,9 @@ module Crawlora
       "produces" => [
         "application/json"
       ],
-      "security" => []
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "tiktok-category" => {
       "id" => "tiktok-category",
@@ -31335,8 +31640,10 @@ module Crawlora
       "housing_markets_item" => "datasets-housing-markets-item",
       "housing_markets_search" => "datasets-housing-markets-search",
       "jobs_companies" => "datasets-jobs-companies",
+      "jobs_company_item" => "datasets-jobs-company-item",
       "jobs_facets" => "datasets-jobs-facets",
       "jobs_item" => "datasets-jobs-item",
+      "jobs_nearby" => "datasets-jobs-nearby",
       "jobs_search" => "datasets-jobs-search",
       "journalists_facets" => "datasets-journalists-facets",
       "journalists_item" => "datasets-journalists-item",
@@ -31525,9 +31832,13 @@ module Crawlora
     "jobs" => {
       "ashby_board" => "jobs-ashby-board",
       "company_search" => "jobs-company-search",
+      "eightfold_board" => "jobs-eightfold-board",
+      "eightfold_job" => "jobs-eightfold-job",
       "greenhouse_board" => "jobs-greenhouse-board",
       "greenhouse_job" => "jobs-greenhouse-job",
       "hiring_signals" => "jobs-hiring-signals",
+      "icims_board" => "jobs-icims-board",
+      "icims_job" => "jobs-icims-job",
       "lever_posting" => "jobs-lever-posting",
       "lever_postings" => "jobs-lever-postings",
       "oracle_board" => "jobs-oracle-board",
@@ -32069,7 +32380,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 776
+  OPERATION_COUNT = 782
 
   module OperationId
     AIRBNB_HOST = "airbnb-host"
@@ -32209,8 +32520,10 @@ module Crawlora
     DATASETS_HOUSING_MARKETS_ITEM = "datasets-housing-markets-item"
     DATASETS_HOUSING_MARKETS_SEARCH = "datasets-housing-markets-search"
     DATASETS_JOBS_COMPANIES = "datasets-jobs-companies"
+    DATASETS_JOBS_COMPANY_ITEM = "datasets-jobs-company-item"
     DATASETS_JOBS_FACETS = "datasets-jobs-facets"
     DATASETS_JOBS_ITEM = "datasets-jobs-item"
+    DATASETS_JOBS_NEARBY = "datasets-jobs-nearby"
     DATASETS_JOBS_SEARCH = "datasets-jobs-search"
     DATASETS_JOURNALISTS_FACETS = "datasets-journalists-facets"
     DATASETS_JOURNALISTS_ITEM = "datasets-journalists-item"
@@ -32378,9 +32691,13 @@ module Crawlora
     INSTAGRAM_REELS = "instagram-reels"
     JOBS_ASHBY_BOARD = "jobs-ashby-board"
     JOBS_COMPANY_SEARCH = "jobs-company-search"
+    JOBS_EIGHTFOLD_BOARD = "jobs-eightfold-board"
+    JOBS_EIGHTFOLD_JOB = "jobs-eightfold-job"
     JOBS_GREENHOUSE_BOARD = "jobs-greenhouse-board"
     JOBS_GREENHOUSE_JOB = "jobs-greenhouse-job"
     JOBS_HIRING_SIGNALS = "jobs-hiring-signals"
+    JOBS_ICIMS_BOARD = "jobs-icims-board"
+    JOBS_ICIMS_JOB = "jobs-icims-job"
     JOBS_LEVER_POSTING = "jobs-lever-posting"
     JOBS_LEVER_POSTINGS = "jobs-lever-postings"
     JOBS_ORACLE_BOARD = "jobs-oracle-board"
