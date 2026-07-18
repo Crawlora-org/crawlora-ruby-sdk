@@ -7190,7 +7190,23 @@ module Crawlora
         {
           "name" => "provider",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "greenhouse",
+            "lever",
+            "ashby",
+            "workday",
+            "smartrecruiters",
+            "workable",
+            "recruitee",
+            "rippling",
+            "personio",
+            "teamtailor",
+            "oracle",
+            "ukg",
+            "icims",
+            "eightfold"
+          ]
         },
         {
           "name" => "status",
@@ -7325,7 +7341,23 @@ module Crawlora
         {
           "name" => "provider",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "greenhouse",
+            "lever",
+            "ashby",
+            "workday",
+            "smartrecruiters",
+            "workable",
+            "recruitee",
+            "rippling",
+            "personio",
+            "teamtailor",
+            "oracle",
+            "ukg",
+            "icims",
+            "eightfold"
+          ]
         },
         {
           "name" => "include_closed",
@@ -7376,7 +7408,23 @@ module Crawlora
         {
           "name" => "provider",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "greenhouse",
+            "lever",
+            "ashby",
+            "workday",
+            "smartrecruiters",
+            "workable",
+            "recruitee",
+            "rippling",
+            "personio",
+            "teamtailor",
+            "oracle",
+            "ukg",
+            "icims",
+            "eightfold"
+          ]
         },
         {
           "name" => "department",
