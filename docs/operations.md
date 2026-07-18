@@ -2,7 +2,7 @@
 
 Generated from `openapi/public.json`. Deprecated, admin, and internal operations are excluded from this SDK contract.
 
-Total operations: `782`
+Total operations: `784`
 
 | Group | SDK method | Operation ID | HTTP | Params | Auth | Response | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -670,6 +670,8 @@ Total operations: `782`
 | tcdb | `tcdb.tagged` | `tcdb-tagged` | `GET /tcdb/tagged` | `id` (query String)<br>`path` (query String)<br>`url` (query String)<br>`sport` (query "Baseball" \| "Basketball" \| "Boxing" \| "Cricket" \| "Football" \| "Gaming" \| "Golf" \| "Hockey" \| "Misc Sports" \| "MMA" \| "Multi-Sport" \| "Non-Sport" \| "Racing" \| "Soccer" \| "Tennis" \| "Wrestling")<br>`page` (query Integer)<br>`limit` (query Integer) | `ApiKeyAuth` | `TcdbTaggedResponse` |  |
 | tcdb | `tcdb.team` | `tcdb-team` | `GET /tcdb/team` | `id` (query String)<br>`path` (query String)<br>`url` (query String)<br>`limit` (query Integer) | `ApiKeyAuth` | `TcdbTeamResponse` |  |
 | tcdb | `tcdb.top_sets` | `tcdb-top-sets` | `GET /tcdb/top-sets` | `limit` (query Integer) | `ApiKeyAuth` | `TcdbTopSetsResponse` |  |
+| threads | `threads.post` | `threads-post` | `GET /threads/post/{username}/{code}` | `username` (path String required)<br>`code` (path String required) | `ApiKeyAuth` | `ThreadsPostResponse` |  |
+| threads | `threads.profile` | `threads-profile` | `GET /threads/profile/{username}` | `username` (path String required) | `ApiKeyAuth` | `ThreadsProfileResponse` |  |
 | tiktok | `tiktok.category` | `tiktok-category` | `GET /tiktok/category` | none | `ApiKeyAuth` | `TiktokCategoryResponse` |  |
 | tiktok | `tiktok.video_comments` | `tiktok-video-comments` | `GET /tiktok/comments` | `aweme_id` (query String required)<br>`cursor` (query Integer) | `ApiKeyAuth` | `TiktokVideoCommentsResponse` |  |
 | tiktok | `tiktok.explore` | `tiktok-explore` | `GET /tiktok/explore/{id}` | `id` (path Integer required) | `ApiKeyAuth` | `TiktokExploreResponse` |  |

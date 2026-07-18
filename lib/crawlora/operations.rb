@@ -27688,6 +27688,45 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "threads-post" => {
+      "id" => "threads-post",
+      "method" => "GET",
+      "path" => "/threads/post/{username}/{code}",
+      "pathParams" => [
+        "username",
+        "code"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "threads-profile" => {
+      "id" => "threads-profile",
+      "method" => "GET",
+      "path" => "/threads/profile/{username}",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "tiktok-category" => {
       "id" => "tiktok-category",
       "method" => "GET",
@@ -32236,6 +32275,10 @@ module Crawlora
       "team" => "tcdb-team",
       "top_sets" => "tcdb-top-sets"
     },
+    "threads" => {
+      "post" => "threads-post",
+      "profile" => "threads-profile"
+    },
     "tiktok" => {
       "category" => "tiktok-category",
       "video_comments" => "tiktok-video-comments",
@@ -32380,7 +32423,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 782
+  OPERATION_COUNT = 784
 
   module OperationId
     AIRBNB_HOST = "airbnb-host"
@@ -33042,6 +33085,8 @@ module Crawlora
     TCDB_TAGGED = "tcdb-tagged"
     TCDB_TEAM = "tcdb-team"
     TCDB_TOP_SETS = "tcdb-top-sets"
+    THREADS_POST = "threads-post"
+    THREADS_PROFILE = "threads-profile"
     TIKTOK_CATEGORY = "tiktok-category"
     TIKTOK_CHALLENGE = "tiktok-challenge"
     TIKTOK_CHALLENGE_LIST = "tiktok-challenge-list"
