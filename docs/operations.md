@@ -2,7 +2,7 @@
 
 Generated from `openapi/public.json`. Deprecated, admin, and internal operations are excluded from this SDK contract.
 
-Total operations: `784`
+Total operations: `787`
 
 | Group | SDK method | Operation ID | HTTP | Params | Auth | Response | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -671,7 +671,10 @@ Total operations: `784`
 | tcdb | `tcdb.team` | `tcdb-team` | `GET /tcdb/team` | `id` (query String)<br>`path` (query String)<br>`url` (query String)<br>`limit` (query Integer) | `ApiKeyAuth` | `TcdbTeamResponse` |  |
 | tcdb | `tcdb.top_sets` | `tcdb-top-sets` | `GET /tcdb/top-sets` | `limit` (query Integer) | `ApiKeyAuth` | `TcdbTopSetsResponse` |  |
 | threads | `threads.post` | `threads-post` | `GET /threads/post/{username}/{code}` | `username` (path String required)<br>`code` (path String required) | `ApiKeyAuth` | `ThreadsPostResponse` |  |
+| threads | `threads.post_replies` | `threads-post-replies` | `GET /threads/post/{username}/{code}/replies` | `username` (path String required)<br>`code` (path String required) | `ApiKeyAuth` | `ThreadsPostRepliesResponse` |  |
 | threads | `threads.profile` | `threads-profile` | `GET /threads/profile/{username}` | `username` (path String required) | `ApiKeyAuth` | `ThreadsProfileResponse` |  |
+| threads | `threads.profile_posts` | `threads-profile-posts` | `GET /threads/profile/{username}/posts` | `username` (path String required)<br>`cursor` (query String) | `ApiKeyAuth` | `ThreadsProfilePostsResponse` |  |
+| threads | `threads.search` | `threads-search` | `GET /threads/search` | `q` (query String required) | `ApiKeyAuth` | `ThreadsSearchResponse` |  |
 | tiktok | `tiktok.category` | `tiktok-category` | `GET /tiktok/category` | none | `ApiKeyAuth` | `TiktokCategoryResponse` |  |
 | tiktok | `tiktok.video_comments` | `tiktok-video-comments` | `GET /tiktok/comments` | `aweme_id` (query String required)<br>`cursor` (query Integer) | `ApiKeyAuth` | `TiktokVideoCommentsResponse` |  |
 | tiktok | `tiktok.explore` | `tiktok-explore` | `GET /tiktok/explore/{id}` | `id` (path Integer required) | `ApiKeyAuth` | `TiktokExploreResponse` |  |

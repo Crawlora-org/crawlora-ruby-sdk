@@ -31,6 +31,9 @@ brand = client.brand.retrieve(domain: "stripe.com")
 ```ruby
 profile = client.threads.profile(username: "zuck")
 post = client.threads.post(username: "zuck", code: "DakyAavlKLZ")
+results = client.threads.search(q: "openai")
+posts = client.threads.profile_posts(username: "zuck")
+replies = client.threads.post_replies(username: "zuck", code: "DakyAavlKLZ")
 ```
 
 ## Software, Reviews, And Market Datasets
