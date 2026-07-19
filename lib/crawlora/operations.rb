@@ -5669,6 +5669,249 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "datasets-boxofficemojo-facets" => {
+      "id" => "datasets-boxofficemojo-facets",
+      "method" => "GET",
+      "path" => "/datasets/boxofficemojo/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "title_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "lifetime_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "gross_band",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "franchise",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "brand",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "genre",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "in_lifetime_top_1000",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_worldwide",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_worldwide",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_domestic",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_foreign_share",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_domestic_share",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "hydrated",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "is_billion_dollar",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-boxofficemojo-item" => {
+      "id" => "datasets-boxofficemojo-item",
+      "method" => "GET",
+      "path" => "/datasets/boxofficemojo/items/{title_id}",
+      "pathParams" => [
+        "title_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-boxofficemojo-search" => {
+      "id" => "datasets-boxofficemojo-search",
+      "method" => "GET",
+      "path" => "/datasets/boxofficemojo/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "title_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "lifetime_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "gross_band",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "franchise",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "brand",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "genre",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "in_lifetime_top_1000",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "hydrated",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "is_billion_dollar",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_worldwide",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_worldwide",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_domestic",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_foreign_share",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_domestic_share",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "datasets-chrome-extensions-changes" => {
       "id" => "datasets-chrome-extensions-changes",
       "method" => "GET",
@@ -31780,6 +32023,9 @@ module Crawlora
       "apps_charts_search" => "datasets-apps-charts-search",
       "apps_reviews_search" => "datasets-apps-reviews-search",
       "apps_search" => "datasets-apps-search",
+      "boxofficemojo_facets" => "datasets-boxofficemojo-facets",
+      "boxofficemojo_item" => "datasets-boxofficemojo-item",
+      "boxofficemojo_search" => "datasets-boxofficemojo-search",
       "chrome_extensions_changes" => "datasets-chrome-extensions-changes",
       "chrome_extensions_facets" => "datasets-chrome-extensions-facets",
       "chrome_extensions_history" => "datasets-chrome-extensions-history",
@@ -32547,7 +32793,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 787
+  OPERATION_COUNT = 790
 
   module OperationId
     AIRBNB_HOST = "airbnb-host"
@@ -32667,6 +32913,9 @@ module Crawlora
     DATASETS_APPS_CHARTS_SEARCH = "datasets-apps-charts-search"
     DATASETS_APPS_REVIEWS_SEARCH = "datasets-apps-reviews-search"
     DATASETS_APPS_SEARCH = "datasets-apps-search"
+    DATASETS_BOXOFFICEMOJO_FACETS = "datasets-boxofficemojo-facets"
+    DATASETS_BOXOFFICEMOJO_ITEM = "datasets-boxofficemojo-item"
+    DATASETS_BOXOFFICEMOJO_SEARCH = "datasets-boxofficemojo-search"
     DATASETS_CHROME_EXTENSIONS_CHANGES = "datasets-chrome-extensions-changes"
     DATASETS_CHROME_EXTENSIONS_FACETS = "datasets-chrome-extensions-facets"
     DATASETS_CHROME_EXTENSIONS_HISTORY = "datasets-chrome-extensions-history"
