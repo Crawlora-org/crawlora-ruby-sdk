@@ -421,12 +421,26 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "TRENDING_DESC",
+            "POPULARITY_DESC",
+            "SCORE_DESC",
+            "FAVOURITES_DESC",
+            "START_DATE_DESC",
+            "UPDATED_AT_DESC"
+          ]
         },
         {
           "name" => "season",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "WINTER",
+            "SPRING",
+            "SUMMER",
+            "FALL"
+          ]
         },
         {
           "name" => "season_year",
@@ -436,7 +450,16 @@ module Crawlora
         {
           "name" => "format",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "TV",
+            "TV_SHORT",
+            "MOVIE",
+            "SPECIAL",
+            "OVA",
+            "ONA",
+            "MUSIC"
+          ]
         },
         {
           "name" => "genre",
@@ -446,7 +469,14 @@ module Crawlora
         {
           "name" => "status",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "FINISHED",
+            "RELEASING",
+            "NOT_YET_RELEASED",
+            "CANCELLED",
+            "HIATUS"
+          ]
         },
         {
           "name" => "page",
@@ -488,7 +518,15 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "SEARCH_MATCH",
+            "POPULARITY_DESC",
+            "SCORE_DESC",
+            "TRENDING_DESC",
+            "FAVOURITES_DESC",
+            "START_DATE_DESC"
+          ]
         },
         {
           "name" => "page",
@@ -769,6 +807,16 @@ module Crawlora
           "name" => "lang",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
         }
       ],
       "formParams" => [],
@@ -782,7 +830,8 @@ module Crawlora
       ],
       "security" => [
         "ApiKeyAuth"
-      ]
+      ],
+      "paginatable" => true
     },
     "apple-books-audiobook-similar" => {
       "id" => "apple-books-audiobook-similar",
@@ -897,6 +946,16 @@ module Crawlora
           "name" => "lang",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
         }
       ],
       "formParams" => [],
@@ -910,7 +969,8 @@ module Crawlora
       ],
       "security" => [
         "ApiKeyAuth"
-      ]
+      ],
+      "paginatable" => true
     },
     "apple-books-book-similar" => {
       "id" => "apple-books-book-similar",
@@ -953,7 +1013,11 @@ module Crawlora
         {
           "name" => "collection",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "top-free",
+            "top-paid"
+          ]
         },
         {
           "name" => "genre",
@@ -1103,6 +1167,51 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "apple-podcasts-charts-rankings" => {
+      "id" => "apple-podcasts-charts-rankings",
+      "method" => "GET",
+      "path" => "/apple-podcasts/charts/rankings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "chart",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "genre",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "apple-podcasts-episodes-search" => {
       "id" => "apple-podcasts-episodes-search",
       "method" => "GET",
@@ -1149,6 +1258,31 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "apple-podcasts-new" => {
+      "id" => "apple-podcasts-new",
+      "method" => "GET",
+      "path" => "/apple-podcasts/new",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "apple-podcasts-search" => {
       "id" => "apple-podcasts-search",
@@ -1266,6 +1400,38 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "apple-podcasts-show-related" => {
+      "id" => "apple-podcasts-show-related",
+      "method" => "GET",
+      "path" => "/apple-podcasts/show/{id}/related",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "appstore-app" => {
       "id" => "appstore-app",
       "method" => "GET",
@@ -1296,6 +1462,11 @@ module Crawlora
           "name" => "ratings",
           "in" => "query",
           "type" => "boolean"
+        },
+        {
+          "name" => "platforms",
+          "in" => "query",
+          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -1319,6 +1490,109 @@ module Crawlora
         "dev_id"
       ],
       "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "appstore-editorial" => {
+      "id" => "appstore-editorial",
+      "method" => "GET",
+      "path" => "/appstore/editorial",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "device",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "iphone",
+            "ipad",
+            "mac",
+            "vision",
+            "watch",
+            "tv"
+          ]
+        },
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "main",
+            "arcade"
+          ]
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "appstore-editorial-category" => {
+      "id" => "appstore-editorial-category",
+      "method" => "GET",
+      "path" => "/appstore/editorial/category",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "device",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "iphone",
+            "ipad",
+            "mac",
+            "vision",
+            "watch",
+            "tv"
+          ]
+        },
+        {
+          "name" => "category_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
         {
           "name" => "country",
           "in" => "query",
@@ -1556,6 +1830,16 @@ module Crawlora
           "name" => "ids_only",
           "in" => "query",
           "type" => "boolean"
+        },
+        {
+          "name" => "platform",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "phone",
+            "pad",
+            "mac"
+          ]
         }
       ],
       "formParams" => [],
@@ -5788,12 +6072,34 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "country",
+            "market",
+            "currency",
+            "superhost",
+            "guest_favorite",
+            "rating_band",
+            "review_band",
+            "admin1",
+            "locality",
+            "room_type",
+            "property_type",
+            "amenities"
+          ]
         },
         {
           "name" => "group_by",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "country",
+            "market",
+            "admin1",
+            "locality",
+            "room_type",
+            "property_type"
+          ]
         },
         {
           "name" => "country",
@@ -5947,7 +6253,15 @@ module Crawlora
         {
           "name" => "group_by",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "country",
+            "market",
+            "admin1",
+            "locality",
+            "room_type",
+            "property_type"
+          ]
         },
         {
           "name" => "country",
@@ -5992,7 +6306,180 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "listings_desc",
+            "superhost_pct_desc",
+            "rating_desc",
+            "key_asc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-apple-podcasts-shows-facets" => {
+      "id" => "datasets-apple-podcasts-shows-facets",
+      "method" => "GET",
+      "path" => "/datasets/apple-podcasts-shows/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "genre",
+            "genre_id",
+            "country",
+            "content_advisory_rating",
+            "run_id"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "genre",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "genre_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "explicitness",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "run_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_track_count",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-apple-podcasts-shows-item" => {
+      "id" => "datasets-apple-podcasts-shows-item",
+      "method" => "GET",
+      "path" => "/datasets/apple-podcasts-shows/items/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-apple-podcasts-shows-search" => {
+      "id" => "datasets-apple-podcasts-shows-search",
+      "method" => "GET",
+      "path" => "/datasets/apple-podcasts-shows/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "genre",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "genre_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "explicitness",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "run_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_track_count",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "popularity",
+            "track_count_desc",
+            "release_desc",
+            "title_asc"
+          ]
         },
         {
           "name" => "page",
@@ -6033,10 +6520,25 @@ module Crawlora
         {
           "name" => "store",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "ios",
+            "android"
+          ]
         },
         {
           "name" => "chart_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "top_free",
+            "top_paid",
+            "top_grossing",
+            "new"
+          ]
+        },
+        {
+          "name" => "platform",
           "in" => "query",
           "type" => "string"
         },
@@ -6068,7 +6570,12 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "rank",
+            "rank_desc",
+            "date_desc"
+          ]
         },
         {
           "name" => "page",
@@ -6109,7 +6616,11 @@ module Crawlora
         {
           "name" => "store",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "ios",
+            "android"
+          ]
         },
         {
           "name" => "app_id",
@@ -6129,7 +6640,13 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "recent",
+            "score_desc",
+            "score_asc",
+            "helpful_desc"
+          ]
         },
         {
           "name" => "page",
@@ -6170,7 +6687,18 @@ module Crawlora
         {
           "name" => "store",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "ios",
+            "android",
+            "both"
+          ]
+        },
+        {
+          "name" => "platforms",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
         },
         {
           "name" => "category",
@@ -6205,7 +6733,15 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "rating_desc",
+            "reviews_desc",
+            "installs_desc",
+            "updated_at_desc",
+            "popularity_desc"
+          ]
         },
         {
           "name" => "page",
@@ -6242,7 +6778,18 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "gross_band",
+            "years_active",
+            "lifetime_year",
+            "franchise_names",
+            "brand_names",
+            "genre_names",
+            "hydrated",
+            "is_billion_dollar",
+            "in_lifetime_top_1000_ww"
+          ]
         },
         {
           "name" => "q",
@@ -6388,7 +6935,15 @@ module Crawlora
         {
           "name" => "gross_band",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "under_50m",
+            "50_100m",
+            "100_250m",
+            "250_500m",
+            "500m_1b",
+            "over_1b"
+          ]
         },
         {
           "name" => "franchise",
@@ -6448,7 +7003,16 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "worldwide_desc",
+            "domestic_desc",
+            "peak_worldwide_desc",
+            "lifetime_rank_asc",
+            "year_desc",
+            "year_asc"
+          ]
         },
         {
           "name" => "page",
@@ -6484,7 +7048,17 @@ module Crawlora
         {
           "name" => "change_type",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "users",
+            "rating",
+            "rating_count",
+            "version",
+            "developer",
+            "permissions",
+            "privacy",
+            "status"
+          ]
         },
         {
           "name" => "limit",
@@ -6513,7 +7087,18 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "item_type",
+            "category",
+            "developer",
+            "developer_email",
+            "manifest_version",
+            "permission",
+            "status",
+            "collects_data",
+            "has_broad_host_access"
+          ]
         },
         {
           "name" => "q",
@@ -6523,7 +7108,13 @@ module Crawlora
         {
           "name" => "item_type",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "extension",
+            "theme",
+            "app",
+            "unknown"
+          ]
         },
         {
           "name" => "category",
@@ -6548,12 +7139,20 @@ module Crawlora
         {
           "name" => "status",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "active",
+            "removed"
+          ]
         },
         {
           "name" => "manifest_version",
           "in" => "query",
-          "type" => "integer"
+          "type" => "integer",
+          "enum" => [
+            "2",
+            "3"
+          ]
         },
         {
           "name" => "collects_data",
@@ -6583,7 +7182,15 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "users_desc",
+            "rating_desc",
+            "reviews_desc",
+            "updated_desc",
+            "trending_desc"
+          ]
         }
       ],
       "formParams" => [],
@@ -6660,7 +7267,12 @@ module Crawlora
         {
           "name" => "days",
           "in" => "query",
-          "type" => "integer"
+          "type" => "integer",
+          "enum" => [
+            "7",
+            "30",
+            "90"
+          ]
         },
         {
           "name" => "limit",
@@ -6693,7 +7305,13 @@ module Crawlora
         {
           "name" => "item_type",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "extension",
+            "theme",
+            "app",
+            "unknown"
+          ]
         },
         {
           "name" => "category",
@@ -6718,12 +7336,20 @@ module Crawlora
         {
           "name" => "status",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "active",
+            "removed"
+          ]
         },
         {
           "name" => "manifest_version",
           "in" => "query",
-          "type" => "integer"
+          "type" => "integer",
+          "enum" => [
+            "2",
+            "3"
+          ]
         },
         {
           "name" => "collects_data",
@@ -6753,7 +7379,15 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "users_desc",
+            "rating_desc",
+            "reviews_desc",
+            "updated_desc",
+            "trending_desc"
+          ]
         },
         {
           "name" => "page",
@@ -6792,7 +7426,13 @@ module Crawlora
         {
           "name" => "item_type",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "extension",
+            "theme",
+            "app",
+            "unknown"
+          ]
         },
         {
           "name" => "category",
@@ -6817,12 +7457,20 @@ module Crawlora
         {
           "name" => "status",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "active",
+            "removed"
+          ]
         },
         {
           "name" => "manifest_version",
           "in" => "query",
-          "type" => "integer"
+          "type" => "integer",
+          "enum" => [
+            "2",
+            "3"
+          ]
         },
         {
           "name" => "collects_data",
@@ -6921,7 +7569,13 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "followers_desc",
+            "engagement_desc",
+            "likes_desc",
+            "relevance"
+          ]
         },
         {
           "name" => "page",
@@ -6958,7 +7612,26 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "influence_tier",
+            "type",
+            "country",
+            "country_code",
+            "state",
+            "city",
+            "domains",
+            "company",
+            "reachable",
+            "has_email",
+            "has_twitter",
+            "has_blog",
+            "active_90d",
+            "hireable",
+            "is_org",
+            "is_bot",
+            "is_suspected_automation"
+          ]
         },
         {
           "name" => "q",
@@ -6978,7 +7651,14 @@ module Crawlora
         {
           "name" => "influence_tier",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "nano",
+            "micro",
+            "mid",
+            "macro",
+            "mega"
+          ]
         },
         {
           "name" => "country",
@@ -7098,7 +7778,15 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "rank_score_desc",
+            "followers_desc",
+            "account_age_desc",
+            "account_age_asc",
+            "distance_asc"
+          ]
         }
       ],
       "formParams" => [],
@@ -7162,7 +7850,14 @@ module Crawlora
         {
           "name" => "influence_tier",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "nano",
+            "micro",
+            "mid",
+            "macro",
+            "mega"
+          ]
         },
         {
           "name" => "reachable",
@@ -7223,7 +7918,14 @@ module Crawlora
         {
           "name" => "influence_tier",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "nano",
+            "micro",
+            "mid",
+            "macro",
+            "mega"
+          ]
         },
         {
           "name" => "country",
@@ -7343,7 +8045,15 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "rank_score_desc",
+            "followers_desc",
+            "account_age_desc",
+            "account_age_asc",
+            "distance_asc"
+          ]
         },
         {
           "name" => "page",
@@ -7380,7 +8090,11 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "genres",
+            "run_id"
+          ]
         },
         {
           "name" => "q",
@@ -7486,7 +8200,13 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "rating_desc",
+            "reviews_desc",
+            "name_asc"
+          ]
         },
         {
           "name" => "page",
@@ -7523,7 +8243,18 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "genres",
+            "format",
+            "language",
+            "publisher",
+            "primary_author",
+            "primary_author_id",
+            "series_name",
+            "publication_year",
+            "run_id"
+          ]
         },
         {
           "name" => "q",
@@ -7739,7 +8470,17 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "rating_desc",
+            "reviews_desc",
+            "publication_desc",
+            "publication_asc",
+            "pages_desc",
+            "pages_asc",
+            "title_asc"
+          ]
         },
         {
           "name" => "page",
@@ -7776,7 +8517,16 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "category",
+            "country",
+            "state",
+            "county",
+            "city",
+            "town",
+            "website_status"
+          ]
         },
         {
           "name" => "q",
@@ -7856,7 +8606,14 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "updated_at_desc",
+            "rating_desc",
+            "review_count_desc",
+            "distance_asc"
+          ]
         }
       ],
       "formParams" => [],
@@ -8041,7 +8798,14 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "updated_at_desc",
+            "rating_desc",
+            "review_count_desc",
+            "distance_asc"
+          ]
         },
         {
           "name" => "page",
@@ -8078,7 +8842,17 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "region_type",
+            "state_code",
+            "property_type",
+            "parent_metro",
+            "parent_metro_code",
+            "income_vintage",
+            "is_latest",
+            "period_begin"
+          ]
         },
         {
           "name" => "q",
@@ -8088,7 +8862,14 @@ module Crawlora
         {
           "name" => "region_type",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "national",
+            "metro",
+            "county",
+            "city",
+            "zip"
+          ]
         },
         {
           "name" => "state_code",
@@ -8251,7 +9032,14 @@ module Crawlora
         {
           "name" => "region_type",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "national",
+            "metro",
+            "county",
+            "city",
+            "zip"
+          ]
         },
         {
           "name" => "state_code",
@@ -8351,7 +9139,23 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "price_desc",
+            "price_asc",
+            "list_price_desc",
+            "list_price_asc",
+            "price_to_income_desc",
+            "price_to_income_asc",
+            "salary_to_buy_desc",
+            "salary_to_buy_asc",
+            "dom_asc",
+            "dom_desc",
+            "inventory_desc",
+            "homes_sold_desc",
+            "period_desc"
+          ]
         },
         {
           "name" => "page",
@@ -8415,7 +9219,15 @@ module Crawlora
         {
           "name" => "status",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "active",
+            "empty",
+            "gone",
+            "blocked",
+            "pending",
+            "invalid"
+          ]
         },
         {
           "name" => "min_open_roles",
@@ -8425,7 +9237,12 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "open_desc",
+            "company_asc",
+            "crawled_desc"
+          ]
         },
         {
           "name" => "page",
@@ -8645,6 +9462,21 @@ module Crawlora
           "type" => "string"
         },
         {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
           "name" => "employment_type",
           "in" => "query",
           "type" => "string"
@@ -8653,6 +9485,16 @@ module Crawlora
           "name" => "remote",
           "in" => "query",
           "type" => "boolean"
+        },
+        {
+          "name" => "workplace_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "onsite",
+            "hybrid",
+            "remote"
+          ]
         },
         {
           "name" => "include_closed",
@@ -8677,7 +9519,12 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "posted_desc",
+            "company_asc"
+          ]
         },
         {
           "name" => "page",
@@ -8714,7 +9561,13 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "outlet",
+            "vertical",
+            "topic",
+            "contact_type"
+          ]
         },
         {
           "name" => "q",
@@ -8729,7 +9582,44 @@ module Crawlora
         {
           "name" => "vertical",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "tech",
+            "crypto",
+            "marketing",
+            "consumer_tech",
+            "consumer_policy",
+            "cybersecurity",
+            "health",
+            "gaming",
+            "climate",
+            "business",
+            "entertainment",
+            "sports",
+            "legal",
+            "science",
+            "politics",
+            "real_estate",
+            "automotive",
+            "travel",
+            "food",
+            "education",
+            "design",
+            "film_tv",
+            "fashion",
+            "music",
+            "personal_finance",
+            "tech_independent",
+            "culture_independent",
+            "local_news",
+            "construction",
+            "banking",
+            "retail",
+            "aerospace_defense",
+            "energy",
+            "agriculture",
+            "local_business"
+          ]
         },
         {
           "name" => "topic",
@@ -8739,7 +9629,12 @@ module Crawlora
         {
           "name" => "contact_type",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "email",
+            "social",
+            "none"
+          ]
         }
       ],
       "formParams" => [],
@@ -8796,7 +9691,44 @@ module Crawlora
         {
           "name" => "vertical",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "tech",
+            "crypto",
+            "marketing",
+            "consumer_tech",
+            "consumer_policy",
+            "cybersecurity",
+            "health",
+            "gaming",
+            "climate",
+            "business",
+            "entertainment",
+            "sports",
+            "legal",
+            "science",
+            "politics",
+            "real_estate",
+            "automotive",
+            "travel",
+            "food",
+            "education",
+            "design",
+            "film_tv",
+            "fashion",
+            "music",
+            "personal_finance",
+            "tech_independent",
+            "culture_independent",
+            "local_news",
+            "construction",
+            "banking",
+            "retail",
+            "aerospace_defense",
+            "energy",
+            "agriculture",
+            "local_business"
+          ]
         },
         {
           "name" => "topic",
@@ -8806,12 +9738,23 @@ module Crawlora
         {
           "name" => "contact_type",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "email",
+            "social",
+            "none"
+          ]
         },
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "name_asc",
+            "outlet_asc",
+            "crawled_desc"
+          ]
         },
         {
           "name" => "page",
@@ -8848,7 +9791,10 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "country"
+          ]
         },
         {
           "name" => "q",
@@ -9004,7 +9950,18 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "name_asc",
+            "cost_of_living_asc",
+            "cost_of_living_desc",
+            "quality_of_life_desc",
+            "safety_desc",
+            "crime_asc",
+            "health_care_desc",
+            "pollution_asc",
+            "traffic_asc"
+          ]
         },
         {
           "name" => "page",
@@ -9111,7 +10068,18 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "name_asc",
+            "cost_of_living_asc",
+            "cost_of_living_desc",
+            "quality_of_life_desc",
+            "safety_desc",
+            "crime_asc",
+            "health_care_desc",
+            "pollution_asc",
+            "traffic_asc"
+          ]
         },
         {
           "name" => "page",
@@ -9148,7 +10116,13 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "service_type",
+            "hq_country",
+            "hq_state",
+            "run_id"
+          ]
         },
         {
           "name" => "q",
@@ -9264,7 +10238,13 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "name_asc",
+            "year_founded_desc",
+            "recently_crawled_desc"
+          ]
         },
         {
           "name" => "page",
@@ -9301,7 +10281,16 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "status",
+            "primary_industry",
+            "financing_status",
+            "ownership_status",
+            "hq_country",
+            "hq_state",
+            "run_id"
+          ]
         },
         {
           "name" => "q",
@@ -9457,7 +10446,14 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "name_asc",
+            "year_founded_desc",
+            "investor_count_desc",
+            "recently_crawled_desc"
+          ]
         },
         {
           "name" => "page",
@@ -9494,7 +10490,12 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "fund_strategy",
+            "fund_status",
+            "run_id"
+          ]
         },
         {
           "name" => "q",
@@ -9600,7 +10601,13 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "name_asc",
+            "vintage_desc",
+            "recently_crawled_desc"
+          ]
         },
         {
           "name" => "page",
@@ -9637,7 +10644,14 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "status",
+            "investor_type",
+            "hq_country",
+            "hq_state",
+            "run_id"
+          ]
         },
         {
           "name" => "q",
@@ -9763,7 +10777,13 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "name_asc",
+            "portfolio_count_desc",
+            "recently_crawled_desc"
+          ]
         },
         {
           "name" => "page",
@@ -9800,7 +10820,13 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "institution_type",
+            "hq_country",
+            "hq_state",
+            "run_id"
+          ]
         },
         {
           "name" => "q",
@@ -9916,7 +10942,13 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "name_asc",
+            "year_founded_desc",
+            "recently_crawled_desc"
+          ]
         },
         {
           "name" => "page",
@@ -9953,7 +10985,24 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "publisher",
+            "classification",
+            "genres",
+            "platforms",
+            "content_rating_authority",
+            "content_descriptors",
+            "price_tier",
+            "service_branding",
+            "region",
+            "release_year",
+            "run_id",
+            "is_free",
+            "is_addon",
+            "is_tied_to_subscription",
+            "coming_soon"
+          ]
         },
         {
           "name" => "q",
@@ -9993,7 +11042,16 @@ module Crawlora
         {
           "name" => "price_tier",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "free",
+            "under_5",
+            "5_to_10",
+            "10_to_20",
+            "20_to_40",
+            "40_to_60",
+            "60_plus"
+          ]
         },
         {
           "name" => "branding",
@@ -10159,7 +11217,16 @@ module Crawlora
         {
           "name" => "price_tier",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "free",
+            "under_5",
+            "5_to_10",
+            "10_to_20",
+            "20_to_40",
+            "40_to_60",
+            "60_plus"
+          ]
         },
         {
           "name" => "branding",
@@ -10249,7 +11316,17 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "rating_desc",
+            "reviews_desc",
+            "price_asc",
+            "price_desc",
+            "discount_desc",
+            "release_desc",
+            "release_asc"
+          ]
         },
         {
           "name" => "page",
@@ -10286,7 +11363,11 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "topic",
+            "product_count_band"
+          ]
         },
         {
           "name" => "q",
@@ -10372,7 +11453,13 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "total_votes_desc",
+            "product_count_desc",
+            "followers_desc",
+            "relevance"
+          ]
         },
         {
           "name" => "page",
@@ -10409,7 +11496,13 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "topic",
+            "launch_year",
+            "pricing_type",
+            "product_state"
+          ]
         },
         {
           "name" => "q",
@@ -10555,7 +11648,15 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "votes_desc",
+            "launched_desc",
+            "launched_asc",
+            "rating_desc",
+            "best_rank_asc"
+          ]
         },
         {
           "name" => "page",
@@ -10592,12 +11693,21 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "topic",
+            "launch_year"
+          ]
         },
         {
           "name" => "group_by",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "topic_month",
+            "topic_year",
+            "topic"
+          ]
         },
         {
           "name" => "topic",
@@ -10647,7 +11757,12 @@ module Crawlora
         {
           "name" => "group_by",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "topic_month",
+            "topic_year",
+            "topic"
+          ]
         },
         {
           "name" => "topic",
@@ -10677,7 +11792,13 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "period_desc",
+            "period_asc",
+            "launch_count_desc",
+            "sum_votes_desc"
+          ]
         },
         {
           "name" => "page",
@@ -10714,7 +11835,17 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "sic",
+            "sic_description",
+            "exchange",
+            "state_of_incorporation",
+            "entity_type",
+            "reporting_currency",
+            "revenue_band",
+            "forms_filed"
+          ]
         },
         {
           "name" => "q",
@@ -10791,12 +11922,21 @@ module Crawlora
         {
           "name" => "statement",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "income",
+            "balance",
+            "cash_flow"
+          ]
         },
         {
           "name" => "period",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "annual",
+            "quarterly"
+          ]
         },
         {
           "name" => "from",
@@ -10979,7 +12119,15 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "name_asc",
+            "revenue_desc",
+            "net_income_desc",
+            "filing_recent_desc",
+            "insider_activity_desc"
+          ]
         },
         {
           "name" => "page",
@@ -11016,7 +12164,11 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "manager",
+            "issuer"
+          ]
         },
         {
           "name" => "manager_cik",
@@ -11071,7 +12223,12 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "value_desc",
+            "value_asc",
+            "shares_desc"
+          ]
         },
         {
           "name" => "page",
@@ -11112,7 +12269,12 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "percent_desc",
+            "percent_asc",
+            "rank_asc"
+          ]
         },
         {
           "name" => "page",
@@ -11153,7 +12315,12 @@ module Crawlora
         {
           "name" => "chart",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "most_played",
+            "concurrent",
+            "top_sellers"
+          ]
         },
         {
           "name" => "country",
@@ -11173,7 +12340,12 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "rank",
+            "rank_desc",
+            "date_desc"
+          ]
         },
         {
           "name" => "page",
@@ -11210,7 +12382,26 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "type",
+            "developer",
+            "publisher",
+            "genres",
+            "categories",
+            "tags",
+            "primary_tag",
+            "price_tier",
+            "review_tier",
+            "owners_bucket",
+            "release_year",
+            "run_id",
+            "is_free",
+            "coming_soon",
+            "platform_windows",
+            "platform_mac",
+            "platform_linux"
+          ]
         },
         {
           "name" => "q",
@@ -11250,12 +12441,32 @@ module Crawlora
         {
           "name" => "price_tier",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "free",
+            "under5",
+            "5to15",
+            "15to30",
+            "30to60",
+            "over60"
+          ]
         },
         {
           "name" => "review_tier",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "overwhelmingly_positive",
+            "very_positive",
+            "positive",
+            "mostly_positive",
+            "mixed",
+            "mostly_negative",
+            "negative",
+            "very_negative",
+            "overwhelmingly_negative",
+            "insufficient"
+          ]
         },
         {
           "name" => "owners_bucket",
@@ -11421,12 +12632,32 @@ module Crawlora
         {
           "name" => "price_tier",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "free",
+            "under5",
+            "5to15",
+            "15to30",
+            "30to60",
+            "over60"
+          ]
         },
         {
           "name" => "review_tier",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "overwhelmingly_positive",
+            "very_positive",
+            "positive",
+            "mostly_positive",
+            "mixed",
+            "mostly_negative",
+            "negative",
+            "very_negative",
+            "overwhelmingly_negative",
+            "insufficient"
+          ]
         },
         {
           "name" => "owners_bucket",
@@ -11516,7 +12747,19 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "owners_desc",
+            "reviews_desc",
+            "review_score_desc",
+            "ccu_desc",
+            "metacritic_desc",
+            "price_asc",
+            "price_desc",
+            "release_desc",
+            "release_asc"
+          ]
         },
         {
           "name" => "page",
@@ -11562,7 +12805,11 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "date_desc",
+            "date_asc"
+          ]
         },
         {
           "name" => "page",
@@ -11608,7 +12855,12 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "date_desc",
+            "date_asc",
+            "players_desc"
+          ]
         },
         {
           "name" => "page",
@@ -11654,7 +12906,14 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "date_desc",
+            "date_asc",
+            "price_asc",
+            "price_desc",
+            "discount_desc"
+          ]
         },
         {
           "name" => "page",
@@ -11710,7 +12969,12 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "votes_desc",
+            "weighted_desc",
+            "date_desc"
+          ]
         },
         {
           "name" => "page",
@@ -11747,7 +13011,20 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "technology",
+            "category",
+            "cms",
+            "ecommerce",
+            "cdn",
+            "web_server",
+            "server_language",
+            "analytics",
+            "tld",
+            "render_tier",
+            "seed_source"
+          ]
         },
         {
           "name" => "q",
@@ -11810,7 +13087,11 @@ module Crawlora
         {
           "name" => "render_tier",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "http",
+            "browser"
+          ]
         },
         {
           "name" => "seed_source",
@@ -11939,7 +13220,11 @@ module Crawlora
         {
           "name" => "render_tier",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "http",
+            "browser"
+          ]
         },
         {
           "name" => "seed_source",
@@ -11969,7 +13254,14 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "rank_asc",
+            "tech_count_desc",
+            "domain_asc",
+            "crawled_desc"
+          ]
         },
         {
           "name" => "page",
@@ -12006,7 +13298,21 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "category",
+            "country",
+            "payment_provider",
+            "target_audience",
+            "business_type",
+            "tech",
+            "channels",
+            "listing_tier",
+            "status",
+            "on_sale",
+            "is_sponsored",
+            "tags"
+          ]
         },
         {
           "name" => "q",
@@ -12169,7 +13475,11 @@ module Crawlora
         {
           "name" => "status",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "active",
+            "removed"
+          ]
         },
         {
           "name" => "on_sale",
@@ -12234,7 +13544,20 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "mrr_desc",
+            "revenue_desc",
+            "revenue_30d_desc",
+            "traffic_desc",
+            "growth_desc",
+            "deal_score_desc",
+            "price_asc",
+            "price_desc",
+            "multiple_asc",
+            "founded_desc"
+          ]
         },
         {
           "name" => "page",
@@ -12271,7 +13594,13 @@ module Crawlora
           "name" => "facet",
           "in" => "query",
           "type" => "string",
-          "required" => true
+          "required" => true,
+          "enum" => [
+            "is_blue_verified",
+            "has_bio",
+            "has_external_url",
+            "source_tier"
+          ]
         },
         {
           "name" => "q",
@@ -12346,7 +13675,16 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "followers_desc",
+            "followers_asc",
+            "crawled_at_desc",
+            "crawled_at_asc",
+            "created_at_desc",
+            "created_at_asc"
+          ]
         }
       ],
       "formParams" => [],
@@ -12462,7 +13800,16 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "followers_desc",
+            "followers_asc",
+            "crawled_at_desc",
+            "crawled_at_asc",
+            "created_at_desc",
+            "created_at_asc"
+          ]
         },
         {
           "name" => "page",
@@ -15942,7 +17289,14 @@ module Crawlora
         {
           "name" => "collection",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "TOP_FREE",
+            "TOP_PAID",
+            "GROSSING",
+            "NEW_FREE",
+            "NEW_PAID"
+          ]
         },
         {
           "name" => "category",
@@ -16044,7 +17398,12 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "helpfulness",
+            "newest",
+            "rating"
+          ]
         },
         {
           "name" => "num",
@@ -16120,7 +17479,12 @@ module Crawlora
         {
           "name" => "price",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "all",
+            "free",
+            "paid"
+          ]
         }
       ],
       "formParams" => [],
@@ -19876,12 +21240,25 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "TRENDING_DESC",
+            "POPULARITY_DESC",
+            "SCORE_DESC",
+            "FAVOURITES_DESC",
+            "START_DATE_DESC",
+            "UPDATED_AT_DESC"
+          ]
         },
         {
           "name" => "format",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "MANGA",
+            "NOVEL",
+            "ONE_SHOT"
+          ]
         },
         {
           "name" => "genre",
@@ -19891,7 +21268,14 @@ module Crawlora
         {
           "name" => "status",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "FINISHED",
+            "RELEASING",
+            "NOT_YET_RELEASED",
+            "CANCELLED",
+            "HIATUS"
+          ]
         },
         {
           "name" => "page",
@@ -19933,7 +21317,15 @@ module Crawlora
         {
           "name" => "sort",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "SEARCH_MATCH",
+            "POPULARITY_DESC",
+            "SCORE_DESC",
+            "TRENDING_DESC",
+            "FAVOURITES_DESC",
+            "START_DATE_DESC"
+          ]
         },
         {
           "name" => "page",
@@ -24718,7 +26110,11 @@ module Crawlora
         {
           "name" => "status",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "for_sale",
+            "sold"
+          ]
         },
         {
           "name" => "min_price",
@@ -27047,12 +28443,62 @@ module Crawlora
         {
           "name" => "chart",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "top-podcasts",
+            "top-episodes",
+            "trending",
+            "arts",
+            "business",
+            "comedy",
+            "education",
+            "fiction",
+            "health-fitness",
+            "history",
+            "leisure",
+            "music",
+            "news",
+            "religion-spirituality",
+            "science",
+            "society-culture",
+            "sports",
+            "technology",
+            "true-crime",
+            "tv-film"
+          ]
         },
         {
           "name" => "region",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "ar",
+            "au",
+            "at",
+            "br",
+            "ca",
+            "cl",
+            "co",
+            "dk",
+            "fi",
+            "fr",
+            "de",
+            "in",
+            "id",
+            "ie",
+            "it",
+            "jp",
+            "mx",
+            "nz",
+            "no",
+            "ph",
+            "pl",
+            "es",
+            "se",
+            "nl",
+            "gb",
+            "us"
+          ]
         },
         {
           "name" => "limit",
@@ -27519,12 +28965,25 @@ module Crawlora
         {
           "name" => "type",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "album",
+            "single",
+            "compilation",
+            "appears_on",
+            "all"
+          ]
         },
         {
           "name" => "order",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "date_desc",
+            "date_asc",
+            "name_asc",
+            "name_desc"
+          ]
         },
         {
           "name" => "offset",
@@ -27867,7 +29326,13 @@ module Crawlora
         {
           "name" => "content_id",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "CHARTS",
+            "POPULAR_ALBUMS",
+            "POPULAR_ARTISTS",
+            "TRENDING_SONGS"
+          ]
         }
       ],
       "formParams" => [],
@@ -29532,487 +30997,6 @@ module Crawlora
           "name" => "l",
           "in" => "query",
           "type" => "string"
-        }
-      ],
-      "formParams" => [],
-      "bodyParam" => nil,
-      "bodyRequired" => false,
-      "consumes" => [
-        "application/json"
-      ],
-      "produces" => [
-        "application/json"
-      ],
-      "security" => [
-        "ApiKeyAuth"
-      ]
-    },
-    "tcdb-birthdays" => {
-      "id" => "tcdb-birthdays",
-      "method" => "GET",
-      "path" => "/tcdb/birthdays",
-      "pathParams" => [],
-      "queryParams" => [
-        {
-          "name" => "month",
-          "in" => "query",
-          "type" => "integer",
-          "required" => true
-        },
-        {
-          "name" => "day",
-          "in" => "query",
-          "type" => "integer",
-          "required" => true
-        },
-        {
-          "name" => "limit",
-          "in" => "query",
-          "type" => "integer"
-        }
-      ],
-      "formParams" => [],
-      "bodyParam" => nil,
-      "bodyRequired" => false,
-      "consumes" => [
-        "application/json"
-      ],
-      "produces" => [
-        "application/json"
-      ],
-      "security" => [
-        "ApiKeyAuth"
-      ]
-    },
-    "tcdb-card" => {
-      "id" => "tcdb-card",
-      "method" => "GET",
-      "path" => "/tcdb/card",
-      "pathParams" => [],
-      "queryParams" => [
-        {
-          "name" => "set_id",
-          "in" => "query",
-          "type" => "string"
-        },
-        {
-          "name" => "card_id",
-          "in" => "query",
-          "type" => "string"
-        },
-        {
-          "name" => "path",
-          "in" => "query",
-          "type" => "string"
-        },
-        {
-          "name" => "url",
-          "in" => "query",
-          "type" => "string"
-        }
-      ],
-      "formParams" => [],
-      "bodyParam" => nil,
-      "bodyRequired" => false,
-      "consumes" => [
-        "application/json"
-      ],
-      "produces" => [
-        "application/json"
-      ],
-      "security" => [
-        "ApiKeyAuth"
-      ]
-    },
-    "tcdb-card-of-the-day" => {
-      "id" => "tcdb-card-of-the-day",
-      "method" => "GET",
-      "path" => "/tcdb/card-of-the-day",
-      "pathParams" => [],
-      "queryParams" => [
-        {
-          "name" => "page",
-          "in" => "query",
-          "type" => "integer"
-        },
-        {
-          "name" => "limit",
-          "in" => "query",
-          "type" => "integer"
-        }
-      ],
-      "formParams" => [],
-      "bodyParam" => nil,
-      "bodyRequired" => false,
-      "consumes" => [
-        "application/json"
-      ],
-      "produces" => [
-        "application/json"
-      ],
-      "security" => [
-        "ApiKeyAuth"
-      ],
-      "paginatable" => true
-    },
-    "tcdb-companies" => {
-      "id" => "tcdb-companies",
-      "method" => "GET",
-      "path" => "/tcdb/companies",
-      "pathParams" => [],
-      "queryParams" => [
-        {
-          "name" => "limit",
-          "in" => "query",
-          "type" => "integer"
-        }
-      ],
-      "formParams" => [],
-      "bodyParam" => nil,
-      "bodyRequired" => false,
-      "consumes" => [
-        "application/json"
-      ],
-      "produces" => [
-        "application/json"
-      ],
-      "security" => [
-        "ApiKeyAuth"
-      ]
-    },
-    "tcdb-person" => {
-      "id" => "tcdb-person",
-      "method" => "GET",
-      "path" => "/tcdb/person",
-      "pathParams" => [],
-      "queryParams" => [
-        {
-          "name" => "id",
-          "in" => "query",
-          "type" => "string"
-        },
-        {
-          "name" => "path",
-          "in" => "query",
-          "type" => "string"
-        },
-        {
-          "name" => "url",
-          "in" => "query",
-          "type" => "string"
-        },
-        {
-          "name" => "limit",
-          "in" => "query",
-          "type" => "integer"
-        }
-      ],
-      "formParams" => [],
-      "bodyParam" => nil,
-      "bodyRequired" => false,
-      "consumes" => [
-        "application/json"
-      ],
-      "produces" => [
-        "application/json"
-      ],
-      "security" => [
-        "ApiKeyAuth"
-      ]
-    },
-    "tcdb-releases" => {
-      "id" => "tcdb-releases",
-      "method" => "GET",
-      "path" => "/tcdb/releases",
-      "pathParams" => [],
-      "queryParams" => [
-        {
-          "name" => "limit",
-          "in" => "query",
-          "type" => "integer"
-        }
-      ],
-      "formParams" => [],
-      "bodyParam" => nil,
-      "bodyRequired" => false,
-      "consumes" => [
-        "application/json"
-      ],
-      "produces" => [
-        "application/json"
-      ],
-      "security" => [
-        "ApiKeyAuth"
-      ]
-    },
-    "tcdb-search" => {
-      "id" => "tcdb-search",
-      "method" => "GET",
-      "path" => "/tcdb/search",
-      "pathParams" => [],
-      "queryParams" => [
-        {
-          "name" => "q",
-          "in" => "query",
-          "type" => "string",
-          "required" => true
-        },
-        {
-          "name" => "category",
-          "in" => "query",
-          "type" => "string",
-          "enum" => [
-            "Baseball",
-            "Basketball",
-            "Boxing",
-            "Cricket",
-            "Football",
-            "Gaming",
-            "Golf",
-            "Hockey",
-            "Misc Sports",
-            "MMA",
-            "Multi-Sport",
-            "Non-Sport",
-            "Racing",
-            "Soccer",
-            "Tennis",
-            "Wrestling"
-          ]
-        },
-        {
-          "name" => "limit",
-          "in" => "query",
-          "type" => "integer"
-        }
-      ],
-      "formParams" => [],
-      "bodyParam" => nil,
-      "bodyRequired" => false,
-      "consumes" => [
-        "application/json"
-      ],
-      "produces" => [
-        "application/json"
-      ],
-      "security" => [
-        "ApiKeyAuth"
-      ]
-    },
-    "tcdb-set" => {
-      "id" => "tcdb-set",
-      "method" => "GET",
-      "path" => "/tcdb/set",
-      "pathParams" => [],
-      "queryParams" => [
-        {
-          "name" => "id",
-          "in" => "query",
-          "type" => "string"
-        },
-        {
-          "name" => "path",
-          "in" => "query",
-          "type" => "string"
-        },
-        {
-          "name" => "url",
-          "in" => "query",
-          "type" => "string"
-        },
-        {
-          "name" => "limit",
-          "in" => "query",
-          "type" => "integer"
-        }
-      ],
-      "formParams" => [],
-      "bodyParam" => nil,
-      "bodyRequired" => false,
-      "consumes" => [
-        "application/json"
-      ],
-      "produces" => [
-        "application/json"
-      ],
-      "security" => [
-        "ApiKeyAuth"
-      ]
-    },
-    "tcdb-sets" => {
-      "id" => "tcdb-sets",
-      "method" => "GET",
-      "path" => "/tcdb/sets",
-      "pathParams" => [],
-      "queryParams" => [
-        {
-          "name" => "sport",
-          "in" => "query",
-          "type" => "string",
-          "required" => true,
-          "enum" => [
-            "Baseball",
-            "Basketball",
-            "Boxing",
-            "Cricket",
-            "Football",
-            "Gaming",
-            "Golf",
-            "Hockey",
-            "Misc Sports",
-            "MMA",
-            "Multi-Sport",
-            "Non-Sport",
-            "Racing",
-            "Soccer",
-            "Tennis",
-            "Wrestling"
-          ]
-        },
-        {
-          "name" => "year",
-          "in" => "query",
-          "type" => "string",
-          "required" => true
-        },
-        {
-          "name" => "limit",
-          "in" => "query",
-          "type" => "integer"
-        }
-      ],
-      "formParams" => [],
-      "bodyParam" => nil,
-      "bodyRequired" => false,
-      "consumes" => [
-        "application/json"
-      ],
-      "produces" => [
-        "application/json"
-      ],
-      "security" => [
-        "ApiKeyAuth"
-      ]
-    },
-    "tcdb-tagged" => {
-      "id" => "tcdb-tagged",
-      "method" => "GET",
-      "path" => "/tcdb/tagged",
-      "pathParams" => [],
-      "queryParams" => [
-        {
-          "name" => "id",
-          "in" => "query",
-          "type" => "string"
-        },
-        {
-          "name" => "path",
-          "in" => "query",
-          "type" => "string"
-        },
-        {
-          "name" => "url",
-          "in" => "query",
-          "type" => "string"
-        },
-        {
-          "name" => "sport",
-          "in" => "query",
-          "type" => "string",
-          "enum" => [
-            "Baseball",
-            "Basketball",
-            "Boxing",
-            "Cricket",
-            "Football",
-            "Gaming",
-            "Golf",
-            "Hockey",
-            "Misc Sports",
-            "MMA",
-            "Multi-Sport",
-            "Non-Sport",
-            "Racing",
-            "Soccer",
-            "Tennis",
-            "Wrestling"
-          ]
-        },
-        {
-          "name" => "page",
-          "in" => "query",
-          "type" => "integer"
-        },
-        {
-          "name" => "limit",
-          "in" => "query",
-          "type" => "integer"
-        }
-      ],
-      "formParams" => [],
-      "bodyParam" => nil,
-      "bodyRequired" => false,
-      "consumes" => [
-        "application/json"
-      ],
-      "produces" => [
-        "application/json"
-      ],
-      "security" => [
-        "ApiKeyAuth"
-      ],
-      "paginatable" => true
-    },
-    "tcdb-team" => {
-      "id" => "tcdb-team",
-      "method" => "GET",
-      "path" => "/tcdb/team",
-      "pathParams" => [],
-      "queryParams" => [
-        {
-          "name" => "id",
-          "in" => "query",
-          "type" => "string"
-        },
-        {
-          "name" => "path",
-          "in" => "query",
-          "type" => "string"
-        },
-        {
-          "name" => "url",
-          "in" => "query",
-          "type" => "string"
-        },
-        {
-          "name" => "limit",
-          "in" => "query",
-          "type" => "integer"
-        }
-      ],
-      "formParams" => [],
-      "bodyParam" => nil,
-      "bodyRequired" => false,
-      "consumes" => [
-        "application/json"
-      ],
-      "produces" => [
-        "application/json"
-      ],
-      "security" => [
-        "ApiKeyAuth"
-      ]
-    },
-    "tcdb-top-sets" => {
-      "id" => "tcdb-top-sets",
-      "method" => "GET",
-      "path" => "/tcdb/top-sets",
-      "pathParams" => [],
-      "queryParams" => [
-        {
-          "name" => "limit",
-          "in" => "query",
-          "type" => "integer"
         }
       ],
       "formParams" => [],
@@ -32999,12 +33983,25 @@ module Crawlora
         {
           "name" => "statement",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "income",
+            "income-statement",
+            "balance-sheet",
+            "balance",
+            "cash-flow",
+            "cashflow"
+          ]
         },
         {
           "name" => "period",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "annual",
+            "quarterly",
+            "trailing"
+          ]
         }
       ],
       "formParams" => [],
@@ -33911,7 +34908,16 @@ module Crawlora
         {
           "name" => "status",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "for_sale",
+            "sale",
+            "for-sale",
+            "for_rent",
+            "rent",
+            "for-rent",
+            "sold"
+          ]
         }
       ],
       "formParams" => [],
@@ -33968,7 +34974,16 @@ module Crawlora
         {
           "name" => "status",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "for_sale",
+            "sale",
+            "for-sale",
+            "for_rent",
+            "rent",
+            "for-rent",
+            "sold"
+          ]
         },
         {
           "name" => "region_id",
@@ -34059,14 +35074,19 @@ module Crawlora
     },
     "apple_podcasts" => {
       "charts" => "apple-podcasts-charts",
+      "charts_rankings" => "apple-podcasts-charts-rankings",
       "episodes_search" => "apple-podcasts-episodes-search",
+      "new" => "apple-podcasts-new",
       "search" => "apple-podcasts-search",
       "show" => "apple-podcasts-show",
-      "show_episodes" => "apple-podcasts-show-episodes"
+      "show_episodes" => "apple-podcasts-show-episodes",
+      "show_related" => "apple-podcasts-show-related"
     },
     "app_store" => {
       "app" => "appstore-app",
       "developer" => "appstore-developer",
+      "editorial" => "appstore-editorial",
+      "editorial_category" => "appstore-editorial-category",
       "list" => "appstore-list",
       "privacy" => "appstore-privacy",
       "ratings" => "appstore-ratings",
@@ -34181,6 +35201,9 @@ module Crawlora
       "airbnb_markets_item" => "datasets-airbnb-markets-item",
       "airbnb_markets_nearby" => "datasets-airbnb-markets-nearby",
       "airbnb_markets_search" => "datasets-airbnb-markets-search",
+      "apple_podcasts_shows_facets" => "datasets-apple-podcasts-shows-facets",
+      "apple_podcasts_shows_item" => "datasets-apple-podcasts-shows-item",
+      "apple_podcasts_shows_search" => "datasets-apple-podcasts-shows-search",
       "apps_charts_search" => "datasets-apps-charts-search",
       "apps_reviews_search" => "datasets-apps-reviews-search",
       "apps_search" => "datasets-apps-search",
@@ -34820,20 +35843,6 @@ module Crawlora
       "tags_list" => "steam-tags-list",
       "top_sellers" => "steam-top-sellers"
     },
-    "tcdb" => {
-      "birthdays" => "tcdb-birthdays",
-      "card" => "tcdb-card",
-      "card_of_the_day" => "tcdb-card-of-the-day",
-      "companies" => "tcdb-companies",
-      "person" => "tcdb-person",
-      "releases" => "tcdb-releases",
-      "search" => "tcdb-search",
-      "set" => "tcdb-set",
-      "sets" => "tcdb-sets",
-      "tagged" => "tcdb-tagged",
-      "team" => "tcdb-team",
-      "top_sets" => "tcdb-top-sets"
-    },
     "threads" => {
       "post" => "threads-post",
       "post_replies" => "threads-post-replies",
@@ -34990,7 +35999,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 836
+  OPERATION_COUNT = 832
 
   module OperationId
     AIRBNB_HOST = "airbnb-host"
@@ -35014,6 +36023,8 @@ module Crawlora
     ANIME_TITLE_STAFF = "anime-title-staff"
     APP_STORE_APP = "appstore-app"
     APP_STORE_DEVELOPER = "appstore-developer"
+    APP_STORE_EDITORIAL = "appstore-editorial"
+    APP_STORE_EDITORIAL_CATEGORY = "appstore-editorial-category"
     APP_STORE_LIST = "appstore-list"
     APP_STORE_PRIVACY = "appstore-privacy"
     APP_STORE_RATINGS = "appstore-ratings"
@@ -35035,10 +36046,13 @@ module Crawlora
     APPLE_BOOKS_SEARCH = "apple-books-search"
     APPLE_BOOKS_SERIES = "apple-books-series"
     APPLE_PODCASTS_CHARTS = "apple-podcasts-charts"
+    APPLE_PODCASTS_CHARTS_RANKINGS = "apple-podcasts-charts-rankings"
     APPLE_PODCASTS_EPISODES_SEARCH = "apple-podcasts-episodes-search"
+    APPLE_PODCASTS_NEW = "apple-podcasts-new"
     APPLE_PODCASTS_SEARCH = "apple-podcasts-search"
     APPLE_PODCASTS_SHOW = "apple-podcasts-show"
     APPLE_PODCASTS_SHOW_EPISODES = "apple-podcasts-show-episodes"
+    APPLE_PODCASTS_SHOW_RELATED = "apple-podcasts-show-related"
     BILLING_ME = "billing-me"
     BILLING_ME_CHECKOUT = "billing-me-checkout"
     BILLING_ME_EVENTS = "billing-me-events"
@@ -35119,6 +36133,9 @@ module Crawlora
     DATASETS_AIRBNB_MARKETS_ITEM = "datasets-airbnb-markets-item"
     DATASETS_AIRBNB_MARKETS_NEARBY = "datasets-airbnb-markets-nearby"
     DATASETS_AIRBNB_MARKETS_SEARCH = "datasets-airbnb-markets-search"
+    DATASETS_APPLE_PODCASTS_SHOWS_FACETS = "datasets-apple-podcasts-shows-facets"
+    DATASETS_APPLE_PODCASTS_SHOWS_ITEM = "datasets-apple-podcasts-shows-item"
+    DATASETS_APPLE_PODCASTS_SHOWS_SEARCH = "datasets-apple-podcasts-shows-search"
     DATASETS_APPS_CHARTS_SEARCH = "datasets-apps-charts-search"
     DATASETS_APPS_REVIEWS_SEARCH = "datasets-apps-reviews-search"
     DATASETS_APPS_SEARCH = "datasets-apps-search"
@@ -35686,18 +36703,6 @@ module Crawlora
     STEAM_TAGS = "steam-tags"
     STEAM_TAGS_LIST = "steam-tags-list"
     STEAM_TOP_SELLERS = "steam-top-sellers"
-    TCDB_BIRTHDAYS = "tcdb-birthdays"
-    TCDB_CARD = "tcdb-card"
-    TCDB_CARD_OF_THE_DAY = "tcdb-card-of-the-day"
-    TCDB_COMPANIES = "tcdb-companies"
-    TCDB_PERSON = "tcdb-person"
-    TCDB_RELEASES = "tcdb-releases"
-    TCDB_SEARCH = "tcdb-search"
-    TCDB_SET = "tcdb-set"
-    TCDB_SETS = "tcdb-sets"
-    TCDB_TAGGED = "tcdb-tagged"
-    TCDB_TEAM = "tcdb-team"
-    TCDB_TOP_SETS = "tcdb-top-sets"
     THREADS_POST = "threads-post"
     THREADS_POST_REPLIES = "threads-post-replies"
     THREADS_PROFILE = "threads-profile"
