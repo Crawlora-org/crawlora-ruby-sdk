@@ -9182,6 +9182,291 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "datasets-instagram-users-facets" => {
+      "id" => "datasets-instagram-users-facets",
+      "method" => "GET",
+      "path" => "/datasets/instagram-users/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "is_verified",
+            "is_business_account",
+            "has_bio",
+            "has_external_url",
+            "category_name",
+            "source_tier"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "username",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category_name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "source_tier",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "is_verified",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "is_business_account",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_bio",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_external_url",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_ratio",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_ratio",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "created_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "created_before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "crawled_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "crawled_before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "followers_desc",
+            "followers_asc",
+            "crawled_at_desc",
+            "crawled_at_asc",
+            "created_at_desc",
+            "created_at_asc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-instagram-users-item" => {
+      "id" => "datasets-instagram-users-item",
+      "method" => "GET",
+      "path" => "/datasets/instagram-users/items/{username}",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-instagram-users-search" => {
+      "id" => "datasets-instagram-users-search",
+      "method" => "GET",
+      "path" => "/datasets/instagram-users/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "username",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category_name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "source_tier",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "is_verified",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "is_business_account",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_bio",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_external_url",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_ratio",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_ratio",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "created_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "created_before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "crawled_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "crawled_before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "followers_desc",
+            "followers_asc",
+            "crawled_at_desc",
+            "crawled_at_asc",
+            "created_at_desc",
+            "created_at_asc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "datasets-jobs-companies" => {
       "id" => "datasets-jobs-companies",
       "method" => "GET",
@@ -11798,6 +12083,61 @@ module Crawlora
             "period_asc",
             "launch_count_desc",
             "sum_votes_desc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-reddit-trending-search" => {
+      "id" => "datasets-reddit-trending-search",
+      "method" => "GET",
+      "path" => "/datasets/reddit-trending/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "subreddit",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "rank",
+            "date_desc"
           ]
         },
         {
@@ -17304,6 +17644,20 @@ module Crawlora
           "type" => "string"
         },
         {
+          "name" => "device",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "phone",
+            "tablet",
+            "tv",
+            "chromebook",
+            "watch",
+            "xr",
+            "car"
+          ]
+        },
+        {
           "name" => "age",
           "in" => "query",
           "type" => "string"
@@ -17368,6 +17722,42 @@ module Crawlora
           "name" => "short",
           "in" => "query",
           "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "googleplay-ratings" => {
+      "id" => "googleplay-ratings",
+      "method" => "GET",
+      "path" => "/googleplay/ratings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "app_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
         }
       ],
       "formParams" => [],
@@ -25538,6 +25928,11 @@ module Crawlora
           "name" => "depth",
           "in" => "query",
           "type" => "integer"
+        },
+        {
+          "name" => "include_metrics",
+          "in" => "query",
+          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -25616,7 +26011,13 @@ module Crawlora
       "pathParams" => [
         "id"
       ],
-      "queryParams" => [],
+      "queryParams" => [
+        {
+          "name" => "include_metrics",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -35235,6 +35636,9 @@ module Crawlora
       "housing_markets_facets" => "datasets-housing-markets-facets",
       "housing_markets_item" => "datasets-housing-markets-item",
       "housing_markets_search" => "datasets-housing-markets-search",
+      "instagram_users_facets" => "datasets-instagram-users-facets",
+      "instagram_users_item" => "datasets-instagram-users-item",
+      "instagram_users_search" => "datasets-instagram-users-search",
       "jobs_companies" => "datasets-jobs-companies",
       "jobs_company_item" => "datasets-jobs-company-item",
       "jobs_facets" => "datasets-jobs-facets",
@@ -35275,6 +35679,7 @@ module Crawlora
       "producthunt_products_search" => "datasets-producthunt-products-search",
       "producthunt_trends_facets" => "datasets-producthunt-trends-facets",
       "producthunt_trends_search" => "datasets-producthunt-trends-search",
+      "reddit_trending_search" => "datasets-reddit-trending-search",
       "sec_companies_facets" => "datasets-sec-companies-facets",
       "sec_companies_financials" => "datasets-sec-companies-financials",
       "sec_companies_insider" => "datasets-sec-companies-insider",
@@ -35415,6 +35820,7 @@ module Crawlora
       "developer" => "googleplay-developer",
       "list" => "googleplay-list",
       "permissions" => "googleplay-permissions",
+      "ratings" => "googleplay-ratings",
       "reviews" => "googleplay-reviews",
       "search" => "googleplay-search",
       "similar" => "googleplay-similar",
@@ -35999,7 +36405,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 832
+  OPERATION_COUNT = 837
 
   module OperationId
     AIRBNB_HOST = "airbnb-host"
@@ -36167,6 +36573,9 @@ module Crawlora
     DATASETS_HOUSING_MARKETS_FACETS = "datasets-housing-markets-facets"
     DATASETS_HOUSING_MARKETS_ITEM = "datasets-housing-markets-item"
     DATASETS_HOUSING_MARKETS_SEARCH = "datasets-housing-markets-search"
+    DATASETS_INSTAGRAM_USERS_FACETS = "datasets-instagram-users-facets"
+    DATASETS_INSTAGRAM_USERS_ITEM = "datasets-instagram-users-item"
+    DATASETS_INSTAGRAM_USERS_SEARCH = "datasets-instagram-users-search"
     DATASETS_JOBS_COMPANIES = "datasets-jobs-companies"
     DATASETS_JOBS_COMPANY_ITEM = "datasets-jobs-company-item"
     DATASETS_JOBS_FACETS = "datasets-jobs-facets"
@@ -36208,6 +36617,7 @@ module Crawlora
     DATASETS_PRODUCTHUNT_PRODUCTS_SEARCH = "datasets-producthunt-products-search"
     DATASETS_PRODUCTHUNT_TRENDS_FACETS = "datasets-producthunt-trends-facets"
     DATASETS_PRODUCTHUNT_TRENDS_SEARCH = "datasets-producthunt-trends-search"
+    DATASETS_REDDIT_TRENDING_SEARCH = "datasets-reddit-trending-search"
     DATASETS_SEC_COMPANIES_FACETS = "datasets-sec-companies-facets"
     DATASETS_SEC_COMPANIES_FINANCIALS = "datasets-sec-companies-financials"
     DATASETS_SEC_COMPANIES_INSIDER = "datasets-sec-companies-insider"
@@ -36318,6 +36728,7 @@ module Crawlora
     GOOGLE_PLAY_DEVELOPER = "googleplay-developer"
     GOOGLE_PLAY_LIST = "googleplay-list"
     GOOGLE_PLAY_PERMISSIONS = "googleplay-permissions"
+    GOOGLE_PLAY_RATINGS = "googleplay-ratings"
     GOOGLE_PLAY_REVIEWS = "googleplay-reviews"
     GOOGLE_PLAY_SEARCH = "googleplay-search"
     GOOGLE_PLAY_SIMILAR = "googleplay-similar"
