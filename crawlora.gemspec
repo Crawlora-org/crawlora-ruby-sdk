@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
     backoff and Retry-After, numeric and cursor pagination, before/after
     middleware hooks, and client-side rate limiting.
   DESC
-  spec.homepage = "https://crawlora.net/"
+  spec.homepage = "https://crawlora.net/?utm_source=rubygems&utm_medium=referral&utm_campaign=crawlora-ruby-sdk"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0"
 

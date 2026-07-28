@@ -1,6 +1,6 @@
 # Crawlora Ruby SDK
 
-Ruby client for the public [Crawlora](https://crawlora.net) web-scraping API. It
+Ruby client for the public [Crawlora](https://crawlora.net?utm_source=github&utm_medium=referral&utm_campaign=crawlora-ruby-sdk) web-scraping API. It
 wraps every public endpoint with grouped helpers and a dynamic call interface,
 plus retries, pagination, middleware hooks, and client-side rate limiting.
 
