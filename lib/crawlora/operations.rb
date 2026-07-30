@@ -9678,7 +9678,12 @@ module Crawlora
             "icims",
             "eightfold",
             "gem",
-            "pinpoint"
+            "pinpoint",
+            "amazon-jobs",
+            "apple-jobs",
+            "google-jobs",
+            "meta-jobs",
+            "tesla-jobs"
           ]
         },
         {
@@ -9698,6 +9703,11 @@ module Crawlora
           "name" => "min_open_roles",
           "in" => "query",
           "type" => "integer"
+        },
+        {
+          "name" => "sponsors_visa",
+          "in" => "query",
+          "type" => "boolean"
         },
         {
           "name" => "sort",
@@ -9844,7 +9854,12 @@ module Crawlora
             "icims",
             "eightfold",
             "gem",
-            "pinpoint"
+            "pinpoint",
+            "amazon-jobs",
+            "apple-jobs",
+            "google-jobs",
+            "meta-jobs",
+            "tesla-jobs"
           ]
         },
         {
@@ -9913,7 +9928,12 @@ module Crawlora
             "icims",
             "eightfold",
             "gem",
-            "pinpoint"
+            "pinpoint",
+            "amazon-jobs",
+            "apple-jobs",
+            "google-jobs",
+            "meta-jobs",
+            "tesla-jobs"
           ]
         },
         {
@@ -15279,6 +15299,27 @@ module Crawlora
       "formParams" => [],
       "bodyParam" => "extractOption",
       "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "facebook-page" => {
+      "id" => "facebook-page",
+      "method" => "GET",
+      "path" => "/facebook/{page}",
+      "pathParams" => [
+        "page"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
       "consumes" => [
         "application/json"
       ],
@@ -36173,6 +36214,9 @@ module Crawlora
       "team_roster" => "espn-team-roster",
       "teams" => "espn-teams"
     },
+    "facebook" => {
+      "page" => "facebook-page"
+    },
     "geocoding" => {
       "lookup" => "geocoding-lookup",
       "reverse" => "geocoding-reverse",
@@ -36856,7 +36900,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 848
+  OPERATION_COUNT = 849
 
   module OperationId
     AIRBNB_HOST = "airbnb-host"
@@ -37121,6 +37165,7 @@ module Crawlora
     ESPN_TEAM = "espn-team"
     ESPN_TEAM_ROSTER = "espn-team-roster"
     ESPN_TEAMS = "espn-teams"
+    FACEBOOK_PAGE = "facebook-page"
     GEOCODING_LOOKUP = "geocoding-lookup"
     GEOCODING_REVERSE = "geocoding-reverse"
     GEOCODING_SEARCH = "geocoding-search"
