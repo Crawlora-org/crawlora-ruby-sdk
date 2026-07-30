@@ -227,6 +227,123 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "amazon-jobs-job" => {
+      "id" => "amazon-jobs-job",
+      "method" => "GET",
+      "path" => "/amazon-jobs/job",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "amazon-jobs-search" => {
+      "id" => "amazon-jobs-search",
+      "method" => "GET",
+      "path" => "/amazon-jobs/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "administrative-support",
+            "applied-science",
+            "audio-video-photography-production",
+            "business-intelligence-data-engineering",
+            "business-merchant-development",
+            "buying-planning-instock-management",
+            "customer-service",
+            "data-science",
+            "database-administration",
+            "design",
+            "economics",
+            "editorial-writing-content-management",
+            "facilities-maintenance-real-estate",
+            "fgbs",
+            "fulfillment-center-warehouse-associate",
+            "fulfillment-operations-management",
+            "hardware-development",
+            "human-resources",
+            "investigation-loss-prevention",
+            "leadership-development-training",
+            "legal",
+            "marketing",
+            "medical-health-safety",
+            "operations-it-support-engineering",
+            "project-program-product-management-non-tech",
+            "project-program-product-management-technical",
+            "public-policy",
+            "public-relations-communications",
+            "research-science",
+            "sales-advertising-account-management",
+            "software-development",
+            "solutions-architecture",
+            "supply-chain-transportation-management",
+            "systems-quality-security-engineering"
+          ]
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevant",
+            "recent"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "amazon-product" => {
       "id" => "amazon-product",
       "method" => "GET",
@@ -1126,6 +1243,69 @@ module Crawlora
       "security" => [
         "ApiKeyAuth"
       ]
+    },
+    "apple-jobs-job" => {
+      "id" => "apple-jobs-job",
+      "method" => "GET",
+      "path" => "/apple-jobs/job",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "apple-jobs-search" => {
+      "id" => "apple-jobs-search",
+      "method" => "GET",
+      "path" => "/apple-jobs/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
     },
     "apple-podcasts-charts" => {
       "id" => "apple-podcasts-charts",
@@ -16179,6 +16359,69 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "google-jobs-job" => {
+      "id" => "google-jobs-job",
+      "method" => "GET",
+      "path" => "/google-jobs/job",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "google-jobs-search" => {
+      "id" => "google-jobs-search",
+      "method" => "GET",
+      "path" => "/google-jobs/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "google-finance-analyst-articles" => {
       "id" => "google-finance-analyst-articles",
       "method" => "GET",
@@ -21754,6 +21997,126 @@ module Crawlora
           "name" => "mal",
           "in" => "query",
           "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "meta-jobs-job" => {
+      "id" => "meta-jobs-job",
+      "method" => "GET",
+      "path" => "/meta-jobs/job",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "meta-jobs-list" => {
+      "id" => "meta-jobs-list",
+      "method" => "GET",
+      "path" => "/meta-jobs/list",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "meta-jobs-search" => {
+      "id" => "meta-jobs-search",
+      "method" => "GET",
+      "path" => "/meta-jobs/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "teams",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "roles",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "offices",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "is_remote_only",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "sort_by_new",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "results_per_page",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "five",
+            "ten"
+          ]
         }
       ],
       "formParams" => [],
@@ -31413,6 +31776,73 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "tesla-jobs-job" => {
+      "id" => "tesla-jobs-job",
+      "method" => "GET",
+      "path" => "/tesla-jobs/job",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "tesla-jobs-list" => {
+      "id" => "tesla-jobs-list",
+      "method" => "GET",
+      "path" => "/tesla-jobs/list",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "threads-post" => {
       "id" => "threads-post",
       "method" => "GET",
@@ -35443,6 +35873,10 @@ module Crawlora
       "room_reviews" => "airbnb-room-reviews",
       "search" => "airbnb-search"
     },
+    "amazon_jobs" => {
+      "job" => "amazon-jobs-job",
+      "search" => "amazon-jobs-search"
+    },
     "amazon" => {
       "product" => "amazon-product",
       "search" => "amazon-search",
@@ -35472,6 +35906,10 @@ module Crawlora
       "charts" => "apple-books-charts",
       "search" => "apple-books-search",
       "series" => "apple-books-series"
+    },
+    "apple_jobs" => {
+      "job" => "apple-jobs-job",
+      "search" => "apple-jobs-search"
     },
     "apple_podcasts" => {
       "charts" => "apple-podcasts-charts",
@@ -35771,6 +36209,10 @@ module Crawlora
       "lists" => "goodreads-lists",
       "search" => "goodreads-search"
     },
+    "google_jobs" => {
+      "job" => "google-jobs-job",
+      "search" => "google-jobs-search"
+    },
     "google" => {
       "finance_analyst_articles" => "google-finance-analyst-articles",
       "finance_chart" => "google-finance-chart",
@@ -35947,6 +36389,11 @@ module Crawlora
       "rankings" => "manga-rankings",
       "search" => "manga-search",
       "title" => "manga-title"
+    },
+    "meta_jobs" => {
+      "job" => "meta-jobs-job",
+      "list" => "meta-jobs-list",
+      "search" => "meta-jobs-search"
     },
     "metacritic" => {
       "browse" => "metacritic-browse",
@@ -36249,6 +36696,10 @@ module Crawlora
       "tags_list" => "steam-tags-list",
       "top_sellers" => "steam-top-sellers"
     },
+    "tesla_jobs" => {
+      "job" => "tesla-jobs-job",
+      "list" => "tesla-jobs-list"
+    },
     "threads" => {
       "post" => "threads-post",
       "post_replies" => "threads-post-replies",
@@ -36405,7 +36856,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 837
+  OPERATION_COUNT = 848
 
   module OperationId
     AIRBNB_HOST = "airbnb-host"
@@ -36415,6 +36866,8 @@ module Crawlora
     AIRBNB_ROOM_CALENDAR = "airbnb-room-calendar"
     AIRBNB_ROOM_REVIEWS = "airbnb-room-reviews"
     AIRBNB_SEARCH = "airbnb-search"
+    AMAZON_JOBS_JOB = "amazon-jobs-job"
+    AMAZON_JOBS_SEARCH = "amazon-jobs-search"
     AMAZON_PRODUCT = "amazon-product"
     AMAZON_SEARCH = "amazon-search"
     AMAZON_SUGGEST = "amazon-suggest"
@@ -36451,6 +36904,8 @@ module Crawlora
     APPLE_BOOKS_CHARTS = "apple-books-charts"
     APPLE_BOOKS_SEARCH = "apple-books-search"
     APPLE_BOOKS_SERIES = "apple-books-series"
+    APPLE_JOBS_JOB = "apple-jobs-job"
+    APPLE_JOBS_SEARCH = "apple-jobs-search"
     APPLE_PODCASTS_CHARTS = "apple-podcasts-charts"
     APPLE_PODCASTS_CHARTS_RANKINGS = "apple-podcasts-charts-rankings"
     APPLE_PODCASTS_EPISODES_SEARCH = "apple-podcasts-episodes-search"
@@ -36717,6 +37172,8 @@ module Crawlora
     GOOGLE_FINANCE_SEARCH = "google-finance-search"
     GOOGLE_FINANCE_TICKER = "google-finance-ticker"
     GOOGLE_JOBS = "google-jobs"
+    GOOGLE_JOBS_JOB = "google-jobs-job"
+    GOOGLE_JOBS_SEARCH = "google-jobs-search"
     GOOGLE_MAP_PLACE = "google-map-place"
     GOOGLE_MAP_PLACE_PHOTOS = "google-map-place-photos"
     GOOGLE_MAP_PLACE_REVIEWS = "google-map-place-reviews"
@@ -36853,6 +37310,9 @@ module Crawlora
     MANGA_RANKINGS = "manga-rankings"
     MANGA_SEARCH = "manga-search"
     MANGA_TITLE = "manga-title"
+    META_JOBS_JOB = "meta-jobs-job"
+    META_JOBS_LIST = "meta-jobs-list"
+    META_JOBS_SEARCH = "meta-jobs-search"
     META_PING = "ping"
     META_READY = "ready"
     METACRITIC_BROWSE = "metacritic-browse"
@@ -37114,6 +37574,8 @@ module Crawlora
     STEAM_TAGS = "steam-tags"
     STEAM_TAGS_LIST = "steam-tags-list"
     STEAM_TOP_SELLERS = "steam-top-sellers"
+    TESLA_JOBS_JOB = "tesla-jobs-job"
+    TESLA_JOBS_LIST = "tesla-jobs-list"
     THREADS_POST = "threads-post"
     THREADS_POST_REPLIES = "threads-post-replies"
     THREADS_PROFILE = "threads-profile"
