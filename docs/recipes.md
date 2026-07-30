@@ -31,6 +31,18 @@ brand = client.brand.retrieve(domain: "stripe.com")
 Omit `include_metrics` for the 1-credit feed mode. Set it to `true` for the
 3-credit anonymous HTML mode with public post and comment engagement metrics.
 
+## Company Job Searches
+
+Search public job listings directly from employer career sites:
+
+```ruby
+amazon = client.amazon_jobs.search(q: "software engineer", country: "US")
+apple = client.apple_jobs.search(q: "machine learning", location: "United States")
+google = client.google_jobs.search(q: "data scientist", location: "Singapore")
+meta = client.meta_jobs.search(q: "product manager", is_remote_only: true)
+tesla = client.tesla_jobs.list(query: "manufacturing", location: "Texas")
+```
+
 ## Threads Public Lookups
 
 ```ruby

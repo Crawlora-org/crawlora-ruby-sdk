@@ -15,6 +15,12 @@ module Crawlora
     def search: (?location: String, ?check_in: String, ?check_out: String, ?adults: Integer, ?page: Integer, ?currency: String, ?ne_lat: Float, ?ne_lng: Float, ?sw_lat: Float, ?sw_lng: Float, ?zoom: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class AmazonJobsGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def job: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?q: String, ?category: "administrative-support" | "applied-science" | "audio-video-photography-production" | "business-intelligence-data-engineering" | "business-merchant-development" | "buying-planning-instock-management" | "customer-service" | "data-science" | "database-administration" | "design" | "economics" | "editorial-writing-content-management" | "facilities-maintenance-real-estate" | "fgbs" | "fulfillment-center-warehouse-associate" | "fulfillment-operations-management" | "hardware-development" | "human-resources" | "investigation-loss-prevention" | "leadership-development-training" | "legal" | "marketing" | "medical-health-safety" | "operations-it-support-engineering" | "project-program-product-management-non-tech" | "project-program-product-management-technical" | "public-policy" | "public-relations-communications" | "research-science" | "sales-advertising-account-management" | "software-development" | "solutions-architecture" | "supply-chain-transportation-management" | "systems-quality-security-engineering", ?country: String, ?page: Integer, ?limit: Integer, ?sort: "relevant" | "recent", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class AmazonGroup
     def initialize: (Client, Hash[String, String]) -> void
     def product: (?asin: String, ?language: "en_US", ?currency: "USD", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -49,6 +55,12 @@ module Crawlora
     def charts: (?collection: "top-free" | "top-paid", ?genre: Integer, ?country: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search: (?term: String, ?country: String, ?lang: String, ?limit: Integer, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def series: (?id: String, ?country: String, ?lang: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class AppleJobsGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def job: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?q: String, ?location: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class ApplePodcastsGroup
@@ -385,6 +397,12 @@ module Crawlora
     def search: (?q: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class GoogleJobsGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def job: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?q: String, ?location: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class GoogleGroup
     def initialize: (Client, Hash[String, String]) -> void
     def finance_analyst_articles: (?quote: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -580,6 +598,13 @@ module Crawlora
     def rankings: (?sort: "TRENDING_DESC" | "POPULARITY_DESC" | "SCORE_DESC" | "FAVOURITES_DESC" | "START_DATE_DESC" | "UPDATED_AT_DESC", ?format: "MANGA" | "NOVEL" | "ONE_SHOT", ?genre: String, ?status: "FINISHED" | "RELEASING" | "NOT_YET_RELEASED" | "CANCELLED" | "HIATUS", ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search: (?query: String, ?sort: "SEARCH_MATCH" | "POPULARITY_DESC" | "SCORE_DESC" | "TRENDING_DESC" | "FAVOURITES_DESC" | "START_DATE_DESC", ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def title: (?id: String, ?mal: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class MetaJobsGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def job: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def list: (?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?q: String, ?teams: Array[String], ?roles: Array[String], ?offices: Array[String], ?is_remote_only: bool, ?sort_by_new: bool, ?results_per_page: "all" | "five" | "ten", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class MetacriticGroup
@@ -921,6 +946,12 @@ module Crawlora
     def tags: (?tags: String, ?untags: String, ?category1: String, ?category2: String, ?category3: String, ?os: String, ?maxprice: String, ?specials: bool, ?hidef2p: bool, ?deck_compatibility: "1" | "2" | "3", ?vrsupport: String, ?filter: "globaltopsellers" | "topsellers" | "popularnew" | "comingsoon", ?supportedlang: String, ?sort_by: "Relevance" | "Released_DESC" | "Name_ASC" | "Price_ASC" | "Price_DESC" | "Reviews_DESC", ?start: Integer, ?count: Integer, ?cc: String, ?l: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def tags_list: (?l: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def top_sellers: (?cc: String, ?l: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class TeslaJobsGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def job: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def list: (?query: String, ?location: String, ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class ThreadsGroup
