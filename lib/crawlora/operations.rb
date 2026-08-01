@@ -9967,6 +9967,11 @@ module Crawlora
           "type" => "string"
         },
         {
+          "name" => "job_family",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
           "name" => "remote",
           "in" => "query",
           "type" => "boolean"
@@ -22855,6 +22860,410 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "mlb-game" => {
+      "id" => "mlb-game",
+      "method" => "GET",
+      "path" => "/mlb/game",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-game-boxscore" => {
+      "id" => "mlb-game-boxscore",
+      "method" => "GET",
+      "path" => "/mlb/game-boxscore",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-game-play-by-play" => {
+      "id" => "mlb-game-play-by-play",
+      "method" => "GET",
+      "path" => "/mlb/game-play-by-play",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-league-stats" => {
+      "id" => "mlb-league-stats",
+      "method" => "GET",
+      "path" => "/mlb/league-stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "group",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "hitting",
+            "pitching",
+            "fielding"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-player" => {
+      "id" => "mlb-player",
+      "method" => "GET",
+      "path" => "/mlb/player",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-player-stats" => {
+      "id" => "mlb-player-stats",
+      "method" => "GET",
+      "path" => "/mlb/player-stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "group",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "hitting",
+            "pitching",
+            "fielding"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-schedule" => {
+      "id" => "mlb-schedule",
+      "method" => "GET",
+      "path" => "/mlb/schedule",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "start_date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "end_date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-standings" => {
+      "id" => "mlb-standings",
+      "method" => "GET",
+      "path" => "/mlb/standings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "regularSeason",
+            "wildCard",
+            "springTraining"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-team-roster" => {
+      "id" => "mlb-team-roster",
+      "method" => "GET",
+      "path" => "/mlb/team-roster",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "roster_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "active",
+            "40Man",
+            "fullSeason"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-team-stats" => {
+      "id" => "mlb-team-stats",
+      "method" => "GET",
+      "path" => "/mlb/team-stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "group",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "hitting",
+            "pitching",
+            "fielding"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-teams" => {
+      "id" => "mlb-teams",
+      "method" => "GET",
+      "path" => "/mlb/teams",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-transactions" => {
+      "id" => "mlb-transactions",
+      "method" => "GET",
+      "path" => "/mlb/transactions",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "start_date",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "end_date",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "numbeo-cost-of-living-city" => {
       "id" => "numbeo-cost-of-living-city",
       "method" => "GET",
@@ -31817,6 +32226,272 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "target-categories" => {
+      "id" => "target-categories",
+      "method" => "GET",
+      "path" => "/target/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "target-category-products" => {
+      "id" => "target-category-products",
+      "method" => "GET",
+      "path" => "/target/category-products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "featured",
+            "price-low",
+            "price-high",
+            "rating",
+            "bestselling",
+            "newest"
+          ]
+        },
+        {
+          "name" => "store_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "filter_ids",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "target-filter-options" => {
+      "id" => "target-filter-options",
+      "method" => "GET",
+      "path" => "/target/filter-options",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "store_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "filter_ids",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "target-product" => {
+      "id" => "target-product",
+      "method" => "GET",
+      "path" => "/target/product",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tcin",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "store_id",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "target-questions" => {
+      "id" => "target-questions",
+      "method" => "GET",
+      "path" => "/target/questions",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tcin",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "target-reviews" => {
+      "id" => "target-reviews",
+      "method" => "GET",
+      "path" => "/target/reviews",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tcin",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "target-search" => {
+      "id" => "target-search",
+      "method" => "GET",
+      "path" => "/target/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "featured",
+            "price-low",
+            "price-high",
+            "rating",
+            "bestselling",
+            "newest"
+          ]
+        },
+        {
+          "name" => "store_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "filter_ids",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "tesla-jobs-job" => {
       "id" => "tesla-jobs-job",
       "method" => "GET",
@@ -31996,6 +32671,371 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "ticketmaster-attraction" => {
+      "id" => "ticketmaster-attraction",
+      "method" => "GET",
+      "path" => "/ticketmaster/attraction",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ticketmaster-attraction-events" => {
+      "id" => "ticketmaster-attraction-events",
+      "method" => "GET",
+      "path" => "/ticketmaster/attraction-events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "date"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "ticketmaster-discover-categories" => {
+      "id" => "ticketmaster-discover-categories",
+      "method" => "GET",
+      "path" => "/ticketmaster/discover-categories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "concerts",
+            "sports",
+            "arts-theater",
+            "family"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "ticketmaster-discover-category-events" => {
+      "id" => "ticketmaster-discover-category-events",
+      "method" => "GET",
+      "path" => "/ticketmaster/discover-category-events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "ticketmaster-discover-cities" => {
+      "id" => "ticketmaster-discover-cities",
+      "method" => "GET",
+      "path" => "/ticketmaster/discover-cities",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "ticketmaster-discover-city-events" => {
+      "id" => "ticketmaster-discover-city-events",
+      "method" => "GET",
+      "path" => "/ticketmaster/discover-city-events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "ticketmaster-event" => {
+      "id" => "ticketmaster-event",
+      "method" => "GET",
+      "path" => "/ticketmaster/event",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ticketmaster-search-events" => {
+      "id" => "ticketmaster-search-events",
+      "method" => "GET",
+      "path" => "/ticketmaster/search-events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "date"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "ticketmaster-suggest" => {
+      "id" => "ticketmaster-suggest",
+      "method" => "GET",
+      "path" => "/ticketmaster/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ticketmaster-venue" => {
+      "id" => "ticketmaster-venue",
+      "method" => "GET",
+      "path" => "/ticketmaster/venue",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ticketmaster-venue-events" => {
+      "id" => "ticketmaster-venue-events",
+      "method" => "GET",
+      "path" => "/ticketmaster/venue-events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "date"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "tiktok-category" => {
       "id" => "tiktok-category",
       "method" => "GET",
@@ -32048,6 +33088,96 @@ module Crawlora
       "paginatable" => true,
       "cursorParams" => [
         "cursor"
+      ]
+    },
+    "tiktok-creative-center-hashtags" => {
+      "id" => "tiktok-creative-center-hashtags",
+      "method" => "GET",
+      "path" => "/tiktok/creative-center/hashtags",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country_code",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "period",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "7",
+            "30"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "tiktok-creative-center-videos" => {
+      "id" => "tiktok-creative-center-videos",
+      "method" => "GET",
+      "path" => "/tiktok/creative-center/videos",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country_code",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "period",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "7",
+            "30"
+          ]
+        },
+        {
+          "name" => "sort_by",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "views",
+            "engagement",
+            "six_second_views"
+          ]
+        },
+        {
+          "name" => "content_label_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "organic_only",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
       ]
     },
     "tiktok-explore" => {
@@ -36464,6 +37594,20 @@ module Crawlora
       "top_comments" => "metaculus-top-comments",
       "tournament_questions" => "metaculus-tournament-questions"
     },
+    "mlb" => {
+      "game" => "mlb-game",
+      "game_boxscore" => "mlb-game-boxscore",
+      "game_play_by_play" => "mlb-game-play-by-play",
+      "league_stats" => "mlb-league-stats",
+      "player" => "mlb-player",
+      "player_stats" => "mlb-player-stats",
+      "schedule" => "mlb-schedule",
+      "standings" => "mlb-standings",
+      "team_roster" => "mlb-team-roster",
+      "team_stats" => "mlb-team-stats",
+      "teams" => "mlb-teams",
+      "transactions" => "mlb-transactions"
+    },
     "numbeo" => {
       "cost_of_living_city" => "numbeo-cost-of-living-city",
       "cost_of_living_country" => "numbeo-cost-of-living-country",
@@ -36740,6 +37884,15 @@ module Crawlora
       "tags_list" => "steam-tags-list",
       "top_sellers" => "steam-top-sellers"
     },
+    "target" => {
+      "categories" => "target-categories",
+      "category_products" => "target-category-products",
+      "filter_options" => "target-filter-options",
+      "product" => "target-product",
+      "questions" => "target-questions",
+      "reviews" => "target-reviews",
+      "search" => "target-search"
+    },
     "tesla_jobs" => {
       "job" => "tesla-jobs-job",
       "list" => "tesla-jobs-list"
@@ -36751,9 +37904,24 @@ module Crawlora
       "profile_posts" => "threads-profile-posts",
       "search" => "threads-search"
     },
+    "ticketmaster" => {
+      "attraction" => "ticketmaster-attraction",
+      "attraction_events" => "ticketmaster-attraction-events",
+      "discover_categories" => "ticketmaster-discover-categories",
+      "discover_category_events" => "ticketmaster-discover-category-events",
+      "discover_cities" => "ticketmaster-discover-cities",
+      "discover_city_events" => "ticketmaster-discover-city-events",
+      "event" => "ticketmaster-event",
+      "search_events" => "ticketmaster-search-events",
+      "suggest" => "ticketmaster-suggest",
+      "venue" => "ticketmaster-venue",
+      "venue_events" => "ticketmaster-venue-events"
+    },
     "tiktok" => {
       "category" => "tiktok-category",
       "video_comments" => "tiktok-video-comments",
+      "creative_center_hashtags" => "tiktok-creative-center-hashtags",
+      "creative_center_videos" => "tiktok-creative-center-videos",
       "explore" => "tiktok-explore",
       "challenge" => "tiktok-challenge",
       "challenge_list" => "tiktok-challenge-list",
@@ -36900,7 +38068,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 849
+  OPERATION_COUNT = 881
 
   module OperationId
     AIRBNB_HOST = "airbnb-host"
@@ -37381,6 +38549,18 @@ module Crawlora
     METACULUS_QUESTIONS = "metaculus-questions"
     METACULUS_TOP_COMMENTS = "metaculus-top-comments"
     METACULUS_TOURNAMENT_QUESTIONS = "metaculus-tournament-questions"
+    MLB_GAME = "mlb-game"
+    MLB_GAME_BOXSCORE = "mlb-game-boxscore"
+    MLB_GAME_PLAY_BY_PLAY = "mlb-game-play-by-play"
+    MLB_LEAGUE_STATS = "mlb-league-stats"
+    MLB_PLAYER = "mlb-player"
+    MLB_PLAYER_STATS = "mlb-player-stats"
+    MLB_SCHEDULE = "mlb-schedule"
+    MLB_STANDINGS = "mlb-standings"
+    MLB_TEAM_ROSTER = "mlb-team-roster"
+    MLB_TEAM_STATS = "mlb-team-stats"
+    MLB_TEAMS = "mlb-teams"
+    MLB_TRANSACTIONS = "mlb-transactions"
     NUMBEO_COST_OF_LIVING_CITY = "numbeo-cost-of-living-city"
     NUMBEO_COST_OF_LIVING_COUNTRY = "numbeo-cost-of-living-country"
     NUMBEO_COST_OF_LIVING_RANKINGS = "numbeo-cost-of-living-rankings"
@@ -37619,6 +38799,13 @@ module Crawlora
     STEAM_TAGS = "steam-tags"
     STEAM_TAGS_LIST = "steam-tags-list"
     STEAM_TOP_SELLERS = "steam-top-sellers"
+    TARGET_CATEGORIES = "target-categories"
+    TARGET_CATEGORY_PRODUCTS = "target-category-products"
+    TARGET_FILTER_OPTIONS = "target-filter-options"
+    TARGET_PRODUCT = "target-product"
+    TARGET_QUESTIONS = "target-questions"
+    TARGET_REVIEWS = "target-reviews"
+    TARGET_SEARCH = "target-search"
     TESLA_JOBS_JOB = "tesla-jobs-job"
     TESLA_JOBS_LIST = "tesla-jobs-list"
     THREADS_POST = "threads-post"
@@ -37626,9 +38813,22 @@ module Crawlora
     THREADS_PROFILE = "threads-profile"
     THREADS_PROFILE_POSTS = "threads-profile-posts"
     THREADS_SEARCH = "threads-search"
+    TICKETMASTER_ATTRACTION = "ticketmaster-attraction"
+    TICKETMASTER_ATTRACTION_EVENTS = "ticketmaster-attraction-events"
+    TICKETMASTER_DISCOVER_CATEGORIES = "ticketmaster-discover-categories"
+    TICKETMASTER_DISCOVER_CATEGORY_EVENTS = "ticketmaster-discover-category-events"
+    TICKETMASTER_DISCOVER_CITIES = "ticketmaster-discover-cities"
+    TICKETMASTER_DISCOVER_CITY_EVENTS = "ticketmaster-discover-city-events"
+    TICKETMASTER_EVENT = "ticketmaster-event"
+    TICKETMASTER_SEARCH_EVENTS = "ticketmaster-search-events"
+    TICKETMASTER_SUGGEST = "ticketmaster-suggest"
+    TICKETMASTER_VENUE = "ticketmaster-venue"
+    TICKETMASTER_VENUE_EVENTS = "ticketmaster-venue-events"
     TIKTOK_CATEGORY = "tiktok-category"
     TIKTOK_CHALLENGE = "tiktok-challenge"
     TIKTOK_CHALLENGE_LIST = "tiktok-challenge-list"
+    TIKTOK_CREATIVE_CENTER_HASHTAGS = "tiktok-creative-center-hashtags"
+    TIKTOK_CREATIVE_CENTER_VIDEOS = "tiktok-creative-center-videos"
     TIKTOK_EXPLORE = "tiktok-explore"
     TIKTOK_POPULAR_TREND_COUNTRY_INDUSTRY_META = "tiktok-popular-trend-country-industry-meta"
     TIKTOK_POST = "tiktok-post"
