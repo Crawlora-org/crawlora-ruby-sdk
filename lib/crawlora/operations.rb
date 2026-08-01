@@ -33888,6 +33888,76 @@ module Crawlora
           ]
         },
         {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort_by",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "popularity.desc",
+            "popularity.asc",
+            "vote_average.desc",
+            "vote_average.asc",
+            "primary_release_date.desc",
+            "primary_release_date.asc",
+            "title.asc",
+            "title.desc"
+          ]
+        },
+        {
+          "name" => "with_genres",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "original_language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_votes",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_runtime",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_runtime",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "include_adult",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
           "name" => "limit",
           "in" => "query",
           "type" => "integer"
@@ -33904,7 +33974,8 @@ module Crawlora
       ],
       "security" => [
         "ApiKeyAuth"
-      ]
+      ],
+      "paginatable" => true
     },
     "tmdb-movie" => {
       "id" => "tmdb-movie",
@@ -33926,6 +33997,37 @@ module Crawlora
       "security" => [
         "ApiKeyAuth"
       ]
+    },
+    "tmdb-person-list" => {
+      "id" => "tmdb-person-list",
+      "method" => "GET",
+      "path" => "/tmdb/person/list",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
     },
     "tmdb-person" => {
       "id" => "tmdb-person",
@@ -33977,6 +34079,11 @@ module Crawlora
           ]
         },
         {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
           "name" => "limit",
           "in" => "query",
           "type" => "integer"
@@ -33993,7 +34100,8 @@ module Crawlora
       ],
       "security" => [
         "ApiKeyAuth"
-      ]
+      ],
+      "paginatable" => true
     },
     "tmdb-tv-list" => {
       "id" => "tmdb-tv-list",
@@ -34013,6 +34121,76 @@ module Crawlora
           ]
         },
         {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort_by",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "popularity.desc",
+            "popularity.asc",
+            "vote_average.desc",
+            "vote_average.asc",
+            "first_air_date.desc",
+            "first_air_date.asc",
+            "name.asc",
+            "name.desc"
+          ]
+        },
+        {
+          "name" => "with_genres",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "original_language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_votes",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_runtime",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_runtime",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "include_adult",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
           "name" => "limit",
           "in" => "query",
           "type" => "integer"
@@ -34029,7 +34207,8 @@ module Crawlora
       ],
       "security" => [
         "ApiKeyAuth"
-      ]
+      ],
+      "paginatable" => true
     },
     "tmdb-tv" => {
       "id" => "tmdb-tv",
@@ -37947,6 +38126,7 @@ module Crawlora
     "tmdb" => {
       "movie_list" => "tmdb-movie-list",
       "movie" => "tmdb-movie",
+      "person_list" => "tmdb-person-list",
       "person" => "tmdb-person",
       "search" => "tmdb-search",
       "tv_list" => "tmdb-tv-list",
@@ -38068,7 +38248,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 881
+  OPERATION_COUNT = 882
 
   module OperationId
     AIRBNB_HOST = "airbnb-host"
@@ -38852,6 +39032,7 @@ module Crawlora
     TMDB_MOVIE = "tmdb-movie"
     TMDB_MOVIE_LIST = "tmdb-movie-list"
     TMDB_PERSON = "tmdb-person"
+    TMDB_PERSON_LIST = "tmdb-person-list"
     TMDB_SEARCH = "tmdb-search"
     TMDB_TV = "tmdb-tv"
     TMDB_TV_LIST = "tmdb-tv-list"
