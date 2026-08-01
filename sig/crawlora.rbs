@@ -1041,11 +1041,12 @@ module Crawlora
 
   class TmdbGroup
     def initialize: (Client, Hash[String, String]) -> void
-    def movie_list: (?category: "popular" | "top_rated" | "now_playing" | "upcoming", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def movie_list: (?category: "popular" | "top_rated" | "now_playing" | "upcoming", ?page: Integer, ?sort_by: "popularity.desc" | "popularity.asc" | "vote_average.desc" | "vote_average.asc" | "primary_release_date.desc" | "primary_release_date.asc" | "title.asc" | "title.desc", ?with_genres: String, ?original_language: String, ?date_from: String, ?date_to: String, ?min_rating: Float, ?max_rating: Float, ?min_votes: Integer, ?min_runtime: Integer, ?max_runtime: Integer, ?include_adult: bool, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def movie: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def person_list: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def person: (?id: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def search: (?query: String, ?type: "movie" | "tv" | "person", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def tv_list: (?category: "popular" | "top_rated" | "airing_today" | "on_the_air", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?query: String, ?type: "movie" | "tv" | "person", ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tv_list: (?category: "popular" | "top_rated" | "airing_today" | "on_the_air", ?page: Integer, ?sort_by: "popularity.desc" | "popularity.asc" | "vote_average.desc" | "vote_average.asc" | "first_air_date.desc" | "first_air_date.asc" | "name.asc" | "name.desc", ?with_genres: String, ?original_language: String, ?date_from: String, ?date_to: String, ?min_rating: Float, ?max_rating: Float, ?min_votes: Integer, ?min_runtime: Integer, ?max_runtime: Integer, ?include_adult: bool, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def tv: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
