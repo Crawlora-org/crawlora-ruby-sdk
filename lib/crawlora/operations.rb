@@ -14598,6 +14598,207 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "doordash-search" => {
+      "id" => "doordash-search",
+      "method" => "GET",
+      "path" => "/doordash/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "tag",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "dashPassOnly",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "asapOnly",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "pickupOnly",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "maxDistanceMiles",
+          "in" => "query",
+          "type" => "number"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "doordash-search-autocomplete" => {
+      "id" => "doordash-search-autocomplete",
+      "method" => "GET",
+      "path" => "/doordash/search/autocomplete",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "doordash-search-filters" => {
+      "id" => "doordash-search-filters",
+      "method" => "GET",
+      "path" => "/doordash/search/filters",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "doordash-store" => {
+      "id" => "doordash-store",
+      "method" => "GET",
+      "path" => "/doordash/store/{store_id}",
+      "pathParams" => [
+        "store_id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "doordash-store-menu" => {
+      "id" => "doordash-store-menu",
+      "method" => "GET",
+      "path" => "/doordash/store/{store_id}/menu",
+      "pathParams" => [
+        "store_id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "ebay-item" => {
       "id" => "ebay-item",
       "method" => "GET",
@@ -18358,6 +18559,166 @@ module Crawlora
           "in" => "query",
           "type" => "string",
           "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-search-title" => {
+      "id" => "imdb-search-title",
+      "method" => "GET",
+      "path" => "/imdb/search/title",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "title",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "title_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "genres",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "release_date_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "release_date_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_user_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_user_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_votes",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_votes",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_popularity",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_popularity",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_runtime",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_runtime",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "groups",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "keywords",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "companies",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "certificates",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "colors",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "countries",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "languages",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sound_mixes",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "role",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "characters",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "plot",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "include_adult",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort_order",
+          "in" => "query",
+          "type" => "string"
         },
         {
           "name" => "limit",
@@ -35023,6 +35384,49 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "ubereats-feed" => {
+      "id" => "ubereats-feed",
+      "method" => "GET",
+      "path" => "/ubereats/feed",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "ubereats-search" => {
       "id" => "ubereats-search",
       "method" => "GET",
@@ -35083,6 +35487,27 @@ module Crawlora
       "id" => "ubereats-store",
       "method" => "GET",
       "path" => "/ubereats/store/{store_id}",
+      "pathParams" => [
+        "store_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ubereats-store-menu" => {
+      "id" => "ubereats-store-menu",
+      "method" => "GET",
+      "path" => "/ubereats/store/{store_id}/menu",
       "pathParams" => [
         "store_id"
       ],
@@ -37504,6 +37929,13 @@ module Crawlora
       "release" => "discogs-release",
       "search" => "discogs-search"
     },
+    "door_dash" => {
+      "doordash_search" => "doordash-search",
+      "doordash_search_autocomplete" => "doordash-search-autocomplete",
+      "doordash_search_filters" => "doordash-search-filters",
+      "doordash_store" => "doordash-store",
+      "doordash_store_menu" => "doordash-store-menu"
+    },
     "e_bay" => {
       "ebay_item" => "ebay-item",
       "ebay_search" => "ebay-search",
@@ -37626,6 +38058,7 @@ module Crawlora
       "name_awards" => "imdb-name-awards",
       "name_credits" => "imdb-name-credits",
       "search" => "imdb-search",
+      "search_title" => "imdb-search-title",
       "title" => "imdb-title",
       "title_awards" => "imdb-title-awards",
       "title_company_credits" => "imdb-title-company-credits",
@@ -38159,8 +38592,10 @@ module Crawlora
       "category" => "trustpilot-category"
     },
     "uber_eats" => {
+      "ubereats_feed" => "ubereats-feed",
       "ubereats_search" => "ubereats-search",
       "ubereats_store" => "ubereats-store",
+      "ubereats_store_menu" => "ubereats-store-menu",
       "ubereats_store_reviews" => "ubereats-store-reviews"
     },
     "usage" => {
@@ -38248,7 +38683,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 882
+  OPERATION_COUNT = 890
 
   module OperationId
     AIRBNB_HOST = "airbnb-host"
@@ -38498,6 +38933,11 @@ module Crawlora
     DISCOGS_MASTER = "discogs-master"
     DISCOGS_RELEASE = "discogs-release"
     DISCOGS_SEARCH = "discogs-search"
+    DOOR_DASH_DOORDASH_SEARCH = "doordash-search"
+    DOOR_DASH_DOORDASH_SEARCH_AUTOCOMPLETE = "doordash-search-autocomplete"
+    DOOR_DASH_DOORDASH_SEARCH_FILTERS = "doordash-search-filters"
+    DOOR_DASH_DOORDASH_STORE = "doordash-store"
+    DOOR_DASH_DOORDASH_STORE_MENU = "doordash-store-menu"
     EBAY_EBAY_ITEM = "ebay-item"
     EBAY_EBAY_SEARCH = "ebay-search"
     EBAY_EBAY_SELLER = "ebay-seller"
@@ -38601,6 +39041,7 @@ module Crawlora
     IMDB_NAME_AWARDS = "imdb-name-awards"
     IMDB_NAME_CREDITS = "imdb-name-credits"
     IMDB_SEARCH = "imdb-search"
+    IMDB_SEARCH_TITLE = "imdb-search-title"
     IMDB_TITLE = "imdb-title"
     IMDB_TITLE_AWARDS = "imdb-title-awards"
     IMDB_TITLE_COMPANY_CREDITS = "imdb-title-company-credits"
@@ -39056,8 +39497,10 @@ module Crawlora
     TRUSTPILOT_CATEGORIES = "trustpilot-categories"
     TRUSTPILOT_CATEGORY = "trustpilot-category"
     TRUSTPILOT_CATEGORY_SEARCH = "trustpilot-category-search"
+    UBER_EATS_UBEREATS_FEED = "ubereats-feed"
     UBER_EATS_UBEREATS_SEARCH = "ubereats-search"
     UBER_EATS_UBEREATS_STORE = "ubereats-store"
+    UBER_EATS_UBEREATS_STORE_MENU = "ubereats-store-menu"
     UBER_EATS_UBEREATS_STORE_REVIEWS = "ubereats-store-reviews"
     USAGE_ME_ENDPOINTS = "usage-me-endpoints"
     USAGE_ME_OVERVIEW = "usage-me-overview"

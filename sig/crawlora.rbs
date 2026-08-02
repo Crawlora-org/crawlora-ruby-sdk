@@ -332,6 +332,15 @@ module Crawlora
     def search: (?q: String, ?type: "release" | "master" | "artist" | "label", ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class DoorDashGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def doordash_search: (?query: String, ?latitude: Float, ?longitude: Float, ?tag: String, ?dashPassOnly: bool, ?asapOnly: bool, ?pickupOnly: bool, ?maxDistanceMiles: Float, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def doordash_search_autocomplete: (?query: String, ?latitude: Float, ?longitude: Float, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def doordash_search_filters: (?latitude: Float, ?longitude: Float, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def doordash_store: (?store_id: String, ?latitude: Float, ?longitude: Float, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def doordash_store_menu: (?store_id: String, ?latitude: Float, ?longitude: Float, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class EBayGroup
     def initialize: (Client, Hash[String, String]) -> void
     def ebay_item: (?item_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -473,6 +482,7 @@ module Crawlora
     def name_awards: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def name_credits: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search: (?query: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search_title: (?title: String, ?title_type: String, ?genres: String, ?release_date_from: String, ?release_date_to: String, ?min_user_rating: Float, ?max_user_rating: Float, ?min_votes: Integer, ?max_votes: Integer, ?min_popularity: Integer, ?max_popularity: Integer, ?min_runtime: Integer, ?max_runtime: Integer, ?groups: String, ?keywords: String, ?companies: String, ?certificates: String, ?colors: String, ?countries: String, ?languages: String, ?sound_mixes: String, ?role: String, ?characters: String, ?plot: String, ?include_adult: bool, ?sort: String, ?sort_order: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def title: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def title_awards: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def title_company_credits: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -1084,8 +1094,10 @@ module Crawlora
 
   class UberEatsGroup
     def initialize: (Client, Hash[String, String]) -> void
+    def ubereats_feed: (?latitude: Float, ?longitude: Float, ?offset: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def ubereats_search: (?latitude: Float, ?longitude: Float, ?query: String, ?offset: Integer, ?limit: Integer, ?cursor: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def ubereats_store: (?store_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def ubereats_store_menu: (?store_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def ubereats_store_reviews: (?store_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
