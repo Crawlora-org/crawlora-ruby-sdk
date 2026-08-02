@@ -14598,6 +14598,49 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "doordash-feed" => {
+      "id" => "doordash-feed",
+      "method" => "GET",
+      "path" => "/doordash/feed",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "doordash-search" => {
       "id" => "doordash-search",
       "method" => "GET",
@@ -14731,6 +14774,44 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "doordash-search-items" => {
+      "id" => "doordash-search-items",
+      "method" => "GET",
+      "path" => "/doordash/search/items",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "doordash-store" => {
       "id" => "doordash-store",
       "method" => "GET",
@@ -14765,10 +14846,113 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "doordash-store-fulfillment" => {
+      "id" => "doordash-store-fulfillment",
+      "method" => "GET",
+      "path" => "/doordash/store/{store_id}/fulfillment",
+      "pathParams" => [
+        "store_id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "doordash-store-item" => {
+      "id" => "doordash-store-item",
+      "method" => "GET",
+      "path" => "/doordash/store/{store_id}/item/{item_id}",
+      "pathParams" => [
+        "store_id",
+        "item_id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "doordash-store-menu" => {
       "id" => "doordash-store-menu",
       "method" => "GET",
       "path" => "/doordash/store/{store_id}/menu",
+      "pathParams" => [
+        "store_id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "doordash-store-reviews" => {
+      "id" => "doordash-store-reviews",
+      "method" => "GET",
+      "path" => "/doordash/store/{store_id}/reviews",
       "pathParams" => [
         "store_id"
       ],
@@ -37930,11 +38114,16 @@ module Crawlora
       "search" => "discogs-search"
     },
     "door_dash" => {
+      "doordash_feed" => "doordash-feed",
       "doordash_search" => "doordash-search",
       "doordash_search_autocomplete" => "doordash-search-autocomplete",
       "doordash_search_filters" => "doordash-search-filters",
+      "doordash_search_items" => "doordash-search-items",
       "doordash_store" => "doordash-store",
-      "doordash_store_menu" => "doordash-store-menu"
+      "doordash_store_fulfillment" => "doordash-store-fulfillment",
+      "doordash_store_item" => "doordash-store-item",
+      "doordash_store_menu" => "doordash-store-menu",
+      "doordash_store_reviews" => "doordash-store-reviews"
     },
     "e_bay" => {
       "ebay_item" => "ebay-item",
@@ -38683,7 +38872,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 890
+  OPERATION_COUNT = 895
 
   module OperationId
     AIRBNB_HOST = "airbnb-host"
@@ -38933,11 +39122,16 @@ module Crawlora
     DISCOGS_MASTER = "discogs-master"
     DISCOGS_RELEASE = "discogs-release"
     DISCOGS_SEARCH = "discogs-search"
+    DOOR_DASH_DOORDASH_FEED = "doordash-feed"
     DOOR_DASH_DOORDASH_SEARCH = "doordash-search"
     DOOR_DASH_DOORDASH_SEARCH_AUTOCOMPLETE = "doordash-search-autocomplete"
     DOOR_DASH_DOORDASH_SEARCH_FILTERS = "doordash-search-filters"
+    DOOR_DASH_DOORDASH_SEARCH_ITEMS = "doordash-search-items"
     DOOR_DASH_DOORDASH_STORE = "doordash-store"
+    DOOR_DASH_DOORDASH_STORE_FULFILLMENT = "doordash-store-fulfillment"
+    DOOR_DASH_DOORDASH_STORE_ITEM = "doordash-store-item"
     DOOR_DASH_DOORDASH_STORE_MENU = "doordash-store-menu"
+    DOOR_DASH_DOORDASH_STORE_REVIEWS = "doordash-store-reviews"
     EBAY_EBAY_ITEM = "ebay-item"
     EBAY_EBAY_SEARCH = "ebay-search"
     EBAY_EBAY_SELLER = "ebay-seller"

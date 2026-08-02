@@ -2,7 +2,7 @@
 
 Generated from `openapi/public.json`. Deprecated, admin, and internal operations are excluded from this SDK contract.
 
-Total operations: `890`
+Total operations: `895`
 
 | Group | SDK method | Operation ID | HTTP | Params | Auth | Response | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -258,11 +258,16 @@ Total operations: `890`
 | discogs | `discogs.master` | `discogs-master` | `GET /discogs/master/{id}` | `id` (path String required) | `ApiKeyAuth` | `DiscogsMasterResponse` |  |
 | discogs | `discogs.release` | `discogs-release` | `GET /discogs/release/{id}` | `id` (path String required) | `ApiKeyAuth` | `DiscogsReleaseResponse` |  |
 | discogs | `discogs.search` | `discogs-search` | `GET /discogs/search` | `q` (query String required)<br>`type` (query "release" \| "master" \| "artist" \| "label")<br>`page` (query Integer)<br>`per_page` (query Integer) | `ApiKeyAuth` | `DiscogsSearchResponse` |  |
+| door_dash | `door_dash.doordash_feed` | `doordash-feed` | `GET /doordash/feed` | `latitude` (query Float required)<br>`longitude` (query Float required)<br>`offset` (query Integer)<br>`limit` (query Integer) | `ApiKeyAuth` | `DoorDashDoordashFeedResponse` |  |
 | door_dash | `door_dash.doordash_search` | `doordash-search` | `GET /doordash/search` | `query` (query String required)<br>`latitude` (query Float required)<br>`longitude` (query Float required)<br>`tag` (query String)<br>`dashPassOnly` (query bool)<br>`asapOnly` (query bool)<br>`pickupOnly` (query bool)<br>`maxDistanceMiles` (query Float) | `ApiKeyAuth` | `DoorDashDoordashSearchResponse` |  |
 | door_dash | `door_dash.doordash_search_autocomplete` | `doordash-search-autocomplete` | `GET /doordash/search/autocomplete` | `query` (query String required)<br>`latitude` (query Float required)<br>`longitude` (query Float required) | `ApiKeyAuth` | `DoorDashDoordashSearchAutocompleteResponse` |  |
 | door_dash | `door_dash.doordash_search_filters` | `doordash-search-filters` | `GET /doordash/search/filters` | `latitude` (query Float required)<br>`longitude` (query Float required) | `ApiKeyAuth` | `DoorDashDoordashSearchFiltersResponse` |  |
+| door_dash | `door_dash.doordash_search_items` | `doordash-search-items` | `GET /doordash/search/items` | `query` (query String required)<br>`latitude` (query Float required)<br>`longitude` (query Float required) | `ApiKeyAuth` | `DoorDashDoordashSearchItemsResponse` |  |
 | door_dash | `door_dash.doordash_store` | `doordash-store` | `GET /doordash/store/{store_id}` | `store_id` (path String required)<br>`latitude` (query Float required)<br>`longitude` (query Float required) | `ApiKeyAuth` | `DoorDashDoordashStoreResponse` |  |
+| door_dash | `door_dash.doordash_store_fulfillment` | `doordash-store-fulfillment` | `GET /doordash/store/{store_id}/fulfillment` | `store_id` (path String required)<br>`latitude` (query Float required)<br>`longitude` (query Float required) | `ApiKeyAuth` | `DoorDashDoordashStoreFulfillmentResponse` |  |
+| door_dash | `door_dash.doordash_store_item` | `doordash-store-item` | `GET /doordash/store/{store_id}/item/{item_id}` | `store_id` (path String required)<br>`item_id` (path String required)<br>`latitude` (query Float required)<br>`longitude` (query Float required) | `ApiKeyAuth` | `DoorDashDoordashStoreItemResponse` |  |
 | door_dash | `door_dash.doordash_store_menu` | `doordash-store-menu` | `GET /doordash/store/{store_id}/menu` | `store_id` (path String required)<br>`latitude` (query Float required)<br>`longitude` (query Float required) | `ApiKeyAuth` | `DoorDashDoordashStoreMenuResponse` |  |
+| door_dash | `door_dash.doordash_store_reviews` | `doordash-store-reviews` | `GET /doordash/store/{store_id}/reviews` | `store_id` (path String required)<br>`latitude` (query Float required)<br>`longitude` (query Float required) | `ApiKeyAuth` | `DoorDashDoordashStoreReviewsResponse` |  |
 | e_bay | `e_bay.ebay_item` | `ebay-item` | `GET /ebay/item/{item_id}` | `item_id` (path String required) | `ApiKeyAuth` | `EBayEbayItemResponse` |  |
 | e_bay | `e_bay.ebay_search` | `ebay-search` | `POST /ebay/search` | `option` (body String required) | `ApiKeyAuth` | `EBayEbaySearchResponse` |  |
 | e_bay | `e_bay.ebay_seller` | `ebay-seller` | `GET /ebay/seller/{seller}` | `seller` (path String required) | `ApiKeyAuth` | `EBayEbaySellerResponse` |  |

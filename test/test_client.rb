@@ -187,7 +187,9 @@ class ClientTest < Minitest::Test
 
   def test_network_error_on_transport_raise
     raising = Object.new
-    def raising.call(**_) = raise(SocketError, "boom")
+    def raising.call(**_)
+      raise(SocketError, "boom")
+    end
     c = Crawlora::Client.new(api_key: "k", transport: raising)
     assert_raises(Crawlora::NetworkError) { c.bing.search(q: "x") }
   end
