@@ -179,3 +179,11 @@ Inject any object responding to
 fake = ->(**) { Crawlora::Response.new(200, { "content-type" => "application/json" }, '{"data":[]}') }
 client = Crawlora.client(transport: fake)
 ```
+
+## Etsy
+
+```ruby
+results = client.etsy.search(q: "handmade mug")
+listing = client.etsy.listing(id: "4474501681")
+shop = client.etsy.shop(id: "gaguatelier")
+```
