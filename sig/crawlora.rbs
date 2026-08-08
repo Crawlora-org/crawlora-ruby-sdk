@@ -261,7 +261,7 @@ module Crawlora
   class CongressGroup
     def initialize: (Client, Hash[String, String]) -> void
     def report: (?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def stock_disclosures: (?chamber: "house" | "senate", ?member: String, ?ticker: String, ?state: String, ?district: String, ?filer_type: String, ?election_year: String, ?report_type: String, ?from: String, ?to: String, ?sort: "name_asc" | "name_desc" | "office_asc" | "office_desc" | "filing_year_asc" | "filing_year_desc", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def stock_disclosures: (?chamber: "house" | "senate", ?member: String, ?ticker: String, ?state: String, ?district: String, ?filer_type: String, ?election_year: String, ?report_type: String, ?from: String, ?to: String, ?sort: "name_asc" | "name_desc" | "office_asc" | "office_desc" | "filing_year_asc" | "filing_year_desc", ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class WebGroup

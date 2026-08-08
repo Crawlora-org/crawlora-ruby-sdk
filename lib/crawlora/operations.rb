@@ -7663,6 +7663,11 @@ module Crawlora
           ]
         },
         {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
           "name" => "limit",
           "in" => "query",
           "type" => "integer"
@@ -7679,7 +7684,8 @@ module Crawlora
       ],
       "security" => [
         "ApiKeyAuth"
-      ]
+      ],
+      "paginatable" => true
     },
     "contact" => {
       "id" => "contact",
