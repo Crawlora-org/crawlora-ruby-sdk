@@ -7610,12 +7610,32 @@ module Crawlora
           "type" => "string"
         },
         {
+          "name" => "first_name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "last_name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
           "name" => "ticker",
           "in" => "query",
           "type" => "string"
         },
         {
           "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "senator_state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "candidate_state",
           "in" => "query",
           "type" => "string"
         },
