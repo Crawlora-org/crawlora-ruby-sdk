@@ -3,6 +3,280 @@
 
 module Crawlora
   OPERATIONS = {
+    "agoda-activities-search" => {
+      "id" => "agoda-activities-search",
+      "method" => "GET",
+      "path" => "/agoda/activities/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "keyword",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "city_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "agoda-activity-detail" => {
+      "id" => "agoda-activity-detail",
+      "method" => "GET",
+      "path" => "/agoda/activities/{activity_id}",
+      "pathParams" => [
+        "activity_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "agoda-flights-itinerary-amenities" => {
+      "id" => "agoda-flights-itinerary-amenities",
+      "method" => "POST",
+      "path" => "/agoda/flights/itinerary-amenities",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "body",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "agoda-flights-search" => {
+      "id" => "agoda-flights-search",
+      "method" => "GET",
+      "path" => "/agoda/flights/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "origin",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "destination",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "departure_date",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "adults",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "children",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "infants",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cabin_class",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Economy",
+            "PremiumEconomy",
+            "Business",
+            "First"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "agoda-flights-search-locations" => {
+      "id" => "agoda-flights-search-locations",
+      "method" => "GET",
+      "path" => "/agoda/flights/search-locations",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "keyword",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "agoda-homes-search" => {
+      "id" => "agoda-homes-search",
+      "method" => "GET",
+      "path" => "/agoda/homes/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "city_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "agoda-hotels-search" => {
+      "id" => "agoda-hotels-search",
+      "method" => "GET",
+      "path" => "/agoda/hotels/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "city_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "agoda-hotel-detail" => {
+      "id" => "agoda-hotel-detail",
+      "method" => "GET",
+      "path" => "/agoda/hotels/{property_id}",
+      "pathParams" => [
+        "property_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "airbnb-host" => {
       "id" => "airbnb-host",
       "method" => "GET",
@@ -2739,6 +3013,242 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "bluesky-author-feed" => {
+      "id" => "bluesky-author-feed",
+      "method" => "GET",
+      "path" => "/bluesky/author-feed",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "actor",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "bluesky-followers" => {
+      "id" => "bluesky-followers",
+      "method" => "GET",
+      "path" => "/bluesky/followers",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "actor",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "bluesky-follows" => {
+      "id" => "bluesky-follows",
+      "method" => "GET",
+      "path" => "/bluesky/follows",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "actor",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "bluesky-post-thread" => {
+      "id" => "bluesky-post-thread",
+      "method" => "GET",
+      "path" => "/bluesky/post-thread",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "uri",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "depth",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bluesky-profile" => {
+      "id" => "bluesky-profile",
+      "method" => "GET",
+      "path" => "/bluesky/profile",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "actor",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bluesky-search-actors" => {
+      "id" => "bluesky-search-actors",
+      "method" => "GET",
+      "path" => "/bluesky/search-actors",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "bluesky-trending-topics" => {
+      "id" => "bluesky-trending-topics",
+      "method" => "GET",
+      "path" => "/bluesky/trending-topics",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "booking-attractions-detail" => {
       "id" => "booking-attractions-detail",
       "method" => "GET",
@@ -4575,6 +5085,306 @@ module Crawlora
           "required" => true
         }
       ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "carmax-search" => {
+      "id" => "carmax-search",
+      "method" => "GET",
+      "path" => "/carmax/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "make",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "model",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "zip",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_price",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_price",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_mileage",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "carmax-search-suggestions" => {
+      "id" => "carmax-search-suggestions",
+      "method" => "GET",
+      "path" => "/carmax/search/suggestions",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "search",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "exact_match",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "carmax-shop-by-brand" => {
+      "id" => "carmax-shop-by-brand",
+      "method" => "GET",
+      "path" => "/carmax/shop-by-brand",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "carmax-store" => {
+      "id" => "carmax-store",
+      "method" => "GET",
+      "path" => "/carmax/store/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "carmax-stores" => {
+      "id" => "carmax-stores",
+      "method" => "GET",
+      "path" => "/carmax/stores",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "zip",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "keyword",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "take",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "carmax-vehicle" => {
+      "id" => "carmax-vehicle",
+      "method" => "GET",
+      "path" => "/carmax/vehicle/{stock_number}",
+      "pathParams" => [
+        "stock_number"
+      ],
+      "queryParams" => [
+        {
+          "name" => "store_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "carmax-vehicle-recommendations" => {
+      "id" => "carmax-vehicle-recommendations",
+      "method" => "GET",
+      "path" => "/carmax/vehicle/{stock_number}/recommendations",
+      "pathParams" => [
+        "stock_number"
+      ],
+      "queryParams" => [
+        {
+          "name" => "store_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "carsdotcom-search" => {
+      "id" => "carsdotcom-search",
+      "method" => "GET",
+      "path" => "/carsdotcom/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "zip",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "radius",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "stock_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "new",
+            "used",
+            "cpo",
+            "all"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "carsdotcom-vehicle" => {
+      "id" => "carsdotcom-vehicle",
+      "method" => "GET",
+      "path" => "/carsdotcom/vehicle/{listing_id}",
+      "pathParams" => [
+        "listing_id"
+      ],
+      "queryParams" => [],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -6753,6 +7563,124 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "congress-report" => {
+      "id" => "congress-report",
+      "method" => "GET",
+      "path" => "/congress/report",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "congress-stock-disclosures" => {
+      "id" => "congress-stock-disclosures",
+      "method" => "GET",
+      "path" => "/congress/stock-disclosures",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "chamber",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "house",
+            "senate"
+          ]
+        },
+        {
+          "name" => "member",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ticker",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "district",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "filer_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "election_year",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "report_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "name_asc",
+            "name_desc",
+            "office_asc",
+            "office_desc",
+            "filing_year_asc",
+            "filing_year_desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "contact" => {
       "id" => "contact",
       "method" => "POST",
@@ -6762,6 +7690,169 @@ module Crawlora
       "formParams" => [],
       "bodyParam" => "option",
       "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "costco-categories" => {
+      "id" => "costco-categories",
+      "method" => "GET",
+      "path" => "/costco/categories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "costco-product" => {
+      "id" => "costco-product",
+      "method" => "GET",
+      "path" => "/costco/product/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "costco-product-availability" => {
+      "id" => "costco-product-availability",
+      "method" => "GET",
+      "path" => "/costco/product/{id}/availability",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "postal_code",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "costco-product-reviews" => {
+      "id" => "costco-product-reviews",
+      "method" => "GET",
+      "path" => "/costco/product/{id}/reviews",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "costco-search" => {
+      "id" => "costco-search",
+      "method" => "GET",
+      "path" => "/costco/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "costco-warehouses" => {
+      "id" => "costco-warehouses",
+      "method" => "GET",
+      "path" => "/costco/warehouses",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
       "consumes" => [
         "application/json"
       ],
@@ -14930,6 +16021,194 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "depop-categories" => {
+      "id" => "depop-categories",
+      "method" => "GET",
+      "path" => "/depop/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "depop-item" => {
+      "id" => "depop-item",
+      "method" => "GET",
+      "path" => "/depop/item/{slug}",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "depop-search" => {
+      "id" => "depop-search",
+      "method" => "GET",
+      "path" => "/depop/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "price_min",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "price_max",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "condition",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "colours",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "on_sale",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "subcategory",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "gender",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "brand_ids",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "depop-shop" => {
+      "id" => "depop-shop",
+      "method" => "GET",
+      "path" => "/depop/shop/{username}",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [
+        {
+          "name" => "price_min",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "price_max",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "condition",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "colours",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "on_sale",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "subcategory",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "gender",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "antibot-check" => {
       "id" => "antibot-check",
       "method" => "POST",
@@ -15597,6 +16876,206 @@ module Crawlora
       "security" => [
         "ApiKeyAuth"
       ]
+    },
+    "duckduckgo-image" => {
+      "id" => "duckduckgo-image",
+      "method" => "GET",
+      "path" => "/duckduckgo/image",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "duckduckgo-news" => {
+      "id" => "duckduckgo-news",
+      "method" => "GET",
+      "path" => "/duckduckgo/news",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "duckduckgo-search" => {
+      "id" => "duckduckgo-search",
+      "method" => "GET",
+      "path" => "/duckduckgo/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "time_range",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "d",
+            "w",
+            "m",
+            "y"
+          ]
+        },
+        {
+          "name" => "safe_search",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "strict",
+            "moderate",
+            "off"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "duckduckgo-shopping" => {
+      "id" => "duckduckgo-shopping",
+      "method" => "GET",
+      "path" => "/duckduckgo/shopping",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "duckduckgo-video" => {
+      "id" => "duckduckgo-video",
+      "method" => "GET",
+      "path" => "/duckduckgo/video",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
     },
     "ebay-item" => {
       "id" => "ebay-item",
@@ -16668,48 +18147,6 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
-    "facebook-group" => {
-      "id" => "facebook-group",
-      "method" => "GET",
-      "path" => "/facebook/groups/{group}",
-      "pathParams" => [
-        "group"
-      ],
-      "queryParams" => [],
-      "formParams" => [],
-      "bodyParam" => nil,
-      "bodyRequired" => false,
-      "consumes" => [
-        "application/json"
-      ],
-      "produces" => [
-        "application/json"
-      ],
-      "security" => [
-        "ApiKeyAuth"
-      ]
-    },
-    "facebook-marketplace-item" => {
-      "id" => "facebook-marketplace-item",
-      "method" => "GET",
-      "path" => "/facebook/marketplace/item/{id}",
-      "pathParams" => [
-        "id"
-      ],
-      "queryParams" => [],
-      "formParams" => [],
-      "bodyParam" => nil,
-      "bodyRequired" => false,
-      "consumes" => [
-        "application/json"
-      ],
-      "produces" => [
-        "application/json"
-      ],
-      "security" => [
-        "ApiKeyAuth"
-      ]
-    },
     "facebook-marketplace-search" => {
       "id" => "facebook-marketplace-search",
       "method" => "GET",
@@ -16815,6 +18252,81 @@ module Crawlora
       "path" => "/facebook/{page}",
       "pathParams" => [
         "page"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fiverr-gig" => {
+      "id" => "fiverr-gig",
+      "method" => "GET",
+      "path" => "/fiverr/gig/{username}/{slug}",
+      "pathParams" => [
+        "username",
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fiverr-search" => {
+      "id" => "fiverr-search",
+      "method" => "GET",
+      "path" => "/fiverr/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "fiverr-seller" => {
+      "id" => "fiverr-seller",
+      "method" => "GET",
+      "path" => "/fiverr/seller/{username}",
+      "pathParams" => [
+        "username"
       ],
       "queryParams" => [],
       "formParams" => [],
@@ -20669,6 +22181,216 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "instacart-departments" => {
+      "id" => "instacart-departments",
+      "method" => "GET",
+      "path" => "/instacart/departments",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "shop_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "store_slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "postal_code",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "instacart-item" => {
+      "id" => "instacart-item",
+      "method" => "GET",
+      "path" => "/instacart/item",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "shop_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "store_slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "retailer_location_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "product_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "postal_code",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "instacart-search" => {
+      "id" => "instacart-search",
+      "method" => "GET",
+      "path" => "/instacart/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "shop_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "store_slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "instacart-search-nearby" => {
+      "id" => "instacart-search-nearby",
+      "method" => "GET",
+      "path" => "/instacart/search-nearby",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "postal_code",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "instacart-stores" => {
+      "id" => "instacart-stores",
+      "method" => "GET",
+      "path" => "/instacart/stores",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "postal_code",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "instacart-trending" => {
+      "id" => "instacart-trending",
+      "method" => "GET",
+      "path" => "/instacart/trending",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "postal_code",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "instagram-post" => {
       "id" => "instagram-post",
       "method" => "GET",
@@ -23884,6 +25606,117 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "mercari-autocomplete" => {
+      "id" => "mercari-autocomplete",
+      "method" => "GET",
+      "path" => "/mercari/autocomplete",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mercari-home" => {
+      "id" => "mercari-home",
+      "method" => "GET",
+      "path" => "/mercari/home",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mercari-item" => {
+      "id" => "mercari-item",
+      "method" => "GET",
+      "path" => "/mercari/item/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mercari-master" => {
+      "id" => "mercari-master",
+      "method" => "GET",
+      "path" => "/mercari/master",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mercari-search" => {
+      "id" => "mercari-search",
+      "method" => "GET",
+      "path" => "/mercari/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "meta-jobs-job" => {
       "id" => "meta-jobs-job",
       "method" => "GET",
@@ -25516,6 +27349,178 @@ module Crawlora
         "application/json"
       ],
       "security" => []
+    },
+    "pinterest-board" => {
+      "id" => "pinterest-board",
+      "method" => "GET",
+      "path" => "/pinterest/board/{username}/{slug}",
+      "pathParams" => [
+        "username",
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pinterest-categories" => {
+      "id" => "pinterest-categories",
+      "method" => "GET",
+      "path" => "/pinterest/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pinterest-idea" => {
+      "id" => "pinterest-idea",
+      "method" => "GET",
+      "path" => "/pinterest/ideas/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pinterest-pin" => {
+      "id" => "pinterest-pin",
+      "method" => "GET",
+      "path" => "/pinterest/pin/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pinterest-search" => {
+      "id" => "pinterest-search",
+      "method" => "GET",
+      "path" => "/pinterest/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pinterest-user" => {
+      "id" => "pinterest-user",
+      "method" => "GET",
+      "path" => "/pinterest/user/{username}",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pinterest-user-boards" => {
+      "id" => "pinterest-user-boards",
+      "method" => "GET",
+      "path" => "/pinterest/user/{username}/boards",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pinterest-user-pins" => {
+      "id" => "pinterest-user-pins",
+      "method" => "GET",
+      "path" => "/pinterest/user/{username}/pins",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "pitchbook-advisor" => {
       "id" => "pitchbook-advisor",
@@ -28237,6 +30242,209 @@ module Crawlora
         "id"
       ],
       "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "poshmark-brand" => {
+      "id" => "poshmark-brand",
+      "method" => "GET",
+      "path" => "/poshmark/brand/{name}",
+      "pathParams" => [
+        "name"
+      ],
+      "queryParams" => [
+        {
+          "name" => "max_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "poshmark-brands" => {
+      "id" => "poshmark-brands",
+      "method" => "GET",
+      "path" => "/poshmark/brands",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "poshmark-categories" => {
+      "id" => "poshmark-categories",
+      "method" => "GET",
+      "path" => "/poshmark/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "poshmark-category" => {
+      "id" => "poshmark-category",
+      "method" => "GET",
+      "path" => "/poshmark/category/{path}",
+      "pathParams" => [
+        "path"
+      ],
+      "queryParams" => [
+        {
+          "name" => "max_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "poshmark-closet" => {
+      "id" => "poshmark-closet",
+      "method" => "GET",
+      "path" => "/poshmark/closet/{username}",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [
+        {
+          "name" => "max_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "poshmark-listing" => {
+      "id" => "poshmark-listing",
+      "method" => "GET",
+      "path" => "/poshmark/listing/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "poshmark-search" => {
+      "id" => "poshmark-search",
+      "method" => "GET",
+      "path" => "/poshmark/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "department",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "max_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "poshmark-trend" => {
+      "id" => "poshmark-trend",
+      "method" => "GET",
+      "path" => "/poshmark/trend/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "max_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -34204,6 +36412,357 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "stockx-brands" => {
+      "id" => "stockx-brands",
+      "method" => "GET",
+      "path" => "/stockx/brands",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "stockx-categories" => {
+      "id" => "stockx-categories",
+      "method" => "GET",
+      "path" => "/stockx/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "stockx-product" => {
+      "id" => "stockx-product",
+      "method" => "GET",
+      "path" => "/stockx/product/{slug}",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "stockx-releases" => {
+      "id" => "stockx-releases",
+      "method" => "GET",
+      "path" => "/stockx/releases",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "stockx-search" => {
+      "id" => "stockx-search",
+      "method" => "GET",
+      "path" => "/stockx/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "sneakers",
+            "shoes",
+            "apparel",
+            "accessories",
+            "collectibles",
+            "trading-cards",
+            "electronics"
+          ]
+        },
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "gender",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "men",
+            "women",
+            "kids",
+            "unisex"
+          ]
+        },
+        {
+          "name" => "brand",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "model",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "color",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "white",
+            "black",
+            "multi",
+            "blue",
+            "grey",
+            "pink",
+            "red",
+            "brown",
+            "yellow",
+            "green",
+            "purple",
+            "orange"
+          ]
+        },
+        {
+          "name" => "shoe_height",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "low",
+            "mid",
+            "high"
+          ]
+        },
+        {
+          "name" => "activity",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "basketball",
+            "football",
+            "golf",
+            "hiking",
+            "running",
+            "skateboarding",
+            "soccer"
+          ]
+        },
+        {
+          "name" => "available_now",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "xpress_ship",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "below_retail",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "featured",
+            "most-active"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "strava-challenges" => {
+      "id" => "strava-challenges",
+      "method" => "GET",
+      "path" => "/strava/challenges",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "strava-club" => {
+      "id" => "strava-club",
+      "method" => "GET",
+      "path" => "/strava/clubs/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "strava-routes" => {
+      "id" => "strava-routes",
+      "method" => "GET",
+      "path" => "/strava/routes",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "sport",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "hiking",
+            "road-biking",
+            "mountain-biking",
+            "trail-running",
+            "gravel-biking"
+          ]
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "strava-route-detail" => {
+      "id" => "strava-route-detail",
+      "method" => "GET",
+      "path" => "/strava/routes/detail",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "target-categories" => {
       "id" => "target-categories",
       "method" => "GET",
@@ -36603,6 +39162,65 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "tripcom-hotels-search" => {
+      "id" => "tripcom-hotels-search",
+      "method" => "GET",
+      "path" => "/tripcom/hotels/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "city_slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "city_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "tripcom-hotel-detail" => {
+      "id" => "tripcom-hotel-detail",
+      "method" => "GET",
+      "path" => "/tripcom/hotels/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "trustmrr-acquire" => {
       "id" => "trustmrr-acquire",
       "method" => "GET",
@@ -37163,6 +39781,80 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "upwork-freelancer" => {
+      "id" => "upwork-freelancer",
+      "method" => "GET",
+      "path" => "/upwork/freelancer/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "upwork-job" => {
+      "id" => "upwork-job",
+      "method" => "GET",
+      "path" => "/upwork/job/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "upwork-search" => {
+      "id" => "upwork-search",
+      "method" => "GET",
+      "path" => "/upwork/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "usage-me-endpoints" => {
       "id" => "usage-me-endpoints",
       "method" => "GET",
@@ -37433,6 +40125,255 @@ module Crawlora
         "JWTAuth"
       ]
     },
+    "vinted-brand" => {
+      "id" => "vinted-brand",
+      "method" => "GET",
+      "path" => "/vinted/brand",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "price_from",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "price_to",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "newest_first",
+            "price_high_to_low",
+            "price_low_to_high"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "vinted-brands" => {
+      "id" => "vinted-brands",
+      "method" => "GET",
+      "path" => "/vinted/brands",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vinted-catalog" => {
+      "id" => "vinted-catalog",
+      "method" => "GET",
+      "path" => "/vinted/catalog",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "search_text",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "price_from",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "price_to",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "newest_first",
+            "price_high_to_low",
+            "price_low_to_high"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "vinted-categories" => {
+      "id" => "vinted-categories",
+      "method" => "GET",
+      "path" => "/vinted/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vinted-category" => {
+      "id" => "vinted-category",
+      "method" => "GET",
+      "path" => "/vinted/category",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "price_from",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "price_to",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "newest_first",
+            "price_high_to_low",
+            "price_low_to_high"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "vinted-item" => {
+      "id" => "vinted-item",
+      "method" => "GET",
+      "path" => "/vinted/item",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vinted-member" => {
+      "id" => "vinted-member",
+      "method" => "GET",
+      "path" => "/vinted/member",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "walmart-product" => {
       "id" => "walmart-product",
       "method" => "GET",
@@ -37548,6 +40489,72 @@ module Crawlora
       "formParams" => [],
       "bodyParam" => "request",
       "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "whatnot-browse" => {
+      "id" => "whatnot-browse",
+      "method" => "GET",
+      "path" => "/whatnot/browse",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "whatnot-categories" => {
+      "id" => "whatnot-categories",
+      "method" => "GET",
+      "path" => "/whatnot/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "whatnot-live" => {
+      "id" => "whatnot-live",
+      "method" => "GET",
+      "path" => "/whatnot/live/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
       "consumes" => [
         "application/json"
       ],
@@ -38685,6 +41692,38 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "yahoo-search" => {
+      "id" => "yahoo-search",
+      "method" => "GET",
+      "path" => "/yahoo-search/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "yelp-business" => {
       "id" => "yelp-business",
       "method" => "GET",
@@ -39727,6 +42766,16 @@ module Crawlora
   }.freeze
 
   GROUPS = {
+    "agoda" => {
+      "activities_search" => "agoda-activities-search",
+      "activity_detail" => "agoda-activity-detail",
+      "flights_itinerary_amenities" => "agoda-flights-itinerary-amenities",
+      "flights_search" => "agoda-flights-search",
+      "flights_search_locations" => "agoda-flights-search-locations",
+      "homes_search" => "agoda-homes-search",
+      "hotels_search" => "agoda-hotels-search",
+      "hotel_detail" => "agoda-hotel-detail"
+    },
     "airbnb" => {
       "host" => "airbnb-host",
       "host_listings" => "airbnb-host-listings",
@@ -39820,6 +42869,15 @@ module Crawlora
       "suggest" => "bing-suggest",
       "videos" => "bing-videos"
     },
+    "bluesky" => {
+      "author_feed" => "bluesky-author-feed",
+      "followers" => "bluesky-followers",
+      "follows" => "bluesky-follows",
+      "post_thread" => "bluesky-post-thread",
+      "profile" => "bluesky-profile",
+      "search_actors" => "bluesky-search-actors",
+      "trending_topics" => "bluesky-trending-topics"
+    },
     "booking" => {
       "attractions_detail" => "booking-attractions-detail",
       "attractions_reviews" => "booking-attractions-reviews",
@@ -39868,6 +42926,19 @@ module Crawlora
       "reviews" => "capterra-reviews",
       "search" => "capterra-search"
     },
+    "car_max" => {
+      "carmax_search" => "carmax-search",
+      "carmax_search_suggestions" => "carmax-search-suggestions",
+      "carmax_shop_by_brand" => "carmax-shop-by-brand",
+      "carmax_store" => "carmax-store",
+      "carmax_stores" => "carmax-stores",
+      "carmax_vehicle" => "carmax-vehicle",
+      "carmax_vehicle_recommendations" => "carmax-vehicle-recommendations"
+    },
+    "cars_com" => {
+      "carsdotcom_search" => "carsdotcom-search",
+      "carsdotcom_vehicle" => "carsdotcom-vehicle"
+    },
     "chrome_web_store" => {
       "chromewebstore_categories" => "chromewebstore-categories",
       "chromewebstore_category" => "chromewebstore-category",
@@ -39905,12 +42976,24 @@ module Crawlora
       "treasuries" => "coingecko-treasuries",
       "trending" => "coingecko-trending"
     },
+    "congress" => {
+      "report" => "congress-report",
+      "stock_disclosures" => "congress-stock-disclosures"
+    },
     "web" => {
       "contact" => "contact",
       "antibot_check" => "antibot-check",
       "extract" => "extract",
       "scrape" => "web-scrape",
       "techstack" => "web-techstack"
+    },
+    "costco" => {
+      "categories" => "costco-categories",
+      "product" => "costco-product",
+      "product_availability" => "costco-product-availability",
+      "product_reviews" => "costco-product-reviews",
+      "search" => "costco-search",
+      "warehouses" => "costco-warehouses"
     },
     "datasets" => {
       "list" => "datasets-list",
@@ -40023,6 +43106,12 @@ module Crawlora
       "x_users_item" => "datasets-x-users-item",
       "x_users_search" => "datasets-x-users-search"
     },
+    "depop" => {
+      "categories" => "depop-categories",
+      "item" => "depop-item",
+      "search" => "depop-search",
+      "shop" => "depop-shop"
+    },
     "discogs" => {
       "artist" => "discogs-artist",
       "artist_releases" => "discogs-artist-releases",
@@ -40045,6 +43134,13 @@ module Crawlora
       "doordash_store_item" => "doordash-store-item",
       "doordash_store_menu" => "doordash-store-menu",
       "doordash_store_reviews" => "doordash-store-reviews"
+    },
+    "duck_duck_go_search" => {
+      "duckduckgo_image" => "duckduckgo-image",
+      "duckduckgo_news" => "duckduckgo-news",
+      "duckduckgo_search" => "duckduckgo-search",
+      "duckduckgo_shopping" => "duckduckgo-shopping",
+      "duckduckgo_video" => "duckduckgo-video"
     },
     "e_bay" => {
       "ebay_item" => "ebay-item",
@@ -40084,10 +43180,13 @@ module Crawlora
       "properties_search" => "expedia-properties-search"
     },
     "facebook" => {
-      "group" => "facebook-group",
-      "marketplace_item" => "facebook-marketplace-item",
       "marketplace_search" => "facebook-marketplace-search",
       "page" => "facebook-page"
+    },
+    "fiverr" => {
+      "gig" => "fiverr-gig",
+      "search" => "fiverr-search",
+      "seller" => "fiverr-seller"
     },
     "geocoding" => {
       "lookup" => "geocoding-lookup",
@@ -40215,6 +43314,14 @@ module Crawlora
       "locations_suggest" => "indeed-locations-suggest",
       "search" => "indeed-search"
     },
+    "instacart" => {
+      "departments" => "instacart-departments",
+      "item" => "instacart-item",
+      "search" => "instacart-search",
+      "search_nearby" => "instacart-search-nearby",
+      "stores" => "instacart-stores",
+      "trending" => "instacart-trending"
+    },
     "instagram" => {
       "post" => "instagram-post",
       "profile" => "instagram-profile",
@@ -40316,6 +43423,13 @@ module Crawlora
       "search" => "manga-search",
       "title" => "manga-title"
     },
+    "mercari" => {
+      "autocomplete" => "mercari-autocomplete",
+      "home" => "mercari-home",
+      "item" => "mercari-item",
+      "master" => "mercari-master",
+      "search" => "mercari-search"
+    },
     "meta_jobs" => {
       "job" => "meta-jobs-job",
       "list" => "meta-jobs-list",
@@ -40379,6 +43493,16 @@ module Crawlora
     "meta" => {
       "ping" => "ping",
       "ready" => "ready"
+    },
+    "pinterest" => {
+      "board" => "pinterest-board",
+      "categories" => "pinterest-categories",
+      "idea" => "pinterest-idea",
+      "pin" => "pinterest-pin",
+      "search" => "pinterest-search",
+      "user" => "pinterest-user",
+      "user_boards" => "pinterest-user-boards",
+      "user_pins" => "pinterest-user-pins"
     },
     "pitch_book" => {
       "pitchbook_advisor" => "pitchbook-advisor",
@@ -40463,6 +43587,16 @@ module Crawlora
       "tokens_spreads" => "polymarket-tokens-spreads",
       "tournaments" => "polymarket-tournaments",
       "tournament" => "polymarket-tournament"
+    },
+    "poshmark" => {
+      "brand" => "poshmark-brand",
+      "brands" => "poshmark-brands",
+      "categories" => "poshmark-categories",
+      "category" => "poshmark-category",
+      "closet" => "poshmark-closet",
+      "listing" => "poshmark-listing",
+      "search" => "poshmark-search",
+      "trend" => "poshmark-trend"
     },
     "product_hunt" => {
       "category" => "producthunt-category",
@@ -40642,6 +43776,19 @@ module Crawlora
       "tags_list" => "steam-tags-list",
       "top_sellers" => "steam-top-sellers"
     },
+    "stock_x" => {
+      "stockx_brands" => "stockx-brands",
+      "stockx_categories" => "stockx-categories",
+      "stockx_product" => "stockx-product",
+      "stockx_releases" => "stockx-releases",
+      "stockx_search" => "stockx-search"
+    },
+    "strava" => {
+      "challenges" => "strava-challenges",
+      "club" => "strava-club",
+      "routes" => "strava-routes",
+      "route_detail" => "strava-route-detail"
+    },
     "target" => {
       "categories" => "target-categories",
       "category_products" => "target-category-products",
@@ -40719,6 +43866,10 @@ module Crawlora
       "tripadvisor_reviews" => "tripadvisor-reviews",
       "tripadvisor_search" => "tripadvisor-search"
     },
+    "trip_com" => {
+      "tripcom_hotels_search" => "tripcom-hotels-search",
+      "tripcom_hotel_detail" => "tripcom-hotel-detail"
+    },
     "trust_mrr" => {
       "trustmrr_acquire" => "trustmrr-acquire",
       "trustmrr_categories" => "trustmrr-categories",
@@ -40744,6 +43895,11 @@ module Crawlora
       "ubereats_store_menu" => "ubereats-store-menu",
       "ubereats_store_reviews" => "ubereats-store-reviews"
     },
+    "upwork" => {
+      "freelancer" => "upwork-freelancer",
+      "job" => "upwork-job",
+      "search" => "upwork-search"
+    },
     "usage" => {
       "me_endpoints" => "usage-me-endpoints",
       "me_overview" => "usage-me-overview",
@@ -40756,10 +43912,24 @@ module Crawlora
       "me_api_keys_rotate" => "user-me-api-keys-rotate",
       "me_api_keys_reveal" => "user-me-api-keys-reveal"
     },
+    "vinted" => {
+      "brand" => "vinted-brand",
+      "brands" => "vinted-brands",
+      "catalog" => "vinted-catalog",
+      "categories" => "vinted-categories",
+      "category" => "vinted-category",
+      "item" => "vinted-item",
+      "member" => "vinted-member"
+    },
     "walmart" => {
       "product" => "walmart-product",
       "product_reviews" => "walmart-product-reviews",
       "search" => "walmart-search"
+    },
+    "whatnot" => {
+      "browse" => "whatnot-browse",
+      "categories" => "whatnot-categories",
+      "live" => "whatnot-live"
     },
     "x" => {
       "post" => "x-post",
@@ -40807,6 +43977,9 @@ module Crawlora
       "ticker_valuation" => "yahoo-finance-ticker-valuation",
       "trending" => "yahoo-finance-trending"
     },
+    "yahoo_search" => {
+      "call" => "yahoo-search"
+    },
     "yelp" => {
       "business" => "yelp-business",
       "business_menu" => "yelp-business-menu",
@@ -40846,9 +44019,17 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 947
+  OPERATION_COUNT = 1041
 
   module OperationId
+    AGODA_ACTIVITIES_SEARCH = "agoda-activities-search"
+    AGODA_ACTIVITY_DETAIL = "agoda-activity-detail"
+    AGODA_FLIGHTS_ITINERARY_AMENITIES = "agoda-flights-itinerary-amenities"
+    AGODA_FLIGHTS_SEARCH = "agoda-flights-search"
+    AGODA_FLIGHTS_SEARCH_LOCATIONS = "agoda-flights-search-locations"
+    AGODA_HOMES_SEARCH = "agoda-homes-search"
+    AGODA_HOTEL_DETAIL = "agoda-hotel-detail"
+    AGODA_HOTELS_SEARCH = "agoda-hotels-search"
     AIRBNB_HOST = "airbnb-host"
     AIRBNB_HOST_LISTINGS = "airbnb-host-listings"
     AIRBNB_HOST_REVIEWS = "airbnb-host-reviews"
@@ -40920,6 +44101,13 @@ module Crawlora
     BING_SEARCH = "bing-search"
     BING_SUGGEST = "bing-suggest"
     BING_VIDEOS = "bing-videos"
+    BLUESKY_AUTHOR_FEED = "bluesky-author-feed"
+    BLUESKY_FOLLOWERS = "bluesky-followers"
+    BLUESKY_FOLLOWS = "bluesky-follows"
+    BLUESKY_POST_THREAD = "bluesky-post-thread"
+    BLUESKY_PROFILE = "bluesky-profile"
+    BLUESKY_SEARCH_ACTORS = "bluesky-search-actors"
+    BLUESKY_TRENDING_TOPICS = "bluesky-trending-topics"
     BOOKING_ATTRACTIONS_DETAIL = "booking-attractions-detail"
     BOOKING_ATTRACTIONS_REVIEWS = "booking-attractions-reviews"
     BOOKING_ATTRACTIONS_SEARCH = "booking-attractions-search"
@@ -40958,6 +44146,15 @@ module Crawlora
     CAPTERRA_PRODUCT = "capterra-product"
     CAPTERRA_REVIEWS = "capterra-reviews"
     CAPTERRA_SEARCH = "capterra-search"
+    CAR_MAX_CARMAX_SEARCH = "carmax-search"
+    CAR_MAX_CARMAX_SEARCH_SUGGESTIONS = "carmax-search-suggestions"
+    CAR_MAX_CARMAX_SHOP_BY_BRAND = "carmax-shop-by-brand"
+    CAR_MAX_CARMAX_STORE = "carmax-store"
+    CAR_MAX_CARMAX_STORES = "carmax-stores"
+    CAR_MAX_CARMAX_VEHICLE = "carmax-vehicle"
+    CAR_MAX_CARMAX_VEHICLE_RECOMMENDATIONS = "carmax-vehicle-recommendations"
+    CARS_COM_CARSDOTCOM_SEARCH = "carsdotcom-search"
+    CARS_COM_CARSDOTCOM_VEHICLE = "carsdotcom-vehicle"
     CHROME_WEB_STORE_CHROMEWEBSTORE_CATEGORIES = "chromewebstore-categories"
     CHROME_WEB_STORE_CHROMEWEBSTORE_CATEGORY = "chromewebstore-category"
     CHROME_WEB_STORE_CHROMEWEBSTORE_CHARTS = "chromewebstore-charts"
@@ -40991,6 +44188,14 @@ module Crawlora
     COIN_GECKO_TOKEN_UNLOCKS = "coingecko-token-unlocks"
     COIN_GECKO_TREASURIES = "coingecko-treasuries"
     COIN_GECKO_TRENDING = "coingecko-trending"
+    CONGRESS_REPORT = "congress-report"
+    CONGRESS_STOCK_DISCLOSURES = "congress-stock-disclosures"
+    COSTCO_CATEGORIES = "costco-categories"
+    COSTCO_PRODUCT = "costco-product"
+    COSTCO_PRODUCT_AVAILABILITY = "costco-product-availability"
+    COSTCO_PRODUCT_REVIEWS = "costco-product-reviews"
+    COSTCO_SEARCH = "costco-search"
+    COSTCO_WAREHOUSES = "costco-warehouses"
     DATASETS_AIRBNB_MARKETS_FACETS = "datasets-airbnb-markets-facets"
     DATASETS_AIRBNB_MARKETS_ITEM = "datasets-airbnb-markets-item"
     DATASETS_AIRBNB_MARKETS_NEARBY = "datasets-airbnb-markets-nearby"
@@ -41100,6 +44305,10 @@ module Crawlora
     DATASETS_XUSERS_FACETS = "datasets-x-users-facets"
     DATASETS_XUSERS_ITEM = "datasets-x-users-item"
     DATASETS_XUSERS_SEARCH = "datasets-x-users-search"
+    DEPOP_CATEGORIES = "depop-categories"
+    DEPOP_ITEM = "depop-item"
+    DEPOP_SEARCH = "depop-search"
+    DEPOP_SHOP = "depop-shop"
     DISCOGS_ARTIST = "discogs-artist"
     DISCOGS_ARTIST_RELEASES = "discogs-artist-releases"
     DISCOGS_LABEL = "discogs-label"
@@ -41119,6 +44328,11 @@ module Crawlora
     DOOR_DASH_DOORDASH_STORE_ITEM = "doordash-store-item"
     DOOR_DASH_DOORDASH_STORE_MENU = "doordash-store-menu"
     DOOR_DASH_DOORDASH_STORE_REVIEWS = "doordash-store-reviews"
+    DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_IMAGE = "duckduckgo-image"
+    DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_NEWS = "duckduckgo-news"
+    DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_SEARCH = "duckduckgo-search"
+    DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_SHOPPING = "duckduckgo-shopping"
+    DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_VIDEO = "duckduckgo-video"
     EBAY_EBAY_ITEM = "ebay-item"
     EBAY_EBAY_SEARCH = "ebay-search"
     EBAY_EBAY_SELLER = "ebay-seller"
@@ -41148,10 +44362,11 @@ module Crawlora
     EXPEDIA_PROPERTIES_FILTERS = "expedia-properties-filters"
     EXPEDIA_PROPERTIES_REVIEWS = "expedia-properties-reviews"
     EXPEDIA_PROPERTIES_SEARCH = "expedia-properties-search"
-    FACEBOOK_GROUP = "facebook-group"
-    FACEBOOK_MARKETPLACE_ITEM = "facebook-marketplace-item"
     FACEBOOK_MARKETPLACE_SEARCH = "facebook-marketplace-search"
     FACEBOOK_PAGE = "facebook-page"
+    FIVERR_GIG = "fiverr-gig"
+    FIVERR_SEARCH = "fiverr-search"
+    FIVERR_SELLER = "fiverr-seller"
     GEOCODING_LOOKUP = "geocoding-lookup"
     GEOCODING_REVERSE = "geocoding-reverse"
     GEOCODING_SEARCH = "geocoding-search"
@@ -41260,6 +44475,12 @@ module Crawlora
     INDEED_JOB = "indeed-job"
     INDEED_LOCATIONS_SUGGEST = "indeed-locations-suggest"
     INDEED_SEARCH = "indeed-search"
+    INSTACART_DEPARTMENTS = "instacart-departments"
+    INSTACART_ITEM = "instacart-item"
+    INSTACART_SEARCH = "instacart-search"
+    INSTACART_SEARCH_NEARBY = "instacart-search-nearby"
+    INSTACART_STORES = "instacart-stores"
+    INSTACART_TRENDING = "instacart-trending"
     INSTAGRAM_POST = "instagram-post"
     INSTAGRAM_PROFILE = "instagram-profile"
     INSTAGRAM_REELS = "instagram-reels"
@@ -41347,6 +44568,11 @@ module Crawlora
     MANGA_RANKINGS = "manga-rankings"
     MANGA_SEARCH = "manga-search"
     MANGA_TITLE = "manga-title"
+    MERCARI_AUTOCOMPLETE = "mercari-autocomplete"
+    MERCARI_HOME = "mercari-home"
+    MERCARI_ITEM = "mercari-item"
+    MERCARI_MASTER = "mercari-master"
+    MERCARI_SEARCH = "mercari-search"
     META_JOBS_JOB = "meta-jobs-job"
     META_JOBS_LIST = "meta-jobs-list"
     META_JOBS_SEARCH = "meta-jobs-search"
@@ -41397,6 +44623,14 @@ module Crawlora
     OPEN_TABLE_OPENTABLE_RESTAURANT_MENUS = "opentable-restaurant-menus"
     OPEN_TABLE_OPENTABLE_RESTAURANT_REVIEWS = "opentable-restaurant-reviews"
     OPEN_TABLE_OPENTABLE_SEARCH = "opentable-search"
+    PINTEREST_BOARD = "pinterest-board"
+    PINTEREST_CATEGORIES = "pinterest-categories"
+    PINTEREST_IDEA = "pinterest-idea"
+    PINTEREST_PIN = "pinterest-pin"
+    PINTEREST_SEARCH = "pinterest-search"
+    PINTEREST_USER = "pinterest-user"
+    PINTEREST_USER_BOARDS = "pinterest-user-boards"
+    PINTEREST_USER_PINS = "pinterest-user-pins"
     PITCH_BOOK_PITCHBOOK_ADVISOR = "pitchbook-advisor"
     PITCH_BOOK_PITCHBOOK_COMPANY = "pitchbook-company"
     PITCH_BOOK_PITCHBOOK_FUND = "pitchbook-fund"
@@ -41475,6 +44709,14 @@ module Crawlora
     POLYMARKET_TOKENS_SPREADS = "polymarket-tokens-spreads"
     POLYMARKET_TOURNAMENT = "polymarket-tournament"
     POLYMARKET_TOURNAMENTS = "polymarket-tournaments"
+    POSHMARK_BRAND = "poshmark-brand"
+    POSHMARK_BRANDS = "poshmark-brands"
+    POSHMARK_CATEGORIES = "poshmark-categories"
+    POSHMARK_CATEGORY = "poshmark-category"
+    POSHMARK_CLOSET = "poshmark-closet"
+    POSHMARK_LISTING = "poshmark-listing"
+    POSHMARK_SEARCH = "poshmark-search"
+    POSHMARK_TREND = "poshmark-trend"
     PRODUCT_HUNT_ABOUT = "producthunt-about"
     PRODUCT_HUNT_ALTERNATIVES = "producthunt-alternatives"
     PRODUCT_HUNT_CATEGORY = "producthunt-category"
@@ -41627,6 +44869,15 @@ module Crawlora
     STEAM_TAGS = "steam-tags"
     STEAM_TAGS_LIST = "steam-tags-list"
     STEAM_TOP_SELLERS = "steam-top-sellers"
+    STOCK_XSTOCKX_BRANDS = "stockx-brands"
+    STOCK_XSTOCKX_CATEGORIES = "stockx-categories"
+    STOCK_XSTOCKX_PRODUCT = "stockx-product"
+    STOCK_XSTOCKX_RELEASES = "stockx-releases"
+    STOCK_XSTOCKX_SEARCH = "stockx-search"
+    STRAVA_CHALLENGES = "strava-challenges"
+    STRAVA_CLUB = "strava-club"
+    STRAVA_ROUTE_DETAIL = "strava-route-detail"
+    STRAVA_ROUTES = "strava-routes"
     TARGET_CATEGORIES = "target-categories"
     TARGET_CATEGORY_PRODUCTS = "target-category-products"
     TARGET_FILTER_OPTIONS = "target-filter-options"
@@ -41690,6 +44941,8 @@ module Crawlora
     TRIP_ADVISOR_TRIPADVISOR_PLACE = "tripadvisor-place"
     TRIP_ADVISOR_TRIPADVISOR_REVIEWS = "tripadvisor-reviews"
     TRIP_ADVISOR_TRIPADVISOR_SEARCH = "tripadvisor-search"
+    TRIP_COM_TRIPCOM_HOTEL_DETAIL = "tripcom-hotel-detail"
+    TRIP_COM_TRIPCOM_HOTELS_SEARCH = "tripcom-hotels-search"
     TRUST_MRR_TRUSTMRR_ACQUIRE = "trustmrr-acquire"
     TRUST_MRR_TRUSTMRR_CATEGORIES = "trustmrr-categories"
     TRUST_MRR_TRUSTMRR_CATEGORY = "trustmrr-category"
@@ -41709,6 +44962,9 @@ module Crawlora
     UBER_EATS_UBEREATS_STORE = "ubereats-store"
     UBER_EATS_UBEREATS_STORE_MENU = "ubereats-store-menu"
     UBER_EATS_UBEREATS_STORE_REVIEWS = "ubereats-store-reviews"
+    UPWORK_FREELANCER = "upwork-freelancer"
+    UPWORK_JOB = "upwork-job"
+    UPWORK_SEARCH = "upwork-search"
     USAGE_ME_ENDPOINTS = "usage-me-endpoints"
     USAGE_ME_OVERVIEW = "usage-me-overview"
     USAGE_ME_RECENT_IPS = "usage-me-recent-ips"
@@ -41717,6 +44973,13 @@ module Crawlora
     USER_ME_API_KEYS = "user-me-api-keys"
     USER_ME_API_KEYS_REVEAL = "user-me-api-keys-reveal"
     USER_ME_API_KEYS_ROTATE = "user-me-api-keys-rotate"
+    VINTED_BRAND = "vinted-brand"
+    VINTED_BRANDS = "vinted-brands"
+    VINTED_CATALOG = "vinted-catalog"
+    VINTED_CATEGORIES = "vinted-categories"
+    VINTED_CATEGORY = "vinted-category"
+    VINTED_ITEM = "vinted-item"
+    VINTED_MEMBER = "vinted-member"
     WALMART_PRODUCT = "walmart-product"
     WALMART_PRODUCT_REVIEWS = "walmart-product-reviews"
     WALMART_SEARCH = "walmart-search"
@@ -41725,6 +44988,9 @@ module Crawlora
     WEB_EXTRACT = "extract"
     WEB_SCRAPE = "web-scrape"
     WEB_TECHSTACK = "web-techstack"
+    WHATNOT_BROWSE = "whatnot-browse"
+    WHATNOT_CATEGORIES = "whatnot-categories"
+    WHATNOT_LIVE = "whatnot-live"
     XPOST = "x-post"
     XPROFILE = "x-profile"
     XPROFILE_POSTS = "x-profile-posts"
@@ -41767,6 +45033,7 @@ module Crawlora
     YAHOO_FINANCE_TICKER_SUSTAINABILITY = "yahoo-finance-ticker-sustainability"
     YAHOO_FINANCE_TICKER_VALUATION = "yahoo-finance-ticker-valuation"
     YAHOO_FINANCE_TRENDING = "yahoo-finance-trending"
+    YAHOO_SEARCH_CALL = "yahoo-search"
     YELP_BUSINESS = "yelp-business"
     YELP_BUSINESS_MENU = "yelp-business-menu"
     YELP_BUSINESS_PHOTOS = "yelp-business-photos"
