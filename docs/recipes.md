@@ -187,3 +187,11 @@ results = client.etsy.search(q: "handmade mug")
 listing = client.etsy.listing(id: "4474501681")
 shop = client.etsy.shop(id: "gaguatelier")
 ```
+
+## Twitch And SoundCloud
+
+```ruby
+channel = client.twitch.channel(login: "caedrel")
+streams = client.twitch.streams(game: "league-of-legends", limit: 20)
+track = client.sound_cloud.soundcloud_track(url: "https://soundcloud.com/artist/track-name")
+```
