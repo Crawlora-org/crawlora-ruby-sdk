@@ -2567,6 +2567,84 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "bestbuy-category" => {
+      "id" => "bestbuy-category",
+      "method" => "GET",
+      "path" => "/bestbuy/category",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bestbuy-product" => {
+      "id" => "bestbuy-product",
+      "method" => "GET",
+      "path" => "/bestbuy/product",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "sku",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bestbuy-product-reviews" => {
+      "id" => "bestbuy-product-reviews",
+      "method" => "GET",
+      "path" => "/bestbuy/product/reviews",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "sku",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "billing-me" => {
       "id" => "billing-me",
       "method" => "GET",
@@ -16303,6 +16381,38 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "depop-item-similar" => {
+      "id" => "depop-item-similar",
+      "method" => "GET",
+      "path" => "/depop/item/{slug}/similar",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "depop-search" => {
       "id" => "depop-search",
       "method" => "GET",
@@ -16359,6 +16469,11 @@ module Crawlora
           "name" => "gender",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "is_kids",
+          "in" => "query",
+          "type" => "boolean"
         },
         {
           "name" => "brand_ids",
@@ -17103,6 +17218,122 @@ module Crawlora
           "name" => "longitude",
           "in" => "query",
           "type" => "number",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "draftkings-event" => {
+      "id" => "draftkings-event",
+      "method" => "GET",
+      "path" => "/draftkings/event",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "event_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "draftkings-event-markets" => {
+      "id" => "draftkings-event-markets",
+      "method" => "GET",
+      "path" => "/draftkings/event-markets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "event_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "subcategory_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "draftkings-futures" => {
+      "id" => "draftkings-futures",
+      "method" => "GET",
+      "path" => "/draftkings/futures",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "subcategory_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "draftkings-odds" => {
+      "id" => "draftkings-odds",
+      "method" => "GET",
+      "path" => "/draftkings/odds",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
           "required" => true
         }
       ],
@@ -21141,6 +21372,215 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "googlepatents-coverage" => {
+      "id" => "googlepatents-coverage",
+      "method" => "GET",
+      "path" => "/googlepatents/coverage",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "googlepatents-detail" => {
+      "id" => "googlepatents-detail",
+      "method" => "GET",
+      "path" => "/googlepatents/detail",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "number",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "googlepatents-search" => {
+      "id" => "googlepatents-search",
+      "method" => "GET",
+      "path" => "/googlepatents/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "inventor",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "assignee",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "GRANT",
+            "APPLICATION"
+          ]
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PATENT",
+            "DESIGN"
+          ]
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "ENGLISH",
+            "GERMAN",
+            "CHINESE",
+            "FRENCH",
+            "SPANISH",
+            "ARABIC",
+            "JAPANESE",
+            "KOREAN",
+            "PORTUGUESE",
+            "RUSSIAN",
+            "ITALIAN",
+            "DUTCH",
+            "SWEDISH",
+            "FINNISH",
+            "NORWEGIAN",
+            "DANISH"
+          ]
+        },
+        {
+          "name" => "date_field",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "priority",
+            "filing",
+            "publication"
+          ]
+        },
+        {
+          "name" => "before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "new",
+            "old"
+          ]
+        },
+        {
+          "name" => "num",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "googlepatents-suggest" => {
+      "id" => "googlepatents-suggest",
+      "method" => "GET",
+      "path" => "/googlepatents/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "field",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "inventor",
+            "assignee"
+          ]
+        },
+        {
+          "name" => "value",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "googleplay-app" => {
       "id" => "googleplay-app",
       "method" => "GET",
@@ -21734,6 +22174,27 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "hm-product-related" => {
+      "id" => "hm-product-related",
+      "method" => "GET",
+      "path" => "/hm/product/{product_id}/related",
+      "pathParams" => [
+        "product_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "hm-search" => {
       "id" => "hm-search",
       "method" => "GET",
@@ -21770,6 +22231,31 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "hm-search-suggestions" => {
+      "id" => "hm-search-suggestions",
+      "method" => "GET",
+      "path" => "/hm/search/suggestions",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "hm-stores" => {
       "id" => "hm-stores",
@@ -47326,6 +47812,11 @@ module Crawlora
       "search" => "autotrader-search",
       "vehicle" => "autotrader-vehicle"
     },
+    "best_buy" => {
+      "bestbuy_category" => "bestbuy-category",
+      "bestbuy_product" => "bestbuy-product",
+      "bestbuy_product_reviews" => "bestbuy-product-reviews"
+    },
     "billing" => {
       "me" => "billing-me",
       "me_checkout" => "billing-me-checkout",
@@ -47584,6 +48075,7 @@ module Crawlora
     "depop" => {
       "categories" => "depop-categories",
       "item" => "depop-item",
+      "item_similar" => "depop-item-similar",
       "search" => "depop-search",
       "shop" => "depop-shop"
     },
@@ -47609,6 +48101,12 @@ module Crawlora
       "doordash_store_item" => "doordash-store-item",
       "doordash_store_menu" => "doordash-store-menu",
       "doordash_store_reviews" => "doordash-store-reviews"
+    },
+    "draft_kings" => {
+      "draftkings_event" => "draftkings-event",
+      "draftkings_event_markets" => "draftkings-event-markets",
+      "draftkings_futures" => "draftkings-futures",
+      "draftkings_odds" => "draftkings-odds"
     },
     "duck_duck_go_search" => {
       "duckduckgo_image" => "duckduckgo-image",
@@ -47749,6 +48247,12 @@ module Crawlora
       "trends_trending_detail" => "google-trends-trending-detail",
       "videos" => "google-videos"
     },
+    "google_patents" => {
+      "googlepatents_coverage" => "googlepatents-coverage",
+      "googlepatents_detail" => "googlepatents-detail",
+      "googlepatents_search" => "googlepatents-search",
+      "googlepatents_suggest" => "googlepatents-suggest"
+    },
     "google_play" => {
       "app" => "googleplay-app",
       "categories" => "googleplay-categories",
@@ -47766,7 +48270,9 @@ module Crawlora
       "hm_categories" => "hm-categories",
       "hm_listing" => "hm-listing",
       "hm_product" => "hm-product",
+      "hm_product_related" => "hm-product-related",
       "hm_search" => "hm-search",
+      "hm_search_suggestions" => "hm-search-suggestions",
       "hm_stores" => "hm-stores"
     },
     "imdb" => {
@@ -48674,7 +49180,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 1176
+  OPERATION_COUNT = 1190
 
   module OperationId
     ACCOUNT_DELETION_CANCEL = "account-deletion-cancel"
@@ -48746,6 +49252,9 @@ module Crawlora
     AUTOTRADER_DEALER = "autotrader-dealer"
     AUTOTRADER_SEARCH = "autotrader-search"
     AUTOTRADER_VEHICLE = "autotrader-vehicle"
+    BEST_BUY_BESTBUY_CATEGORY = "bestbuy-category"
+    BEST_BUY_BESTBUY_PRODUCT = "bestbuy-product"
+    BEST_BUY_BESTBUY_PRODUCT_REVIEWS = "bestbuy-product-reviews"
     BILLING_ME = "billing-me"
     BILLING_ME_CHECKOUT = "billing-me-checkout"
     BILLING_ME_EVENTS = "billing-me-events"
@@ -48966,6 +49475,7 @@ module Crawlora
     DATASETS_XUSERS_SEARCH = "datasets-x-users-search"
     DEPOP_CATEGORIES = "depop-categories"
     DEPOP_ITEM = "depop-item"
+    DEPOP_ITEM_SIMILAR = "depop-item-similar"
     DEPOP_SEARCH = "depop-search"
     DEPOP_SHOP = "depop-shop"
     DISCOGS_ARTIST = "discogs-artist"
@@ -48987,6 +49497,10 @@ module Crawlora
     DOOR_DASH_DOORDASH_STORE_ITEM = "doordash-store-item"
     DOOR_DASH_DOORDASH_STORE_MENU = "doordash-store-menu"
     DOOR_DASH_DOORDASH_STORE_REVIEWS = "doordash-store-reviews"
+    DRAFT_KINGS_DRAFTKINGS_EVENT = "draftkings-event"
+    DRAFT_KINGS_DRAFTKINGS_EVENT_MARKETS = "draftkings-event-markets"
+    DRAFT_KINGS_DRAFTKINGS_FUTURES = "draftkings-futures"
+    DRAFT_KINGS_DRAFTKINGS_ODDS = "draftkings-odds"
     DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_IMAGE = "duckduckgo-image"
     DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_NEWS = "duckduckgo-news"
     DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_SEARCH = "duckduckgo-search"
@@ -49088,6 +49602,10 @@ module Crawlora
     GOOGLE_MAP_PLACE_REVIEWS = "google-map-place-reviews"
     GOOGLE_MAP_SEARCH = "google-map-search"
     GOOGLE_NEWS = "google-news"
+    GOOGLE_PATENTS_GOOGLEPATENTS_COVERAGE = "googlepatents-coverage"
+    GOOGLE_PATENTS_GOOGLEPATENTS_DETAIL = "googlepatents-detail"
+    GOOGLE_PATENTS_GOOGLEPATENTS_SEARCH = "googlepatents-search"
+    GOOGLE_PATENTS_GOOGLEPATENTS_SUGGEST = "googlepatents-suggest"
     GOOGLE_PLAY_APP = "googleplay-app"
     GOOGLE_PLAY_CATEGORIES = "googleplay-categories"
     GOOGLE_PLAY_DATASAFETY = "googleplay-datasafety"
@@ -49116,7 +49634,9 @@ module Crawlora
     HMHM_CATEGORIES = "hm-categories"
     HMHM_LISTING = "hm-listing"
     HMHM_PRODUCT = "hm-product"
+    HMHM_PRODUCT_RELATED = "hm-product-related"
     HMHM_SEARCH = "hm-search"
+    HMHM_SEARCH_SUGGESTIONS = "hm-search-suggestions"
     HMHM_STORES = "hm-stores"
     IMDB_NAME = "imdb-name"
     IMDB_NAME_AWARDS = "imdb-name-awards"
