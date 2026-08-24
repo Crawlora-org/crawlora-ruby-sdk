@@ -3,6 +3,163 @@
 
 module Crawlora
   OPERATIONS = {
+    "adidas-product" => {
+      "id" => "adidas-product",
+      "method" => "GET",
+      "path" => "/adidas/product",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "product_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "adidas-search" => {
+      "id" => "adidas-search",
+      "method" => "GET",
+      "path" => "/adidas/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "adidas-store" => {
+      "id" => "adidas-store",
+      "method" => "GET",
+      "path" => "/adidas/store",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "store_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "adidas-stores" => {
+      "id" => "adidas-stores",
+      "method" => "GET",
+      "path" => "/adidas/stores",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "lat",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "lng",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "adidas-suggest" => {
+      "id" => "adidas-suggest",
+      "method" => "GET",
+      "path" => "/adidas/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "agoda-activities-search" => {
       "id" => "agoda-activities-search",
       "method" => "GET",
@@ -500,6 +657,323 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "allbirds-collections" => {
+      "id" => "allbirds-collections",
+      "method" => "GET",
+      "path" => "/allbirds/collections",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "allbirds-collection-products" => {
+      "id" => "allbirds-collection-products",
+      "method" => "GET",
+      "path" => "/allbirds/collections/{handle}/products",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "allbirds-pages" => {
+      "id" => "allbirds-pages",
+      "method" => "GET",
+      "path" => "/allbirds/pages",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "allbirds-page" => {
+      "id" => "allbirds-page",
+      "method" => "GET",
+      "path" => "/allbirds/pages/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "allbirds-products" => {
+      "id" => "allbirds-products",
+      "method" => "GET",
+      "path" => "/allbirds/products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "allbirds-product" => {
+      "id" => "allbirds-product",
+      "method" => "GET",
+      "path" => "/allbirds/products/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "allbirds-product-recommendations" => {
+      "id" => "allbirds-product-recommendations",
+      "method" => "GET",
+      "path" => "/allbirds/products/{handle}/recommendations",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "intent",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "related",
+            "complementary"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "allbirds-search-suggest" => {
+      "id" => "allbirds-search-suggest",
+      "method" => "GET",
+      "path" => "/allbirds/search/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "types",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "allbirds-sitemap-urls" => {
+      "id" => "allbirds-sitemap-urls",
+      "method" => "GET",
+      "path" => "/allbirds/sitemap/urls",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "products",
+            "collections",
+            "pages",
+            "blogs",
+            "agentic_discovery",
+            "other"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "allbirds-sitemaps" => {
+      "id" => "allbirds-sitemaps",
+      "method" => "GET",
+      "path" => "/allbirds/sitemaps",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "allbirds-store" => {
+      "id" => "allbirds-store",
+      "method" => "GET",
+      "path" => "/allbirds/store",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "amazon-jobs-job" => {
       "id" => "amazon-jobs-job",
@@ -2409,6 +2883,362 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "audible-categories" => {
+      "id" => "audible-categories",
+      "method" => "GET",
+      "path" => "/audible/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "audible-category" => {
+      "id" => "audible-category",
+      "method" => "GET",
+      "path" => "/audible/category/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "audible-charts" => {
+      "id" => "audible-charts",
+      "method" => "GET",
+      "path" => "/audible/charts",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "chart",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "most_listened",
+            "bestselling"
+          ]
+        },
+        {
+          "name" => "content_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "audiobooks",
+            "podcasts"
+          ]
+        },
+        {
+          "name" => "category_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "access_level",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "free",
+            "plus",
+            "premium"
+          ]
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "danish",
+            "english",
+            "french",
+            "german",
+            "italian",
+            "japanese",
+            "polish",
+            "portuguese",
+            "russian",
+            "spanish",
+            "swedish"
+          ]
+        },
+        {
+          "name" => "duration",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "oneHourLess",
+            "oneToThreeHour",
+            "threeToSixHour",
+            "sixToTenHour",
+            "tenToTwentyHour",
+            "twentyHourMore"
+          ]
+        },
+        {
+          "name" => "originals_only",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "audible-editorial-list" => {
+      "id" => "audible-editorial-list",
+      "method" => "GET",
+      "path" => "/audible/list/{list}",
+      "pathParams" => [
+        "list"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "audible-product" => {
+      "id" => "audible-product",
+      "method" => "GET",
+      "path" => "/audible/product/{asin}",
+      "pathParams" => [
+        "asin"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "audible-product-related" => {
+      "id" => "audible-product-related",
+      "method" => "GET",
+      "path" => "/audible/product/{asin}/related",
+      "pathParams" => [
+        "asin"
+      ],
+      "queryParams" => [
+        {
+          "name" => "similarity_type",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "InTheSameSeries",
+            "ByTheSameNarrator",
+            "RawSimilarities",
+            "ByTheSameAuthor",
+            "NextInSameSeries"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "audible-product-reviews" => {
+      "id" => "audible-product-reviews",
+      "method" => "GET",
+      "path" => "/audible/product/{asin}/reviews",
+      "pathParams" => [
+        "asin"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "audible-products" => {
+      "id" => "audible-products",
+      "method" => "GET",
+      "path" => "/audible/products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "asins",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "audible-search" => {
+      "id" => "audible-search",
+      "method" => "GET",
+      "path" => "/audible/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "title",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "author",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "narrator",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "audible-series" => {
+      "id" => "audible-series",
+      "method" => "GET",
+      "path" => "/audible/series/{asin}",
+      "pathParams" => [
+        "asin"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "autotrader-dealer" => {
       "id" => "autotrader-dealer",
       "method" => "GET",
@@ -2566,6 +3396,343 @@ module Crawlora
       "security" => [
         "ApiKeyAuth"
       ]
+    },
+    "bbb-business" => {
+      "id" => "bbb-business",
+      "method" => "GET",
+      "path" => "/bbb/business",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bbb-business-complaints" => {
+      "id" => "bbb-business-complaints",
+      "method" => "GET",
+      "path" => "/bbb/business/complaints",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bbb-business-more-info" => {
+      "id" => "bbb-business-more-info",
+      "method" => "GET",
+      "path" => "/bbb/business/more-info",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bbb-business-reviews" => {
+      "id" => "bbb-business-reviews",
+      "method" => "GET",
+      "path" => "/bbb/business/reviews",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "bbb-category" => {
+      "id" => "bbb-category",
+      "method" => "GET",
+      "path" => "/bbb/category",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "bbb-scamtracker-search" => {
+      "id" => "bbb-scamtracker-search",
+      "method" => "GET",
+      "path" => "/bbb/scamtracker/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "scam_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Advance Fee Loan",
+            "Bank/Credit Card Company Imposter",
+            "Business Email Compromise",
+            "Charity",
+            "Counterfeit Product",
+            "COVID-19",
+            "Credit Cards",
+            "Credit Repair/Debt Relief",
+            "CryptoCurrency",
+            "Debt Collections",
+            "Employment",
+            "Fake Check/Money Order",
+            "Fake Invoice/Supplier Bill",
+            "Family/Friend Emergency",
+            "Foreign Money Exchange",
+            "Government Agency Imposter",
+            "Government Grant",
+            "Healthcare/Medicaid/Medicare",
+            "Home Improvement",
+            "Identity Theft",
+            "Investment",
+            "Moving",
+            "Online Purchase",
+            "Other",
+            "Phishing",
+            "Rental",
+            "Retail Business",
+            "Romance",
+            "Scholarship",
+            "Sweepstakes/Lottery/Prizes",
+            "Tax Collection",
+            "Tech Support",
+            "Travel/Vacation/Timeshare",
+            "Utility",
+            "Vanity Award",
+            "Worthless Problem-solving Service",
+            "Yellow Pages/Directories"
+          ]
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "scammer_state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_dollars_lost",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_dollars_lost",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "bbb-scamtracker-state-stats" => {
+      "id" => "bbb-scamtracker-state-stats",
+      "method" => "GET",
+      "path" => "/bbb/scamtracker/state-stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "period",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "30",
+            "90",
+            "365",
+            "all"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bbb-scamtracker-detail" => {
+      "id" => "bbb-scamtracker-detail",
+      "method" => "GET",
+      "path" => "/bbb/scamtracker/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bbb-search" => {
+      "id" => "bbb-search",
+      "method" => "GET",
+      "path" => "/bbb/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
     },
     "bestbuy-brands" => {
       "id" => "bestbuy-brands",
@@ -3076,6 +4243,63 @@ module Crawlora
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "billing-me-subscription-change" => {
+      "id" => "billing-me-subscription-change",
+      "method" => "POST",
+      "path" => "/billing/me/subscription/change",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "request",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "billing-me-subscription-change-cancel" => {
+      "id" => "billing-me-subscription-change-cancel",
+      "method" => "POST",
+      "path" => "/billing/me/subscription/change/cancel",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "billing-me-subscription-preview" => {
+      "id" => "billing-me-subscription-preview",
+      "method" => "POST",
+      "path" => "/billing/me/subscription/preview",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "request",
+      "bodyRequired" => true,
       "consumes" => [
         "application/json"
       ],
@@ -5316,6 +6540,323 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "brooklinen-collections" => {
+      "id" => "brooklinen-collections",
+      "method" => "GET",
+      "path" => "/brooklinen/collections",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "brooklinen-collection-products" => {
+      "id" => "brooklinen-collection-products",
+      "method" => "GET",
+      "path" => "/brooklinen/collections/{handle}/products",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "brooklinen-pages" => {
+      "id" => "brooklinen-pages",
+      "method" => "GET",
+      "path" => "/brooklinen/pages",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "brooklinen-page" => {
+      "id" => "brooklinen-page",
+      "method" => "GET",
+      "path" => "/brooklinen/pages/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "brooklinen-products" => {
+      "id" => "brooklinen-products",
+      "method" => "GET",
+      "path" => "/brooklinen/products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "brooklinen-product" => {
+      "id" => "brooklinen-product",
+      "method" => "GET",
+      "path" => "/brooklinen/products/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "brooklinen-product-recommendations" => {
+      "id" => "brooklinen-product-recommendations",
+      "method" => "GET",
+      "path" => "/brooklinen/products/{handle}/recommendations",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "intent",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "related",
+            "complementary"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "brooklinen-search-suggest" => {
+      "id" => "brooklinen-search-suggest",
+      "method" => "GET",
+      "path" => "/brooklinen/search/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "types",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "brooklinen-sitemap-urls" => {
+      "id" => "brooklinen-sitemap-urls",
+      "method" => "GET",
+      "path" => "/brooklinen/sitemap/urls",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "products",
+            "collections",
+            "pages",
+            "blogs",
+            "agentic_discovery",
+            "other"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "brooklinen-sitemaps" => {
+      "id" => "brooklinen-sitemaps",
+      "method" => "GET",
+      "path" => "/brooklinen/sitemaps",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "brooklinen-store" => {
+      "id" => "brooklinen-store",
+      "method" => "GET",
+      "path" => "/brooklinen/store",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "capterra-product" => {
       "id" => "capterra-product",
       "method" => "GET",
@@ -5687,6 +7228,244 @@ module Crawlora
         "listing_id"
       ],
       "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "chewy-categories" => {
+      "id" => "chewy-categories",
+      "method" => "GET",
+      "path" => "/chewy/categories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "group_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "depth",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "chewy-category" => {
+      "id" => "chewy-category",
+      "method" => "GET",
+      "path" => "/chewy/category",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "group_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "byRelevance",
+            "byNewest",
+            "byPopularity",
+            "byLowestPrice",
+            "byHighestPrice",
+            "byRating",
+            "byRatingCount"
+          ]
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "chewy-gtin-lookup" => {
+      "id" => "chewy-gtin-lookup",
+      "method" => "GET",
+      "path" => "/chewy/gtin-lookup",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "gtins",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "chewy-product" => {
+      "id" => "chewy-product",
+      "method" => "GET",
+      "path" => "/chewy/product",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "chewy-products" => {
+      "id" => "chewy-products",
+      "method" => "GET",
+      "path" => "/chewy/products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "part_numbers",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "chewy-search" => {
+      "id" => "chewy-search",
+      "method" => "GET",
+      "path" => "/chewy/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "byRelevance",
+            "byNewest",
+            "byPopularity",
+            "byLowestPrice",
+            "byHighestPrice",
+            "byRating",
+            "byRatingCount"
+          ]
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "chewy-suggest" => {
+      "id" => "chewy-suggest",
+      "method" => "GET",
+      "path" => "/chewy/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "term",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -7865,6 +9644,323 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "colehaan-collections" => {
+      "id" => "colehaan-collections",
+      "method" => "GET",
+      "path" => "/colehaan/collections",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "colehaan-collection-products" => {
+      "id" => "colehaan-collection-products",
+      "method" => "GET",
+      "path" => "/colehaan/collections/{handle}/products",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "colehaan-pages" => {
+      "id" => "colehaan-pages",
+      "method" => "GET",
+      "path" => "/colehaan/pages",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "colehaan-page" => {
+      "id" => "colehaan-page",
+      "method" => "GET",
+      "path" => "/colehaan/pages/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "colehaan-products" => {
+      "id" => "colehaan-products",
+      "method" => "GET",
+      "path" => "/colehaan/products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "colehaan-product" => {
+      "id" => "colehaan-product",
+      "method" => "GET",
+      "path" => "/colehaan/products/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "colehaan-product-recommendations" => {
+      "id" => "colehaan-product-recommendations",
+      "method" => "GET",
+      "path" => "/colehaan/products/{handle}/recommendations",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "intent",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "related",
+            "complementary"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "colehaan-search-suggest" => {
+      "id" => "colehaan-search-suggest",
+      "method" => "GET",
+      "path" => "/colehaan/search/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "types",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "colehaan-sitemap-urls" => {
+      "id" => "colehaan-sitemap-urls",
+      "method" => "GET",
+      "path" => "/colehaan/sitemap/urls",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "products",
+            "collections",
+            "pages",
+            "blogs",
+            "agentic_discovery",
+            "other"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "colehaan-sitemaps" => {
+      "id" => "colehaan-sitemaps",
+      "method" => "GET",
+      "path" => "/colehaan/sitemaps",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "colehaan-store" => {
+      "id" => "colehaan-store",
+      "method" => "GET",
+      "path" => "/colehaan/store",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "congress-report" => {
       "id" => "congress-report",
       "method" => "GET",
@@ -9113,6 +11209,221 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "datasets-bbb-businesses-facets" => {
+      "id" => "datasets-bbb-businesses-facets",
+      "method" => "GET",
+      "path" => "/datasets/bbb-businesses/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "category",
+            "state",
+            "city",
+            "rating",
+            "accredited",
+            "entity_type",
+            "run_id"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "rating",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "A+",
+            "A",
+            "A-",
+            "B+",
+            "B",
+            "B-",
+            "C+",
+            "C",
+            "C-",
+            "D+",
+            "D",
+            "D-",
+            "F"
+          ]
+        },
+        {
+          "name" => "accredited",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "entity_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "run_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-bbb-businesses-item" => {
+      "id" => "datasets-bbb-businesses-item",
+      "method" => "GET",
+      "path" => "/datasets/bbb-businesses/items/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-bbb-businesses-search" => {
+      "id" => "datasets-bbb-businesses-search",
+      "method" => "GET",
+      "path" => "/datasets/bbb-businesses/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "rating",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "A+",
+            "A",
+            "A-",
+            "B+",
+            "B",
+            "B-",
+            "C+",
+            "C",
+            "C-",
+            "D+",
+            "D",
+            "D-",
+            "F"
+          ]
+        },
+        {
+          "name" => "min_rating_rank",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "accredited",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "entity_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "run_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "rating_desc",
+            "rating_asc",
+            "accredited_first",
+            "name_asc",
+            "years_in_business_desc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "datasets-boxofficemojo-facets" => {
       "id" => "datasets-boxofficemojo-facets",
       "method" => "GET",
@@ -9920,6 +12231,242 @@ module Crawlora
             "engagement_desc",
             "likes_desc",
             "relevance"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-facebook-pages-facets" => {
+      "id" => "datasets-facebook-pages-facets",
+      "method" => "GET",
+      "path" => "/datasets/facebook-pages/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "category",
+            "discovery_source"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "identifier",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "discovery_source",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "has_website",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_email",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_phone",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_whatsapp",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_likes",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_likes",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "hydrated_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "hydrated_before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "likes_desc",
+            "likes_asc",
+            "hydrated_at_desc",
+            "hydrated_at_asc"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-facebook-pages-item" => {
+      "id" => "datasets-facebook-pages-item",
+      "method" => "GET",
+      "path" => "/datasets/facebook-pages/items/{page_id}",
+      "pathParams" => [
+        "page_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-facebook-pages-search" => {
+      "id" => "datasets-facebook-pages-search",
+      "method" => "GET",
+      "path" => "/datasets/facebook-pages/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "identifier",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "discovery_source",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "has_website",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_email",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_phone",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_whatsapp",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_likes",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_likes",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "hydrated_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "hydrated_before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "likes_desc",
+            "likes_asc",
+            "hydrated_at_desc",
+            "hydrated_at_asc"
           ]
         },
         {
@@ -16294,6 +18841,344 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "datasets-vehicle-listings-facets" => {
+      "id" => "datasets-vehicle-listings-facets",
+      "method" => "GET",
+      "path" => "/datasets/vehicle-listings/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "source",
+            "make",
+            "model",
+            "trim",
+            "body_style",
+            "transmission",
+            "drive_type",
+            "fuel_type",
+            "seller_type",
+            "state",
+            "run_id"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "source",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "carmax",
+            "autotrader",
+            "carsdotcom"
+          ]
+        },
+        {
+          "name" => "make",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "model",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "trim",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "body_style",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "transmission",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "drive_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "fuel_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "seller_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "retailer",
+            "dealer",
+            "private"
+          ]
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "vin",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "run_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "is_price_reduced",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_mileage",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-vehicle-listings-item" => {
+      "id" => "datasets-vehicle-listings-item",
+      "method" => "GET",
+      "path" => "/datasets/vehicle-listings/items/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-vehicle-listings-price-history" => {
+      "id" => "datasets-vehicle-listings-price-history",
+      "method" => "GET",
+      "path" => "/datasets/vehicle-listings/price-history/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-vehicle-listings-search" => {
+      "id" => "datasets-vehicle-listings-search",
+      "method" => "GET",
+      "path" => "/datasets/vehicle-listings/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "source",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "carmax",
+            "autotrader",
+            "carsdotcom"
+          ]
+        },
+        {
+          "name" => "make",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "model",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "trim",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "body_style",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "transmission",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "drive_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "fuel_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "seller_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "retailer",
+            "dealer",
+            "private"
+          ]
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "vin",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "run_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "is_price_reduced",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_mileage",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "recently_updated",
+            "newly_listed",
+            "price_asc",
+            "price_desc",
+            "mileage_asc",
+            "mileage_desc",
+            "year_desc",
+            "year_asc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "datasets-x-users-facets" => {
       "id" => "datasets-x-users-facets",
       "method" => "GET",
@@ -16519,6 +19404,306 @@ module Crawlora
             "crawled_at_asc",
             "created_at_desc",
             "created_at_asc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-youtube-creators-facets" => {
+      "id" => "datasets-youtube-creators-facets",
+      "method" => "GET",
+      "path" => "/datasets/youtube-creators/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "region",
+            "discovery_source"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "channel_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "discovery_source",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "has_bio",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_links",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "followers_count_available",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "videos_count_available",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "views_count_available",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_videos",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_videos",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_views",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_views",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "joined_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "joined_before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "hydrated_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "hydrated_before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "followers_desc",
+            "followers_asc",
+            "views_desc",
+            "videos_desc",
+            "hydrated_at_desc",
+            "hydrated_at_asc"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-youtube-creators-item" => {
+      "id" => "datasets-youtube-creators-item",
+      "method" => "GET",
+      "path" => "/datasets/youtube-creators/items/{channel_id}",
+      "pathParams" => [
+        "channel_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-youtube-creators-search" => {
+      "id" => "datasets-youtube-creators-search",
+      "method" => "GET",
+      "path" => "/datasets/youtube-creators/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "channel_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "discovery_source",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "has_bio",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_links",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "followers_count_available",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "videos_count_available",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "views_count_available",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_videos",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_videos",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_views",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_views",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "joined_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "joined_before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "hydrated_after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "hydrated_before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "followers_desc",
+            "followers_asc",
+            "views_desc",
+            "videos_desc",
+            "hydrated_at_desc",
+            "hydrated_at_asc"
           ]
         },
         {
@@ -19125,6 +22310,323 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "everlane-collections" => {
+      "id" => "everlane-collections",
+      "method" => "GET",
+      "path" => "/everlane/collections",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "everlane-collection-products" => {
+      "id" => "everlane-collection-products",
+      "method" => "GET",
+      "path" => "/everlane/collections/{handle}/products",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "everlane-pages" => {
+      "id" => "everlane-pages",
+      "method" => "GET",
+      "path" => "/everlane/pages",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "everlane-page" => {
+      "id" => "everlane-page",
+      "method" => "GET",
+      "path" => "/everlane/pages/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "everlane-products" => {
+      "id" => "everlane-products",
+      "method" => "GET",
+      "path" => "/everlane/products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "everlane-product" => {
+      "id" => "everlane-product",
+      "method" => "GET",
+      "path" => "/everlane/products/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "everlane-product-recommendations" => {
+      "id" => "everlane-product-recommendations",
+      "method" => "GET",
+      "path" => "/everlane/products/{handle}/recommendations",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "intent",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "related",
+            "complementary"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "everlane-search-suggest" => {
+      "id" => "everlane-search-suggest",
+      "method" => "GET",
+      "path" => "/everlane/search/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "types",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "everlane-sitemap-urls" => {
+      "id" => "everlane-sitemap-urls",
+      "method" => "GET",
+      "path" => "/everlane/sitemap/urls",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "products",
+            "collections",
+            "pages",
+            "blogs",
+            "agentic_discovery",
+            "other"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "everlane-sitemaps" => {
+      "id" => "everlane-sitemaps",
+      "method" => "GET",
+      "path" => "/everlane/sitemaps",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "everlane-store" => {
+      "id" => "everlane-store",
+      "method" => "GET",
+      "path" => "/everlane/store",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "expedia-activities-search" => {
       "id" => "expedia-activities-search",
       "method" => "POST",
@@ -19397,6 +22899,323 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "fashionnova-collections" => {
+      "id" => "fashionnova-collections",
+      "method" => "GET",
+      "path" => "/fashionnova/collections",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "fashionnova-collection-products" => {
+      "id" => "fashionnova-collection-products",
+      "method" => "GET",
+      "path" => "/fashionnova/collections/{handle}/products",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "fashionnova-pages" => {
+      "id" => "fashionnova-pages",
+      "method" => "GET",
+      "path" => "/fashionnova/pages",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "fashionnova-page" => {
+      "id" => "fashionnova-page",
+      "method" => "GET",
+      "path" => "/fashionnova/pages/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fashionnova-products" => {
+      "id" => "fashionnova-products",
+      "method" => "GET",
+      "path" => "/fashionnova/products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "fashionnova-product" => {
+      "id" => "fashionnova-product",
+      "method" => "GET",
+      "path" => "/fashionnova/products/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fashionnova-product-recommendations" => {
+      "id" => "fashionnova-product-recommendations",
+      "method" => "GET",
+      "path" => "/fashionnova/products/{handle}/recommendations",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "intent",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "related",
+            "complementary"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fashionnova-search-suggest" => {
+      "id" => "fashionnova-search-suggest",
+      "method" => "GET",
+      "path" => "/fashionnova/search/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "types",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fashionnova-sitemap-urls" => {
+      "id" => "fashionnova-sitemap-urls",
+      "method" => "GET",
+      "path" => "/fashionnova/sitemap/urls",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "products",
+            "collections",
+            "pages",
+            "blogs",
+            "agentic_discovery",
+            "other"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fashionnova-sitemaps" => {
+      "id" => "fashionnova-sitemaps",
+      "method" => "GET",
+      "path" => "/fashionnova/sitemaps",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fashionnova-store" => {
+      "id" => "fashionnova-store",
+      "method" => "GET",
+      "path" => "/fashionnova/store",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "fiverr-gig" => {
       "id" => "fiverr-gig",
       "method" => "GET",
@@ -19459,6 +23278,963 @@ module Crawlora
         "username"
       ],
       "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gdelt-context" => {
+      "id" => "gdelt-context",
+      "method" => "GET",
+      "path" => "/gdelt/context",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "domain",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "is_quote",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "timespan",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "datedesc",
+            "dateasc"
+          ]
+        },
+        {
+          "name" => "maxrecords",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gdelt-search" => {
+      "id" => "gdelt-search",
+      "method" => "GET",
+      "path" => "/gdelt/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "domain",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "timespan",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "datedesc",
+            "dateasc",
+            "tonedesc",
+            "toneasc"
+          ]
+        },
+        {
+          "name" => "maxrecords",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gdelt-timeline" => {
+      "id" => "gdelt-timeline",
+      "method" => "GET",
+      "path" => "/gdelt/timeline",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "metric",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "volume",
+            "volume_raw",
+            "tone",
+            "lang",
+            "country"
+          ]
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "domain",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "timespan",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "smooth",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gdelt-tonechart" => {
+      "id" => "gdelt-tonechart",
+      "method" => "GET",
+      "path" => "/gdelt/tonechart",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "domain",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "timespan",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gdelt-tv-concept-entities" => {
+      "id" => "gdelt-tv-concept-entities",
+      "method" => "GET",
+      "path" => "/gdelt/tv-concept-entities",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gdelt-tv-search" => {
+      "id" => "gdelt-tv-search",
+      "method" => "GET",
+      "path" => "/gdelt/tv-search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "transcript",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "caption",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "concept",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "onscreen_text",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "visual",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_transcript",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_caption",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_concept",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_onscreen_text",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_visual",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "station",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "CNN",
+            "MSNBC",
+            "FOXNEWS",
+            "BBCNEWS",
+            "KGO",
+            "KPIX",
+            "KNTV"
+          ]
+        },
+        {
+          "name" => "show",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "day_of_week",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "timespan",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "datedesc",
+            "dateasc"
+          ]
+        },
+        {
+          "name" => "maxrecords",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gdelt-tv-showchart" => {
+      "id" => "gdelt-tv-showchart",
+      "method" => "GET",
+      "path" => "/gdelt/tv-showchart",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "transcript",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "caption",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "concept",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "onscreen_text",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "visual",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_transcript",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_caption",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_concept",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_onscreen_text",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_visual",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "station",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "required" => true,
+          "enum" => [
+            "CNN",
+            "MSNBC",
+            "FOXNEWS",
+            "BBCNEWS",
+            "KGO",
+            "KPIX",
+            "KNTV"
+          ]
+        },
+        {
+          "name" => "show",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "timespan",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gdelt-tv-stationchart" => {
+      "id" => "gdelt-tv-stationchart",
+      "method" => "GET",
+      "path" => "/gdelt/tv-stationchart",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "transcript",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "caption",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "concept",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "onscreen_text",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "visual",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_transcript",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_caption",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_concept",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_onscreen_text",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_visual",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "station",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "required" => true,
+          "enum" => [
+            "CNN",
+            "MSNBC",
+            "FOXNEWS",
+            "BBCNEWS",
+            "KGO",
+            "KPIX",
+            "KNTV"
+          ]
+        },
+        {
+          "name" => "show",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "timespan",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gdelt-tv-stationdetails" => {
+      "id" => "gdelt-tv-stationdetails",
+      "method" => "GET",
+      "path" => "/gdelt/tv-stationdetails",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gdelt-tv-timeline" => {
+      "id" => "gdelt-tv-timeline",
+      "method" => "GET",
+      "path" => "/gdelt/tv-timeline",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "transcript",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "caption",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "concept",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "onscreen_text",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "visual",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_transcript",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_caption",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_concept",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_onscreen_text",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_visual",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "station",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "CNN",
+            "MSNBC",
+            "FOXNEWS",
+            "BBCNEWS",
+            "KGO",
+            "KPIX",
+            "KNTV"
+          ]
+        },
+        {
+          "name" => "show",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "timespan",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gdelt-tv-visual-entities" => {
+      "id" => "gdelt-tv-visual-entities",
+      "method" => "GET",
+      "path" => "/gdelt/tv-visual-entities",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gdelt-tv-wordcloud" => {
+      "id" => "gdelt-tv-wordcloud",
+      "method" => "GET",
+      "path" => "/gdelt/tv-wordcloud",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "channel",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "transcript",
+            "caption",
+            "concept",
+            "onscreen_text",
+            "visual"
+          ]
+        },
+        {
+          "name" => "transcript",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "caption",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "concept",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "onscreen_text",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "visual",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_transcript",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_caption",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_concept",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_onscreen_text",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "exclude_visual",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "station",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "CNN",
+            "MSNBC",
+            "FOXNEWS",
+            "BBCNEWS",
+            "KGO",
+            "KPIX",
+            "KNTV"
+          ]
+        },
+        {
+          "name" => "show",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "day_of_week",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "timespan",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -22655,6 +27431,287 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "gymshark-collections" => {
+      "id" => "gymshark-collections",
+      "method" => "GET",
+      "path" => "/gymshark/collections",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "gymshark-collection-products" => {
+      "id" => "gymshark-collection-products",
+      "method" => "GET",
+      "path" => "/gymshark/collections/{handle}/products",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "gymshark-pages" => {
+      "id" => "gymshark-pages",
+      "method" => "GET",
+      "path" => "/gymshark/pages",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "gymshark-page" => {
+      "id" => "gymshark-page",
+      "method" => "GET",
+      "path" => "/gymshark/pages/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gymshark-products" => {
+      "id" => "gymshark-products",
+      "method" => "GET",
+      "path" => "/gymshark/products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "gymshark-product" => {
+      "id" => "gymshark-product",
+      "method" => "GET",
+      "path" => "/gymshark/products/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gymshark-product-recommendations" => {
+      "id" => "gymshark-product-recommendations",
+      "method" => "GET",
+      "path" => "/gymshark/products/{handle}/recommendations",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "intent",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "related",
+            "complementary"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gymshark-sitemap-urls" => {
+      "id" => "gymshark-sitemap-urls",
+      "method" => "GET",
+      "path" => "/gymshark/sitemap/urls",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "products",
+            "collections",
+            "pages",
+            "blogs",
+            "agentic_discovery",
+            "other"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gymshark-sitemaps" => {
+      "id" => "gymshark-sitemaps",
+      "method" => "GET",
+      "path" => "/gymshark/sitemaps",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gymshark-store" => {
+      "id" => "gymshark-store",
+      "method" => "GET",
+      "path" => "/gymshark/store",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "hm-categories" => {
       "id" => "hm-categories",
       "method" => "GET",
@@ -22867,6 +27924,463 @@ module Crawlora
         },
         {
           "name" => "radius_meters",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "homedepot-categories" => {
+      "id" => "homedepot-categories",
+      "method" => "GET",
+      "path" => "/homedepot/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "homedepot-category" => {
+      "id" => "homedepot-category",
+      "method" => "GET",
+      "path" => "/homedepot/category",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "homedepot-product" => {
+      "id" => "homedepot-product",
+      "method" => "GET",
+      "path" => "/homedepot/product/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "homedepot-product-questions" => {
+      "id" => "homedepot-product-questions",
+      "method" => "GET",
+      "path" => "/homedepot/product/{id}/questions",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "homedepot-search" => {
+      "id" => "homedepot-search",
+      "method" => "GET",
+      "path" => "/homedepot/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "ikea-availability" => {
+      "id" => "ikea-availability",
+      "method" => "GET",
+      "path" => "/ikea/availability",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "item_no",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ikea-category" => {
+      "id" => "ikea-category",
+      "method" => "GET",
+      "path" => "/ikea/category",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "size",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "price-low",
+            "price-high",
+            "newest",
+            "rating",
+            "name",
+            "popular",
+            "width",
+            "height",
+            "depth",
+            "length"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "ikea-product" => {
+      "id" => "ikea-product",
+      "method" => "GET",
+      "path" => "/ikea/product",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "item_no",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ikea-reviews" => {
+      "id" => "ikea-reviews",
+      "method" => "GET",
+      "path" => "/ikea/reviews",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "item_no",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ikea-search" => {
+      "id" => "ikea-search",
+      "method" => "GET",
+      "path" => "/ikea/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ikea-store" => {
+      "id" => "ikea-store",
+      "method" => "GET",
+      "path" => "/ikea/store",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ikea-stores" => {
+      "id" => "ikea-stores",
+      "method" => "GET",
+      "path" => "/ikea/stores",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ikea-suggest" => {
+      "id" => "ikea-suggest",
+      "method" => "GET",
+      "path" => "/ikea/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-charts" => {
+      "id" => "imdb-charts",
+      "method" => "GET",
+      "path" => "/imdb/charts",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "chart",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "top_rated_movies",
+            "top_rated_tv_shows",
+            "most_popular_movies",
+            "most_popular_tv_shows",
+            "top_rated_english_movies",
+            "lowest_rated_movies"
+          ]
+        },
+        {
+          "name" => "limit",
           "in" => "query",
           "type" => "integer"
         }
@@ -23505,6 +29019,36 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "imdb-title-ratings" => {
+      "id" => "imdb-title-ratings",
+      "method" => "GET",
+      "path" => "/imdb/title/ratings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "imdb-title-release-info" => {
       "id" => "imdb-title-release-info",
       "method" => "GET",
@@ -23555,6 +29099,36 @@ module Crawlora
           "name" => "limit",
           "in" => "query",
           "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "imdb-title-similar" => {
+      "id" => "imdb-title-similar",
+      "method" => "GET",
+      "path" => "/imdb/title/similar",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
         }
       ],
       "formParams" => [],
@@ -24066,6 +29640,327 @@ module Crawlora
           "name" => "max_id",
           "in" => "query",
           "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jcrew-categories" => {
+      "id" => "jcrew-categories",
+      "method" => "GET",
+      "path" => "/jcrew/categories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "site",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "jcrew",
+            "factory"
+          ]
+        },
+        {
+          "name" => "department",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jcrew-category" => {
+      "id" => "jcrew-category",
+      "method" => "GET",
+      "path" => "/jcrew/category",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "site",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "jcrew",
+            "factory"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "jcrew-product" => {
+      "id" => "jcrew-product",
+      "method" => "GET",
+      "path" => "/jcrew/product",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "pid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "site",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "jcrew",
+            "factory"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jcrew-product-reviews" => {
+      "id" => "jcrew-product-reviews",
+      "method" => "GET",
+      "path" => "/jcrew/product/reviews",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "pid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "site",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "jcrew",
+            "factory"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "jcrew-search" => {
+      "id" => "jcrew-search",
+      "method" => "GET",
+      "path" => "/jcrew/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "keyword",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "site",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "jcrew",
+            "factory"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "price_asc",
+            "price_desc"
+          ]
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "jcrew-size-chart" => {
+      "id" => "jcrew-size-chart",
+      "method" => "GET",
+      "path" => "/jcrew/size-chart",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "pid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "site",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "jcrew",
+            "factory"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jcrew-stores" => {
+      "id" => "jcrew-stores",
+      "method" => "GET",
+      "path" => "/jcrew/stores",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "site",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "jcrew",
+            "factory"
+          ]
+        },
+        {
+          "name" => "lat",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "lng",
+          "in" => "query",
+          "type" => "number"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jcrew-suggest" => {
+      "id" => "jcrew-suggest",
+      "method" => "GET",
+      "path" => "/jcrew/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "site",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "jcrew",
+            "factory"
+          ]
         }
       ],
       "formParams" => [],
@@ -26777,6 +32672,169 @@ module Crawlora
         "cursor"
       ]
     },
+    "kickstarter-comments" => {
+      "id" => "kickstarter-comments",
+      "method" => "GET",
+      "path" => "/kickstarter/comments",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "creator",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kickstarter-discover" => {
+      "id" => "kickstarter-discover",
+      "method" => "GET",
+      "path" => "/kickstarter/discover",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "term",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "magic",
+            "popularity",
+            "newest",
+            "end_date",
+            "most_funded"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "upcoming",
+            "live",
+            "late_pledge",
+            "canceled",
+            "failed",
+            "successful"
+          ]
+        },
+        {
+          "name" => "staff_pick_only",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "kickstarter-project" => {
+      "id" => "kickstarter-project",
+      "method" => "GET",
+      "path" => "/kickstarter/project",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "creator",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kickstarter-updates" => {
+      "id" => "kickstarter-updates",
+      "method" => "GET",
+      "path" => "/kickstarter/updates",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "creator",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "kohls-category" => {
       "id" => "kohls-category",
       "method" => "GET",
@@ -26874,6 +32932,323 @@ module Crawlora
           "required" => true
         }
       ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kyliecosmetics-collections" => {
+      "id" => "kyliecosmetics-collections",
+      "method" => "GET",
+      "path" => "/kyliecosmetics/collections",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "kyliecosmetics-collection-products" => {
+      "id" => "kyliecosmetics-collection-products",
+      "method" => "GET",
+      "path" => "/kyliecosmetics/collections/{handle}/products",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "kyliecosmetics-pages" => {
+      "id" => "kyliecosmetics-pages",
+      "method" => "GET",
+      "path" => "/kyliecosmetics/pages",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "kyliecosmetics-page" => {
+      "id" => "kyliecosmetics-page",
+      "method" => "GET",
+      "path" => "/kyliecosmetics/pages/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kyliecosmetics-products" => {
+      "id" => "kyliecosmetics-products",
+      "method" => "GET",
+      "path" => "/kyliecosmetics/products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "kyliecosmetics-product" => {
+      "id" => "kyliecosmetics-product",
+      "method" => "GET",
+      "path" => "/kyliecosmetics/products/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kyliecosmetics-product-recommendations" => {
+      "id" => "kyliecosmetics-product-recommendations",
+      "method" => "GET",
+      "path" => "/kyliecosmetics/products/{handle}/recommendations",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "intent",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "related",
+            "complementary"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kyliecosmetics-search-suggest" => {
+      "id" => "kyliecosmetics-search-suggest",
+      "method" => "GET",
+      "path" => "/kyliecosmetics/search/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "types",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kyliecosmetics-sitemap-urls" => {
+      "id" => "kyliecosmetics-sitemap-urls",
+      "method" => "GET",
+      "path" => "/kyliecosmetics/sitemap/urls",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "products",
+            "collections",
+            "pages",
+            "blogs",
+            "agentic_discovery",
+            "other"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kyliecosmetics-sitemaps" => {
+      "id" => "kyliecosmetics-sitemaps",
+      "method" => "GET",
+      "path" => "/kyliecosmetics/sitemaps",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "kyliecosmetics-store" => {
+      "id" => "kyliecosmetics-store",
+      "method" => "GET",
+      "path" => "/kyliecosmetics/store",
+      "pathParams" => [],
+      "queryParams" => [],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -28907,6 +35282,128 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "monitors-list" => {
+      "id" => "monitors-list",
+      "method" => "GET",
+      "path" => "/monitors",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "monitors-create" => {
+      "id" => "monitors-create",
+      "method" => "POST",
+      "path" => "/monitors",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "request",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "monitors-delete" => {
+      "id" => "monitors-delete",
+      "method" => "DELETE",
+      "path" => "/monitors/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "monitors-get" => {
+      "id" => "monitors-get",
+      "method" => "GET",
+      "path" => "/monitors/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "monitors-update" => {
+      "id" => "monitors-update",
+      "method" => "PATCH",
+      "path" => "/monitors/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "request",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "monitors-checks" => {
+      "id" => "monitors-checks",
+      "method" => "GET",
+      "path" => "/monitors/{id}/checks",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "nike-categories" => {
       "id" => "nike-categories",
       "method" => "GET",
@@ -28938,6 +35435,84 @@ module Crawlora
           "type" => "string",
           "required" => true
         },
+        {
+          "name" => "style_color",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nike-product-availability" => {
+      "id" => "nike-product-availability",
+      "method" => "GET",
+      "path" => "/nike/product/availability",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "group_key",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nike-product-details" => {
+      "id" => "nike-product-details",
+      "method" => "GET",
+      "path" => "/nike/product/details",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "group_key",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nike-product-recommendations" => {
+      "id" => "nike-product-recommendations",
+      "method" => "GET",
+      "path" => "/nike/product/recommendations",
+      "pathParams" => [],
+      "queryParams" => [
         {
           "name" => "style_color",
           "in" => "query",
@@ -29346,6 +35921,323 @@ module Crawlora
           ]
         }
       ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ohpolly-collections" => {
+      "id" => "ohpolly-collections",
+      "method" => "GET",
+      "path" => "/ohpolly/collections",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "ohpolly-collection-products" => {
+      "id" => "ohpolly-collection-products",
+      "method" => "GET",
+      "path" => "/ohpolly/collections/{handle}/products",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "ohpolly-pages" => {
+      "id" => "ohpolly-pages",
+      "method" => "GET",
+      "path" => "/ohpolly/pages",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "ohpolly-page" => {
+      "id" => "ohpolly-page",
+      "method" => "GET",
+      "path" => "/ohpolly/pages/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ohpolly-products" => {
+      "id" => "ohpolly-products",
+      "method" => "GET",
+      "path" => "/ohpolly/products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "ohpolly-product" => {
+      "id" => "ohpolly-product",
+      "method" => "GET",
+      "path" => "/ohpolly/products/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ohpolly-product-recommendations" => {
+      "id" => "ohpolly-product-recommendations",
+      "method" => "GET",
+      "path" => "/ohpolly/products/{handle}/recommendations",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "intent",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "related",
+            "complementary"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ohpolly-search-suggest" => {
+      "id" => "ohpolly-search-suggest",
+      "method" => "GET",
+      "path" => "/ohpolly/search/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "types",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ohpolly-sitemap-urls" => {
+      "id" => "ohpolly-sitemap-urls",
+      "method" => "GET",
+      "path" => "/ohpolly/sitemap/urls",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "products",
+            "collections",
+            "pages",
+            "blogs",
+            "agentic_discovery",
+            "other"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ohpolly-sitemaps" => {
+      "id" => "ohpolly-sitemaps",
+      "method" => "GET",
+      "path" => "/ohpolly/sitemaps",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ohpolly-store" => {
+      "id" => "ohpolly-store",
+      "method" => "GET",
+      "path" => "/ohpolly/store",
+      "pathParams" => [],
+      "queryParams" => [],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -33365,6 +40257,275 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "quince-categories" => {
+      "id" => "quince-categories",
+      "method" => "GET",
+      "path" => "/quince/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "quince-navigation" => {
+      "id" => "quince-navigation",
+      "method" => "GET",
+      "path" => "/quince/navigation",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "quince-product" => {
+      "id" => "quince-product",
+      "method" => "GET",
+      "path" => "/quince/product",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "handle",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "quince-product-faq" => {
+      "id" => "quince-product-faq",
+      "method" => "GET",
+      "path" => "/quince/product/faq",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "handle",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "quince-product-reviews" => {
+      "id" => "quince-product-reviews",
+      "method" => "GET",
+      "path" => "/quince/product/reviews",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "handle",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "quince-search" => {
+      "id" => "quince-search",
+      "method" => "GET",
+      "path" => "/quince/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "department",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "material",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "color",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "size",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "quince-sitemap-urls" => {
+      "id" => "quince-sitemap-urls",
+      "method" => "GET",
+      "path" => "/quince/sitemap/urls",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "products",
+            "collections",
+            "subcollections",
+            "pages"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "quince-sitemaps" => {
+      "id" => "quince-sitemaps",
+      "method" => "GET",
+      "path" => "/quince/sitemaps",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "quince-suggest" => {
+      "id" => "quince-suggest",
+      "method" => "GET",
+      "path" => "/quince/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "ready" => {
       "id" => "ready",
       "method" => "GET",
@@ -33473,6 +40634,82 @@ module Crawlora
           "name" => "after",
           "in" => "query",
           "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "reddit-leads" => {
+      "id" => "reddit-leads",
+      "method" => "GET",
+      "path" => "/reddit/leads",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "subreddit",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "hot",
+            "new",
+            "top",
+            "comments"
+          ]
+        },
+        {
+          "name" => "time",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "hour",
+            "day",
+            "week",
+            "month",
+            "year",
+            "all"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_score",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "classifier",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "auto",
+            "heuristic",
+            "llm"
+          ]
         }
       ],
       "formParams" => [],
@@ -34121,6 +41358,323 @@ module Crawlora
       ],
       "security" => [
         "JWTAuth"
+      ]
+    },
+    "rothys-collections" => {
+      "id" => "rothys-collections",
+      "method" => "GET",
+      "path" => "/rothys/collections",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "rothys-collection-products" => {
+      "id" => "rothys-collection-products",
+      "method" => "GET",
+      "path" => "/rothys/collections/{handle}/products",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "rothys-pages" => {
+      "id" => "rothys-pages",
+      "method" => "GET",
+      "path" => "/rothys/pages",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "rothys-page" => {
+      "id" => "rothys-page",
+      "method" => "GET",
+      "path" => "/rothys/pages/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rothys-products" => {
+      "id" => "rothys-products",
+      "method" => "GET",
+      "path" => "/rothys/products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "rothys-product" => {
+      "id" => "rothys-product",
+      "method" => "GET",
+      "path" => "/rothys/products/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rothys-product-recommendations" => {
+      "id" => "rothys-product-recommendations",
+      "method" => "GET",
+      "path" => "/rothys/products/{handle}/recommendations",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "intent",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "related",
+            "complementary"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rothys-search-suggest" => {
+      "id" => "rothys-search-suggest",
+      "method" => "GET",
+      "path" => "/rothys/search/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "types",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rothys-sitemap-urls" => {
+      "id" => "rothys-sitemap-urls",
+      "method" => "GET",
+      "path" => "/rothys/sitemap/urls",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "products",
+            "collections",
+            "pages",
+            "blogs",
+            "agentic_discovery",
+            "other"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rothys-sitemaps" => {
+      "id" => "rothys-sitemaps",
+      "method" => "GET",
+      "path" => "/rothys/sitemaps",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rothys-store" => {
+      "id" => "rothys-store",
+      "method" => "GET",
+      "path" => "/rothys/store",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
       ]
     },
     "rottentomatoes-browse-movies" => {
@@ -35328,6 +42882,260 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "shein-category-filters" => {
+      "id" => "shein-category-filters",
+      "method" => "GET",
+      "path" => "/shein/category/filters",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "cat_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shein-category-goods" => {
+      "id" => "shein-category-goods",
+      "method" => "GET",
+      "path" => "/shein/category/goods",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "cat_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "shein-category-nav" => {
+      "id" => "shein-category-nav",
+      "method" => "GET",
+      "path" => "/shein/category/nav",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "cat_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shein-products-aggregation-filters" => {
+      "id" => "shein-products-aggregation-filters",
+      "method" => "POST",
+      "path" => "/shein/products/aggregation-filters",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "keyword",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "cat_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shein-products-detail" => {
+      "id" => "shein-products-detail",
+      "method" => "GET",
+      "path" => "/shein/products/detail",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "goods_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "goods_sn",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shein-products-search" => {
+      "id" => "shein-products-search",
+      "method" => "POST",
+      "path" => "/shein/products/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "keyword",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "shein-search-autocomplete" => {
+      "id" => "shein-search-autocomplete",
+      "method" => "POST",
+      "path" => "/shein/search/autocomplete",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "word",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shein-search-keywords" => {
+      "id" => "shein-search-keywords",
+      "method" => "POST",
+      "path" => "/shein/search/keywords",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "scene",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "word_type",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "shop-app-analysis" => {
       "id" => "shop-app-analysis",
       "method" => "GET",
@@ -35886,6 +43694,16 @@ module Crawlora
           "name" => "limit",
           "in" => "query",
           "type" => "integer"
+        },
+        {
+          "name" => "sortBy",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "sortLTH",
+            "sortHTL",
+            "newest"
+          ]
         }
       ],
       "formParams" => [],
@@ -35988,6 +43806,16 @@ module Crawlora
           "name" => "limit",
           "in" => "query",
           "type" => "integer"
+        },
+        {
+          "name" => "sortBy",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "sortLTH",
+            "sortHTL",
+            "newest"
+          ]
         }
       ],
       "formParams" => [],
@@ -36246,6 +44074,323 @@ module Crawlora
       "pathParams" => [
         "domain"
       ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "skims-collections" => {
+      "id" => "skims-collections",
+      "method" => "GET",
+      "path" => "/skims/collections",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "skims-collection-products" => {
+      "id" => "skims-collection-products",
+      "method" => "GET",
+      "path" => "/skims/collections/{handle}/products",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "skims-pages" => {
+      "id" => "skims-pages",
+      "method" => "GET",
+      "path" => "/skims/pages",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "skims-page" => {
+      "id" => "skims-page",
+      "method" => "GET",
+      "path" => "/skims/pages/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "skims-products" => {
+      "id" => "skims-products",
+      "method" => "GET",
+      "path" => "/skims/products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "skims-product" => {
+      "id" => "skims-product",
+      "method" => "GET",
+      "path" => "/skims/products/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "skims-product-recommendations" => {
+      "id" => "skims-product-recommendations",
+      "method" => "GET",
+      "path" => "/skims/products/{handle}/recommendations",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "intent",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "related",
+            "complementary"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "skims-search-suggest" => {
+      "id" => "skims-search-suggest",
+      "method" => "GET",
+      "path" => "/skims/search/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "types",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "skims-sitemap-urls" => {
+      "id" => "skims-sitemap-urls",
+      "method" => "GET",
+      "path" => "/skims/sitemap/urls",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "products",
+            "collections",
+            "pages",
+            "blogs",
+            "agentic_discovery",
+            "other"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "skims-sitemaps" => {
+      "id" => "skims-sitemaps",
+      "method" => "GET",
+      "path" => "/skims/sitemaps",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "skims-store" => {
+      "id" => "skims-store",
+      "method" => "GET",
+      "path" => "/skims/store",
+      "pathParams" => [],
       "queryParams" => [],
       "formParams" => [],
       "bodyParam" => nil,
@@ -39468,6 +47613,323 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "stevemadden-collections" => {
+      "id" => "stevemadden-collections",
+      "method" => "GET",
+      "path" => "/stevemadden/collections",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "stevemadden-collection-products" => {
+      "id" => "stevemadden-collection-products",
+      "method" => "GET",
+      "path" => "/stevemadden/collections/{handle}/products",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "stevemadden-pages" => {
+      "id" => "stevemadden-pages",
+      "method" => "GET",
+      "path" => "/stevemadden/pages",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "stevemadden-page" => {
+      "id" => "stevemadden-page",
+      "method" => "GET",
+      "path" => "/stevemadden/pages/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "stevemadden-products" => {
+      "id" => "stevemadden-products",
+      "method" => "GET",
+      "path" => "/stevemadden/products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "stevemadden-product" => {
+      "id" => "stevemadden-product",
+      "method" => "GET",
+      "path" => "/stevemadden/products/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "stevemadden-product-recommendations" => {
+      "id" => "stevemadden-product-recommendations",
+      "method" => "GET",
+      "path" => "/stevemadden/products/{handle}/recommendations",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "intent",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "related",
+            "complementary"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "stevemadden-search-suggest" => {
+      "id" => "stevemadden-search-suggest",
+      "method" => "GET",
+      "path" => "/stevemadden/search/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "types",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "stevemadden-sitemap-urls" => {
+      "id" => "stevemadden-sitemap-urls",
+      "method" => "GET",
+      "path" => "/stevemadden/sitemap/urls",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "products",
+            "collections",
+            "pages",
+            "blogs",
+            "agentic_discovery",
+            "other"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "stevemadden-sitemaps" => {
+      "id" => "stevemadden-sitemaps",
+      "method" => "GET",
+      "path" => "/stevemadden/sitemaps",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "stevemadden-store" => {
+      "id" => "stevemadden-store",
+      "method" => "GET",
+      "path" => "/stevemadden/store",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "stockx-brands" => {
       "id" => "stockx-brands",
       "method" => "GET",
@@ -40151,6 +48613,323 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "thebodyshop-collections" => {
+      "id" => "thebodyshop-collections",
+      "method" => "GET",
+      "path" => "/thebodyshop/collections",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "thebodyshop-collection-products" => {
+      "id" => "thebodyshop-collection-products",
+      "method" => "GET",
+      "path" => "/thebodyshop/collections/{handle}/products",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "thebodyshop-pages" => {
+      "id" => "thebodyshop-pages",
+      "method" => "GET",
+      "path" => "/thebodyshop/pages",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "thebodyshop-page" => {
+      "id" => "thebodyshop-page",
+      "method" => "GET",
+      "path" => "/thebodyshop/pages/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "thebodyshop-products" => {
+      "id" => "thebodyshop-products",
+      "method" => "GET",
+      "path" => "/thebodyshop/products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "thebodyshop-product" => {
+      "id" => "thebodyshop-product",
+      "method" => "GET",
+      "path" => "/thebodyshop/products/{handle}",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "thebodyshop-product-recommendations" => {
+      "id" => "thebodyshop-product-recommendations",
+      "method" => "GET",
+      "path" => "/thebodyshop/products/{handle}/recommendations",
+      "pathParams" => [
+        "handle"
+      ],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "intent",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "related",
+            "complementary"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "thebodyshop-search-suggest" => {
+      "id" => "thebodyshop-search-suggest",
+      "method" => "GET",
+      "path" => "/thebodyshop/search/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "types",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "thebodyshop-sitemap-urls" => {
+      "id" => "thebodyshop-sitemap-urls",
+      "method" => "GET",
+      "path" => "/thebodyshop/sitemap/urls",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "products",
+            "collections",
+            "pages",
+            "blogs",
+            "agentic_discovery",
+            "other"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "thebodyshop-sitemaps" => {
+      "id" => "thebodyshop-sitemaps",
+      "method" => "GET",
+      "path" => "/thebodyshop/sitemaps",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "thebodyshop-store" => {
+      "id" => "thebodyshop-store",
+      "method" => "GET",
+      "path" => "/thebodyshop/store",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "threads-post" => {
       "id" => "threads-post",
@@ -44071,6 +52850,41 @@ module Crawlora
           "in" => "query",
           "type" => "string",
           "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "walgreens-stores" => {
+      "id" => "walgreens-stores",
+      "method" => "GET",
+      "path" => "/walgreens/stores",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "zip",
+          "in" => "query",
+          "type" => "string"
         }
       ],
       "formParams" => [],
@@ -48704,6 +57518,13 @@ module Crawlora
   }.freeze
 
   GROUPS = {
+    "adidas" => {
+      "product" => "adidas-product",
+      "search" => "adidas-search",
+      "store" => "adidas-store",
+      "stores" => "adidas-stores",
+      "suggest" => "adidas-suggest"
+    },
     "agoda" => {
       "activities_search" => "agoda-activities-search",
       "activity_detail" => "agoda-activity-detail",
@@ -48722,6 +57543,19 @@ module Crawlora
       "room_calendar" => "airbnb-room-calendar",
       "room_reviews" => "airbnb-room-reviews",
       "search" => "airbnb-search"
+    },
+    "allbirds" => {
+      "collections" => "allbirds-collections",
+      "collection_products" => "allbirds-collection-products",
+      "pages" => "allbirds-pages",
+      "page" => "allbirds-page",
+      "products" => "allbirds-products",
+      "product" => "allbirds-product",
+      "product_recommendations" => "allbirds-product-recommendations",
+      "search_suggest" => "allbirds-search-suggest",
+      "sitemap_urls" => "allbirds-sitemap-urls",
+      "sitemaps" => "allbirds-sitemaps",
+      "store" => "allbirds-store"
     },
     "amazon_jobs" => {
       "job" => "amazon-jobs-job",
@@ -48785,10 +57619,33 @@ module Crawlora
       "suggest" => "appstore-suggest",
       "version_history" => "appstore-version-history"
     },
+    "audible" => {
+      "categories" => "audible-categories",
+      "category" => "audible-category",
+      "charts" => "audible-charts",
+      "editorial_list" => "audible-editorial-list",
+      "product" => "audible-product",
+      "product_related" => "audible-product-related",
+      "product_reviews" => "audible-product-reviews",
+      "products" => "audible-products",
+      "search" => "audible-search",
+      "series" => "audible-series"
+    },
     "autotrader" => {
       "dealer" => "autotrader-dealer",
       "search" => "autotrader-search",
       "vehicle" => "autotrader-vehicle"
+    },
+    "bbb" => {
+      "business" => "bbb-business",
+      "business_complaints" => "bbb-business-complaints",
+      "business_more_info" => "bbb-business-more-info",
+      "business_reviews" => "bbb-business-reviews",
+      "category" => "bbb-category",
+      "scamtracker_search" => "bbb-scamtracker-search",
+      "scamtracker_state_stats" => "bbb-scamtracker-state-stats",
+      "scamtracker_detail" => "bbb-scamtracker-detail",
+      "search" => "bbb-search"
     },
     "best_buy" => {
       "bestbuy_brands" => "bestbuy-brands",
@@ -48812,7 +57669,10 @@ module Crawlora
       "me_period_statement" => "billing-me-period-statement",
       "me_period_statement_download" => "billing-me-period-statement-download",
       "me_portal" => "billing-me-portal",
-      "me_rejections" => "billing-me-rejections"
+      "me_rejections" => "billing-me-rejections",
+      "me_subscription_change" => "billing-me-subscription-change",
+      "me_subscription_change_cancel" => "billing-me-subscription-change-cancel",
+      "me_subscription_preview" => "billing-me-subscription-preview"
     },
     "bing" => {
       "images" => "bing-images",
@@ -48873,6 +57733,19 @@ module Crawlora
       "suggest" => "brave-suggest",
       "videos" => "brave-videos"
     },
+    "brooklinen" => {
+      "collections" => "brooklinen-collections",
+      "collection_products" => "brooklinen-collection-products",
+      "pages" => "brooklinen-pages",
+      "page" => "brooklinen-page",
+      "products" => "brooklinen-products",
+      "product" => "brooklinen-product",
+      "product_recommendations" => "brooklinen-product-recommendations",
+      "search_suggest" => "brooklinen-search-suggest",
+      "sitemap_urls" => "brooklinen-sitemap-urls",
+      "sitemaps" => "brooklinen-sitemaps",
+      "store" => "brooklinen-store"
+    },
     "capterra" => {
       "product" => "capterra-product",
       "reviews" => "capterra-reviews",
@@ -48890,6 +57763,15 @@ module Crawlora
     "cars_com" => {
       "carsdotcom_search" => "carsdotcom-search",
       "carsdotcom_vehicle" => "carsdotcom-vehicle"
+    },
+    "chewy" => {
+      "categories" => "chewy-categories",
+      "category" => "chewy-category",
+      "gtin_lookup" => "chewy-gtin-lookup",
+      "product" => "chewy-product",
+      "products" => "chewy-products",
+      "search" => "chewy-search",
+      "suggest" => "chewy-suggest"
     },
     "chrome_web_store" => {
       "chromewebstore_categories" => "chromewebstore-categories",
@@ -48928,6 +57810,19 @@ module Crawlora
       "treasuries" => "coingecko-treasuries",
       "trending" => "coingecko-trending"
     },
+    "cole_haan" => {
+      "colehaan_collections" => "colehaan-collections",
+      "colehaan_collection_products" => "colehaan-collection-products",
+      "colehaan_pages" => "colehaan-pages",
+      "colehaan_page" => "colehaan-page",
+      "colehaan_products" => "colehaan-products",
+      "colehaan_product" => "colehaan-product",
+      "colehaan_product_recommendations" => "colehaan-product-recommendations",
+      "colehaan_search_suggest" => "colehaan-search-suggest",
+      "colehaan_sitemap_urls" => "colehaan-sitemap-urls",
+      "colehaan_sitemaps" => "colehaan-sitemaps",
+      "colehaan_store" => "colehaan-store"
+    },
     "congress" => {
       "report" => "congress-report",
       "stock_disclosures" => "congress-stock-disclosures"
@@ -48959,6 +57854,9 @@ module Crawlora
       "apps_charts_search" => "datasets-apps-charts-search",
       "apps_reviews_search" => "datasets-apps-reviews-search",
       "apps_search" => "datasets-apps-search",
+      "bbb_businesses_facets" => "datasets-bbb-businesses-facets",
+      "bbb_businesses_item" => "datasets-bbb-businesses-item",
+      "bbb_businesses_search" => "datasets-bbb-businesses-search",
       "boxofficemojo_facets" => "datasets-boxofficemojo-facets",
       "boxofficemojo_item" => "datasets-boxofficemojo-item",
       "boxofficemojo_search" => "datasets-boxofficemojo-search",
@@ -48970,6 +57868,9 @@ module Crawlora
       "chrome_extensions_search" => "datasets-chrome-extensions-search",
       "chrome_extensions_trending" => "datasets-chrome-extensions-trending",
       "creators_search" => "datasets-creators-search",
+      "facebook_pages_facets" => "datasets-facebook-pages-facets",
+      "facebook_pages_item" => "datasets-facebook-pages-item",
+      "facebook_pages_search" => "datasets-facebook-pages-search",
       "github_users_facets" => "datasets-github-users-facets",
       "github_users_item" => "datasets-github-users-item",
       "github_users_nearby" => "datasets-github-users-nearby",
@@ -49054,9 +57955,16 @@ module Crawlora
       "trustmrr_history" => "datasets-trustmrr-history",
       "trustmrr_item" => "datasets-trustmrr-item",
       "trustmrr_search" => "datasets-trustmrr-search",
+      "vehicle_listings_facets" => "datasets-vehicle-listings-facets",
+      "vehicle_listings_item" => "datasets-vehicle-listings-item",
+      "vehicle_listings_price_history" => "datasets-vehicle-listings-price-history",
+      "vehicle_listings_search" => "datasets-vehicle-listings-search",
       "x_users_facets" => "datasets-x-users-facets",
       "x_users_item" => "datasets-x-users-item",
-      "x_users_search" => "datasets-x-users-search"
+      "x_users_search" => "datasets-x-users-search",
+      "youtube_creators_facets" => "datasets-youtube-creators-facets",
+      "youtube_creators_item" => "datasets-youtube-creators-item",
+      "youtube_creators_search" => "datasets-youtube-creators-search"
     },
     "depop" => {
       "brands" => "depop-brands",
@@ -49146,6 +58054,19 @@ module Crawlora
       "shop_listings" => "etsy-shop-listings",
       "shop_reviews" => "etsy-shop-reviews"
     },
+    "everlane" => {
+      "collections" => "everlane-collections",
+      "collection_products" => "everlane-collection-products",
+      "pages" => "everlane-pages",
+      "page" => "everlane-page",
+      "products" => "everlane-products",
+      "product" => "everlane-product",
+      "product_recommendations" => "everlane-product-recommendations",
+      "search_suggest" => "everlane-search-suggest",
+      "sitemap_urls" => "everlane-sitemap-urls",
+      "sitemaps" => "everlane-sitemaps",
+      "store" => "everlane-store"
+    },
     "expedia" => {
       "activities_search" => "expedia-activities-search",
       "flights_search" => "expedia-flights-search",
@@ -49159,10 +58080,37 @@ module Crawlora
       "marketplace_search" => "facebook-marketplace-search",
       "page" => "facebook-page"
     },
+    "fashion_nova" => {
+      "fashionnova_collections" => "fashionnova-collections",
+      "fashionnova_collection_products" => "fashionnova-collection-products",
+      "fashionnova_pages" => "fashionnova-pages",
+      "fashionnova_page" => "fashionnova-page",
+      "fashionnova_products" => "fashionnova-products",
+      "fashionnova_product" => "fashionnova-product",
+      "fashionnova_product_recommendations" => "fashionnova-product-recommendations",
+      "fashionnova_search_suggest" => "fashionnova-search-suggest",
+      "fashionnova_sitemap_urls" => "fashionnova-sitemap-urls",
+      "fashionnova_sitemaps" => "fashionnova-sitemaps",
+      "fashionnova_store" => "fashionnova-store"
+    },
     "fiverr" => {
       "gig" => "fiverr-gig",
       "search" => "fiverr-search",
       "seller" => "fiverr-seller"
+    },
+    "gdelt" => {
+      "context" => "gdelt-context",
+      "search" => "gdelt-search",
+      "timeline" => "gdelt-timeline",
+      "tonechart" => "gdelt-tonechart",
+      "tv_concept_entities" => "gdelt-tv-concept-entities",
+      "tv_search" => "gdelt-tv-search",
+      "tv_showchart" => "gdelt-tv-showchart",
+      "tv_stationchart" => "gdelt-tv-stationchart",
+      "tv_stationdetails" => "gdelt-tv-stationdetails",
+      "tv_timeline" => "gdelt-tv-timeline",
+      "tv_visual_entities" => "gdelt-tv-visual-entities",
+      "tv_wordcloud" => "gdelt-tv-wordcloud"
     },
     "geocoding" => {
       "lookup" => "geocoding-lookup",
@@ -49267,6 +58215,18 @@ module Crawlora
       "similar" => "googleplay-similar",
       "suggest" => "googleplay-suggest"
     },
+    "gymshark" => {
+      "collections" => "gymshark-collections",
+      "collection_products" => "gymshark-collection-products",
+      "pages" => "gymshark-pages",
+      "page" => "gymshark-page",
+      "products" => "gymshark-products",
+      "product" => "gymshark-product",
+      "product_recommendations" => "gymshark-product-recommendations",
+      "sitemap_urls" => "gymshark-sitemap-urls",
+      "sitemaps" => "gymshark-sitemaps",
+      "store" => "gymshark-store"
+    },
     "h_m" => {
       "hm_categories" => "hm-categories",
       "hm_listing" => "hm-listing",
@@ -49276,7 +58236,25 @@ module Crawlora
       "hm_search_suggestions" => "hm-search-suggestions",
       "hm_stores" => "hm-stores"
     },
+    "home_depot" => {
+      "homedepot_categories" => "homedepot-categories",
+      "homedepot_category" => "homedepot-category",
+      "homedepot_product" => "homedepot-product",
+      "homedepot_product_questions" => "homedepot-product-questions",
+      "homedepot_search" => "homedepot-search"
+    },
+    "ikea" => {
+      "availability" => "ikea-availability",
+      "category" => "ikea-category",
+      "product" => "ikea-product",
+      "reviews" => "ikea-reviews",
+      "search" => "ikea-search",
+      "store" => "ikea-store",
+      "stores" => "ikea-stores",
+      "suggest" => "ikea-suggest"
+    },
     "imdb" => {
+      "charts" => "imdb-charts",
       "name" => "imdb-name",
       "name_awards" => "imdb-name-awards",
       "name_credits" => "imdb-name-credits",
@@ -49293,8 +58271,10 @@ module Crawlora
       "title_parental_guide" => "imdb-title-parental-guide",
       "title_public_facts_analysis" => "imdb-title-public-facts-analysis",
       "title_quotes" => "imdb-title-quotes",
+      "title_ratings" => "imdb-title-ratings",
       "title_release_info" => "imdb-title-release-info",
       "title_reviews" => "imdb-title-reviews",
+      "title_similar" => "imdb-title-similar",
       "title_technical_specs" => "imdb-title-technical-specs",
       "title_trivia" => "imdb-title-trivia"
     },
@@ -49319,6 +58299,16 @@ module Crawlora
       "post" => "instagram-post",
       "profile" => "instagram-profile",
       "reels" => "instagram-reels"
+    },
+    "j_crew" => {
+      "jcrew_categories" => "jcrew-categories",
+      "jcrew_category" => "jcrew-category",
+      "jcrew_product" => "jcrew-product",
+      "jcrew_product_reviews" => "jcrew-product-reviews",
+      "jcrew_search" => "jcrew-search",
+      "jcrew_size_chart" => "jcrew-size-chart",
+      "jcrew_stores" => "jcrew-stores",
+      "jcrew_suggest" => "jcrew-suggest"
     },
     "jobs" => {
       "ashby_board" => "jobs-ashby-board",
@@ -49396,11 +58386,30 @@ module Crawlora
       "series_detail" => "kalshi-series-detail",
       "trades" => "kalshi-trades"
     },
+    "kickstarter" => {
+      "comments" => "kickstarter-comments",
+      "discover" => "kickstarter-discover",
+      "project" => "kickstarter-project",
+      "updates" => "kickstarter-updates"
+    },
     "kohl_s" => {
       "kohls_category" => "kohls-category",
       "kohls_product_reviews" => "kohls-product-reviews",
       "kohls_stores" => "kohls-stores",
       "kohls_suggest" => "kohls-suggest"
+    },
+    "kylie_cosmetics" => {
+      "kyliecosmetics_collections" => "kyliecosmetics-collections",
+      "kyliecosmetics_collection_products" => "kyliecosmetics-collection-products",
+      "kyliecosmetics_pages" => "kyliecosmetics-pages",
+      "kyliecosmetics_page" => "kyliecosmetics-page",
+      "kyliecosmetics_products" => "kyliecosmetics-products",
+      "kyliecosmetics_product" => "kyliecosmetics-product",
+      "kyliecosmetics_product_recommendations" => "kyliecosmetics-product-recommendations",
+      "kyliecosmetics_search_suggest" => "kyliecosmetics-search-suggest",
+      "kyliecosmetics_sitemap_urls" => "kyliecosmetics-sitemap-urls",
+      "kyliecosmetics_sitemaps" => "kyliecosmetics-sitemaps",
+      "kyliecosmetics_store" => "kyliecosmetics-store"
     },
     "letterboxd" => {
       "film" => "letterboxd-film",
@@ -49485,9 +58494,20 @@ module Crawlora
       "teams" => "mlb-teams",
       "transactions" => "mlb-transactions"
     },
+    "monitors" => {
+      "list" => "monitors-list",
+      "create" => "monitors-create",
+      "delete" => "monitors-delete",
+      "get" => "monitors-get",
+      "update" => "monitors-update",
+      "checks" => "monitors-checks"
+    },
     "nike" => {
       "categories" => "nike-categories",
       "product" => "nike-product",
+      "product_availability" => "nike-product-availability",
+      "product_details" => "nike-product-details",
+      "product_recommendations" => "nike-product-recommendations",
       "product_reviews" => "nike-product-reviews",
       "search" => "nike-search",
       "stores" => "nike-stores",
@@ -49502,6 +58522,19 @@ module Crawlora
       "indices_country" => "numbeo-indices-country",
       "indices_rankings" => "numbeo-indices-rankings",
       "indices_rankings_by_country" => "numbeo-indices-rankings-by-country"
+    },
+    "oh_polly" => {
+      "ohpolly_collections" => "ohpolly-collections",
+      "ohpolly_collection_products" => "ohpolly-collection-products",
+      "ohpolly_pages" => "ohpolly-pages",
+      "ohpolly_page" => "ohpolly-page",
+      "ohpolly_products" => "ohpolly-products",
+      "ohpolly_product" => "ohpolly-product",
+      "ohpolly_product_recommendations" => "ohpolly-product-recommendations",
+      "ohpolly_search_suggest" => "ohpolly-search-suggest",
+      "ohpolly_sitemap_urls" => "ohpolly-sitemap-urls",
+      "ohpolly_sitemaps" => "ohpolly-sitemaps",
+      "ohpolly_store" => "ohpolly-store"
     },
     "old_navy" => {
       "oldnavy_categories" => "oldnavy-categories",
@@ -49639,9 +58672,21 @@ module Crawlora
       "reviews" => "producthunt-reviews",
       "search" => "producthunt-search"
     },
+    "quince" => {
+      "categories" => "quince-categories",
+      "navigation" => "quince-navigation",
+      "product" => "quince-product",
+      "product_faq" => "quince-product-faq",
+      "product_reviews" => "quince-product-reviews",
+      "search" => "quince-search",
+      "sitemap_urls" => "quince-sitemap-urls",
+      "sitemaps" => "quince-sitemaps",
+      "suggest" => "quince-suggest"
+    },
     "reddit" => {
       "comments" => "reddit-comments",
       "domain_posts" => "reddit-domain-posts",
+      "leads" => "reddit-leads",
       "post" => "reddit-post",
       "search" => "reddit-search",
       "subreddit_about" => "reddit-subreddit-about",
@@ -49663,6 +58708,19 @@ module Crawlora
       "click" => "referrals-click",
       "me" => "referrals-me",
       "me_events" => "referrals-me-events"
+    },
+    "rothy_s" => {
+      "rothys_collections" => "rothys-collections",
+      "rothys_collection_products" => "rothys-collection-products",
+      "rothys_pages" => "rothys-pages",
+      "rothys_page" => "rothys-page",
+      "rothys_products" => "rothys-products",
+      "rothys_product" => "rothys-product",
+      "rothys_product_recommendations" => "rothys-product-recommendations",
+      "rothys_search_suggest" => "rothys-search-suggest",
+      "rothys_sitemap_urls" => "rothys-sitemap-urls",
+      "rothys_sitemaps" => "rothys-sitemaps",
+      "rothys_store" => "rothys-store"
     },
     "rotten_tomatoes" => {
       "rottentomatoes_browse_movies" => "rottentomatoes-browse-movies",
@@ -49703,6 +58761,16 @@ module Crawlora
       "stores" => "sephora-stores",
       "suggest" => "sephora-suggest"
     },
+    "shein" => {
+      "category_filters" => "shein-category-filters",
+      "category_goods" => "shein-category-goods",
+      "category_nav" => "shein-category-nav",
+      "products_aggregation_filters" => "shein-products-aggregation-filters",
+      "products_detail" => "shein-products-detail",
+      "products_search" => "shein-products-search",
+      "search_autocomplete" => "shein-search-autocomplete",
+      "search_keywords" => "shein-search-keywords"
+    },
     "shop_app" => {
       "analysis" => "shop-app-analysis",
       "categories" => "shop-app-categories",
@@ -49737,6 +58805,19 @@ module Crawlora
     "similar_web" => {
       "search" => "similarweb-search",
       "web" => "similarweb-web"
+    },
+    "skims" => {
+      "collections" => "skims-collections",
+      "collection_products" => "skims-collection-products",
+      "pages" => "skims-pages",
+      "page" => "skims-page",
+      "products" => "skims-products",
+      "product" => "skims-product",
+      "product_recommendations" => "skims-product-recommendations",
+      "search_suggest" => "skims-search-suggest",
+      "sitemap_urls" => "skims-sitemap-urls",
+      "sitemaps" => "skims-sitemaps",
+      "store" => "skims-store"
     },
     "sofa_score" => {
       "sofascore_event" => "sofascore-event",
@@ -49827,6 +58908,19 @@ module Crawlora
       "tags_list" => "steam-tags-list",
       "top_sellers" => "steam-top-sellers"
     },
+    "steve_madden" => {
+      "stevemadden_collections" => "stevemadden-collections",
+      "stevemadden_collection_products" => "stevemadden-collection-products",
+      "stevemadden_pages" => "stevemadden-pages",
+      "stevemadden_page" => "stevemadden-page",
+      "stevemadden_products" => "stevemadden-products",
+      "stevemadden_product" => "stevemadden-product",
+      "stevemadden_product_recommendations" => "stevemadden-product-recommendations",
+      "stevemadden_search_suggest" => "stevemadden-search-suggest",
+      "stevemadden_sitemap_urls" => "stevemadden-sitemap-urls",
+      "stevemadden_sitemaps" => "stevemadden-sitemaps",
+      "stevemadden_store" => "stevemadden-store"
+    },
     "stock_x" => {
       "stockx_brands" => "stockx-brands",
       "stockx_categories" => "stockx-categories",
@@ -49852,6 +58946,19 @@ module Crawlora
     "tesla_jobs" => {
       "job" => "tesla-jobs-job",
       "list" => "tesla-jobs-list"
+    },
+    "the_body_shop" => {
+      "thebodyshop_collections" => "thebodyshop-collections",
+      "thebodyshop_collection_products" => "thebodyshop-collection-products",
+      "thebodyshop_pages" => "thebodyshop-pages",
+      "thebodyshop_page" => "thebodyshop-page",
+      "thebodyshop_products" => "thebodyshop-products",
+      "thebodyshop_product" => "thebodyshop-product",
+      "thebodyshop_product_recommendations" => "thebodyshop-product-recommendations",
+      "thebodyshop_search_suggest" => "thebodyshop-search-suggest",
+      "thebodyshop_sitemap_urls" => "thebodyshop-sitemap-urls",
+      "thebodyshop_sitemaps" => "thebodyshop-sitemaps",
+      "thebodyshop_store" => "thebodyshop-store"
     },
     "threads" => {
       "post" => "threads-post",
@@ -50001,6 +59108,9 @@ module Crawlora
       "category" => "vinted-category",
       "item" => "vinted-item",
       "member" => "vinted-member"
+    },
+    "walgreens" => {
+      "stores" => "walgreens-stores"
     },
     "walmart" => {
       "product" => "walmart-product",
@@ -50194,12 +59304,17 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 1222
+  OPERATION_COUNT = 1468
 
   module OperationId
     ACCOUNT_DELETION_CANCEL = "account-deletion-cancel"
     ACCOUNT_DELETION_MY_REQUEST = "account-deletion-my-request"
     ACCOUNT_DELETION_REQUEST = "account-deletion-request"
+    ADIDAS_PRODUCT = "adidas-product"
+    ADIDAS_SEARCH = "adidas-search"
+    ADIDAS_STORE = "adidas-store"
+    ADIDAS_STORES = "adidas-stores"
+    ADIDAS_SUGGEST = "adidas-suggest"
     AGODA_ACTIVITIES_SEARCH = "agoda-activities-search"
     AGODA_ACTIVITY_DETAIL = "agoda-activity-detail"
     AGODA_FLIGHTS_ITINERARY_AMENITIES = "agoda-flights-itinerary-amenities"
@@ -50215,6 +59330,17 @@ module Crawlora
     AIRBNB_ROOM_CALENDAR = "airbnb-room-calendar"
     AIRBNB_ROOM_REVIEWS = "airbnb-room-reviews"
     AIRBNB_SEARCH = "airbnb-search"
+    ALLBIRDS_COLLECTION_PRODUCTS = "allbirds-collection-products"
+    ALLBIRDS_COLLECTIONS = "allbirds-collections"
+    ALLBIRDS_PAGE = "allbirds-page"
+    ALLBIRDS_PAGES = "allbirds-pages"
+    ALLBIRDS_PRODUCT = "allbirds-product"
+    ALLBIRDS_PRODUCT_RECOMMENDATIONS = "allbirds-product-recommendations"
+    ALLBIRDS_PRODUCTS = "allbirds-products"
+    ALLBIRDS_SEARCH_SUGGEST = "allbirds-search-suggest"
+    ALLBIRDS_SITEMAP_URLS = "allbirds-sitemap-urls"
+    ALLBIRDS_SITEMAPS = "allbirds-sitemaps"
+    ALLBIRDS_STORE = "allbirds-store"
     AMAZON_JOBS_JOB = "amazon-jobs-job"
     AMAZON_JOBS_SEARCH = "amazon-jobs-search"
     AMAZON_PRODUCT = "amazon-product"
@@ -50263,9 +59389,28 @@ module Crawlora
     APPLE_PODCASTS_SHOW = "apple-podcasts-show"
     APPLE_PODCASTS_SHOW_EPISODES = "apple-podcasts-show-episodes"
     APPLE_PODCASTS_SHOW_RELATED = "apple-podcasts-show-related"
+    AUDIBLE_CATEGORIES = "audible-categories"
+    AUDIBLE_CATEGORY = "audible-category"
+    AUDIBLE_CHARTS = "audible-charts"
+    AUDIBLE_EDITORIAL_LIST = "audible-editorial-list"
+    AUDIBLE_PRODUCT = "audible-product"
+    AUDIBLE_PRODUCT_RELATED = "audible-product-related"
+    AUDIBLE_PRODUCT_REVIEWS = "audible-product-reviews"
+    AUDIBLE_PRODUCTS = "audible-products"
+    AUDIBLE_SEARCH = "audible-search"
+    AUDIBLE_SERIES = "audible-series"
     AUTOTRADER_DEALER = "autotrader-dealer"
     AUTOTRADER_SEARCH = "autotrader-search"
     AUTOTRADER_VEHICLE = "autotrader-vehicle"
+    BBB_BUSINESS = "bbb-business"
+    BBB_BUSINESS_COMPLAINTS = "bbb-business-complaints"
+    BBB_BUSINESS_MORE_INFO = "bbb-business-more-info"
+    BBB_BUSINESS_REVIEWS = "bbb-business-reviews"
+    BBB_CATEGORY = "bbb-category"
+    BBB_SCAMTRACKER_DETAIL = "bbb-scamtracker-detail"
+    BBB_SCAMTRACKER_SEARCH = "bbb-scamtracker-search"
+    BBB_SCAMTRACKER_STATE_STATS = "bbb-scamtracker-state-stats"
+    BBB_SEARCH = "bbb-search"
     BEST_BUY_BESTBUY_BRANDS = "bestbuy-brands"
     BEST_BUY_BESTBUY_CATEGORIES = "bestbuy-categories"
     BEST_BUY_BESTBUY_CATEGORIES_TRENDING = "bestbuy-categories-trending"
@@ -50286,6 +59431,9 @@ module Crawlora
     BILLING_ME_PERIODS = "billing-me-periods"
     BILLING_ME_PORTAL = "billing-me-portal"
     BILLING_ME_REJECTIONS = "billing-me-rejections"
+    BILLING_ME_SUBSCRIPTION_CHANGE = "billing-me-subscription-change"
+    BILLING_ME_SUBSCRIPTION_CHANGE_CANCEL = "billing-me-subscription-change-cancel"
+    BILLING_ME_SUBSCRIPTION_PREVIEW = "billing-me-subscription-preview"
     BING_IMAGES = "bing-images"
     BING_NEWS = "bing-news"
     BING_SEARCH = "bing-search"
@@ -50333,6 +59481,17 @@ module Crawlora
     BRAVE_SEARCH = "brave-search"
     BRAVE_SUGGEST = "brave-suggest"
     BRAVE_VIDEOS = "brave-videos"
+    BROOKLINEN_COLLECTION_PRODUCTS = "brooklinen-collection-products"
+    BROOKLINEN_COLLECTIONS = "brooklinen-collections"
+    BROOKLINEN_PAGE = "brooklinen-page"
+    BROOKLINEN_PAGES = "brooklinen-pages"
+    BROOKLINEN_PRODUCT = "brooklinen-product"
+    BROOKLINEN_PRODUCT_RECOMMENDATIONS = "brooklinen-product-recommendations"
+    BROOKLINEN_PRODUCTS = "brooklinen-products"
+    BROOKLINEN_SEARCH_SUGGEST = "brooklinen-search-suggest"
+    BROOKLINEN_SITEMAP_URLS = "brooklinen-sitemap-urls"
+    BROOKLINEN_SITEMAPS = "brooklinen-sitemaps"
+    BROOKLINEN_STORE = "brooklinen-store"
     CAPTERRA_PRODUCT = "capterra-product"
     CAPTERRA_REVIEWS = "capterra-reviews"
     CAPTERRA_SEARCH = "capterra-search"
@@ -50345,6 +59504,13 @@ module Crawlora
     CAR_MAX_CARMAX_VEHICLE_RECOMMENDATIONS = "carmax-vehicle-recommendations"
     CARS_COM_CARSDOTCOM_SEARCH = "carsdotcom-search"
     CARS_COM_CARSDOTCOM_VEHICLE = "carsdotcom-vehicle"
+    CHEWY_CATEGORIES = "chewy-categories"
+    CHEWY_CATEGORY = "chewy-category"
+    CHEWY_GTIN_LOOKUP = "chewy-gtin-lookup"
+    CHEWY_PRODUCT = "chewy-product"
+    CHEWY_PRODUCTS = "chewy-products"
+    CHEWY_SEARCH = "chewy-search"
+    CHEWY_SUGGEST = "chewy-suggest"
     CHROME_WEB_STORE_CHROMEWEBSTORE_CATEGORIES = "chromewebstore-categories"
     CHROME_WEB_STORE_CHROMEWEBSTORE_CATEGORY = "chromewebstore-category"
     CHROME_WEB_STORE_CHROMEWEBSTORE_CHARTS = "chromewebstore-charts"
@@ -50378,6 +59544,17 @@ module Crawlora
     COIN_GECKO_TOKEN_UNLOCKS = "coingecko-token-unlocks"
     COIN_GECKO_TREASURIES = "coingecko-treasuries"
     COIN_GECKO_TRENDING = "coingecko-trending"
+    COLE_HAAN_COLEHAAN_COLLECTION_PRODUCTS = "colehaan-collection-products"
+    COLE_HAAN_COLEHAAN_COLLECTIONS = "colehaan-collections"
+    COLE_HAAN_COLEHAAN_PAGE = "colehaan-page"
+    COLE_HAAN_COLEHAAN_PAGES = "colehaan-pages"
+    COLE_HAAN_COLEHAAN_PRODUCT = "colehaan-product"
+    COLE_HAAN_COLEHAAN_PRODUCT_RECOMMENDATIONS = "colehaan-product-recommendations"
+    COLE_HAAN_COLEHAAN_PRODUCTS = "colehaan-products"
+    COLE_HAAN_COLEHAAN_SEARCH_SUGGEST = "colehaan-search-suggest"
+    COLE_HAAN_COLEHAAN_SITEMAP_URLS = "colehaan-sitemap-urls"
+    COLE_HAAN_COLEHAAN_SITEMAPS = "colehaan-sitemaps"
+    COLE_HAAN_COLEHAAN_STORE = "colehaan-store"
     CONGRESS_REPORT = "congress-report"
     CONGRESS_STOCK_DISCLOSURES = "congress-stock-disclosures"
     COSTCO_CATEGORIES = "costco-categories"
@@ -50396,6 +59573,9 @@ module Crawlora
     DATASETS_APPS_CHARTS_SEARCH = "datasets-apps-charts-search"
     DATASETS_APPS_REVIEWS_SEARCH = "datasets-apps-reviews-search"
     DATASETS_APPS_SEARCH = "datasets-apps-search"
+    DATASETS_BBB_BUSINESSES_FACETS = "datasets-bbb-businesses-facets"
+    DATASETS_BBB_BUSINESSES_ITEM = "datasets-bbb-businesses-item"
+    DATASETS_BBB_BUSINESSES_SEARCH = "datasets-bbb-businesses-search"
     DATASETS_BOXOFFICEMOJO_FACETS = "datasets-boxofficemojo-facets"
     DATASETS_BOXOFFICEMOJO_ITEM = "datasets-boxofficemojo-item"
     DATASETS_BOXOFFICEMOJO_SEARCH = "datasets-boxofficemojo-search"
@@ -50407,6 +59587,9 @@ module Crawlora
     DATASETS_CHROME_EXTENSIONS_SEARCH = "datasets-chrome-extensions-search"
     DATASETS_CHROME_EXTENSIONS_TRENDING = "datasets-chrome-extensions-trending"
     DATASETS_CREATORS_SEARCH = "datasets-creators-search"
+    DATASETS_FACEBOOK_PAGES_FACETS = "datasets-facebook-pages-facets"
+    DATASETS_FACEBOOK_PAGES_ITEM = "datasets-facebook-pages-item"
+    DATASETS_FACEBOOK_PAGES_SEARCH = "datasets-facebook-pages-search"
     DATASETS_GITHUB_USERS_FACETS = "datasets-github-users-facets"
     DATASETS_GITHUB_USERS_ITEM = "datasets-github-users-item"
     DATASETS_GITHUB_USERS_NEARBY = "datasets-github-users-nearby"
@@ -50492,9 +59675,16 @@ module Crawlora
     DATASETS_TRUSTMRR_HISTORY = "datasets-trustmrr-history"
     DATASETS_TRUSTMRR_ITEM = "datasets-trustmrr-item"
     DATASETS_TRUSTMRR_SEARCH = "datasets-trustmrr-search"
+    DATASETS_VEHICLE_LISTINGS_FACETS = "datasets-vehicle-listings-facets"
+    DATASETS_VEHICLE_LISTINGS_ITEM = "datasets-vehicle-listings-item"
+    DATASETS_VEHICLE_LISTINGS_PRICE_HISTORY = "datasets-vehicle-listings-price-history"
+    DATASETS_VEHICLE_LISTINGS_SEARCH = "datasets-vehicle-listings-search"
     DATASETS_XUSERS_FACETS = "datasets-x-users-facets"
     DATASETS_XUSERS_ITEM = "datasets-x-users-item"
     DATASETS_XUSERS_SEARCH = "datasets-x-users-search"
+    DATASETS_YOUTUBE_CREATORS_FACETS = "datasets-youtube-creators-facets"
+    DATASETS_YOUTUBE_CREATORS_ITEM = "datasets-youtube-creators-item"
+    DATASETS_YOUTUBE_CREATORS_SEARCH = "datasets-youtube-creators-search"
     DEPOP_BRANDS = "depop-brands"
     DEPOP_CATEGORIES = "depop-categories"
     DEPOP_ITEM = "depop-item"
@@ -50567,6 +59757,17 @@ module Crawlora
     ETSY_SHOP_LISTINGS = "etsy-shop-listings"
     ETSY_SHOP_REVIEWS = "etsy-shop-reviews"
     ETSY_SHOP_SEARCH = "etsy-shop-search"
+    EVERLANE_COLLECTION_PRODUCTS = "everlane-collection-products"
+    EVERLANE_COLLECTIONS = "everlane-collections"
+    EVERLANE_PAGE = "everlane-page"
+    EVERLANE_PAGES = "everlane-pages"
+    EVERLANE_PRODUCT = "everlane-product"
+    EVERLANE_PRODUCT_RECOMMENDATIONS = "everlane-product-recommendations"
+    EVERLANE_PRODUCTS = "everlane-products"
+    EVERLANE_SEARCH_SUGGEST = "everlane-search-suggest"
+    EVERLANE_SITEMAP_URLS = "everlane-sitemap-urls"
+    EVERLANE_SITEMAPS = "everlane-sitemaps"
+    EVERLANE_STORE = "everlane-store"
     EXPEDIA_ACTIVITIES_SEARCH = "expedia-activities-search"
     EXPEDIA_FLIGHTS_SEARCH = "expedia-flights-search"
     EXPEDIA_LOCATIONS_SEARCH = "expedia-locations-search"
@@ -50576,9 +59777,32 @@ module Crawlora
     EXPEDIA_PROPERTIES_SEARCH = "expedia-properties-search"
     FACEBOOK_MARKETPLACE_SEARCH = "facebook-marketplace-search"
     FACEBOOK_PAGE = "facebook-page"
+    FASHION_NOVA_FASHIONNOVA_COLLECTION_PRODUCTS = "fashionnova-collection-products"
+    FASHION_NOVA_FASHIONNOVA_COLLECTIONS = "fashionnova-collections"
+    FASHION_NOVA_FASHIONNOVA_PAGE = "fashionnova-page"
+    FASHION_NOVA_FASHIONNOVA_PAGES = "fashionnova-pages"
+    FASHION_NOVA_FASHIONNOVA_PRODUCT = "fashionnova-product"
+    FASHION_NOVA_FASHIONNOVA_PRODUCT_RECOMMENDATIONS = "fashionnova-product-recommendations"
+    FASHION_NOVA_FASHIONNOVA_PRODUCTS = "fashionnova-products"
+    FASHION_NOVA_FASHIONNOVA_SEARCH_SUGGEST = "fashionnova-search-suggest"
+    FASHION_NOVA_FASHIONNOVA_SITEMAP_URLS = "fashionnova-sitemap-urls"
+    FASHION_NOVA_FASHIONNOVA_SITEMAPS = "fashionnova-sitemaps"
+    FASHION_NOVA_FASHIONNOVA_STORE = "fashionnova-store"
     FIVERR_GIG = "fiverr-gig"
     FIVERR_SEARCH = "fiverr-search"
     FIVERR_SELLER = "fiverr-seller"
+    GDELT_CONTEXT = "gdelt-context"
+    GDELT_SEARCH = "gdelt-search"
+    GDELT_TIMELINE = "gdelt-timeline"
+    GDELT_TONECHART = "gdelt-tonechart"
+    GDELT_TV_CONCEPT_ENTITIES = "gdelt-tv-concept-entities"
+    GDELT_TV_SEARCH = "gdelt-tv-search"
+    GDELT_TV_SHOWCHART = "gdelt-tv-showchart"
+    GDELT_TV_STATIONCHART = "gdelt-tv-stationchart"
+    GDELT_TV_STATIONDETAILS = "gdelt-tv-stationdetails"
+    GDELT_TV_TIMELINE = "gdelt-tv-timeline"
+    GDELT_TV_VISUAL_ENTITIES = "gdelt-tv-visual-entities"
+    GDELT_TV_WORDCLOUD = "gdelt-tv-wordcloud"
     GEOCODING_LOOKUP = "geocoding-lookup"
     GEOCODING_REVERSE = "geocoding-reverse"
     GEOCODING_SEARCH = "geocoding-search"
@@ -50668,6 +59892,16 @@ module Crawlora
     GOOGLE_TRENDS_TRENDING = "google-trends-trending"
     GOOGLE_TRENDS_TRENDING_DETAIL = "google-trends-trending-detail"
     GOOGLE_VIDEOS = "google-videos"
+    GYMSHARK_COLLECTION_PRODUCTS = "gymshark-collection-products"
+    GYMSHARK_COLLECTIONS = "gymshark-collections"
+    GYMSHARK_PAGE = "gymshark-page"
+    GYMSHARK_PAGES = "gymshark-pages"
+    GYMSHARK_PRODUCT = "gymshark-product"
+    GYMSHARK_PRODUCT_RECOMMENDATIONS = "gymshark-product-recommendations"
+    GYMSHARK_PRODUCTS = "gymshark-products"
+    GYMSHARK_SITEMAP_URLS = "gymshark-sitemap-urls"
+    GYMSHARK_SITEMAPS = "gymshark-sitemaps"
+    GYMSHARK_STORE = "gymshark-store"
     HMHM_CATEGORIES = "hm-categories"
     HMHM_LISTING = "hm-listing"
     HMHM_PRODUCT = "hm-product"
@@ -50675,6 +59909,20 @@ module Crawlora
     HMHM_SEARCH = "hm-search"
     HMHM_SEARCH_SUGGESTIONS = "hm-search-suggestions"
     HMHM_STORES = "hm-stores"
+    HOME_DEPOT_HOMEDEPOT_CATEGORIES = "homedepot-categories"
+    HOME_DEPOT_HOMEDEPOT_CATEGORY = "homedepot-category"
+    HOME_DEPOT_HOMEDEPOT_PRODUCT = "homedepot-product"
+    HOME_DEPOT_HOMEDEPOT_PRODUCT_QUESTIONS = "homedepot-product-questions"
+    HOME_DEPOT_HOMEDEPOT_SEARCH = "homedepot-search"
+    IKEA_AVAILABILITY = "ikea-availability"
+    IKEA_CATEGORY = "ikea-category"
+    IKEA_PRODUCT = "ikea-product"
+    IKEA_REVIEWS = "ikea-reviews"
+    IKEA_SEARCH = "ikea-search"
+    IKEA_STORE = "ikea-store"
+    IKEA_STORES = "ikea-stores"
+    IKEA_SUGGEST = "ikea-suggest"
+    IMDB_CHARTS = "imdb-charts"
     IMDB_NAME = "imdb-name"
     IMDB_NAME_AWARDS = "imdb-name-awards"
     IMDB_NAME_CREDITS = "imdb-name-credits"
@@ -50691,8 +59939,10 @@ module Crawlora
     IMDB_TITLE_PARENTAL_GUIDE = "imdb-title-parental-guide"
     IMDB_TITLE_PUBLIC_FACTS_ANALYSIS = "imdb-title-public-facts-analysis"
     IMDB_TITLE_QUOTES = "imdb-title-quotes"
+    IMDB_TITLE_RATINGS = "imdb-title-ratings"
     IMDB_TITLE_RELEASE_INFO = "imdb-title-release-info"
     IMDB_TITLE_REVIEWS = "imdb-title-reviews"
+    IMDB_TITLE_SIMILAR = "imdb-title-similar"
     IMDB_TITLE_TECHNICAL_SPECS = "imdb-title-technical-specs"
     IMDB_TITLE_TRIVIA = "imdb-title-trivia"
     IMPORT_YETI_IMPORTYETI_COMPANY = "importyeti-company"
@@ -50709,6 +59959,14 @@ module Crawlora
     INSTAGRAM_POST = "instagram-post"
     INSTAGRAM_PROFILE = "instagram-profile"
     INSTAGRAM_REELS = "instagram-reels"
+    JCREW_JCREW_CATEGORIES = "jcrew-categories"
+    JCREW_JCREW_CATEGORY = "jcrew-category"
+    JCREW_JCREW_PRODUCT = "jcrew-product"
+    JCREW_JCREW_PRODUCT_REVIEWS = "jcrew-product-reviews"
+    JCREW_JCREW_SEARCH = "jcrew-search"
+    JCREW_JCREW_SIZE_CHART = "jcrew-size-chart"
+    JCREW_JCREW_STORES = "jcrew-stores"
+    JCREW_JCREW_SUGGEST = "jcrew-suggest"
     JOBS_ASHBY_BOARD = "jobs-ashby-board"
     JOBS_COMPANY_SEARCH = "jobs-company-search"
     JOBS_EIGHTFOLD_BOARD = "jobs-eightfold-board"
@@ -50779,10 +60037,25 @@ module Crawlora
     KALSHI_SERIES = "kalshi-series"
     KALSHI_SERIES_DETAIL = "kalshi-series-detail"
     KALSHI_TRADES = "kalshi-trades"
+    KICKSTARTER_COMMENTS = "kickstarter-comments"
+    KICKSTARTER_DISCOVER = "kickstarter-discover"
+    KICKSTARTER_PROJECT = "kickstarter-project"
+    KICKSTARTER_UPDATES = "kickstarter-updates"
     KOHL_SKOHLS_CATEGORY = "kohls-category"
     KOHL_SKOHLS_PRODUCT_REVIEWS = "kohls-product-reviews"
     KOHL_SKOHLS_STORES = "kohls-stores"
     KOHL_SKOHLS_SUGGEST = "kohls-suggest"
+    KYLIE_COSMETICS_KYLIECOSMETICS_COLLECTION_PRODUCTS = "kyliecosmetics-collection-products"
+    KYLIE_COSMETICS_KYLIECOSMETICS_COLLECTIONS = "kyliecosmetics-collections"
+    KYLIE_COSMETICS_KYLIECOSMETICS_PAGE = "kyliecosmetics-page"
+    KYLIE_COSMETICS_KYLIECOSMETICS_PAGES = "kyliecosmetics-pages"
+    KYLIE_COSMETICS_KYLIECOSMETICS_PRODUCT = "kyliecosmetics-product"
+    KYLIE_COSMETICS_KYLIECOSMETICS_PRODUCT_RECOMMENDATIONS = "kyliecosmetics-product-recommendations"
+    KYLIE_COSMETICS_KYLIECOSMETICS_PRODUCTS = "kyliecosmetics-products"
+    KYLIE_COSMETICS_KYLIECOSMETICS_SEARCH_SUGGEST = "kyliecosmetics-search-suggest"
+    KYLIE_COSMETICS_KYLIECOSMETICS_SITEMAP_URLS = "kyliecosmetics-sitemap-urls"
+    KYLIE_COSMETICS_KYLIECOSMETICS_SITEMAPS = "kyliecosmetics-sitemaps"
+    KYLIE_COSMETICS_KYLIECOSMETICS_STORE = "kyliecosmetics-store"
     LETTERBOXD_FILM = "letterboxd-film"
     LETTERBOXD_FILM_RATING_HISTOGRAM = "letterboxd-film-rating-histogram"
     LETTERBOXD_FILM_REVIEWS = "letterboxd-film-reviews"
@@ -50848,8 +60121,17 @@ module Crawlora
     MLB_TEAM_STATS = "mlb-team-stats"
     MLB_TEAMS = "mlb-teams"
     MLB_TRANSACTIONS = "mlb-transactions"
+    MONITORS_CHECKS = "monitors-checks"
+    MONITORS_CREATE = "monitors-create"
+    MONITORS_DELETE = "monitors-delete"
+    MONITORS_GET = "monitors-get"
+    MONITORS_LIST = "monitors-list"
+    MONITORS_UPDATE = "monitors-update"
     NIKE_CATEGORIES = "nike-categories"
     NIKE_PRODUCT = "nike-product"
+    NIKE_PRODUCT_AVAILABILITY = "nike-product-availability"
+    NIKE_PRODUCT_DETAILS = "nike-product-details"
+    NIKE_PRODUCT_RECOMMENDATIONS = "nike-product-recommendations"
     NIKE_PRODUCT_REVIEWS = "nike-product-reviews"
     NIKE_SEARCH = "nike-search"
     NIKE_STORES = "nike-stores"
@@ -50862,6 +60144,17 @@ module Crawlora
     NUMBEO_INDICES_COUNTRY = "numbeo-indices-country"
     NUMBEO_INDICES_RANKINGS = "numbeo-indices-rankings"
     NUMBEO_INDICES_RANKINGS_BY_COUNTRY = "numbeo-indices-rankings-by-country"
+    OH_POLLY_OHPOLLY_COLLECTION_PRODUCTS = "ohpolly-collection-products"
+    OH_POLLY_OHPOLLY_COLLECTIONS = "ohpolly-collections"
+    OH_POLLY_OHPOLLY_PAGE = "ohpolly-page"
+    OH_POLLY_OHPOLLY_PAGES = "ohpolly-pages"
+    OH_POLLY_OHPOLLY_PRODUCT = "ohpolly-product"
+    OH_POLLY_OHPOLLY_PRODUCT_RECOMMENDATIONS = "ohpolly-product-recommendations"
+    OH_POLLY_OHPOLLY_PRODUCTS = "ohpolly-products"
+    OH_POLLY_OHPOLLY_SEARCH_SUGGEST = "ohpolly-search-suggest"
+    OH_POLLY_OHPOLLY_SITEMAP_URLS = "ohpolly-sitemap-urls"
+    OH_POLLY_OHPOLLY_SITEMAPS = "ohpolly-sitemaps"
+    OH_POLLY_OHPOLLY_STORE = "ohpolly-store"
     OLD_NAVY_OLDNAVY_CATEGORIES = "oldnavy-categories"
     OLD_NAVY_OLDNAVY_CATEGORY = "oldnavy-category"
     OLD_NAVY_OLDNAVY_PRODUCT = "oldnavy-product"
@@ -50978,8 +60271,18 @@ module Crawlora
     PRODUCT_HUNT_PRODUCT = "producthunt-product"
     PRODUCT_HUNT_REVIEWS = "producthunt-reviews"
     PRODUCT_HUNT_SEARCH = "producthunt-search"
+    QUINCE_CATEGORIES = "quince-categories"
+    QUINCE_NAVIGATION = "quince-navigation"
+    QUINCE_PRODUCT = "quince-product"
+    QUINCE_PRODUCT_FAQ = "quince-product-faq"
+    QUINCE_PRODUCT_REVIEWS = "quince-product-reviews"
+    QUINCE_SEARCH = "quince-search"
+    QUINCE_SITEMAP_URLS = "quince-sitemap-urls"
+    QUINCE_SITEMAPS = "quince-sitemaps"
+    QUINCE_SUGGEST = "quince-suggest"
     REDDIT_COMMENTS = "reddit-comments"
     REDDIT_DOMAIN_POSTS = "reddit-domain-posts"
+    REDDIT_LEADS = "reddit-leads"
     REDDIT_POST = "reddit-post"
     REDDIT_SEARCH = "reddit-search"
     REDDIT_SUBREDDIT_ABOUT = "reddit-subreddit-about"
@@ -50997,6 +60300,17 @@ module Crawlora
     REFERRALS_CLICK = "referrals-click"
     REFERRALS_ME = "referrals-me"
     REFERRALS_ME_EVENTS = "referrals-me-events"
+    ROTHY_SROTHYS_COLLECTION_PRODUCTS = "rothys-collection-products"
+    ROTHY_SROTHYS_COLLECTIONS = "rothys-collections"
+    ROTHY_SROTHYS_PAGE = "rothys-page"
+    ROTHY_SROTHYS_PAGES = "rothys-pages"
+    ROTHY_SROTHYS_PRODUCT = "rothys-product"
+    ROTHY_SROTHYS_PRODUCT_RECOMMENDATIONS = "rothys-product-recommendations"
+    ROTHY_SROTHYS_PRODUCTS = "rothys-products"
+    ROTHY_SROTHYS_SEARCH_SUGGEST = "rothys-search-suggest"
+    ROTHY_SROTHYS_SITEMAP_URLS = "rothys-sitemap-urls"
+    ROTHY_SROTHYS_SITEMAPS = "rothys-sitemaps"
+    ROTHY_SROTHYS_STORE = "rothys-store"
     ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_MOVIES = "rottentomatoes-browse-movies"
     ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_TV = "rottentomatoes-browse-tv"
     ROTTEN_TOMATOES_ROTTENTOMATOES_EPISODE = "rottentomatoes-episode"
@@ -51028,6 +60342,14 @@ module Crawlora
     SEPHORA_SEARCH = "sephora-search"
     SEPHORA_STORES = "sephora-stores"
     SEPHORA_SUGGEST = "sephora-suggest"
+    SHEIN_CATEGORY_FILTERS = "shein-category-filters"
+    SHEIN_CATEGORY_GOODS = "shein-category-goods"
+    SHEIN_CATEGORY_NAV = "shein-category-nav"
+    SHEIN_PRODUCTS_AGGREGATION_FILTERS = "shein-products-aggregation-filters"
+    SHEIN_PRODUCTS_DETAIL = "shein-products-detail"
+    SHEIN_PRODUCTS_SEARCH = "shein-products-search"
+    SHEIN_SEARCH_AUTOCOMPLETE = "shein-search-autocomplete"
+    SHEIN_SEARCH_KEYWORDS = "shein-search-keywords"
     SHOP_APP_ANALYSIS = "shop-app-analysis"
     SHOP_APP_CATEGORIES = "shop-app-categories"
     SHOP_APP_COLLECTION_PRODUCTS = "shop-app-collection-products"
@@ -51057,6 +60379,17 @@ module Crawlora
     SHOPIFY_STORE = "shopify-store"
     SIMILAR_WEB_SEARCH = "similarweb-search"
     SIMILAR_WEB_WEB = "similarweb-web"
+    SKIMS_COLLECTION_PRODUCTS = "skims-collection-products"
+    SKIMS_COLLECTIONS = "skims-collections"
+    SKIMS_PAGE = "skims-page"
+    SKIMS_PAGES = "skims-pages"
+    SKIMS_PRODUCT = "skims-product"
+    SKIMS_PRODUCT_RECOMMENDATIONS = "skims-product-recommendations"
+    SKIMS_PRODUCTS = "skims-products"
+    SKIMS_SEARCH_SUGGEST = "skims-search-suggest"
+    SKIMS_SITEMAP_URLS = "skims-sitemap-urls"
+    SKIMS_SITEMAPS = "skims-sitemaps"
+    SKIMS_STORE = "skims-store"
     SOFA_SCORE_SOFASCORE_EVENT = "sofascore-event"
     SOFA_SCORE_SOFASCORE_EVENT_H2H = "sofascore-event-h2h"
     SOFA_SCORE_SOFASCORE_EVENT_INCIDENTS = "sofascore-event-incidents"
@@ -51136,6 +60469,17 @@ module Crawlora
     STEAM_TAGS = "steam-tags"
     STEAM_TAGS_LIST = "steam-tags-list"
     STEAM_TOP_SELLERS = "steam-top-sellers"
+    STEVE_MADDEN_STEVEMADDEN_COLLECTION_PRODUCTS = "stevemadden-collection-products"
+    STEVE_MADDEN_STEVEMADDEN_COLLECTIONS = "stevemadden-collections"
+    STEVE_MADDEN_STEVEMADDEN_PAGE = "stevemadden-page"
+    STEVE_MADDEN_STEVEMADDEN_PAGES = "stevemadden-pages"
+    STEVE_MADDEN_STEVEMADDEN_PRODUCT = "stevemadden-product"
+    STEVE_MADDEN_STEVEMADDEN_PRODUCT_RECOMMENDATIONS = "stevemadden-product-recommendations"
+    STEVE_MADDEN_STEVEMADDEN_PRODUCTS = "stevemadden-products"
+    STEVE_MADDEN_STEVEMADDEN_SEARCH_SUGGEST = "stevemadden-search-suggest"
+    STEVE_MADDEN_STEVEMADDEN_SITEMAP_URLS = "stevemadden-sitemap-urls"
+    STEVE_MADDEN_STEVEMADDEN_SITEMAPS = "stevemadden-sitemaps"
+    STEVE_MADDEN_STEVEMADDEN_STORE = "stevemadden-store"
     STOCK_XSTOCKX_BRANDS = "stockx-brands"
     STOCK_XSTOCKX_CATEGORIES = "stockx-categories"
     STOCK_XSTOCKX_PRODUCT = "stockx-product"
@@ -51154,6 +60498,17 @@ module Crawlora
     TARGET_SEARCH = "target-search"
     TESLA_JOBS_JOB = "tesla-jobs-job"
     TESLA_JOBS_LIST = "tesla-jobs-list"
+    THE_BODY_SHOP_THEBODYSHOP_COLLECTION_PRODUCTS = "thebodyshop-collection-products"
+    THE_BODY_SHOP_THEBODYSHOP_COLLECTIONS = "thebodyshop-collections"
+    THE_BODY_SHOP_THEBODYSHOP_PAGE = "thebodyshop-page"
+    THE_BODY_SHOP_THEBODYSHOP_PAGES = "thebodyshop-pages"
+    THE_BODY_SHOP_THEBODYSHOP_PRODUCT = "thebodyshop-product"
+    THE_BODY_SHOP_THEBODYSHOP_PRODUCT_RECOMMENDATIONS = "thebodyshop-product-recommendations"
+    THE_BODY_SHOP_THEBODYSHOP_PRODUCTS = "thebodyshop-products"
+    THE_BODY_SHOP_THEBODYSHOP_SEARCH_SUGGEST = "thebodyshop-search-suggest"
+    THE_BODY_SHOP_THEBODYSHOP_SITEMAP_URLS = "thebodyshop-sitemap-urls"
+    THE_BODY_SHOP_THEBODYSHOP_SITEMAPS = "thebodyshop-sitemaps"
+    THE_BODY_SHOP_THEBODYSHOP_STORE = "thebodyshop-store"
     THREADS_POST = "threads-post"
     THREADS_POST_REPLIES = "threads-post-replies"
     THREADS_PROFILE = "threads-profile"
@@ -51266,6 +60621,7 @@ module Crawlora
     VINTED_CATEGORY = "vinted-category"
     VINTED_ITEM = "vinted-item"
     VINTED_MEMBER = "vinted-member"
+    WALGREENS_STORES = "walgreens-stores"
     WALMART_PRODUCT = "walmart-product"
     WALMART_PRODUCT_REVIEWS = "walmart-product-reviews"
     WALMART_SEARCH = "walmart-search"

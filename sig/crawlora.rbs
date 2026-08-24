@@ -4,6 +4,15 @@ module Crawlora
   GROUPS: Hash[String, Hash[String, String]]
   OPERATION_COUNT: Integer
 
+  class AdidasGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def product: (?product_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?query: String, ?category: String, ?sort: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def store: (?store_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def stores: (?lat: Float, ?lng: Float, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def suggest: (?query: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class AgodaGroup
     def initialize: (Client, Hash[String, String]) -> void
     def activities_search: (?keyword: String, ?city_id: Integer, ?city: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -25,6 +34,21 @@ module Crawlora
     def room_calendar: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def room_reviews: (?id: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search: (?location: String, ?check_in: String, ?check_out: String, ?adults: Integer, ?page: Integer, ?currency: String, ?ne_lat: Float, ?ne_lng: Float, ?sw_lat: Float, ?sw_lng: Float, ?zoom: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class AllbirdsGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def collections: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def collection_products: (?handle: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pages: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def page: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def products: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product_recommendations: (?handle: String, ?limit: Integer, ?intent: "related" | "complementary", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search_suggest: (?q: String, ?types: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sitemap_urls: (?type: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sitemaps: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def store: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class AmazonJobsGroup
@@ -103,11 +127,38 @@ module Crawlora
     def version_history: (?id: String, ?country: String, ?lang: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class AudibleGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def categories: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def category: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def charts: (?chart: "most_listened" | "bestselling", ?content_type: "audiobooks" | "podcasts", ?category_id: String, ?access_level: "all" | "free" | "plus" | "premium", ?language: "all" | "danish" | "english" | "french" | "german" | "italian" | "japanese" | "polish" | "portuguese" | "russian" | "spanish" | "swedish", ?duration: "all" | "oneHourLess" | "oneToThreeHour" | "threeToSixHour" | "sixToTenHour" | "tenToTwentyHour" | "twentyHourMore", ?originals_only: bool, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def editorial_list: (?list: "audiobooks" | "booktok" | "podcasts", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product: (?asin: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product_related: (?asin: String, ?similarity_type: "InTheSameSeries" | "ByTheSameNarrator" | "RawSimilarities" | "ByTheSameAuthor" | "NextInSameSeries", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product_reviews: (?asin: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def products: (?asins: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?q: String, ?title: String, ?author: String, ?narrator: String, ?category_id: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def series: (?asin: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class AutotraderGroup
     def initialize: (Client, Hash[String, String]) -> void
     def dealer: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search: (?query: String, ?zip: String, ?radius: Integer, ?make: String, ?model: String, ?trim: String, ?condition: "new" | "used" | "certified" | "3p_cert", ?body_style: "convertible" | "coupe" | "hatchback" | "sedan" | "suv" | "truck" | "van" | "wagon", ?seller_type: "dealer" | "private", ?min_year: Integer, ?max_year: Integer, ?min_price: Integer, ?max_price: Integer, ?max_mileage: Integer, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def vehicle: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class BbbGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def business: (?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def business_complaints: (?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def business_more_info: (?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def business_reviews: (?url: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def category: (?url: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def scamtracker_search: (?query: String, ?scam_type: "Advance Fee Loan" | "Bank/Credit Card Company Imposter" | "Business Email Compromise" | "Charity" | "Counterfeit Product" | "COVID-19" | "Credit Cards" | "Credit Repair/Debt Relief" | "CryptoCurrency" | "Debt Collections" | "Employment" | "Fake Check/Money Order" | "Fake Invoice/Supplier Bill" | "Family/Friend Emergency" | "Foreign Money Exchange" | "Government Agency Imposter" | "Government Grant" | "Healthcare/Medicaid/Medicare" | "Home Improvement" | "Identity Theft" | "Investment" | "Moving" | "Online Purchase" | "Other" | "Phishing" | "Rental" | "Retail Business" | "Romance" | "Scholarship" | "Sweepstakes/Lottery/Prizes" | "Tax Collection" | "Tech Support" | "Travel/Vacation/Timeshare" | "Utility" | "Vanity Award" | "Worthless Problem-solving Service" | "Yellow Pages/Directories", ?state: String, ?scammer_state: String, ?date_from: String, ?date_to: String, ?min_dollars_lost: Integer, ?max_dollars_lost: Integer, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def scamtracker_state_stats: (?period: "30" | "90" | "365" | "all", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def scamtracker_detail: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?query: String, ?location: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class BestBuyGroup
@@ -136,6 +187,9 @@ module Crawlora
     def me_period_statement_download: (?period_key: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def me_portal: (?request: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def me_rejections: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def me_subscription_change: (?request: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def me_subscription_change_cancel: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def me_subscription_preview: (?request: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class BingGroup
@@ -209,6 +263,21 @@ module Crawlora
     def videos: (?q: String, ?offset: Integer, ?count: Integer, ?country: "all" | "ar" | "at" | "au" | "be" | "br" | "ca" | "ch" | "cl" | "cn" | "de" | "dk" | "es" | "fi" | "fr" | "gb" | "gr" | "hk" | "id" | "in" | "it" | "jp" | "kr" | "mx" | "my" | "nl" | "no" | "nz" | "ph" | "pl" | "pt" | "ru" | "sa" | "se" | "sg" | "tr" | "tw" | "us" | "za", ?lang: "de-de" | "en-ca" | "en-gb" | "en-in" | "en-us" | "fi-fi" | "fr-ca" | "fr-fr" | "ja-jp" | "pt-br" | "sq-al" | "sw-ke" | "zh-tw", ?time_range: "any" | "day" | "week" | "month" | "year" | "custom", ?date_from: String, ?date_to: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class BrooklinenGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def collections: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def collection_products: (?handle: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pages: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def page: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def products: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product_recommendations: (?handle: String, ?limit: Integer, ?intent: "related" | "complementary", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search_suggest: (?q: String, ?types: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sitemap_urls: (?type: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sitemaps: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def store: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class CapterraGroup
     def initialize: (Client, Hash[String, String]) -> void
     def product: (?product_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -231,6 +300,17 @@ module Crawlora
     def initialize: (Client, Hash[String, String]) -> void
     def carsdotcom_search: (?zip: String, ?radius: Integer, ?stock_type: "new" | "used" | "cpo" | "all", ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def carsdotcom_vehicle: (?listing_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class ChewyGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def categories: (?group_id: String, ?depth: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def category: (?group_id: String, ?page: Integer, ?sort: "byRelevance" | "byNewest" | "byPopularity" | "byLowestPrice" | "byHighestPrice" | "byRating" | "byRatingCount", ?filter: Array[String], ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def gtin_lookup: (?gtins: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def products: (?part_numbers: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?q: String, ?page: Integer, ?sort: "byRelevance" | "byNewest" | "byPopularity" | "byLowestPrice" | "byHighestPrice" | "byRating" | "byRatingCount", ?filter: Array[String], ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def suggest: (?term: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class ChromeWebStoreGroup
@@ -274,6 +354,21 @@ module Crawlora
     def trending: (?limit: Integer, ?vs_currency: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class ColeHaanGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def colehaan_collections: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def colehaan_collection_products: (?handle: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def colehaan_pages: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def colehaan_page: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def colehaan_products: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def colehaan_product: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def colehaan_product_recommendations: (?handle: String, ?limit: Integer, ?intent: "related" | "complementary", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def colehaan_search_suggest: (?q: String, ?types: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def colehaan_sitemap_urls: (?type: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def colehaan_sitemaps: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def colehaan_store: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class CongressGroup
     def initialize: (Client, Hash[String, String]) -> void
     def report: (?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -312,6 +407,9 @@ module Crawlora
     def apps_charts_search: (?q: String, ?store: "ios" | "android", ?chart_type: "top_free" | "top_paid" | "top_grossing" | "new", ?platform: String, ?collection: String, ?category: String, ?country: String, ?app_id: String, ?date: String, ?sort: "rank" | "rank_desc" | "date_desc", ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def apps_reviews_search: (?q: String, ?store: "ios" | "android", ?app_id: String, ?country: String, ?min_score: Integer, ?sort: "recent" | "score_desc" | "score_asc" | "helpful_desc", ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def apps_search: (?q: String, ?store: "ios" | "android" | "both", ?platforms: Array[String], ?category: String, ?country: String, ?developer: String, ?free: bool, ?min_rating: Float, ?min_reviews: Integer, ?sort: "relevance" | "rating_desc" | "reviews_desc" | "installs_desc" | "updated_at_desc" | "popularity_desc", ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def bbb_businesses_facets: (?facet: "category" | "state" | "city" | "rating" | "accredited" | "entity_type" | "run_id", ?q: String, ?category: String, ?state: String, ?city: String, ?rating: "A+" | "A" | "A-" | "B+" | "B" | "B-" | "C+" | "C" | "C-" | "D+" | "D" | "D-" | "F", ?accredited: bool, ?entity_type: String, ?run_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def bbb_businesses_item: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def bbb_businesses_search: (?q: String, ?category: String, ?state: String, ?city: String, ?rating: "A+" | "A" | "A-" | "B+" | "B" | "B-" | "C+" | "C" | "C-" | "D+" | "D" | "D-" | "F", ?min_rating_rank: Integer, ?accredited: bool, ?entity_type: String, ?run_id: String, ?sort: "relevance" | "rating_desc" | "rating_asc" | "accredited_first" | "name_asc" | "years_in_business_desc", ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def boxofficemojo_facets: (?facet: "gross_band" | "years_active" | "lifetime_year" | "franchise_names" | "brand_names" | "genre_names" | "hydrated" | "is_billion_dollar" | "in_lifetime_top_1000_ww", ?q: String, ?title_id: String, ?year: Integer, ?lifetime_year: Integer, ?gross_band: String, ?franchise: String, ?brand: String, ?genre: String, ?in_lifetime_top_1000: bool, ?min_worldwide: Integer, ?max_worldwide: Integer, ?min_domestic: Integer, ?min_foreign_share: Float, ?max_domestic_share: Float, ?hydrated: bool, ?is_billion_dollar: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def boxofficemojo_item: (?title_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def boxofficemojo_search: (?q: String, ?title_id: String, ?year: Integer, ?lifetime_year: Integer, ?gross_band: "under_50m" | "50_100m" | "100_250m" | "250_500m" | "500m_1b" | "over_1b", ?franchise: String, ?brand: String, ?genre: String, ?in_lifetime_top_1000: bool, ?hydrated: bool, ?is_billion_dollar: bool, ?min_worldwide: Integer, ?max_worldwide: Integer, ?min_domestic: Integer, ?min_foreign_share: Float, ?max_domestic_share: Float, ?sort: "relevance" | "worldwide_desc" | "domestic_desc" | "peak_worldwide_desc" | "lifetime_rank_asc" | "year_desc" | "year_asc", ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -323,6 +421,9 @@ module Crawlora
     def chrome_extensions_search: (?q: String, ?item_type: "extension" | "theme" | "app" | "unknown", ?category: String, ?developer: String, ?developer_email: String, ?permission: String, ?status: "active" | "removed", ?manifest_version: "2" | "3", ?collects_data: bool, ?has_broad_host_access: bool, ?min_users: Integer, ?min_rating: Float, ?min_rating_count: Integer, ?sort: "relevance" | "users_desc" | "rating_desc" | "reviews_desc" | "updated_desc" | "trending_desc", ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def chrome_extensions_trending: (?q: String, ?item_type: "extension" | "theme" | "app" | "unknown", ?category: String, ?developer: String, ?developer_email: String, ?permission: String, ?status: "active" | "removed", ?manifest_version: "2" | "3", ?collects_data: bool, ?has_broad_host_access: bool, ?min_users: Integer, ?min_rating: Float, ?min_rating_count: Integer, ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def creators_search: (?q: String, ?handle: String, ?niche: String, ?country: String, ?verified: bool, ?min_followers: Integer, ?has_email: bool, ?include_inactive: bool, ?sort: "followers_desc" | "engagement_desc" | "likes_desc" | "relevance", ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def facebook_pages_facets: (?facet: "category" | "discovery_source", ?q: String, ?page_id: String, ?identifier: String, ?category: String, ?discovery_source: String, ?has_website: bool, ?has_email: bool, ?has_phone: bool, ?has_whatsapp: bool, ?min_likes: Integer, ?max_likes: Integer, ?hydrated_after: String, ?hydrated_before: String, ?sort: "relevance" | "likes_desc" | "likes_asc" | "hydrated_at_desc" | "hydrated_at_asc", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def facebook_pages_item: (?page_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def facebook_pages_search: (?q: String, ?page_id: String, ?identifier: String, ?category: String, ?discovery_source: String, ?has_website: bool, ?has_email: bool, ?has_phone: bool, ?has_whatsapp: bool, ?min_likes: Integer, ?max_likes: Integer, ?hydrated_after: String, ?hydrated_before: String, ?sort: "relevance" | "likes_desc" | "likes_asc" | "hydrated_at_desc" | "hydrated_at_asc", ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def github_users_facets: (?facet: "influence_tier" | "type" | "country" | "country_code" | "state" | "city" | "domains" | "company" | "reachable" | "has_email" | "has_twitter" | "has_blog" | "active_90d" | "hireable" | "is_org" | "is_bot" | "is_suspected_automation", ?q: String, ?login: String, ?company: String, ?influence_tier: "nano" | "micro" | "mid" | "macro" | "mega", ?country: String, ?country_code: String, ?state: String, ?city: String, ?domain: String, ?has_email: bool, ?has_twitter: bool, ?has_blog: bool, ?reachable: bool, ?active_90d: bool, ?hireable: bool, ?is_org: bool, ?is_bot: bool, ?is_suspected_automation: bool, ?min_followers: Integer, ?max_followers: Integer, ?min_repos: Integer, ?min_rank_score: Integer, ?min_account_age_years: Float, ?max_account_age_years: Float, ?lat: Float, ?lon: Float, ?radius_m: Integer, ?sort: "relevance" | "rank_score_desc" | "followers_desc" | "account_age_desc" | "account_age_asc" | "distance_asc", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def github_users_item: (?login: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def github_users_nearby: (?lat: Float, ?lon: Float, ?radius_m: Integer, ?influence_tier: "nano" | "micro" | "mid" | "macro" | "mega", ?reachable: bool, ?min_followers: Integer, ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -407,9 +508,16 @@ module Crawlora
     def trustmrr_history: (?slug: String, ?from: String, ?to: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def trustmrr_item: (?slug: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def trustmrr_search: (?q: String, ?slug: String, ?category: String, ?country: String, ?payment_provider: String, ?target_audience: String, ?business_type: String, ?tech: String, ?channel: String, ?listing_tier: String, ?status: "active" | "removed", ?on_sale: bool, ?is_sponsored: bool, ?min_mrr: Float, ?max_mrr: Float, ?min_revenue: Float, ?min_revenue_30d: Float, ?min_traffic: Float, ?min_growth: Float, ?max_multiple: Float, ?min_asking_price: Float, ?max_asking_price: Float, ?min_ahrefs_dr: Integer, ?sort: "relevance" | "mrr_desc" | "revenue_desc" | "revenue_30d_desc" | "traffic_desc" | "growth_desc" | "deal_score_desc" | "price_asc" | "price_desc" | "multiple_asc" | "founded_desc", ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def vehicle_listings_facets: (?facet: "source" | "make" | "model" | "trim" | "body_style" | "transmission" | "drive_type" | "fuel_type" | "seller_type" | "state" | "run_id", ?q: String, ?source: "carmax" | "autotrader" | "carsdotcom", ?make: String, ?model: String, ?trim: String, ?body_style: String, ?transmission: String, ?drive_type: String, ?fuel_type: String, ?seller_type: "retailer" | "dealer" | "private", ?state: String, ?vin: String, ?run_id: String, ?is_price_reduced: bool, ?min_year: Integer, ?max_year: Integer, ?min_price: Float, ?max_price: Float, ?max_mileage: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def vehicle_listings_item: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def vehicle_listings_price_history: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def vehicle_listings_search: (?q: String, ?source: "carmax" | "autotrader" | "carsdotcom", ?make: String, ?model: String, ?trim: String, ?body_style: String, ?transmission: String, ?drive_type: String, ?fuel_type: String, ?seller_type: "retailer" | "dealer" | "private", ?state: String, ?vin: String, ?run_id: String, ?is_price_reduced: bool, ?min_year: Integer, ?max_year: Integer, ?min_price: Float, ?max_price: Float, ?max_mileage: Integer, ?sort: "relevance" | "recently_updated" | "newly_listed" | "price_asc" | "price_desc" | "mileage_asc" | "mileage_desc" | "year_desc" | "year_asc", ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def x_users_facets: (?facet: "is_blue_verified" | "has_bio" | "has_external_url" | "source_tier", ?q: String, ?username: String, ?source_tier: String, ?is_blue_verified: bool, ?has_bio: bool, ?has_external_url: bool, ?min_followers: Integer, ?max_followers: Integer, ?min_ratio: Float, ?max_ratio: Float, ?created_after: String, ?created_before: String, ?crawled_after: String, ?crawled_before: String, ?sort: "relevance" | "followers_desc" | "followers_asc" | "crawled_at_desc" | "crawled_at_asc" | "created_at_desc" | "created_at_asc", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def x_users_item: (?username: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def x_users_search: (?q: String, ?username: String, ?source_tier: String, ?is_blue_verified: bool, ?has_bio: bool, ?has_external_url: bool, ?min_followers: Integer, ?max_followers: Integer, ?min_ratio: Float, ?max_ratio: Float, ?created_after: String, ?created_before: String, ?crawled_after: String, ?crawled_before: String, ?sort: "relevance" | "followers_desc" | "followers_asc" | "crawled_at_desc" | "crawled_at_asc" | "created_at_desc" | "created_at_asc", ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def youtube_creators_facets: (?facet: "region" | "discovery_source", ?q: String, ?channel_id: String, ?region: String, ?discovery_source: String, ?has_bio: bool, ?has_links: bool, ?followers_count_available: bool, ?videos_count_available: bool, ?views_count_available: bool, ?min_followers: Integer, ?max_followers: Integer, ?min_videos: Integer, ?max_videos: Integer, ?min_views: Integer, ?max_views: Integer, ?joined_after: String, ?joined_before: String, ?hydrated_after: String, ?hydrated_before: String, ?sort: "relevance" | "followers_desc" | "followers_asc" | "views_desc" | "videos_desc" | "hydrated_at_desc" | "hydrated_at_asc", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def youtube_creators_item: (?channel_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def youtube_creators_search: (?q: String, ?channel_id: String, ?region: String, ?discovery_source: String, ?has_bio: bool, ?has_links: bool, ?followers_count_available: bool, ?videos_count_available: bool, ?views_count_available: bool, ?min_followers: Integer, ?max_followers: Integer, ?min_videos: Integer, ?max_videos: Integer, ?min_views: Integer, ?max_views: Integer, ?joined_after: String, ?joined_before: String, ?hydrated_after: String, ?hydrated_before: String, ?sort: "relevance" | "followers_desc" | "followers_asc" | "views_desc" | "videos_desc" | "hydrated_at_desc" | "hydrated_at_asc", ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class DepopGroup
@@ -516,6 +624,21 @@ module Crawlora
     def shop_reviews: (?id: String, ?offset: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class EverlaneGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def collections: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def collection_products: (?handle: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pages: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def page: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def products: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product_recommendations: (?handle: String, ?limit: Integer, ?intent: "related" | "complementary", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search_suggest: (?q: String, ?types: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sitemap_urls: (?type: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sitemaps: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def store: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class ExpediaGroup
     def initialize: (Client, Hash[String, String]) -> void
     def activities_search: (?option: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -533,11 +656,42 @@ module Crawlora
     def page: (?page: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class FashionNovaGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def fashionnova_collections: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fashionnova_collection_products: (?handle: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fashionnova_pages: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fashionnova_page: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fashionnova_products: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fashionnova_product: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fashionnova_product_recommendations: (?handle: String, ?limit: Integer, ?intent: "related" | "complementary", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fashionnova_search_suggest: (?q: String, ?types: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fashionnova_sitemap_urls: (?type: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fashionnova_sitemaps: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fashionnova_store: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class FiverrGroup
     def initialize: (Client, Hash[String, String]) -> void
     def gig: (?username: String, ?slug: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search: (?q: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def seller: (?username: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class GdeltGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def context: (?query: String, ?domain: String, ?language: String, ?is_quote: bool, ?timespan: String, ?from: String, ?to: String, ?sort: "relevance" | "datedesc" | "dateasc", ?maxrecords: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?query: String, ?country: String, ?language: String, ?domain: String, ?timespan: String, ?from: String, ?to: String, ?sort: "relevance" | "datedesc" | "dateasc" | "tonedesc" | "toneasc", ?maxrecords: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def timeline: (?query: String, ?metric: "volume" | "volume_raw" | "tone" | "lang" | "country", ?country: String, ?language: String, ?domain: String, ?timespan: String, ?from: String, ?to: String, ?smooth: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tonechart: (?query: String, ?country: String, ?language: String, ?domain: String, ?timespan: String, ?from: String, ?to: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tv_concept_entities: (?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tv_search: (?transcript: Array[String], ?caption: Array[String], ?concept: Array[String], ?onscreen_text: Array[String], ?visual: Array[String], ?exclude_transcript: Array[String], ?exclude_caption: Array[String], ?exclude_concept: Array[String], ?exclude_onscreen_text: Array[String], ?exclude_visual: Array[String], ?station: "CNN" | "MSNBC" | "FOXNEWS" | "BBCNEWS" | "KGO" | "KPIX" | "KNTV", ?show: String, ?day_of_week: Integer, ?timespan: String, ?from: String, ?to: String, ?sort: "relevance" | "datedesc" | "dateasc", ?maxrecords: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tv_showchart: (?transcript: Array[String], ?caption: Array[String], ?concept: Array[String], ?onscreen_text: Array[String], ?visual: Array[String], ?exclude_transcript: Array[String], ?exclude_caption: Array[String], ?exclude_concept: Array[String], ?exclude_onscreen_text: Array[String], ?exclude_visual: Array[String], ?station: Array["CNN" | "MSNBC" | "FOXNEWS" | "BBCNEWS" | "KGO" | "KPIX" | "KNTV"], ?show: String, ?timespan: String, ?from: String, ?to: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tv_stationchart: (?transcript: Array[String], ?caption: Array[String], ?concept: Array[String], ?onscreen_text: Array[String], ?visual: Array[String], ?exclude_transcript: Array[String], ?exclude_caption: Array[String], ?exclude_concept: Array[String], ?exclude_onscreen_text: Array[String], ?exclude_visual: Array[String], ?station: Array["CNN" | "MSNBC" | "FOXNEWS" | "BBCNEWS" | "KGO" | "KPIX" | "KNTV"], ?show: String, ?timespan: String, ?from: String, ?to: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tv_stationdetails: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tv_timeline: (?transcript: Array[String], ?caption: Array[String], ?concept: Array[String], ?onscreen_text: Array[String], ?visual: Array[String], ?exclude_transcript: Array[String], ?exclude_caption: Array[String], ?exclude_concept: Array[String], ?exclude_onscreen_text: Array[String], ?exclude_visual: Array[String], ?station: "CNN" | "MSNBC" | "FOXNEWS" | "BBCNEWS" | "KGO" | "KPIX" | "KNTV", ?show: String, ?timespan: String, ?from: String, ?to: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tv_visual_entities: (?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tv_wordcloud: (?channel: "transcript" | "caption" | "concept" | "onscreen_text" | "visual", ?transcript: Array[String], ?caption: Array[String], ?concept: Array[String], ?onscreen_text: Array[String], ?visual: Array[String], ?exclude_transcript: Array[String], ?exclude_caption: Array[String], ?exclude_concept: Array[String], ?exclude_onscreen_text: Array[String], ?exclude_visual: Array[String], ?station: "CNN" | "MSNBC" | "FOXNEWS" | "BBCNEWS" | "KGO" | "KPIX" | "KNTV", ?show: String, ?day_of_week: String, ?timespan: String, ?from: String, ?to: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class GeocodingGroup
@@ -657,6 +811,20 @@ module Crawlora
     def suggest: (?term: String, ?country: String, ?lang: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class GymsharkGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def collections: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def collection_products: (?handle: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pages: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def page: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def products: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product_recommendations: (?handle: String, ?limit: Integer, ?intent: "related" | "complementary", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sitemap_urls: (?type: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sitemaps: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def store: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class HMGroup
     def initialize: (Client, Hash[String, String]) -> void
     def hm_categories: (?department: "women" | "men" | "kids" | "home" | "beauty", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -668,8 +836,30 @@ module Crawlora
     def hm_stores: (?search: String, ?lat: Float, ?lng: Float, ?radius_meters: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class HomeDepotGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def homedepot_categories: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def homedepot_category: (?path: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def homedepot_product: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def homedepot_product_questions: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def homedepot_search: (?q: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class IkeaGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def availability: (?item_no: String, ?country: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def category: (?category: String, ?country: String, ?language: String, ?offset: Integer, ?size: Integer, ?sort: "relevance" | "price-low" | "price-high" | "newest" | "rating" | "name" | "popular" | "width" | "height" | "depth" | "length", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product: (?item_no: String, ?country: String, ?language: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def reviews: (?item_no: String, ?country: String, ?language: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?q: String, ?country: String, ?language: String, ?size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def store: (?slug: String, ?country: String, ?language: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def stores: (?country: String, ?language: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def suggest: (?q: String, ?country: String, ?language: String, ?size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class ImdbGroup
     def initialize: (Client, Hash[String, String]) -> void
+    def charts: (?chart: "top_rated_movies" | "top_rated_tv_shows" | "most_popular_movies" | "most_popular_tv_shows" | "top_rated_english_movies" | "lowest_rated_movies", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def name: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def name_awards: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def name_credits: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -686,8 +876,10 @@ module Crawlora
     def title_parental_guide: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def title_public_facts_analysis: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def title_quotes: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_ratings: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def title_release_info: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def title_reviews: (?id: String, ?url: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def title_similar: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def title_technical_specs: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def title_trivia: (?id: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
@@ -720,6 +912,18 @@ module Crawlora
     def post: (?id: String, ?post_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def profile: (?username: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def reels: (?id: String, ?max_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class JCrewGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def jcrew_categories: (?site: "jcrew" | "factory", ?department: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def jcrew_category: (?category: String, ?site: "jcrew" | "factory", ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def jcrew_product: (?pid: String, ?site: "jcrew" | "factory", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def jcrew_product_reviews: (?pid: String, ?site: "jcrew" | "factory", ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def jcrew_search: (?keyword: String, ?site: "jcrew" | "factory", ?page: Integer, ?per_page: Integer, ?sort: "relevance" | "price_asc" | "price_desc", ?filter: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def jcrew_size_chart: (?pid: String, ?site: "jcrew" | "factory", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def jcrew_stores: (?site: "jcrew" | "factory", ?lat: Float, ?lng: Float, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def jcrew_suggest: (?query: String, ?site: "jcrew" | "factory", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class JobsGroup
@@ -804,12 +1008,35 @@ module Crawlora
     def trades: (?limit: Integer, ?cursor: String, ?ticker: String, ?min_ts: Integer, ?max_ts: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class KickstarterGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def comments: (?creator: String, ?slug: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def discover: (?category_id: Integer, ?term: String, ?sort: "magic" | "popularity" | "newest" | "end_date" | "most_funded", ?page: Integer, ?state: Array["upcoming" | "live" | "late_pledge" | "canceled" | "failed" | "successful"], ?staff_pick_only: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def project: (?creator: String, ?slug: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def updates: (?creator: String, ?slug: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class KohlSGroup
     def initialize: (Client, Hash[String, String]) -> void
     def kohls_category: (?category: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def kohls_product_reviews: (?web_id: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def kohls_stores: (?search: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def kohls_suggest: (?query: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class KylieCosmeticsGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def kyliecosmetics_collections: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def kyliecosmetics_collection_products: (?handle: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def kyliecosmetics_pages: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def kyliecosmetics_page: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def kyliecosmetics_products: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def kyliecosmetics_product: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def kyliecosmetics_product_recommendations: (?handle: String, ?limit: Integer, ?intent: "related" | "complementary", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def kyliecosmetics_search_suggest: (?q: String, ?types: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def kyliecosmetics_sitemap_urls: (?type: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def kyliecosmetics_sitemaps: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def kyliecosmetics_store: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class LetterboxdGroup
@@ -915,10 +1142,23 @@ module Crawlora
     def transactions: (?start_date: String, ?end_date: String, ?team_id: String, ?player_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class MonitorsGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def list: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def create: (?request: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def delete: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def get: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def update: (?id: String, ?request: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def checks: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class NikeGroup
     def initialize: (Client, Hash[String, String]) -> void
     def categories: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def product: (?slug: String, ?style_color: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product_availability: (?group_key: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product_details: (?group_key: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product_recommendations: (?style_color: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def product_reviews: (?slug: String, ?style_color: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search: (?keyword: String, ?category: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def stores: (?lat: Float, ?lng: Float, ?radius_miles: Integer, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -935,6 +1175,21 @@ module Crawlora
     def indices_country: (?country: String, ?index: "quality-of-life" | "crime" | "health-care" | "pollution" | "traffic" | "property-investment", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def indices_rankings: (?index: "quality-of-life" | "crime" | "health-care" | "pollution" | "traffic" | "property-investment", ?scope: "current" | "historical", ?period: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def indices_rankings_by_country: (?index: "quality-of-life" | "crime" | "health-care" | "pollution" | "traffic" | "property-investment", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class OhPollyGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def ohpolly_collections: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def ohpolly_collection_products: (?handle: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def ohpolly_pages: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def ohpolly_page: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def ohpolly_products: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def ohpolly_product: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def ohpolly_product_recommendations: (?handle: String, ?limit: Integer, ?intent: "related" | "complementary", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def ohpolly_search_suggest: (?q: String, ?types: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def ohpolly_sitemap_urls: (?type: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def ohpolly_sitemaps: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def ohpolly_store: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class OldNavyGroup
@@ -1091,10 +1346,24 @@ module Crawlora
     def search: (?query: String, ?type: "product" | "user" | "launch", ?page: Integer, ?featured: bool, ?topics: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class QuinceGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def categories: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def navigation: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product_faq: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product_reviews: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?q: String, ?department: String, ?category: String, ?material: String, ?color: String, ?size: String, ?min_price: Float, ?max_price: Float, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sitemap_urls: (?type: "all" | "products" | "collections" | "subcollections" | "pages", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sitemaps: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def suggest: (?q: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class RedditGroup
     def initialize: (Client, Hash[String, String]) -> void
     def comments: (?id: String, ?sort: "confidence" | "top" | "new" | "controversial" | "old" | "qa", ?limit: Integer, ?depth: Integer, ?include_metrics: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def domain_posts: (?domain: String, ?sort: "hot" | "new" | "top" | "rising", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def leads: (?q: String, ?subreddit: String, ?sort: "relevance" | "hot" | "new" | "top" | "comments", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?min_score: Integer, ?classifier: "auto" | "heuristic" | "llm", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def post: (?id: String, ?include_metrics: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search: (?q: String, ?subreddit: String, ?sort: "relevance" | "hot" | "new" | "top" | "comments", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def subreddit_about: (?subreddit: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -1120,6 +1389,21 @@ module Crawlora
     def click: (?request: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def me: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def me_events: (?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class RothySGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def rothys_collections: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rothys_collection_products: (?handle: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rothys_pages: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rothys_page: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rothys_products: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rothys_product: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rothys_product_recommendations: (?handle: String, ?limit: Integer, ?intent: "related" | "complementary", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rothys_search_suggest: (?q: String, ?types: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rothys_sitemap_urls: (?type: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rothys_sitemaps: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rothys_store: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class RottenTomatoesGroup
@@ -1169,6 +1453,18 @@ module Crawlora
     def suggest: (?query: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class SheinGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def category_filters: (?cat_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def category_goods: (?cat_id: String, ?page: Integer, ?page_size: Integer, ?sort: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def category_nav: (?cat_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def products_aggregation_filters: (?keyword: String, ?cat_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def products_detail: (?goods_id: String, ?goods_sn: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def products_search: (?keyword: String, ?page: Integer, ?page_size: Integer, ?sort: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search_autocomplete: (?word: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search_keywords: (?scene: String, ?word_type: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class ShopAppGroup
     def initialize: (Client, Hash[String, String]) -> void
     def analysis: (?query: String, ?limit: Integer, ?in_stock: bool, ?on_sale: bool, ?deep_search: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -1192,10 +1488,10 @@ module Crawlora
   class ShopifyGroup
     def initialize: (Client, Hash[String, String]) -> void
     def collections: (?url: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def collection_products: (?handle: String, ?url: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def collection_products: (?handle: String, ?url: String, ?page: Integer, ?limit: Integer, ?sortBy: "sortLTH" | "sortHTL" | "newest", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def pages: (?url: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def page: (?handle: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def products: (?url: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def products: (?url: String, ?page: Integer, ?limit: Integer, ?sortBy: "sortLTH" | "sortHTL" | "newest", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def product: (?handle: String, ?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def product_recommendations: (?handle: String, ?url: String, ?limit: Integer, ?intent: "related" | "complementary", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search_suggest: (?url: String, ?q: String, ?types: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -1208,6 +1504,21 @@ module Crawlora
     def initialize: (Client, Hash[String, String]) -> void
     def search: (?q: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def web: (?domain: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class SkimsGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def collections: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def collection_products: (?handle: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pages: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def page: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def products: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product_recommendations: (?handle: String, ?limit: Integer, ?intent: "related" | "complementary", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search_suggest: (?q: String, ?types: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sitemap_urls: (?type: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def sitemaps: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def store: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class SofaScoreGroup
@@ -1309,6 +1620,21 @@ module Crawlora
     def top_sellers: (?cc: String, ?l: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class SteveMaddenGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def stevemadden_collections: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def stevemadden_collection_products: (?handle: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def stevemadden_pages: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def stevemadden_page: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def stevemadden_products: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def stevemadden_product: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def stevemadden_product_recommendations: (?handle: String, ?limit: Integer, ?intent: "related" | "complementary", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def stevemadden_search_suggest: (?q: String, ?types: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def stevemadden_sitemap_urls: (?type: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def stevemadden_sitemaps: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def stevemadden_store: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class StockXGroup
     def initialize: (Client, Hash[String, String]) -> void
     def stockx_brands: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -1341,6 +1667,21 @@ module Crawlora
     def initialize: (Client, Hash[String, String]) -> void
     def job: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def list: (?query: String, ?location: String, ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class TheBodyShopGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def thebodyshop_collections: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def thebodyshop_collection_products: (?handle: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def thebodyshop_pages: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def thebodyshop_page: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def thebodyshop_products: (?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def thebodyshop_product: (?handle: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def thebodyshop_product_recommendations: (?handle: String, ?limit: Integer, ?intent: "related" | "complementary", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def thebodyshop_search_suggest: (?q: String, ?types: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def thebodyshop_sitemap_urls: (?type: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def thebodyshop_sitemaps: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def thebodyshop_store: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class ThreadsGroup
@@ -1524,6 +1865,11 @@ module Crawlora
     def category: (?id: String, ?price_from: Float, ?price_to: Float, ?order: "relevance" | "newest_first" | "price_high_to_low" | "price_low_to_high", ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def item: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def member: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class WalgreensGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def stores: (?latitude: Float, ?longitude: Float, ?zip: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class WalmartGroup
