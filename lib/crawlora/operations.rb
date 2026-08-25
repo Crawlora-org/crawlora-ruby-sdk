@@ -18361,6 +18361,11 @@ module Crawlora
           "type" => "boolean"
         },
         {
+          "name" => "is_infrastructure",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
           "name" => "reachable",
           "in" => "query",
           "type" => "boolean"
@@ -18490,6 +18495,11 @@ module Crawlora
         },
         {
           "name" => "has_captcha",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "is_infrastructure",
           "in" => "query",
           "type" => "boolean"
         },
@@ -49110,6 +49120,69 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "ticketmaster-attraction-related" => {
+      "id" => "ticketmaster-attraction-related",
+      "method" => "GET",
+      "path" => "/ticketmaster/attraction-related",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ticketmaster-attraction-reviews" => {
+      "id" => "ticketmaster-attraction-reviews",
+      "method" => "GET",
+      "path" => "/ticketmaster/attraction-reviews",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "ticketmaster-discover-categories" => {
       "id" => "ticketmaster-discover-categories",
       "method" => "GET",
@@ -49341,10 +49414,55 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "ticketmaster-trending-attractions" => {
+      "id" => "ticketmaster-trending-attractions",
+      "method" => "GET",
+      "path" => "/ticketmaster/trending-attractions",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "ticketmaster-venue" => {
       "id" => "ticketmaster-venue",
       "method" => "GET",
       "path" => "/ticketmaster/venue",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ticketmaster-venue-enhanced-details" => {
+      "id" => "ticketmaster-venue-enhanced-details",
+      "method" => "GET",
+      "path" => "/ticketmaster/venue-enhanced-details",
       "pathParams" => [],
       "queryParams" => [
         {
@@ -49392,6 +49510,96 @@ module Crawlora
             "relevance",
             "date"
           ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "ticketweb-event" => {
+      "id" => "ticketweb-event",
+      "method" => "GET",
+      "path" => "/ticketweb/event",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ticketweb-search" => {
+      "id" => "ticketweb-search",
+      "method" => "GET",
+      "path" => "/ticketweb/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "ticketweb-venue" => {
+      "id" => "ticketweb-venue",
+      "method" => "GET",
+      "path" => "/ticketweb/venue",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
         }
       ],
       "formParams" => [],
@@ -58970,6 +59178,8 @@ module Crawlora
     "ticketmaster" => {
       "attraction" => "ticketmaster-attraction",
       "attraction_events" => "ticketmaster-attraction-events",
+      "attraction_related" => "ticketmaster-attraction-related",
+      "attraction_reviews" => "ticketmaster-attraction-reviews",
       "discover_categories" => "ticketmaster-discover-categories",
       "discover_category_events" => "ticketmaster-discover-category-events",
       "discover_cities" => "ticketmaster-discover-cities",
@@ -58977,8 +59187,15 @@ module Crawlora
       "event" => "ticketmaster-event",
       "search_events" => "ticketmaster-search-events",
       "suggest" => "ticketmaster-suggest",
+      "trending_attractions" => "ticketmaster-trending-attractions",
       "venue" => "ticketmaster-venue",
+      "venue_enhanced_details" => "ticketmaster-venue-enhanced-details",
       "venue_events" => "ticketmaster-venue-events"
+    },
+    "ticket_web" => {
+      "ticketweb_event" => "ticketweb-event",
+      "ticketweb_search" => "ticketweb-search",
+      "ticketweb_venue" => "ticketweb-venue"
     },
     "tiktok" => {
       "category" => "tiktok-category",
@@ -59304,7 +59521,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 1468
+  OPERATION_COUNT = 1475
 
   module OperationId
     ACCOUNT_DELETION_CANCEL = "account-deletion-cancel"
@@ -60514,8 +60731,13 @@ module Crawlora
     THREADS_PROFILE = "threads-profile"
     THREADS_PROFILE_POSTS = "threads-profile-posts"
     THREADS_SEARCH = "threads-search"
+    TICKET_WEB_TICKETWEB_EVENT = "ticketweb-event"
+    TICKET_WEB_TICKETWEB_SEARCH = "ticketweb-search"
+    TICKET_WEB_TICKETWEB_VENUE = "ticketweb-venue"
     TICKETMASTER_ATTRACTION = "ticketmaster-attraction"
     TICKETMASTER_ATTRACTION_EVENTS = "ticketmaster-attraction-events"
+    TICKETMASTER_ATTRACTION_RELATED = "ticketmaster-attraction-related"
+    TICKETMASTER_ATTRACTION_REVIEWS = "ticketmaster-attraction-reviews"
     TICKETMASTER_DISCOVER_CATEGORIES = "ticketmaster-discover-categories"
     TICKETMASTER_DISCOVER_CATEGORY_EVENTS = "ticketmaster-discover-category-events"
     TICKETMASTER_DISCOVER_CITIES = "ticketmaster-discover-cities"
@@ -60523,7 +60745,9 @@ module Crawlora
     TICKETMASTER_EVENT = "ticketmaster-event"
     TICKETMASTER_SEARCH_EVENTS = "ticketmaster-search-events"
     TICKETMASTER_SUGGEST = "ticketmaster-suggest"
+    TICKETMASTER_TRENDING_ATTRACTIONS = "ticketmaster-trending-attractions"
     TICKETMASTER_VENUE = "ticketmaster-venue"
+    TICKETMASTER_VENUE_ENHANCED_DETAILS = "ticketmaster-venue-enhanced-details"
     TICKETMASTER_VENUE_EVENTS = "ticketmaster-venue-events"
     TIKTOK_CATEGORY = "tiktok-category"
     TIKTOK_CHALLENGE = "tiktok-challenge"
