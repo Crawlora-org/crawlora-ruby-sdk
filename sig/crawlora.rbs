@@ -540,6 +540,7 @@ module Crawlora
     def initialize: (Client, Hash[String, String]) -> void
     def contact: (?option: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def antibot_check: (?request: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def email_verify: (?option: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def extract: (?extractOption: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def scrape: (?scrapeOption: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def techstack: (?request: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped

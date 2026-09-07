@@ -27559,6 +27559,25 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "email-verify" => {
+      "id" => "email-verify",
+      "method" => "POST",
+      "path" => "/email/verify",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "option",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "espn-athlete" => {
       "id" => "espn-athlete",
       "method" => "GET",
@@ -74920,6 +74939,7 @@ module Crawlora
     "web" => {
       "contact" => "contact",
       "antibot_check" => "antibot-check",
+      "email_verify" => "email-verify",
       "extract" => "extract",
       "scrape" => "web-scrape",
       "techstack" => "web-techstack"
@@ -76855,7 +76875,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 1938
+  OPERATION_COUNT = 1939
 
   module OperationId
     ACCOR_AMENITIES = "accor-amenities"
@@ -78617,6 +78637,7 @@ module Crawlora
     WAYFAIR_PRODUCT = "wayfair-product"
     WEB_ANTIBOT_CHECK = "antibot-check"
     WEB_CONTACT = "contact"
+    WEB_EMAIL_VERIFY = "email-verify"
     WEB_EXTRACT = "extract"
     WEB_SCRAPE = "web-scrape"
     WEB_TECHSTACK = "web-techstack"
