@@ -83610,6 +83610,37 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "rottentomatoes-browse-filters" => {
+      "id" => "rottentomatoes-browse-filters",
+      "method" => "GET",
+      "path" => "/rottentomatoes/browse/filters",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "list",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "movies_in_theaters",
+            "movies_at_home",
+            "movies_coming_soon",
+            "tv_series_browse"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "rottentomatoes-browse-movies" => {
       "id" => "rottentomatoes-browse-movies",
       "method" => "GET",
@@ -83633,8 +83664,117 @@ module Crawlora
           "enum" => [
             "popular",
             "newest",
-            "top_box_office"
+            "top_box_office",
+            "a_z",
+            "critic_highest",
+            "critic_lowest",
+            "audience_highest",
+            "audience_lowest"
           ]
+        },
+        {
+          "name" => "genres",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "action",
+            "adventure",
+            "animation",
+            "anime",
+            "biography",
+            "comedy",
+            "crime",
+            "documentary",
+            "drama",
+            "entertainment",
+            "faith_and_spirituality",
+            "fantasy",
+            "game_show",
+            "lgbtq",
+            "health_and_wellness",
+            "history",
+            "holiday",
+            "horror",
+            "house_and_garden",
+            "kids_and_family",
+            "music",
+            "musical",
+            "mystery_and_thriller",
+            "nature",
+            "news",
+            "reality",
+            "romance",
+            "sci_fi",
+            "short",
+            "soap",
+            "special_interest",
+            "sports",
+            "stand_up",
+            "talk_show",
+            "travel",
+            "variety",
+            "war",
+            "western"
+          ]
+        },
+        {
+          "name" => "ratings",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "g",
+            "pg",
+            "pg_13",
+            "r",
+            "nc_17",
+            "nr",
+            "ur"
+          ]
+        },
+        {
+          "name" => "audience",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "verified_hot",
+            "upright",
+            "spilled"
+          ]
+        },
+        {
+          "name" => "critics",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "certified_fresh",
+            "fresh",
+            "rotten"
+          ]
+        },
+        {
+          "name" => "affiliates",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "theaters",
+            "fandango",
+            "apple-tv-plus",
+            "netflix",
+            "prime-video",
+            "disney-plus",
+            "max",
+            "peacock",
+            "hulu",
+            "paramount-plus",
+            "amc-plus",
+            "acorn-tv",
+            "apple-tv"
+          ]
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
         },
         {
           "name" => "limit",
@@ -83675,8 +83815,114 @@ module Crawlora
           "type" => "string",
           "enum" => [
             "popular",
-            "newest"
+            "newest",
+            "a_z",
+            "critic_highest",
+            "critic_lowest",
+            "audience_highest",
+            "audience_lowest"
           ]
+        },
+        {
+          "name" => "genres",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "action",
+            "adventure",
+            "animation",
+            "anime",
+            "biography",
+            "comedy",
+            "crime",
+            "documentary",
+            "drama",
+            "entertainment",
+            "faith_and_spirituality",
+            "fantasy",
+            "game_show",
+            "lgbtq",
+            "health_and_wellness",
+            "history",
+            "holiday",
+            "horror",
+            "house_and_garden",
+            "kids_and_family",
+            "music",
+            "musical",
+            "mystery_and_thriller",
+            "nature",
+            "news",
+            "reality",
+            "romance",
+            "sci_fi",
+            "short",
+            "soap",
+            "special_interest",
+            "sports",
+            "stand_up",
+            "talk_show",
+            "travel",
+            "variety",
+            "war",
+            "western"
+          ]
+        },
+        {
+          "name" => "ratings",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "tvy",
+            "tvy7",
+            "tvg",
+            "tvpg",
+            "tv14",
+            "tvma"
+          ]
+        },
+        {
+          "name" => "audience",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "upright",
+            "spilled"
+          ]
+        },
+        {
+          "name" => "critics",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "fresh",
+            "rotten"
+          ]
+        },
+        {
+          "name" => "affiliates",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "theaters",
+            "fandango",
+            "apple-tv-plus",
+            "netflix",
+            "prime-video",
+            "disney-plus",
+            "max",
+            "peacock",
+            "hulu",
+            "paramount-plus",
+            "amc-plus",
+            "acorn-tv",
+            "apple-tv"
+          ]
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
         },
         {
           "name" => "limit",
@@ -83696,6 +83942,122 @@ module Crawlora
       "security" => [
         "ApiKeyAuth"
       ]
+    },
+    "rottentomatoes-critics-authors" => {
+      "id" => "rottentomatoes-critics-authors",
+      "method" => "GET",
+      "path" => "/rottentomatoes/critics/authors",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "letter",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "#",
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h",
+            "i",
+            "j",
+            "k",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "q",
+            "r",
+            "s",
+            "t",
+            "u",
+            "v",
+            "w",
+            "x",
+            "y",
+            "z"
+          ]
+        },
+        {
+          "name" => "search",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "inactive",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rottentomatoes-editorial-search" => {
+      "id" => "rottentomatoes-editorial-search",
+      "method" => "GET",
+      "path" => "/rottentomatoes/editorial/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
     },
     "rottentomatoes-episode" => {
       "id" => "rottentomatoes-episode",
@@ -83916,6 +84278,62 @@ module Crawlora
           "type" => "string"
         }
       ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rottentomatoes-sitemap-urls" => {
+      "id" => "rottentomatoes-sitemap-urls",
+      "method" => "GET",
+      "path" => "/rottentomatoes/sitemap/urls",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "name",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "rottentomatoes-sitemaps" => {
+      "id" => "rottentomatoes-sitemaps",
+      "method" => "GET",
+      "path" => "/rottentomatoes/sitemaps",
+      "pathParams" => [],
+      "queryParams" => [],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -116906,15 +117324,20 @@ module Crawlora
       "rothys_store" => "rothys-store"
     },
     "rotten_tomatoes" => {
+      "rottentomatoes_browse_filters" => "rottentomatoes-browse-filters",
       "rottentomatoes_browse_movies" => "rottentomatoes-browse-movies",
       "rottentomatoes_browse_tv" => "rottentomatoes-browse-tv",
+      "rottentomatoes_critics_authors" => "rottentomatoes-critics-authors",
+      "rottentomatoes_editorial_search" => "rottentomatoes-editorial-search",
       "rottentomatoes_episode" => "rottentomatoes-episode",
       "rottentomatoes_movie" => "rottentomatoes-movie",
       "rottentomatoes_movie_reviews" => "rottentomatoes-movie-reviews",
       "rottentomatoes_person" => "rottentomatoes-person",
       "rottentomatoes_search" => "rottentomatoes-search",
       "rottentomatoes_season" => "rottentomatoes-season",
-      "rottentomatoes_series" => "rottentomatoes-series"
+      "rottentomatoes_series" => "rottentomatoes-series",
+      "rottentomatoes_sitemap_urls" => "rottentomatoes-sitemap-urls",
+      "rottentomatoes_sitemaps" => "rottentomatoes-sitemaps"
     },
     "rover" => {
       "sitter_search" => "rover-sitter-search",
@@ -118085,7 +118508,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 3160
+  OPERATION_COUNT = 3165
 
   module OperationId
     ABC_NEWS_ABCNEWS_ARTICLE = "abcnews-article"
@@ -120314,8 +120737,11 @@ module Crawlora
     ROTHY_SROTHYS_SITEMAP_URLS = "rothys-sitemap-urls"
     ROTHY_SROTHYS_SITEMAPS = "rothys-sitemaps"
     ROTHY_SROTHYS_STORE = "rothys-store"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_FILTERS = "rottentomatoes-browse-filters"
     ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_MOVIES = "rottentomatoes-browse-movies"
     ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_TV = "rottentomatoes-browse-tv"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_CRITICS_AUTHORS = "rottentomatoes-critics-authors"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_EDITORIAL_SEARCH = "rottentomatoes-editorial-search"
     ROTTEN_TOMATOES_ROTTENTOMATOES_EPISODE = "rottentomatoes-episode"
     ROTTEN_TOMATOES_ROTTENTOMATOES_MOVIE = "rottentomatoes-movie"
     ROTTEN_TOMATOES_ROTTENTOMATOES_MOVIE_REVIEWS = "rottentomatoes-movie-reviews"
@@ -120323,6 +120749,8 @@ module Crawlora
     ROTTEN_TOMATOES_ROTTENTOMATOES_SEARCH = "rottentomatoes-search"
     ROTTEN_TOMATOES_ROTTENTOMATOES_SEASON = "rottentomatoes-season"
     ROTTEN_TOMATOES_ROTTENTOMATOES_SERIES = "rottentomatoes-series"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_SITEMAP_URLS = "rottentomatoes-sitemap-urls"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_SITEMAPS = "rottentomatoes-sitemaps"
     ROVER_SITTER_PROFILE = "rover-sitter-profile"
     ROVER_SITTER_SEARCH = "rover-sitter-search"
     ROVER_TRAINER_PROFILE = "rover-trainer-profile"
