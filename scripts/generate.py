@@ -35,7 +35,10 @@ POLICY = core.NamingPolicy(
     dedup_sep="_",
     keywords=RUBY_KEYWORDS,
     tag_group_overrides={
+        "1stDibs": "first_dibs",
         "7NOW": "seven_now",
+        "7NEWS Australia": "seven_news_australia",
+        "9to5Mac": "nine_to_five_mac",
         "AppStore": "app_store",
         "CoinGecko": "coin_gecko",
         "GooglePlay": "google_play",
