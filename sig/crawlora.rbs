@@ -2379,7 +2379,8 @@ module Crawlora
     def livescore_news: (?category: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def livescore_news_article: (?path: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def livescore_news_categories: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def livescore_news_feed: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def livescore_news_feed: (?include_content: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def livescore_news_publishers: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def livescore_player: (?path: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def livescore_scores: (?sport: "soccer" | "hockey" | "basketball" | "tennis" | "cricket", ?date: String, ?timezone_offset: Integer, ?paging: bool, ?cursor: String, ?direction: "down" | "up", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def livescore_scores_toc: (?sport: "soccer" | "hockey" | "basketball" | "tennis" | "cricket", ?date: String, ?timezone_offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped

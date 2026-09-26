@@ -61234,6 +61234,31 @@ module Crawlora
       "method" => "GET",
       "path" => "/livescore/news-feed",
       "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "include_content",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "livescore-news-publishers" => {
+      "id" => "livescore-news-publishers",
+      "method" => "GET",
+      "path" => "/livescore/news-publishers",
+      "pathParams" => [],
       "queryParams" => [],
       "formParams" => [],
       "bodyParam" => nil,
@@ -116023,6 +116048,7 @@ module Crawlora
       "livescore_news_article" => "livescore-news-article",
       "livescore_news_categories" => "livescore-news-categories",
       "livescore_news_feed" => "livescore-news-feed",
+      "livescore_news_publishers" => "livescore-news-publishers",
       "livescore_player" => "livescore-player",
       "livescore_scores" => "livescore-scores",
       "livescore_scores_toc" => "livescore-scores-toc",
@@ -118059,7 +118085,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 3159
+  OPERATION_COUNT = 3160
 
   module OperationId
     ABC_NEWS_ABCNEWS_ARTICLE = "abcnews-article"
@@ -119591,6 +119617,7 @@ module Crawlora
     LIVE_SCORE_LIVESCORE_NEWS_ARTICLE = "livescore-news-article"
     LIVE_SCORE_LIVESCORE_NEWS_CATEGORIES = "livescore-news-categories"
     LIVE_SCORE_LIVESCORE_NEWS_FEED = "livescore-news-feed"
+    LIVE_SCORE_LIVESCORE_NEWS_PUBLISHERS = "livescore-news-publishers"
     LIVE_SCORE_LIVESCORE_PLAYER = "livescore-player"
     LIVE_SCORE_LIVESCORE_SCORES = "livescore-scores"
     LIVE_SCORE_LIVESCORE_SCORES_TOC = "livescore-scores-toc"
