@@ -1995,6 +1995,69 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "alcom-headlines" => {
+      "id" => "alcom-headlines",
+      "method" => "GET",
+      "path" => "/alcom/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "news",
+            "sports",
+            "life"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "alcom-news" => {
+      "id" => "alcom-news",
+      "method" => "GET",
+      "path" => "/alcom/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "alcom-sections" => {
+      "id" => "alcom-sections",
+      "method" => "GET",
+      "path" => "/alcom/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "aljazeera-article" => {
       "id" => "aljazeera-article",
       "method" => "GET",
@@ -10754,6 +10817,23 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "bostonglobe-news" => {
+      "id" => "bostonglobe-news",
+      "method" => "GET",
+      "path" => "/bostonglobe/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "boxofficemojo-brand" => {
       "id" => "boxofficemojo-brand",
       "method" => "GET",
@@ -16270,6 +16350,23 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "clevelandcom-news" => {
+      "id" => "clevelandcom-news",
+      "method" => "GET",
+      "path" => "/clevelandcom/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "cna-article" => {
       "id" => "cna-article",
@@ -26094,7 +26191,8 @@ module Crawlora
             "aerospace_defense",
             "energy",
             "agriculture",
-            "local_business"
+            "local_business",
+            "general_news"
           ]
         },
         {
@@ -26248,7 +26346,8 @@ module Crawlora
             "aerospace_defense",
             "energy",
             "agriculture",
-            "local_business"
+            "local_business",
+            "general_news"
           ]
         },
         {
@@ -40463,6 +40562,116 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "fotmob-audio-matches" => {
+      "id" => "fotmob-audio-matches",
+      "method" => "GET",
+      "path" => "/fotmob/audio-matches",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-fifa-ranking-periods" => {
+      "id" => "fotmob-fifa-ranking-periods",
+      "method" => "GET",
+      "path" => "/fotmob/fifa-ranking-periods",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "gender",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "men",
+            "women"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-fifa-rankings" => {
+      "id" => "fotmob-fifa-rankings",
+      "method" => "GET",
+      "path" => "/fotmob/fifa-rankings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "gender",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "men",
+            "women"
+          ]
+        },
+        {
+          "name" => "period_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-latest-news" => {
+      "id" => "fotmob-latest-news",
+      "method" => "GET",
+      "path" => "/fotmob/latest-news",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "start_index",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "fotmob-league" => {
       "id" => "fotmob-league",
       "method" => "GET",
@@ -40474,6 +40683,16 @@ module Crawlora
           "in" => "query",
           "type" => "integer",
           "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "shotmap",
+          "in" => "query",
+          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -40508,10 +40727,88 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "fotmob-lineup-builder-players" => {
+      "id" => "fotmob-lineup-builder-players",
+      "method" => "GET",
+      "path" => "/fotmob/lineup-builder-players",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "player_ids",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-lineup-builder-team" => {
+      "id" => "fotmob-lineup-builder-team",
+      "method" => "GET",
+      "path" => "/fotmob/lineup-builder-team",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "fotmob-match" => {
       "id" => "fotmob-match",
       "method" => "GET",
       "path" => "/fotmob/match",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-match-media" => {
+      "id" => "fotmob-match-media",
+      "method" => "GET",
+      "path" => "/fotmob/match-media",
       "pathParams" => [],
       "queryParams" => [
         {
@@ -40581,6 +40878,32 @@ module Crawlora
           "name" => "start_index",
           "in" => "query",
           "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-news-article" => {
+      "id" => "fotmob-news-article",
+      "method" => "GET",
+      "path" => "/fotmob/news-article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
         }
       ],
       "formParams" => [],
@@ -40758,6 +41081,32 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "fotmob-seasons" => {
+      "id" => "fotmob-seasons",
+      "method" => "GET",
+      "path" => "/fotmob/seasons",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "fotmob-stats" => {
       "id" => "fotmob-stats",
       "method" => "GET",
@@ -40917,6 +41266,42 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "fotmob-team-fixtures" => {
+      "id" => "fotmob-team-fixtures",
+      "method" => "GET",
+      "path" => "/fotmob/team-fixtures",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
     "fotmob-team-news" => {
       "id" => "fotmob-team-news",
       "method" => "GET",
@@ -41047,6 +41432,286 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "fotmob-trending-news" => {
+      "id" => "fotmob-trending-news",
+      "method" => "GET",
+      "path" => "/fotmob/trending-news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-trending-searches" => {
+      "id" => "fotmob-trending-searches",
+      "method" => "GET",
+      "path" => "/fotmob/trending-searches",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-tv-guide" => {
+      "id" => "fotmob-tv-guide",
+      "method" => "GET",
+      "path" => "/fotmob/tv-guide",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "us",
+            "se",
+            "gb",
+            "de",
+            "no",
+            "es",
+            "mx",
+            "ar",
+            "bo",
+            "cl",
+            "co",
+            "cr",
+            "ec",
+            "gt",
+            "hn",
+            "ni",
+            "pa",
+            "py",
+            "pe",
+            "uy",
+            "ve",
+            "da",
+            "ca",
+            "au",
+            "at",
+            "be",
+            "bg",
+            "hr",
+            "cy",
+            "cz",
+            "ee",
+            "fi",
+            "fr",
+            "gr",
+            "hu",
+            "is",
+            "ie",
+            "il",
+            "it",
+            "nl",
+            "pl",
+            "pt",
+            "ro",
+            "ru",
+            "ch",
+            "tr",
+            "za",
+            "br",
+            "in",
+            "me",
+            "id",
+            "th",
+            "mm",
+            "al",
+            "az",
+            "bl",
+            "ba",
+            "ks",
+            "la",
+            "li",
+            "mk",
+            "rs",
+            "sk",
+            "ua",
+            "essv",
+            "nz",
+            "bd",
+            "cn",
+            "gh",
+            "hk",
+            "jp",
+            "kr",
+            "ma",
+            "mt",
+            "my",
+            "ng",
+            "ph",
+            "pk",
+            "sg",
+            "si",
+            "tz"
+          ]
+        },
+        {
+          "name" => "timezone",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-tv-guide-channels" => {
+      "id" => "fotmob-tv-guide-channels",
+      "method" => "GET",
+      "path" => "/fotmob/tv-guide-channels",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "us",
+            "se",
+            "gb",
+            "de",
+            "no",
+            "es",
+            "mx",
+            "ar",
+            "bo",
+            "cl",
+            "co",
+            "cr",
+            "ec",
+            "gt",
+            "hn",
+            "ni",
+            "pa",
+            "py",
+            "pe",
+            "uy",
+            "ve",
+            "da",
+            "ca",
+            "au",
+            "at",
+            "be",
+            "bg",
+            "hr",
+            "cy",
+            "cz",
+            "ee",
+            "fi",
+            "fr",
+            "gr",
+            "hu",
+            "is",
+            "ie",
+            "il",
+            "it",
+            "nl",
+            "pl",
+            "pt",
+            "ro",
+            "ru",
+            "ch",
+            "tr",
+            "za",
+            "br",
+            "in",
+            "me",
+            "id",
+            "th",
+            "mm",
+            "al",
+            "az",
+            "bl",
+            "ba",
+            "ks",
+            "la",
+            "li",
+            "mk",
+            "rs",
+            "sk",
+            "ua",
+            "essv",
+            "nz",
+            "bd",
+            "cn",
+            "gh",
+            "hk",
+            "jp",
+            "kr",
+            "ma",
+            "mt",
+            "my",
+            "ng",
+            "ph",
+            "pk",
+            "sg",
+            "si",
+            "tz"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-tv-guide-countries" => {
+      "id" => "fotmob-tv-guide-countries",
+      "method" => "GET",
+      "path" => "/fotmob/tv-guide-countries",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "foxnews-article" => {
       "id" => "foxnews-article",
@@ -41215,6 +41880,113 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "foxsports-article" => {
+      "id" => "foxsports-article",
+      "method" => "GET",
+      "path" => "/foxsports/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "foxsports-headlines" => {
+      "id" => "foxsports-headlines",
+      "method" => "GET",
+      "path" => "/foxsports/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "top",
+            "mlb",
+            "nfl",
+            "college-football",
+            "ufl",
+            "nba",
+            "nhl",
+            "college-basketball",
+            "nascar",
+            "ufc",
+            "motor-sports",
+            "golf",
+            "soccer",
+            "fifa-world-cup",
+            "fifa-womens-world-cup",
+            "olympics",
+            "tennis",
+            "horseracing",
+            "westminster-kennel-club-dog-show",
+            "wnba",
+            "womens-college-basketball",
+            "world-baseball-classic",
+            "wwe"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "foxsports-news" => {
+      "id" => "foxsports-news",
+      "method" => "GET",
+      "path" => "/foxsports/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "foxsports-sections" => {
+      "id" => "foxsports-sections",
+      "method" => "GET",
+      "path" => "/foxsports/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "france24-article" => {
       "id" => "france24-article",
       "method" => "GET",
@@ -41322,6 +42094,40 @@ module Crawlora
       "id" => "france24-sections",
       "method" => "GET",
       "path" => "/france24/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "freemalaysiatoday-news" => {
+      "id" => "freemalaysiatoday-news",
+      "method" => "GET",
+      "path" => "/freemalaysiatoday/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "freemalaysiatoday-sections" => {
+      "id" => "freemalaysiatoday-sections",
+      "method" => "GET",
+      "path" => "/freemalaysiatoday/sections",
       "pathParams" => [],
       "queryParams" => [],
       "formParams" => [],
@@ -43572,6 +44378,228 @@ module Crawlora
       "consumes" => [
         "application/json"
       ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ghanaweb-archive" => {
+      "id" => "ghanaweb-archive",
+      "method" => "GET",
+      "path" => "/ghanaweb/archive",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "month",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "ghanaweb-archive-months" => {
+      "id" => "ghanaweb-archive-months",
+      "method" => "GET",
+      "path" => "/ghanaweb/archive/months",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ghanaweb-article" => {
+      "id" => "ghanaweb-article",
+      "method" => "GET",
+      "path" => "/ghanaweb/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ghanaweb-headlines" => {
+      "id" => "ghanaweb-headlines",
+      "method" => "GET",
+      "path" => "/ghanaweb/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "news",
+            "sports",
+            "business",
+            "entertainment",
+            "africa",
+            "opinions",
+            "editorial",
+            "crime",
+            "regional",
+            "health",
+            "politics",
+            "tabloid",
+            "world",
+            "lifestyle",
+            "features"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ghanaweb-news" => {
+      "id" => "ghanaweb-news",
+      "method" => "GET",
+      "path" => "/ghanaweb/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ghanaweb-sections" => {
+      "id" => "ghanaweb-sections",
+      "method" => "GET",
+      "path" => "/ghanaweb/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ghanaweb-video" => {
+      "id" => "ghanaweb-video",
+      "method" => "GET",
+      "path" => "/ghanaweb/video",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ghanaweb-video-sections" => {
+      "id" => "ghanaweb-video-sections",
+      "method" => "GET",
+      "path" => "/ghanaweb/video-sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ghanaweb-videos" => {
+      "id" => "ghanaweb-videos",
+      "method" => "GET",
+      "path" => "/ghanaweb/videos",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "news",
+            "sports",
+            "business",
+            "entertainment"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
       "produces" => [
         "application/json"
       ],
@@ -50988,6 +52016,23 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "howtogeek-news" => {
+      "id" => "howtogeek-news",
+      "method" => "GET",
+      "path" => "/howtogeek/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "huffpost-article" => {
       "id" => "huffpost-article",
       "method" => "GET",
@@ -55068,6 +56113,171 @@ module Crawlora
       "consumes" => [
         "application/json"
       ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jerusalempost-article" => {
+      "id" => "jerusalempost-article",
+      "method" => "GET",
+      "path" => "/jerusalempost/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jerusalempost-author" => {
+      "id" => "jerusalempost-author",
+      "method" => "GET",
+      "path" => "/jerusalempost/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jerusalempost-authors" => {
+      "id" => "jerusalempost-authors",
+      "method" => "GET",
+      "path" => "/jerusalempost/authors",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jerusalempost-headlines" => {
+      "id" => "jerusalempost-headlines",
+      "method" => "GET",
+      "path" => "/jerusalempost/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "aliyah",
+            "american-politics",
+            "arab-israeli-conflict",
+            "archaeology",
+            "bds-movement",
+            "all-news",
+            "banking-and-finance",
+            "business-and-innovation",
+            "business-opinion",
+            "christian-world",
+            "consumerism",
+            "culture",
+            "defense-and-tech",
+            "diaspora",
+            "environment",
+            "food-and-recipes",
+            "health-and-wellness",
+            "health-around-the-world",
+            "history",
+            "home",
+            "iran-news",
+            "israel-election-2026",
+            "israel-news",
+            "israel-politics",
+            "israeli-sports",
+            "j-spot",
+            "jewish-holidays",
+            "judaism",
+            "kabbalah",
+            "middle-east",
+            "must",
+            "nutrition",
+            "omg",
+            "opinion",
+            "science",
+            "tech-and-startups",
+            "terrorism",
+            "torah-portion",
+            "ukraine-russia-war",
+            "world-news"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jerusalempost-news" => {
+      "id" => "jerusalempost-news",
+      "method" => "GET",
+      "path" => "/jerusalempost/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "jerusalempost-sections" => {
+      "id" => "jerusalempost-sections",
+      "method" => "GET",
+      "path" => "/jerusalempost/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
       "produces" => [
         "application/json"
       ],
@@ -61045,6 +62255,25 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "livescore-competitions" => {
+      "id" => "livescore-competitions",
+      "method" => "GET",
+      "path" => "/livescore/competitions",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "livescore-live-scores" => {
       "id" => "livescore-live-scores",
       "method" => "GET",
@@ -61393,6 +62622,49 @@ module Crawlora
         },
         {
           "name" => "timezone_offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "livescore-search" => {
+      "id" => "livescore-search",
+      "method" => "GET",
+      "path" => "/livescore/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "sport",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "soccer",
+            "hockey",
+            "basketball",
+            "tennis",
+            "cricket"
+          ]
+        },
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
           "in" => "query",
           "type" => "integer"
         }
@@ -62707,6 +63979,119 @@ module Crawlora
       "id" => "mediaite-sections",
       "method" => "GET",
       "path" => "/mediaite/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "medicalnewstoday-article" => {
+      "id" => "medicalnewstoday-article",
+      "method" => "GET",
+      "path" => "/medicalnewstoday/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "medicalnewstoday-author" => {
+      "id" => "medicalnewstoday-author",
+      "method" => "GET",
+      "path" => "/medicalnewstoday/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "medicalnewstoday-headlines" => {
+      "id" => "medicalnewstoday-headlines",
+      "method" => "GET",
+      "path" => "/medicalnewstoday/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "news"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "medicalnewstoday-news" => {
+      "id" => "medicalnewstoday-news",
+      "method" => "GET",
+      "path" => "/medicalnewstoday/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "medicalnewstoday-sections" => {
+      "id" => "medicalnewstoday-sections",
+      "method" => "GET",
+      "path" => "/medicalnewstoday/sections",
       "pathParams" => [],
       "queryParams" => [],
       "formParams" => [],
@@ -64790,6 +66175,66 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "mlb-discovery" => {
+      "id" => "mlb-discovery",
+      "method" => "GET",
+      "path" => "/mlb/discovery",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-editorial-feed" => {
+      "id" => "mlb-editorial-feed",
+      "method" => "GET",
+      "path" => "/mlb/editorial-feed",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "EN_US",
+            "ES_US"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "skip",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "mlb-game" => {
       "id" => "mlb-game",
       "method" => "GET",
@@ -64864,6 +66309,82 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "mlb-league-leaders" => {
+      "id" => "mlb-league-leaders",
+      "method" => "GET",
+      "path" => "/mlb/league-leaders",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "categories",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "group",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "hitting",
+            "pitching",
+            "fielding",
+            "catching",
+            "running",
+            "game",
+            "team",
+            "streak"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "S",
+            "R",
+            "F",
+            "D",
+            "L",
+            "W",
+            "C",
+            "P",
+            "A",
+            "I",
+            "E"
+          ]
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "103",
+            "104"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "mlb-league-stats" => {
       "id" => "mlb-league-stats",
       "method" => "GET",
@@ -64883,11 +66404,166 @@ module Crawlora
           "enum" => [
             "hitting",
             "pitching",
-            "fielding"
+            "fielding",
+            "catching",
+            "running",
+            "game",
+            "team",
+            "streak"
+          ]
+        },
+        {
+          "name" => "stat_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "projected",
+            "projectedRos",
+            "yearByYear",
+            "yearByYearAdvanced",
+            "yearByYearPlayoffs",
+            "season",
+            "standard",
+            "advanced",
+            "career",
+            "careerRegularSeason",
+            "careerAdvanced",
+            "seasonAdvanced",
+            "careerStatSplits",
+            "careerPlayoffs",
+            "gameLog",
+            "playLog",
+            "pitchLog",
+            "pitchArsenal",
+            "outsAboveAverage",
+            "expectedStatistics",
+            "sabermetrics",
+            "sprayChart",
+            "tracking",
+            "vsPlayer",
+            "vsPlayerTotal",
+            "vsPlayer5Y",
+            "vsTeam",
+            "vsTeam5Y",
+            "vsTeamTotal",
+            "lastXGames",
+            "byDateRange",
+            "byDateRangeAdvanced",
+            "byMonth",
+            "byMonthPlayoffs",
+            "byDayOfWeek",
+            "byDayOfWeekPlayoffs",
+            "homeAndAway",
+            "homeAndAwayPlayoffs",
+            "winLoss",
+            "winLossPlayoffs",
+            "rankings",
+            "rankingsByYear",
+            "statsSingleSeason",
+            "statsSingleSeasonAdvanced",
+            "hotColdZones",
+            "availableStats",
+            "opponentsFaced",
+            "gameTypeStats",
+            "firstYearStats",
+            "lastYearStats",
+            "statSplits",
+            "statSplitsAdvanced",
+            "atGameStart",
+            "vsOpponents",
+            "sabermetricsMultiTeam",
+            "projected_Zips",
+            "projected_ZipsRos",
+            "projected_Zips2YR",
+            "projected_Zips3YR"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "S",
+            "R",
+            "F",
+            "D",
+            "L",
+            "W",
+            "C",
+            "P",
+            "A",
+            "I",
+            "E"
+          ]
+        },
+        {
+          "name" => "start_date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "end_date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "opponent_team_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "opponent_player_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "103",
+            "104"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "position",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "C",
+            "1B",
+            "2B",
+            "3B",
+            "SS",
+            "LF",
+            "CF",
+            "RF",
+            "DH",
+            "OF",
+            "IF"
+          ]
+        },
+        {
+          "name" => "player_pool",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "QUALIFIED",
+            "ALL"
           ]
         },
         {
           "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
           "in" => "query",
           "type" => "integer"
         }
@@ -64903,7 +66579,8 @@ module Crawlora
       ],
       "security" => [
         "ApiKeyAuth"
-      ]
+      ],
+      "paginatable" => true
     },
     "mlb-player" => {
       "id" => "mlb-player",
@@ -64956,8 +66633,117 @@ module Crawlora
           "enum" => [
             "hitting",
             "pitching",
-            "fielding"
+            "fielding",
+            "catching",
+            "running",
+            "game",
+            "team",
+            "streak"
           ]
+        },
+        {
+          "name" => "stat_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "projected",
+            "projectedRos",
+            "yearByYear",
+            "yearByYearAdvanced",
+            "yearByYearPlayoffs",
+            "season",
+            "standard",
+            "advanced",
+            "career",
+            "careerRegularSeason",
+            "careerAdvanced",
+            "seasonAdvanced",
+            "careerStatSplits",
+            "careerPlayoffs",
+            "gameLog",
+            "playLog",
+            "pitchLog",
+            "pitchArsenal",
+            "outsAboveAverage",
+            "expectedStatistics",
+            "sabermetrics",
+            "sprayChart",
+            "tracking",
+            "vsPlayer",
+            "vsPlayerTotal",
+            "vsPlayer5Y",
+            "vsTeam",
+            "vsTeam5Y",
+            "vsTeamTotal",
+            "lastXGames",
+            "byDateRange",
+            "byDateRangeAdvanced",
+            "byMonth",
+            "byMonthPlayoffs",
+            "byDayOfWeek",
+            "byDayOfWeekPlayoffs",
+            "homeAndAway",
+            "homeAndAwayPlayoffs",
+            "winLoss",
+            "winLossPlayoffs",
+            "rankings",
+            "rankingsByYear",
+            "statsSingleSeason",
+            "statsSingleSeasonAdvanced",
+            "hotColdZones",
+            "availableStats",
+            "opponentsFaced",
+            "gameTypeStats",
+            "firstYearStats",
+            "lastYearStats",
+            "statSplits",
+            "statSplitsAdvanced",
+            "atGameStart",
+            "vsOpponents",
+            "sabermetricsMultiTeam",
+            "projected_Zips",
+            "projected_ZipsRos",
+            "projected_Zips2YR",
+            "projected_Zips3YR"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "S",
+            "R",
+            "F",
+            "D",
+            "L",
+            "W",
+            "C",
+            "P",
+            "A",
+            "I",
+            "E"
+          ]
+        },
+        {
+          "name" => "start_date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "end_date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "opponent_team_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "opponent_player_id",
+          "in" => "query",
+          "type" => "string"
         }
       ],
       "formParams" => [],
@@ -64972,6 +66758,114 @@ module Crawlora
       "security" => [
         "ApiKeyAuth"
       ]
+    },
+    "mlb-prospect-stats" => {
+      "id" => "mlb-prospect-stats",
+      "method" => "GET",
+      "path" => "/mlb/prospect-stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "list_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "top100",
+            "all"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_range",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "today",
+            "1day",
+            "10day",
+            "30day",
+            "springTraining",
+            "Year2019",
+            "Year2020",
+            "Year2021",
+            "Year2022",
+            "Year2023",
+            "Year2024",
+            "Year2025",
+            "Year2026"
+          ]
+        },
+        {
+          "name" => "player_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "batters",
+            "pitchers"
+          ]
+        },
+        {
+          "name" => "min_pa",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "100",
+            "150",
+            "200",
+            "250"
+          ]
+        },
+        {
+          "name" => "position",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1b",
+            "2b",
+            "ss",
+            "3b",
+            "c",
+            "of",
+            "rhp",
+            "lhp"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
     },
     "mlb-schedule" => {
       "id" => "mlb-schedule",
@@ -64998,6 +66892,24 @@ module Crawlora
           "name" => "team_id",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "S",
+            "R",
+            "F",
+            "D",
+            "L",
+            "W",
+            "C",
+            "P",
+            "A",
+            "I",
+            "E"
+          ]
         }
       ],
       "formParams" => [],
@@ -65006,6 +66918,30 @@ module Crawlora
       "consumes" => [
         "application/json"
       ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-search" => {
+      "id" => "mlb-search",
+      "method" => "GET",
+      "path" => "/mlb/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
       "produces" => [
         "application/json"
       ],
@@ -65031,8 +66967,23 @@ module Crawlora
           "enum" => [
             "regularSeason",
             "wildCard",
-            "springTraining"
+            "divisionLeaders",
+            "wildCardWithLeaders",
+            "firstHalf",
+            "secondHalf",
+            "springTraining",
+            "postseason",
+            "byDivision",
+            "byConference",
+            "byLeague",
+            "byOrganization",
+            "currentHalf"
           ]
+        },
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
         }
       ],
       "formParams" => [],
@@ -65047,6 +66998,397 @@ module Crawlora
       "security" => [
         "ApiKeyAuth"
       ]
+    },
+    "mlb-statcast-expected" => {
+      "id" => "mlb-statcast-expected",
+      "method" => "GET",
+      "path" => "/mlb/statcast-expected",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "batter",
+            "pitcher",
+            "batter-team",
+            "pitcher-team"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "position",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "C",
+            "1B",
+            "2B",
+            "SS",
+            "3B",
+            "LF",
+            "CF",
+            "RF",
+            "DH"
+          ]
+        },
+        {
+          "name" => "filter_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "bip",
+            "pa"
+          ]
+        },
+        {
+          "name" => "minimum",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "1",
+            "25",
+            "50",
+            "100",
+            "150",
+            "200",
+            "250",
+            "350",
+            "450",
+            "500",
+            "600"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "entity_name",
+            "entity_team_name",
+            "pa",
+            "bip",
+            "ba",
+            "est_ba",
+            "ba_minus_est_ba_diff",
+            "slg",
+            "est_slg",
+            "slg_minus_est_slg_diff",
+            "woba",
+            "est_woba",
+            "woba_minus_est_woba_diff",
+            "wobacon",
+            "est_wobacon",
+            "wobacon_minus_est_wobacon_diff",
+            "exit_velocity_avg",
+            "hard_hit_percent",
+            "barrels_per_bip",
+            "barrels_per_pa"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast" => {
+      "id" => "mlb-statcast",
+      "method" => "GET",
+      "path" => "/mlb/statcast-leaders",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "batter",
+            "pitcher",
+            "batter-team",
+            "pitcher-team"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "position",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "C",
+            "1B",
+            "2B",
+            "SS",
+            "3B",
+            "LF",
+            "CF",
+            "RF",
+            "DH"
+          ]
+        },
+        {
+          "name" => "min_bbe",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "1",
+            "25",
+            "50",
+            "100",
+            "150",
+            "200",
+            "250",
+            "350",
+            "450",
+            "500",
+            "600"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "entity_name",
+            "bip",
+            "launch_angle_avg",
+            "sweet_spot_percent",
+            "exit_velocity_max",
+            "exit_velocity_avg",
+            "avg_best_speed",
+            "exit_velocity_fbld",
+            "distance_max",
+            "distance_hr_avg",
+            "hard_hit_ct",
+            "hard_hit_percent",
+            "hard_hit_per_swing",
+            "barrel_ct",
+            "barrels_per_bip",
+            "barrels_per_pa"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-oaa" => {
+      "id" => "mlb-statcast-oaa",
+      "method" => "GET",
+      "path" => "/mlb/statcast-oaa",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Fielder",
+            "Fielding_Team",
+            "Batter",
+            "Batting_Team",
+            "Pitcher"
+          ]
+        },
+        {
+          "name" => "start_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "split",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "no",
+            "yes"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "range",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "year",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ]
+        },
+        {
+          "name" => "minimum",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "10",
+            "25",
+            "50",
+            "75",
+            "100",
+            "150",
+            "200",
+            "250"
+          ]
+        },
+        {
+          "name" => "position",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "if",
+            "of",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ]
+        },
+        {
+          "name" => "roles",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "entity_name",
+            "display_team_name",
+            "primary_pos_formatted",
+            "fielding_runs_prevented",
+            "outs_above_average",
+            "outs_above_average_infront",
+            "outs_above_average_lateral",
+            "outs_above_average_behind",
+            "actual_success_rate",
+            "adj_estimated_success_rate",
+            "diff_success_rate",
+            "n"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
     },
     "mlb-team-roster" => {
       "id" => "mlb-team-roster",
@@ -65070,9 +67412,15 @@ module Crawlora
           "in" => "query",
           "type" => "string",
           "enum" => [
-            "active",
             "40Man",
-            "fullSeason"
+            "fullSeason",
+            "fullRoster",
+            "nonRosterInvitees",
+            "active",
+            "allTime",
+            "depthChart",
+            "gameday",
+            "coach"
           ]
         }
       ],
@@ -65114,8 +67462,117 @@ module Crawlora
           "enum" => [
             "hitting",
             "pitching",
-            "fielding"
+            "fielding",
+            "catching",
+            "running",
+            "game",
+            "team",
+            "streak"
           ]
+        },
+        {
+          "name" => "stat_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "projected",
+            "projectedRos",
+            "yearByYear",
+            "yearByYearAdvanced",
+            "yearByYearPlayoffs",
+            "season",
+            "standard",
+            "advanced",
+            "career",
+            "careerRegularSeason",
+            "careerAdvanced",
+            "seasonAdvanced",
+            "careerStatSplits",
+            "careerPlayoffs",
+            "gameLog",
+            "playLog",
+            "pitchLog",
+            "pitchArsenal",
+            "outsAboveAverage",
+            "expectedStatistics",
+            "sabermetrics",
+            "sprayChart",
+            "tracking",
+            "vsPlayer",
+            "vsPlayerTotal",
+            "vsPlayer5Y",
+            "vsTeam",
+            "vsTeam5Y",
+            "vsTeamTotal",
+            "lastXGames",
+            "byDateRange",
+            "byDateRangeAdvanced",
+            "byMonth",
+            "byMonthPlayoffs",
+            "byDayOfWeek",
+            "byDayOfWeekPlayoffs",
+            "homeAndAway",
+            "homeAndAwayPlayoffs",
+            "winLoss",
+            "winLossPlayoffs",
+            "rankings",
+            "rankingsByYear",
+            "statsSingleSeason",
+            "statsSingleSeasonAdvanced",
+            "hotColdZones",
+            "availableStats",
+            "opponentsFaced",
+            "gameTypeStats",
+            "firstYearStats",
+            "lastYearStats",
+            "statSplits",
+            "statSplitsAdvanced",
+            "atGameStart",
+            "vsOpponents",
+            "sabermetricsMultiTeam",
+            "projected_Zips",
+            "projected_ZipsRos",
+            "projected_Zips2YR",
+            "projected_Zips3YR"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "S",
+            "R",
+            "F",
+            "D",
+            "L",
+            "W",
+            "C",
+            "P",
+            "A",
+            "I",
+            "E"
+          ]
+        },
+        {
+          "name" => "start_date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "end_date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "opponent_team_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "opponent_player_id",
+          "in" => "query",
+          "type" => "string"
         }
       ],
       "formParams" => [],
@@ -65183,6 +67640,23 @@ module Crawlora
           "type" => "string"
         }
       ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlive-news" => {
+      "id" => "mlive-news",
+      "method" => "GET",
+      "path" => "/mlive/news",
+      "pathParams" => [],
+      "queryParams" => [],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -65858,6 +68332,124 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "motleyfool-article" => {
+      "id" => "motleyfool-article",
+      "method" => "GET",
+      "path" => "/motleyfool/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motleyfool-author" => {
+      "id" => "motleyfool-author",
+      "method" => "GET",
+      "path" => "/motleyfool/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motleyfool-headlines" => {
+      "id" => "motleyfool-headlines",
+      "method" => "GET",
+      "path" => "/motleyfool/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "trending-news",
+            "news",
+            "market-movers",
+            "tech-stock-news",
+            "market-trends",
+            "crypto-news",
+            "markets",
+            "most-active-stocks",
+            "top-stock-gainers",
+            "top-stock-losers"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motleyfool-news" => {
+      "id" => "motleyfool-news",
+      "method" => "GET",
+      "path" => "/motleyfool/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motleyfool-sections" => {
+      "id" => "motleyfool-sections",
+      "method" => "GET",
+      "path" => "/motleyfool/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "nationafrica-article" => {
       "id" => "nationafrica-article",
       "method" => "GET",
@@ -66435,6 +69027,36 @@ module Crawlora
       "security" => [
         "ApiKeyAuth"
       ]
+    },
+    "ndtv-search" => {
+      "id" => "ndtv-search",
+      "method" => "GET",
+      "path" => "/ndtv/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
     },
     "ndtv-sections" => {
       "id" => "ndtv-sections",
@@ -67632,6 +70254,23 @@ module Crawlora
       "id" => "ninetofivemac-sections",
       "method" => "GET",
       "path" => "/ninetofivemac/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "njcom-news" => {
+      "id" => "njcom-news",
+      "method" => "GET",
+      "path" => "/njcom/news",
       "pathParams" => [],
       "queryParams" => [],
       "formParams" => [],
@@ -77417,6 +80056,23 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "popularmechanics-news" => {
+      "id" => "popularmechanics-news",
+      "method" => "GET",
+      "path" => "/popularmechanics/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "poshmark-brand" => {
       "id" => "poshmark-brand",
       "method" => "GET",
@@ -84022,6 +86678,123 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "rottentomatoes-editorial-content" => {
+      "id" => "rottentomatoes-editorial-content",
+      "method" => "GET",
+      "path" => "/rottentomatoes/editorial/content",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "article",
+            "guide",
+            "gallery",
+            "hub-subpage",
+            "non-rt-publication",
+            "rt-hub",
+            "how-to",
+            "otg-article",
+            "prev",
+            "rt_poll",
+            "pages"
+          ]
+        },
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "taxonomy",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "categories",
+            "tags",
+            "related-movie-id",
+            "related-tv-season-id",
+            "related-tv-series-id",
+            "related-tv-episode-id",
+            "related-celebrity-id",
+            "publication",
+            "franchise",
+            "coauthors"
+          ]
+        },
+        {
+          "name" => "term_ids",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "operator",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "AND",
+            "OR"
+          ]
+        },
+        {
+          "name" => "include_children",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "rottentomatoes-editorial-detail" => {
+      "id" => "rottentomatoes-editorial-detail",
+      "method" => "GET",
+      "path" => "/rottentomatoes/editorial/detail",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "rottentomatoes-editorial-search" => {
       "id" => "rottentomatoes-editorial-search",
       "method" => "GET",
@@ -84058,6 +86831,189 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "rottentomatoes-editorial-section" => {
+      "id" => "rottentomatoes-editorial-section",
+      "method" => "GET",
+      "path" => "/rottentomatoes/editorial/section",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "rottentomatoes-editorial-taxonomies" => {
+      "id" => "rottentomatoes-editorial-taxonomies",
+      "method" => "GET",
+      "path" => "/rottentomatoes/editorial/taxonomies",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rottentomatoes-editorial-terms" => {
+      "id" => "rottentomatoes-editorial-terms",
+      "method" => "GET",
+      "path" => "/rottentomatoes/editorial/terms",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "taxonomy",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "categories",
+            "tags",
+            "related-movie-id",
+            "related-tv-season-id",
+            "related-tv-series-id",
+            "related-tv-episode-id",
+            "related-celebrity-id",
+            "publication",
+            "franchise",
+            "coauthors"
+          ]
+        },
+        {
+          "name" => "search",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "hide_empty",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "orderby",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "id",
+            "include",
+            "name",
+            "slug",
+            "include_slugs",
+            "term_group",
+            "description",
+            "count"
+          ]
+        },
+        {
+          "name" => "include",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "exclude",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "post",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "parent",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "rottentomatoes-editorial-types" => {
+      "id" => "rottentomatoes-editorial-types",
+      "method" => "GET",
+      "path" => "/rottentomatoes/editorial/types",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "rottentomatoes-episode" => {
       "id" => "rottentomatoes-episode",
@@ -84857,6 +87813,251 @@ module Crawlora
       "consumes" => [
         "application/json"
       ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sbsnews-article" => {
+      "id" => "sbsnews-article",
+      "method" => "GET",
+      "path" => "/sbsnews/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sbsnews-author" => {
+      "id" => "sbsnews-author",
+      "method" => "GET",
+      "path" => "/sbsnews/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "sbsnews-headlines" => {
+      "id" => "sbsnews-headlines",
+      "method" => "GET",
+      "path" => "/sbsnews/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "top",
+            "latest",
+            "australia",
+            "world",
+            "politics",
+            "indigenous",
+            "environment",
+            "life",
+            "cost-of-living",
+            "immigration",
+            "health-and-wellbeing",
+            "sport",
+            "education",
+            "technology-and-social-media",
+            "arts-and-entertainment"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sbsnews-news" => {
+      "id" => "sbsnews-news",
+      "method" => "GET",
+      "path" => "/sbsnews/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sbsnews-sections" => {
+      "id" => "sbsnews-sections",
+      "method" => "GET",
+      "path" => "/sbsnews/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sciencealert-article" => {
+      "id" => "sciencealert-article",
+      "method" => "GET",
+      "path" => "/sciencealert/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sciencealert-author" => {
+      "id" => "sciencealert-author",
+      "method" => "GET",
+      "path" => "/sciencealert/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sciencealert-headlines" => {
+      "id" => "sciencealert-headlines",
+      "method" => "GET",
+      "path" => "/sciencealert/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "space",
+            "health",
+            "environment",
+            "humans",
+            "tech",
+            "nature",
+            "physics",
+            "this-week-in-science"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sciencealert-news" => {
+      "id" => "sciencealert-news",
+      "method" => "GET",
+      "path" => "/sciencealert/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sciencealert-sections" => {
+      "id" => "sciencealert-sections",
+      "method" => "GET",
+      "path" => "/sciencealert/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
       "produces" => [
         "application/json"
       ],
@@ -88788,6 +91989,136 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "skysports-article" => {
+      "id" => "skysports-article",
+      "method" => "GET",
+      "path" => "/skysports/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "skysports-author" => {
+      "id" => "skysports-author",
+      "method" => "GET",
+      "path" => "/skysports/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "skysports-headlines" => {
+      "id" => "skysports-headlines",
+      "method" => "GET",
+      "path" => "/skysports/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "football",
+            "f1",
+            "cricket",
+            "rugby-union",
+            "rugby-league",
+            "golf",
+            "boxing",
+            "nfl",
+            "tennis",
+            "nba",
+            "racing",
+            "darts",
+            "netball",
+            "mma",
+            "more-sports",
+            "athletics",
+            "basketball",
+            "cycling",
+            "snooker",
+            "motor-sport",
+            "wwe",
+            "olympics"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "skysports-news" => {
+      "id" => "skysports-news",
+      "method" => "GET",
+      "path" => "/skysports/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "skysports-sections" => {
+      "id" => "skysports-sections",
+      "method" => "GET",
+      "path" => "/skysports/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "slate-article" => {
       "id" => "slate-article",
       "method" => "GET",
@@ -90959,6 +94290,629 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "sportskeeda-article" => {
+      "id" => "sportskeeda-article",
+      "method" => "GET",
+      "path" => "/sportskeeda/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-author" => {
+      "id" => "sportskeeda-author",
+      "method" => "GET",
+      "path" => "/sportskeeda/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-depth-chart" => {
+      "id" => "sportskeeda-depth-chart",
+      "method" => "GET",
+      "path" => "/sportskeeda/depth-chart",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl/depth-chart"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-feed" => {
+      "id" => "sportskeeda-feed",
+      "method" => "GET",
+      "path" => "/sportskeeda/feed",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "sportskeeda-football-data" => {
+      "id" => "sportskeeda-football-data",
+      "method" => "GET",
+      "path" => "/sportskeeda/football-data",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "event",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "matchday",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-football-options" => {
+      "id" => "sportskeeda-football-options",
+      "method" => "GET",
+      "path" => "/sportskeeda/football-options",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "event",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-news" => {
+      "id" => "sportskeeda-news",
+      "method" => "GET",
+      "path" => "/sportskeeda/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-page-data" => {
+      "id" => "sportskeeda-page-data",
+      "method" => "GET",
+      "path" => "/sportskeeda/page-data",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-page-options" => {
+      "id" => "sportskeeda-page-options",
+      "method" => "GET",
+      "path" => "/sportskeeda/page-options",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-player-stats" => {
+      "id" => "sportskeeda-player-stats",
+      "method" => "GET",
+      "path" => "/sportskeeda/player-stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "event_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "1",
+            "2",
+            "3"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-profile" => {
+      "id" => "sportskeeda-profile",
+      "method" => "GET",
+      "path" => "/sportskeeda/profile",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-schedule" => {
+      "id" => "sportskeeda-schedule",
+      "method" => "GET",
+      "path" => "/sportskeeda/schedule",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-sections" => {
+      "id" => "sportskeeda-sections",
+      "method" => "GET",
+      "path" => "/sportskeeda/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-sitemap-items" => {
+      "id" => "sportskeeda-sitemap-items",
+      "method" => "GET",
+      "path" => "/sportskeeda/sitemap-items",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sitemap_url",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "sportskeeda-sitemaps" => {
+      "id" => "sportskeeda-sitemaps",
+      "method" => "GET",
+      "path" => "/sportskeeda/sitemaps",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-standings" => {
+      "id" => "sportskeeda-standings",
+      "method" => "GET",
+      "path" => "/sportskeeda/standings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "2026",
+            "2025",
+            "2024",
+            "2023",
+            "2022",
+            "2021",
+            "2020",
+            "2019",
+            "2018",
+            "2017",
+            "2016",
+            "2015",
+            "2014",
+            "2013"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-standings-options" => {
+      "id" => "sportskeeda-standings-options",
+      "method" => "GET",
+      "path" => "/sportskeeda/standings-options",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "2026",
+            "2025",
+            "2024",
+            "2023",
+            "2022",
+            "2021",
+            "2020",
+            "2019",
+            "2018",
+            "2017",
+            "2016",
+            "2015",
+            "2014",
+            "2013"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-taxonomy-search" => {
+      "id" => "sportskeeda-taxonomy-search",
+      "method" => "GET",
+      "path" => "/sportskeeda/taxonomy-search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-trade-values" => {
+      "id" => "sportskeeda-trade-values",
+      "method" => "GET",
+      "path" => "/sportskeeda/trade-values",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl/fantasy-football-trade-value-charts",
+            "nfl/dynasty-trade-value-charts"
+          ]
+        },
+        {
+          "name" => "position",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "All",
+            "QB",
+            "RB",
+            "WR",
+            "TE"
+          ]
+        },
+        {
+          "name" => "scoring",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "ppr",
+            "non_ppr",
+            "0.5_ppr"
+          ]
+        },
+        {
+          "name" => "superflex",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "sportskeeda-video" => {
+      "id" => "sportskeeda-video",
+      "method" => "GET",
+      "path" => "/sportskeeda/video",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-videos" => {
+      "id" => "sportskeeda-videos",
+      "method" => "GET",
+      "path" => "/sportskeeda/videos",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "spotify-podcasts-categories" => {
       "id" => "spotify-podcasts-categories",
       "method" => "GET",
@@ -93033,6 +96987,23 @@ module Crawlora
       "consumes" => [
         "application/json"
       ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "startribune-news" => {
+      "id" => "startribune-news",
+      "method" => "GET",
+      "path" => "/startribune/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
       "produces" => [
         "application/json"
       ],
@@ -107871,6 +111842,37 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "whatnot-seller" => {
+      "id" => "whatnot-seller",
+      "method" => "GET",
+      "path" => "/whatnot/seller/{username}",
+      "pathParams" => [
+        "username"
+      ],
+      "queryParams" => [
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
     "wingstop-delivery-store" => {
       "id" => "wingstop-delivery-store",
       "method" => "GET",
@@ -114564,6 +118566,11 @@ module Crawlora
       "room_reviews" => "airbnb-room-reviews",
       "search" => "airbnb-search"
     },
+    "al_com" => {
+      "alcom_headlines" => "alcom-headlines",
+      "alcom_news" => "alcom-news",
+      "alcom_sections" => "alcom-sections"
+    },
     "al_jazeera" => {
       "aljazeera_article" => "aljazeera-article",
       "aljazeera_author" => "aljazeera-author",
@@ -114887,6 +118894,9 @@ module Crawlora
       "search" => "boots-search",
       "suggest" => "boots-suggest"
     },
+    "boston_globe" => {
+      "bostonglobe_news" => "bostonglobe-news"
+    },
     "box_office_mojo" => {
       "boxofficemojo_brand" => "boxofficemojo-brand",
       "boxofficemojo_brands" => "boxofficemojo-brands",
@@ -115080,6 +119090,9 @@ module Crawlora
       "listing" => "chrono24-listing",
       "models" => "chrono24-models",
       "search" => "chrono24-search"
+    },
+    "cleveland_com" => {
+      "clevelandcom_news" => "clevelandcom-news"
     },
     "cna" => {
       "article" => "cna-article",
@@ -115745,22 +119758,37 @@ module Crawlora
       "sections" => "fortune-sections"
     },
     "fot_mob" => {
+      "fotmob_audio_matches" => "fotmob-audio-matches",
+      "fotmob_fifa_ranking_periods" => "fotmob-fifa-ranking-periods",
+      "fotmob_fifa_rankings" => "fotmob-fifa-rankings",
+      "fotmob_latest_news" => "fotmob-latest-news",
       "fotmob_league" => "fotmob-league",
       "fotmob_leagues" => "fotmob-leagues",
+      "fotmob_lineup_builder_players" => "fotmob-lineup-builder-players",
+      "fotmob_lineup_builder_team" => "fotmob-lineup-builder-team",
       "fotmob_match" => "fotmob-match",
+      "fotmob_match_media" => "fotmob-match-media",
       "fotmob_matches" => "fotmob-matches",
       "fotmob_news" => "fotmob-news",
+      "fotmob_news_article" => "fotmob-news-article",
       "fotmob_player" => "fotmob-player",
       "fotmob_player_match_stats" => "fotmob-player-match-stats",
       "fotmob_player_matches" => "fotmob-player-matches",
       "fotmob_player_stats" => "fotmob-player-stats",
       "fotmob_search" => "fotmob-search",
+      "fotmob_seasons" => "fotmob-seasons",
       "fotmob_stats" => "fotmob-stats",
       "fotmob_stats_categories" => "fotmob-stats-categories",
       "fotmob_table" => "fotmob-table",
       "fotmob_team" => "fotmob-team",
+      "fotmob_team_fixtures" => "fotmob-team-fixtures",
       "fotmob_team_news" => "fotmob-team-news",
-      "fotmob_transfers" => "fotmob-transfers"
+      "fotmob_transfers" => "fotmob-transfers",
+      "fotmob_trending_news" => "fotmob-trending-news",
+      "fotmob_trending_searches" => "fotmob-trending-searches",
+      "fotmob_tv_guide" => "fotmob-tv-guide",
+      "fotmob_tv_guide_channels" => "fotmob-tv-guide-channels",
+      "fotmob_tv_guide_countries" => "fotmob-tv-guide-countries"
     },
     "fox_news" => {
       "foxnews_article" => "foxnews-article",
@@ -115770,12 +119798,22 @@ module Crawlora
       "foxnews_search" => "foxnews-search",
       "foxnews_sections" => "foxnews-sections"
     },
+    "fox_sports" => {
+      "foxsports_article" => "foxsports-article",
+      "foxsports_headlines" => "foxsports-headlines",
+      "foxsports_news" => "foxsports-news",
+      "foxsports_sections" => "foxsports-sections"
+    },
     "france_24" => {
       "france24_article" => "france24-article",
       "france24_author" => "france24-author",
       "france24_headlines" => "france24-headlines",
       "france24_news" => "france24-news",
       "france24_sections" => "france24-sections"
+    },
+    "free_malaysia_today" => {
+      "freemalaysiatoday_news" => "freemalaysiatoday-news",
+      "freemalaysiatoday_sections" => "freemalaysiatoday-sections"
     },
     "ft" => {
       "article" => "ft-article",
@@ -115824,6 +119862,17 @@ module Crawlora
       "lookup" => "geocoding-lookup",
       "reverse" => "geocoding-reverse",
       "search" => "geocoding-search"
+    },
+    "ghana_web" => {
+      "ghanaweb_archive" => "ghanaweb-archive",
+      "ghanaweb_archive_months" => "ghanaweb-archive-months",
+      "ghanaweb_article" => "ghanaweb-article",
+      "ghanaweb_headlines" => "ghanaweb-headlines",
+      "ghanaweb_news" => "ghanaweb-news",
+      "ghanaweb_sections" => "ghanaweb-sections",
+      "ghanaweb_video" => "ghanaweb-video",
+      "ghanaweb_video_sections" => "ghanaweb-video-sections",
+      "ghanaweb_videos" => "ghanaweb-videos"
     },
     "git_hub" => {
       "github_org" => "github-org",
@@ -116092,6 +120141,9 @@ module Crawlora
       "hotels_reviews_archive" => "hotels-reviews-archive",
       "hotels_search" => "hotels-search"
     },
+    "how_to_geek" => {
+      "howtogeek_news" => "howtogeek-news"
+    },
     "huff_post" => {
       "huffpost_article" => "huffpost-article",
       "huffpost_author" => "huffpost-author",
@@ -116250,6 +120302,14 @@ module Crawlora
       "jcrew_size_chart" => "jcrew-size-chart",
       "jcrew_stores" => "jcrew-stores",
       "jcrew_suggest" => "jcrew-suggest"
+    },
+    "jerusalem_post" => {
+      "jerusalempost_article" => "jerusalempost-article",
+      "jerusalempost_author" => "jerusalempost-author",
+      "jerusalempost_authors" => "jerusalempost-authors",
+      "jerusalempost_headlines" => "jerusalempost-headlines",
+      "jerusalempost_news" => "jerusalempost-news",
+      "jerusalempost_sections" => "jerusalempost-sections"
     },
     "jimmy_johns" => {
       "menu" => "jimmy-johns-menu",
@@ -116459,6 +120519,7 @@ module Crawlora
     },
     "live_score" => {
       "livescore_competition" => "livescore-competition",
+      "livescore_competitions" => "livescore-competitions",
       "livescore_live_scores" => "livescore-live-scores",
       "livescore_match" => "livescore-match",
       "livescore_match_stats" => "livescore-match-stats",
@@ -116470,6 +120531,7 @@ module Crawlora
       "livescore_player" => "livescore-player",
       "livescore_scores" => "livescore-scores",
       "livescore_scores_toc" => "livescore-scores-toc",
+      "livescore_search" => "livescore-search",
       "livescore_sports" => "livescore-sports",
       "livescore_team" => "livescore-team"
     },
@@ -116528,6 +120590,13 @@ module Crawlora
       "headlines" => "mediaite-headlines",
       "news" => "mediaite-news",
       "sections" => "mediaite-sections"
+    },
+    "medical_news_today" => {
+      "medicalnewstoday_article" => "medicalnewstoday-article",
+      "medicalnewstoday_author" => "medicalnewstoday-author",
+      "medicalnewstoday_headlines" => "medicalnewstoday-headlines",
+      "medicalnewstoday_news" => "medicalnewstoday-news",
+      "medicalnewstoday_sections" => "medicalnewstoday-sections"
     },
     "manchester_evening_news" => {
       "men_article" => "men-article",
@@ -116604,18 +120673,29 @@ module Crawlora
       "sections" => "mirror-sections"
     },
     "mlb" => {
+      "discovery" => "mlb-discovery",
+      "editorial_feed" => "mlb-editorial-feed",
       "game" => "mlb-game",
       "game_boxscore" => "mlb-game-boxscore",
       "game_play_by_play" => "mlb-game-play-by-play",
+      "league_leaders" => "mlb-league-leaders",
       "league_stats" => "mlb-league-stats",
       "player" => "mlb-player",
       "player_stats" => "mlb-player-stats",
+      "prospect_stats" => "mlb-prospect-stats",
       "schedule" => "mlb-schedule",
+      "search" => "mlb-search",
       "standings" => "mlb-standings",
+      "statcast_expected" => "mlb-statcast-expected",
+      "statcast" => "mlb-statcast",
+      "statcast_oaa" => "mlb-statcast-oaa",
       "team_roster" => "mlb-team-roster",
       "team_stats" => "mlb-team-stats",
       "teams" => "mlb-teams",
       "transactions" => "mlb-transactions"
+    },
+    "mlive" => {
+      "news" => "mlive-news"
     },
     "moda_operandi" => {
       "modaoperandi_categories" => "modaoperandi-categories",
@@ -116646,6 +120726,13 @@ module Crawlora
       "update" => "monitors-update",
       "checks" => "monitors-checks"
     },
+    "the_motley_fool" => {
+      "motleyfool_article" => "motleyfool-article",
+      "motleyfool_author" => "motleyfool-author",
+      "motleyfool_headlines" => "motleyfool-headlines",
+      "motleyfool_news" => "motleyfool-news",
+      "motleyfool_sections" => "motleyfool-sections"
+    },
     "nation_africa" => {
       "nationafrica_article" => "nationafrica-article",
       "nationafrica_author" => "nationafrica-author",
@@ -116672,6 +120759,7 @@ module Crawlora
       "author" => "ndtv-author",
       "headlines" => "ndtv-headlines",
       "news" => "ndtv-news",
+      "search" => "ndtv-search",
       "sections" => "ndtv-sections"
     },
     "news18" => {
@@ -116732,6 +120820,9 @@ module Crawlora
       "headlines" => "ninetofivemac-headlines",
       "news" => "ninetofivemac-news",
       "sections" => "ninetofivemac-sections"
+    },
+    "nj_com" => {
+      "njcom_news" => "njcom-news"
     },
     "npr" => {
       "article" => "npr-article",
@@ -117091,6 +121182,9 @@ module Crawlora
       "quests" => "popeyes-quests",
       "rewards" => "popeyes-rewards"
     },
+    "popular_mechanics" => {
+      "popularmechanics_news" => "popularmechanics-news"
+    },
     "poshmark" => {
       "brand" => "poshmark-brand",
       "brands" => "poshmark-brands",
@@ -117328,7 +121422,13 @@ module Crawlora
       "rottentomatoes_browse_movies" => "rottentomatoes-browse-movies",
       "rottentomatoes_browse_tv" => "rottentomatoes-browse-tv",
       "rottentomatoes_critics_authors" => "rottentomatoes-critics-authors",
+      "rottentomatoes_editorial_content" => "rottentomatoes-editorial-content",
+      "rottentomatoes_editorial_detail" => "rottentomatoes-editorial-detail",
       "rottentomatoes_editorial_search" => "rottentomatoes-editorial-search",
+      "rottentomatoes_editorial_section" => "rottentomatoes-editorial-section",
+      "rottentomatoes_editorial_taxonomies" => "rottentomatoes-editorial-taxonomies",
+      "rottentomatoes_editorial_terms" => "rottentomatoes-editorial-terms",
+      "rottentomatoes_editorial_types" => "rottentomatoes-editorial-types",
       "rottentomatoes_episode" => "rottentomatoes-episode",
       "rottentomatoes_movie" => "rottentomatoes-movie",
       "rottentomatoes_movie_reviews" => "rottentomatoes-movie-reviews",
@@ -117365,6 +121465,20 @@ module Crawlora
       "samsclub_departments" => "samsclub-departments",
       "samsclub_product" => "samsclub-product",
       "samsclub_product_related" => "samsclub-product-related"
+    },
+    "sbs_news" => {
+      "sbsnews_article" => "sbsnews-article",
+      "sbsnews_author" => "sbsnews-author",
+      "sbsnews_headlines" => "sbsnews-headlines",
+      "sbsnews_news" => "sbsnews-news",
+      "sbsnews_sections" => "sbsnews-sections"
+    },
+    "science_alert" => {
+      "sciencealert_article" => "sciencealert-article",
+      "sciencealert_author" => "sciencealert-author",
+      "sciencealert_headlines" => "sciencealert-headlines",
+      "sciencealert_news" => "sciencealert-news",
+      "sciencealert_sections" => "sciencealert-sections"
     },
     "scmp" => {
       "article" => "scmp-article",
@@ -117509,6 +121623,13 @@ module Crawlora
       "skynews_video" => "skynews-video",
       "skynews_videos" => "skynews-videos"
     },
+    "sky_sports" => {
+      "skysports_article" => "skysports-article",
+      "skysports_author" => "skysports-author",
+      "skysports_headlines" => "skysports-headlines",
+      "skysports_news" => "skysports-news",
+      "skysports_sections" => "skysports-sections"
+    },
     "slate" => {
       "article" => "slate-article",
       "categories" => "slate-categories",
@@ -117599,6 +121720,29 @@ module Crawlora
       "sportingnews_news" => "sportingnews-news",
       "sportingnews_sections" => "sportingnews-sections"
     },
+    "sportskeeda" => {
+      "article" => "sportskeeda-article",
+      "author" => "sportskeeda-author",
+      "depth_chart" => "sportskeeda-depth-chart",
+      "feed" => "sportskeeda-feed",
+      "football_data" => "sportskeeda-football-data",
+      "football_options" => "sportskeeda-football-options",
+      "news" => "sportskeeda-news",
+      "page_data" => "sportskeeda-page-data",
+      "page_options" => "sportskeeda-page-options",
+      "player_stats" => "sportskeeda-player-stats",
+      "profile" => "sportskeeda-profile",
+      "schedule" => "sportskeeda-schedule",
+      "sections" => "sportskeeda-sections",
+      "sitemap_items" => "sportskeeda-sitemap-items",
+      "sitemaps" => "sportskeeda-sitemaps",
+      "standings" => "sportskeeda-standings",
+      "standings_options" => "sportskeeda-standings-options",
+      "taxonomy_search" => "sportskeeda-taxonomy-search",
+      "trade_values" => "sportskeeda-trade-values",
+      "video" => "sportskeeda-video",
+      "videos" => "sportskeeda-videos"
+    },
     "spotify_podcasts" => {
       "categories" => "spotify-podcasts-categories",
       "charts" => "spotify-podcasts-charts",
@@ -117654,6 +121798,9 @@ module Crawlora
       "product" => "starbucks-product",
       "nutrition" => "starbucks-nutrition",
       "stores" => "starbucks-stores"
+    },
+    "minnesota_star_tribune" => {
+      "startribune_news" => "startribune-news"
     },
     "steam" => {
       "achievements" => "steam-achievements",
@@ -118258,7 +122405,8 @@ module Crawlora
     "whatnot" => {
       "browse" => "whatnot-browse",
       "categories" => "whatnot-categories",
-      "live" => "whatnot-live"
+      "live" => "whatnot-live",
+      "seller" => "whatnot-seller"
     },
     "wingstop" => {
       "delivery_store" => "wingstop-delivery-store",
@@ -118508,7 +122656,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 3165
+  OPERATION_COUNT = 3275
 
   module OperationId
     ABC_NEWS_ABCNEWS_ARTICLE = "abcnews-article"
@@ -118554,6 +122702,9 @@ module Crawlora
     AIRBNB_ROOM_CALENDAR = "airbnb-room-calendar"
     AIRBNB_ROOM_REVIEWS = "airbnb-room-reviews"
     AIRBNB_SEARCH = "airbnb-search"
+    AL_COM_ALCOM_HEADLINES = "alcom-headlines"
+    AL_COM_ALCOM_NEWS = "alcom-news"
+    AL_COM_ALCOM_SECTIONS = "alcom-sections"
     AL_JAZEERA_ALJAZEERA_ARTICLE = "aljazeera-article"
     AL_JAZEERA_ALJAZEERA_AUTHOR = "aljazeera-author"
     AL_JAZEERA_ALJAZEERA_CATEGORIES = "aljazeera-categories"
@@ -118805,6 +122956,7 @@ module Crawlora
     BOOKING_SEARCH = "booking-search"
     BOOTS_SEARCH = "boots-search"
     BOOTS_SUGGEST = "boots-suggest"
+    BOSTON_GLOBE_BOSTONGLOBE_NEWS = "bostonglobe-news"
     BOX_OFFICE_MOJO_BOXOFFICEMOJO_BRAND = "boxofficemojo-brand"
     BOX_OFFICE_MOJO_BOXOFFICEMOJO_BRANDS = "boxofficemojo-brands"
     BOX_OFFICE_MOJO_BOXOFFICEMOJO_CALENDAR = "boxofficemojo-calendar"
@@ -118955,6 +123107,7 @@ module Crawlora
     CHRONO24_LISTING = "chrono24-listing"
     CHRONO24_MODELS = "chrono24-models"
     CHRONO24_SEARCH = "chrono24-search"
+    CLEVELAND_COM_CLEVELANDCOM_NEWS = "clevelandcom-news"
     CNA_ARTICLE = "cna-article"
     CNA_AUTHOR = "cna-author"
     CNA_HEADLINES = "cna-headlines"
@@ -119496,33 +123649,54 @@ module Crawlora
     FORTUNE_RANKING_LISTS = "fortune-ranking-lists"
     FORTUNE_RANKING_YEARS = "fortune-ranking-years"
     FORTUNE_SECTIONS = "fortune-sections"
+    FOT_MOB_FOTMOB_AUDIO_MATCHES = "fotmob-audio-matches"
+    FOT_MOB_FOTMOB_FIFA_RANKING_PERIODS = "fotmob-fifa-ranking-periods"
+    FOT_MOB_FOTMOB_FIFA_RANKINGS = "fotmob-fifa-rankings"
+    FOT_MOB_FOTMOB_LATEST_NEWS = "fotmob-latest-news"
     FOT_MOB_FOTMOB_LEAGUE = "fotmob-league"
     FOT_MOB_FOTMOB_LEAGUES = "fotmob-leagues"
+    FOT_MOB_FOTMOB_LINEUP_BUILDER_PLAYERS = "fotmob-lineup-builder-players"
+    FOT_MOB_FOTMOB_LINEUP_BUILDER_TEAM = "fotmob-lineup-builder-team"
     FOT_MOB_FOTMOB_MATCH = "fotmob-match"
+    FOT_MOB_FOTMOB_MATCH_MEDIA = "fotmob-match-media"
     FOT_MOB_FOTMOB_MATCHES = "fotmob-matches"
     FOT_MOB_FOTMOB_NEWS = "fotmob-news"
+    FOT_MOB_FOTMOB_NEWS_ARTICLE = "fotmob-news-article"
     FOT_MOB_FOTMOB_PLAYER = "fotmob-player"
     FOT_MOB_FOTMOB_PLAYER_MATCH_STATS = "fotmob-player-match-stats"
     FOT_MOB_FOTMOB_PLAYER_MATCHES = "fotmob-player-matches"
     FOT_MOB_FOTMOB_PLAYER_STATS = "fotmob-player-stats"
     FOT_MOB_FOTMOB_SEARCH = "fotmob-search"
+    FOT_MOB_FOTMOB_SEASONS = "fotmob-seasons"
     FOT_MOB_FOTMOB_STATS = "fotmob-stats"
     FOT_MOB_FOTMOB_STATS_CATEGORIES = "fotmob-stats-categories"
     FOT_MOB_FOTMOB_TABLE = "fotmob-table"
     FOT_MOB_FOTMOB_TEAM = "fotmob-team"
+    FOT_MOB_FOTMOB_TEAM_FIXTURES = "fotmob-team-fixtures"
     FOT_MOB_FOTMOB_TEAM_NEWS = "fotmob-team-news"
     FOT_MOB_FOTMOB_TRANSFERS = "fotmob-transfers"
+    FOT_MOB_FOTMOB_TRENDING_NEWS = "fotmob-trending-news"
+    FOT_MOB_FOTMOB_TRENDING_SEARCHES = "fotmob-trending-searches"
+    FOT_MOB_FOTMOB_TV_GUIDE = "fotmob-tv-guide"
+    FOT_MOB_FOTMOB_TV_GUIDE_CHANNELS = "fotmob-tv-guide-channels"
+    FOT_MOB_FOTMOB_TV_GUIDE_COUNTRIES = "fotmob-tv-guide-countries"
     FOX_NEWS_FOXNEWS_ARTICLE = "foxnews-article"
     FOX_NEWS_FOXNEWS_AUTHOR = "foxnews-author"
     FOX_NEWS_FOXNEWS_HEADLINES = "foxnews-headlines"
     FOX_NEWS_FOXNEWS_NEWS = "foxnews-news"
     FOX_NEWS_FOXNEWS_SEARCH = "foxnews-search"
     FOX_NEWS_FOXNEWS_SECTIONS = "foxnews-sections"
+    FOX_SPORTS_FOXSPORTS_ARTICLE = "foxsports-article"
+    FOX_SPORTS_FOXSPORTS_HEADLINES = "foxsports-headlines"
+    FOX_SPORTS_FOXSPORTS_NEWS = "foxsports-news"
+    FOX_SPORTS_FOXSPORTS_SECTIONS = "foxsports-sections"
     FRANCE24_FRANCE24_ARTICLE = "france24-article"
     FRANCE24_FRANCE24_AUTHOR = "france24-author"
     FRANCE24_FRANCE24_HEADLINES = "france24-headlines"
     FRANCE24_FRANCE24_NEWS = "france24-news"
     FRANCE24_FRANCE24_SECTIONS = "france24-sections"
+    FREE_MALAYSIA_TODAY_FREEMALAYSIATODAY_NEWS = "freemalaysiatoday-news"
+    FREE_MALAYSIA_TODAY_FREEMALAYSIATODAY_SECTIONS = "freemalaysiatoday-sections"
     FT_ARTICLE = "ft-article"
     FT_AUTHOR = "ft-author"
     FT_CATEGORIES = "ft-categories"
@@ -119559,6 +123733,15 @@ module Crawlora
     GEOCODING_LOOKUP = "geocoding-lookup"
     GEOCODING_REVERSE = "geocoding-reverse"
     GEOCODING_SEARCH = "geocoding-search"
+    GHANA_WEB_GHANAWEB_ARCHIVE = "ghanaweb-archive"
+    GHANA_WEB_GHANAWEB_ARCHIVE_MONTHS = "ghanaweb-archive-months"
+    GHANA_WEB_GHANAWEB_ARTICLE = "ghanaweb-article"
+    GHANA_WEB_GHANAWEB_HEADLINES = "ghanaweb-headlines"
+    GHANA_WEB_GHANAWEB_NEWS = "ghanaweb-news"
+    GHANA_WEB_GHANAWEB_SECTIONS = "ghanaweb-sections"
+    GHANA_WEB_GHANAWEB_VIDEO = "ghanaweb-video"
+    GHANA_WEB_GHANAWEB_VIDEO_SECTIONS = "ghanaweb-video-sections"
+    GHANA_WEB_GHANAWEB_VIDEOS = "ghanaweb-videos"
     GIT_HUB_GITHUB_ORG = "github-org"
     GIT_HUB_GITHUB_ORG_REPOS = "github-org-repos"
     GIT_HUB_GITHUB_REPO = "github-repo"
@@ -119774,6 +123957,7 @@ module Crawlora
     HOTELS_COM_HOTELS_REVIEWS = "hotels-reviews"
     HOTELS_COM_HOTELS_REVIEWS_ARCHIVE = "hotels-reviews-archive"
     HOTELS_COM_HOTELS_SEARCH = "hotels-search"
+    HOW_TO_GEEK_HOWTOGEEK_NEWS = "howtogeek-news"
     HUFF_POST_HUFFPOST_ARTICLE = "huffpost-article"
     HUFF_POST_HUFFPOST_AUTHOR = "huffpost-author"
     HUFF_POST_HUFFPOST_HEADLINES = "huffpost-headlines"
@@ -119880,6 +124064,12 @@ module Crawlora
     JCREW_JCREW_SIZE_CHART = "jcrew-size-chart"
     JCREW_JCREW_STORES = "jcrew-stores"
     JCREW_JCREW_SUGGEST = "jcrew-suggest"
+    JERUSALEM_POST_JERUSALEMPOST_ARTICLE = "jerusalempost-article"
+    JERUSALEM_POST_JERUSALEMPOST_AUTHOR = "jerusalempost-author"
+    JERUSALEM_POST_JERUSALEMPOST_AUTHORS = "jerusalempost-authors"
+    JERUSALEM_POST_JERUSALEMPOST_HEADLINES = "jerusalempost-headlines"
+    JERUSALEM_POST_JERUSALEMPOST_NEWS = "jerusalempost-news"
+    JERUSALEM_POST_JERUSALEMPOST_SECTIONS = "jerusalempost-sections"
     JIMMY_JOHNS_MENU = "jimmy-johns-menu"
     JIMMY_JOHNS_MODIFIERS = "jimmy-johns-modifiers"
     JIMMY_JOHNS_NEARBY = "jimmy-johns-nearby"
@@ -120033,6 +124223,7 @@ module Crawlora
     LIVE_SCIENCE_LIVESCIENCE_NEWS = "livescience-news"
     LIVE_SCIENCE_LIVESCIENCE_SECTIONS = "livescience-sections"
     LIVE_SCORE_LIVESCORE_COMPETITION = "livescore-competition"
+    LIVE_SCORE_LIVESCORE_COMPETITIONS = "livescore-competitions"
     LIVE_SCORE_LIVESCORE_LIVE_SCORES = "livescore-live-scores"
     LIVE_SCORE_LIVESCORE_MATCH = "livescore-match"
     LIVE_SCORE_LIVESCORE_MATCH_STATS = "livescore-match-stats"
@@ -120044,6 +124235,7 @@ module Crawlora
     LIVE_SCORE_LIVESCORE_PLAYER = "livescore-player"
     LIVE_SCORE_LIVESCORE_SCORES = "livescore-scores"
     LIVE_SCORE_LIVESCORE_SCORES_TOC = "livescore-scores-toc"
+    LIVE_SCORE_LIVESCORE_SEARCH = "livescore-search"
     LIVE_SCORE_LIVESCORE_SPORTS = "livescore-sports"
     LIVE_SCORE_LIVESCORE_TEAM = "livescore-team"
     LIVERPOOL_ECHO_LIVERPOOLECHO_ARTICLE = "liverpoolecho-article"
@@ -120100,6 +124292,11 @@ module Crawlora
     MEDIAITE_HEADLINES = "mediaite-headlines"
     MEDIAITE_NEWS = "mediaite-news"
     MEDIAITE_SECTIONS = "mediaite-sections"
+    MEDICAL_NEWS_TODAY_MEDICALNEWSTODAY_ARTICLE = "medicalnewstoday-article"
+    MEDICAL_NEWS_TODAY_MEDICALNEWSTODAY_AUTHOR = "medicalnewstoday-author"
+    MEDICAL_NEWS_TODAY_MEDICALNEWSTODAY_HEADLINES = "medicalnewstoday-headlines"
+    MEDICAL_NEWS_TODAY_MEDICALNEWSTODAY_NEWS = "medicalnewstoday-news"
+    MEDICAL_NEWS_TODAY_MEDICALNEWSTODAY_SECTIONS = "medicalnewstoday-sections"
     MERCARI_AUTOCOMPLETE = "mercari-autocomplete"
     MERCARI_HOME = "mercari-home"
     MERCARI_ITEM = "mercari-item"
@@ -120150,6 +124347,7 @@ module Crawlora
     MICROSOFT_STORE_MICROSOFTSTORE_SEARCH = "microsoftstore-search"
     MICROSOFT_STORE_MICROSOFTSTORE_SPOTLIGHT = "microsoftstore-spotlight"
     MICROSOFT_STORE_MICROSOFTSTORE_SUGGEST = "microsoftstore-suggest"
+    MINNESOTA_STAR_TRIBUNE_STARTRIBUNE_NEWS = "startribune-news"
     MINT_LIVEMINT_ARTICLE = "livemint-article"
     MINT_LIVEMINT_AUTHOR = "livemint-author"
     MINT_LIVEMINT_HEADLINES = "livemint-headlines"
@@ -120165,18 +124363,27 @@ module Crawlora
     MIT_SLOAN_MANAGEMENT_REVIEW_SLOANREVIEW_CATEGORIES = "sloanreview-categories"
     MIT_SLOAN_MANAGEMENT_REVIEW_SLOANREVIEW_HEADLINES = "sloanreview-headlines"
     MIT_SLOAN_MANAGEMENT_REVIEW_SLOANREVIEW_TOPIC = "sloanreview-topic"
+    MLB_DISCOVERY = "mlb-discovery"
+    MLB_EDITORIAL_FEED = "mlb-editorial-feed"
     MLB_GAME = "mlb-game"
     MLB_GAME_BOXSCORE = "mlb-game-boxscore"
     MLB_GAME_PLAY_BY_PLAY = "mlb-game-play-by-play"
+    MLB_LEAGUE_LEADERS = "mlb-league-leaders"
     MLB_LEAGUE_STATS = "mlb-league-stats"
     MLB_PLAYER = "mlb-player"
     MLB_PLAYER_STATS = "mlb-player-stats"
+    MLB_PROSPECT_STATS = "mlb-prospect-stats"
     MLB_SCHEDULE = "mlb-schedule"
+    MLB_SEARCH = "mlb-search"
     MLB_STANDINGS = "mlb-standings"
+    MLB_STATCAST = "mlb-statcast"
+    MLB_STATCAST_EXPECTED = "mlb-statcast-expected"
+    MLB_STATCAST_OAA = "mlb-statcast-oaa"
     MLB_TEAM_ROSTER = "mlb-team-roster"
     MLB_TEAM_STATS = "mlb-team-stats"
     MLB_TEAMS = "mlb-teams"
     MLB_TRANSACTIONS = "mlb-transactions"
+    MLIVE_NEWS = "mlive-news"
     MODA_OPERANDI_MODAOPERANDI_CATEGORIES = "modaoperandi-categories"
     MODA_OPERANDI_MODAOPERANDI_DESIGNERS = "modaoperandi-designers"
     MODA_OPERANDI_MODAOPERANDI_PRODUCT = "modaoperandi-product"
@@ -120217,6 +124424,7 @@ module Crawlora
     NDTV_AUTHOR = "ndtv-author"
     NDTV_HEADLINES = "ndtv-headlines"
     NDTV_NEWS = "ndtv-news"
+    NDTV_SEARCH = "ndtv-search"
     NDTV_SECTIONS = "ndtv-sections"
     NEW_YORK_DAILY_NEWS_NYDAILYNEWS_ARTICLE = "nydailynews-article"
     NEW_YORK_DAILY_NEWS_NYDAILYNEWS_AUTHOR = "nydailynews-author"
@@ -120276,6 +124484,7 @@ module Crawlora
     NINE_TO_FIVE_MAC_HEADLINES = "ninetofivemac-headlines"
     NINE_TO_FIVE_MAC_NEWS = "ninetofivemac-news"
     NINE_TO_FIVE_MAC_SECTIONS = "ninetofivemac-sections"
+    NJ_COM_NJCOM_NEWS = "njcom-news"
     NPR_ARTICLE = "npr-article"
     NPR_AUTHOR = "npr-author"
     NPR_CATEGORIES = "npr-categories"
@@ -120553,6 +124762,7 @@ module Crawlora
     POPEYES_PROMOTIONS = "popeyes-promotions"
     POPEYES_QUESTS = "popeyes-quests"
     POPEYES_REWARDS = "popeyes-rewards"
+    POPULAR_MECHANICS_POPULARMECHANICS_NEWS = "popularmechanics-news"
     POSHMARK_BRAND = "poshmark-brand"
     POSHMARK_BRANDS = "poshmark-brands"
     POSHMARK_CATEGORIES = "poshmark-categories"
@@ -120741,7 +124951,13 @@ module Crawlora
     ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_MOVIES = "rottentomatoes-browse-movies"
     ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_TV = "rottentomatoes-browse-tv"
     ROTTEN_TOMATOES_ROTTENTOMATOES_CRITICS_AUTHORS = "rottentomatoes-critics-authors"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_EDITORIAL_CONTENT = "rottentomatoes-editorial-content"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_EDITORIAL_DETAIL = "rottentomatoes-editorial-detail"
     ROTTEN_TOMATOES_ROTTENTOMATOES_EDITORIAL_SEARCH = "rottentomatoes-editorial-search"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_EDITORIAL_SECTION = "rottentomatoes-editorial-section"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_EDITORIAL_TAXONOMIES = "rottentomatoes-editorial-taxonomies"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_EDITORIAL_TERMS = "rottentomatoes-editorial-terms"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_EDITORIAL_TYPES = "rottentomatoes-editorial-types"
     ROTTEN_TOMATOES_ROTTENTOMATOES_EPISODE = "rottentomatoes-episode"
     ROTTEN_TOMATOES_ROTTENTOMATOES_MOVIE = "rottentomatoes-movie"
     ROTTEN_TOMATOES_ROTTENTOMATOES_MOVIE_REVIEWS = "rottentomatoes-movie-reviews"
@@ -120770,6 +124986,16 @@ module Crawlora
     SAM_SCLUB_SAMSCLUB_DEPARTMENTS = "samsclub-departments"
     SAM_SCLUB_SAMSCLUB_PRODUCT = "samsclub-product"
     SAM_SCLUB_SAMSCLUB_PRODUCT_RELATED = "samsclub-product-related"
+    SBS_NEWS_SBSNEWS_ARTICLE = "sbsnews-article"
+    SBS_NEWS_SBSNEWS_AUTHOR = "sbsnews-author"
+    SBS_NEWS_SBSNEWS_HEADLINES = "sbsnews-headlines"
+    SBS_NEWS_SBSNEWS_NEWS = "sbsnews-news"
+    SBS_NEWS_SBSNEWS_SECTIONS = "sbsnews-sections"
+    SCIENCE_ALERT_SCIENCEALERT_ARTICLE = "sciencealert-article"
+    SCIENCE_ALERT_SCIENCEALERT_AUTHOR = "sciencealert-author"
+    SCIENCE_ALERT_SCIENCEALERT_HEADLINES = "sciencealert-headlines"
+    SCIENCE_ALERT_SCIENCEALERT_NEWS = "sciencealert-news"
+    SCIENCE_ALERT_SCIENCEALERT_SECTIONS = "sciencealert-sections"
     SCMP_ARTICLE = "scmp-article"
     SCMP_AUTHOR = "scmp-author"
     SCMP_HEADLINES = "scmp-headlines"
@@ -120896,6 +125122,11 @@ module Crawlora
     SKY_NEWS_SKYNEWS_SECTIONS = "skynews-sections"
     SKY_NEWS_SKYNEWS_VIDEO = "skynews-video"
     SKY_NEWS_SKYNEWS_VIDEOS = "skynews-videos"
+    SKY_SPORTS_SKYSPORTS_ARTICLE = "skysports-article"
+    SKY_SPORTS_SKYSPORTS_AUTHOR = "skysports-author"
+    SKY_SPORTS_SKYSPORTS_HEADLINES = "skysports-headlines"
+    SKY_SPORTS_SKYSPORTS_NEWS = "skysports-news"
+    SKY_SPORTS_SKYSPORTS_SECTIONS = "skysports-sections"
     SLATE_ARTICLE = "slate-article"
     SLATE_CATEGORIES = "slate-categories"
     SLATE_HEADLINES = "slate-headlines"
@@ -120956,6 +125187,27 @@ module Crawlora
     SPORTING_NEWS_SPORTINGNEWS_HEADLINES = "sportingnews-headlines"
     SPORTING_NEWS_SPORTINGNEWS_NEWS = "sportingnews-news"
     SPORTING_NEWS_SPORTINGNEWS_SECTIONS = "sportingnews-sections"
+    SPORTSKEEDA_ARTICLE = "sportskeeda-article"
+    SPORTSKEEDA_AUTHOR = "sportskeeda-author"
+    SPORTSKEEDA_DEPTH_CHART = "sportskeeda-depth-chart"
+    SPORTSKEEDA_FEED = "sportskeeda-feed"
+    SPORTSKEEDA_FOOTBALL_DATA = "sportskeeda-football-data"
+    SPORTSKEEDA_FOOTBALL_OPTIONS = "sportskeeda-football-options"
+    SPORTSKEEDA_NEWS = "sportskeeda-news"
+    SPORTSKEEDA_PAGE_DATA = "sportskeeda-page-data"
+    SPORTSKEEDA_PAGE_OPTIONS = "sportskeeda-page-options"
+    SPORTSKEEDA_PLAYER_STATS = "sportskeeda-player-stats"
+    SPORTSKEEDA_PROFILE = "sportskeeda-profile"
+    SPORTSKEEDA_SCHEDULE = "sportskeeda-schedule"
+    SPORTSKEEDA_SECTIONS = "sportskeeda-sections"
+    SPORTSKEEDA_SITEMAP_ITEMS = "sportskeeda-sitemap-items"
+    SPORTSKEEDA_SITEMAPS = "sportskeeda-sitemaps"
+    SPORTSKEEDA_STANDINGS = "sportskeeda-standings"
+    SPORTSKEEDA_STANDINGS_OPTIONS = "sportskeeda-standings-options"
+    SPORTSKEEDA_TAXONOMY_SEARCH = "sportskeeda-taxonomy-search"
+    SPORTSKEEDA_TRADE_VALUES = "sportskeeda-trade-values"
+    SPORTSKEEDA_VIDEO = "sportskeeda-video"
+    SPORTSKEEDA_VIDEOS = "sportskeeda-videos"
     SPOTIFY_ALBUM = "spotify-album"
     SPOTIFY_ALBUM_TRACKS = "spotify-album-tracks"
     SPOTIFY_ALBUMS_SEARCH = "spotify-albums-search"
@@ -121175,6 +125427,11 @@ module Crawlora
     THE_JOURNAL_IE_THEJOURNAL_HEADLINES = "thejournal-headlines"
     THE_JOURNAL_IE_THEJOURNAL_NEWS = "thejournal-news"
     THE_JOURNAL_IE_THEJOURNAL_SECTIONS = "thejournal-sections"
+    THE_MOTLEY_FOOL_MOTLEYFOOL_ARTICLE = "motleyfool-article"
+    THE_MOTLEY_FOOL_MOTLEYFOOL_AUTHOR = "motleyfool-author"
+    THE_MOTLEY_FOOL_MOTLEYFOOL_HEADLINES = "motleyfool-headlines"
+    THE_MOTLEY_FOOL_MOTLEYFOOL_NEWS = "motleyfool-news"
+    THE_MOTLEY_FOOL_MOTLEYFOOL_SECTIONS = "motleyfool-sections"
     THE_NEW_YORKER_NEWYORKER_ARTICLE = "newyorker-article"
     THE_NEW_YORKER_NEWYORKER_AUTHOR = "newyorker-author"
     THE_NEW_YORKER_NEWYORKER_HEADLINES = "newyorker-headlines"
@@ -121488,6 +125745,7 @@ module Crawlora
     WHATNOT_BROWSE = "whatnot-browse"
     WHATNOT_CATEGORIES = "whatnot-categories"
     WHATNOT_LIVE = "whatnot-live"
+    WHATNOT_SELLER = "whatnot-seller"
     WINGSTOP_DELIVERY_STORE = "wingstop-delivery-store"
     WINGSTOP_DIRECTORY = "wingstop-directory"
     WINGSTOP_FLAVORS = "wingstop-flavors"
