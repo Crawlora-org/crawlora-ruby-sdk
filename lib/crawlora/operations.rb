@@ -2058,6 +2058,132 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "aliexpress-reviews" => {
+      "id" => "aliexpress-reviews",
+      "method" => "GET",
+      "path" => "/aliexpress/reviews",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "product_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "aliexpress-search" => {
+      "id" => "aliexpress-search",
+      "method" => "GET",
+      "path" => "/aliexpress/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "best_match",
+            "orders",
+            "price_asc",
+            "price_desc"
+          ]
+        },
+        {
+          "name" => "min_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "free_shipping",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "choice",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "attr",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "aliexpress-search-filters" => {
+      "id" => "aliexpress-search-filters",
+      "method" => "GET",
+      "path" => "/aliexpress/search-filters",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "aljazeera-article" => {
       "id" => "aljazeera-article",
       "method" => "GET",
@@ -3440,6 +3566,132 @@ module Crawlora
       "id" => "androidauthority-sections",
       "method" => "GET",
       "path" => "/androidauthority/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "androidpolice-article" => {
+      "id" => "androidpolice-article",
+      "method" => "GET",
+      "path" => "/androidpolice/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "androidpolice-author" => {
+      "id" => "androidpolice-author",
+      "method" => "GET",
+      "path" => "/androidpolice/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "androidpolice-headlines" => {
+      "id" => "androidpolice-headlines",
+      "method" => "GET",
+      "path" => "/androidpolice/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "news",
+            "phones",
+            "tablets",
+            "gadgets",
+            "accessories",
+            "apps",
+            "entertainment",
+            "productivity",
+            "utilities",
+            "ai-machine-learning",
+            "operating-systems",
+            "wearables",
+            "smart-home",
+            "smart-tv",
+            "carriers",
+            "deals",
+            "videos",
+            "awards"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "androidpolice-news" => {
+      "id" => "androidpolice-news",
+      "method" => "GET",
+      "path" => "/androidpolice/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "androidpolice-sections" => {
+      "id" => "androidpolice-sections",
+      "method" => "GET",
+      "path" => "/androidpolice/sections",
       "pathParams" => [],
       "queryParams" => [],
       "formParams" => [],
@@ -5912,6 +6164,100 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "appstore-collection" => {
+      "id" => "appstore-collection",
+      "method" => "GET",
+      "path" => "/appstore/collection",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "platform",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "iphone",
+            "ipad",
+            "mac",
+            "vision",
+            "watch",
+            "tv"
+          ]
+        },
+        {
+          "name" => "collection_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "appstore-collections" => {
+      "id" => "appstore-collections",
+      "method" => "GET",
+      "path" => "/appstore/collections",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "platform",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "iphone",
+            "ipad",
+            "mac",
+            "vision",
+            "watch",
+            "tv"
+          ]
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "appstore-developer" => {
       "id" => "appstore-developer",
       "method" => "GET",
@@ -8082,6 +8428,118 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "benzinga-article" => {
+      "id" => "benzinga-article",
+      "method" => "GET",
+      "path" => "/benzinga/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "benzinga-headlines" => {
+      "id" => "benzinga-headlines",
+      "method" => "GET",
+      "path" => "/benzinga/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "latest",
+            "technology-stocks",
+            "politics",
+            "health-care"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "benzinga-news" => {
+      "id" => "benzinga-news",
+      "method" => "GET",
+      "path" => "/benzinga/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "benzinga-search" => {
+      "id" => "benzinga-search",
+      "method" => "GET",
+      "path" => "/benzinga/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "benzinga-sections" => {
+      "id" => "benzinga-sections",
+      "method" => "GET",
+      "path" => "/benzinga/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "bestbuy-brands" => {
       "id" => "bestbuy-brands",
@@ -12334,6 +12792,218 @@ module Crawlora
       "id" => "breitbart-sections",
       "method" => "GET",
       "path" => "/breitbart/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "brisbanetimes-article" => {
+      "id" => "brisbanetimes-article",
+      "method" => "GET",
+      "path" => "/brisbanetimes/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "brisbanetimes-author" => {
+      "id" => "brisbanetimes-author",
+      "method" => "GET",
+      "path" => "/brisbanetimes/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "brisbanetimes-headlines" => {
+      "id" => "brisbanetimes-headlines",
+      "method" => "GET",
+      "path" => "/brisbanetimes/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "national/queensland",
+            "politics",
+            "business",
+            "world",
+            "goodfood",
+            "lifestyle",
+            "traveller",
+            "sport",
+            "brisbane-news",
+            "politics/federal",
+            "politics/queensland",
+            "politics/nsw",
+            "politics/victoria",
+            "politics/western-australia",
+            "business/companies",
+            "business/markets",
+            "business/bullsnbears",
+            "business/the-economy",
+            "business/banking-and-finance",
+            "business/small-business",
+            "business/workplace",
+            "world/north-america",
+            "world/europe",
+            "world/asia",
+            "world/middle-east",
+            "world/south-america",
+            "world/africa",
+            "national",
+            "national/nsw",
+            "national/victoria",
+            "national/western-australia",
+            "opinion",
+            "property",
+            "property/news",
+            "property/living",
+            "sport/nrl",
+            "sport/rugby-union",
+            "sport/afl",
+            "sport/cricket",
+            "sport/soccer",
+            "sport/racing",
+            "sport/tennis",
+            "sport/netball",
+            "sport/basketball",
+            "sport/motorsport",
+            "sport/golf",
+            "sport/nfl",
+            "sport/athletics",
+            "sport/swimming",
+            "sport/boxing",
+            "goodfood/recipes",
+            "goodfood/tips-and-advice",
+            "goodfood/brisbane-eating-out",
+            "goodfood/drinks",
+            "culture",
+            "culture/movies",
+            "culture/tv-and-radio",
+            "culture/music",
+            "culture/celebrity",
+            "culture/books",
+            "culture/comedy",
+            "culture/dance",
+            "culture/musicals",
+            "culture/opera",
+            "culture/theatre",
+            "culture/art-and-design",
+            "culture/live-reviews",
+            "lifestyle/health-and-wellness",
+            "lifestyle/fashion",
+            "lifestyle/life-and-relationships",
+            "lifestyle/beauty",
+            "traveller/inspiration/destination-guides",
+            "traveller/inspiration",
+            "traveller/reviews-and-advice",
+            "traveller/travel-news",
+            "good-weekend",
+            "sunday-life",
+            "money",
+            "money/super-and-retirement",
+            "money/investing",
+            "money/banking",
+            "money/borrowing",
+            "money/saving",
+            "money/tax",
+            "money/planning-and-budgeting",
+            "education",
+            "healthcare",
+            "environment",
+            "environment/conservation",
+            "environment/climate-change",
+            "environment/sustainability",
+            "environment/weather",
+            "technology",
+            "technology/video-games",
+            "australia-higher-education",
+            "topic/media-and-marketing-5z7",
+            "topic/auctions-1nq1",
+            "topic/financing-1nq2",
+            "topic/style-luxury-1nij",
+            "topic/horoscopes-5yc",
+            "topic/home-technology-hqq",
+            "topic/phones-5zt",
+            "topic/gadgets-hqp",
+            "topic/explainers-1lz9"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "brisbanetimes-news" => {
+      "id" => "brisbanetimes-news",
+      "method" => "GET",
+      "path" => "/brisbanetimes/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "brisbanetimes-sections" => {
+      "id" => "brisbanetimes-sections",
+      "method" => "GET",
+      "path" => "/brisbanetimes/sections",
       "pathParams" => [],
       "queryParams" => [],
       "formParams" => [],
@@ -21266,6 +21936,114 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "dailykos-article" => {
+      "id" => "dailykos-article",
+      "method" => "GET",
+      "path" => "/dailykos/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "dailykos-headlines" => {
+      "id" => "dailykos-headlines",
+      "method" => "GET",
+      "path" => "/dailykos/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "announcements",
+            "cartoon",
+            "daily-kos",
+            "partnerhub",
+            "news",
+            "news/business-and-economy",
+            "news/congress",
+            "news/courts",
+            "news/culture",
+            "news/elections",
+            "news/environment",
+            "news/health",
+            "news/immigration",
+            "news/justice",
+            "news/media",
+            "news/media-and-culture",
+            "news/national",
+            "news/science",
+            "news/series",
+            "news/stateandlocal",
+            "news/tech",
+            "news/videos",
+            "news/whitehouse",
+            "news/world"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "dailykos-news" => {
+      "id" => "dailykos-news",
+      "method" => "GET",
+      "path" => "/dailykos/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "dailykos-sections" => {
+      "id" => "dailykos-sections",
+      "method" => "GET",
+      "path" => "/dailykos/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "dailymail-article" => {
       "id" => "dailymail-article",
       "method" => "GET",
@@ -21379,6 +22157,141 @@ module Crawlora
       "id" => "dailymail-sections",
       "method" => "GET",
       "path" => "/dailymail/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "dailymaverick-article" => {
+      "id" => "dailymaverick-article",
+      "method" => "GET",
+      "path" => "/dailymaverick/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "dailymaverick-headlines" => {
+      "id" => "dailymaverick-headlines",
+      "method" => "GET",
+      "path" => "/dailymaverick/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "2019-elections",
+            "2019-rugby-world-cup",
+            "africa",
+            "analysis",
+            "articles",
+            "blog",
+            "books",
+            "business-maverick",
+            "cartoons",
+            "companies",
+            "covid-19",
+            "crypto",
+            "culture",
+            "declassified-uk",
+            "dm168",
+            "economy",
+            "editorial",
+            "elections",
+            "fifa-world-cup-2026",
+            "international-finance",
+            "johannesburg",
+            "magazine",
+            "maverick-citizen",
+            "maverick-earth",
+            "maverick-insider",
+            "maverick-life",
+            "maverick-news",
+            "media",
+            "mining",
+            "motoring",
+            "multimedia",
+            "nelson-mandela-bay",
+            "op-eds",
+            "open-secrets",
+            "opinionistas",
+            "partner-content",
+            "people-of-the-year",
+            "personal-finance",
+            "podcasts",
+            "politics",
+            "sci-tech",
+            "scorpio",
+            "south-africa",
+            "sponsored-content",
+            "sport",
+            "tgifood",
+            "ukraine-crisis",
+            "webinars",
+            "weekend-wrap",
+            "world",
+            "world-cup-2018"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "dailymaverick-news" => {
+      "id" => "dailymaverick-news",
+      "method" => "GET",
+      "path" => "/dailymaverick/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "dailymaverick-sections" => {
+      "id" => "dailymaverick-sections",
+      "method" => "GET",
+      "path" => "/dailymaverick/sections",
       "pathParams" => [],
       "queryParams" => [],
       "formParams" => [],
@@ -23573,6 +24486,292 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "datasets-doordash-stores-facets" => {
+      "id" => "datasets-doordash-stores-facets",
+      "method" => "GET",
+      "path" => "/datasets/doordash-stores/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "country",
+            "state",
+            "city",
+            "tags",
+            "display_status",
+            "price_range",
+            "dash_pass_eligible"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tag",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "dash_pass_only",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-doordash-stores-item" => {
+      "id" => "datasets-doordash-stores-item",
+      "method" => "GET",
+      "path" => "/datasets/doordash-stores/items/{store_id}",
+      "pathParams" => [
+        "store_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-doordash-stores-nearby" => {
+      "id" => "datasets-doordash-stores-nearby",
+      "method" => "GET",
+      "path" => "/datasets/doordash-stores/nearby",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "lat",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "lon",
+          "in" => "query",
+          "type" => "number",
+          "required" => true
+        },
+        {
+          "name" => "radius_m",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tag",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "dash_pass_only",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "pagination",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "offset",
+            "cursor"
+          ]
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "datasets-doordash-stores-search" => {
+      "id" => "datasets-doordash-stores-search",
+      "method" => "GET",
+      "path" => "/datasets/doordash-stores/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tag",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "dash_pass_only",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_price",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_price",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "lat",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "lon",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "radius_m",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "rating",
+            "distance",
+            "distance_asc"
+          ]
+        },
+        {
+          "name" => "pagination",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "offset",
+            "cursor"
+          ]
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
     },
     "datasets-facebook-pages-facets" => {
       "id" => "datasets-facebook-pages-facets",
@@ -32030,6 +33229,193 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "denverpost-article" => {
+      "id" => "denverpost-article",
+      "method" => "GET",
+      "path" => "/denverpost/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "denverpost-author" => {
+      "id" => "denverpost-author",
+      "method" => "GET",
+      "path" => "/denverpost/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "denverpost-headlines" => {
+      "id" => "denverpost-headlines",
+      "method" => "GET",
+      "path" => "/denverpost/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "news",
+            "latest-headlines",
+            "colorado",
+            "politics",
+            "crime-public-safety",
+            "courts",
+            "national",
+            "world",
+            "education",
+            "health",
+            "environment",
+            "transportation",
+            "housing",
+            "news-obituaries",
+            "photos-and-videos",
+            "weather",
+            "sports",
+            "sports-columnists",
+            "denver-broncos",
+            "colorado-rockies",
+            "denver-nuggets",
+            "colorado-avalanche",
+            "colorado-rapids",
+            "denver-summit-fc",
+            "college",
+            "colorado-preps",
+            "betting",
+            "golf",
+            "boxing-mma",
+            "sports-podcasts",
+            "business",
+            "colorado-real-estate",
+            "airlines",
+            "economy",
+            "energy",
+            "retail",
+            "colorado-technology",
+            "best-reviews",
+            "theknow",
+            "restaurants-food-drink",
+            "arts",
+            "culture",
+            "movies",
+            "television",
+            "music",
+            "theater",
+            "travel",
+            "parenting-family",
+            "bars",
+            "beer",
+            "outdoors",
+            "hiking",
+            "fall-colors",
+            "cycling",
+            "fitness",
+            "running",
+            "camping",
+            "fishing",
+            "hunting",
+            "water-sports",
+            "skiing",
+            "snowboarding",
+            "winter-sports",
+            "opinion",
+            "editorials",
+            "opinion-columnists",
+            "letters",
+            "endorsements",
+            "things-to-do",
+            "horoscopes",
+            "advice",
+            "home-garden",
+            "free-and-cheap",
+            "cannabis",
+            "recipes"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "denverpost-news" => {
+      "id" => "denverpost-news",
+      "method" => "GET",
+      "path" => "/denverpost/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "denverpost-sections" => {
+      "id" => "denverpost-sections",
+      "method" => "GET",
+      "path" => "/denverpost/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "depop-brands" => {
       "id" => "depop-brands",
       "method" => "GET",
@@ -36350,6 +37736,153 @@ module Crawlora
       "consumes" => [
         "application/json"
       ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "expresstribune-article" => {
+      "id" => "expresstribune-article",
+      "method" => "GET",
+      "path" => "/expresstribune/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "expresstribune-author" => {
+      "id" => "expresstribune-author",
+      "method" => "GET",
+      "path" => "/expresstribune/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "expresstribune-headlines" => {
+      "id" => "expresstribune-headlines",
+      "method" => "GET",
+      "path" => "/expresstribune/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "home",
+            "latest",
+            "analysis",
+            "politics",
+            "cricket",
+            "movies",
+            "health",
+            "style",
+            "pakistan",
+            "sindh",
+            "punjab",
+            "balochistan",
+            "khyber-pakhtunkhwa",
+            "jammu-kashmir",
+            "gilgit-baltistan",
+            "business",
+            "world",
+            "sports",
+            "technology",
+            "games",
+            "gadget",
+            "life-style",
+            "art-books",
+            "music",
+            "film",
+            "fashion",
+            "gossip",
+            "tv",
+            "theatre",
+            "entertainment",
+            "opinion",
+            "editorial",
+            "blogs"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "expresstribune-news" => {
+      "id" => "expresstribune-news",
+      "method" => "GET",
+      "path" => "/expresstribune/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "expresstribune-sections" => {
+      "id" => "expresstribune-sections",
+      "method" => "GET",
+      "path" => "/expresstribune/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
       "produces" => [
         "application/json"
       ],
@@ -46655,6 +48188,622 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "goodrx-answer" => {
+      "id" => "goodrx-answer",
+      "method" => "GET",
+      "path" => "/goodrx/answer",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-answers" => {
+      "id" => "goodrx-answers",
+      "method" => "GET",
+      "path" => "/goodrx/answers",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-brands" => {
+      "id" => "goodrx-brands",
+      "method" => "GET",
+      "path" => "/goodrx/brands",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-class" => {
+      "id" => "goodrx-class",
+      "method" => "GET",
+      "path" => "/goodrx/class",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-classes" => {
+      "id" => "goodrx-classes",
+      "method" => "GET",
+      "path" => "/goodrx/classes",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-comparison" => {
+      "id" => "goodrx-comparison",
+      "method" => "GET",
+      "path" => "/goodrx/comparison",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-comparisons" => {
+      "id" => "goodrx-comparisons",
+      "method" => "GET",
+      "path" => "/goodrx/comparisons",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-condition" => {
+      "id" => "goodrx-condition",
+      "method" => "GET",
+      "path" => "/goodrx/condition",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-condition-drugs" => {
+      "id" => "goodrx-condition-drugs",
+      "method" => "GET",
+      "path" => "/goodrx/condition-drugs",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-conditions" => {
+      "id" => "goodrx-conditions",
+      "method" => "GET",
+      "path" => "/goodrx/conditions",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-drug-guide" => {
+      "id" => "goodrx-drug-guide",
+      "method" => "GET",
+      "path" => "/goodrx/drug-guide",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "topic",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "side-effects",
+            "dosage",
+            "interactions"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-drug-guides" => {
+      "id" => "goodrx-drug-guides",
+      "method" => "GET",
+      "path" => "/goodrx/drug-guides",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "topic",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "side-effects",
+            "dosage",
+            "interactions"
+          ]
+        },
+        {
+          "name" => "letter",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-drug-info" => {
+      "id" => "goodrx-drug-info",
+      "method" => "GET",
+      "path" => "/goodrx/drug-info",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "audience",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "people",
+            "pets"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-drug-options" => {
+      "id" => "goodrx-drug-options",
+      "method" => "GET",
+      "path" => "/goodrx/drug-options",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-drug-prices" => {
+      "id" => "goodrx-drug-prices",
+      "method" => "GET",
+      "path" => "/goodrx/drug-prices",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "label",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "form",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "dosage",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "quantity",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "zip_code",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-drugs" => {
+      "id" => "goodrx-drugs",
+      "method" => "GET",
+      "path" => "/goodrx/drugs",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "letter",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h",
+            "i",
+            "j",
+            "k",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "q",
+            "r",
+            "s",
+            "t",
+            "u",
+            "v",
+            "w",
+            "x",
+            "y",
+            "z"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-health-article" => {
+      "id" => "goodrx-health-article",
+      "method" => "GET",
+      "path" => "/goodrx/health-article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-health-articles" => {
+      "id" => "goodrx-health-articles",
+      "method" => "GET",
+      "path" => "/goodrx/health-articles",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "conditions",
+            "health-topic",
+            "well-being",
+            "pet-health",
+            "insurance",
+            "classes",
+            "drugs",
+            "healthcare-access",
+            "corporate",
+            "hcp",
+            "drug"
+          ]
+        },
+        {
+          "name" => "topic",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "goodrx-health-topics" => {
+      "id" => "goodrx-health-topics",
+      "method" => "GET",
+      "path" => "/goodrx/health-topics",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "conditions",
+            "health-topic",
+            "well-being",
+            "pet-health",
+            "insurance",
+            "classes",
+            "drugs",
+            "healthcare-access",
+            "corporate",
+            "hcp",
+            "drug"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "goodrx-pet-medications" => {
+      "id" => "goodrx-pet-medications",
+      "method" => "GET",
+      "path" => "/goodrx/pet-medications",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "google-jobs-job" => {
       "id" => "google-jobs-job",
       "method" => "GET",
@@ -49348,6 +51497,341 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "greystar-articles" => {
+      "id" => "greystar-articles",
+      "method" => "GET",
+      "path" => "/greystar/articles",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "applying-and-leasing",
+            "general-guides",
+            "moving",
+            "blog"
+          ]
+        },
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "greystar-article" => {
+      "id" => "greystar-article",
+      "method" => "GET",
+      "path" => "/greystar/articles/{section}/{slug}",
+      "pathParams" => [
+        "section",
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "greystar-location" => {
+      "id" => "greystar-location",
+      "method" => "GET",
+      "path" => "/greystar/location",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "neighborhood",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "greystar-locations" => {
+      "id" => "greystar-locations",
+      "method" => "GET",
+      "path" => "/greystar/locations",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "level",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "state",
+            "city",
+            "neighborhood"
+          ]
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "greystar-markets" => {
+      "id" => "greystar-markets",
+      "method" => "GET",
+      "path" => "/greystar/markets",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "greystar-newsroom" => {
+      "id" => "greystar-newsroom",
+      "method" => "GET",
+      "path" => "/greystar/newsroom",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "greystar-newsroom-article" => {
+      "id" => "greystar-newsroom-article",
+      "method" => "GET",
+      "path" => "/greystar/newsroom/{slug}",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "greystar-property" => {
+      "id" => "greystar-property",
+      "method" => "GET",
+      "path" => "/greystar/properties/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "greystar-search" => {
+      "id" => "greystar-search",
+      "method" => "GET",
+      "path" => "/greystar/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "market_area",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "neighborhood",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country_code",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "name",
+            "price_asc",
+            "price_desc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "grubhub-availability" => {
       "id" => "grubhub-availability",
       "method" => "GET",
@@ -50605,6 +53089,730 @@ module Crawlora
       "bodyParam" => nil,
       "bodyRequired" => false,
       "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "healthgrades-autocomplete" => {
+      "id" => "healthgrades-autocomplete",
+      "method" => "GET",
+      "path" => "/healthgrades/autocomplete",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "term",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "healthgrades-facilities-filters" => {
+      "id" => "healthgrades-facilities-filters",
+      "method" => "GET",
+      "path" => "/healthgrades/facilities/filters",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "hospital",
+            "pharmacy",
+            "group_practice",
+            "urgent_care"
+          ]
+        },
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "where",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "healthgrades-facilities-search" => {
+      "id" => "healthgrades-facilities-search",
+      "method" => "GET",
+      "path" => "/healthgrades/facilities/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "hospital",
+            "pharmacy",
+            "group_practice",
+            "urgent_care"
+          ]
+        },
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "where",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "bestmatch",
+            "distance",
+            "patientsatisfaction"
+          ]
+        },
+        {
+          "name" => "distance",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0.5",
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "100",
+            "national"
+          ]
+        },
+        {
+          "name" => "rating",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "award",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "healthgrades-facility" => {
+      "id" => "healthgrades-facility",
+      "method" => "GET",
+      "path" => "/healthgrades/facility",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "healthgrades-health-article" => {
+      "id" => "healthgrades-health-article",
+      "method" => "GET",
+      "path" => "/healthgrades/health-article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "healthgrades-health-articles" => {
+      "id" => "healthgrades-health-articles",
+      "method" => "GET",
+      "path" => "/healthgrades/health-articles",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "topic",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "healthgrades-health-topics" => {
+      "id" => "healthgrades-health-topics",
+      "method" => "GET",
+      "path" => "/healthgrades/health-topics",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "healthgrades-hospital" => {
+      "id" => "healthgrades-hospital",
+      "method" => "GET",
+      "path" => "/healthgrades/hospital",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "healthgrades-hospital-awards" => {
+      "id" => "healthgrades-hospital-awards",
+      "method" => "GET",
+      "path" => "/healthgrades/hospital-awards",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "award",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "americas-best-hospitals",
+            "specialty-excellence-americas-best-care",
+            "patient-safety-excellence-award",
+            "outstanding-patient-experience-award",
+            "ob-gyn-care-excellence-awards",
+            "state-rankings"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "list",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "top50",
+            "top100",
+            "top250"
+          ]
+        },
+        {
+          "name" => "list_category",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "top50",
+            "top100"
+          ]
+        },
+        {
+          "name" => "specialty",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "BAR",
+            "CVO",
+            "CWS",
+            "PCI",
+            "NSG",
+            "CCU",
+            "GIO",
+            "GSO",
+            "ORJ",
+            "NSC",
+            "ORT",
+            "OJO",
+            "OOR",
+            "OBP",
+            "PRS",
+            "PUL",
+            "ORS",
+            "NEU",
+            "OVSC",
+            "VAS"
+          ]
+        },
+        {
+          "name" => "ob_gyn_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "GYS",
+            "LAB",
+            "OBG"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "name",
+            "distance"
+          ]
+        },
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "healthgrades-hospital-award-filters" => {
+      "id" => "healthgrades-hospital-award-filters",
+      "method" => "GET",
+      "path" => "/healthgrades/hospital-awards/filters",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "award",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "americas-best-hospitals",
+            "specialty-excellence-americas-best-care",
+            "patient-safety-excellence-award",
+            "outstanding-patient-experience-award",
+            "ob-gyn-care-excellence-awards",
+            "state-rankings"
+          ]
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "healthgrades-locations" => {
+      "id" => "healthgrades-locations",
+      "method" => "GET",
+      "path" => "/healthgrades/locations",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "term",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "healthgrades-physician" => {
+      "id" => "healthgrades-physician",
+      "method" => "GET",
+      "path" => "/healthgrades/physician",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "healthgrades-physicians-filters" => {
+      "id" => "healthgrades-physicians-filters",
+      "method" => "GET",
+      "path" => "/healthgrades/physicians/filters",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "where",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "healthgrades-physicians-search" => {
+      "id" => "healthgrades-physicians-search",
+      "method" => "GET",
+      "path" => "/healthgrades/physicians/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "where",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "bestmatch",
+            "distance",
+            "ratings"
+          ]
+        },
+        {
+          "name" => "gender",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "F",
+            "M"
+          ]
+        },
+        {
+          "name" => "distance",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "100",
+            "national"
+          ]
+        },
+        {
+          "name" => "age",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "*-40",
+            "41-50",
+            "51-60",
+            "61-70",
+            "71-*"
+          ]
+        },
+        {
+          "name" => "availability",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "today",
+            "tomorrow",
+            "nextTwoWeeks",
+            "online",
+            "acceptsNewPatients",
+            "telehealth"
+          ]
+        },
+        {
+          "name" => "rating",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        },
+        {
+          "name" => "insurance",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "insurance_plan",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "clinical_focus",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "affiliated_hospital",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "specialty",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "affirming_care",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "healthgrades-specialties" => {
+      "id" => "healthgrades-specialties",
+      "method" => "GET",
+      "path" => "/healthgrades/specialties",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "healthgrades-top-searches" => {
+      "id" => "healthgrades-top-searches",
+      "method" => "GET",
+      "path" => "/healthgrades/top-searches",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
       "produces" => [
         "application/json"
       ],
@@ -52009,6 +55217,149 @@ module Crawlora
       "consumes" => [
         "application/json"
       ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "houston-chronicle-article" => {
+      "id" => "houston-chronicle-article",
+      "method" => "GET",
+      "path" => "/houston-chronicle/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "houston-chronicle-author" => {
+      "id" => "houston-chronicle-author",
+      "method" => "GET",
+      "path" => "/houston-chronicle/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "houston-chronicle-headlines" => {
+      "id" => "houston-chronicle-headlines",
+      "method" => "GET",
+      "path" => "/houston-chronicle/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "news-houston-texas",
+            "news-houston-texas-trending",
+            "neighborhood",
+            "news-houston-texas-education",
+            "news-houston-texas-environment",
+            "health",
+            "news-houston-weather",
+            "politics",
+            "politics-houston",
+            "politics-texas",
+            "politics-us-world",
+            "business",
+            "business-energy",
+            "business-real-estate",
+            "business-tech",
+            "sports",
+            "sports-texans",
+            "sports-astros",
+            "sports-rockets",
+            "sports-college",
+            "sports-high-school",
+            "sports-dynamo",
+            "entertainment",
+            "lifestyle",
+            "food-restaurants",
+            "food-restaurants-reviews",
+            "food-restaurants-bbq",
+            "opinion",
+            "opinion-editorials",
+            "opinion-letters",
+            "opinion-columnists",
+            "news-interactives",
+            "news-investigations",
+            "la-voz",
+            "visuals"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "houston-chronicle-news" => {
+      "id" => "houston-chronicle-news",
+      "method" => "GET",
+      "path" => "/houston-chronicle/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "houston-chronicle-sections" => {
+      "id" => "houston-chronicle-sections",
+      "method" => "GET",
+      "path" => "/houston-chronicle/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
       "produces" => [
         "application/json"
       ],
@@ -55786,6 +59137,174 @@ module Crawlora
       "id" => "irishtimes-sections",
       "method" => "GET",
       "path" => "/irishtimes/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "japantimes-article" => {
+      "id" => "japantimes-article",
+      "method" => "GET",
+      "path" => "/japantimes/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "japantimes-author" => {
+      "id" => "japantimes-author",
+      "method" => "GET",
+      "path" => "/japantimes/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "japantimes-headlines" => {
+      "id" => "japantimes-headlines",
+      "method" => "GET",
+      "path" => "/japantimes/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "news-japan",
+            "news-japan-politics",
+            "news-japan-society",
+            "news-japan-crime-legal",
+            "news-japan-science-health",
+            "news-japan-explainer",
+            "news-japan-history",
+            "news-world",
+            "news-world-politics",
+            "news-world-crime-legal",
+            "news-world-science-health",
+            "news-world-society",
+            "news-asia-pacific",
+            "news-asia-pacific-politics",
+            "news-asia-pacific-crime-legal",
+            "news-asia-pacific-science-health",
+            "news-asia-pacific-society",
+            "business",
+            "business-companies",
+            "business-economy",
+            "business-markets",
+            "business-tech",
+            "sports",
+            "sports-sumo",
+            "sports-soccer",
+            "sports-baseball",
+            "sports-basketball",
+            "sports-tennis",
+            "sports-olympics",
+            "sports-more-sports",
+            "opinion",
+            "opinion-editorials",
+            "opinion-commentary",
+            "tag-geoeconomic-briefing",
+            "environment",
+            "environment-climate-change",
+            "environment-energy",
+            "environment-sustainability",
+            "environment-wildlife",
+            "environment-earth-science",
+            "life",
+            "life-travel",
+            "life-digital",
+            "life-food-drink",
+            "life-style-design",
+            "life-language",
+            "life-lifestyle",
+            "culture",
+            "culture-film",
+            "culture-books",
+            "culture-music",
+            "culture-art",
+            "culture-tv-streaming",
+            "culture-stage",
+            "culture-entertainment-news",
+            "community",
+            "community-voices",
+            "community-issues",
+            "community-how-tos",
+            "community-our-lives"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "japantimes-news" => {
+      "id" => "japantimes-news",
+      "method" => "GET",
+      "path" => "/japantimes/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "japantimes-sections" => {
+      "id" => "japantimes-sections",
+      "method" => "GET",
+      "path" => "/japantimes/sections",
       "pathParams" => [],
       "queryParams" => [],
       "formParams" => [],
@@ -63097,6 +66616,223 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "makeuseof-article" => {
+      "id" => "makeuseof-article",
+      "method" => "GET",
+      "path" => "/makeuseof/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "makeuseof-author" => {
+      "id" => "makeuseof-author",
+      "method" => "GET",
+      "path" => "/makeuseof/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "makeuseof-headlines" => {
+      "id" => "makeuseof-headlines",
+      "method" => "GET",
+      "path" => "/makeuseof/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "windows",
+            "linux",
+            "google-android",
+            "apple",
+            "technology-explained",
+            "networking",
+            "security",
+            "productivity",
+            "creative",
+            "entertainment",
+            "streaming",
+            "smart-home",
+            "home",
+            "news"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "makeuseof-news" => {
+      "id" => "makeuseof-news",
+      "method" => "GET",
+      "path" => "/makeuseof/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "makeuseof-sections" => {
+      "id" => "makeuseof-sections",
+      "method" => "GET",
+      "path" => "/makeuseof/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "malaymail-article" => {
+      "id" => "malaymail-article",
+      "method" => "GET",
+      "path" => "/malaymail/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "malaymail-headlines" => {
+      "id" => "malaymail-headlines",
+      "method" => "GET",
+      "path" => "/malaymail/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "malaysia",
+            "singapore",
+            "money",
+            "world",
+            "life",
+            "eat-drink",
+            "showbiz",
+            "opinion",
+            "sports",
+            "tech-gadgets",
+            "what-you-think"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "malaymail-news" => {
+      "id" => "malaymail-news",
+      "method" => "GET",
+      "path" => "/malaymail/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "malaymail-sections" => {
+      "id" => "malaymail-sections",
+      "method" => "GET",
+      "path" => "/malaymail/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "manga-rankings" => {
       "id" => "manga-rankings",
       "method" => "GET",
@@ -66759,6 +70495,120 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "mlb-prospect-rankings" => {
+      "id" => "mlb-prospect-rankings",
+      "method" => "GET",
+      "path" => "/mlb/prospect-rankings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "view",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "top100",
+            "team",
+            "position",
+            "draft",
+            "international"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "2026",
+            "2025",
+            "2024",
+            "2023",
+            "2022",
+            "2021",
+            "2020",
+            "2019",
+            "2018",
+            "2017",
+            "2016",
+            "2015",
+            "2014",
+            "2013",
+            "2011",
+            "2012"
+          ]
+        },
+        {
+          "name" => "team_slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "position",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1b",
+            "2b",
+            "ss",
+            "3b",
+            "c",
+            "of",
+            "rhp",
+            "lhp"
+          ]
+        },
+        {
+          "name" => "team_filter",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "rank",
+            "level",
+            "eta",
+            "age"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "mlb-prospect-stats" => {
       "id" => "mlb-prospect-stats",
       "method" => "GET",
@@ -66999,6 +70849,3699 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "mlb-statcast-abs-challenges" => {
+      "id" => "mlb-statcast-abs-challenges",
+      "method" => "GET",
+      "path" => "/mlb/statcast-abs-challenges",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "challenge_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "batter",
+            "batting-team",
+            "catcher",
+            "pitcher",
+            "catching-team",
+            "team-summary",
+            "league"
+          ]
+        },
+        {
+          "name" => "seasons",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "game_types",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "R",
+            "S",
+            "F",
+            "D",
+            "L",
+            "W"
+          ]
+        },
+        {
+          "name" => "data_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "for",
+            "against"
+          ]
+        },
+        {
+          "name" => "data_count",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "chal",
+            "runs"
+          ]
+        },
+        {
+          "name" => "min_challenges",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "1",
+            "2",
+            "5",
+            "10",
+            "20"
+          ]
+        },
+        {
+          "name" => "min_opponent_challenges",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "1",
+            "2",
+            "5",
+            "10",
+            "20"
+          ]
+        },
+        {
+          "name" => "level",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "mlb",
+            "aaa"
+          ]
+        },
+        {
+          "name" => "leverage",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "vlow",
+            "low",
+            "med",
+            "high"
+          ]
+        },
+        {
+          "name" => "ball_strike",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "in",
+            "out"
+          ]
+        },
+        {
+          "name" => "breakeven",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "low",
+            "med",
+            "high",
+            "vhigh"
+          ]
+        },
+        {
+          "name" => "split_year",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "name" => "splits",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "api_game_date_month_text",
+            "game_type",
+            "bat_position_code",
+            "lineup_cd",
+            "leverage_run_value_code",
+            "is_strike_calc",
+            "home_away",
+            "api_pitch_type_group03",
+            "gameday3_pitchzone_cd",
+            "abschallenge_breakeven_code"
+          ]
+        },
+        {
+          "name" => "challenge_team_ids",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "141",
+            "110",
+            "139",
+            "111",
+            "147",
+            "114",
+            "118",
+            "116",
+            "142",
+            "145",
+            "108",
+            "117",
+            "133",
+            "136",
+            "140",
+            "144",
+            "146",
+            "121",
+            "120",
+            "143",
+            "158",
+            "138",
+            "112",
+            "134",
+            "113",
+            "109",
+            "119",
+            "137",
+            "135",
+            "115"
+          ]
+        },
+        {
+          "name" => "opponent_team_ids",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "141",
+            "110",
+            "139",
+            "111",
+            "147",
+            "114",
+            "118",
+            "116",
+            "142",
+            "145",
+            "108",
+            "117",
+            "133",
+            "136",
+            "140",
+            "144",
+            "146",
+            "121",
+            "120",
+            "143",
+            "158",
+            "138",
+            "112",
+            "134",
+            "113",
+            "109",
+            "119",
+            "137",
+            "135",
+            "115"
+          ]
+        },
+        {
+          "name" => "pitch_types",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "FF",
+            "SI",
+            "FC",
+            "CH",
+            "FS",
+            "FO",
+            "SC",
+            "CU",
+            "SL",
+            "ST",
+            "SV",
+            "KN"
+          ]
+        },
+        {
+          "name" => "shadow_zones",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "11",
+            "12",
+            "13",
+            "14",
+            "16",
+            "17",
+            "18",
+            "19"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-statcast-active-spin" => {
+      "id" => "mlb-statcast-active-spin",
+      "method" => "GET",
+      "path" => "/mlb/statcast-active-spin",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2026_spin-based",
+            "2026_observed",
+            "2025_spin-based",
+            "2025_observed",
+            "2024_spin-based",
+            "2024_observed",
+            "2023_spin-based",
+            "2023_observed",
+            "2022_spin-based",
+            "2022_observed",
+            "2021_spin-based",
+            "2021_observed",
+            "2020_spin-based",
+            "2020_observed",
+            "2019_observed",
+            "2018_observed",
+            "2017_observed"
+          ]
+        },
+        {
+          "name" => "min",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "50",
+            "100",
+            "250",
+            "500",
+            "750",
+            "1000",
+            "1500",
+            "2000",
+            "2500",
+            "3000"
+          ]
+        },
+        {
+          "name" => "hand",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "R",
+            "L"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "name_display_last_first",
+            "team_id",
+            "pitch_hand",
+            "formatted_active_spin_fourseam",
+            "formatted_active_spin_sinker",
+            "formatted_active_spin_cutter",
+            "formatted_active_spin_changeup",
+            "formatted_active_spin_splitter",
+            "formatted_active_spin_curve",
+            "formatted_active_spin_slider",
+            "formatted_active_spin_sweeper",
+            "formatted_active_spin_slurve"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-arm-angle" => {
+      "id" => "mlb-statcast-arm-angle",
+      "method" => "GET",
+      "path" => "/mlb/statcast-arm-angle",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "seasons",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "2026",
+            "2025",
+            "2024",
+            "2023",
+            "2022",
+            "2021",
+            "2020"
+          ]
+        },
+        {
+          "name" => "teams",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "108",
+            "109",
+            "110",
+            "111",
+            "112",
+            "113",
+            "114",
+            "115",
+            "116",
+            "117",
+            "118",
+            "119",
+            "120",
+            "121",
+            "133",
+            "134",
+            "135",
+            "136",
+            "137",
+            "138",
+            "139",
+            "140",
+            "141",
+            "142",
+            "143",
+            "144",
+            "145",
+            "146",
+            "147",
+            "158"
+          ]
+        },
+        {
+          "name" => "game_types",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "R",
+            "F",
+            "D",
+            "L",
+            "W"
+          ]
+        },
+        {
+          "name" => "pitch_types",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "FF",
+            "SI",
+            "FC",
+            "CH",
+            "FS",
+            "FO",
+            "SC",
+            "CU",
+            "SL",
+            "ST",
+            "SV",
+            "KN"
+          ]
+        },
+        {
+          "name" => "pitch_hand",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "bat_side",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "min",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "100",
+            "300",
+            "500",
+            "1000",
+            "1500",
+            "2000",
+            "2500",
+            "3000"
+          ]
+        },
+        {
+          "name" => "min_group_pitches",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "100",
+            "300",
+            "500",
+            "1000",
+            "1500",
+            "2000"
+          ]
+        },
+        {
+          "name" => "group_by",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "year",
+            "api_game_date_month_text",
+            "api_pitch_type_group03",
+            "game_type",
+            "bat_side",
+            "fld_team_id"
+          ]
+        },
+        {
+          "name" => "date_start",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_end",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "name",
+            "team_name",
+            "pitch_hand",
+            "n_pitches",
+            "arm_angle",
+            "release_ball_x",
+            "relative_release_ball_x",
+            "release_ball_z",
+            "relative_shoulder_x",
+            "shoulder_z"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-arm-strength" => {
+      "id" => "mlb-statcast-arm-strength",
+      "method" => "GET",
+      "path" => "/mlb/statcast-arm-strength",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "player",
+            "team"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "9999"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "108",
+            "117",
+            "133",
+            "141",
+            "144",
+            "158",
+            "138",
+            "112",
+            "109",
+            "119",
+            "137",
+            "114",
+            "136",
+            "146",
+            "121",
+            "120",
+            "110",
+            "135",
+            "143",
+            "134",
+            "140",
+            "139",
+            "113",
+            "111",
+            "115",
+            "118",
+            "116",
+            "142",
+            "145",
+            "147"
+          ]
+        },
+        {
+          "name" => "position",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "arm_inf",
+            "arm_of",
+            "arm_1b",
+            "arm_2b",
+            "arm_3b",
+            "arm_ss",
+            "arm_lf",
+            "arm_cf",
+            "arm_rf"
+          ]
+        },
+        {
+          "name" => "min_throws",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "50",
+            "100",
+            "300",
+            "500",
+            "1000"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "fielder_name",
+            "team_name",
+            "total_throws",
+            "max_arm_strength",
+            "arm_overall",
+            "arm_inf",
+            "arm_of",
+            "arm_1b",
+            "arm_2b",
+            "arm_3b",
+            "arm_ss",
+            "arm_lf",
+            "arm_cf",
+            "arm_rf"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-arm-strength-player" => {
+      "id" => "mlb-statcast-arm-strength-player",
+      "method" => "GET",
+      "path" => "/mlb/statcast-arm-strength-player",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "9999"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-statcast-arm-value" => {
+      "id" => "mlb-statcast-arm-value",
+      "method" => "GET",
+      "path" => "/mlb/statcast-arm-value",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Run",
+            "Fld",
+            "Pit",
+            "Batting Team",
+            "Pitching Team",
+            "League"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular",
+            "Playoff",
+            "All"
+          ]
+        },
+        {
+          "name" => "key_base_out",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "All",
+            "r10_to_2b_210",
+            "r10_to_3b_210",
+            "r11_to_3b_10",
+            "r11_to_3b_2",
+            "r11_to_hp_10",
+            "r11_to_hp_2",
+            "r12_to_hp_10",
+            "r12_to_hp_2",
+            "r13_to_hp_0",
+            "r13_to_hp_1"
+          ]
+        },
+        {
+          "name" => "minimum_opps",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "top",
+            "1",
+            "5",
+            "10",
+            "20",
+            "30",
+            "40",
+            "50",
+            "75",
+            "100",
+            "250",
+            "500",
+            "1000"
+          ]
+        },
+        {
+          "name" => "start_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "split",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "no",
+            "yes"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "108",
+            "117",
+            "133",
+            "141",
+            "144",
+            "158",
+            "138",
+            "112",
+            "109",
+            "119",
+            "137",
+            "114",
+            "136",
+            "146",
+            "121",
+            "120",
+            "110",
+            "135",
+            "143",
+            "134",
+            "140",
+            "139",
+            "113",
+            "111",
+            "115",
+            "118",
+            "116",
+            "142",
+            "145",
+            "147",
+            "split"
+          ]
+        },
+        {
+          "name" => "with_team_only",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "0"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "entity_name",
+            "team_name",
+            "start_year",
+            "runner_runs",
+            "fielder_runs",
+            "runner_runs_swipe",
+            "runner_runs_snipe",
+            "runner_runs_freeze",
+            "fielder_runs_swipe",
+            "fielder_runs_snipe",
+            "fielder_runs_freeze",
+            "n_opp_xb",
+            "n_att_xb",
+            "rate_att_xb",
+            "est_rate_att_generic_runner",
+            "est_rate_att_generic_fielder",
+            "rate_att_xb_diff_runner",
+            "rate_att_xb_diff_fielder",
+            "n_safe",
+            "rate_safe",
+            "rate_safe_per_attempt"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-arm-value-details" => {
+      "id" => "mlb-statcast-arm-value-details",
+      "method" => "GET",
+      "path" => "/mlb/statcast-arm-value-details",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "entity_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Run",
+            "Fld",
+            "Pit"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular",
+            "Playoff",
+            "All"
+          ]
+        },
+        {
+          "name" => "key_base_out",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "All",
+            "r10_to_2b_210",
+            "r10_to_3b_210",
+            "r11_to_3b_10",
+            "r11_to_3b_2",
+            "r11_to_hp_10",
+            "r11_to_hp_2",
+            "r12_to_hp_10",
+            "r12_to_hp_2",
+            "r13_to_hp_0",
+            "r13_to_hp_1"
+          ]
+        },
+        {
+          "name" => "minimum_opps",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "top",
+            "1",
+            "5",
+            "10",
+            "20",
+            "30",
+            "40",
+            "50",
+            "75",
+            "100",
+            "250",
+            "500",
+            "1000"
+          ]
+        },
+        {
+          "name" => "start_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "split",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "no",
+            "yes"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "108",
+            "117",
+            "133",
+            "141",
+            "144",
+            "158",
+            "138",
+            "112",
+            "109",
+            "119",
+            "137",
+            "114",
+            "136",
+            "146",
+            "121",
+            "120",
+            "110",
+            "135",
+            "143",
+            "134",
+            "140",
+            "139",
+            "113",
+            "111",
+            "115",
+            "118",
+            "116",
+            "142",
+            "145",
+            "147",
+            "split"
+          ]
+        },
+        {
+          "name" => "with_team_only",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "0"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-statcast-baserunning" => {
+      "id" => "mlb-statcast-baserunning",
+      "method" => "GET",
+      "path" => "/mlb/statcast-baserunning",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "board",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "baserunning-run-value",
+            "basestealing-running-game",
+            "baserunning"
+          ]
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Run",
+            "Bat",
+            "Batting Team",
+            "Pitching Team",
+            "Fld",
+            "Pit",
+            "League"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular",
+            "Playoff",
+            "All"
+          ]
+        },
+        {
+          "name" => "season_start",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "season_end",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "split",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "no",
+            "yes"
+          ]
+        },
+        {
+          "name" => "n",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "top",
+            "1",
+            "5",
+            "10",
+            "20",
+            "30",
+            "40",
+            "50",
+            "75",
+            "100",
+            "250",
+            "500",
+            "1000",
+            "1500",
+            "2000"
+          ]
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "split",
+            "108",
+            "117",
+            "133",
+            "141",
+            "144",
+            "158",
+            "138",
+            "112",
+            "109",
+            "119",
+            "137",
+            "114",
+            "136",
+            "146",
+            "121",
+            "120",
+            "110",
+            "135",
+            "143",
+            "134",
+            "140",
+            "139",
+            "113",
+            "111",
+            "115",
+            "118",
+            "116",
+            "142",
+            "145",
+            "147"
+          ]
+        },
+        {
+          "name" => "with_team_only",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "pitch_hand",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "runner_moved",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "All",
+            "Advance",
+            "Out",
+            "Hold"
+          ]
+        },
+        {
+          "name" => "target_base",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "All",
+            "2B",
+            "3B"
+          ]
+        },
+        {
+          "name" => "prior_pk",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "All",
+            "0",
+            "1",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "name" => "key_base_out",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "All",
+            "r10_to_2b_210",
+            "r10_to_3b_210",
+            "r11_to_3b_10",
+            "r11_to_3b_2",
+            "r11_to_hp_10",
+            "r11_to_hp_2",
+            "r12_to_hp_10",
+            "r12_to_hp_2",
+            "r13_to_hp_0",
+            "r13_to_hp_1"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "entity_name",
+            "team_name",
+            "start_year",
+            "N_runner_moved",
+            "N_runner_moved_SBX",
+            "N_runner_moved_XB",
+            "runner_runs_SB2",
+            "runner_runs_SB3",
+            "runner_runs_SBX",
+            "runner_runs_XB",
+            "runner_runs_XB_freeze",
+            "runner_runs_XB_snipe",
+            "runner_runs_XB_swipe",
+            "runner_runs_tot",
+            "simple_stolen_on_running_act_SB2",
+            "simple_stolen_on_running_act_SB3",
+            "bk",
+            "catcher_name",
+            "cs",
+            "entity_id",
+            "fb",
+            "fielder_name",
+            "game_date",
+            "n_bk",
+            "n_cs",
+            "n_fb",
+            "n_init",
+            "n_minus",
+            "n_pk",
+            "n_plus",
+            "n_sb",
+            "net_act_minus",
+            "net_act_plus",
+            "pitcher_name",
+            "pk",
+            "r_primary_lead",
+            "r_primary_lead_sbx",
+            "r_sec_minus_prim_lead",
+            "r_sec_minus_prim_lead_sbx",
+            "r_secondary_lead",
+            "r_secondary_lead_sbx",
+            "r_sprint_speed_top50percent",
+            "rate_sbx",
+            "runner_moved_cd",
+            "runner_name",
+            "runs_stolen_on_running_act",
+            "sb",
+            "sba",
+            "simple_stolen_on_running_act",
+            "target_base",
+            "runner_runs",
+            "fielder_runs",
+            "runner_runs_swipe",
+            "runner_runs_snipe",
+            "runner_runs_freeze",
+            "fielder_runs_swipe",
+            "fielder_runs_snipe",
+            "fielder_runs_freeze",
+            "n_opp_xb",
+            "rate_att_xb",
+            "est_rate_att_generic_runner",
+            "est_rate_att_generic_fielder",
+            "rate_att_xb_diff_runner",
+            "rate_att_xb_diff_fielder",
+            "n_safe",
+            "rate_safe",
+            "rate_safe_per_attempt"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "search",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-bat-tracking" => {
+      "id" => "mlb-statcast-bat-tracking",
+      "method" => "GET",
+      "path" => "/mlb/statcast-bat-tracking",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "batter",
+            "batting-team",
+            "pitcher",
+            "pitching-team",
+            "league"
+          ]
+        },
+        {
+          "name" => "season_start",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "season_end",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Any",
+            "Playoff",
+            "Regular"
+          ]
+        },
+        {
+          "name" => "min_swings",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "100",
+            "200",
+            "500",
+            "1000"
+          ]
+        },
+        {
+          "name" => "min_group_swings",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "100",
+            "200",
+            "500",
+            "1000"
+          ]
+        },
+        {
+          "name" => "date_start",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_end",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "bat_side",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "contact_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2",
+            "4",
+            "9"
+          ]
+        },
+        {
+          "name" => "is_hard_hit",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "0"
+          ]
+        },
+        {
+          "name" => "attack_zone",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "1",
+            "1.1",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "name" => "pitch_hand",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "teams",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "108",
+            "109",
+            "110",
+            "111",
+            "112",
+            "113",
+            "114",
+            "115",
+            "116",
+            "117",
+            "118",
+            "119",
+            "120",
+            "121",
+            "133",
+            "134",
+            "135",
+            "136",
+            "137",
+            "138",
+            "139",
+            "140",
+            "141",
+            "142",
+            "143",
+            "144",
+            "145",
+            "146",
+            "147",
+            "158"
+          ]
+        },
+        {
+          "name" => "pitch_types",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "FF",
+            "SI",
+            "FC",
+            "CH",
+            "FS",
+            "FO",
+            "SC",
+            "CU",
+            "SL",
+            "ST",
+            "SV",
+            "KN"
+          ]
+        },
+        {
+          "name" => "counts",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "00",
+            "01",
+            "02",
+            "10",
+            "11",
+            "12",
+            "20",
+            "21",
+            "22",
+            "30",
+            "31",
+            "32"
+          ]
+        },
+        {
+          "name" => "group_by",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "year",
+            "api_game_date_month_text",
+            "bat_contact_code",
+            "api_pitch_type_group03",
+            "game_type",
+            "is_hit_into_play_hardhit",
+            "is_best_speed",
+            "pitch_hand",
+            "bat_side",
+            "is_pre_ball_count_3",
+            "is_pre_strike_count_2"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "avg_batter_x_position",
+            "avg_batter_y_position",
+            "avg_intercept_x_vs_batter",
+            "avg_intercept_y_vs_batter",
+            "avg_foot_sep0",
+            "avg_foot_angle0",
+            "attack_direction_pullopp",
+            "rate_ideal_attack_angle",
+            "attack_angle",
+            "avg_plane_vertical_angle",
+            "avg_sweetspot_speed_mph",
+            "avg_sweetspot_speed_mph_qualified",
+            "avg_is_sweetspot_speed_high",
+            "avg_is_sweetspot_speed_high_qualified",
+            "squared_up",
+            "squared_up_qualified",
+            "squared_up_per_bat_contact",
+            "squared_up_per_swing",
+            "squared_up_with_speed",
+            "squared_up_with_speed_qualified",
+            "squared_up_with_speed_per_bat_contact",
+            "squared_up_with_speed_per_swing",
+            "swing_length_qualified",
+            "swords",
+            "swings_qualified",
+            "percent_qualified",
+            "hit_into_play_qualified",
+            "bat_contact",
+            "bat_contact_qualified",
+            "count",
+            "delta_run_exp",
+            "hit_into_play_per_swing",
+            "pitcher_delta_run_exp",
+            "strikes_swinging_qualified",
+            "sweetspot_speed_high_qualified",
+            "strike_swinging_per_swing",
+            "id",
+            "name",
+            "batter_name",
+            "b_name_display_first_last",
+            "savant_batter_id",
+            "team_id",
+            "team_name",
+            "side",
+            "n_sides",
+            "n_teams",
+            "bat_side_formatted"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-batted-ball" => {
+      "id" => "mlb-statcast-batted-ball",
+      "method" => "GET",
+      "path" => "/mlb/statcast-batted-ball",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "batter",
+            "batting-team",
+            "pitcher",
+            "pitching-team",
+            "league"
+          ]
+        },
+        {
+          "name" => "seasons",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "game_types",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "R",
+            "A",
+            "F",
+            "D",
+            "L",
+            "W"
+          ]
+        },
+        {
+          "name" => "splits",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "api_game_date_month_text",
+            "game_type",
+            "api_pitch_type_group03",
+            "bat_side",
+            "pitch_hand"
+          ]
+        },
+        {
+          "name" => "min",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "100",
+            "200",
+            "500",
+            "1000"
+          ]
+        },
+        {
+          "name" => "min_split",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "100",
+            "200",
+            "500",
+            "1000"
+          ]
+        },
+        {
+          "name" => "split_year",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "0"
+          ]
+        },
+        {
+          "name" => "teams",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "108",
+            "109",
+            "110",
+            "111",
+            "112",
+            "113",
+            "114",
+            "115",
+            "116",
+            "117",
+            "118",
+            "119",
+            "120",
+            "121",
+            "133",
+            "134",
+            "135",
+            "136",
+            "137",
+            "138",
+            "139",
+            "140",
+            "141",
+            "142",
+            "143",
+            "144",
+            "145",
+            "146",
+            "147",
+            "158"
+          ]
+        },
+        {
+          "name" => "date_start",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_end",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "bat_side",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "pitch_hand",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "pitch_types",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "FF",
+            "SI",
+            "FC",
+            "CH",
+            "FS",
+            "FO",
+            "SC",
+            "CU",
+            "SL",
+            "ST",
+            "SV",
+            "KN"
+          ]
+        },
+        {
+          "name" => "include_league_average",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "name",
+            "team_name",
+            "num_bbe",
+            "gb_rate",
+            "air_rate",
+            "fb_rate",
+            "ld_rate",
+            "pu_rate",
+            "pull_rate",
+            "straight_rate",
+            "oppo_rate",
+            "pull_gb_rate",
+            "straight_gb_rate",
+            "oppo_gb_rate",
+            "pull_air_rate",
+            "straight_air_rate",
+            "oppo_air_rate"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-birthday-index" => {
+      "id" => "mlb-statcast-birthday-index",
+      "method" => "GET",
+      "path" => "/mlb/statcast-birthday-index",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "batter",
+            "pitcher"
+          ]
+        },
+        {
+          "name" => "min_games",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "2",
+            "3",
+            "5",
+            "8",
+            "10"
+          ]
+        },
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "show_inactives",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "player_name",
+            "is_player_active",
+            "birth_day_noyear_sort_hidden",
+            "age",
+            "daysUntil",
+            "birthday_index",
+            "birthday_games",
+            "birthday_pa",
+            "birthday_hits",
+            "birthday_hit_1b",
+            "birthday_hit_2b",
+            "birthday_hit_3b",
+            "birthday_hit_hr",
+            "birthday_strikeout",
+            "birthday_k_percent",
+            "birthday_walk",
+            "birthday_bb_percent",
+            "birthday_BA",
+            "non_birthday_BA",
+            "birthday_BA_diff",
+            "birthday_OPS",
+            "non_birthday_OPS",
+            "birthday_OPS_diff",
+            "birthday_wOBA",
+            "non_birthday_wOBA",
+            "birthday_wOBA_diff"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-catcher-blocking" => {
+      "id" => "mlb-statcast-catcher-blocking",
+      "method" => "GET",
+      "path" => "/mlb/statcast-catcher-blocking",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Cat",
+            "Pit",
+            "Pitching Team",
+            "League"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular",
+            "Playoff",
+            "All"
+          ]
+        },
+        {
+          "name" => "min",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "1",
+            "50",
+            "100",
+            "250",
+            "500",
+            "1000",
+            "2000",
+            "3000",
+            "4000",
+            "5000"
+          ]
+        },
+        {
+          "name" => "start_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "split",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "yes",
+            "no"
+          ]
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "with_team_only",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "entity_name",
+            "team_name",
+            "start_year",
+            "N",
+            "catcher_runs",
+            "diff_runner_pbwp",
+            "N_runner_pbwp",
+            "x_runner_pbwp",
+            "diff_rate_runner_pbwp",
+            "freq_pbwp_1_easy",
+            "freq_pbwp_2_medium",
+            "freq_pbwp_3_tough",
+            "diff_runner_pbwp_1_easy",
+            "diff_runner_pbwp_2_medium",
+            "diff_runner_pbwp_3_tough"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-catcher-blocking-details" => {
+      "id" => "mlb-statcast-catcher-blocking-details",
+      "method" => "GET",
+      "path" => "/mlb/statcast-catcher-blocking-details",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "entity_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Cat",
+            "Pit",
+            "Pitching Team"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular",
+            "Playoff",
+            "All"
+          ]
+        },
+        {
+          "name" => "start_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "split",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "yes",
+            "no"
+          ]
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "with_team_only",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-catcher-framing" => {
+      "id" => "mlb-statcast-catcher-framing",
+      "method" => "GET",
+      "path" => "/mlb/statcast-catcher-framing",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "catcher",
+            "catching-team",
+            "batter",
+            "batting-team",
+            "pitcher",
+            "league"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Any",
+            "Playoff",
+            "Regular"
+          ]
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "108",
+            "117",
+            "133",
+            "141",
+            "144",
+            "158",
+            "138",
+            "112",
+            "109",
+            "119",
+            "137",
+            "114",
+            "136",
+            "146",
+            "121",
+            "120",
+            "110",
+            "135",
+            "143",
+            "134",
+            "140",
+            "139",
+            "113",
+            "111",
+            "115",
+            "118",
+            "116",
+            "142",
+            "145",
+            "147"
+          ]
+        },
+        {
+          "name" => "min_pitches",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "100",
+            "250",
+            "500",
+            "750",
+            "1000",
+            "1250",
+            "1500"
+          ]
+        },
+        {
+          "name" => "min_results",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "1",
+            "25",
+            "50",
+            "100",
+            "250",
+            "500",
+            "750",
+            "1000",
+            "1250",
+            "1500"
+          ]
+        },
+        {
+          "name" => "season_start",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "season_end",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "date_start",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_end",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "bat_side",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "pitch_hand",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "pitch_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "FF",
+            "SI",
+            "FC",
+            "CH",
+            "FS",
+            "FO",
+            "SC",
+            "CU",
+            "SL",
+            "ST",
+            "SV",
+            "KN"
+          ]
+        },
+        {
+          "name" => "ball_strike",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "in",
+            "out"
+          ]
+        },
+        {
+          "name" => "call",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "original",
+            "final"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "name",
+            "team_name",
+            "pitches",
+            "pitches_shadow",
+            "rv_tot",
+            "pct_tot",
+            "pitches_shadow_top",
+            "rv_shadow_top",
+            "pct_shadow_top",
+            "pitches_shadow_bot",
+            "rv_shadow_bot",
+            "pct_shadow_bot",
+            "pitches_11",
+            "rv_11",
+            "pct_11",
+            "pitches_12",
+            "rv_12",
+            "pct_12",
+            "pitches_13",
+            "rv_13",
+            "pct_13",
+            "pitches_14",
+            "rv_14",
+            "pct_14",
+            "pitches_16",
+            "rv_16",
+            "pct_16",
+            "pitches_17",
+            "rv_17",
+            "pct_17",
+            "pitches_18",
+            "rv_18",
+            "pct_18",
+            "pitches_19",
+            "rv_19",
+            "pct_19",
+            "pitches_heart",
+            "rv_heart",
+            "pct_heart",
+            "pitches_chwa",
+            "rv_chwa",
+            "pct_chwa",
+            "pitches_bin_minus10",
+            "pitches_bin_minus9",
+            "pitches_bin_minus8",
+            "pitches_bin_minus7",
+            "pitches_bin_minus6",
+            "pitches_bin_minus5",
+            "pitches_bin_minus4",
+            "pitches_bin_minus3",
+            "pitches_bin_minus2",
+            "pitches_bin_minus1",
+            "pitches_bin_0",
+            "pitches_bin_1",
+            "pitches_bin_2",
+            "pitches_bin_3",
+            "pitches_bin_4",
+            "pitches_bin_5",
+            "pitches_bin_6",
+            "pitches_bin_7",
+            "pitches_bin_8",
+            "pitches_bin_9",
+            "pct_bin_minus10",
+            "pct_bin_minus9",
+            "pct_bin_minus8",
+            "pct_bin_minus7",
+            "pct_bin_minus6",
+            "pct_bin_minus5",
+            "pct_bin_minus4",
+            "pct_bin_minus3",
+            "pct_bin_minus2",
+            "pct_bin_minus1",
+            "pct_bin_0",
+            "pct_bin_1",
+            "pct_bin_2",
+            "pct_bin_3",
+            "pct_bin_4",
+            "pct_bin_5",
+            "pct_bin_6",
+            "pct_bin_7",
+            "pct_bin_8",
+            "pct_bin_9"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-catcher-framing-details" => {
+      "id" => "mlb-statcast-catcher-framing-details",
+      "method" => "GET",
+      "path" => "/mlb/statcast-catcher-framing-details",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "entity_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "catcher",
+            "catching-team",
+            "batter",
+            "batting-team",
+            "pitcher"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Any",
+            "Playoff",
+            "Regular"
+          ]
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "108",
+            "117",
+            "133",
+            "141",
+            "144",
+            "158",
+            "138",
+            "112",
+            "109",
+            "119",
+            "137",
+            "114",
+            "136",
+            "146",
+            "121",
+            "120",
+            "110",
+            "135",
+            "143",
+            "134",
+            "140",
+            "139",
+            "113",
+            "111",
+            "115",
+            "118",
+            "116",
+            "142",
+            "145",
+            "147"
+          ]
+        },
+        {
+          "name" => "min_pitches",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "100",
+            "250",
+            "500",
+            "750",
+            "1000",
+            "1250",
+            "1500"
+          ]
+        },
+        {
+          "name" => "min_results",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "1",
+            "25",
+            "50",
+            "100",
+            "250",
+            "500",
+            "750",
+            "1000",
+            "1250",
+            "1500"
+          ]
+        },
+        {
+          "name" => "season_start",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "season_end",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "date_start",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_end",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "bat_side",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "pitch_hand",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "pitch_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "FF",
+            "SI",
+            "FC",
+            "CH",
+            "FS",
+            "FO",
+            "SC",
+            "CU",
+            "SL",
+            "ST",
+            "SV",
+            "KN"
+          ]
+        },
+        {
+          "name" => "ball_strike",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "in",
+            "out"
+          ]
+        },
+        {
+          "name" => "call",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "original",
+            "final"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-catcher-pop-time" => {
+      "id" => "mlb-statcast-catcher-pop-time",
+      "method" => "GET",
+      "path" => "/mlb/statcast-catcher-pop-time",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "108",
+            "117",
+            "133",
+            "141",
+            "144",
+            "158",
+            "138",
+            "112",
+            "109",
+            "119",
+            "137",
+            "114",
+            "136",
+            "146",
+            "121",
+            "120",
+            "110",
+            "135",
+            "143",
+            "134",
+            "140",
+            "139",
+            "111",
+            "113",
+            "115",
+            "118",
+            "116",
+            "142",
+            "145",
+            "147"
+          ]
+        },
+        {
+          "name" => "min2b",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "5",
+            "10",
+            "15",
+            "20"
+          ]
+        },
+        {
+          "name" => "min3b",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "1",
+            "5",
+            "10",
+            "15",
+            "20"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "catcher",
+            "team",
+            "age",
+            "arm",
+            "exchange",
+            "2b_attempts",
+            "2b_all",
+            "2b_caught_stealing",
+            "2b_stolen_bases",
+            "3b_attempts",
+            "3b_all",
+            "3b_caught_stealing",
+            "3b_stolen_bases"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-catcher-stance" => {
+      "id" => "mlb-statcast-catcher-stance",
+      "method" => "GET",
+      "path" => "/mlb/statcast-catcher-stance",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "catcher",
+            "catching-team",
+            "batter",
+            "batting-team",
+            "pitcher",
+            "league"
+          ]
+        },
+        {
+          "name" => "season_start",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "season_end",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Any",
+            "Playoff",
+            "Regular"
+          ]
+        },
+        {
+          "name" => "min_pitches",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "100",
+            "250",
+            "500",
+            "750",
+            "1000",
+            "2500",
+            "5000",
+            "7500",
+            "10000",
+            "15000",
+            "20000"
+          ]
+        },
+        {
+          "name" => "min_results",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "25",
+            "50",
+            "100",
+            "250",
+            "500",
+            "750",
+            "1000",
+            "2500",
+            "5000",
+            "7500",
+            "10000",
+            "15000",
+            "20000"
+          ]
+        },
+        {
+          "name" => "date_start",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_end",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "bat_side",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "pitch_hand",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "knee_code",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "9999",
+            "4",
+            "1",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "name" => "teams",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "108",
+            "117",
+            "133",
+            "141",
+            "144",
+            "158",
+            "138",
+            "112",
+            "109",
+            "119",
+            "137",
+            "114",
+            "136",
+            "146",
+            "121",
+            "120",
+            "110",
+            "135",
+            "143",
+            "134",
+            "140",
+            "139",
+            "111",
+            "113",
+            "115",
+            "118",
+            "116",
+            "142",
+            "145",
+            "147"
+          ]
+        },
+        {
+          "name" => "pitch_types",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "FF",
+            "SI",
+            "FC",
+            "CH",
+            "FS",
+            "FO",
+            "SC",
+            "CU",
+            "SL",
+            "ST",
+            "SV",
+            "KN"
+          ]
+        },
+        {
+          "name" => "group_by",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "none",
+            "year",
+            "api_game_date_month_text",
+            "game_type",
+            "knee_code_overview",
+            "pitch_hand",
+            "bat_side",
+            "api_pitch_type_group03",
+            "knee_code"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "name",
+            "id",
+            "team_id",
+            "team_name",
+            "year",
+            "pitches",
+            "skeletal_pitches",
+            "n_both_down",
+            "n_both_up",
+            "n_inside_down",
+            "n_l_down",
+            "n_leg_extended",
+            "n_one_down",
+            "n_outside_down",
+            "n_r_down",
+            "n_teams",
+            "pct_both_down",
+            "pct_both_up",
+            "pct_inside_down",
+            "pct_l_down",
+            "pct_leg_extended",
+            "pct_one_down",
+            "pct_outside_down",
+            "pct_r_down",
+            "one_knee_blocking",
+            "one_knee_blocking_162",
+            "one_knee_csaa",
+            "one_knee_csp",
+            "one_knee_framing",
+            "one_knee_framing_162",
+            "one_knee_pbwp",
+            "one_knee_pitching",
+            "one_knee_pitching_162",
+            "one_knee_ron_num",
+            "one_knee_ron_pbwp",
+            "one_knee_sba_csaa",
+            "one_knee_sba_num",
+            "one_knee_shadow_cs",
+            "one_knee_shadow_num",
+            "one_knee_throwing",
+            "one_knee_throwing_162",
+            "other_blocking",
+            "other_blocking_162",
+            "other_csaa",
+            "other_csp",
+            "other_framing",
+            "other_framing_162",
+            "other_pbwp",
+            "other_pitching",
+            "other_pitching_162",
+            "other_ron_num",
+            "other_ron_pbwp",
+            "other_sba_csaa",
+            "other_sba_num",
+            "other_shadow_cs",
+            "other_shadow_num",
+            "other_throwing",
+            "other_throwing_162",
+            "total_blocking",
+            "total_framing",
+            "total_frv",
+            "total_throwing",
+            "total_untracked"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-catcher-throwing" => {
+      "id" => "mlb-statcast-catcher-throwing",
+      "method" => "GET",
+      "path" => "/mlb/statcast-catcher-throwing",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Cat",
+            "Pitching Team",
+            "League"
+          ]
+        },
+        {
+          "name" => "season_start",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "season_end",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular",
+            "Playoff",
+            "All"
+          ]
+        },
+        {
+          "name" => "minimum",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "1",
+            "5",
+            "10",
+            "20",
+            "30",
+            "40",
+            "50",
+            "75",
+            "100"
+          ]
+        },
+        {
+          "name" => "target_base",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2B",
+            "3B",
+            "All"
+          ]
+        },
+        {
+          "name" => "split",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "yes",
+            "no"
+          ]
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "split",
+            "108",
+            "117",
+            "133",
+            "141",
+            "144",
+            "158",
+            "138",
+            "112",
+            "109",
+            "119",
+            "137",
+            "114",
+            "136",
+            "146",
+            "121",
+            "120",
+            "110",
+            "135",
+            "143",
+            "134",
+            "140",
+            "139",
+            "111",
+            "113",
+            "115",
+            "118",
+            "116",
+            "142",
+            "145",
+            "147"
+          ]
+        },
+        {
+          "name" => "with_team_only",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "entity_name",
+            "start_year",
+            "n",
+            "cs_raa",
+            "n_cs_aa",
+            "n_cs",
+            "rate_cs",
+            "n_xcs",
+            "rate_xcs",
+            "rate_cs_aa",
+            "seasonal_sprint_speed",
+            "distance_to_target",
+            "pop_time",
+            "exchange_time",
+            "arm_strength",
+            "n_xcs_with_flight_over_xcs",
+            "n_xcs_with_exchange_over_xcs",
+            "n_xcs_with_accuracy_over_xcs",
+            "n_xcs_with_ground_other_over_xcs",
+            "n_xcs_with_onfly_other_over_xcs",
+            "n_xcs_with_untracked_other_over_xcs"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-catcher-throwing-details" => {
+      "id" => "mlb-statcast-catcher-throwing-details",
+      "method" => "GET",
+      "path" => "/mlb/statcast-catcher-throwing-details",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "entity_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular",
+            "Playoff",
+            "All"
+          ]
+        },
+        {
+          "name" => "minimum",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "1",
+            "5",
+            "10",
+            "20",
+            "30",
+            "40",
+            "50",
+            "75",
+            "100"
+          ]
+        },
+        {
+          "name" => "target_base",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2B",
+            "3B",
+            "All"
+          ]
+        },
+        {
+          "name" => "split",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "yes",
+            "no"
+          ]
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "108",
+            "117",
+            "133",
+            "141",
+            "144",
+            "158",
+            "138",
+            "112",
+            "109",
+            "119",
+            "137",
+            "114",
+            "136",
+            "146",
+            "121",
+            "120",
+            "110",
+            "135",
+            "143",
+            "134",
+            "140",
+            "139",
+            "111",
+            "113",
+            "115",
+            "118",
+            "116",
+            "142",
+            "145",
+            "147"
+          ]
+        },
+        {
+          "name" => "with_team_only",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "mlb-statcast-expected" => {
       "id" => "mlb-statcast-expected",
       "method" => "GET",
@@ -67104,6 +74647,1070 @@ module Crawlora
           "enum" => [
             "asc",
             "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-fielding-run-value" => {
+      "id" => "mlb-statcast-fielding-run-value",
+      "method" => "GET",
+      "path" => "/mlb/statcast-fielding-run-value",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "fielder",
+            "fielding-team",
+            "batter",
+            "batting-team",
+            "pitcher"
+          ]
+        },
+        {
+          "name" => "season_start",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "season_end",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Any",
+            "Regular",
+            "Playoff"
+          ]
+        },
+        {
+          "name" => "minimum",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "0.1",
+            "1",
+            "10",
+            "25",
+            "50",
+            "100",
+            "200",
+            "500",
+            "750",
+            "1000",
+            "2500",
+            "5000"
+          ]
+        },
+        {
+          "name" => "minimum_split",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0.1",
+            "1",
+            "10",
+            "25",
+            "50",
+            "100",
+            "200",
+            "500",
+            "750",
+            "1000",
+            "2500",
+            "5000"
+          ]
+        },
+        {
+          "name" => "position",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "11",
+            "12",
+            "111",
+            "112",
+            "121",
+            "13",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "108",
+            "109",
+            "110",
+            "111",
+            "112",
+            "113",
+            "114",
+            "115",
+            "116",
+            "117",
+            "118",
+            "119",
+            "120",
+            "121",
+            "133",
+            "134",
+            "135",
+            "136",
+            "137",
+            "138",
+            "139",
+            "140",
+            "141",
+            "142",
+            "143",
+            "144",
+            "145",
+            "146",
+            "147",
+            "158"
+          ]
+        },
+        {
+          "name" => "group_by",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "year",
+            "api_game_date_month_text",
+            "position",
+            "game_type"
+          ]
+        },
+        {
+          "name" => "date_start",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_end",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "name",
+            "team_name",
+            "total_runs",
+            "inf_of_runs",
+            "range_runs",
+            "arm_runs",
+            "dp_runs",
+            "fielding_runs_prevented_on_rec1b",
+            "catching_runs",
+            "framing_runs",
+            "throwing_runs",
+            "blocking_runs",
+            "outs_total",
+            "outs_2",
+            "outs_3",
+            "outs_4",
+            "outs_5",
+            "outs_6",
+            "outs_7",
+            "outs_8",
+            "outs_9",
+            "tot_pa",
+            "year",
+            "api_game_date_month_mm",
+            "api_game_date_month_text",
+            "pos_id",
+            "game_type"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-first-base-receiving" => {
+      "id" => "mlb-statcast-first-base-receiving",
+      "method" => "GET",
+      "path" => "/mlb/statcast-first-base-receiving",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "fielder_3",
+            "throw_fielder_id",
+            "pitching-team",
+            "batting-team",
+            "league"
+          ]
+        },
+        {
+          "name" => "season[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "gameType[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "R",
+            "F",
+            "D",
+            "L",
+            "W"
+          ]
+        },
+        {
+          "name" => "min",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "75",
+            "100",
+            "200",
+            "300",
+            "400",
+            "500",
+            "750",
+            "1000"
+          ]
+        },
+        {
+          "name" => "minSplit",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "75",
+            "100",
+            "200",
+            "300",
+            "400",
+            "500",
+            "750",
+            "1000"
+          ]
+        },
+        {
+          "name" => "splitYear",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "name" => "split[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "throw_height_code",
+            "throw_location_code_full",
+            "runners_on_cd"
+          ]
+        },
+        {
+          "name" => "team[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "108",
+            "117",
+            "133",
+            "141",
+            "144",
+            "158",
+            "138",
+            "112",
+            "109",
+            "119",
+            "137",
+            "114",
+            "136",
+            "146",
+            "121",
+            "120",
+            "110",
+            "135",
+            "143",
+            "134",
+            "140",
+            "139",
+            "111",
+            "113",
+            "115",
+            "118",
+            "116",
+            "142",
+            "145",
+            "147"
+          ]
+        },
+        {
+          "name" => "dateStart",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "dateEnd",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "fielder_3_hand",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "min_height_in_inches",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80"
+          ]
+        },
+        {
+          "name" => "is_hit_into_play_field_out",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "name" => "runners_on_cd[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+          ]
+        },
+        {
+          "name" => "throw_pos_id[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "4",
+            "5",
+            "6"
+          ]
+        },
+        {
+          "name" => "throw_height_code[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "1_Low",
+            "2_Mid",
+            "3_High"
+          ]
+        },
+        {
+          "name" => "throw_location_code_full[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "A. On Target",
+            "B. Scoop",
+            "C. Bounce",
+            "D. Low",
+            "E. Wide",
+            "F. High"
+          ]
+        },
+        {
+          "name" => "bin_time_X10[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "-1",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        },
+        {
+          "name" => "sortColumn",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "entity_name",
+            "total_oaa",
+            "oaa_on_target",
+            "oaa_bounce",
+            "oaa_scoop",
+            "oaa_low",
+            "oaa_high",
+            "oaa_wide",
+            "n_on_target",
+            "n_bounce",
+            "n_scoop",
+            "n_low",
+            "n_high",
+            "n_wide",
+            "outs_on_target",
+            "outs_bounce",
+            "outs_scoop",
+            "outs_low",
+            "outs_high",
+            "outs_wide",
+            "n_outs",
+            "n_plays",
+            "avg_expected_rate_out"
+          ]
+        },
+        {
+          "name" => "sortDirection",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-first-base-receiving-details" => {
+      "id" => "mlb-statcast-first-base-receiving-details",
+      "method" => "GET",
+      "path" => "/mlb/statcast-first-base-receiving-details",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "fielder_3",
+            "throw_fielder_id",
+            "pitching-team",
+            "batting-team",
+            "league"
+          ]
+        },
+        {
+          "name" => "season[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "gameType[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "R",
+            "F",
+            "D",
+            "L",
+            "W"
+          ]
+        },
+        {
+          "name" => "min",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "75",
+            "100",
+            "200",
+            "300",
+            "400",
+            "500",
+            "750",
+            "1000"
+          ]
+        },
+        {
+          "name" => "minSplit",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "75",
+            "100",
+            "200",
+            "300",
+            "400",
+            "500",
+            "750",
+            "1000"
+          ]
+        },
+        {
+          "name" => "split[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "throw_height_code",
+            "throw_location_code_full",
+            "runners_on_cd"
+          ]
+        },
+        {
+          "name" => "splitYear",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "name" => "team[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "108",
+            "117",
+            "133",
+            "141",
+            "144",
+            "158",
+            "138",
+            "112",
+            "109",
+            "119",
+            "137",
+            "114",
+            "136",
+            "146",
+            "121",
+            "120",
+            "110",
+            "135",
+            "143",
+            "134",
+            "140",
+            "139",
+            "111",
+            "113",
+            "115",
+            "118",
+            "116",
+            "142",
+            "145",
+            "147"
+          ]
+        },
+        {
+          "name" => "dateStart",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "dateEnd",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "fielder_3_hand",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "min_height_in_inches",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80"
+          ]
+        },
+        {
+          "name" => "is_hit_into_play_field_out",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "name" => "runners_on_cd[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+          ]
+        },
+        {
+          "name" => "throw_pos_id[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "4",
+            "5",
+            "6"
+          ]
+        },
+        {
+          "name" => "throw_height_code[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "1_Low",
+            "2_Mid",
+            "3_High"
+          ]
+        },
+        {
+          "name" => "throw_location_code_full[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "A. On Target",
+            "B. Scoop",
+            "C. Bounce",
+            "D. Low",
+            "E. Wide",
+            "F. High"
+          ]
+        },
+        {
+          "name" => "bin_time_X10[]",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "-1",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-home-runs" => {
+      "id" => "mlb-statcast-home-runs",
+      "method" => "GET",
+      "path" => "/mlb/statcast-home-runs",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "player_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Batter",
+            "Pitcher"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "108",
+            "109",
+            "110",
+            "111",
+            "112",
+            "113",
+            "114",
+            "115",
+            "116",
+            "117",
+            "118",
+            "119",
+            "120",
+            "121",
+            "133",
+            "134",
+            "135",
+            "136",
+            "137",
+            "138",
+            "139",
+            "140",
+            "141",
+            "142",
+            "143",
+            "144",
+            "145",
+            "146",
+            "147",
+            "158"
+          ]
+        },
+        {
+          "name" => "min",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "5",
+            "10",
+            "15",
+            "20",
+            "25"
+          ]
+        },
+        {
+          "name" => "cat",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "adj_xhr",
+            "xhr"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "player",
+            "team",
+            "year",
+            "cat",
+            "avg_hr_trot",
+            "doubters",
+            "mostly_gone",
+            "no_doubters",
+            "no_doubter_per",
+            "hr_total",
+            "xhr",
+            "xhr_diff"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-home-runs-details" => {
+      "id" => "mlb-statcast-home-runs-details",
+      "method" => "GET",
+      "path" => "/mlb/statcast-home-runs-details",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "player_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Batter",
+            "Pitcher"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "cat",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "adj_xhr",
+            "xhr"
           ]
         },
         {
@@ -67357,6 +75964,3231 @@ module Crawlora
             "diff_success_rate",
             "n"
           ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-park-factors" => {
+      "id" => "mlb-statcast-park-factors",
+      "method" => "GET",
+      "path" => "/mlb/statcast-park-factors",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "year",
+            "venue",
+            "distance",
+            "distance-all",
+            "raw",
+            "dimensions"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "bat_side",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "R",
+            "L"
+          ]
+        },
+        {
+          "name" => "condition",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "All",
+            "Day",
+            "Night",
+            "Roof Closed",
+            "Open Air"
+          ]
+        },
+        {
+          "name" => "rolling",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "name" => "stat",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "index_wOBA",
+            "index_wOBAcon",
+            "index_xwOBAcon",
+            "index_BACON",
+            "index_xBAcon",
+            "index_hardhit",
+            "index_runs",
+            "index_OBP",
+            "index_Hits",
+            "index_1B",
+            "index_2B",
+            "index_3B",
+            "index_HR",
+            "index_BB",
+            "index_SO"
+          ]
+        },
+        {
+          "name" => "parks",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "mlb",
+            "all"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-percentile" => {
+      "id" => "mlb-statcast-percentile",
+      "method" => "GET",
+      "path" => "/mlb/statcast-percentile",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "batter",
+            "pitcher"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "108",
+            "109",
+            "110",
+            "111",
+            "112",
+            "113",
+            "114",
+            "115",
+            "116",
+            "117",
+            "118",
+            "119",
+            "120",
+            "121",
+            "133",
+            "134",
+            "135",
+            "136",
+            "137",
+            "138",
+            "139",
+            "140",
+            "141",
+            "142",
+            "143",
+            "144",
+            "145",
+            "146",
+            "147",
+            "158"
+          ]
+        },
+        {
+          "name" => "pctl",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-pitch-arsenal" => {
+      "id" => "mlb-statcast-pitch-arsenal",
+      "method" => "GET",
+      "path" => "/mlb/statcast-pitch-arsenal",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "pitcher",
+            "batter"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "pitch_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "FF",
+            "CH",
+            "CU",
+            "FC",
+            "KN",
+            "SC",
+            "SI",
+            "SL",
+            "SV",
+            "FS",
+            "ST",
+            "CUKC",
+            "SIFT"
+          ]
+        },
+        {
+          "name" => "min_pa",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "10",
+            "25",
+            "50",
+            "100",
+            "150",
+            "200",
+            "250",
+            "350",
+            "450",
+            "500",
+            "600"
+          ]
+        },
+        {
+          "name" => "min_pitches",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "1",
+            "10",
+            "50",
+            "100",
+            "200",
+            "300",
+            "500",
+            "750"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "player_name",
+            "team_name_alt",
+            "pitch_name",
+            "run_value_per_100",
+            "run_value",
+            "pitches",
+            "pitch_usage",
+            "pa",
+            "ba",
+            "slg",
+            "woba",
+            "whiff_percent",
+            "k_percent",
+            "put_away",
+            "est_ba",
+            "est_slg",
+            "est_woba",
+            "hard_hit_percent"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-pitch-arsenal-details" => {
+      "id" => "mlb-statcast-pitch-arsenal-details",
+      "method" => "GET",
+      "path" => "/mlb/statcast-pitch-arsenal-details",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "player_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "pitcher",
+            "batter"
+          ]
+        },
+        {
+          "name" => "pitch_type",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "FF",
+            "CH",
+            "CU",
+            "FC",
+            "KN",
+            "SC",
+            "SI",
+            "SL",
+            "SV",
+            "FS",
+            "ST",
+            "CUKC",
+            "SIFT"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-pitch-arsenals" => {
+      "id" => "mlb-statcast-pitch-arsenals",
+      "method" => "GET",
+      "path" => "/mlb/statcast-pitch-arsenals",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "avg_speed",
+            "n_",
+            "avg_spin"
+          ]
+        },
+        {
+          "name" => "hand",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "R",
+            "L"
+          ]
+        },
+        {
+          "name" => "min_pitches",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "100",
+            "250",
+            "500",
+            "750",
+            "1000",
+            "1500",
+            "2000",
+            "2500",
+            "3000"
+          ]
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "ATH",
+            "ATL",
+            "AZ",
+            "BAL",
+            "BOS",
+            "CHC",
+            "CIN",
+            "CLE",
+            "COL",
+            "CWS",
+            "DET",
+            "HOU",
+            "KC",
+            "LAA",
+            "LAD",
+            "MIA",
+            "MIL",
+            "MIN",
+            "NYM",
+            "NYY",
+            "PHI",
+            "PIT",
+            "SD",
+            "SEA",
+            "SF",
+            "STL",
+            "TB",
+            "TEX",
+            "TOR",
+            "WSH"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "player_name",
+            "four_seam",
+            "sinker",
+            "cutter",
+            "slider",
+            "changeup",
+            "curve",
+            "splitter",
+            "sweeper",
+            "slurve"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-pitch-movement" => {
+      "id" => "mlb-statcast-pitch-movement",
+      "method" => "GET",
+      "path" => "/mlb/statcast-pitch-movement",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2026",
+            "2025",
+            "2024",
+            "2023",
+            "2022",
+            "2021",
+            "2020",
+            "2019",
+            "2018",
+            "2017"
+          ]
+        },
+        {
+          "name" => "pitch_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "FF",
+            "CH",
+            "CU",
+            "FC",
+            "FO",
+            "KN",
+            "SC",
+            "SI",
+            "SL",
+            "SV",
+            "FS",
+            "ST",
+            "ALL"
+          ]
+        },
+        {
+          "name" => "hand",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "R",
+            "L"
+          ]
+        },
+        {
+          "name" => "min",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "50",
+            "100",
+            "250",
+            "500",
+            "750",
+            "1000",
+            "1500",
+            "2000",
+            "2500",
+            "3000"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "pitcher_name",
+            "team_name_abbrev",
+            "pitch_hand",
+            "pitch_type_name",
+            "pitches_thrown",
+            "avg_speed",
+            "pitcher_break_z",
+            "diff_z",
+            "pitcher_break_x_hidden",
+            "diff_x",
+            "pitcher_break_z_induced",
+            "diff_z_induced_standard",
+            "diff_x_standard"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-pitch-tempo" => {
+      "id" => "mlb-statcast-pitch-tempo",
+      "method" => "GET",
+      "path" => "/mlb/statcast-pitch-tempo",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Pit",
+            "Bat",
+            "Pitching Team",
+            "Batting Team",
+            "League"
+          ]
+        },
+        {
+          "name" => "season_start",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "season_end",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular",
+            "Playoff",
+            "All"
+          ]
+        },
+        {
+          "name" => "n",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "1",
+            "10",
+            "50",
+            "100",
+            "250",
+            "500",
+            "1000",
+            "2000",
+            "5000"
+          ]
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "108",
+            "109",
+            "110",
+            "111",
+            "112",
+            "113",
+            "114",
+            "115",
+            "116",
+            "117",
+            "118",
+            "119",
+            "120",
+            "121",
+            "133",
+            "134",
+            "135",
+            "136",
+            "137",
+            "138",
+            "139",
+            "140",
+            "141",
+            "142",
+            "143",
+            "144",
+            "145",
+            "146",
+            "147",
+            "158"
+          ]
+        },
+        {
+          "name" => "split",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "yes",
+            "no"
+          ]
+        },
+        {
+          "name" => "with_team_only",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "entity_name",
+            "start_year",
+            "tot_n_empty",
+            "median_seconds_empty",
+            "empty_equiv",
+            "freq_hot_empty",
+            "freq_cold_empty",
+            "tot_n_onbase",
+            "median_seconds_onbase",
+            "onbase_equiv",
+            "freq_hot_onbase",
+            "freq_cold_onbase"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-pitch-tempo-player" => {
+      "id" => "mlb-statcast-pitch-tempo-player",
+      "method" => "GET",
+      "path" => "/mlb/statcast-pitch-tempo-player",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "entity_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Pit",
+            "Bat"
+          ]
+        },
+        {
+          "name" => "season_start",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "season_end",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular",
+            "Playoff",
+            "All"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-statcast-pitch-timer" => {
+      "id" => "mlb-statcast-pitch-timer",
+      "method" => "GET",
+      "path" => "/mlb/statcast-pitch-timer",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Pit",
+            "Bat",
+            "Cat",
+            "Team",
+            "Opp"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "min_pitches",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "5",
+            "25",
+            "50",
+            "100",
+            "250",
+            "500",
+            "1000"
+          ]
+        },
+        {
+          "name" => "include_zeroes",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "chart_sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "violating",
+            "violated",
+            "net",
+            "ballsAgainst",
+            "ballsFor",
+            "strikesAgainst",
+            "strikesFor",
+            "division"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "entity_name",
+            "N_pitches",
+            "N_time_violations",
+            "N_pitcher_pitch_timer",
+            "N_batter_pitch_timer",
+            "N_batter_timeout",
+            "N_catcher_pitch_timer",
+            "N_defensive_shift",
+            "rate"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-player-details" => {
+      "id" => "mlb-statcast-player-details",
+      "method" => "GET",
+      "path" => "/mlb/statcast-player-details",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "player_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "batter",
+            "pitcher"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-statcast-rolling" => {
+      "id" => "mlb-statcast-rolling",
+      "method" => "GET",
+      "path" => "/mlb/statcast-rolling",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "metric",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "xwoba",
+            "woba",
+            "ba",
+            "xba",
+            "slg",
+            "xslg"
+          ]
+        },
+        {
+          "name" => "role",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Batter",
+            "Pitcher"
+          ]
+        },
+        {
+          "name" => "window_pa",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "50",
+            "100",
+            "250"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-run-value" => {
+      "id" => "mlb-statcast-run-value",
+      "method" => "GET",
+      "path" => "/mlb/statcast-run-value",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "group",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Batter",
+            "Pitcher"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "All",
+            "Career",
+            "2026",
+            "2025",
+            "2024",
+            "2023",
+            "2022",
+            "2021",
+            "2020",
+            "2019",
+            "2018",
+            "2017",
+            "2016",
+            "2015",
+            "2014",
+            "2013",
+            "2012",
+            "2011",
+            "2010",
+            "2009",
+            "2008"
+          ]
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "10",
+            "25",
+            "50",
+            "75",
+            "100",
+            "150",
+            "200",
+            "250",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900",
+            "1000",
+            "1500"
+          ]
+        },
+        {
+          "name" => "leverage",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Neutral",
+            "Leveraged"
+          ]
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "All",
+            "Swing-Take",
+            "Pitch Type",
+            "Attack Region",
+            "Bat-side"
+          ]
+        },
+        {
+          "name" => "sub_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Swing",
+            "Take",
+            "4-Seam Fastball",
+            "Changeup",
+            "Curveball",
+            "Cutter",
+            "Knuckleball",
+            "Screwball",
+            "Sinker",
+            "Slider",
+            "Slurve",
+            "Split-Finger",
+            "Sweeper",
+            "Heart",
+            "Shadow",
+            "Chase",
+            "Waste"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "player_name",
+            "team_name_abbrev",
+            "year",
+            "pa",
+            "pitches",
+            "runs_heart",
+            "runs_shadow",
+            "runs_chase",
+            "runs_waste",
+            "runs_all",
+            "runs_ff",
+            "runs_si",
+            "runs_fc",
+            "runs_ch",
+            "runs_fs",
+            "runs_cu",
+            "runs_sl",
+            "runs_st",
+            "runs_sv",
+            "runs_kn",
+            "runs_sc",
+            "delta_runs"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-running-game" => {
+      "id" => "mlb-statcast-running-game",
+      "method" => "GET",
+      "path" => "/mlb/statcast-running-game",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Pit",
+            "Pitching Team",
+            "League"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular",
+            "Playoff",
+            "All"
+          ]
+        },
+        {
+          "name" => "pitch_hand",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "runner_moved",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "All",
+            "Advance",
+            "Out",
+            "Hold"
+          ]
+        },
+        {
+          "name" => "target_base",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "All",
+            "2B",
+            "3B"
+          ]
+        },
+        {
+          "name" => "prior_pk",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "All",
+            "0",
+            "1",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "name" => "n",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "1",
+            "50",
+            "100",
+            "200",
+            "500",
+            "1000",
+            "1500",
+            "2000"
+          ]
+        },
+        {
+          "name" => "season_start",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "season_end",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "split",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "yes",
+            "no"
+          ]
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "split",
+            "108",
+            "117",
+            "133",
+            "141",
+            "144",
+            "158",
+            "138",
+            "112",
+            "109",
+            "119",
+            "137",
+            "114",
+            "136",
+            "146",
+            "121",
+            "120",
+            "110",
+            "135",
+            "143",
+            "134",
+            "140",
+            "139",
+            "113",
+            "111",
+            "115",
+            "118",
+            "116",
+            "142",
+            "145",
+            "147"
+          ]
+        },
+        {
+          "name" => "with_team_only",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "entity_name",
+            "team_name",
+            "start_year",
+            "pitch_hand",
+            "key_pitch_hand",
+            "runs_prevented_on_running_attr",
+            "simple_prevented_on_running_attr",
+            "net_attr_plus",
+            "net_attr_minus",
+            "n_init",
+            "rate_sbx",
+            "n_plus",
+            "n_minus",
+            "r_sec_minus_prim_lead",
+            "r_sec_minus_prim_lead_sbx",
+            "n_sb",
+            "n_cs",
+            "n_pk",
+            "n_bk",
+            "n_fb",
+            "r_primary_lead",
+            "r_secondary_lead",
+            "r_primary_lead_sbx",
+            "r_secondary_lead_sbx"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "search",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-running-game-details" => {
+      "id" => "mlb-statcast-running-game-details",
+      "method" => "GET",
+      "path" => "/mlb/statcast-running-game-details",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "entity_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Pit",
+            "Pitching Team"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular",
+            "Playoff",
+            "All"
+          ]
+        },
+        {
+          "name" => "pitch_hand",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "runner_moved",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "All",
+            "Advance",
+            "Out",
+            "Hold"
+          ]
+        },
+        {
+          "name" => "target_base",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "All",
+            "2B",
+            "3B"
+          ]
+        },
+        {
+          "name" => "prior_pk",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "All",
+            "0",
+            "1",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "name" => "n",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "1",
+            "50",
+            "100",
+            "200",
+            "500",
+            "1000",
+            "1500",
+            "2000"
+          ]
+        },
+        {
+          "name" => "season_start",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "season_end",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "split",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "yes",
+            "no"
+          ]
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "108",
+            "117",
+            "133",
+            "141",
+            "144",
+            "158",
+            "138",
+            "112",
+            "109",
+            "119",
+            "137",
+            "114",
+            "136",
+            "146",
+            "121",
+            "120",
+            "110",
+            "135",
+            "143",
+            "134",
+            "140",
+            "139",
+            "113",
+            "111",
+            "115",
+            "118",
+            "116",
+            "142",
+            "145",
+            "147"
+          ]
+        },
+        {
+          "name" => "with_team_only",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-sprint-speed" => {
+      "id" => "mlb-statcast-sprint-speed",
+      "method" => "GET",
+      "path" => "/mlb/statcast-sprint-speed",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "min_season",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "max_season",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "position",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "108",
+            "117",
+            "133",
+            "141",
+            "144",
+            "158",
+            "138",
+            "112",
+            "109",
+            "119",
+            "137",
+            "114",
+            "136",
+            "146",
+            "121",
+            "120",
+            "110",
+            "135",
+            "143",
+            "134",
+            "140",
+            "139",
+            "113",
+            "111",
+            "115",
+            "118",
+            "116",
+            "142",
+            "145",
+            "147"
+          ]
+        },
+        {
+          "name" => "minimum_runs",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "5",
+            "10",
+            "25",
+            "50",
+            "75",
+            "100",
+            "150",
+            "200",
+            "250"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "player",
+            "team",
+            "position",
+            "age",
+            "competitive_runs",
+            "bolts",
+            "home_to_first",
+            "sprint_speed"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-sprint-speed-teams" => {
+      "id" => "mlb-statcast-sprint-speed-teams",
+      "method" => "GET",
+      "path" => "/mlb/statcast-sprint-speed-teams",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "all"
+          ]
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "LAA",
+            "HOU",
+            "OAK",
+            "TOR",
+            "ATL",
+            "MIL",
+            "STL",
+            "CHC",
+            "ARI",
+            "LAD",
+            "SF",
+            "CLE",
+            "SEA",
+            "MIA",
+            "NYM",
+            "WSH",
+            "BAL",
+            "SD",
+            "PHI",
+            "PIT",
+            "TEX",
+            "TB",
+            "BOS",
+            "CIN",
+            "COL",
+            "KC",
+            "DET",
+            "MIN",
+            "CWS",
+            "NYY"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "season",
+            "team",
+            "players",
+            "competitive_runs",
+            "average_sprint_speed",
+            "fastest_sprint_speed",
+            "slowest_sprint_speed",
+            "bolts",
+            "average_home_to_first"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-swing-path" => {
+      "id" => "mlb-statcast-swing-path",
+      "method" => "GET",
+      "path" => "/mlb/statcast-swing-path",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "batter",
+            "batting-team",
+            "league"
+          ]
+        },
+        {
+          "name" => "season_start",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "season_end",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "game_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Any",
+            "Exhibition",
+            "Playoff",
+            "Regular"
+          ]
+        },
+        {
+          "name" => "min_swings",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "100",
+            "200",
+            "500",
+            "1000"
+          ]
+        },
+        {
+          "name" => "min_group_swings",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "100",
+            "200",
+            "500",
+            "1000"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "108",
+            "109",
+            "110",
+            "111",
+            "112",
+            "113",
+            "114",
+            "115",
+            "116",
+            "117",
+            "118",
+            "119",
+            "120",
+            "121",
+            "133",
+            "134",
+            "135",
+            "136",
+            "137",
+            "138",
+            "139",
+            "140",
+            "141",
+            "142",
+            "143",
+            "144",
+            "145",
+            "146",
+            "147",
+            "158"
+          ]
+        },
+        {
+          "name" => "date_start",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_end",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "bat_side",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "contact_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2",
+            "4",
+            "9"
+          ]
+        },
+        {
+          "name" => "is_hard_hit",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "0"
+          ]
+        },
+        {
+          "name" => "attack_zone",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "1",
+            "1.1",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "name" => "pitch_hand",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "name",
+            "team_name",
+            "avg_sweetspot_speed_mph",
+            "avg_plane_vertical_angle",
+            "attack_angle",
+            "attack_direction_pullopp",
+            "rate_ideal_attack_angle",
+            "avg_intercept_y_vs_plate",
+            "avg_intercept_y_vs_batter",
+            "avg_batter_y_position",
+            "avg_batter_x_position",
+            "avg_foot_sep0",
+            "avg_foot_angle0",
+            "n_swings"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-swing-timing" => {
+      "id" => "mlb-statcast-swing-timing",
+      "method" => "GET",
+      "path" => "/mlb/statcast-swing-timing",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "batter",
+            "batting-team",
+            "pitcher",
+            "pitching-team",
+            "league"
+          ]
+        },
+        {
+          "name" => "seasons",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "game_types",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "R",
+            "A",
+            "F",
+            "D",
+            "L",
+            "W"
+          ]
+        },
+        {
+          "name" => "splits",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "api_pitch_type_group03",
+            "api_pitch_type_group09",
+            "api_game_date_month_text",
+            "bat_contact_code",
+            "game_type",
+            "is_hit_into_play_hardhit",
+            "is_best_speed",
+            "timing_x_tiedupflail",
+            "timing_y_earlylate",
+            "timing_z_overunder",
+            "pitch_hand",
+            "bat_side",
+            "is_pre_ball_count_3",
+            "is_pre_strike_count_2",
+            "pitchzone_height_code",
+            "is_starter_pitcher"
+          ]
+        },
+        {
+          "name" => "min_swings",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "100",
+            "200",
+            "500",
+            "1000"
+          ]
+        },
+        {
+          "name" => "min_split",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "100",
+            "200",
+            "500",
+            "1000"
+          ]
+        },
+        {
+          "name" => "split_year",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "0"
+          ]
+        },
+        {
+          "name" => "teams",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "108",
+            "109",
+            "110",
+            "111",
+            "112",
+            "113",
+            "114",
+            "115",
+            "116",
+            "117",
+            "118",
+            "119",
+            "120",
+            "121",
+            "133",
+            "134",
+            "135",
+            "136",
+            "137",
+            "138",
+            "139",
+            "140",
+            "141",
+            "142",
+            "143",
+            "144",
+            "145",
+            "146",
+            "147",
+            "158"
+          ]
+        },
+        {
+          "name" => "date_start",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_end",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "bat_side",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "contact_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2",
+            "4",
+            "9"
+          ]
+        },
+        {
+          "name" => "attack_zone",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "1",
+            "1.1",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "name" => "pitch_hand",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "pitch_types",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "FF",
+            "SI",
+            "FC",
+            "CH",
+            "FS",
+            "FO",
+            "SC",
+            "CU",
+            "SL",
+            "ST",
+            "SV",
+            "KN"
+          ]
+        },
+        {
+          "name" => "counts",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "00",
+            "01",
+            "02",
+            "10",
+            "11",
+            "12",
+            "20",
+            "21",
+            "22",
+            "30",
+            "31",
+            "32"
+          ]
+        },
+        {
+          "name" => "swing_timing_x",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "Tiedup",
+            "Centered",
+            "Flail"
+          ]
+        },
+        {
+          "name" => "swing_timing_y",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "Early",
+            "OnTime",
+            "Late"
+          ]
+        },
+        {
+          "name" => "swing_timing_z",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "Under",
+            "Linedup",
+            "Over"
+          ]
+        },
+        {
+          "name" => "flags",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "is_timing_xyz_flawed",
+            "is_timing_xyz_perfect"
+          ]
+        },
+        {
+          "name" => "not_flags",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "is_timing_xyz_flawed",
+            "is_timing_xyz_perfect"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "name",
+            "team_name",
+            "pitch_hand_type",
+            "bat_side_type",
+            "n_swings",
+            "competitive_swings",
+            "strikes_swinging",
+            "miss_distance",
+            "flails",
+            "centers",
+            "tied_ups",
+            "earlys",
+            "on_times",
+            "lates",
+            "unders",
+            "lined_ups",
+            "overs",
+            "delta_run_exp",
+            "whiff_rate",
+            "competitive_percent",
+            "perfect_percent",
+            "flawed_percent"
+          ]
+        },
+        {
+          "name" => "sort_dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "mlb-statcast-swing-timing-details" => {
+      "id" => "mlb-statcast-swing-timing-details",
+      "method" => "GET",
+      "path" => "/mlb/statcast-swing-timing-details",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "row_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "batter",
+            "pitcher"
+          ]
+        },
+        {
+          "name" => "seasons",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "game_types",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "R",
+            "A",
+            "F",
+            "D",
+            "L",
+            "W"
+          ]
+        },
+        {
+          "name" => "splits",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "api_pitch_type_group03",
+            "api_pitch_type_group09",
+            "api_game_date_month_text",
+            "bat_contact_code",
+            "game_type",
+            "is_hit_into_play_hardhit",
+            "is_best_speed",
+            "timing_x_tiedupflail",
+            "timing_y_earlylate",
+            "timing_z_overunder",
+            "pitch_hand",
+            "bat_side",
+            "is_pre_ball_count_3",
+            "is_pre_strike_count_2",
+            "pitchzone_height_code",
+            "is_starter_pitcher"
+          ]
+        },
+        {
+          "name" => "min_swings",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "q",
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "100",
+            "200",
+            "500",
+            "1000"
+          ]
+        },
+        {
+          "name" => "min_split",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "5",
+            "10",
+            "25",
+            "50",
+            "100",
+            "200",
+            "500",
+            "1000"
+          ]
+        },
+        {
+          "name" => "split_year",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "name" => "teams",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "108",
+            "117",
+            "133",
+            "141",
+            "144",
+            "158",
+            "138",
+            "112",
+            "109",
+            "119",
+            "137",
+            "114",
+            "136",
+            "146",
+            "121",
+            "120",
+            "110",
+            "135",
+            "143",
+            "134",
+            "113",
+            "111",
+            "115",
+            "118",
+            "116",
+            "142",
+            "145",
+            "147"
+          ]
+        },
+        {
+          "name" => "date_start",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_end",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "bat_side",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "contact_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2",
+            "4",
+            "9"
+          ]
+        },
+        {
+          "name" => "attack_zone",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "0",
+            "1",
+            "1.1",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "name" => "pitch_hand",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "L",
+            "R"
+          ]
+        },
+        {
+          "name" => "pitch_types",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "FF",
+            "SI",
+            "FC",
+            "CH",
+            "FS",
+            "FO",
+            "SC",
+            "CU",
+            "SL",
+            "ST",
+            "SV",
+            "KN"
+          ]
+        },
+        {
+          "name" => "counts",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "00",
+            "01",
+            "02",
+            "10",
+            "11",
+            "12",
+            "20",
+            "21",
+            "22",
+            "30",
+            "31",
+            "32"
+          ]
+        },
+        {
+          "name" => "swing_timing_x",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "Tiedup",
+            "Centered",
+            "Flail"
+          ]
+        },
+        {
+          "name" => "swing_timing_y",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "Early",
+            "OnTime",
+            "Late"
+          ]
+        },
+        {
+          "name" => "swing_timing_z",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "Under",
+            "Linedup",
+            "Over"
+          ]
+        },
+        {
+          "name" => "flags",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "is_timing_xyz_flawed",
+            "is_timing_xyz_perfect"
+          ]
+        },
+        {
+          "name" => "not_flags",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "is_timing_xyz_flawed",
+            "is_timing_xyz_perfect"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-statcast-top-performers" => {
+      "id" => "mlb-statcast-top-performers",
+      "method" => "GET",
+      "path" => "/mlb/statcast-top-performers",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "mlb-statcast-year-to-year" => {
+      "id" => "mlb-statcast-year-to-year",
+      "method" => "GET",
+      "path" => "/mlb/statcast-year-to-year",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "group",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Batter",
+            "Pitcher",
+            "Batter Team",
+            "Pitcher Team"
+          ]
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "ba",
+            "xba",
+            "obp",
+            "xobp",
+            "slg",
+            "xslg",
+            "iso",
+            "xiso",
+            "babip",
+            "woba",
+            "xwoba",
+            "wobacon",
+            "xwobacon",
+            "bacon",
+            "xbacon",
+            "hard_hit_percent",
+            "exit_velocity_avg",
+            "sweet_spot_percent",
+            "barrel_batted_rate",
+            "launch_angle_avg",
+            "avg_swing_speed",
+            "attack_angle",
+            "ideal_angle_rate",
+            "attack_direction",
+            "vertical_swing_path",
+            "avg_swing_length",
+            "fastball_velo",
+            "breaking_velo",
+            "offspeed_velo",
+            "barrels",
+            "popups_percent",
+            "flyballs_percent",
+            "linedrives_percent",
+            "groundballs_percent",
+            "pull_percent",
+            "straightaway_percent",
+            "opposite_percent",
+            "poorlyweak_percent",
+            "pull_percent_airballs",
+            "poorlytopped_percent",
+            "poorlyunder_percent",
+            "flareburner_percent",
+            "solidcontact_percent",
+            "hr_flyballs_percent",
+            "popups",
+            "flyballs",
+            "linedrives",
+            "groundballs",
+            "in_zone_percent",
+            "out_zone_percent",
+            "edge_percent",
+            "z_swing_percent",
+            "oz_swing_percent",
+            "iz_contact_percent",
+            "oz_contact_percent",
+            "whiff_percent",
+            "f_strike_percent",
+            "f_swing_percent",
+            "swing_percent",
+            "meatball_swing_percent",
+            "meatball_percent",
+            "z_swing_miss_percent",
+            "oz_swing_miss_percent",
+            "in_zone",
+            "out_zone",
+            "edge",
+            "in_zone_swing",
+            "out_zone_swing",
+            "in_zone_swing_miss",
+            "out_zone_swing_miss",
+            "pitch_count",
+            "pa",
+            "ab",
+            "hit",
+            "single",
+            "double",
+            "triple",
+            "home_run",
+            "walk",
+            "strikeout",
+            "k_percent",
+            "bb_percent",
+            "hbp",
+            "batted_ball",
+            "pitch_usage_fastball",
+            "pitch_usage_offspeed",
+            "pitch_usage_breaking",
+            "pitch_count_fastball",
+            "pitch_count_offspeed",
+            "pitch_count_breaking"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "2025",
+            "2024",
+            "2023",
+            "2022",
+            "2021",
+            "2020",
+            "2019",
+            "2018",
+            "2017"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
         },
         {
           "name" => "sort_dir",
@@ -68609,6 +80441,175 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "national-article" => {
+      "id" => "national-article",
+      "method" => "GET",
+      "path" => "/national/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "national-author" => {
+      "id" => "national-author",
+      "method" => "GET",
+      "path" => "/national/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "national-headlines" => {
+      "id" => "national-headlines",
+      "method" => "GET",
+      "path" => "/national/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "news",
+            "news/uae",
+            "news/gulf",
+            "news/mena",
+            "mena/arab-showcase",
+            "news/us",
+            "news/uk",
+            "news/europe",
+            "news/asia",
+            "business",
+            "business/aviation",
+            "business/economy",
+            "business/energy",
+            "business/money",
+            "business/property",
+            "business/banking",
+            "business/uk",
+            "business/markets",
+            "in-focus",
+            "opinion",
+            "opinion/comment",
+            "opinion/editorial",
+            "opinion/obituaries",
+            "opinion/cartoon",
+            "opinion/feedback",
+            "future",
+            "future/science",
+            "future/space",
+            "future/technology",
+            "climate",
+            "climate/environment",
+            "climate/road-to-net-zero",
+            "health",
+            "arts-culture",
+            "arts-culture/art-design",
+            "arts-culture/books",
+            "arts-culture/film-tv",
+            "arts-culture/music-stage",
+            "arts-culture/pop-culture",
+            "lifestyle",
+            "travel",
+            "lifestyle/fashion-beauty",
+            "lifestyle/food",
+            "lifestyle/motoring",
+            "magazine",
+            "lifestyle/luxury",
+            "lifestyle/home-garden",
+            "lifestyle/wellbeing",
+            "lifestyle/things-to-do",
+            "sport",
+            "sport/football",
+            "sport/cricket",
+            "sport/f1",
+            "sport/tennis",
+            "sport/combat-sports",
+            "sport/cycling",
+            "weekend"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "national-news" => {
+      "id" => "national-news",
+      "method" => "GET",
+      "path" => "/national/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "national-sections" => {
+      "id" => "national-sections",
+      "method" => "GET",
+      "path" => "/national/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "nationalpost-article" => {
       "id" => "nationalpost-article",
       "method" => "GET",
@@ -68916,6 +80917,11 @@ module Crawlora
           "in" => "query",
           "type" => "string",
           "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
         }
       ],
       "formParams" => [],
@@ -68927,7 +80933,8 @@ module Crawlora
       ],
       "security" => [
         "ApiKeyAuth"
-      ]
+      ],
+      "paginatable" => true
     },
     "ndtv-headlines" => {
       "id" => "ndtv-headlines",
@@ -69011,6 +81018,78 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "ndtv-latest-videos" => {
+      "id" => "ndtv-latest-videos",
+      "method" => "GET",
+      "path" => "/ndtv/latest-videos",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "ndtv-live-blog" => {
+      "id" => "ndtv-live-blog",
+      "method" => "GET",
+      "path" => "/ndtv/live-blog",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ndtv-live-blogs" => {
+      "id" => "ndtv-live-blogs",
+      "method" => "GET",
+      "path" => "/ndtv/live-blogs",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "ndtv-news" => {
       "id" => "ndtv-news",
       "method" => "GET",
@@ -69074,6 +81153,95 @@ module Crawlora
       "security" => [
         "ApiKeyAuth"
       ]
+    },
+    "ndtv-video" => {
+      "id" => "ndtv-video",
+      "method" => "GET",
+      "path" => "/ndtv/video",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ndtv-video-categories" => {
+      "id" => "ndtv-video-categories",
+      "method" => "GET",
+      "path" => "/ndtv/video-categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ndtv-videos" => {
+      "id" => "ndtv-videos",
+      "method" => "GET",
+      "path" => "/ndtv/videos",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "news",
+            "business",
+            "entertainment",
+            "auto",
+            "exclusive",
+            "features",
+            "environment",
+            "fashion",
+            "travel",
+            "elections",
+            "comedy",
+            "property",
+            "art",
+            "beauty",
+            "lifestyle",
+            "tech360"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
     },
     "news18-article" => {
       "id" => "news18-article",
@@ -70117,6 +82285,177 @@ module Crawlora
       "consumes" => [
         "application/json"
       ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ninetofivegoogle-article" => {
+      "id" => "ninetofivegoogle-article",
+      "method" => "GET",
+      "path" => "/ninetofivegoogle/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ninetofivegoogle-author" => {
+      "id" => "ninetofivegoogle-author",
+      "method" => "GET",
+      "path" => "/ninetofivegoogle/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ninetofivegoogle-headlines" => {
+      "id" => "ninetofivegoogle-headlines",
+      "method" => "GET",
+      "path" => "/ninetofivegoogle/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "gemini",
+            "google-pixel-9-pro-fold",
+            "google-pixel-9-pro-xl",
+            "google-pixel-9-pro",
+            "google-pixel-9",
+            "google-pixel-8-pro",
+            "google-pixel-8",
+            "google-pixel-watch-3",
+            "google-pixel-watch",
+            "google-pixel-buds-pro-2",
+            "google-pixel-buds-pro",
+            "google-nest-hub",
+            "google-nest-hub-max",
+            "google-nest-mini",
+            "google-nest-audio",
+            "nest-thermostat",
+            "nest-cam",
+            "google-nest-doorbell",
+            "android-17",
+            "android-auto",
+            "wear-os",
+            "samsung",
+            "oneplus",
+            "oppo",
+            "xiaomi",
+            "google-chrome",
+            "chrome-os",
+            "google-tv",
+            "android-tv",
+            "chromecast",
+            "chromecast-with-google-tv",
+            "gmail",
+            "google-meet",
+            "google-chat",
+            "google-calendar",
+            "google-keep",
+            "google-drive",
+            "google-docs",
+            "youtube",
+            "youtube-music",
+            "youtube-tv",
+            "android",
+            "android-14",
+            "android-15",
+            "android-15-beta",
+            "apk-insight",
+            "apps-and-updates-2",
+            "exclusives",
+            "fitbit",
+            "google",
+            "google-apps",
+            "google-assistant",
+            "google-home",
+            "google-pixel",
+            "pixel-11-buyers-guide",
+            "google-play",
+            "google-search",
+            "made-by-google",
+            "feature-exclusives",
+            "feature-review",
+            "feature-newsletter",
+            "feature-videos",
+            "feature-sponsored-post"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ninetofivegoogle-news" => {
+      "id" => "ninetofivegoogle-news",
+      "method" => "GET",
+      "path" => "/ninetofivegoogle/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "ninetofivegoogle-sections" => {
+      "id" => "ninetofivegoogle-sections",
+      "method" => "GET",
+      "path" => "/ninetofivegoogle/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
       "produces" => [
         "application/json"
       ],
@@ -76147,6 +88486,99 @@ module Crawlora
       "id" => "phonearena-sections",
       "method" => "GET",
       "path" => "/phonearena/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "physorg-article" => {
+      "id" => "physorg-article",
+      "method" => "GET",
+      "path" => "/physorg/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "physorg-headlines" => {
+      "id" => "physorg-headlines",
+      "method" => "GET",
+      "path" => "/physorg/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nanotech-news",
+            "physics-news",
+            "space-news",
+            "earth-news",
+            "chemistry-news",
+            "biology-news",
+            "science-news",
+            "breaking",
+            "editorials"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "physorg-news" => {
+      "id" => "physorg-news",
+      "method" => "GET",
+      "path" => "/physorg/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "physorg-sections" => {
+      "id" => "physorg-sections",
+      "method" => "GET",
+      "path" => "/physorg/sections",
       "pathParams" => [],
       "queryParams" => [],
       "formParams" => [],
@@ -84873,6 +97305,412 @@ module Crawlora
           "name" => "size",
           "in" => "query",
           "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "retailmenot-autocomplete" => {
+      "id" => "retailmenot-autocomplete",
+      "method" => "GET",
+      "path" => "/retailmenot/autocomplete",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "term",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "retailmenot-blog-categories" => {
+      "id" => "retailmenot-blog-categories",
+      "method" => "GET",
+      "path" => "/retailmenot/blog-categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "retailmenot-blog-post" => {
+      "id" => "retailmenot-blog-post",
+      "method" => "GET",
+      "path" => "/retailmenot/blog-post",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "retailmenot-blog-posts" => {
+      "id" => "retailmenot-blog-posts",
+      "method" => "GET",
+      "path" => "/retailmenot/blog-posts",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tag",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "order_by",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "date",
+            "modified",
+            "title",
+            "relevance"
+          ]
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "desc",
+            "asc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "retailmenot-blog-tags" => {
+      "id" => "retailmenot-blog-tags",
+      "method" => "GET",
+      "path" => "/retailmenot/blog-tags",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "retailmenot-cashback" => {
+      "id" => "retailmenot-cashback",
+      "method" => "GET",
+      "path" => "/retailmenot/cashback",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "retailmenot-categories" => {
+      "id" => "retailmenot-categories",
+      "method" => "GET",
+      "path" => "/retailmenot/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "retailmenot-category" => {
+      "id" => "retailmenot-category",
+      "method" => "GET",
+      "path" => "/retailmenot/category",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "retailmenot-deal-event" => {
+      "id" => "retailmenot-deal-event",
+      "method" => "GET",
+      "path" => "/retailmenot/deal-event",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "retailmenot-deal-events" => {
+      "id" => "retailmenot-deal-events",
+      "method" => "GET",
+      "path" => "/retailmenot/deal-events",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "retailmenot-home" => {
+      "id" => "retailmenot-home",
+      "method" => "GET",
+      "path" => "/retailmenot/home",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "retailmenot-store" => {
+      "id" => "retailmenot-store",
+      "method" => "GET",
+      "path" => "/retailmenot/store",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "domain",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "market",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "us",
+            "ca"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "retailmenot-stores" => {
+      "id" => "retailmenot-stores",
+      "method" => "GET",
+      "path" => "/retailmenot/stores",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "letter",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h",
+            "i",
+            "j",
+            "k",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "q",
+            "r",
+            "s",
+            "t",
+            "u",
+            "v",
+            "w",
+            "x",
+            "y",
+            "z",
+            "0-9"
+          ]
+        },
+        {
+          "name" => "market",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "us",
+            "ca"
+          ]
         }
       ],
       "formParams" => [],
@@ -94346,6 +107184,128 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "sportskeeda-college-basketball-schedule" => {
+      "id" => "sportskeeda-college-basketball-schedule",
+      "method" => "GET",
+      "path" => "/sportskeeda/college-basketball-schedule",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-college-basketball-schedule-options" => {
+      "id" => "sportskeeda-college-basketball-schedule-options",
+      "method" => "GET",
+      "path" => "/sportskeeda/college-basketball-schedule-options",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-cricket-commentary" => {
+      "id" => "sportskeeda-cricket-commentary",
+      "method" => "GET",
+      "path" => "/sportskeeda/cricket-commentary",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "en",
+            "hi",
+            "ta",
+            "te",
+            "bho"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "sportskeeda-cricket-match" => {
+      "id" => "sportskeeda-cricket-match",
+      "method" => "GET",
+      "path" => "/sportskeeda/cricket-match",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "sportskeeda-depth-chart" => {
       "id" => "sportskeeda-depth-chart",
       "method" => "GET",
@@ -94362,6 +107322,186 @@ module Crawlora
           ]
         }
       ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-draft-picks" => {
+      "id" => "sportskeeda-draft-picks",
+      "method" => "GET",
+      "path" => "/sportskeeda/draft-picks",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "round",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "position",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "sportskeeda-draft-picks-options" => {
+      "id" => "sportskeeda-draft-picks-options",
+      "method" => "GET",
+      "path" => "/sportskeeda/draft-picks-options",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-event-calendar" => {
+      "id" => "sportskeeda-event-calendar",
+      "method" => "GET",
+      "path" => "/sportskeeda/event-calendar",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "us",
+            "india"
+          ]
+        },
+        {
+          "name" => "sport",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "NFL",
+            "Football",
+            "MLB",
+            "College Football",
+            "NBA",
+            "College Basketball",
+            "NHL",
+            "WNBA",
+            "Golf",
+            "Tennis",
+            "NASCAR",
+            "WWE",
+            "Boxing",
+            "UFC",
+            "MMA",
+            "Formula 1",
+            "College Baseball",
+            "IndyCar",
+            "AEW",
+            "MotoGP",
+            "Wrestling",
+            "Cricket",
+            "Table Tennis",
+            "Chess",
+            "Kabaddi",
+            "Hockey",
+            "Badminton",
+            "Athletics"
+          ]
+        },
+        {
+          "name" => "month",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "2026-09",
+            "2026-10",
+            "2026-11",
+            "2026-12"
+          ]
+        },
+        {
+          "name" => "start_date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "end_date",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-event-calendar-options" => {
+      "id" => "sportskeeda-event-calendar-options",
+      "method" => "GET",
+      "path" => "/sportskeeda/event-calendar-options",
+      "pathParams" => [],
+      "queryParams" => [],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -94455,6 +107595,123 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "sportskeeda-guessing-game" => {
+      "id" => "sportskeeda-guessing-game",
+      "method" => "GET",
+      "path" => "/sportskeeda/guessing-game",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "wwe/brainbuster-wwe-player-guessing-game",
+            "nfl/gridle-nfl-player-guessing-game"
+          ]
+        },
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-guessing-game-entities" => {
+      "id" => "sportskeeda-guessing-game-entities",
+      "method" => "GET",
+      "path" => "/sportskeeda/guessing-game-entities",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "wwe/brainbuster-wwe-player-guessing-game",
+            "nfl/gridle-nfl-player-guessing-game"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-guessing-games" => {
+      "id" => "sportskeeda-guessing-games",
+      "method" => "GET",
+      "path" => "/sportskeeda/guessing-games",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-nba-queries" => {
+      "id" => "sportskeeda-nba-queries",
+      "method" => "GET",
+      "path" => "/sportskeeda/nba-queries",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "player-stat",
+            "player-vs-team"
+          ]
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "sportskeeda-news" => {
       "id" => "sportskeeda-news",
       "method" => "GET",
@@ -94493,6 +107750,42 @@ module Crawlora
           "name" => "type",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "conference",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all-conferences",
+            "all-fbs-i-a",
+            "atlantic-coast",
+            "big-ten",
+            "mid-american",
+            "pac-12",
+            "southeastern",
+            "independents-fbs",
+            "big-12",
+            "conference-usa",
+            "mountain-west",
+            "sun-belt",
+            "aac",
+            "all-fcs-i-aa",
+            "big-sky",
+            "missouri-valley",
+            "ivy-league",
+            "mid-eastern-athletic",
+            "ohio-valley",
+            "patriot-league",
+            "pioneer-league",
+            "southern",
+            "southland",
+            "swac",
+            "northeast",
+            "independents-fcs",
+            "big-south",
+            "caa",
+            "united-athletic"
+          ]
         }
       ],
       "formParams" => [],
@@ -94576,6 +107869,141 @@ module Crawlora
           "in" => "query",
           "type" => "string",
           "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-quiz" => {
+      "id" => "sportskeeda-quiz",
+      "method" => "GET",
+      "path" => "/sportskeeda/quiz",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-quiz-categories" => {
+      "id" => "sportskeeda-quiz-categories",
+      "method" => "GET",
+      "path" => "/sportskeeda/quiz-categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-quizzes" => {
+      "id" => "sportskeeda-quizzes",
+      "method" => "GET",
+      "path" => "/sportskeeda/quizzes",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "anime/quiz",
+            "cricket/quiz",
+            "daily-soaps/quiz",
+            "esports/quiz",
+            "fortnite/quiz",
+            "minecraft/quiz",
+            "movies/quiz",
+            "pokemon/quiz",
+            "shows/quiz",
+            "tennis/quiz",
+            "wwe/quiz"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-salary-cap" => {
+      "id" => "sportskeeda-salary-cap",
+      "method" => "GET",
+      "path" => "/sportskeeda/salary-cap",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort_by",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "player",
+            "cap_number",
+            "cut_pre_june_1_dead_money",
+            "cut_pre_june_1_cap_saving",
+            "cut_post_june_1_dead_money",
+            "cut_post_june_1_cap_saving",
+            "trade_pre_june_1_dead_money",
+            "trade_pre_june_1_cap_saving",
+            "trade_post_june_1_dead_money",
+            "trade_post_june_1_cap_saving",
+            "restructure_cap_saving",
+            "extension_cap_saving"
+          ]
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
         }
       ],
       "formParams" => [],
@@ -94800,6 +108228,30 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "sportskeeda-topic" => {
+      "id" => "sportskeeda-topic",
+      "method" => "GET",
+      "path" => "/sportskeeda/topic",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "sportskeeda-trade-values" => {
       "id" => "sportskeeda-trade-values",
       "method" => "GET",
@@ -94866,6 +108318,174 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "sportskeeda-transactions" => {
+      "id" => "sportskeeda-transactions",
+      "method" => "GET",
+      "path" => "/sportskeeda/transactions",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        },
+        {
+          "name" => "month",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "022020",
+            "032020",
+            "042020",
+            "052020",
+            "062020",
+            "072020",
+            "082020",
+            "092020",
+            "102020",
+            "112020",
+            "122020",
+            "012021",
+            "022021",
+            "032021",
+            "042021",
+            "052021",
+            "062021",
+            "072021",
+            "082021",
+            "092021",
+            "102021",
+            "112021",
+            "122021",
+            "012022",
+            "022022",
+            "032022",
+            "042022",
+            "052022",
+            "062022",
+            "072022",
+            "082022",
+            "092022",
+            "102022",
+            "112022",
+            "122022",
+            "012023",
+            "022023",
+            "032023",
+            "042023",
+            "052023",
+            "062023",
+            "072023",
+            "082023",
+            "092023",
+            "102023",
+            "112023",
+            "122023",
+            "012024",
+            "022024",
+            "032024",
+            "042024",
+            "052024",
+            "062024",
+            "072024",
+            "082024",
+            "092024",
+            "102024",
+            "112024",
+            "122024",
+            "012025",
+            "022025",
+            "032025",
+            "042025",
+            "052025",
+            "062025",
+            "072025",
+            "082025",
+            "092025",
+            "102025",
+            "112025",
+            "122025",
+            "012026",
+            "022026",
+            "032026",
+            "042026",
+            "052026",
+            "062026",
+            "072026",
+            "082026",
+            "092026"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "sportskeeda-transactions-options" => {
+      "id" => "sportskeeda-transactions-options",
+      "method" => "GET",
+      "path" => "/sportskeeda/transactions-options",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "sportskeeda-video" => {
       "id" => "sportskeeda-video",
       "method" => "GET",
@@ -94900,6 +108520,326 @@ module Crawlora
           "name" => "slug",
           "in" => "query",
           "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-wiki-activity" => {
+      "id" => "sportskeeda-wiki-activity",
+      "method" => "GET",
+      "path" => "/sportskeeda/wiki-activity",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "sort_by",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "author_name",
+            "updated_at"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "sportskeeda-wiki-article" => {
+      "id" => "sportskeeda-wiki-article",
+      "method" => "GET",
+      "path" => "/sportskeeda/wiki-article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-wiki-categories" => {
+      "id" => "sportskeeda-wiki-categories",
+      "method" => "GET",
+      "path" => "/sportskeeda/wiki-categories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "wiki",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "minecraft",
+            "terraria",
+            "naruto",
+            "tiktok",
+            "youtube",
+            "gta",
+            "one-piece",
+            "sk-communities"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-wiki-contributors" => {
+      "id" => "sportskeeda-wiki-contributors",
+      "method" => "GET",
+      "path" => "/sportskeeda/wiki-contributors",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "sort_by",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "author_name",
+            "contributions",
+            "updated_at"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "sportskeeda-wiki-issues" => {
+      "id" => "sportskeeda-wiki-issues",
+      "method" => "GET",
+      "path" => "/sportskeeda/wiki-issues",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "opened",
+            "closed"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "sportskeeda-wiki-options" => {
+      "id" => "sportskeeda-wiki-options",
+      "method" => "GET",
+      "path" => "/sportskeeda/wiki-options",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sportskeeda-wiki-pages" => {
+      "id" => "sportskeeda-wiki-pages",
+      "method" => "GET",
+      "path" => "/sportskeeda/wiki-pages",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "wiki",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "minecraft",
+            "terraria",
+            "naruto",
+            "tiktok",
+            "youtube",
+            "gta",
+            "one-piece",
+            "sk-communities"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "ASC",
+            "DESC"
+          ]
+        },
+        {
+          "name" => "sort_by",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "last_updated",
+            "page_size",
+            "ratings",
+            "issues_count"
+          ]
+        },
+        {
+          "name" => "search",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "sportskeeda-wiki-summary" => {
+      "id" => "sportskeeda-wiki-summary",
+      "method" => "GET",
+      "path" => "/sportskeeda/wiki-summary",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
         }
       ],
       "formParams" => [],
@@ -98720,6 +112660,839 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "streeteasy-areas" => {
+      "id" => "streeteasy-areas",
+      "method" => "GET",
+      "path" => "/streeteasy/areas",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "streeteasy-building" => {
+      "id" => "streeteasy-building",
+      "method" => "GET",
+      "path" => "/streeteasy/buildings/{slug}",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "streeteasy-market-data-catalog" => {
+      "id" => "streeteasy-market-data-catalog",
+      "method" => "GET",
+      "path" => "/streeteasy/market-data/catalog",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "streeteasy-market-indices" => {
+      "id" => "streeteasy-market-indices",
+      "method" => "GET",
+      "path" => "/streeteasy/market-data/indices",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "start_month",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "end_month",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "streeteasy-market-inventory" => {
+      "id" => "streeteasy-market-inventory",
+      "method" => "GET",
+      "path" => "/streeteasy/market-data/inventory",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "start_month",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "end_month",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "streeteasy-market-data-series" => {
+      "id" => "streeteasy-market-data-series",
+      "method" => "GET",
+      "path" => "/streeteasy/market-data/series",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "dataset",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "medianAskingPPSF",
+            "medianAskingPPSFOneBd",
+            "medianAskingPPSFStudio",
+            "medianAskingPPSFThreePlusBd",
+            "medianAskingPPSFTwoBd",
+            "medianAskingPrice",
+            "medianAskingPriceCondo",
+            "medianAskingPriceCoop",
+            "medianAskingPriceSfr",
+            "medianAskingRent",
+            "medianAskingRentOneBd",
+            "medianAskingRentStudio",
+            "medianAskingRentThreePlusBd",
+            "medianAskingRentTwoBd",
+            "medianDaysMarket",
+            "medianDaysMarketCondo",
+            "medianDaysMarketCoop",
+            "medianRecordedSalesPrice",
+            "medianRecordedSalesPriceCondo",
+            "medianRecordedSalesPriceCoop",
+            "medianRecordedSalesPriceSfr",
+            "medianRentalDiscount",
+            "medianRentalDiscountOneBd",
+            "medianRentalDiscountStudio",
+            "medianRentalDiscountThreePlusBd",
+            "medianRentalDiscountTwoBd",
+            "newInventory",
+            "newInventoryCondo",
+            "newInventoryCoop",
+            "newInventorySfr",
+            "priceIndex",
+            "recordedSales",
+            "recordedSalesCondo",
+            "recordedSalesCoop",
+            "recordedSalesSfr",
+            "rentIndex",
+            "rentalConcessions",
+            "rentalInventory",
+            "rentalInventoryOneBd",
+            "rentalInventoryStudio",
+            "rentalInventoryThreePlusBd",
+            "rentalInventoryTwoBd",
+            "saleListRatio",
+            "saleListRatioCondo",
+            "saleListRatioCoop",
+            "saleListRatioSfr",
+            "salesInventory",
+            "salesInventoryCondo",
+            "salesInventoryCoop",
+            "salesInventoryOneBd",
+            "salesInventorySfr",
+            "salesInventoryStudio",
+            "salesInventoryThreePlusBd",
+            "salesInventoryTwoBd",
+            "shareOfRentalsDiscounted",
+            "shareOfRentalsDiscountedOneBd",
+            "shareOfRentalsDiscountedStudio",
+            "shareOfRentalsDiscountedThreePlusBd",
+            "shareOfRentalsDiscountedTwoBd",
+            "sharePriceCut",
+            "sharePriceCutCondo",
+            "sharePriceCutCoop",
+            "sharePriceCutSfr"
+          ]
+        },
+        {
+          "name" => "start_month",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "end_month",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "streeteasy-quick-search" => {
+      "id" => "streeteasy-quick-search",
+      "method" => "GET",
+      "path" => "/streeteasy/quick-search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "streeteasy-rentals-search" => {
+      "id" => "streeteasy-rentals-search",
+      "method" => "GET",
+      "path" => "/streeteasy/rentals/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "area_id",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "default",
+            "newest",
+            "recently_updated",
+            "price_desc",
+            "price_asc",
+            "largest",
+            "smallest"
+          ]
+        },
+        {
+          "name" => "min_price",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_price",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_bedrooms",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_bedrooms",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_bathrooms",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_bathrooms",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_sqft",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_sqft",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "building_type",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "rental",
+            "condo",
+            "co-op",
+            "house",
+            "multifamily"
+          ]
+        },
+        {
+          "name" => "amenity",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "washer_dryer",
+            "dishwasher",
+            "private_outdoor_space",
+            "central_air",
+            "furnished",
+            "fireplace",
+            "loft",
+            "city_view",
+            "garden_view",
+            "park_view",
+            "skyline_view",
+            "water_view",
+            "elevator",
+            "doorman",
+            "laundry",
+            "gym",
+            "parking",
+            "shared_outdoor_space",
+            "pool",
+            "pied_a_terre",
+            "childrens_playroom",
+            "smoke_free",
+            "storage"
+          ]
+        },
+        {
+          "name" => "optional_amenity",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "washer_dryer",
+            "dishwasher",
+            "private_outdoor_space",
+            "central_air",
+            "furnished",
+            "fireplace",
+            "loft",
+            "city_view",
+            "garden_view",
+            "park_view",
+            "skyline_view",
+            "water_view",
+            "elevator",
+            "doorman",
+            "laundry",
+            "gym",
+            "parking",
+            "shared_outdoor_space",
+            "pool",
+            "pied_a_terre",
+            "childrens_playroom",
+            "smoke_free",
+            "storage"
+          ]
+        },
+        {
+          "name" => "pets_allowed",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "open_house",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "tour_3d",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "video_tour",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "transit_line",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "A",
+            "C",
+            "E",
+            "B",
+            "D",
+            "F",
+            "M",
+            "G",
+            "N",
+            "Q",
+            "R",
+            "W",
+            "J",
+            "Z",
+            "L",
+            "S",
+            "HBLR",
+            "PATH"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "streeteasy-sales-search" => {
+      "id" => "streeteasy-sales-search",
+      "method" => "GET",
+      "path" => "/streeteasy/sales/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "area_id",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "required" => true
+        },
+        {
+          "name" => "sale_status",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "active",
+            "preview",
+            "coming_soon",
+            "in_contract",
+            "sold",
+            "unavailable"
+          ]
+        },
+        {
+          "name" => "sale_type",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "sponsor_unit",
+            "foreclosure",
+            "resale",
+            "restricted_sale"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "default",
+            "newest",
+            "recently_updated",
+            "price_desc",
+            "price_asc",
+            "largest",
+            "smallest"
+          ]
+        },
+        {
+          "name" => "min_price",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_price",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_bedrooms",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_bedrooms",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_bathrooms",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_bathrooms",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_sqft",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_sqft",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_maintenance",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_maintenance",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_monthly_taxes",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_monthly_taxes",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_price_per_sqft",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_price_per_sqft",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "include_unknown_price_per_sqft",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_year_built",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_year_built",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "prewar",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "development",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "pre_construction"
+          ]
+        },
+        {
+          "name" => "income_restricted",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "school_id",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        },
+        {
+          "name" => "zip_code",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "keywords",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "building_type",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "condo",
+            "co-op",
+            "house",
+            "multifamily"
+          ]
+        },
+        {
+          "name" => "amenity",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "washer_dryer",
+            "dishwasher",
+            "private_outdoor_space",
+            "central_air",
+            "furnished",
+            "fireplace",
+            "loft",
+            "city_view",
+            "garden_view",
+            "park_view",
+            "skyline_view",
+            "water_view",
+            "elevator",
+            "doorman",
+            "laundry",
+            "gym",
+            "parking",
+            "shared_outdoor_space",
+            "pool",
+            "pied_a_terre",
+            "childrens_playroom",
+            "smoke_free",
+            "storage"
+          ]
+        },
+        {
+          "name" => "optional_amenity",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "washer_dryer",
+            "dishwasher",
+            "private_outdoor_space",
+            "central_air",
+            "furnished",
+            "fireplace",
+            "loft",
+            "city_view",
+            "garden_view",
+            "park_view",
+            "skyline_view",
+            "water_view",
+            "elevator",
+            "doorman",
+            "laundry",
+            "gym",
+            "parking",
+            "shared_outdoor_space",
+            "pool",
+            "pied_a_terre",
+            "childrens_playroom",
+            "smoke_free",
+            "storage"
+          ]
+        },
+        {
+          "name" => "pets_allowed",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "open_house",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "tour_3d",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "video_tour",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "transit_line",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "A",
+            "C",
+            "E",
+            "B",
+            "D",
+            "F",
+            "M",
+            "G",
+            "N",
+            "Q",
+            "R",
+            "W",
+            "J",
+            "Z",
+            "L",
+            "S",
+            "HBLR",
+            "PATH"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "streeteasy-school" => {
+      "id" => "streeteasy-school",
+      "method" => "GET",
+      "path" => "/streeteasy/schools/{slug}",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "streeteasy-unit" => {
+      "id" => "streeteasy-unit",
+      "method" => "GET",
+      "path" => "/streeteasy/units/{building_slug}/{unit}",
+      "pathParams" => [
+        "building_slug",
+        "unit"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "stubhub-carousel" => {
       "id" => "stubhub-carousel",
       "method" => "GET",
@@ -102164,6 +116937,162 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "theblaze-article" => {
+      "id" => "theblaze-article",
+      "method" => "GET",
+      "path" => "/theblaze/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "theblaze-author" => {
+      "id" => "theblaze-author",
+      "method" => "GET",
+      "path" => "/theblaze/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "theblaze-headlines" => {
+      "id" => "theblaze-headlines",
+      "method" => "GET",
+      "path" => "/theblaze/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "news",
+            "columns",
+            "columns/opinion",
+            "columns/analysis",
+            "tech",
+            "lifestyle",
+            "lifestyle/men",
+            "lifestyle/women",
+            "lifestyle/provisions",
+            "fearless",
+            "exclusive",
+            "original",
+            "politics",
+            "your-opinion",
+            "shows",
+            "shows/back-to-the-people",
+            "shows/blaze-news-tonight",
+            "shows/blaze-originals",
+            "shows/blazetv-specials",
+            "shows/come-take-it-with-sara-gonzales",
+            "shows/conservative-review-with-daniel-horowitz",
+            "shows/dusty-bluffs",
+            "shows/fearless-with-jason-whitlock",
+            "shows/glenn-tv",
+            "shows/kibbe-on-liberty",
+            "shows/live-free-with-josh-howerton",
+            "shows/making-the-argument-with-nick-freitas",
+            "shows/pat-gray-unleashed",
+            "shows/relatable",
+            "shows/rufo-lomez",
+            "shows/sara-gonzales-unfiltered",
+            "shows/steve-deace-show",
+            "shows/strange-encounters",
+            "shows/stu-and-dave-do-america",
+            "shows/the-auron-macintyre-show",
+            "shows/the-coverup",
+            "shows/glenn-beck-podcast",
+            "shows/the-glenn-beck-program",
+            "shows/the-john-doyle-show",
+            "shows/the-liz-wheeler-show",
+            "shows/the-rick-burgess-show",
+            "shows/zero-hour",
+            "contributors",
+            "jan-6-truth"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "theblaze-news" => {
+      "id" => "theblaze-news",
+      "method" => "GET",
+      "path" => "/theblaze/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "theblaze-sections" => {
+      "id" => "theblaze-sections",
+      "method" => "GET",
+      "path" => "/theblaze/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "thebodyshop-collections" => {
       "id" => "thebodyshop-collections",
       "method" => "GET",
@@ -103090,6 +118019,128 @@ module Crawlora
       "id" => "thejournal-sections",
       "method" => "GET",
       "path" => "/thejournal/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "thenextweb-article" => {
+      "id" => "thenextweb-article",
+      "method" => "GET",
+      "path" => "/thenextweb/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "thenextweb-author" => {
+      "id" => "thenextweb-author",
+      "method" => "GET",
+      "path" => "/thenextweb/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "thenextweb-headlines" => {
+      "id" => "thenextweb-headlines",
+      "method" => "GET",
+      "path" => "/thenextweb/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "deep-tech",
+            "sustainability",
+            "ecosystems",
+            "data-security",
+            "fintech-ecommerce",
+            "future-of-work",
+            "startups-technology",
+            "investors-funding",
+            "government-policy",
+            "corporates-innovation"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "thenextweb-news" => {
+      "id" => "thenextweb-news",
+      "method" => "GET",
+      "path" => "/thenextweb/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "thenextweb-sections" => {
+      "id" => "thenextweb-sections",
+      "method" => "GET",
+      "path" => "/thenextweb/sections",
       "pathParams" => [],
       "queryParams" => [],
       "formParams" => [],
@@ -105836,6 +120887,113 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "timeslive-article" => {
+      "id" => "timeslive-article",
+      "method" => "GET",
+      "path" => "/timeslive/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "timeslive-headlines" => {
+      "id" => "timeslive-headlines",
+      "method" => "GET",
+      "path" => "/timeslive/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "news",
+            "news/south-africa",
+            "news/africa",
+            "news/world",
+            "news/business",
+            "news/sci-tech",
+            "politics",
+            "opinion",
+            "ideas",
+            "investigations",
+            "tshisa-live",
+            "lifestyle",
+            "lifestyle/fashion",
+            "lifestyle/food",
+            "lifestyle/travel",
+            "lifestyle/books",
+            "lifestyle/spotlight",
+            "sport",
+            "sport/soccer",
+            "sport/rugby",
+            "sport/cricket",
+            "sport/arena-sports-show",
+            "motoring"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "timeslive-news" => {
+      "id" => "timeslive-news",
+      "method" => "GET",
+      "path" => "/timeslive/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "timeslive-sections" => {
+      "id" => "timeslive-sections",
+      "method" => "GET",
+      "path" => "/timeslive/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "timesofindia-article" => {
       "id" => "timesofindia-article",
       "method" => "GET",
@@ -107665,18 +122823,33 @@ module Crawlora
         {
           "name" => "sort_type",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "ML_SORTED",
+            "DEFAULT"
+          ]
         },
         {
           "name" => "sort_by",
           "in" => "query",
-          "type" => "string"
+          "type" => "string",
+          "enum" => [
+            "FAVORABLE_RATING",
+            "DATE"
+          ]
         },
         {
           "name" => "ratings",
           "in" => "query",
           "collectionFormat" => "multi",
-          "type" => "array"
+          "type" => "array",
+          "enum" => [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
         },
         {
           "name" => "do_machine_translation",
@@ -110905,6 +126078,175 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "vrbo-location-suggestions" => {
+      "id" => "vrbo-location-suggestions",
+      "method" => "GET",
+      "path" => "/vrbo/locations/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "search_term",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vrbo-property" => {
+      "id" => "vrbo-property",
+      "method" => "GET",
+      "path" => "/vrbo/properties/{property_id}",
+      "pathParams" => [
+        "property_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vrbo-rate-calendar" => {
+      "id" => "vrbo-rate-calendar",
+      "method" => "GET",
+      "path" => "/vrbo/properties/{property_id}/rate-calendar",
+      "pathParams" => [
+        "property_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vrbo-property-reviews" => {
+      "id" => "vrbo-property-reviews",
+      "method" => "GET",
+      "path" => "/vrbo/properties/{property_id}/reviews",
+      "pathParams" => [
+        "property_id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "start_index",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "size",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort_by",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "HIGHEST_TO_LOWEST_RATED",
+            "LOWEST_TO_HIGHEST_RATED",
+            "NEWEST_TO_OLDEST",
+            "NEWEST_TO_OLDEST_BY_LANGUAGE",
+            "NEWEST_TO_OLDEST_BY_RELEVANCY"
+          ]
+        },
+        {
+          "name" => "include_recent_reviews",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "include_ratings_only_reviews",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vrbo-search" => {
+      "id" => "vrbo-search",
+      "method" => "POST",
+      "path" => "/vrbo/search",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "request",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vrbo-travel-pages" => {
+      "id" => "vrbo-travel-pages",
+      "method" => "GET",
+      "path" => "/vrbo/travel-pages",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vrbo-travel-page-detail" => {
+      "id" => "vrbo-travel-page-detail",
+      "method" => "GET",
+      "path" => "/vrbo/travel-pages/{slug}",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "walesonline-article" => {
       "id" => "walesonline-article",
       "method" => "GET",
@@ -111380,6 +126722,116 @@ module Crawlora
       "consumes" => [
         "application/json"
       ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "wccftech-article" => {
+      "id" => "wccftech-article",
+      "method" => "GET",
+      "path" => "/wccftech/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "wccftech-author" => {
+      "id" => "wccftech-author",
+      "method" => "GET",
+      "path" => "/wccftech/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "wccftech-headlines" => {
+      "id" => "wccftech-headlines",
+      "method" => "GET",
+      "path" => "/wccftech/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "wccftech-news" => {
+      "id" => "wccftech-news",
+      "method" => "GET",
+      "path" => "/wccftech/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "wccftech-sections" => {
+      "id" => "wccftech-sections",
+      "method" => "GET",
+      "path" => "/wccftech/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
       "produces" => [
         "application/json"
       ],
@@ -116374,6 +131826,112 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "yardbarker-article" => {
+      "id" => "yardbarker-article",
+      "method" => "GET",
+      "path" => "/yardbarker/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yardbarker-author" => {
+      "id" => "yardbarker-author",
+      "method" => "GET",
+      "path" => "/yardbarker/author",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yardbarker-headlines" => {
+      "id" => "yardbarker-headlines",
+      "method" => "GET",
+      "path" => "/yardbarker/headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yardbarker-news" => {
+      "id" => "yardbarker-news",
+      "method" => "GET",
+      "path" => "/yardbarker/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yardbarker-sections" => {
+      "id" => "yardbarker-sections",
+      "method" => "GET",
+      "path" => "/yardbarker/sections",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "yelp-business" => {
       "id" => "yelp-business",
       "method" => "GET",
@@ -118571,6 +134129,11 @@ module Crawlora
       "alcom_news" => "alcom-news",
       "alcom_sections" => "alcom-sections"
     },
+    "ali_express" => {
+      "aliexpress_reviews" => "aliexpress-reviews",
+      "aliexpress_search" => "aliexpress-search",
+      "aliexpress_search_filters" => "aliexpress-search-filters"
+    },
     "al_jazeera" => {
       "aljazeera_article" => "aljazeera-article",
       "aljazeera_author" => "aljazeera-author",
@@ -118619,6 +134182,13 @@ module Crawlora
       "androidauthority_headlines" => "androidauthority-headlines",
       "androidauthority_news" => "androidauthority-news",
       "androidauthority_sections" => "androidauthority-sections"
+    },
+    "android_police" => {
+      "androidpolice_article" => "androidpolice-article",
+      "androidpolice_author" => "androidpolice-author",
+      "androidpolice_headlines" => "androidpolice-headlines",
+      "androidpolice_news" => "androidpolice-news",
+      "androidpolice_sections" => "androidpolice-sections"
     },
     "anime" => {
       "airing_schedule" => "anime-airing-schedule",
@@ -118700,6 +134270,8 @@ module Crawlora
     "app_store" => {
       "app" => "appstore-app",
       "categories" => "appstore-categories",
+      "collection" => "appstore-collection",
+      "collections" => "appstore-collections",
       "developer" => "appstore-developer",
       "editorial" => "appstore-editorial",
       "editorial_category" => "appstore-editorial-category",
@@ -118781,6 +134353,13 @@ module Crawlora
       "headlines" => "bbc-headlines",
       "live" => "bbc-live",
       "search" => "bbc-search"
+    },
+    "benzinga" => {
+      "article" => "benzinga-article",
+      "headlines" => "benzinga-headlines",
+      "news" => "benzinga-news",
+      "search" => "benzinga-search",
+      "sections" => "benzinga-sections"
     },
     "best_buy" => {
       "bestbuy_brands" => "bestbuy-brands",
@@ -118936,6 +134515,13 @@ module Crawlora
       "headlines" => "breitbart-headlines",
       "news" => "breitbart-news",
       "sections" => "breitbart-sections"
+    },
+    "brisbane_times" => {
+      "brisbanetimes_article" => "brisbanetimes-article",
+      "brisbanetimes_author" => "brisbanetimes-author",
+      "brisbanetimes_headlines" => "brisbanetimes-headlines",
+      "brisbanetimes_news" => "brisbanetimes-news",
+      "brisbanetimes_sections" => "brisbanetimes-sections"
     },
     "brooklinen" => {
       "collections" => "brooklinen-collections",
@@ -119256,12 +134842,24 @@ module Crawlora
       "dailyexpress_news" => "dailyexpress-news",
       "dailyexpress_sections" => "dailyexpress-sections"
     },
+    "daily_kos" => {
+      "dailykos_article" => "dailykos-article",
+      "dailykos_headlines" => "dailykos-headlines",
+      "dailykos_news" => "dailykos-news",
+      "dailykos_sections" => "dailykos-sections"
+    },
     "daily_mail" => {
       "dailymail_article" => "dailymail-article",
       "dailymail_author" => "dailymail-author",
       "dailymail_headlines" => "dailymail-headlines",
       "dailymail_news" => "dailymail-news",
       "dailymail_sections" => "dailymail-sections"
+    },
+    "daily_maverick" => {
+      "dailymaverick_article" => "dailymaverick-article",
+      "dailymaverick_headlines" => "dailymaverick-headlines",
+      "dailymaverick_news" => "dailymaverick-news",
+      "dailymaverick_sections" => "dailymaverick-sections"
     },
     "daily_record" => {
       "dailyrecord_article" => "dailyrecord-article",
@@ -119310,6 +134908,10 @@ module Crawlora
       "chrome_extensions_search" => "datasets-chrome-extensions-search",
       "chrome_extensions_trending" => "datasets-chrome-extensions-trending",
       "creators_search" => "datasets-creators-search",
+      "doordash_stores_facets" => "datasets-doordash-stores-facets",
+      "doordash_stores_item" => "datasets-doordash-stores-item",
+      "doordash_stores_nearby" => "datasets-doordash-stores-nearby",
+      "doordash_stores_search" => "datasets-doordash-stores-search",
       "facebook_pages_facets" => "datasets-facebook-pages-facets",
       "facebook_pages_item" => "datasets-facebook-pages-item",
       "facebook_pages_search" => "datasets-facebook-pages-search",
@@ -119432,6 +135034,13 @@ module Crawlora
       "restaurant_menu" => "deliveroo-restaurant-menu",
       "search" => "deliveroo-search",
       "search_filters" => "deliveroo-search-filters"
+    },
+    "the_denver_post" => {
+      "denverpost_article" => "denverpost-article",
+      "denverpost_author" => "denverpost-author",
+      "denverpost_headlines" => "denverpost-headlines",
+      "denverpost_news" => "denverpost-news",
+      "denverpost_sections" => "denverpost-sections"
     },
     "depop" => {
       "brands" => "depop-brands",
@@ -119598,6 +135207,13 @@ module Crawlora
       "properties_filters" => "expedia-properties-filters",
       "properties_reviews" => "expedia-properties-reviews",
       "properties_search" => "expedia-properties-search"
+    },
+    "the_express_tribune" => {
+      "expresstribune_article" => "expresstribune-article",
+      "expresstribune_author" => "expresstribune-author",
+      "expresstribune_headlines" => "expresstribune-headlines",
+      "expresstribune_news" => "expresstribune-news",
+      "expresstribune_sections" => "expresstribune-sections"
     },
     "facebook" => {
       "marketplace_search" => "facebook-marketplace-search",
@@ -119951,6 +135567,28 @@ module Crawlora
       "lists" => "goodreads-lists",
       "search" => "goodreads-search"
     },
+    "good_rx" => {
+      "goodrx_answer" => "goodrx-answer",
+      "goodrx_answers" => "goodrx-answers",
+      "goodrx_brands" => "goodrx-brands",
+      "goodrx_class" => "goodrx-class",
+      "goodrx_classes" => "goodrx-classes",
+      "goodrx_comparison" => "goodrx-comparison",
+      "goodrx_comparisons" => "goodrx-comparisons",
+      "goodrx_condition" => "goodrx-condition",
+      "goodrx_condition_drugs" => "goodrx-condition-drugs",
+      "goodrx_conditions" => "goodrx-conditions",
+      "goodrx_drug_guide" => "goodrx-drug-guide",
+      "goodrx_drug_guides" => "goodrx-drug-guides",
+      "goodrx_drug_info" => "goodrx-drug-info",
+      "goodrx_drug_options" => "goodrx-drug-options",
+      "goodrx_drug_prices" => "goodrx-drug-prices",
+      "goodrx_drugs" => "goodrx-drugs",
+      "goodrx_health_article" => "goodrx-health-article",
+      "goodrx_health_articles" => "goodrx-health-articles",
+      "goodrx_health_topics" => "goodrx-health-topics",
+      "goodrx_pet_medications" => "goodrx-pet-medications"
+    },
     "google_jobs" => {
       "job" => "google-jobs-job",
       "search" => "google-jobs-search"
@@ -120038,6 +135676,17 @@ module Crawlora
       "sold_listings" => "grailed-sold-listings",
       "suggest" => "grailed-suggest"
     },
+    "greystar" => {
+      "articles" => "greystar-articles",
+      "article" => "greystar-article",
+      "location" => "greystar-location",
+      "locations" => "greystar-locations",
+      "markets" => "greystar-markets",
+      "newsroom" => "greystar-newsroom",
+      "newsroom_article" => "greystar-newsroom-article",
+      "property" => "greystar-property",
+      "search" => "greystar-search"
+    },
     "grubhub" => {
       "availability" => "grubhub-availability",
       "offers" => "grubhub-offers",
@@ -120091,6 +135740,24 @@ module Crawlora
       "hbr_headlines" => "hbr-headlines",
       "hbr_topic" => "hbr-topic"
     },
+    "healthgrades" => {
+      "autocomplete" => "healthgrades-autocomplete",
+      "facilities_filters" => "healthgrades-facilities-filters",
+      "facilities_search" => "healthgrades-facilities-search",
+      "facility" => "healthgrades-facility",
+      "health_article" => "healthgrades-health-article",
+      "health_articles" => "healthgrades-health-articles",
+      "health_topics" => "healthgrades-health-topics",
+      "hospital" => "healthgrades-hospital",
+      "hospital_awards" => "healthgrades-hospital-awards",
+      "hospital_award_filters" => "healthgrades-hospital-award-filters",
+      "locations" => "healthgrades-locations",
+      "physician" => "healthgrades-physician",
+      "physicians_filters" => "healthgrades-physicians-filters",
+      "physicians_search" => "healthgrades-physicians-search",
+      "specialties" => "healthgrades-specialties",
+      "top_searches" => "healthgrades-top-searches"
+    },
     "hermes" => {
       "categories" => "hermes-categories",
       "category" => "hermes-category",
@@ -120140,6 +135807,13 @@ module Crawlora
       "hotels_reviews" => "hotels-reviews",
       "hotels_reviews_archive" => "hotels-reviews-archive",
       "hotels_search" => "hotels-search"
+    },
+    "houston_chronicle" => {
+      "article" => "houston-chronicle-article",
+      "author" => "houston-chronicle-author",
+      "headlines" => "houston-chronicle-headlines",
+      "news" => "houston-chronicle-news",
+      "sections" => "houston-chronicle-sections"
     },
     "how_to_geek" => {
       "howtogeek_news" => "howtogeek-news"
@@ -120292,6 +135966,13 @@ module Crawlora
       "irishtimes_headlines" => "irishtimes-headlines",
       "irishtimes_news" => "irishtimes-news",
       "irishtimes_sections" => "irishtimes-sections"
+    },
+    "the_japan_times" => {
+      "japantimes_article" => "japantimes-article",
+      "japantimes_author" => "japantimes-author",
+      "japantimes_headlines" => "japantimes-headlines",
+      "japantimes_news" => "japantimes-news",
+      "japantimes_sections" => "japantimes-sections"
     },
     "j_crew" => {
       "jcrew_categories" => "jcrew-categories",
@@ -120554,6 +136235,19 @@ module Crawlora
       "macys_product" => "macys-product",
       "macys_suggest" => "macys-suggest"
     },
+    "make_use_of" => {
+      "makeuseof_article" => "makeuseof-article",
+      "makeuseof_author" => "makeuseof-author",
+      "makeuseof_headlines" => "makeuseof-headlines",
+      "makeuseof_news" => "makeuseof-news",
+      "makeuseof_sections" => "makeuseof-sections"
+    },
+    "malay_mail" => {
+      "malaymail_article" => "malaymail-article",
+      "malaymail_headlines" => "malaymail-headlines",
+      "malaymail_news" => "malaymail-news",
+      "malaymail_sections" => "malaymail-sections"
+    },
     "manga" => {
       "rankings" => "manga-rankings",
       "search" => "manga-search",
@@ -120682,13 +136376,59 @@ module Crawlora
       "league_stats" => "mlb-league-stats",
       "player" => "mlb-player",
       "player_stats" => "mlb-player-stats",
+      "prospect_rankings" => "mlb-prospect-rankings",
       "prospect_stats" => "mlb-prospect-stats",
       "schedule" => "mlb-schedule",
       "search" => "mlb-search",
       "standings" => "mlb-standings",
+      "statcast_abs_challenges" => "mlb-statcast-abs-challenges",
+      "statcast_active_spin" => "mlb-statcast-active-spin",
+      "statcast_arm_angle" => "mlb-statcast-arm-angle",
+      "statcast_arm_strength" => "mlb-statcast-arm-strength",
+      "statcast_arm_strength_player" => "mlb-statcast-arm-strength-player",
+      "statcast_arm_value" => "mlb-statcast-arm-value",
+      "statcast_arm_value_details" => "mlb-statcast-arm-value-details",
+      "statcast_baserunning" => "mlb-statcast-baserunning",
+      "statcast_bat_tracking" => "mlb-statcast-bat-tracking",
+      "statcast_batted_ball" => "mlb-statcast-batted-ball",
+      "statcast_birthday_index" => "mlb-statcast-birthday-index",
+      "statcast_catcher_blocking" => "mlb-statcast-catcher-blocking",
+      "statcast_catcher_blocking_details" => "mlb-statcast-catcher-blocking-details",
+      "statcast_catcher_framing" => "mlb-statcast-catcher-framing",
+      "statcast_catcher_framing_details" => "mlb-statcast-catcher-framing-details",
+      "statcast_catcher_pop_time" => "mlb-statcast-catcher-pop-time",
+      "statcast_catcher_stance" => "mlb-statcast-catcher-stance",
+      "statcast_catcher_throwing" => "mlb-statcast-catcher-throwing",
+      "statcast_catcher_throwing_details" => "mlb-statcast-catcher-throwing-details",
       "statcast_expected" => "mlb-statcast-expected",
+      "statcast_fielding_run_value" => "mlb-statcast-fielding-run-value",
+      "statcast_first_base_receiving" => "mlb-statcast-first-base-receiving",
+      "statcast_first_base_receiving_details" => "mlb-statcast-first-base-receiving-details",
+      "statcast_home_runs" => "mlb-statcast-home-runs",
+      "statcast_home_runs_details" => "mlb-statcast-home-runs-details",
       "statcast" => "mlb-statcast",
       "statcast_oaa" => "mlb-statcast-oaa",
+      "statcast_park_factors" => "mlb-statcast-park-factors",
+      "statcast_percentile" => "mlb-statcast-percentile",
+      "statcast_pitch_arsenal" => "mlb-statcast-pitch-arsenal",
+      "statcast_pitch_arsenal_details" => "mlb-statcast-pitch-arsenal-details",
+      "statcast_pitch_arsenals" => "mlb-statcast-pitch-arsenals",
+      "statcast_pitch_movement" => "mlb-statcast-pitch-movement",
+      "statcast_pitch_tempo" => "mlb-statcast-pitch-tempo",
+      "statcast_pitch_tempo_player" => "mlb-statcast-pitch-tempo-player",
+      "statcast_pitch_timer" => "mlb-statcast-pitch-timer",
+      "statcast_player_details" => "mlb-statcast-player-details",
+      "statcast_rolling" => "mlb-statcast-rolling",
+      "statcast_run_value" => "mlb-statcast-run-value",
+      "statcast_running_game" => "mlb-statcast-running-game",
+      "statcast_running_game_details" => "mlb-statcast-running-game-details",
+      "statcast_sprint_speed" => "mlb-statcast-sprint-speed",
+      "statcast_sprint_speed_teams" => "mlb-statcast-sprint-speed-teams",
+      "statcast_swing_path" => "mlb-statcast-swing-path",
+      "statcast_swing_timing" => "mlb-statcast-swing-timing",
+      "statcast_swing_timing_details" => "mlb-statcast-swing-timing-details",
+      "statcast_top_performers" => "mlb-statcast-top-performers",
+      "statcast_year_to_year" => "mlb-statcast-year-to-year",
       "team_roster" => "mlb-team-roster",
       "team_stats" => "mlb-team-stats",
       "teams" => "mlb-teams",
@@ -120740,6 +136480,13 @@ module Crawlora
       "nationafrica_news" => "nationafrica-news",
       "nationafrica_sections" => "nationafrica-sections"
     },
+    "the_national" => {
+      "national_article" => "national-article",
+      "national_author" => "national-author",
+      "national_headlines" => "national-headlines",
+      "national_news" => "national-news",
+      "national_sections" => "national-sections"
+    },
     "national_post" => {
       "nationalpost_article" => "nationalpost-article",
       "nationalpost_author" => "nationalpost-author",
@@ -120758,9 +136505,15 @@ module Crawlora
       "article" => "ndtv-article",
       "author" => "ndtv-author",
       "headlines" => "ndtv-headlines",
+      "latest_videos" => "ndtv-latest-videos",
+      "live_blog" => "ndtv-live-blog",
+      "live_blogs" => "ndtv-live-blogs",
       "news" => "ndtv-news",
       "search" => "ndtv-search",
-      "sections" => "ndtv-sections"
+      "sections" => "ndtv-sections",
+      "video" => "ndtv-video",
+      "video_categories" => "ndtv-video-categories",
+      "videos" => "ndtv-videos"
     },
     "news18" => {
       "article" => "news18-article",
@@ -120813,6 +136566,13 @@ module Crawlora
       "search" => "nike-search",
       "stores" => "nike-stores",
       "suggest" => "nike-suggest"
+    },
+    "nine_to_five_google" => {
+      "article" => "ninetofivegoogle-article",
+      "author" => "ninetofivegoogle-author",
+      "headlines" => "ninetofivegoogle-headlines",
+      "news" => "ninetofivegoogle-news",
+      "sections" => "ninetofivegoogle-sections"
     },
     "nine_to_five_mac" => {
       "article" => "ninetofivemac-article",
@@ -121049,6 +136809,12 @@ module Crawlora
       "phonearena_headlines" => "phonearena-headlines",
       "phonearena_news" => "phonearena-news",
       "phonearena_sections" => "phonearena-sections"
+    },
+    "phys_org" => {
+      "physorg_article" => "physorg-article",
+      "physorg_headlines" => "physorg-headlines",
+      "physorg_news" => "physorg-news",
+      "physorg_sections" => "physorg-sections"
     },
     "meta" => {
       "ping" => "ping",
@@ -121365,6 +137131,21 @@ module Crawlora
       "locations" => "resy-locations",
       "restaurant" => "resy-restaurant",
       "search" => "resy-search"
+    },
+    "retail_me_not" => {
+      "retailmenot_autocomplete" => "retailmenot-autocomplete",
+      "retailmenot_blog_categories" => "retailmenot-blog-categories",
+      "retailmenot_blog_post" => "retailmenot-blog-post",
+      "retailmenot_blog_posts" => "retailmenot-blog-posts",
+      "retailmenot_blog_tags" => "retailmenot-blog-tags",
+      "retailmenot_cashback" => "retailmenot-cashback",
+      "retailmenot_categories" => "retailmenot-categories",
+      "retailmenot_category" => "retailmenot-category",
+      "retailmenot_deal_event" => "retailmenot-deal-event",
+      "retailmenot_deal_events" => "retailmenot-deal-events",
+      "retailmenot_home" => "retailmenot-home",
+      "retailmenot_store" => "retailmenot-store",
+      "retailmenot_stores" => "retailmenot-stores"
     },
     "reuters" => {
       "article" => "reuters-article",
@@ -121723,15 +137504,31 @@ module Crawlora
     "sportskeeda" => {
       "article" => "sportskeeda-article",
       "author" => "sportskeeda-author",
+      "college_basketball_schedule" => "sportskeeda-college-basketball-schedule",
+      "college_basketball_schedule_options" => "sportskeeda-college-basketball-schedule-options",
+      "cricket_commentary" => "sportskeeda-cricket-commentary",
+      "cricket_match" => "sportskeeda-cricket-match",
       "depth_chart" => "sportskeeda-depth-chart",
+      "draft_picks" => "sportskeeda-draft-picks",
+      "draft_picks_options" => "sportskeeda-draft-picks-options",
+      "event_calendar" => "sportskeeda-event-calendar",
+      "event_calendar_options" => "sportskeeda-event-calendar-options",
       "feed" => "sportskeeda-feed",
       "football_data" => "sportskeeda-football-data",
       "football_options" => "sportskeeda-football-options",
+      "guessing_game" => "sportskeeda-guessing-game",
+      "guessing_game_entities" => "sportskeeda-guessing-game-entities",
+      "guessing_games" => "sportskeeda-guessing-games",
+      "nba_queries" => "sportskeeda-nba-queries",
       "news" => "sportskeeda-news",
       "page_data" => "sportskeeda-page-data",
       "page_options" => "sportskeeda-page-options",
       "player_stats" => "sportskeeda-player-stats",
       "profile" => "sportskeeda-profile",
+      "quiz" => "sportskeeda-quiz",
+      "quiz_categories" => "sportskeeda-quiz-categories",
+      "quizzes" => "sportskeeda-quizzes",
+      "salary_cap" => "sportskeeda-salary-cap",
       "schedule" => "sportskeeda-schedule",
       "sections" => "sportskeeda-sections",
       "sitemap_items" => "sportskeeda-sitemap-items",
@@ -121739,9 +137536,20 @@ module Crawlora
       "standings" => "sportskeeda-standings",
       "standings_options" => "sportskeeda-standings-options",
       "taxonomy_search" => "sportskeeda-taxonomy-search",
+      "topic" => "sportskeeda-topic",
       "trade_values" => "sportskeeda-trade-values",
+      "transactions" => "sportskeeda-transactions",
+      "transactions_options" => "sportskeeda-transactions-options",
       "video" => "sportskeeda-video",
-      "videos" => "sportskeeda-videos"
+      "videos" => "sportskeeda-videos",
+      "wiki_activity" => "sportskeeda-wiki-activity",
+      "wiki_article" => "sportskeeda-wiki-article",
+      "wiki_categories" => "sportskeeda-wiki-categories",
+      "wiki_contributors" => "sportskeeda-wiki-contributors",
+      "wiki_issues" => "sportskeeda-wiki-issues",
+      "wiki_options" => "sportskeeda-wiki-options",
+      "wiki_pages" => "sportskeeda-wiki-pages",
+      "wiki_summary" => "sportskeeda-wiki-summary"
     },
     "spotify_podcasts" => {
       "categories" => "spotify-podcasts-categories",
@@ -121857,6 +137665,19 @@ module Crawlora
       "club" => "strava-club",
       "routes" => "strava-routes",
       "route_detail" => "strava-route-detail"
+    },
+    "street_easy" => {
+      "streeteasy_areas" => "streeteasy-areas",
+      "streeteasy_building" => "streeteasy-building",
+      "streeteasy_market_data_catalog" => "streeteasy-market-data-catalog",
+      "streeteasy_market_indices" => "streeteasy-market-indices",
+      "streeteasy_market_inventory" => "streeteasy-market-inventory",
+      "streeteasy_market_data_series" => "streeteasy-market-data-series",
+      "streeteasy_quick_search" => "streeteasy-quick-search",
+      "streeteasy_rentals_search" => "streeteasy-rentals-search",
+      "streeteasy_sales_search" => "streeteasy-sales-search",
+      "streeteasy_school" => "streeteasy-school",
+      "streeteasy_unit" => "streeteasy-unit"
     },
     "stub_hub" => {
       "stubhub_carousel" => "stubhub-carousel",
@@ -121987,6 +137808,13 @@ module Crawlora
       "theatlantic_headlines" => "theatlantic-headlines",
       "theatlantic_sections" => "theatlantic-sections"
     },
+    "the_blaze" => {
+      "theblaze_article" => "theblaze-article",
+      "theblaze_author" => "theblaze-author",
+      "theblaze_headlines" => "theblaze-headlines",
+      "theblaze_news" => "theblaze-news",
+      "theblaze_sections" => "theblaze-sections"
+    },
     "the_body_shop" => {
       "thebodyshop_collections" => "thebodyshop-collections",
       "thebodyshop_collection_products" => "thebodyshop-collection-products",
@@ -122027,6 +137855,13 @@ module Crawlora
       "thejournal_headlines" => "thejournal-headlines",
       "thejournal_news" => "thejournal-news",
       "thejournal_sections" => "thejournal-sections"
+    },
+    "the_next_web" => {
+      "thenextweb_article" => "thenextweb-article",
+      "thenextweb_author" => "thenextweb-author",
+      "thenextweb_headlines" => "thenextweb-headlines",
+      "thenextweb_news" => "thenextweb-news",
+      "thenextweb_sections" => "thenextweb-sections"
     },
     "the_real_real" => {
       "therealreal_autocomplete" => "therealreal-autocomplete",
@@ -122134,6 +137969,12 @@ module Crawlora
       "headlines" => "time-headlines",
       "news" => "time-news",
       "sections" => "time-sections"
+    },
+    "times_live" => {
+      "timeslive_article" => "timeslive-article",
+      "timeslive_headlines" => "timeslive-headlines",
+      "timeslive_news" => "timeslive-news",
+      "timeslive_sections" => "timeslive-sections"
     },
     "times_of_india" => {
       "timesofindia_article" => "timesofindia-article",
@@ -122359,6 +138200,15 @@ module Crawlora
       "news" => "vox-news",
       "sections" => "vox-sections"
     },
+    "vrbo" => {
+      "location_suggestions" => "vrbo-location-suggestions",
+      "property" => "vrbo-property",
+      "rate_calendar" => "vrbo-rate-calendar",
+      "property_reviews" => "vrbo-property-reviews",
+      "search" => "vrbo-search",
+      "travel_pages" => "vrbo-travel-pages",
+      "travel_page_detail" => "vrbo-travel-page-detail"
+    },
     "wales_online" => {
       "walesonline_article" => "walesonline-article",
       "walesonline_author" => "walesonline-author",
@@ -122385,6 +138235,13 @@ module Crawlora
       "categories" => "wayfair-categories",
       "category" => "wayfair-category",
       "product" => "wayfair-product"
+    },
+    "wccftech" => {
+      "article" => "wccftech-article",
+      "author" => "wccftech-author",
+      "headlines" => "wccftech-headlines",
+      "news" => "wccftech-news",
+      "sections" => "wccftech-sections"
     },
     "wendys" => {
       "categories" => "wendys-categories",
@@ -122575,6 +138432,13 @@ module Crawlora
       "category" => "yahoo-tech-category",
       "home" => "yahoo-tech-home"
     },
+    "yardbarker" => {
+      "article" => "yardbarker-article",
+      "author" => "yardbarker-author",
+      "headlines" => "yardbarker-headlines",
+      "news" => "yardbarker-news",
+      "sections" => "yardbarker-sections"
+    },
     "yelp" => {
       "business" => "yelp-business",
       "business_menu" => "yelp-business-menu",
@@ -122656,7 +138520,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 3275
+  OPERATION_COUNT = 3529
 
   module OperationId
     ABC_NEWS_ABCNEWS_ARTICLE = "abcnews-article"
@@ -122710,6 +138574,9 @@ module Crawlora
     AL_JAZEERA_ALJAZEERA_CATEGORIES = "aljazeera-categories"
     AL_JAZEERA_ALJAZEERA_HEADLINES = "aljazeera-headlines"
     AL_JAZEERA_ALJAZEERA_TOPIC = "aljazeera-topic"
+    ALI_EXPRESS_ALIEXPRESS_REVIEWS = "aliexpress-reviews"
+    ALI_EXPRESS_ALIEXPRESS_SEARCH = "aliexpress-search"
+    ALI_EXPRESS_ALIEXPRESS_SEARCH_FILTERS = "aliexpress-search-filters"
     ALLBIRDS_COLLECTION_PRODUCTS = "allbirds-collection-products"
     ALLBIRDS_COLLECTIONS = "allbirds-collections"
     ALLBIRDS_PAGE = "allbirds-page"
@@ -122742,6 +138609,11 @@ module Crawlora
     ANDROID_AUTHORITY_ANDROIDAUTHORITY_HEADLINES = "androidauthority-headlines"
     ANDROID_AUTHORITY_ANDROIDAUTHORITY_NEWS = "androidauthority-news"
     ANDROID_AUTHORITY_ANDROIDAUTHORITY_SECTIONS = "androidauthority-sections"
+    ANDROID_POLICE_ANDROIDPOLICE_ARTICLE = "androidpolice-article"
+    ANDROID_POLICE_ANDROIDPOLICE_AUTHOR = "androidpolice-author"
+    ANDROID_POLICE_ANDROIDPOLICE_HEADLINES = "androidpolice-headlines"
+    ANDROID_POLICE_ANDROIDPOLICE_NEWS = "androidpolice-news"
+    ANDROID_POLICE_ANDROIDPOLICE_SECTIONS = "androidpolice-sections"
     ANIME_AIRING_SCHEDULE = "anime-airing-schedule"
     ANIME_CHARACTER = "anime-character"
     ANIME_CHARACTER_SEARCH = "anime-character-search"
@@ -122765,6 +138637,8 @@ module Crawlora
     APP_INSIGHTS_APK_TEARDOWN_TIMELINE = "apkTeardownTimeline"
     APP_STORE_APP = "appstore-app"
     APP_STORE_CATEGORIES = "appstore-categories"
+    APP_STORE_COLLECTION = "appstore-collection"
+    APP_STORE_COLLECTIONS = "appstore-collections"
     APP_STORE_DEVELOPER = "appstore-developer"
     APP_STORE_EDITORIAL = "appstore-editorial"
     APP_STORE_EDITORIAL_CATEGORY = "appstore-editorial-category"
@@ -122870,6 +138744,11 @@ module Crawlora
     BBC_HEADLINES = "bbc-headlines"
     BBC_LIVE = "bbc-live"
     BBC_SEARCH = "bbc-search"
+    BENZINGA_ARTICLE = "benzinga-article"
+    BENZINGA_HEADLINES = "benzinga-headlines"
+    BENZINGA_NEWS = "benzinga-news"
+    BENZINGA_SEARCH = "benzinga-search"
+    BENZINGA_SECTIONS = "benzinga-sections"
     BEST_BUY_BESTBUY_BRANDS = "bestbuy-brands"
     BEST_BUY_BESTBUY_CATEGORIES = "bestbuy-categories"
     BEST_BUY_BESTBUY_CATEGORIES_TRENDING = "bestbuy-categories-trending"
@@ -122989,6 +138868,11 @@ module Crawlora
     BREITBART_HEADLINES = "breitbart-headlines"
     BREITBART_NEWS = "breitbart-news"
     BREITBART_SECTIONS = "breitbart-sections"
+    BRISBANE_TIMES_BRISBANETIMES_ARTICLE = "brisbanetimes-article"
+    BRISBANE_TIMES_BRISBANETIMES_AUTHOR = "brisbanetimes-author"
+    BRISBANE_TIMES_BRISBANETIMES_HEADLINES = "brisbanetimes-headlines"
+    BRISBANE_TIMES_BRISBANETIMES_NEWS = "brisbanetimes-news"
+    BRISBANE_TIMES_BRISBANETIMES_SECTIONS = "brisbanetimes-sections"
     BROOKLINEN_COLLECTION_PRODUCTS = "brooklinen-collection-products"
     BROOKLINEN_COLLECTIONS = "brooklinen-collections"
     BROOKLINEN_PAGE = "brooklinen-page"
@@ -123223,11 +139107,19 @@ module Crawlora
     DAILY_EXPRESS_DAILYEXPRESS_HEADLINES = "dailyexpress-headlines"
     DAILY_EXPRESS_DAILYEXPRESS_NEWS = "dailyexpress-news"
     DAILY_EXPRESS_DAILYEXPRESS_SECTIONS = "dailyexpress-sections"
+    DAILY_KOS_DAILYKOS_ARTICLE = "dailykos-article"
+    DAILY_KOS_DAILYKOS_HEADLINES = "dailykos-headlines"
+    DAILY_KOS_DAILYKOS_NEWS = "dailykos-news"
+    DAILY_KOS_DAILYKOS_SECTIONS = "dailykos-sections"
     DAILY_MAIL_DAILYMAIL_ARTICLE = "dailymail-article"
     DAILY_MAIL_DAILYMAIL_AUTHOR = "dailymail-author"
     DAILY_MAIL_DAILYMAIL_HEADLINES = "dailymail-headlines"
     DAILY_MAIL_DAILYMAIL_NEWS = "dailymail-news"
     DAILY_MAIL_DAILYMAIL_SECTIONS = "dailymail-sections"
+    DAILY_MAVERICK_DAILYMAVERICK_ARTICLE = "dailymaverick-article"
+    DAILY_MAVERICK_DAILYMAVERICK_HEADLINES = "dailymaverick-headlines"
+    DAILY_MAVERICK_DAILYMAVERICK_NEWS = "dailymaverick-news"
+    DAILY_MAVERICK_DAILYMAVERICK_SECTIONS = "dailymaverick-sections"
     DAILY_RECORD_DAILYRECORD_ARTICLE = "dailyrecord-article"
     DAILY_RECORD_DAILYRECORD_AUTHOR = "dailyrecord-author"
     DAILY_RECORD_DAILYRECORD_HEADLINES = "dailyrecord-headlines"
@@ -123267,6 +139159,10 @@ module Crawlora
     DATASETS_CHROME_EXTENSIONS_SEARCH = "datasets-chrome-extensions-search"
     DATASETS_CHROME_EXTENSIONS_TRENDING = "datasets-chrome-extensions-trending"
     DATASETS_CREATORS_SEARCH = "datasets-creators-search"
+    DATASETS_DOORDASH_STORES_FACETS = "datasets-doordash-stores-facets"
+    DATASETS_DOORDASH_STORES_ITEM = "datasets-doordash-stores-item"
+    DATASETS_DOORDASH_STORES_NEARBY = "datasets-doordash-stores-nearby"
+    DATASETS_DOORDASH_STORES_SEARCH = "datasets-doordash-stores-search"
     DATASETS_FACEBOOK_PAGES_FACETS = "datasets-facebook-pages-facets"
     DATASETS_FACEBOOK_PAGES_ITEM = "datasets-facebook-pages-item"
     DATASETS_FACEBOOK_PAGES_SEARCH = "datasets-facebook-pages-search"
@@ -123793,6 +139689,26 @@ module Crawlora
     GOLDIN_LISTING = "goldin-listing"
     GOLDIN_SEARCH = "goldin-search"
     GOLDIN_SUGGEST = "goldin-suggest"
+    GOOD_RX_GOODRX_ANSWER = "goodrx-answer"
+    GOOD_RX_GOODRX_ANSWERS = "goodrx-answers"
+    GOOD_RX_GOODRX_BRANDS = "goodrx-brands"
+    GOOD_RX_GOODRX_CLASS = "goodrx-class"
+    GOOD_RX_GOODRX_CLASSES = "goodrx-classes"
+    GOOD_RX_GOODRX_COMPARISON = "goodrx-comparison"
+    GOOD_RX_GOODRX_COMPARISONS = "goodrx-comparisons"
+    GOOD_RX_GOODRX_CONDITION = "goodrx-condition"
+    GOOD_RX_GOODRX_CONDITION_DRUGS = "goodrx-condition-drugs"
+    GOOD_RX_GOODRX_CONDITIONS = "goodrx-conditions"
+    GOOD_RX_GOODRX_DRUG_GUIDE = "goodrx-drug-guide"
+    GOOD_RX_GOODRX_DRUG_GUIDES = "goodrx-drug-guides"
+    GOOD_RX_GOODRX_DRUG_INFO = "goodrx-drug-info"
+    GOOD_RX_GOODRX_DRUG_OPTIONS = "goodrx-drug-options"
+    GOOD_RX_GOODRX_DRUG_PRICES = "goodrx-drug-prices"
+    GOOD_RX_GOODRX_DRUGS = "goodrx-drugs"
+    GOOD_RX_GOODRX_HEALTH_ARTICLE = "goodrx-health-article"
+    GOOD_RX_GOODRX_HEALTH_ARTICLES = "goodrx-health-articles"
+    GOOD_RX_GOODRX_HEALTH_TOPICS = "goodrx-health-topics"
+    GOOD_RX_GOODRX_PET_MEDICATIONS = "goodrx-pet-medications"
     GOODREADS_AUTHOR = "goodreads-author"
     GOODREADS_AUTHOR_BOOKS = "goodreads-author-books"
     GOODREADS_AUTHOR_QUOTES = "goodreads-author-quotes"
@@ -123878,6 +139794,15 @@ module Crawlora
     GRAILED_SIMILAR_LISTINGS = "grailed-similar-listings"
     GRAILED_SOLD_LISTINGS = "grailed-sold-listings"
     GRAILED_SUGGEST = "grailed-suggest"
+    GREYSTAR_ARTICLE = "greystar-article"
+    GREYSTAR_ARTICLES = "greystar-articles"
+    GREYSTAR_LOCATION = "greystar-location"
+    GREYSTAR_LOCATIONS = "greystar-locations"
+    GREYSTAR_MARKETS = "greystar-markets"
+    GREYSTAR_NEWSROOM = "greystar-newsroom"
+    GREYSTAR_NEWSROOM_ARTICLE = "greystar-newsroom-article"
+    GREYSTAR_PROPERTY = "greystar-property"
+    GREYSTAR_SEARCH = "greystar-search"
     GRUBHUB_AVAILABILITY = "grubhub-availability"
     GRUBHUB_OFFERS = "grubhub-offers"
     GRUBHUB_RESTAURANT = "grubhub-restaurant"
@@ -123926,6 +139851,22 @@ module Crawlora
     HARVARD_BUSINESS_REVIEW_HBR_CATEGORIES = "hbr-categories"
     HARVARD_BUSINESS_REVIEW_HBR_HEADLINES = "hbr-headlines"
     HARVARD_BUSINESS_REVIEW_HBR_TOPIC = "hbr-topic"
+    HEALTHGRADES_AUTOCOMPLETE = "healthgrades-autocomplete"
+    HEALTHGRADES_FACILITIES_FILTERS = "healthgrades-facilities-filters"
+    HEALTHGRADES_FACILITIES_SEARCH = "healthgrades-facilities-search"
+    HEALTHGRADES_FACILITY = "healthgrades-facility"
+    HEALTHGRADES_HEALTH_ARTICLE = "healthgrades-health-article"
+    HEALTHGRADES_HEALTH_ARTICLES = "healthgrades-health-articles"
+    HEALTHGRADES_HEALTH_TOPICS = "healthgrades-health-topics"
+    HEALTHGRADES_HOSPITAL = "healthgrades-hospital"
+    HEALTHGRADES_HOSPITAL_AWARD_FILTERS = "healthgrades-hospital-award-filters"
+    HEALTHGRADES_HOSPITAL_AWARDS = "healthgrades-hospital-awards"
+    HEALTHGRADES_LOCATIONS = "healthgrades-locations"
+    HEALTHGRADES_PHYSICIAN = "healthgrades-physician"
+    HEALTHGRADES_PHYSICIANS_FILTERS = "healthgrades-physicians-filters"
+    HEALTHGRADES_PHYSICIANS_SEARCH = "healthgrades-physicians-search"
+    HEALTHGRADES_SPECIALTIES = "healthgrades-specialties"
+    HEALTHGRADES_TOP_SEARCHES = "healthgrades-top-searches"
     HERMES_CATEGORIES = "hermes-categories"
     HERMES_CATEGORY = "hermes-category"
     HERMES_PRODUCT = "hermes-product"
@@ -123957,6 +139898,11 @@ module Crawlora
     HOTELS_COM_HOTELS_REVIEWS = "hotels-reviews"
     HOTELS_COM_HOTELS_REVIEWS_ARCHIVE = "hotels-reviews-archive"
     HOTELS_COM_HOTELS_SEARCH = "hotels-search"
+    HOUSTON_CHRONICLE_ARTICLE = "houston-chronicle-article"
+    HOUSTON_CHRONICLE_AUTHOR = "houston-chronicle-author"
+    HOUSTON_CHRONICLE_HEADLINES = "houston-chronicle-headlines"
+    HOUSTON_CHRONICLE_NEWS = "houston-chronicle-news"
+    HOUSTON_CHRONICLE_SECTIONS = "houston-chronicle-sections"
     HOW_TO_GEEK_HOWTOGEEK_NEWS = "howtogeek-news"
     HUFF_POST_HUFFPOST_ARTICLE = "huffpost-article"
     HUFF_POST_HUFFPOST_AUTHOR = "huffpost-author"
@@ -124260,6 +140206,15 @@ module Crawlora
     MACY_SMACYS_PRODUCT = "macys-product"
     MACY_SMACYS_PRODUCT_REVIEWS = "macys-product-reviews"
     MACY_SMACYS_SUGGEST = "macys-suggest"
+    MAKE_USE_OF_MAKEUSEOF_ARTICLE = "makeuseof-article"
+    MAKE_USE_OF_MAKEUSEOF_AUTHOR = "makeuseof-author"
+    MAKE_USE_OF_MAKEUSEOF_HEADLINES = "makeuseof-headlines"
+    MAKE_USE_OF_MAKEUSEOF_NEWS = "makeuseof-news"
+    MAKE_USE_OF_MAKEUSEOF_SECTIONS = "makeuseof-sections"
+    MALAY_MAIL_MALAYMAIL_ARTICLE = "malaymail-article"
+    MALAY_MAIL_MALAYMAIL_HEADLINES = "malaymail-headlines"
+    MALAY_MAIL_MALAYMAIL_NEWS = "malaymail-news"
+    MALAY_MAIL_MALAYMAIL_SECTIONS = "malaymail-sections"
     MANCHESTER_EVENING_NEWS_MEN_ARTICLE = "men-article"
     MANCHESTER_EVENING_NEWS_MEN_AUTHOR = "men-author"
     MANCHESTER_EVENING_NEWS_MEN_HEADLINES = "men-headlines"
@@ -124372,13 +140327,59 @@ module Crawlora
     MLB_LEAGUE_STATS = "mlb-league-stats"
     MLB_PLAYER = "mlb-player"
     MLB_PLAYER_STATS = "mlb-player-stats"
+    MLB_PROSPECT_RANKINGS = "mlb-prospect-rankings"
     MLB_PROSPECT_STATS = "mlb-prospect-stats"
     MLB_SCHEDULE = "mlb-schedule"
     MLB_SEARCH = "mlb-search"
     MLB_STANDINGS = "mlb-standings"
     MLB_STATCAST = "mlb-statcast"
+    MLB_STATCAST_ABS_CHALLENGES = "mlb-statcast-abs-challenges"
+    MLB_STATCAST_ACTIVE_SPIN = "mlb-statcast-active-spin"
+    MLB_STATCAST_ARM_ANGLE = "mlb-statcast-arm-angle"
+    MLB_STATCAST_ARM_STRENGTH = "mlb-statcast-arm-strength"
+    MLB_STATCAST_ARM_STRENGTH_PLAYER = "mlb-statcast-arm-strength-player"
+    MLB_STATCAST_ARM_VALUE = "mlb-statcast-arm-value"
+    MLB_STATCAST_ARM_VALUE_DETAILS = "mlb-statcast-arm-value-details"
+    MLB_STATCAST_BASERUNNING = "mlb-statcast-baserunning"
+    MLB_STATCAST_BAT_TRACKING = "mlb-statcast-bat-tracking"
+    MLB_STATCAST_BATTED_BALL = "mlb-statcast-batted-ball"
+    MLB_STATCAST_BIRTHDAY_INDEX = "mlb-statcast-birthday-index"
+    MLB_STATCAST_CATCHER_BLOCKING = "mlb-statcast-catcher-blocking"
+    MLB_STATCAST_CATCHER_BLOCKING_DETAILS = "mlb-statcast-catcher-blocking-details"
+    MLB_STATCAST_CATCHER_FRAMING = "mlb-statcast-catcher-framing"
+    MLB_STATCAST_CATCHER_FRAMING_DETAILS = "mlb-statcast-catcher-framing-details"
+    MLB_STATCAST_CATCHER_POP_TIME = "mlb-statcast-catcher-pop-time"
+    MLB_STATCAST_CATCHER_STANCE = "mlb-statcast-catcher-stance"
+    MLB_STATCAST_CATCHER_THROWING = "mlb-statcast-catcher-throwing"
+    MLB_STATCAST_CATCHER_THROWING_DETAILS = "mlb-statcast-catcher-throwing-details"
     MLB_STATCAST_EXPECTED = "mlb-statcast-expected"
+    MLB_STATCAST_FIELDING_RUN_VALUE = "mlb-statcast-fielding-run-value"
+    MLB_STATCAST_FIRST_BASE_RECEIVING = "mlb-statcast-first-base-receiving"
+    MLB_STATCAST_FIRST_BASE_RECEIVING_DETAILS = "mlb-statcast-first-base-receiving-details"
+    MLB_STATCAST_HOME_RUNS = "mlb-statcast-home-runs"
+    MLB_STATCAST_HOME_RUNS_DETAILS = "mlb-statcast-home-runs-details"
     MLB_STATCAST_OAA = "mlb-statcast-oaa"
+    MLB_STATCAST_PARK_FACTORS = "mlb-statcast-park-factors"
+    MLB_STATCAST_PERCENTILE = "mlb-statcast-percentile"
+    MLB_STATCAST_PITCH_ARSENAL = "mlb-statcast-pitch-arsenal"
+    MLB_STATCAST_PITCH_ARSENAL_DETAILS = "mlb-statcast-pitch-arsenal-details"
+    MLB_STATCAST_PITCH_ARSENALS = "mlb-statcast-pitch-arsenals"
+    MLB_STATCAST_PITCH_MOVEMENT = "mlb-statcast-pitch-movement"
+    MLB_STATCAST_PITCH_TEMPO = "mlb-statcast-pitch-tempo"
+    MLB_STATCAST_PITCH_TEMPO_PLAYER = "mlb-statcast-pitch-tempo-player"
+    MLB_STATCAST_PITCH_TIMER = "mlb-statcast-pitch-timer"
+    MLB_STATCAST_PLAYER_DETAILS = "mlb-statcast-player-details"
+    MLB_STATCAST_ROLLING = "mlb-statcast-rolling"
+    MLB_STATCAST_RUN_VALUE = "mlb-statcast-run-value"
+    MLB_STATCAST_RUNNING_GAME = "mlb-statcast-running-game"
+    MLB_STATCAST_RUNNING_GAME_DETAILS = "mlb-statcast-running-game-details"
+    MLB_STATCAST_SPRINT_SPEED = "mlb-statcast-sprint-speed"
+    MLB_STATCAST_SPRINT_SPEED_TEAMS = "mlb-statcast-sprint-speed-teams"
+    MLB_STATCAST_SWING_PATH = "mlb-statcast-swing-path"
+    MLB_STATCAST_SWING_TIMING = "mlb-statcast-swing-timing"
+    MLB_STATCAST_SWING_TIMING_DETAILS = "mlb-statcast-swing-timing-details"
+    MLB_STATCAST_TOP_PERFORMERS = "mlb-statcast-top-performers"
+    MLB_STATCAST_YEAR_TO_YEAR = "mlb-statcast-year-to-year"
     MLB_TEAM_ROSTER = "mlb-team-roster"
     MLB_TEAM_STATS = "mlb-team-stats"
     MLB_TEAMS = "mlb-teams"
@@ -124423,9 +140424,15 @@ module Crawlora
     NDTV_ARTICLE = "ndtv-article"
     NDTV_AUTHOR = "ndtv-author"
     NDTV_HEADLINES = "ndtv-headlines"
+    NDTV_LATEST_VIDEOS = "ndtv-latest-videos"
+    NDTV_LIVE_BLOG = "ndtv-live-blog"
+    NDTV_LIVE_BLOGS = "ndtv-live-blogs"
     NDTV_NEWS = "ndtv-news"
     NDTV_SEARCH = "ndtv-search"
     NDTV_SECTIONS = "ndtv-sections"
+    NDTV_VIDEO = "ndtv-video"
+    NDTV_VIDEO_CATEGORIES = "ndtv-video-categories"
+    NDTV_VIDEOS = "ndtv-videos"
     NEW_YORK_DAILY_NEWS_NYDAILYNEWS_ARTICLE = "nydailynews-article"
     NEW_YORK_DAILY_NEWS_NYDAILYNEWS_AUTHOR = "nydailynews-author"
     NEW_YORK_DAILY_NEWS_NYDAILYNEWS_HEADLINES = "nydailynews-headlines"
@@ -124479,6 +140486,11 @@ module Crawlora
     NIKE_SEARCH = "nike-search"
     NIKE_STORES = "nike-stores"
     NIKE_SUGGEST = "nike-suggest"
+    NINE_TO_FIVE_GOOGLE_ARTICLE = "ninetofivegoogle-article"
+    NINE_TO_FIVE_GOOGLE_AUTHOR = "ninetofivegoogle-author"
+    NINE_TO_FIVE_GOOGLE_HEADLINES = "ninetofivegoogle-headlines"
+    NINE_TO_FIVE_GOOGLE_NEWS = "ninetofivegoogle-news"
+    NINE_TO_FIVE_GOOGLE_SECTIONS = "ninetofivegoogle-sections"
     NINE_TO_FIVE_MAC_ARTICLE = "ninetofivemac-article"
     NINE_TO_FIVE_MAC_AUTHOR = "ninetofivemac-author"
     NINE_TO_FIVE_MAC_HEADLINES = "ninetofivemac-headlines"
@@ -124650,6 +140662,10 @@ module Crawlora
     PHONE_ARENA_PHONEARENA_HEADLINES = "phonearena-headlines"
     PHONE_ARENA_PHONEARENA_NEWS = "phonearena-news"
     PHONE_ARENA_PHONEARENA_SECTIONS = "phonearena-sections"
+    PHYS_ORG_PHYSORG_ARTICLE = "physorg-article"
+    PHYS_ORG_PHYSORG_HEADLINES = "physorg-headlines"
+    PHYS_ORG_PHYSORG_NEWS = "physorg-news"
+    PHYS_ORG_PHYSORG_SECTIONS = "physorg-sections"
     PINTEREST_BOARD = "pinterest-board"
     PINTEREST_CATEGORIES = "pinterest-categories"
     PINTEREST_IDEA = "pinterest-idea"
@@ -124908,6 +140924,19 @@ module Crawlora
     RESY_LOCATIONS = "resy-locations"
     RESY_RESTAURANT = "resy-restaurant"
     RESY_SEARCH = "resy-search"
+    RETAIL_ME_NOT_RETAILMENOT_AUTOCOMPLETE = "retailmenot-autocomplete"
+    RETAIL_ME_NOT_RETAILMENOT_BLOG_CATEGORIES = "retailmenot-blog-categories"
+    RETAIL_ME_NOT_RETAILMENOT_BLOG_POST = "retailmenot-blog-post"
+    RETAIL_ME_NOT_RETAILMENOT_BLOG_POSTS = "retailmenot-blog-posts"
+    RETAIL_ME_NOT_RETAILMENOT_BLOG_TAGS = "retailmenot-blog-tags"
+    RETAIL_ME_NOT_RETAILMENOT_CASHBACK = "retailmenot-cashback"
+    RETAIL_ME_NOT_RETAILMENOT_CATEGORIES = "retailmenot-categories"
+    RETAIL_ME_NOT_RETAILMENOT_CATEGORY = "retailmenot-category"
+    RETAIL_ME_NOT_RETAILMENOT_DEAL_EVENT = "retailmenot-deal-event"
+    RETAIL_ME_NOT_RETAILMENOT_DEAL_EVENTS = "retailmenot-deal-events"
+    RETAIL_ME_NOT_RETAILMENOT_HOME = "retailmenot-home"
+    RETAIL_ME_NOT_RETAILMENOT_STORE = "retailmenot-store"
+    RETAIL_ME_NOT_RETAILMENOT_STORES = "retailmenot-stores"
     REUTERS_ARTICLE = "reuters-article"
     REUTERS_ARTICLES = "reuters-articles"
     REUTERS_AUTHOR = "reuters-author"
@@ -125189,15 +141218,31 @@ module Crawlora
     SPORTING_NEWS_SPORTINGNEWS_SECTIONS = "sportingnews-sections"
     SPORTSKEEDA_ARTICLE = "sportskeeda-article"
     SPORTSKEEDA_AUTHOR = "sportskeeda-author"
+    SPORTSKEEDA_COLLEGE_BASKETBALL_SCHEDULE = "sportskeeda-college-basketball-schedule"
+    SPORTSKEEDA_COLLEGE_BASKETBALL_SCHEDULE_OPTIONS = "sportskeeda-college-basketball-schedule-options"
+    SPORTSKEEDA_CRICKET_COMMENTARY = "sportskeeda-cricket-commentary"
+    SPORTSKEEDA_CRICKET_MATCH = "sportskeeda-cricket-match"
     SPORTSKEEDA_DEPTH_CHART = "sportskeeda-depth-chart"
+    SPORTSKEEDA_DRAFT_PICKS = "sportskeeda-draft-picks"
+    SPORTSKEEDA_DRAFT_PICKS_OPTIONS = "sportskeeda-draft-picks-options"
+    SPORTSKEEDA_EVENT_CALENDAR = "sportskeeda-event-calendar"
+    SPORTSKEEDA_EVENT_CALENDAR_OPTIONS = "sportskeeda-event-calendar-options"
     SPORTSKEEDA_FEED = "sportskeeda-feed"
     SPORTSKEEDA_FOOTBALL_DATA = "sportskeeda-football-data"
     SPORTSKEEDA_FOOTBALL_OPTIONS = "sportskeeda-football-options"
+    SPORTSKEEDA_GUESSING_GAME = "sportskeeda-guessing-game"
+    SPORTSKEEDA_GUESSING_GAME_ENTITIES = "sportskeeda-guessing-game-entities"
+    SPORTSKEEDA_GUESSING_GAMES = "sportskeeda-guessing-games"
+    SPORTSKEEDA_NBA_QUERIES = "sportskeeda-nba-queries"
     SPORTSKEEDA_NEWS = "sportskeeda-news"
     SPORTSKEEDA_PAGE_DATA = "sportskeeda-page-data"
     SPORTSKEEDA_PAGE_OPTIONS = "sportskeeda-page-options"
     SPORTSKEEDA_PLAYER_STATS = "sportskeeda-player-stats"
     SPORTSKEEDA_PROFILE = "sportskeeda-profile"
+    SPORTSKEEDA_QUIZ = "sportskeeda-quiz"
+    SPORTSKEEDA_QUIZ_CATEGORIES = "sportskeeda-quiz-categories"
+    SPORTSKEEDA_QUIZZES = "sportskeeda-quizzes"
+    SPORTSKEEDA_SALARY_CAP = "sportskeeda-salary-cap"
     SPORTSKEEDA_SCHEDULE = "sportskeeda-schedule"
     SPORTSKEEDA_SECTIONS = "sportskeeda-sections"
     SPORTSKEEDA_SITEMAP_ITEMS = "sportskeeda-sitemap-items"
@@ -125205,9 +141250,20 @@ module Crawlora
     SPORTSKEEDA_STANDINGS = "sportskeeda-standings"
     SPORTSKEEDA_STANDINGS_OPTIONS = "sportskeeda-standings-options"
     SPORTSKEEDA_TAXONOMY_SEARCH = "sportskeeda-taxonomy-search"
+    SPORTSKEEDA_TOPIC = "sportskeeda-topic"
     SPORTSKEEDA_TRADE_VALUES = "sportskeeda-trade-values"
+    SPORTSKEEDA_TRANSACTIONS = "sportskeeda-transactions"
+    SPORTSKEEDA_TRANSACTIONS_OPTIONS = "sportskeeda-transactions-options"
     SPORTSKEEDA_VIDEO = "sportskeeda-video"
     SPORTSKEEDA_VIDEOS = "sportskeeda-videos"
+    SPORTSKEEDA_WIKI_ACTIVITY = "sportskeeda-wiki-activity"
+    SPORTSKEEDA_WIKI_ARTICLE = "sportskeeda-wiki-article"
+    SPORTSKEEDA_WIKI_CATEGORIES = "sportskeeda-wiki-categories"
+    SPORTSKEEDA_WIKI_CONTRIBUTORS = "sportskeeda-wiki-contributors"
+    SPORTSKEEDA_WIKI_ISSUES = "sportskeeda-wiki-issues"
+    SPORTSKEEDA_WIKI_OPTIONS = "sportskeeda-wiki-options"
+    SPORTSKEEDA_WIKI_PAGES = "sportskeeda-wiki-pages"
+    SPORTSKEEDA_WIKI_SUMMARY = "sportskeeda-wiki-summary"
     SPOTIFY_ALBUM = "spotify-album"
     SPOTIFY_ALBUM_TRACKS = "spotify-album-tracks"
     SPOTIFY_ALBUMS_SEARCH = "spotify-albums-search"
@@ -125292,6 +141348,17 @@ module Crawlora
     STRAVA_CLUB = "strava-club"
     STRAVA_ROUTE_DETAIL = "strava-route-detail"
     STRAVA_ROUTES = "strava-routes"
+    STREET_EASY_STREETEASY_AREAS = "streeteasy-areas"
+    STREET_EASY_STREETEASY_BUILDING = "streeteasy-building"
+    STREET_EASY_STREETEASY_MARKET_DATA_CATALOG = "streeteasy-market-data-catalog"
+    STREET_EASY_STREETEASY_MARKET_DATA_SERIES = "streeteasy-market-data-series"
+    STREET_EASY_STREETEASY_MARKET_INDICES = "streeteasy-market-indices"
+    STREET_EASY_STREETEASY_MARKET_INVENTORY = "streeteasy-market-inventory"
+    STREET_EASY_STREETEASY_QUICK_SEARCH = "streeteasy-quick-search"
+    STREET_EASY_STREETEASY_RENTALS_SEARCH = "streeteasy-rentals-search"
+    STREET_EASY_STREETEASY_SALES_SEARCH = "streeteasy-sales-search"
+    STREET_EASY_STREETEASY_SCHOOL = "streeteasy-school"
+    STREET_EASY_STREETEASY_UNIT = "streeteasy-unit"
     STUB_HUB_STUBHUB_CAROUSEL = "stubhub-carousel"
     STUB_HUB_STUBHUB_CATEGORIES = "stubhub-categories"
     STUB_HUB_STUBHUB_CATEGORY_EVENTS = "stubhub-category-events"
@@ -125381,6 +141448,11 @@ module Crawlora
     THE_ATLANTIC_THEATLANTIC_AUTHOR = "theatlantic-author"
     THE_ATLANTIC_THEATLANTIC_HEADLINES = "theatlantic-headlines"
     THE_ATLANTIC_THEATLANTIC_SECTIONS = "theatlantic-sections"
+    THE_BLAZE_THEBLAZE_ARTICLE = "theblaze-article"
+    THE_BLAZE_THEBLAZE_AUTHOR = "theblaze-author"
+    THE_BLAZE_THEBLAZE_HEADLINES = "theblaze-headlines"
+    THE_BLAZE_THEBLAZE_NEWS = "theblaze-news"
+    THE_BLAZE_THEBLAZE_SECTIONS = "theblaze-sections"
     THE_BODY_SHOP_THEBODYSHOP_COLLECTION_PRODUCTS = "thebodyshop-collection-products"
     THE_BODY_SHOP_THEBODYSHOP_COLLECTIONS = "thebodyshop-collections"
     THE_BODY_SHOP_THEBODYSHOP_PAGE = "thebodyshop-page"
@@ -125402,6 +141474,16 @@ module Crawlora
     THE_DAILY_CALLER_DAILYCALLER_HEADLINES = "dailycaller-headlines"
     THE_DAILY_CALLER_DAILYCALLER_NEWS = "dailycaller-news"
     THE_DAILY_CALLER_DAILYCALLER_SECTIONS = "dailycaller-sections"
+    THE_DENVER_POST_DENVERPOST_ARTICLE = "denverpost-article"
+    THE_DENVER_POST_DENVERPOST_AUTHOR = "denverpost-author"
+    THE_DENVER_POST_DENVERPOST_HEADLINES = "denverpost-headlines"
+    THE_DENVER_POST_DENVERPOST_NEWS = "denverpost-news"
+    THE_DENVER_POST_DENVERPOST_SECTIONS = "denverpost-sections"
+    THE_EXPRESS_TRIBUNE_EXPRESSTRIBUNE_ARTICLE = "expresstribune-article"
+    THE_EXPRESS_TRIBUNE_EXPRESSTRIBUNE_AUTHOR = "expresstribune-author"
+    THE_EXPRESS_TRIBUNE_EXPRESSTRIBUNE_HEADLINES = "expresstribune-headlines"
+    THE_EXPRESS_TRIBUNE_EXPRESSTRIBUNE_NEWS = "expresstribune-news"
+    THE_EXPRESS_TRIBUNE_EXPRESSTRIBUNE_SECTIONS = "expresstribune-sections"
     THE_HILL_THEHILL_ARTICLE = "thehill-article"
     THE_HILL_THEHILL_AUTHOR = "thehill-author"
     THE_HILL_THEHILL_HEADLINES = "thehill-headlines"
@@ -125422,6 +141504,11 @@ module Crawlora
     THE_INDIAN_EXPRESS_INDIANEXPRESS_HEADLINES = "indianexpress-headlines"
     THE_INDIAN_EXPRESS_INDIANEXPRESS_NEWS = "indianexpress-news"
     THE_INDIAN_EXPRESS_INDIANEXPRESS_SECTIONS = "indianexpress-sections"
+    THE_JAPAN_TIMES_JAPANTIMES_ARTICLE = "japantimes-article"
+    THE_JAPAN_TIMES_JAPANTIMES_AUTHOR = "japantimes-author"
+    THE_JAPAN_TIMES_JAPANTIMES_HEADLINES = "japantimes-headlines"
+    THE_JAPAN_TIMES_JAPANTIMES_NEWS = "japantimes-news"
+    THE_JAPAN_TIMES_JAPANTIMES_SECTIONS = "japantimes-sections"
     THE_JOURNAL_IE_THEJOURNAL_ARTICLE = "thejournal-article"
     THE_JOURNAL_IE_THEJOURNAL_AUTHOR = "thejournal-author"
     THE_JOURNAL_IE_THEJOURNAL_HEADLINES = "thejournal-headlines"
@@ -125432,11 +141519,21 @@ module Crawlora
     THE_MOTLEY_FOOL_MOTLEYFOOL_HEADLINES = "motleyfool-headlines"
     THE_MOTLEY_FOOL_MOTLEYFOOL_NEWS = "motleyfool-news"
     THE_MOTLEY_FOOL_MOTLEYFOOL_SECTIONS = "motleyfool-sections"
+    THE_NATIONAL_NATIONAL_ARTICLE = "national-article"
+    THE_NATIONAL_NATIONAL_AUTHOR = "national-author"
+    THE_NATIONAL_NATIONAL_HEADLINES = "national-headlines"
+    THE_NATIONAL_NATIONAL_NEWS = "national-news"
+    THE_NATIONAL_NATIONAL_SECTIONS = "national-sections"
     THE_NEW_YORKER_NEWYORKER_ARTICLE = "newyorker-article"
     THE_NEW_YORKER_NEWYORKER_AUTHOR = "newyorker-author"
     THE_NEW_YORKER_NEWYORKER_HEADLINES = "newyorker-headlines"
     THE_NEW_YORKER_NEWYORKER_NEWS = "newyorker-news"
     THE_NEW_YORKER_NEWYORKER_SECTIONS = "newyorker-sections"
+    THE_NEXT_WEB_THENEXTWEB_ARTICLE = "thenextweb-article"
+    THE_NEXT_WEB_THENEXTWEB_AUTHOR = "thenextweb-author"
+    THE_NEXT_WEB_THENEXTWEB_HEADLINES = "thenextweb-headlines"
+    THE_NEXT_WEB_THENEXTWEB_NEWS = "thenextweb-news"
+    THE_NEXT_WEB_THENEXTWEB_SECTIONS = "thenextweb-sections"
     THE_REAL_REAL_THEREALREAL_AUTOCOMPLETE = "therealreal-autocomplete"
     THE_REAL_REAL_THEREALREAL_CATEGORIES = "therealreal-categories"
     THE_REAL_REAL_THEREALREAL_CATEGORY = "therealreal-category"
@@ -125544,6 +141641,10 @@ module Crawlora
     TIME_HEADLINES = "time-headlines"
     TIME_NEWS = "time-news"
     TIME_SECTIONS = "time-sections"
+    TIMES_LIVE_TIMESLIVE_ARTICLE = "timeslive-article"
+    TIMES_LIVE_TIMESLIVE_HEADLINES = "timeslive-headlines"
+    TIMES_LIVE_TIMESLIVE_NEWS = "timeslive-news"
+    TIMES_LIVE_TIMESLIVE_SECTIONS = "timeslive-sections"
     TIMES_OF_INDIA_TIMESOFINDIA_ARTICLE = "timesofindia-article"
     TIMES_OF_INDIA_TIMESOFINDIA_AUTHOR = "timesofindia-author"
     TIMES_OF_INDIA_TIMESOFINDIA_HEADLINES = "timesofindia-headlines"
@@ -125705,6 +141806,13 @@ module Crawlora
     VOX_HEADLINES = "vox-headlines"
     VOX_NEWS = "vox-news"
     VOX_SECTIONS = "vox-sections"
+    VRBO_LOCATION_SUGGESTIONS = "vrbo-location-suggestions"
+    VRBO_PROPERTY = "vrbo-property"
+    VRBO_PROPERTY_REVIEWS = "vrbo-property-reviews"
+    VRBO_RATE_CALENDAR = "vrbo-rate-calendar"
+    VRBO_SEARCH = "vrbo-search"
+    VRBO_TRAVEL_PAGE_DETAIL = "vrbo-travel-page-detail"
+    VRBO_TRAVEL_PAGES = "vrbo-travel-pages"
     WALES_ONLINE_WALESONLINE_ARTICLE = "walesonline-article"
     WALES_ONLINE_WALESONLINE_AUTHOR = "walesonline-author"
     WALES_ONLINE_WALESONLINE_HEADLINES = "walesonline-headlines"
@@ -125724,6 +141832,11 @@ module Crawlora
     WAYFAIR_CATEGORIES = "wayfair-categories"
     WAYFAIR_CATEGORY = "wayfair-category"
     WAYFAIR_PRODUCT = "wayfair-product"
+    WCCFTECH_ARTICLE = "wccftech-article"
+    WCCFTECH_AUTHOR = "wccftech-author"
+    WCCFTECH_HEADLINES = "wccftech-headlines"
+    WCCFTECH_NEWS = "wccftech-news"
+    WCCFTECH_SECTIONS = "wccftech-sections"
     WEB_ANTIBOT_CHECK = "antibot-check"
     WEB_CONTACT = "contact"
     WEB_EMAIL_VERIFY = "email-verify"
@@ -125875,6 +141988,11 @@ module Crawlora
     YAHOO_TECH_ARTICLE = "yahoo-tech-article"
     YAHOO_TECH_CATEGORY = "yahoo-tech-category"
     YAHOO_TECH_HOME = "yahoo-tech-home"
+    YARDBARKER_ARTICLE = "yardbarker-article"
+    YARDBARKER_AUTHOR = "yardbarker-author"
+    YARDBARKER_HEADLINES = "yardbarker-headlines"
+    YARDBARKER_NEWS = "yardbarker-news"
+    YARDBARKER_SECTIONS = "yardbarker-sections"
     YELP_BUSINESS = "yelp-business"
     YELP_BUSINESS_MENU = "yelp-business-menu"
     YELP_BUSINESS_PHOTOS = "yelp-business-photos"
