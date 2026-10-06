@@ -334,6 +334,12 @@ module Crawlora
     def headlines: (?topic: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class BaiduGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def search: (?q: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def suggest: (?q: String, ?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class BalenciagaGroup
     def initialize: (Client, Hash[String, String]) -> void
     def categories: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -448,7 +454,7 @@ module Crawlora
     def images: (?q: String, ?page: Integer, ?count: Integer, ?country: String, ?lang: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def news: (?q: String, ?page: Integer, ?count: Integer, ?country: String, ?lang: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search: (?q: String, ?page: Integer, ?count: Integer, ?country: String, ?lang: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def suggest: (?q: String, ?count: Integer, ?country: String, ?lang: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def suggest: (?q: String, ?count: Integer, ?country: String, ?lang: String, ?rich: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def videos: (?q: String, ?page: Integer, ?count: Integer, ?country: String, ?lang: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
@@ -562,7 +568,7 @@ module Crawlora
     def images: (?q: String, ?offset: Integer, ?count: Integer, ?country: "all" | "ar" | "at" | "au" | "be" | "br" | "ca" | "ch" | "cl" | "cn" | "de" | "dk" | "es" | "fi" | "fr" | "gb" | "gr" | "hk" | "id" | "in" | "it" | "jp" | "kr" | "mx" | "my" | "nl" | "no" | "nz" | "ph" | "pl" | "pt" | "ru" | "sa" | "se" | "sg" | "tr" | "tw" | "us" | "za", ?lang: "de-de" | "en-ca" | "en-gb" | "en-in" | "en-us" | "fi-fi" | "fr-ca" | "fr-fr" | "ja-jp" | "pt-br" | "sq-al" | "sw-ke" | "zh-tw", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def news: (?q: String, ?offset: Integer, ?count: Integer, ?country: "all" | "ar" | "at" | "au" | "be" | "br" | "ca" | "ch" | "cl" | "cn" | "de" | "dk" | "es" | "fi" | "fr" | "gb" | "gr" | "hk" | "id" | "in" | "it" | "jp" | "kr" | "mx" | "my" | "nl" | "no" | "nz" | "ph" | "pl" | "pt" | "ru" | "sa" | "se" | "sg" | "tr" | "tw" | "us" | "za", ?lang: "de-de" | "en-ca" | "en-gb" | "en-in" | "en-us" | "fi-fi" | "fr-ca" | "fr-fr" | "ja-jp" | "pt-br" | "sq-al" | "sw-ke" | "zh-tw", ?time_range: "any" | "day" | "week" | "month" | "year" | "custom", ?date_from: String, ?date_to: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search: (?q: String, ?offset: Integer, ?country: "all" | "ar" | "at" | "au" | "be" | "br" | "ca" | "ch" | "cl" | "cn" | "de" | "dk" | "es" | "fi" | "fr" | "gb" | "gr" | "hk" | "id" | "in" | "it" | "jp" | "kr" | "mx" | "my" | "nl" | "no" | "nz" | "ph" | "pl" | "pt" | "ru" | "sa" | "se" | "sg" | "tr" | "tw" | "us" | "za", ?lang: "de-de" | "en-ca" | "en-gb" | "en-in" | "en-us" | "fi-fi" | "fr-ca" | "fr-fr" | "ja-jp" | "pt-br" | "sq-al" | "sw-ke" | "zh-tw", ?time_range: "any" | "day" | "week" | "month" | "year" | "custom", ?date_from: String, ?date_to: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def suggest: (?q: String, ?count: Integer, ?country: "all" | "ar" | "at" | "au" | "be" | "br" | "ca" | "ch" | "cl" | "cn" | "de" | "dk" | "es" | "fi" | "fr" | "gb" | "gr" | "hk" | "id" | "in" | "it" | "jp" | "kr" | "mx" | "my" | "nl" | "no" | "nz" | "ph" | "pl" | "pt" | "ru" | "sa" | "se" | "sg" | "tr" | "tw" | "us" | "za", ?lang: "de-de" | "en-ca" | "en-gb" | "en-in" | "en-us" | "fi-fi" | "fr-ca" | "fr-fr" | "ja-jp" | "pt-br" | "sq-al" | "sw-ke" | "zh-tw", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def suggest: (?q: String, ?count: Integer, ?country: "all" | "ar" | "at" | "au" | "be" | "br" | "ca" | "ch" | "cl" | "cn" | "de" | "dk" | "es" | "fi" | "fr" | "gb" | "gr" | "hk" | "id" | "in" | "it" | "jp" | "kr" | "mx" | "my" | "nl" | "no" | "nz" | "ph" | "pl" | "pt" | "ru" | "sa" | "se" | "sg" | "tr" | "tw" | "us" | "za", ?lang: "de-de" | "en-ca" | "en-gb" | "en-in" | "en-us" | "fi-fi" | "fr-ca" | "fr-fr" | "ja-jp" | "pt-br" | "sq-al" | "sw-ke" | "zh-tw", ?rich: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def videos: (?q: String, ?offset: Integer, ?count: Integer, ?country: "all" | "ar" | "at" | "au" | "be" | "br" | "ca" | "ch" | "cl" | "cn" | "de" | "dk" | "es" | "fi" | "fr" | "gb" | "gr" | "hk" | "id" | "in" | "it" | "jp" | "kr" | "mx" | "my" | "nl" | "no" | "nz" | "ph" | "pl" | "pt" | "ru" | "sa" | "se" | "sg" | "tr" | "tw" | "us" | "za", ?lang: "de-de" | "en-ca" | "en-gb" | "en-in" | "en-us" | "fi-fi" | "fr-ca" | "fr-fr" | "ja-jp" | "pt-br" | "sq-al" | "sw-ke" | "zh-tw", ?time_range: "any" | "day" | "week" | "month" | "year" | "custom", ?date_from: String, ?date_to: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
@@ -1272,6 +1278,7 @@ module Crawlora
     def duckduckgo_news: (?q: String, ?page: Integer, ?region: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def duckduckgo_search: (?q: String, ?page: Integer, ?region: String, ?time_range: "d" | "w" | "m" | "y", ?safe_search: "strict" | "moderate" | "off", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def duckduckgo_shopping: (?q: String, ?region: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def duckduckgo_suggest: (?q: String, ?count: Integer, ?region: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def duckduckgo_video: (?q: String, ?page: Integer, ?region: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
@@ -1893,7 +1900,7 @@ module Crawlora
     def map_search: (?mapSearchOption: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def news: (?q: String, ?page: Integer, ?count: Integer, ?country: String, ?lang: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def news_search: (?searchOption: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def suggest: (?q: String, ?count: Integer, ?country: String, ?lang: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def suggest: (?q: String, ?count: Integer, ?country: String, ?lang: String, ?source: "web" | "youtube" | "shopping", ?rich: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def trends_categories: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def trends_enums: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def trends_explore: (?request: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -1968,6 +1975,8 @@ module Crawlora
     def newsroom_article: (?slug: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def property: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search: (?query: String, ?market_area: String, ?neighborhood: String, ?city: String, ?state: String, ?country_code: String, ?min_price: Float, ?max_price: Float, ?sort: "relevance" | "name" | "price_asc" | "price_desc", ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def unit_locations: (?query: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def units: (?location: String, ?bedrooms: Array["0" | "1" | "2" | "3" | "4" | "5" | "6"], ?bathrooms: Array["0" | "1" | "2" | "3" | "4"], ?building_type: Array["Active Adult" | "Garden" | "High-Rise" | "Mid-Rise" | "Single Family Home" | "Student" | "Townhome"], ?highlights: Array["airCon" | "dishwasher" | "eco" | "fitness" | "garages" | "limitedAccess" | "patioBalcony" | "pets" | "playground" | "pools" | "smokeFree" | "walkInClosets" | "washerDryer"], ?min_price: Float, ?max_price: Float, ?sort: "relevance" | "price_asc", ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class GrubhubGroup
@@ -3628,6 +3637,11 @@ module Crawlora
     def suggest: (?q: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class QwantGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def suggest: (?q: String, ?count: Integer, ?locale: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class RaisingCaneSGroup
     def initialize: (Client, Hash[String, String]) -> void
     def raisingcanes_directory: (?path: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -4278,6 +4292,11 @@ module Crawlora
     def product: (?product_number: String, ?form: "hot" | "iced" | "single" | "packaged" | "whole-bean" | "via", ?store_number: String, ?market: "us" | "ca", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def nutrition: (?product_number: String, ?form: "hot", ?request: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def stores: (?place: String, ?lat: Float, ?lng: Float, ?market: "us" | "ca", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class StartpageGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def suggest: (?q: String, ?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class MinnesotaStarTribuneGroup
@@ -5301,6 +5320,12 @@ module Crawlora
     def home: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class YandexGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def search: (?q: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def suggest: (?q: String, ?count: Integer, ?lang: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class YardbarkerGroup
     def initialize: (Client, Hash[String, String]) -> void
     def article: (?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -5341,6 +5366,7 @@ module Crawlora
     def playlist: (?id: String, ?continuation_token: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def profile: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search: (?q: String, ?search_query: String, ?continuation_token: String, ?type: "video" | "shorts" | "channel" | "playlist" | "movie", ?sort_by: "relevance" | "upload_date" | "view_count" | "popularity" | "rating", ?upload_date: "last_hour" | "today" | "this_week" | "this_month" | "this_year", ?duration: "under_3_minutes" | "three_to_20_minutes" | "over_20_minutes" | "under_3" | "three_to_20" | "over_20" | "short" | "medium" | "long", ?features: String, ?hl: String, ?gl: String, ?params: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def suggest: (?q: String, ?count: Integer, ?hl: String, ?gl: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def tag: (?tag: String, ?type: "all" | "shorts", ?continuation_token: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def transcript: (?id: String, ?lang: String, ?translate_to: String, ?format: "json" | "text" | "srt" | "vtt", ?timestamps: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def transcript_languages: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
