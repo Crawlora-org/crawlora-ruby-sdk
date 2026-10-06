@@ -7619,6 +7619,69 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "baidu-search" => {
+      "id" => "baidu-search",
+      "method" => "GET",
+      "path" => "/baidu/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "baidu-suggest" => {
+      "id" => "baidu-suggest",
+      "method" => "GET",
+      "path" => "/baidu/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "count",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "balenciaga-categories" => {
       "id" => "balenciaga-categories",
       "method" => "GET",
@@ -9717,6 +9780,11 @@ module Crawlora
           "name" => "lang",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "rich",
+          "in" => "query",
+          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -12525,6 +12593,11 @@ module Crawlora
             "sw-ke",
             "zh-tw"
           ]
+        },
+        {
+          "name" => "rich",
+          "in" => "query",
+          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -35140,6 +35213,42 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "duckduckgo-suggest" => {
+      "id" => "duckduckgo-suggest",
+      "method" => "GET",
+      "path" => "/duckduckgo/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "count",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "duckduckgo-video" => {
       "id" => "duckduckgo-video",
       "method" => "GET",
@@ -49555,6 +49664,21 @@ module Crawlora
           "name" => "lang",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "source",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "web",
+            "youtube",
+            "shopping"
+          ]
+        },
+        {
+          "name" => "rich",
+          "in" => "query",
+          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -51805,6 +51929,150 @@ module Crawlora
             "name",
             "price_asc",
             "price_desc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "greystar-unit-locations" => {
+      "id" => "greystar-unit-locations",
+      "method" => "GET",
+      "path" => "/greystar/unit-locations",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "greystar-units" => {
+      "id" => "greystar-units",
+      "method" => "GET",
+      "path" => "/greystar/units",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "bedrooms",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ]
+        },
+        {
+          "name" => "bathrooms",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "name" => "building_type",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "Active Adult",
+            "Garden",
+            "High-Rise",
+            "Mid-Rise",
+            "Single Family Home",
+            "Student",
+            "Townhome"
+          ]
+        },
+        {
+          "name" => "highlights",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "enum" => [
+            "airCon",
+            "dishwasher",
+            "eco",
+            "fitness",
+            "garages",
+            "limitedAccess",
+            "patioBalcony",
+            "pets",
+            "playground",
+            "pools",
+            "smokeFree",
+            "walkInClosets",
+            "washerDryer"
+          ]
+        },
+        {
+          "name" => "min_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "price_asc"
           ]
         },
         {
@@ -95277,6 +95545,42 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "qwant-suggest" => {
+      "id" => "qwant-suggest",
+      "method" => "GET",
+      "path" => "/qwant/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "count",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "locale",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "raisingcanes-directory" => {
       "id" => "raisingcanes-directory",
       "method" => "GET",
@@ -110919,6 +111223,37 @@ module Crawlora
             "us",
             "ca"
           ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "startpage-suggest" => {
+      "id" => "startpage-suggest",
+      "method" => "GET",
+      "path" => "/startpage/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "count",
+          "in" => "query",
+          "type" => "integer"
         }
       ],
       "formParams" => [],
@@ -131826,6 +132161,74 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "yandex-search" => {
+      "id" => "yandex-search",
+      "method" => "GET",
+      "path" => "/yandex/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "yandex-suggest" => {
+      "id" => "yandex-suggest",
+      "method" => "GET",
+      "path" => "/yandex/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "count",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "lang",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "yardbarker-article" => {
       "id" => "yardbarker-article",
       "method" => "GET",
@@ -132632,6 +133035,47 @@ module Crawlora
         },
         {
           "name" => "params",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "youtube-suggest" => {
+      "id" => "youtube-suggest",
+      "method" => "GET",
+      "path" => "/youtube/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "count",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "hl",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "gl",
           "in" => "query",
           "type" => "string"
         }
@@ -134321,6 +134765,10 @@ module Crawlora
       "categories" => "axios-categories",
       "headlines" => "axios-headlines"
     },
+    "baidu" => {
+      "search" => "baidu-search",
+      "suggest" => "baidu-suggest"
+    },
     "balenciaga" => {
       "categories" => "balenciaga-categories",
       "category" => "balenciaga-category",
@@ -135104,6 +135552,7 @@ module Crawlora
       "duckduckgo_news" => "duckduckgo-news",
       "duckduckgo_search" => "duckduckgo-search",
       "duckduckgo_shopping" => "duckduckgo-shopping",
+      "duckduckgo_suggest" => "duckduckgo-suggest",
       "duckduckgo_video" => "duckduckgo-video"
     },
     "dunkin" => {
@@ -135685,7 +136134,9 @@ module Crawlora
       "newsroom" => "greystar-newsroom",
       "newsroom_article" => "greystar-newsroom-article",
       "property" => "greystar-property",
-      "search" => "greystar-search"
+      "search" => "greystar-search",
+      "unit_locations" => "greystar-unit-locations",
+      "units" => "greystar-units"
     },
     "grubhub" => {
       "availability" => "grubhub-availability",
@@ -137061,6 +137512,9 @@ module Crawlora
       "sitemaps" => "quince-sitemaps",
       "suggest" => "quince-suggest"
     },
+    "qwant" => {
+      "suggest" => "qwant-suggest"
+    },
     "raising_cane_s" => {
       "raisingcanes_directory" => "raisingcanes-directory",
       "raisingcanes_menu" => "raisingcanes-menu",
@@ -137606,6 +138060,9 @@ module Crawlora
       "product" => "starbucks-product",
       "nutrition" => "starbucks-nutrition",
       "stores" => "starbucks-stores"
+    },
+    "startpage" => {
+      "suggest" => "startpage-suggest"
     },
     "minnesota_star_tribune" => {
       "startribune_news" => "startribune-news"
@@ -138432,6 +138889,10 @@ module Crawlora
       "category" => "yahoo-tech-category",
       "home" => "yahoo-tech-home"
     },
+    "yandex" => {
+      "search" => "yandex-search",
+      "suggest" => "yandex-suggest"
+    },
     "yardbarker" => {
       "article" => "yardbarker-article",
       "author" => "yardbarker-author",
@@ -138465,6 +138926,7 @@ module Crawlora
       "playlist" => "youtube-playlist",
       "profile" => "youtube-profile",
       "search" => "youtube-search",
+      "suggest" => "youtube-suggest",
       "tag" => "youtube-tag",
       "transcript" => "youtube-transcript",
       "transcript_languages" => "youtube-transcript-languages",
@@ -138520,7 +138982,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 3529
+  OPERATION_COUNT = 3539
 
   module OperationId
     ABC_NEWS_ABCNEWS_ARTICLE = "abcnews-article"
@@ -138719,6 +139181,8 @@ module Crawlora
     AXIOS_ARTICLE = "axios-article"
     AXIOS_CATEGORIES = "axios-categories"
     AXIOS_HEADLINES = "axios-headlines"
+    BAIDU_SEARCH = "baidu-search"
+    BAIDU_SUGGEST = "baidu-suggest"
     BALENCIAGA_CATEGORIES = "balenciaga-categories"
     BALENCIAGA_CATEGORY = "balenciaga-category"
     BALENCIAGA_PRODUCT = "balenciaga-product"
@@ -139331,6 +139795,7 @@ module Crawlora
     DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_NEWS = "duckduckgo-news"
     DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_SEARCH = "duckduckgo-search"
     DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_SHOPPING = "duckduckgo-shopping"
+    DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_SUGGEST = "duckduckgo-suggest"
     DUCK_DUCK_GO_SEARCH_DUCKDUCKGO_VIDEO = "duckduckgo-video"
     DUNKIN_DIRECTORY = "dunkin-directory"
     DUNKIN_MENU = "dunkin-menu"
@@ -139803,6 +140268,8 @@ module Crawlora
     GREYSTAR_NEWSROOM_ARTICLE = "greystar-newsroom-article"
     GREYSTAR_PROPERTY = "greystar-property"
     GREYSTAR_SEARCH = "greystar-search"
+    GREYSTAR_UNIT_LOCATIONS = "greystar-unit-locations"
+    GREYSTAR_UNITS = "greystar-units"
     GRUBHUB_AVAILABILITY = "grubhub-availability"
     GRUBHUB_OFFERS = "grubhub-offers"
     GRUBHUB_RESTAURANT = "grubhub-restaurant"
@@ -140869,6 +141336,7 @@ module Crawlora
     QUINCE_SITEMAP_URLS = "quince-sitemap-urls"
     QUINCE_SITEMAPS = "quince-sitemaps"
     QUINCE_SUGGEST = "quince-suggest"
+    QWANT_SUGGEST = "qwant-suggest"
     RAISING_CANE_SRAISINGCANES_DIRECTORY = "raisingcanes-directory"
     RAISING_CANE_SRAISINGCANES_MENU = "raisingcanes-menu"
     RAISING_CANE_SRAISINGCANES_NEARBY = "raisingcanes-nearby"
@@ -141307,6 +141775,7 @@ module Crawlora
     STARBUCKS_NUTRITION = "starbucks-nutrition"
     STARBUCKS_PRODUCT = "starbucks-product"
     STARBUCKS_STORES = "starbucks-stores"
+    STARTPAGE_SUGGEST = "startpage-suggest"
     STEAM_ACHIEVEMENTS = "steam-achievements"
     STEAM_APP = "steam-app"
     STEAM_CATEGORY = "steam-category"
@@ -141988,6 +142457,8 @@ module Crawlora
     YAHOO_TECH_ARTICLE = "yahoo-tech-article"
     YAHOO_TECH_CATEGORY = "yahoo-tech-category"
     YAHOO_TECH_HOME = "yahoo-tech-home"
+    YANDEX_SEARCH = "yandex-search"
+    YANDEX_SUGGEST = "yandex-suggest"
     YARDBARKER_ARTICLE = "yardbarker-article"
     YARDBARKER_AUTHOR = "yardbarker-author"
     YARDBARKER_HEADLINES = "yardbarker-headlines"
@@ -142014,6 +142485,7 @@ module Crawlora
     YOUTUBE_PLAYLIST = "youtube-playlist"
     YOUTUBE_PROFILE = "youtube-profile"
     YOUTUBE_SEARCH = "youtube-search"
+    YOUTUBE_SUGGEST = "youtube-suggest"
     YOUTUBE_TAG = "youtube-tag"
     YOUTUBE_TRANSCRIPT = "youtube-transcript"
     YOUTUBE_TRANSCRIPT_LANGUAGES = "youtube-transcript-languages"
