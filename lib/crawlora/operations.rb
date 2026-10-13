@@ -23927,6 +23927,7 @@ module Crawlora
           "type" => "string",
           "required" => true,
           "enum" => [
+            "country",
             "category",
             "state",
             "city",
@@ -23939,6 +23940,16 @@ module Crawlora
           ]
         },
         {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
           "name" => "q",
           "in" => "query",
           "type" => "string"
@@ -23947,6 +23958,15 @@ module Crawlora
           "name" => "category",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "us",
+            "ca"
+          ]
         },
         {
           "name" => "state",
@@ -23977,6 +23997,11 @@ module Crawlora
             "D-",
             "F"
           ]
+        },
+        {
+          "name" => "min_rating_rank",
+          "in" => "query",
+          "type" => "integer"
         },
         {
           "name" => "accredited",
@@ -24020,7 +24045,8 @@ module Crawlora
       ],
       "security" => [
         "ApiKeyAuth"
-      ]
+      ],
+      "paginatable" => true
     },
     "datasets-bbb-businesses-item" => {
       "id" => "datasets-bbb-businesses-item",
@@ -24058,6 +24084,15 @@ module Crawlora
           "name" => "category",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "us",
+            "ca"
+          ]
         },
         {
           "name" => "state",
