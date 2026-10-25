@@ -1283,6 +1283,45 @@ module Crawlora
     def doordash_store_reviews: (?store_id: String, ?latitude: Float, ?longitude: Float, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class DraftKingsCasinoGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def draftkings_casino_directory: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def draftkings_casino_slots_guide: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def draftkings_casino_slots_categories: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def draftkings_casino_cleopatra_guide: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def draftkings_casino_wheel_of_fortune_guide: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class DraftKingsDailyFantasySportsGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def draftkings_dfs_glossary: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def draftkings_dfs_guide: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def draftkings_dfs_nfl_best_ball_featured_contests: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def draftkings_dfs_rules_and_scoring: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def draftkings_dfs_sports: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class DraftKingsPick6Group
+    def initialize: (Client, Hash[String, String]) -> void
+    def draftkings_pick6_rules: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def draftkings_pick6_rule_page: (?slug: "nfl" | "nba" | "nhl" | "pga-full-tournament" | "pga-single-round" | "mlb" | "wnba" | "nascar" | "cfb" | "cbb" | "soccer" | "valorant" | "miscellaneous" | "league-of-legends" | "counter-strike" | "call-of-duty" | "nfl-season-long" | "nba-season-long", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def draftkings_pick6_sports: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class DraftKingsPredictionsGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def draftkings_predictions_availability: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def draftkings_predictions_categories: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def draftkings_predictions_rules: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class DraftKingsRacingGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def draftkings_racing_race_info: (?race_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def draftkings_racing_schedule: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def draftkings_racing_tracks: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class DraftKingsSportsbookGroup
     def initialize: (Client, Hash[String, String]) -> void
     def draftkings_event: (?event_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -1479,6 +1518,82 @@ module Crawlora
     def fanaticslive_shops: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def fanaticslive_show: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def fanaticslive_instant_rips: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class FanDuelGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def fanduel_casino_categories: (?region: "mi" | "on", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_casino_category: (?region: "mi" | "on", ?category: "all-games" | "new" | "slots" | "double-your-bet-category" | "jackpots" | "daily-jackpots" | "hot-slots" | "classic-reels-category" | "bonus-buy-category" | "high-limit-category" | "spooky-slots-category" | "exclusives" | "pick-play" | "arcade" | "blackjack" | "baccarat" | "roulette" | "table" | "livecasino" | "online-casino-favorites" | "explore-videos" | "motorcity-favorites" | "fallsview-favourites-category" | "the-wolf-den-category" | "sports-central", ?q: String, ?provider: String, ?badge: String, ?limit: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_casino_game: (?region: "mi" | "on", ?game: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_racing_carryover_pools: (?status: "O" | "IC" | "SK" | "RO", ?track: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_racing_filters: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_racing_horse: (?id: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_racing_past_race: (?date: String, ?track: String, ?number: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_racing_past_races: (?date: String, ?track: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_racing_past_tracks: (?date: String, ?track: String, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_racing_race: (?track: String, ?number: String, ?include: "handicapping" | "timeform" | "pool_grids", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_racing_races: (?track: String, ?country: String, ?exclude_country: String, ?race_type: "T" | "H" | "Q" | "L", ?status: "O" | "IC" | "SK" | "RO", ?open: bool, ?within_minutes: Integer, ?sort: "mtp" | "post_time" | "race_number", ?order: "asc" | "desc", ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_racing_results: (?track: String, ?country: String, ?exclude_country: String, ?race_type: "T" | "H" | "Q" | "L", ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_racing_search: (?q: String, ?type: "runner" | "jockey" | "trainer" | "owner", ?sort: "name" | "last_event", ?order: "asc" | "desc", ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_racing_track: (?code: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_racing_tracks: (?country: String, ?exclude_country: String, ?race_type: "T" | "H" | "Q" | "L", ?code: String, ?finished: bool, ?featured: bool, ?sort: "name" | "mtp" | "wagerable_mtp" | "ivr", ?order: "asc" | "desc", ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_racing_wager_types: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_research: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_research_article: (?article: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_research_articles: (?sport: "casino" | "nascar" | "ncaab" | "f1" | "ufc" | "boxing" | "ncaaf" | "womenssoccer" | "tv-and-podcast" | "nba" | "pga" | "tennis" | "nhl" | "mma" | "soccer" | "fanduel-sportsbook-promo-codes" | "sports-betting-101" | "horse-racing" | "wnba" | "predicts" | "mlb" | "canada" | "nfl", ?exclude_sport: String, ?sub_category: String, ?team: Integer, ?player: Integer, ?author: String, ?hero_type: "IMAGE" | "JWPLAYER", ?published_after: String, ?published_before: String, ?hide_deprioritized: bool, ?limit: Integer, ?cursor: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_research_author: (?author: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_research_authors: (?sport: "casino" | "nascar" | "ncaab" | "f1" | "ufc" | "boxing" | "ncaaf" | "womenssoccer" | "tv-and-podcast" | "nba" | "pga" | "tennis" | "nhl" | "mma" | "soccer" | "fanduel-sportsbook-promo-codes" | "sports-betting-101" | "horse-racing" | "wnba" | "predicts" | "mlb" | "canada" | "nfl", ?limit: Integer, ?cursor: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_research_featured_articles: (?sport: "casino" | "nascar" | "ncaab" | "f1" | "ufc" | "boxing" | "ncaaf" | "womenssoccer" | "tv-and-podcast" | "nba" | "pga" | "tennis" | "nhl" | "mma" | "soccer" | "fanduel-sportsbook-promo-codes" | "sports-betting-101" | "horse-racing" | "wnba" | "predicts" | "mlb" | "canada" | "nfl", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_research_fixtures: (?sport: "nba" | "nfl" | "nhl" | "mlb", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_research_nfl_schedule: (?week: Integer, ?season_type: "PRE" | "REGULAR" | "POST", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_research_player_news: (?sport: "nfl" | "nba" | "mlb" | "nhl", ?news_type: "INJURY" | "RECAP" | "TRANSACTION" | "LINEUP" | "GAME_UPDATE" | "OUTLOOK", ?team: Integer, ?player: Integer, ?position: "G" | "F" | "C" | "W" | "D" | "QB" | "DB" | "DL" | "K" | "LB" | "OL" | "P" | "RB" | "TE" | "WR" | "IF" | "OF" | "DH", ?include_non_primary: bool, ?limit: Integer, ?cursor: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_research_quick_picks_daily: (?cursor: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_research_projection_slates: (?sport: "mlb" | "nba" | "nfl" | "nhl" | "golf", ?date: String, ?week: Integer, ?season: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_research_projection_tables: (?sport: "mlb" | "nba" | "nfl" | "nhl" | "golf", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_research_projections: (?sport: "mlb" | "nba" | "nfl" | "nhl" | "golf", ?type: "DAILY" | "WEEKLY" | "YEARLY" | "REMAINING" | "PPR" | "SEASON_STATS", ?position: "batters" | "pitchers" | "c" | "1b" | "2b" | "3b" | "ss" | "of" | "sp" | "rp" | "qb" | "rb" | "wr" | "te" | "flex" | "k" | "defense" | "all" | "pg" | "sg" | "guards" | "sf" | "pf" | "forwards" | "centers" | "skaters" | "goalies" | "wingers" | "d" | "idp", ?scope: "TOTAL" | "PER_GAME", ?slate_id: String, ?event_id: String, ?date: String, ?week: Integer, ?season: Integer, ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_research_sports: (?sport: "casino" | "nascar" | "ncaab" | "f1" | "ufc" | "boxing" | "ncaaf" | "womenssoccer" | "tv-and-podcast" | "nba" | "pga" | "tennis" | "nhl" | "mma" | "soccer" | "fanduel-sportsbook-promo-codes" | "sports-betting-101" | "horse-racing" | "wnba" | "predicts" | "mlb" | "canada" | "nfl", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_research_sub_categories: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_autocomplete: (?q: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_builder: (?event_id: Integer, ?experience: "yourway" | "head-to-head" | "player-combos" | "bullseye" | "player-podium" | "or-bets", ?state: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_builder_events: (?experience: "yourway" | "head-to-head" | "player-combos" | "bullseye" | "player-podium" | "or-bets", ?state: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_builder_quotes: (?ramp_event_id: Integer, ?choice_id: Array[String], ?state: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_competition: (?event_type_id: "6423" | "1" | "7522" | "3" | "7511" | "7524" | "2" | "26420387" | "2593174" | "3503" | "6" | "5" | "4" | "8" | "1477" | "6422" | "468328" | "28608997" | "998917" | "4726642" | "10" | "2378961", ?competition_id: Integer, ?state: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy", ?tab: String, ?market_type: String, ?exclude_markets: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_event: (?event_id: Integer, ?state: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy", ?tab: String, ?market_type: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_event_box_score: (?event_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_event_play_by_play: (?event_id: Integer, ?current: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_event_players: (?event_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_event_score: (?event_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_event_stats: (?event_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_events_status: (?event_id: Array[String], ?state: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_home: (?state: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy", ?tab: String, ?competition_id: Integer, ?market_type: String, ?exclude_markets: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_league: (?custom_page_id: String, ?state: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy", ?tab: String, ?competition_id: Integer, ?market_type: String, ?exclude_markets: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_live: (?event_type_id: "6423" | "1" | "7522" | "3" | "7511" | "7524" | "2" | "26420387" | "2593174" | "3503" | "6" | "5" | "4" | "8" | "1477" | "6422" | "468328" | "28608997" | "998917" | "4726642" | "10" | "2378961", ?state: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy", ?market_type: String, ?exclude_markets: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_live_count: (?state: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_live_data: (?event_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_live_scores: (?event_id: Array[String], ?state: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_market_prices: (?market_id: String, ?state: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_parlays: (?view: "popular" | "all" | "next-to-start" | "event", ?event_id: Integer, ?type: "PARLAY" | "SGP" | "SGP_PLUS", ?event_type_id: "6423" | "1" | "7522" | "3" | "7511" | "7524" | "2" | "26420387" | "2593174" | "3503" | "6" | "5" | "4" | "8" | "1477" | "6422" | "468328" | "28608997" | "998917" | "4726642" | "10" | "2378961", ?competition_id: String, ?min_odds: Float, ?max_odds: Float, ?state: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_player: (?league: "nfl" | "nba", ?player: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_player_news: (?league: "nfl" | "nba", ?player: String, ?cursor: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_player_props: (?league: "nfl" | "nba", ?player: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_player_stats: (?league: "nfl" | "nba", ?player: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_players: (?league: "nfl" | "nba", ?q: String, ?limit: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_promotions: (?context: "home" | "league" | "sport", ?custom_page_id: String, ?event_type_id: "6423" | "1" | "7522" | "3" | "7511" | "7524" | "2" | "26420387" | "2593174" | "3503" | "6" | "5" | "4" | "8" | "1477" | "6422" | "468328" | "28608997" | "998917" | "4726642" | "10" | "2378961", ?tag: String, ?state: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_schedule: (?league: "nfl" | "nba" | "mlb" | "college-football", ?week: String, ?date: String, ?end_date: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_search: (?q: String, ?type: "all" | "event" | "competition", ?event_type_id: "6423" | "1" | "7522" | "3" | "7511" | "7524" | "2" | "26420387" | "2593174" | "3503" | "6" | "5" | "4" | "8" | "1477" | "6422" | "468328" | "28608997" | "998917" | "4726642" | "10" | "2378961", ?limit: Integer, ?state: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_search_tabs: (?q: String, ?tab: String, ?pill: String, ?start_index: Integer, ?timezone: String, ?state: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_sport: (?event_type_id: "6423" | "1" | "7522" | "3" | "7511" | "7524" | "2" | "26420387" | "2593174" | "3503" | "6" | "5" | "4" | "8" | "1477" | "6422" | "468328" | "28608997" | "998917" | "4726642" | "10" | "2378961", ?state: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy", ?tab: String, ?competition_id: Integer, ?market_type: String, ?exclude_markets: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_sports: (?state: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_standings: (?league: "nfl" | "nba" | "mlb" | "college-football", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_stats: (?competition_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_team_depth_chart: (?league: "nfl" | "nba" | "mlb" | "college-football" | "college-basketball", ?team: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_team_news: (?league: "nfl" | "nba" | "mlb" | "college-football" | "college-basketball", ?team: String, ?cursor: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_team_odds: (?league: "nfl" | "nba" | "mlb" | "college-football" | "college-basketball", ?team: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_team_roster: (?league: "nfl" | "nba" | "mlb" | "college-football" | "college-basketball", ?team: String, ?injured_only: bool, ?status: String, ?position: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_team_schedule: (?league: "nfl" | "nba" | "mlb" | "college-football" | "college-basketball", ?team: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_team_stats: (?league: "nfl" | "nba" | "mlb" | "college-football" | "college-basketball", ?team: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_teams: (?league: "nfl" | "nba" | "mlb" | "college-football" | "college-basketball", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fanduel_sportsbook_trending: (?enriched: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class FarfetchGroup
@@ -1740,6 +1855,37 @@ module Crawlora
     def headlines: (?section: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def news: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search: (?q: String, ?page: Integer, ?sort: "relevance" | "date", ?date_range: "now-24h" | "now-7d" | "now-30d" | "now-1y", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class FussballDeGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def fussballde_amateur_stats: (?stat: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10", ?season: String, ?team_type: "1" | "3" | "6" | "8" | "4" | "5" | "7" | "9", ?federation_id: "89" | "32" | "31" | "66" | "61" | "02" | "03" | "34" | "62" | "23" | "22" | "01" | "41" | "43" | "63" | "64" | "04" | "33" | "42" | "65" | "21" | "35", ?limit: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_club: (?club_id: String, ?season: String, ?competition_kind: "1" | "8" | "3" | "7" | "6" | "11" | "2" | "21" | "9", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_club_matches: (?club_id: String, ?kind: "all" | "next" | "previous", ?date_from: String, ?date_to: String, ?competition_kind: "1" | "8" | "3" | "7" | "6" | "11" | "2" | "21" | "9", ?limit: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_club_search: (?text: String, ?place: String, ?limit: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_competition_options: (?federation_id: "89" | "32" | "31" | "66" | "61" | "02" | "03" | "34" | "62" | "23" | "22" | "01" | "41" | "43" | "63" | "64" | "04" | "33" | "42" | "65" | "21" | "35", ?season: String, ?competition_type: "1" | "308" | "300" | "70" | "305" | "-300" | "-305" | "11" | "2" | "-2" | "12", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_competitions: (?federation_id: "89" | "32" | "31" | "66" | "61" | "02" | "03" | "34" | "62" | "23" | "22" | "01" | "41" | "43" | "63" | "64" | "04" | "33" | "42" | "65" | "21" | "35", ?season: String, ?competition_type: "1" | "308" | "300" | "70" | "305" | "-300" | "-305" | "11" | "2" | "-2" | "12", ?team_type: String, ?league: String, ?area: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_federation: (?federation_id: "89" | "32" | "31" | "66" | "61" | "02" | "03" | "34" | "62" | "23" | "22" | "01" | "41" | "43" | "63" | "64" | "04" | "33" | "42" | "65" | "21" | "35", ?regional_association: "nord" | "nordost" | "sued" | "suedwest" | "west", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_filters: (?federation_id: "89" | "32" | "31" | "66" | "61" | "02" | "03" | "34" | "62" | "23" | "22" | "01" | "41" | "43" | "63" | "64" | "04" | "33" | "42" | "65" | "21" | "35", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_match: (?match_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_match_calendar: (?postal_code: String, ?date_from: String, ?date_to: String, ?team_types: String, ?competition_kind: "1" | "8" | "3" | "7" | "6" | "11" | "2" | "21" | "9", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_match_comparison: (?match_id: String, ?view: "history" | "meetings" | "season", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_match_plan: (?competition_id: String, ?team_id: String, ?date_from: String, ?date_to: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_matchday: (?competition_id: String, ?date: String, ?matchday: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_national_top_scorers: (?team_type: "men" | "women", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_news: (?stream: "all_news" | "magazin" | "regionalliga" | "verbaende" | "service" | "aktionen" | "helpcenter", ?regional_league: "nord" | "nordost" | "west" | "suedwest" | "bayern", ?help_category: "allgemeines" | "app" | "liveticker" | "mannschaftsseite" | "profile" | "registrierung" | "training_service" | "widgets", ?limit: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_news_article: (?article_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_news_search: (?q: String, ?channel: "news" | "pro_news", ?limit: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_player: (?player_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_player_matches: (?player_id: String, ?season: String, ?team_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_player_search: (?first_name: String, ?last_name: String, ?place: String, ?limit: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_position_history: (?competition_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_postal_codes: (?q: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_table: (?competition_id: String, ?view: "overall" | "home_away" | "rounds" | "fairness" | "cross", ?matchday: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_team: (?team_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_team_matches: (?team_id: String, ?kind: "all" | "next" | "previous" | "wins" | "draws" | "losses", ?date_from: String, ?date_to: String, ?competition_kind: "1" | "8" | "3" | "7" | "6" | "11" | "2" | "21" | "9", ?limit: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_team_squad: (?team_id: String, ?season: String, ?kind: "squad" | "arrivals" | "departures", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def fussballde_top_scorers: (?competition_id: String, ?limit: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class GameRantGroup
@@ -2341,9 +2487,11 @@ module Crawlora
 
   class InstagramGroup
     def initialize: (Client, Hash[String, String]) -> void
+    def comments: (?url: String, ?max_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def post: (?id: String, ?post_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def profile: (?username: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def reels: (?id: String, ?max_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def user_posts: (?username: String, ?max_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class InvestopediaGroup
@@ -2454,6 +2602,15 @@ module Crawlora
     def workable_postings: (?company: String, ?search: String, ?department: String, ?location: String, ?remote: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def workday_board: (?tenant: String, ?datacenter: String, ?site: String, ?search: String, ?limit: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def workday_job: (?tenant: String, ?datacenter: String, ?site: String, ?path: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class JumiaGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def categories: (?country: "ci" | "eg" | "ke" | "ma" | "ng" | "sn", ?category: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def category: (?country: "ci" | "eg" | "ke" | "ma" | "ng" | "sn", ?category: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def countries: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def product: (?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?country: "ci" | "eg" | "ke" | "ma" | "ng" | "sn", ?q: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class JustEatGroup
@@ -3745,6 +3902,13 @@ module Crawlora
 
   class RedditGroup
     def initialize: (Client, Hash[String, String]) -> void
+    def archive_comments_ids: (?ids: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def archive_comments_search: (?author: String, ?subreddit: String, ?query: String, ?link_id: String, ?parent_id: String, ?created_after: String, ?created_before: String, ?sort: "asc" | "desc", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def archive_comments_tree: (?id: String, ?parent_id: String, ?limit: Integer, ?start_breadth: Integer, ?start_depth: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def archive_posts_ids: (?ids: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def archive_posts_search: (?query: String, ?author: String, ?subreddit: String, ?url: String, ?url_exact: bool, ?created_after: String, ?created_before: String, ?sort: "asc" | "desc", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def archive_subreddits_search: (?query: String, ?min_subscribers: Integer, ?max_subscribers: Integer, ?over_18: bool, ?sort_by: "created_utc" | "subscribers" | "subreddit", ?sort: "asc" | "desc", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def archive_time_series: (?metric: "posts_count" | "comments_count" | "posts_score_sum" | "comments_score_sum" | "posts_retrieval_delay_seconds_sum" | "comments_retrieval_delay_seconds_sum" | "subreddit_subscribers", ?subreddit: String, ?precision: "year" | "quarter" | "month" | "week" | "day" | "hour" | "minute", ?created_after: String, ?created_before: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def comments: (?id: String, ?sort: "confidence" | "top" | "new" | "controversial" | "old" | "qa", ?limit: Integer, ?depth: Integer, ?include_metrics: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def domain_posts: (?domain: String, ?sort: "hot" | "new" | "top" | "rising", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?after: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def leads: (?q: String, ?subreddit: String, ?sort: "relevance" | "hot" | "new" | "top" | "comments", ?time: "hour" | "day" | "week" | "month" | "year" | "all", ?limit: Integer, ?min_score: Integer, ?classifier: "auto" | "heuristic" | "llm", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -4069,14 +4233,22 @@ module Crawlora
 
   class SheinGroup
     def initialize: (Client, Hash[String, String]) -> void
+    def brands: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def categories: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def category_filters: (?cat_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def category_goods: (?cat_id: String, ?page: Integer, ?page_size: Integer, ?sort: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def category_nav: (?cat_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def deals_products: (?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def deals_tabs: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def products_aggregation_filters: (?keyword: String, ?cat_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def products_detail: (?goods_id: String, ?goods_sn: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def products_search: (?keyword: String, ?page: Integer, ?page_size: Integer, ?sort: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search_autocomplete: (?word: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search_keywords: (?scene: String, ?word_type: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def store: (?store_code: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def store_products: (?store_code: String, ?category_id: String, ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def trending_categories: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def trending_filters: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class ShopAppGroup
@@ -4900,31 +5072,68 @@ module Crawlora
     def challenge: (?name: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def challenge_list: (?id: String, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_anchor_list: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_collection_detail: (?collection_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_collection_list: (?user_id: String, ?cursor: Integer, ?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_collection_videos: (?collection_id: String, ?cursor: Integer, ?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_comment_replies: (?aweme_id: String, ?comment_id: String, ?cursor: Integer, ?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_comments: (?aweme_id: String, ?cursor: Integer, ?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_feed: (?count: Integer, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_feed_offline: (?pull_type: Integer, ?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_feed_post: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_hashtag: (?name: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_hashtag_posts: (?name: String, ?sort: "fresh" | "popular", ?count: Integer, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_hashtags: (?keyword: String, ?count: Integer, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_live_effects: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_live_gifts: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_live_hashtags: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_live_room: (?room_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_live_room_by_user: (?user_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_live_search: (?keyword: String, ?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_live_tabs: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_music_beats: (?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_music_chart: (?chart_region: String, ?cursor: Integer, ?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_music_choices: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_music_collection_list: (?count: Integer, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_music_collections: (?count: Integer, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_music_detail: (?music_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_music_pick: (?count: Integer, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def mobile_music_posts: (?music_id: String, ?count: Integer, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_music_posts: (?music_id: String, ?sort: "fresh" | "popular", ?count: Integer, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_music_related: (?aweme_id: String, ?count: Integer, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_music_trending: (?count: Integer, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def mobile_search: (?keyword: String, ?count: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_mv_videos: (?mv_id: String, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_place_detail: (?poi_id: String, ?review_count: Integer, ?review_cursor: Integer, ?merged_count: Integer, ?video_cursor: Integer, ?enter_from: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_place_info: (?poi_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_place_media: (?poi_id: String, ?cursor: String, ?size: Integer, ?data_version: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_place_photos: (?poi_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_place_reviews: (?poi_id: String, ?cursor: Integer, ?count: Integer, ?sort_type: "1" | "2", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_place_videos: (?poi_id: String, ?count: Integer, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_playlist_detail: (?mix_id: String, ?user_id: String, ?sec_user_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_playlist_list: (?user_id: String, ?sec_user_id: String, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_playlist_videos: (?mix_id: String, ?cursor: Integer, ?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_search: (?keyword: String, ?count: Integer, ?offset: Integer, ?search_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_search_effects: (?keyword: String, ?count: Integer, ?cursor: Integer, ?search_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_search_hashtags: (?keyword: String, ?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_search_music: (?keyword: String, ?count: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_search_photos: (?keyword: String, ?count: Integer, ?offset: Integer, ?sort_type: Integer, ?publish_time: Integer, ?search_source: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_search_place: (?keyword: String, ?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_search_pre_info: (?keyword: String, ?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_search_stream: (?keyword: String, ?count: Integer, ?offset: Integer, ?search_source: String, ?sort_type: "0" | "1" | "3", ?publish_time: Integer, ?filter_selected: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_search_sug: (?keyword: String, ?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_search_tabs: (?keyword: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_search_user: (?keyword: String, ?count: Integer, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_search_videos: (?keyword: String, ?count: Integer, ?offset: Integer, ?sort_type: "0" | "1" | "3", ?publish_time: Integer, ?search_source: String, ?search_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_translation_description: (?item_id: String, ?target_lang: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_trending_categories: (?count: Integer, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def mobile_trending_effects: (?count: Integer, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_user_followers: (?user_id: String, ?count: Integer, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_user_following: (?user_id: String, ?count: Integer, ?cursor: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_user_original_effects: (?user_id: String, ?cursor: Integer, ?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_user_original_music: (?user_id: String, ?cursor: Integer, ?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_user_posts: (?user_id: String, ?sec_user_id: String, ?count: Integer, ?cursor: Integer, ?sort_type: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_user_profile: (?user_id: String, ?sec_user_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_user_recommendations: (?count: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_video_detail: (?aweme_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mobile_video_subtitles: (?video_id: String, ?language: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def popular_trend_country_industry_meta: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def post: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def profile_post: (?secUid: String, ?cursor: Integer, ?sort_type: "0" | "1" | "2", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -5574,9 +5783,10 @@ module Crawlora
     def captions: (?id: String, ?lang: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def channel_playlists: (?id: String, ?continuation_token: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def channel_search: (?id: String, ?q: String, ?continuation_token: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
-    def channel_shorts: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def channel_shorts: (?id: String, ?continuation_token: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def channel_videos: (?id: String, ?continuation_token: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def comments: (?id: String, ?continuation_token: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def comment_replies: (?id: String, ?continuation_token: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def playlist: (?id: String, ?continuation_token: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def profile: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def search: (?q: String, ?search_query: String, ?continuation_token: String, ?type: "video" | "shorts" | "channel" | "playlist" | "movie", ?sort_by: "relevance" | "upload_date" | "view_count" | "popularity" | "rating", ?upload_date: "last_hour" | "today" | "this_week" | "this_month" | "this_year", ?duration: "under_3_minutes" | "three_to_20_minutes" | "over_20_minutes" | "under_3" | "three_to_20" | "over_20" | "short" | "medium" | "long", ?features: String, ?hl: String, ?gl: String, ?params: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
