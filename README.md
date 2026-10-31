@@ -10,18 +10,15 @@ plus retries, pagination, middleware hooks, and client-side rate limiting.
 - Operation reference: [`docs/operations.md`](docs/operations.md) · recipes: [`docs/recipes.md`](docs/recipes.md)
 
 ## Install
-
-Published on [RubyGems](https://rubygems.org/gems/crawlora). The current release
-is a prerelease (`1.41.0.pre.sdk.1`), so install it with `--pre` or pin the
-version:
+Published on [RubyGems](https://rubygems.org/gems/crawlora). Install the stable release:
 
 ```ruby
 # Gemfile
-gem "crawlora", "1.41.0.pre.sdk.1"
+gem "crawlora", "1.50.0"
 ```
 
 ```sh
-gem install crawlora --pre
+gem install crawlora
 ```
 
 ## Quick start

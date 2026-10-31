@@ -514,6 +514,38 @@ module Crawlora
     def trending_topics: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class Bo3Group
+    def initialize: (Client, Hash[String, String]) -> void
+    def economy_baseline: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def forum: (?game: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb", ?category: Integer, ?sort: "activity" | "newest" | "comments" | "rating", ?offset: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def forum_categories: (?game: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def match: (?slug: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def match_games: (?match_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def match_history: (?game: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb", ?status: "finished" | "defwin" | "upcoming" | "current", ?tier: "s" | "a" | "b" | "c" | "d", ?from: String, ?to: String, ?sort: "newest" | "oldest", ?offset: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def match_players: (?slug: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def news_categories: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def news_feed: (?game: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb", ?section: "news" | "article" | "wiki" | "predictions", ?category: Integer, ?sort: "newest" | "oldest", ?offset: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def player: (?slug: String, ?game: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def player_leaderboard: (?from: String, ?to: String, ?tier: "s" | "a" | "b" | "c" | "d", ?sort: "rating" | "kd" | "kills" | "damage" | "assists" | "headshots" | "games" | "rounds", ?order: "desc" | "asc", ?offset: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def player_recent_matches: (?slug: String, ?opponent: String, ?tournament: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def player_stats: (?slug: String, ?kind: "general" | "maps" | "accuracy", ?from: String, ?to: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def records: (?from: String, ?to: String, ?record_type: String, ?match: String, ?tournament: String, ?team: String, ?player: String, ?sort: "newest" | "oldest", ?offset: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team: (?slug: String, ?game: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team_prize_money: (?game: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb", ?from: String, ?to: String, ?offset: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team_ranking_dates: (?game: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team_rankings: (?game: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb", ?region: String, ?date: String, ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team_recent_matches: (?slug: String, ?opponent: String, ?tournament: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team_stats: (?slug: String, ?kind: "general" | "advanced" | "accuracy" | "economy" | "map-pool", ?from: String, ?to: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tournament: (?slug: String, ?game: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tournament_map_pool: (?slug: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tournament_mvps: (?game: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb", ?offset: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tournament_squads: (?slug: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tournament_stages: (?game: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb", ?slug: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def tournaments: (?game: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb", ?status: "current" | "upcoming" | "finished", ?tier: "s" | "a" | "b" | "c" | "d", ?event_type: "lan" | "online", ?sort: "newest" | "oldest" | "prize", ?offset: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def transfers: (?team_id: Integer, ?player_id: Integer, ?action: "join" | "change" | "leave", ?role: "player" | "coach", ?sort: "newest" | "oldest", ?offset: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def valorant_leaderboard: (?from: String, ?to: String, ?sort: "acs" | "kills" | "deaths" | "damage" | "assists" | "first_kills" | "clutches" | "first_duels" | "games" | "rounds", ?order: "desc" | "asc", ?offset: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class BonhamsGroup
     def initialize: (Client, Hash[String, String]) -> void
     def auction_search: (?q: String, ?country: String, ?category: String, ?month: String, ?auction_type: "ONLINE" | "PUBLIC" | "EXHIBITION" | "OTHER", ?status: "upcoming" | "past" | "all", ?page: Integer, ?per_page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -2172,6 +2204,25 @@ module Crawlora
     def suggest: (?term: String, ?country: String, ?lang: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class GosuGamersGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def gosugamers_encounters: (?game: "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india", ?match_id: String, ?team1_id: String, ?team2_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def gosugamers_games: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def gosugamers_match: (?game: "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india", ?tournament_id: String, ?match_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def gosugamers_match_game: (?game_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def gosugamers_matches: (?game: "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india", ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def gosugamers_player: (?game: "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india", ?player_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def gosugamers_rankings: (?game: "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india", ?region_id: Integer, ?q: String, ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def gosugamers_results: (?game: "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india", ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def gosugamers_stage_groups: (?tournament_id: String, ?stage_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def gosugamers_team: (?game: "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india", ?team_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def gosugamers_team_results: (?team_id: String, ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def gosugamers_tournament: (?game: "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india", ?tournament_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def gosugamers_tournament_participants: (?game: "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india", ?tournament_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def gosugamers_tournament_talents: (?tournament_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def gosugamers_tournaments: (?game: "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india", ?state: "all" | "ongoing" | "upcoming" | "past", ?q: String, ?page: Integer, ?page_size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class GqGroup
     def initialize: (Client, Hash[String, String]) -> void
     def article: (?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -2893,6 +2944,23 @@ module Crawlora
     def livescore_team: (?path: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class LoLEsportsGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def lolesports_completed_events: (?hl: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW", ?tournament_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def lolesports_event: (?hl: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW", ?match_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def lolesports_game_details: (?game_id: String, ?starting_time: String, ?participant_ids: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def lolesports_game_window: (?game_id: String, ?starting_time: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def lolesports_gpr: (?season: "current" | "2025" | "2024", ?league: String, ?limit: Integer, ?history: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def lolesports_leagues: (?hl: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def lolesports_live: (?hl: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def lolesports_news: (?hl: "cs-CZ" | "de-DE" | "el-GR" | "en-AU" | "en-GB" | "en-PH" | "en-SG" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "id-ID" | "it-IT" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "ro-RO" | "ru-RU" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def lolesports_schedule: (?hl: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW", ?league_id: String, ?page_token: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def lolesports_seasons: (?hl: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW", ?season_id: String, ?region: String, ?league_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def lolesports_standings: (?hl: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW", ?tournament_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def lolesports_teams: (?hl: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW", ?slug: String, ?q: String, ?status: "active" | "archived", ?page: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def lolesports_tournaments: (?hl: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW", ?league_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class LululemonGroup
     def initialize: (Client, Hash[String, String]) -> void
     def categories: (?section: "new-featured" | "women" | "men" | "accessories" | "bags" | "activity" | "we-made-too-much", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -3433,6 +3501,36 @@ module Crawlora
     def oldnavy_product_reviews: (?pid: String, ?brand: "on" | "gap" | "br" | "at", ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def oldnavy_search: (?keyword: String, ?brand: "on" | "gap" | "br" | "at", ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def oldnavy_stores: (?search: String, ?lat: Float, ?lng: Float, ?brand: "on" | "gap" | "br" | "at", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class OpenDotaGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def opendota_abilities: (?q: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_benchmarks: (?hero_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_constants: (?resource: "game_mode" | "lobby_type" | "patch" | "region" | "cluster" | "item_ids" | "ability_ids" | "permanent_buffs" | "xp_level" | "countries" | "order_types" | "player_colors", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_hero_durations: (?hero_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_hero_items: (?hero_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_hero_matchups: (?hero_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_hero_stats: (?primary_attr: "agi" | "all" | "int" | "str", ?attack_type: "Melee" | "Ranged", ?role: "Carry" | "Disabler" | "Durable" | "Escape" | "Initiator" | "Nuker" | "Pusher" | "Support", ?sort: "id" | "name" | "pro_pick" | "pro_win" | "pro_ban" | "pro_win_rate" | "pub_pick" | "pub_win" | "pub_win_rate" | "turbo_pick" | "turbo_win_rate", ?desc: bool, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_heroes: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_items: (?q: String, ?quality: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_league: (?league_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_league_match_ids: (?league_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_league_matches: (?league_id: Integer, ?team_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_leagues: (?tier: "amateur" | "excluded" | "premium" | "professional" | "unrated", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_live: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_match: (?id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_patch_notes: (?patch: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_pro_matches: (?less_than_match_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_pro_players: (?team_id: Integer, ?q: String, ?limit: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_rank_distribution: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_records: (?field: "kills" | "deaths" | "assists" | "last_hits" | "denies" | "gold_per_min" | "xp_per_min" | "hero_damage" | "tower_damage" | "hero_healing" | "duration", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_scenarios: (?kind: "item-timings" | "lane-roles" | "misc", ?hero_id: Integer, ?item: String, ?lane_role: Integer, ?scenario: "courier_kill" | "first_blood" | "neg_chat_1min" | "pos_chat_1min", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_team: (?team_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_team_heroes: (?team_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_team_matches: (?team_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_team_players: (?team_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opendota_teams: (?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class OpenSeaGroup
@@ -4000,6 +4098,14 @@ module Crawlora
     def similar: (?property_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class RednoteGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def explore: (?channel_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def note: (?url: String, ?note_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def note_comments: (?url: String, ?note_id: String, ?cursor: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search_suggest: (?keyword: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class ReelShortGroup
     def initialize: (Client, Hash[String, String]) -> void
     def reelshort_fandom_categories: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -4352,6 +4458,25 @@ module Crawlora
     def shop_reviews: (?handle: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def shop_typeahead: (?handle: String, ?query: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def suggestions: (?query: String, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class ShopeeGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def banners: (?region: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl", ?slot: "HOME_CAROUSEL_01" | "HOME_SKINNY_01" | "HOME_NUZ_CAROUSEL_01" | "HOME_FLOATING" | "HOME_POPUP_01" | "HOME_MALL_01", ?space_key: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def categories: (?region: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def category_detail: (?region: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl", ?catids: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def flash_sale: (?region: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl", ?limit: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def footer: (?region: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def home: (?region: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def home_categories: (?region: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def location_filters: (?region: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def mall_categories: (?region: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def prefills: (?region: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search_filters: (?region: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl", ?keyword: String, ?category: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search_hints: (?region: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl", ?keyword: String, ?version: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def shop_info: (?region: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl", ?shop_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def shops: (?region: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl", ?limit: Integer, ?offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def suggest: (?region: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl", ?keyword: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class ShopifyGroup
@@ -5551,6 +5676,33 @@ module Crawlora
     def member: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class VlrGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def event: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def event_agents: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def event_matches: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def event_stats: (?id: String, ?side: "all" | "t" | "ct", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def events: (?tier: "all" | "vct" | "vcl" | "t3" | "gc" | "cg" | "off", ?region: "all" | "americas" | "emea" | "pacific" | "china", ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def forum_categories: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def forum_threads: (?category: "valorant-discussion" | "off-topic" | "site-feedback", ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def match: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def match_economy: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def match_performance: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def match_rounds: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def matches: (?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def news: (?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def news_article: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def player: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def player_matches: (?id: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def rankings: (?region: "north-america" | "europe" | "brazil" | "asia-pacific" | "korea" | "china" | "japan" | "la-s" | "la-n" | "oceania" | "mena" | "gc" | "collegiate", ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def results: (?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search: (?q: String, ?type: "all" | "teams" | "events" | "players", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def stats: (?tier: String, ?region: String, ?timespan: "all" | "30d" | "60d" | "90d" | "2026" | "2025" | "2024" | "2023" | "2022" | "2021" | "2020", ?side: "all" | "t" | "ct", ?role: String, ?agent: String, ?map: String, ?min_rounds: Integer, ?from: String, ?to: String, ?min_rating: "0" | "1300" | "1400" | "1500" | "1550" | "1650" | "1750" | "1850", ?sort: "rating" | "maps" | "rnd" | "acs" | "kd" | "kast" | "adr" | "kpr" | "apr" | "fkfd" | "fkpr" | "fdpr" | "hsp" | "clp" | "cl" | "kmax" | "k" | "d" | "a" | "fk" | "fd", ?dir: "asc" | "desc", ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team_maps: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team_matches: (?id: String, ?page: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class VoxGroup
     def initialize: (Client, Hash[String, String]) -> void
     def article: (?url: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -5739,6 +5891,14 @@ module Crawlora
     def headlines: (?section: "news" | "features" | "reviews" | "buying-guides" | "tutorials" | "editorials" | "editor-columns" | "deals" | "commerce" | "evergreen" | "performance" | "beats" | "awards" | "hardware" | "processor" | "gpu" | "storage" | "monitors" | "input-devices" | "laptops" | "devices" | "single-board-computers" | "gaming-handhelds" | "prebuilt-pc" | "networking" | "smart-home" | "home" | "other-hardware" | "headset" | "cpu-cooler" | "printer" | "home-internet" | "other-computing-devices" | "phone-reviews" | "3d-printing" | "esp32" | "home-lab" | "self-hosting" | "software" | "software-and-services" | "apps" | "ai-tools" | "claude" | "notebooklm" | "productivity" | "os" | "windows" | "windows-tutorials" | "linux-hub" | "linux-tutorials" | "macos" | "macos-tutorials" | "chromeos-tutorials" | "microsoft-edge" | "opera" | "spotify" | "bing" | "gaming" | "gaming-news" | "gaming-reviews" | "entertainment" | "entertainment-segment", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def news: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def sections: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class XiaohongshuGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def explore: (?channel_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def note: (?url: String, ?note_id: String, ?xsec_token: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def note_comments: (?url: String, ?note_id: String, ?xsec_token: String, ?cursor: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def search_suggest: (?keyword: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class YahooAutosGroup

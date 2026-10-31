@@ -11221,6 +11221,1312 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "bo3-economy-baseline" => {
+      "id" => "bo3-economy-baseline",
+      "method" => "GET",
+      "path" => "/bo3/economy-baseline",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bo3-forum" => {
+      "id" => "bo3-forum",
+      "method" => "GET",
+      "path" => "/bo3/forum",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs2",
+            "valorant",
+            "lol",
+            "dota2",
+            "r6siege",
+            "mlbb"
+          ]
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "activity",
+            "newest",
+            "comments",
+            "rating"
+          ]
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "bo3-forum-categories" => {
+      "id" => "bo3-forum-categories",
+      "method" => "GET",
+      "path" => "/bo3/forum-categories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs2",
+            "valorant",
+            "lol",
+            "dota2",
+            "r6siege",
+            "mlbb"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bo3-match" => {
+      "id" => "bo3-match",
+      "method" => "GET",
+      "path" => "/bo3/match",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bo3-match-games" => {
+      "id" => "bo3-match-games",
+      "method" => "GET",
+      "path" => "/bo3/match-games",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "match_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bo3-match-history" => {
+      "id" => "bo3-match-history",
+      "method" => "GET",
+      "path" => "/bo3/match-history",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs2",
+            "valorant",
+            "lol",
+            "dota2",
+            "r6siege",
+            "mlbb"
+          ]
+        },
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "finished",
+            "defwin",
+            "upcoming",
+            "current"
+          ]
+        },
+        {
+          "name" => "tier",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "s",
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "newest",
+            "oldest"
+          ]
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "bo3-match-players" => {
+      "id" => "bo3-match-players",
+      "method" => "GET",
+      "path" => "/bo3/match-players",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bo3-news-categories" => {
+      "id" => "bo3-news-categories",
+      "method" => "GET",
+      "path" => "/bo3/news-categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bo3-news-feed" => {
+      "id" => "bo3-news-feed",
+      "method" => "GET",
+      "path" => "/bo3/news-feed",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs2",
+            "valorant",
+            "lol",
+            "dota2",
+            "r6siege",
+            "mlbb"
+          ]
+        },
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "news",
+            "article",
+            "wiki",
+            "predictions"
+          ]
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "newest",
+            "oldest"
+          ]
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "bo3-player" => {
+      "id" => "bo3-player",
+      "method" => "GET",
+      "path" => "/bo3/player",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs2",
+            "valorant",
+            "lol",
+            "dota2",
+            "r6siege",
+            "mlbb"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bo3-player-leaderboard" => {
+      "id" => "bo3-player-leaderboard",
+      "method" => "GET",
+      "path" => "/bo3/player-leaderboard",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tier",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "s",
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "rating",
+            "kd",
+            "kills",
+            "damage",
+            "assists",
+            "headshots",
+            "games",
+            "rounds"
+          ]
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "desc",
+            "asc"
+          ]
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "bo3-player-recent-matches" => {
+      "id" => "bo3-player-recent-matches",
+      "method" => "GET",
+      "path" => "/bo3/player-recent-matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "opponent",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tournament",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bo3-player-stats" => {
+      "id" => "bo3-player-stats",
+      "method" => "GET",
+      "path" => "/bo3/player-stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "kind",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "general",
+            "maps",
+            "accuracy"
+          ]
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bo3-records" => {
+      "id" => "bo3-records",
+      "method" => "GET",
+      "path" => "/bo3/records",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "record_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "match",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tournament",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "player",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "newest",
+            "oldest"
+          ]
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "bo3-team" => {
+      "id" => "bo3-team",
+      "method" => "GET",
+      "path" => "/bo3/team",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs2",
+            "valorant",
+            "lol",
+            "dota2",
+            "r6siege",
+            "mlbb"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bo3-team-prize-money" => {
+      "id" => "bo3-team-prize-money",
+      "method" => "GET",
+      "path" => "/bo3/team-prize-money",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs2",
+            "valorant",
+            "lol",
+            "dota2",
+            "r6siege",
+            "mlbb"
+          ]
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "bo3-team-ranking-dates" => {
+      "id" => "bo3-team-ranking-dates",
+      "method" => "GET",
+      "path" => "/bo3/team-ranking-dates",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs2",
+            "valorant",
+            "lol",
+            "dota2",
+            "r6siege",
+            "mlbb"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bo3-team-rankings" => {
+      "id" => "bo3-team-rankings",
+      "method" => "GET",
+      "path" => "/bo3/team-rankings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs2",
+            "valorant",
+            "lol",
+            "dota2",
+            "r6siege",
+            "mlbb"
+          ]
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "bo3-team-recent-matches" => {
+      "id" => "bo3-team-recent-matches",
+      "method" => "GET",
+      "path" => "/bo3/team-recent-matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "opponent",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tournament",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bo3-team-stats" => {
+      "id" => "bo3-team-stats",
+      "method" => "GET",
+      "path" => "/bo3/team-stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "kind",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "general",
+            "advanced",
+            "accuracy",
+            "economy",
+            "map-pool"
+          ]
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bo3-tournament" => {
+      "id" => "bo3-tournament",
+      "method" => "GET",
+      "path" => "/bo3/tournament",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs2",
+            "valorant",
+            "lol",
+            "dota2",
+            "r6siege",
+            "mlbb"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bo3-tournament-map-pool" => {
+      "id" => "bo3-tournament-map-pool",
+      "method" => "GET",
+      "path" => "/bo3/tournament-map-pool",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bo3-tournament-mvps" => {
+      "id" => "bo3-tournament-mvps",
+      "method" => "GET",
+      "path" => "/bo3/tournament-mvps",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs2",
+            "valorant",
+            "lol",
+            "dota2",
+            "r6siege",
+            "mlbb"
+          ]
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "bo3-tournament-squads" => {
+      "id" => "bo3-tournament-squads",
+      "method" => "GET",
+      "path" => "/bo3/tournament-squads",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bo3-tournament-stages" => {
+      "id" => "bo3-tournament-stages",
+      "method" => "GET",
+      "path" => "/bo3/tournament-stages",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs2",
+            "valorant",
+            "lol",
+            "dota2",
+            "r6siege",
+            "mlbb"
+          ]
+        },
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bo3-tournaments" => {
+      "id" => "bo3-tournaments",
+      "method" => "GET",
+      "path" => "/bo3/tournaments",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs2",
+            "valorant",
+            "lol",
+            "dota2",
+            "r6siege",
+            "mlbb"
+          ]
+        },
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "current",
+            "upcoming",
+            "finished"
+          ]
+        },
+        {
+          "name" => "tier",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "s",
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "name" => "event_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "lan",
+            "online"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "newest",
+            "oldest",
+            "prize"
+          ]
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "bo3-transfers" => {
+      "id" => "bo3-transfers",
+      "method" => "GET",
+      "path" => "/bo3/transfers",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "action",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "join",
+            "change",
+            "leave"
+          ]
+        },
+        {
+          "name" => "role",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "player",
+            "coach"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "newest",
+            "oldest"
+          ]
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "bo3-valorant-leaderboard" => {
+      "id" => "bo3-valorant-leaderboard",
+      "method" => "GET",
+      "path" => "/bo3/valorant-leaderboard",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "acs",
+            "kills",
+            "deaths",
+            "damage",
+            "assists",
+            "first_kills",
+            "clutches",
+            "first_duels",
+            "games",
+            "rounds"
+          ]
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "desc",
+            "asc"
+          ]
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "bonhams-auction-search" => {
       "id" => "bonhams-auction-search",
       "method" => "GET",
@@ -60297,6 +61603,637 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "gosugamers-encounters" => {
+      "id" => "gosugamers-encounters",
+      "method" => "GET",
+      "path" => "/gosugamers/encounters",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "dota2",
+            "counterstrike",
+            "lol",
+            "valorant",
+            "mobile-legends",
+            "pubg-mobile",
+            "wild-rift",
+            "free-fire",
+            "battlegrounds-mobile-india"
+          ]
+        },
+        {
+          "name" => "match_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "team1_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "team2_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gosugamers-games" => {
+      "id" => "gosugamers-games",
+      "method" => "GET",
+      "path" => "/gosugamers/games",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gosugamers-match" => {
+      "id" => "gosugamers-match",
+      "method" => "GET",
+      "path" => "/gosugamers/match",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "dota2",
+            "counterstrike",
+            "lol",
+            "valorant",
+            "mobile-legends",
+            "pubg-mobile",
+            "wild-rift",
+            "free-fire",
+            "battlegrounds-mobile-india"
+          ]
+        },
+        {
+          "name" => "tournament_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "match_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gosugamers-match-game" => {
+      "id" => "gosugamers-match-game",
+      "method" => "GET",
+      "path" => "/gosugamers/match-game",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gosugamers-matches" => {
+      "id" => "gosugamers-matches",
+      "method" => "GET",
+      "path" => "/gosugamers/matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "dota2",
+            "counterstrike",
+            "lol",
+            "valorant",
+            "mobile-legends",
+            "pubg-mobile",
+            "wild-rift",
+            "free-fire",
+            "battlegrounds-mobile-india"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "gosugamers-player" => {
+      "id" => "gosugamers-player",
+      "method" => "GET",
+      "path" => "/gosugamers/player",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "dota2",
+            "counterstrike",
+            "lol",
+            "valorant",
+            "mobile-legends",
+            "pubg-mobile",
+            "wild-rift",
+            "free-fire",
+            "battlegrounds-mobile-india"
+          ]
+        },
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gosugamers-rankings" => {
+      "id" => "gosugamers-rankings",
+      "method" => "GET",
+      "path" => "/gosugamers/rankings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "dota2",
+            "counterstrike",
+            "lol",
+            "valorant",
+            "mobile-legends",
+            "pubg-mobile",
+            "wild-rift",
+            "free-fire",
+            "battlegrounds-mobile-india"
+          ]
+        },
+        {
+          "name" => "region_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "gosugamers-results" => {
+      "id" => "gosugamers-results",
+      "method" => "GET",
+      "path" => "/gosugamers/results",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "dota2",
+            "counterstrike",
+            "lol",
+            "valorant",
+            "mobile-legends",
+            "pubg-mobile",
+            "wild-rift",
+            "free-fire",
+            "battlegrounds-mobile-india"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "gosugamers-stage-groups" => {
+      "id" => "gosugamers-stage-groups",
+      "method" => "GET",
+      "path" => "/gosugamers/stage-groups",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tournament_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "stage_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gosugamers-team" => {
+      "id" => "gosugamers-team",
+      "method" => "GET",
+      "path" => "/gosugamers/team",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "dota2",
+            "counterstrike",
+            "lol",
+            "valorant",
+            "mobile-legends",
+            "pubg-mobile",
+            "wild-rift",
+            "free-fire",
+            "battlegrounds-mobile-india"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gosugamers-team-results" => {
+      "id" => "gosugamers-team-results",
+      "method" => "GET",
+      "path" => "/gosugamers/team-results",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "gosugamers-tournament" => {
+      "id" => "gosugamers-tournament",
+      "method" => "GET",
+      "path" => "/gosugamers/tournament",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "dota2",
+            "counterstrike",
+            "lol",
+            "valorant",
+            "mobile-legends",
+            "pubg-mobile",
+            "wild-rift",
+            "free-fire",
+            "battlegrounds-mobile-india"
+          ]
+        },
+        {
+          "name" => "tournament_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gosugamers-tournament-participants" => {
+      "id" => "gosugamers-tournament-participants",
+      "method" => "GET",
+      "path" => "/gosugamers/tournament-participants",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "dota2",
+            "counterstrike",
+            "lol",
+            "valorant",
+            "mobile-legends",
+            "pubg-mobile",
+            "wild-rift",
+            "free-fire",
+            "battlegrounds-mobile-india"
+          ]
+        },
+        {
+          "name" => "tournament_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gosugamers-tournament-talents" => {
+      "id" => "gosugamers-tournament-talents",
+      "method" => "GET",
+      "path" => "/gosugamers/tournament-talents",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tournament_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gosugamers-tournaments" => {
+      "id" => "gosugamers-tournaments",
+      "method" => "GET",
+      "path" => "/gosugamers/tournaments",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "dota2",
+            "counterstrike",
+            "lol",
+            "valorant",
+            "mobile-legends",
+            "pubg-mobile",
+            "wild-rift",
+            "free-fire",
+            "battlegrounds-mobile-india"
+          ]
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "ongoing",
+            "upcoming",
+            "past"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "gq-article" => {
       "id" => "gq-article",
       "method" => "GET",
@@ -76732,6 +78669,635 @@ module Crawlora
       "queryParams" => [
         {
           "name" => "path",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "lolesports-completed-events" => {
+      "id" => "lolesports-completed-events",
+      "method" => "GET",
+      "path" => "/lolesports/completed-events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "hl",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs-CZ",
+            "de-DE",
+            "en-US",
+            "es-ES",
+            "es-MX",
+            "fr-FR",
+            "hu-HU",
+            "ja-JP",
+            "ko-KR",
+            "pl-PL",
+            "pt-BR",
+            "th-TH",
+            "tr-TR",
+            "vi-VN",
+            "zh-TW"
+          ]
+        },
+        {
+          "name" => "tournament_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "lolesports-event" => {
+      "id" => "lolesports-event",
+      "method" => "GET",
+      "path" => "/lolesports/event",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "hl",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs-CZ",
+            "de-DE",
+            "en-US",
+            "es-ES",
+            "es-MX",
+            "fr-FR",
+            "hu-HU",
+            "ja-JP",
+            "ko-KR",
+            "pl-PL",
+            "pt-BR",
+            "th-TH",
+            "tr-TR",
+            "vi-VN",
+            "zh-TW"
+          ]
+        },
+        {
+          "name" => "match_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "lolesports-game-details" => {
+      "id" => "lolesports-game-details",
+      "method" => "GET",
+      "path" => "/lolesports/game-details",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "starting_time",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "participant_ids",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "lolesports-game-window" => {
+      "id" => "lolesports-game-window",
+      "method" => "GET",
+      "path" => "/lolesports/game-window",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "starting_time",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "lolesports-gpr" => {
+      "id" => "lolesports-gpr",
+      "method" => "GET",
+      "path" => "/lolesports/gpr",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "current",
+            "2025",
+            "2024"
+          ]
+        },
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "history",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "lolesports-leagues" => {
+      "id" => "lolesports-leagues",
+      "method" => "GET",
+      "path" => "/lolesports/leagues",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "hl",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs-CZ",
+            "de-DE",
+            "en-US",
+            "es-ES",
+            "es-MX",
+            "fr-FR",
+            "hu-HU",
+            "ja-JP",
+            "ko-KR",
+            "pl-PL",
+            "pt-BR",
+            "th-TH",
+            "tr-TR",
+            "vi-VN",
+            "zh-TW"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "lolesports-live" => {
+      "id" => "lolesports-live",
+      "method" => "GET",
+      "path" => "/lolesports/live",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "hl",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs-CZ",
+            "de-DE",
+            "en-US",
+            "es-ES",
+            "es-MX",
+            "fr-FR",
+            "hu-HU",
+            "ja-JP",
+            "ko-KR",
+            "pl-PL",
+            "pt-BR",
+            "th-TH",
+            "tr-TR",
+            "vi-VN",
+            "zh-TW"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "lolesports-news" => {
+      "id" => "lolesports-news",
+      "method" => "GET",
+      "path" => "/lolesports/news",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "hl",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs-CZ",
+            "de-DE",
+            "el-GR",
+            "en-AU",
+            "en-GB",
+            "en-PH",
+            "en-SG",
+            "en-US",
+            "es-ES",
+            "es-MX",
+            "fr-FR",
+            "hu-HU",
+            "id-ID",
+            "it-IT",
+            "ja-JP",
+            "ko-KR",
+            "pl-PL",
+            "pt-BR",
+            "ro-RO",
+            "ru-RU",
+            "th-TH",
+            "tr-TR",
+            "vi-VN",
+            "zh-TW"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "lolesports-schedule" => {
+      "id" => "lolesports-schedule",
+      "method" => "GET",
+      "path" => "/lolesports/schedule",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "hl",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs-CZ",
+            "de-DE",
+            "en-US",
+            "es-ES",
+            "es-MX",
+            "fr-FR",
+            "hu-HU",
+            "ja-JP",
+            "ko-KR",
+            "pl-PL",
+            "pt-BR",
+            "th-TH",
+            "tr-TR",
+            "vi-VN",
+            "zh-TW"
+          ]
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page_token",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "page_token"
+      ]
+    },
+    "lolesports-seasons" => {
+      "id" => "lolesports-seasons",
+      "method" => "GET",
+      "path" => "/lolesports/seasons",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "hl",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs-CZ",
+            "de-DE",
+            "en-US",
+            "es-ES",
+            "es-MX",
+            "fr-FR",
+            "hu-HU",
+            "ja-JP",
+            "ko-KR",
+            "pl-PL",
+            "pt-BR",
+            "th-TH",
+            "tr-TR",
+            "vi-VN",
+            "zh-TW"
+          ]
+        },
+        {
+          "name" => "season_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "lolesports-standings" => {
+      "id" => "lolesports-standings",
+      "method" => "GET",
+      "path" => "/lolesports/standings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "hl",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs-CZ",
+            "de-DE",
+            "en-US",
+            "es-ES",
+            "es-MX",
+            "fr-FR",
+            "hu-HU",
+            "ja-JP",
+            "ko-KR",
+            "pl-PL",
+            "pt-BR",
+            "th-TH",
+            "tr-TR",
+            "vi-VN",
+            "zh-TW"
+          ]
+        },
+        {
+          "name" => "tournament_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "lolesports-teams" => {
+      "id" => "lolesports-teams",
+      "method" => "GET",
+      "path" => "/lolesports/teams",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "hl",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs-CZ",
+            "de-DE",
+            "en-US",
+            "es-ES",
+            "es-MX",
+            "fr-FR",
+            "hu-HU",
+            "ja-JP",
+            "ko-KR",
+            "pl-PL",
+            "pt-BR",
+            "th-TH",
+            "tr-TR",
+            "vi-VN",
+            "zh-TW"
+          ]
+        },
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "active",
+            "archived"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "lolesports-tournaments" => {
+      "id" => "lolesports-tournaments",
+      "method" => "GET",
+      "path" => "/lolesports/tournaments",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "hl",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs-CZ",
+            "de-DE",
+            "en-US",
+            "es-ES",
+            "es-MX",
+            "fr-FR",
+            "hu-HU",
+            "ja-JP",
+            "ko-KR",
+            "pl-PL",
+            "pt-BR",
+            "th-TH",
+            "tr-TR",
+            "vi-VN",
+            "zh-TW"
+          ]
+        },
+        {
+          "name" => "league_id",
           "in" => "query",
           "type" => "string",
           "required" => true
@@ -94795,6 +97361,818 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "opendota-abilities" => {
+      "id" => "opendota-abilities",
+      "method" => "GET",
+      "path" => "/opendota/abilities",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-benchmarks" => {
+      "id" => "opendota-benchmarks",
+      "method" => "GET",
+      "path" => "/opendota/benchmarks",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "hero_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-constants" => {
+      "id" => "opendota-constants",
+      "method" => "GET",
+      "path" => "/opendota/constants",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "resource",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "game_mode",
+            "lobby_type",
+            "patch",
+            "region",
+            "cluster",
+            "item_ids",
+            "ability_ids",
+            "permanent_buffs",
+            "xp_level",
+            "countries",
+            "order_types",
+            "player_colors"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-hero-durations" => {
+      "id" => "opendota-hero-durations",
+      "method" => "GET",
+      "path" => "/opendota/hero-durations",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "hero_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-hero-items" => {
+      "id" => "opendota-hero-items",
+      "method" => "GET",
+      "path" => "/opendota/hero-items",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "hero_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-hero-matchups" => {
+      "id" => "opendota-hero-matchups",
+      "method" => "GET",
+      "path" => "/opendota/hero-matchups",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "hero_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-hero-stats" => {
+      "id" => "opendota-hero-stats",
+      "method" => "GET",
+      "path" => "/opendota/hero-stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "primary_attr",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "agi",
+            "all",
+            "int",
+            "str"
+          ]
+        },
+        {
+          "name" => "attack_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Melee",
+            "Ranged"
+          ]
+        },
+        {
+          "name" => "role",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Carry",
+            "Disabler",
+            "Durable",
+            "Escape",
+            "Initiator",
+            "Nuker",
+            "Pusher",
+            "Support"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "id",
+            "name",
+            "pro_pick",
+            "pro_win",
+            "pro_ban",
+            "pro_win_rate",
+            "pub_pick",
+            "pub_win",
+            "pub_win_rate",
+            "turbo_pick",
+            "turbo_win_rate"
+          ]
+        },
+        {
+          "name" => "desc",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-heroes" => {
+      "id" => "opendota-heroes",
+      "method" => "GET",
+      "path" => "/opendota/heroes",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-items" => {
+      "id" => "opendota-items",
+      "method" => "GET",
+      "path" => "/opendota/items",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "quality",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-league" => {
+      "id" => "opendota-league",
+      "method" => "GET",
+      "path" => "/opendota/league",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-league-match-ids" => {
+      "id" => "opendota-league-match-ids",
+      "method" => "GET",
+      "path" => "/opendota/league-match-ids",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-league-matches" => {
+      "id" => "opendota-league-matches",
+      "method" => "GET",
+      "path" => "/opendota/league-matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-leagues" => {
+      "id" => "opendota-leagues",
+      "method" => "GET",
+      "path" => "/opendota/leagues",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tier",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "amateur",
+            "excluded",
+            "premium",
+            "professional",
+            "unrated"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-live" => {
+      "id" => "opendota-live",
+      "method" => "GET",
+      "path" => "/opendota/live",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-match" => {
+      "id" => "opendota-match",
+      "method" => "GET",
+      "path" => "/opendota/match",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-patch-notes" => {
+      "id" => "opendota-patch-notes",
+      "method" => "GET",
+      "path" => "/opendota/patch-notes",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "patch",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-pro-matches" => {
+      "id" => "opendota-pro-matches",
+      "method" => "GET",
+      "path" => "/opendota/pro-matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "less_than_match_id",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-pro-players" => {
+      "id" => "opendota-pro-players",
+      "method" => "GET",
+      "path" => "/opendota/pro-players",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "opendota-rank-distribution" => {
+      "id" => "opendota-rank-distribution",
+      "method" => "GET",
+      "path" => "/opendota/rank-distribution",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-records" => {
+      "id" => "opendota-records",
+      "method" => "GET",
+      "path" => "/opendota/records",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "field",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "kills",
+            "deaths",
+            "assists",
+            "last_hits",
+            "denies",
+            "gold_per_min",
+            "xp_per_min",
+            "hero_damage",
+            "tower_damage",
+            "hero_healing",
+            "duration"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-scenarios" => {
+      "id" => "opendota-scenarios",
+      "method" => "GET",
+      "path" => "/opendota/scenarios",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "kind",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "item-timings",
+            "lane-roles",
+            "misc"
+          ]
+        },
+        {
+          "name" => "hero_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "item",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "lane_role",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "scenario",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "courier_kill",
+            "first_blood",
+            "neg_chat_1min",
+            "pos_chat_1min"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-team" => {
+      "id" => "opendota-team",
+      "method" => "GET",
+      "path" => "/opendota/team",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-team-heroes" => {
+      "id" => "opendota-team-heroes",
+      "method" => "GET",
+      "path" => "/opendota/team-heroes",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-team-matches" => {
+      "id" => "opendota-team-matches",
+      "method" => "GET",
+      "path" => "/opendota/team-matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-team-players" => {
+      "id" => "opendota-team-players",
+      "method" => "GET",
+      "path" => "/opendota/team-players",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-teams" => {
+      "id" => "opendota-teams",
+      "method" => "GET",
+      "path" => "/opendota/teams",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "opensea-activity" => {
       "id" => "opensea-activity",
       "method" => "GET",
@@ -108229,6 +111607,126 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "rednote-explore" => {
+      "id" => "rednote-explore",
+      "method" => "GET",
+      "path" => "/rednote/explore",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "channel_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rednote-note" => {
+      "id" => "rednote-note",
+      "method" => "GET",
+      "path" => "/rednote/note",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "note_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rednote-note-comments" => {
+      "id" => "rednote-note-comments",
+      "method" => "GET",
+      "path" => "/rednote/note-comments",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "note_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "rednote-search-suggest" => {
+      "id" => "rednote-search-suggest",
+      "method" => "GET",
+      "path" => "/rednote/search-suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "keyword",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "reelshort-fandom-categories" => {
       "id" => "reelshort-fandom-categories",
       "method" => "GET",
@@ -116254,6 +119752,655 @@ module Crawlora
           "name" => "limit",
           "in" => "query",
           "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shopee-banners" => {
+      "id" => "shopee-banners",
+      "method" => "GET",
+      "path" => "/shopee/banners",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "my",
+            "sg",
+            "id",
+            "th",
+            "vn",
+            "ph",
+            "tw",
+            "br",
+            "mx",
+            "co",
+            "cl"
+          ]
+        },
+        {
+          "name" => "slot",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "HOME_CAROUSEL_01",
+            "HOME_SKINNY_01",
+            "HOME_NUZ_CAROUSEL_01",
+            "HOME_FLOATING",
+            "HOME_POPUP_01",
+            "HOME_MALL_01"
+          ]
+        },
+        {
+          "name" => "space_key",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shopee-categories" => {
+      "id" => "shopee-categories",
+      "method" => "GET",
+      "path" => "/shopee/categories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "my",
+            "sg",
+            "id",
+            "th",
+            "vn",
+            "ph",
+            "tw",
+            "br",
+            "mx",
+            "co",
+            "cl"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shopee-category-detail" => {
+      "id" => "shopee-category-detail",
+      "method" => "GET",
+      "path" => "/shopee/category-detail",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "my",
+            "sg",
+            "id",
+            "th",
+            "vn",
+            "ph",
+            "tw",
+            "br",
+            "mx",
+            "co",
+            "cl"
+          ]
+        },
+        {
+          "name" => "catids",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shopee-flash-sale" => {
+      "id" => "shopee-flash-sale",
+      "method" => "GET",
+      "path" => "/shopee/flash-sale",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "my",
+            "sg",
+            "id",
+            "th",
+            "vn",
+            "ph",
+            "tw",
+            "br",
+            "mx",
+            "co",
+            "cl"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "shopee-footer" => {
+      "id" => "shopee-footer",
+      "method" => "GET",
+      "path" => "/shopee/footer",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "my",
+            "sg",
+            "id",
+            "th",
+            "vn",
+            "ph",
+            "tw",
+            "br",
+            "mx",
+            "co",
+            "cl"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shopee-home" => {
+      "id" => "shopee-home",
+      "method" => "GET",
+      "path" => "/shopee/home",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "my",
+            "sg",
+            "id",
+            "th",
+            "vn",
+            "ph",
+            "tw",
+            "br",
+            "mx",
+            "co",
+            "cl"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shopee-home-categories" => {
+      "id" => "shopee-home-categories",
+      "method" => "GET",
+      "path" => "/shopee/home-categories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "my",
+            "sg",
+            "id",
+            "th",
+            "vn",
+            "ph",
+            "tw",
+            "br",
+            "mx",
+            "co",
+            "cl"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shopee-location-filters" => {
+      "id" => "shopee-location-filters",
+      "method" => "GET",
+      "path" => "/shopee/location-filters",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "my",
+            "sg",
+            "id",
+            "th",
+            "vn",
+            "ph",
+            "tw",
+            "br",
+            "mx",
+            "co",
+            "cl"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shopee-mall-categories" => {
+      "id" => "shopee-mall-categories",
+      "method" => "GET",
+      "path" => "/shopee/mall-categories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "my",
+            "sg",
+            "id",
+            "th",
+            "vn",
+            "ph",
+            "tw",
+            "br",
+            "mx",
+            "co",
+            "cl"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shopee-prefills" => {
+      "id" => "shopee-prefills",
+      "method" => "GET",
+      "path" => "/shopee/prefills",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "my",
+            "sg",
+            "id",
+            "th",
+            "vn",
+            "ph",
+            "tw",
+            "br",
+            "mx",
+            "co",
+            "cl"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shopee-search-filters" => {
+      "id" => "shopee-search-filters",
+      "method" => "GET",
+      "path" => "/shopee/search-filters",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "my",
+            "sg",
+            "id",
+            "th",
+            "vn",
+            "ph",
+            "tw",
+            "br",
+            "mx",
+            "co",
+            "cl"
+          ]
+        },
+        {
+          "name" => "keyword",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shopee-search-hints" => {
+      "id" => "shopee-search-hints",
+      "method" => "GET",
+      "path" => "/shopee/search-hints",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "my",
+            "sg",
+            "id",
+            "th",
+            "vn",
+            "ph",
+            "tw",
+            "br",
+            "mx",
+            "co",
+            "cl"
+          ]
+        },
+        {
+          "name" => "keyword",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "version",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shopee-shop-info" => {
+      "id" => "shopee-shop-info",
+      "method" => "GET",
+      "path" => "/shopee/shop-info",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "my",
+            "sg",
+            "id",
+            "th",
+            "vn",
+            "ph",
+            "tw",
+            "br",
+            "mx",
+            "co",
+            "cl"
+          ]
+        },
+        {
+          "name" => "shop_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "shopee-shops" => {
+      "id" => "shopee-shops",
+      "method" => "GET",
+      "path" => "/shopee/shops",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "my",
+            "sg",
+            "id",
+            "th",
+            "vn",
+            "ph",
+            "tw",
+            "br",
+            "mx",
+            "co",
+            "cl"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "shopee-suggest" => {
+      "id" => "shopee-suggest",
+      "method" => "GET",
+      "path" => "/shopee/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "my",
+            "sg",
+            "id",
+            "th",
+            "vn",
+            "ph",
+            "tw",
+            "br",
+            "mx",
+            "co",
+            "cl"
+          ]
+        },
+        {
+          "name" => "keyword",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
         }
       ],
       "formParams" => [],
@@ -144733,6 +148880,805 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "vlr-event" => {
+      "id" => "vlr-event",
+      "method" => "GET",
+      "path" => "/vlr/event",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vlr-event-agents" => {
+      "id" => "vlr-event-agents",
+      "method" => "GET",
+      "path" => "/vlr/event-agents",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vlr-event-matches" => {
+      "id" => "vlr-event-matches",
+      "method" => "GET",
+      "path" => "/vlr/event-matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vlr-event-stats" => {
+      "id" => "vlr-event-stats",
+      "method" => "GET",
+      "path" => "/vlr/event-stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "side",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "t",
+            "ct"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vlr-events" => {
+      "id" => "vlr-events",
+      "method" => "GET",
+      "path" => "/vlr/events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tier",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "vct",
+            "vcl",
+            "t3",
+            "gc",
+            "cg",
+            "off"
+          ]
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "americas",
+            "emea",
+            "pacific",
+            "china"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "vlr-forum-categories" => {
+      "id" => "vlr-forum-categories",
+      "method" => "GET",
+      "path" => "/vlr/forum-categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vlr-forum-threads" => {
+      "id" => "vlr-forum-threads",
+      "method" => "GET",
+      "path" => "/vlr/forum-threads",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "valorant-discussion",
+            "off-topic",
+            "site-feedback"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "vlr-match" => {
+      "id" => "vlr-match",
+      "method" => "GET",
+      "path" => "/vlr/match",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vlr-match-economy" => {
+      "id" => "vlr-match-economy",
+      "method" => "GET",
+      "path" => "/vlr/match-economy",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vlr-match-performance" => {
+      "id" => "vlr-match-performance",
+      "method" => "GET",
+      "path" => "/vlr/match-performance",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vlr-match-rounds" => {
+      "id" => "vlr-match-rounds",
+      "method" => "GET",
+      "path" => "/vlr/match-rounds",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vlr-matches" => {
+      "id" => "vlr-matches",
+      "method" => "GET",
+      "path" => "/vlr/matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "vlr-news" => {
+      "id" => "vlr-news",
+      "method" => "GET",
+      "path" => "/vlr/news",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "vlr-news-article" => {
+      "id" => "vlr-news-article",
+      "method" => "GET",
+      "path" => "/vlr/news-article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vlr-player" => {
+      "id" => "vlr-player",
+      "method" => "GET",
+      "path" => "/vlr/player",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vlr-player-matches" => {
+      "id" => "vlr-player-matches",
+      "method" => "GET",
+      "path" => "/vlr/player-matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "vlr-rankings" => {
+      "id" => "vlr-rankings",
+      "method" => "GET",
+      "path" => "/vlr/rankings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "north-america",
+            "europe",
+            "brazil",
+            "asia-pacific",
+            "korea",
+            "china",
+            "japan",
+            "la-s",
+            "la-n",
+            "oceania",
+            "mena",
+            "gc",
+            "collegiate"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vlr-results" => {
+      "id" => "vlr-results",
+      "method" => "GET",
+      "path" => "/vlr/results",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "vlr-search" => {
+      "id" => "vlr-search",
+      "method" => "GET",
+      "path" => "/vlr/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "teams",
+            "events",
+            "players"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vlr-stats" => {
+      "id" => "vlr-stats",
+      "method" => "GET",
+      "path" => "/vlr/stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tier",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "timespan",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "30d",
+            "60d",
+            "90d",
+            "2026",
+            "2025",
+            "2024",
+            "2023",
+            "2022",
+            "2021",
+            "2020"
+          ]
+        },
+        {
+          "name" => "side",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "t",
+            "ct"
+          ]
+        },
+        {
+          "name" => "role",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "agent",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "map",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_rounds",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_rating",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "0",
+            "1300",
+            "1400",
+            "1500",
+            "1550",
+            "1650",
+            "1750",
+            "1850"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "rating",
+            "maps",
+            "rnd",
+            "acs",
+            "kd",
+            "kast",
+            "adr",
+            "kpr",
+            "apr",
+            "fkfd",
+            "fkpr",
+            "fdpr",
+            "hsp",
+            "clp",
+            "cl",
+            "kmax",
+            "k",
+            "d",
+            "a",
+            "fk",
+            "fd"
+          ]
+        },
+        {
+          "name" => "dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "vlr-team" => {
+      "id" => "vlr-team",
+      "method" => "GET",
+      "path" => "/vlr/team",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vlr-team-maps" => {
+      "id" => "vlr-team-maps",
+      "method" => "GET",
+      "path" => "/vlr/team-maps",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "vlr-team-matches" => {
+      "id" => "vlr-team-matches",
+      "method" => "GET",
+      "path" => "/vlr/team-matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "vox-article" => {
       "id" => "vox-article",
       "method" => "GET",
@@ -148614,6 +153560,136 @@ module Crawlora
       "bodyParam" => nil,
       "bodyRequired" => false,
       "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "xiaohongshu-explore" => {
+      "id" => "xiaohongshu-explore",
+      "method" => "GET",
+      "path" => "/xiaohongshu/explore",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "channel_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "xiaohongshu-note" => {
+      "id" => "xiaohongshu-note",
+      "method" => "GET",
+      "path" => "/xiaohongshu/note",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "note_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "xsec_token",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "xiaohongshu-note-comments" => {
+      "id" => "xiaohongshu-note-comments",
+      "method" => "GET",
+      "path" => "/xiaohongshu/note-comments",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "note_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "xsec_token",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "xiaohongshu-search-suggest" => {
+      "id" => "xiaohongshu-search-suggest",
+      "method" => "GET",
+      "path" => "/xiaohongshu/search-suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "keyword",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
       "produces" => [
         "application/json"
       ],
@@ -154174,6 +159250,36 @@ module Crawlora
       "search_actors" => "bluesky-search-actors",
       "trending_topics" => "bluesky-trending-topics"
     },
+    "bo3" => {
+      "economy_baseline" => "bo3-economy-baseline",
+      "forum" => "bo3-forum",
+      "forum_categories" => "bo3-forum-categories",
+      "match" => "bo3-match",
+      "match_games" => "bo3-match-games",
+      "match_history" => "bo3-match-history",
+      "match_players" => "bo3-match-players",
+      "news_categories" => "bo3-news-categories",
+      "news_feed" => "bo3-news-feed",
+      "player" => "bo3-player",
+      "player_leaderboard" => "bo3-player-leaderboard",
+      "player_recent_matches" => "bo3-player-recent-matches",
+      "player_stats" => "bo3-player-stats",
+      "records" => "bo3-records",
+      "team" => "bo3-team",
+      "team_prize_money" => "bo3-team-prize-money",
+      "team_ranking_dates" => "bo3-team-ranking-dates",
+      "team_rankings" => "bo3-team-rankings",
+      "team_recent_matches" => "bo3-team-recent-matches",
+      "team_stats" => "bo3-team-stats",
+      "tournament" => "bo3-tournament",
+      "tournament_map_pool" => "bo3-tournament-map-pool",
+      "tournament_mvps" => "bo3-tournament-mvps",
+      "tournament_squads" => "bo3-tournament-squads",
+      "tournament_stages" => "bo3-tournament-stages",
+      "tournaments" => "bo3-tournaments",
+      "transfers" => "bo3-transfers",
+      "valorant_leaderboard" => "bo3-valorant-leaderboard"
+    },
     "bonhams" => {
       "auction_search" => "bonhams-auction-search",
       "auction_detail" => "bonhams-auction-detail",
@@ -155580,6 +160686,23 @@ module Crawlora
       "similar" => "googleplay-similar",
       "suggest" => "googleplay-suggest"
     },
+    "gosu_gamers" => {
+      "gosugamers_encounters" => "gosugamers-encounters",
+      "gosugamers_games" => "gosugamers-games",
+      "gosugamers_match" => "gosugamers-match",
+      "gosugamers_match_game" => "gosugamers-match-game",
+      "gosugamers_matches" => "gosugamers-matches",
+      "gosugamers_player" => "gosugamers-player",
+      "gosugamers_rankings" => "gosugamers-rankings",
+      "gosugamers_results" => "gosugamers-results",
+      "gosugamers_stage_groups" => "gosugamers-stage-groups",
+      "gosugamers_team" => "gosugamers-team",
+      "gosugamers_team_results" => "gosugamers-team-results",
+      "gosugamers_tournament" => "gosugamers-tournament",
+      "gosugamers_tournament_participants" => "gosugamers-tournament-participants",
+      "gosugamers_tournament_talents" => "gosugamers-tournament-talents",
+      "gosugamers_tournaments" => "gosugamers-tournaments"
+    },
     "gq" => {
       "article" => "gq-article",
       "author" => "gq-author",
@@ -156177,6 +161300,21 @@ module Crawlora
       "livescore_sports" => "livescore-sports",
       "livescore_team" => "livescore-team"
     },
+    "lo_l_esports" => {
+      "lolesports_completed_events" => "lolesports-completed-events",
+      "lolesports_event" => "lolesports-event",
+      "lolesports_game_details" => "lolesports-game-details",
+      "lolesports_game_window" => "lolesports-game-window",
+      "lolesports_gpr" => "lolesports-gpr",
+      "lolesports_leagues" => "lolesports-leagues",
+      "lolesports_live" => "lolesports-live",
+      "lolesports_news" => "lolesports-news",
+      "lolesports_schedule" => "lolesports-schedule",
+      "lolesports_seasons" => "lolesports-seasons",
+      "lolesports_standings" => "lolesports-standings",
+      "lolesports_teams" => "lolesports-teams",
+      "lolesports_tournaments" => "lolesports-tournaments"
+    },
     "lululemon" => {
       "categories" => "lululemon-categories",
       "category" => "lululemon-category",
@@ -156618,6 +161756,34 @@ module Crawlora
       "oldnavy_product_reviews" => "oldnavy-product-reviews",
       "oldnavy_search" => "oldnavy-search",
       "oldnavy_stores" => "oldnavy-stores"
+    },
+    "open_dota" => {
+      "opendota_abilities" => "opendota-abilities",
+      "opendota_benchmarks" => "opendota-benchmarks",
+      "opendota_constants" => "opendota-constants",
+      "opendota_hero_durations" => "opendota-hero-durations",
+      "opendota_hero_items" => "opendota-hero-items",
+      "opendota_hero_matchups" => "opendota-hero-matchups",
+      "opendota_hero_stats" => "opendota-hero-stats",
+      "opendota_heroes" => "opendota-heroes",
+      "opendota_items" => "opendota-items",
+      "opendota_league" => "opendota-league",
+      "opendota_league_match_ids" => "opendota-league-match-ids",
+      "opendota_league_matches" => "opendota-league-matches",
+      "opendota_leagues" => "opendota-leagues",
+      "opendota_live" => "opendota-live",
+      "opendota_match" => "opendota-match",
+      "opendota_patch_notes" => "opendota-patch-notes",
+      "opendota_pro_matches" => "opendota-pro-matches",
+      "opendota_pro_players" => "opendota-pro-players",
+      "opendota_rank_distribution" => "opendota-rank-distribution",
+      "opendota_records" => "opendota-records",
+      "opendota_scenarios" => "opendota-scenarios",
+      "opendota_team" => "opendota-team",
+      "opendota_team_heroes" => "opendota-team-heroes",
+      "opendota_team_matches" => "opendota-team-matches",
+      "opendota_team_players" => "opendota-team-players",
+      "opendota_teams" => "opendota-teams"
     },
     "open_sea" => {
       "opensea_activity" => "opensea-activity",
@@ -157098,6 +162264,12 @@ module Crawlora
       "search" => "redfin-search",
       "similar" => "redfin-similar"
     },
+    "rednote" => {
+      "explore" => "rednote-explore",
+      "note" => "rednote-note",
+      "note_comments" => "rednote-note-comments",
+      "search_suggest" => "rednote-search-suggest"
+    },
     "reel_short" => {
       "reelshort_fandom_categories" => "reelshort-fandom-categories",
       "reelshort_fandom_post" => "reelshort-fandom-post",
@@ -157389,6 +162561,23 @@ module Crawlora
       "shop_reviews" => "shop-app-shop-reviews",
       "shop_typeahead" => "shop-app-shop-typeahead",
       "suggestions" => "shop-app-suggestions"
+    },
+    "shopee" => {
+      "banners" => "shopee-banners",
+      "categories" => "shopee-categories",
+      "category_detail" => "shopee-category-detail",
+      "flash_sale" => "shopee-flash-sale",
+      "footer" => "shopee-footer",
+      "home" => "shopee-home",
+      "home_categories" => "shopee-home-categories",
+      "location_filters" => "shopee-location-filters",
+      "mall_categories" => "shopee-mall-categories",
+      "prefills" => "shopee-prefills",
+      "search_filters" => "shopee-search-filters",
+      "search_hints" => "shopee-search-hints",
+      "shop_info" => "shopee-shop-info",
+      "shops" => "shopee-shops",
+      "suggest" => "shopee-suggest"
     },
     "shopify" => {
       "collections" => "shopify-collections",
@@ -158403,6 +163592,31 @@ module Crawlora
       "item" => "vinted-item",
       "member" => "vinted-member"
     },
+    "vlr" => {
+      "event" => "vlr-event",
+      "event_agents" => "vlr-event-agents",
+      "event_matches" => "vlr-event-matches",
+      "event_stats" => "vlr-event-stats",
+      "events" => "vlr-events",
+      "forum_categories" => "vlr-forum-categories",
+      "forum_threads" => "vlr-forum-threads",
+      "match" => "vlr-match",
+      "match_economy" => "vlr-match-economy",
+      "match_performance" => "vlr-match-performance",
+      "match_rounds" => "vlr-match-rounds",
+      "matches" => "vlr-matches",
+      "news" => "vlr-news",
+      "news_article" => "vlr-news-article",
+      "player" => "vlr-player",
+      "player_matches" => "vlr-player-matches",
+      "rankings" => "vlr-rankings",
+      "results" => "vlr-results",
+      "search" => "vlr-search",
+      "stats" => "vlr-stats",
+      "team" => "vlr-team",
+      "team_maps" => "vlr-team-maps",
+      "team_matches" => "vlr-team-matches"
+    },
     "vox" => {
       "article" => "vox-article",
       "author" => "vox-author",
@@ -158550,6 +163764,12 @@ module Crawlora
       "headlines" => "xda-headlines",
       "news" => "xda-news",
       "sections" => "xda-sections"
+    },
+    "xiaohongshu" => {
+      "explore" => "xiaohongshu-explore",
+      "note" => "xiaohongshu-note",
+      "note_comments" => "xiaohongshu-note-comments",
+      "search_suggest" => "xiaohongshu-search-suggest"
     },
     "yahoo_autos" => {
       "article" => "yahoo-autos-article",
@@ -158756,7 +163976,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 4012
+  OPERATION_COUNT = 4140
 
   module OperationId
     ABC_NEWS_ABCNEWS_ARTICLE = "abcnews-article"
@@ -159071,6 +164291,34 @@ module Crawlora
     BLUESKY_PROFILE = "bluesky-profile"
     BLUESKY_SEARCH_ACTORS = "bluesky-search-actors"
     BLUESKY_TRENDING_TOPICS = "bluesky-trending-topics"
+    BO3_ECONOMY_BASELINE = "bo3-economy-baseline"
+    BO3_FORUM = "bo3-forum"
+    BO3_FORUM_CATEGORIES = "bo3-forum-categories"
+    BO3_MATCH = "bo3-match"
+    BO3_MATCH_GAMES = "bo3-match-games"
+    BO3_MATCH_HISTORY = "bo3-match-history"
+    BO3_MATCH_PLAYERS = "bo3-match-players"
+    BO3_NEWS_CATEGORIES = "bo3-news-categories"
+    BO3_NEWS_FEED = "bo3-news-feed"
+    BO3_PLAYER = "bo3-player"
+    BO3_PLAYER_LEADERBOARD = "bo3-player-leaderboard"
+    BO3_PLAYER_RECENT_MATCHES = "bo3-player-recent-matches"
+    BO3_PLAYER_STATS = "bo3-player-stats"
+    BO3_RECORDS = "bo3-records"
+    BO3_TEAM = "bo3-team"
+    BO3_TEAM_PRIZE_MONEY = "bo3-team-prize-money"
+    BO3_TEAM_RANKING_DATES = "bo3-team-ranking-dates"
+    BO3_TEAM_RANKINGS = "bo3-team-rankings"
+    BO3_TEAM_RECENT_MATCHES = "bo3-team-recent-matches"
+    BO3_TEAM_STATS = "bo3-team-stats"
+    BO3_TOURNAMENT = "bo3-tournament"
+    BO3_TOURNAMENT_MAP_POOL = "bo3-tournament-map-pool"
+    BO3_TOURNAMENT_MVPS = "bo3-tournament-mvps"
+    BO3_TOURNAMENT_SQUADS = "bo3-tournament-squads"
+    BO3_TOURNAMENT_STAGES = "bo3-tournament-stages"
+    BO3_TOURNAMENTS = "bo3-tournaments"
+    BO3_TRANSFERS = "bo3-transfers"
+    BO3_VALORANT_LEADERBOARD = "bo3-valorant-leaderboard"
     BONHAMS_AUCTION_DETAIL = "bonhams-auction-detail"
     BONHAMS_AUCTION_LOTS = "bonhams-auction-lots"
     BONHAMS_AUCTION_SEARCH = "bonhams-auction-search"
@@ -160204,6 +165452,21 @@ module Crawlora
     GOOGLE_TRENDS_TRENDING = "google-trends-trending"
     GOOGLE_TRENDS_TRENDING_DETAIL = "google-trends-trending-detail"
     GOOGLE_VIDEOS = "google-videos"
+    GOSU_GAMERS_GOSUGAMERS_ENCOUNTERS = "gosugamers-encounters"
+    GOSU_GAMERS_GOSUGAMERS_GAMES = "gosugamers-games"
+    GOSU_GAMERS_GOSUGAMERS_MATCH = "gosugamers-match"
+    GOSU_GAMERS_GOSUGAMERS_MATCH_GAME = "gosugamers-match-game"
+    GOSU_GAMERS_GOSUGAMERS_MATCHES = "gosugamers-matches"
+    GOSU_GAMERS_GOSUGAMERS_PLAYER = "gosugamers-player"
+    GOSU_GAMERS_GOSUGAMERS_RANKINGS = "gosugamers-rankings"
+    GOSU_GAMERS_GOSUGAMERS_RESULTS = "gosugamers-results"
+    GOSU_GAMERS_GOSUGAMERS_STAGE_GROUPS = "gosugamers-stage-groups"
+    GOSU_GAMERS_GOSUGAMERS_TEAM = "gosugamers-team"
+    GOSU_GAMERS_GOSUGAMERS_TEAM_RESULTS = "gosugamers-team-results"
+    GOSU_GAMERS_GOSUGAMERS_TOURNAMENT = "gosugamers-tournament"
+    GOSU_GAMERS_GOSUGAMERS_TOURNAMENT_PARTICIPANTS = "gosugamers-tournament-participants"
+    GOSU_GAMERS_GOSUGAMERS_TOURNAMENT_TALENTS = "gosugamers-tournament-talents"
+    GOSU_GAMERS_GOSUGAMERS_TOURNAMENTS = "gosugamers-tournaments"
     GQ_ARTICLE = "gq-article"
     GQ_AUTHOR = "gq-author"
     GQ_HEADLINES = "gq-headlines"
@@ -160648,6 +165911,19 @@ module Crawlora
     LIVERPOOL_ECHO_LIVERPOOLECHO_HEADLINES = "liverpoolecho-headlines"
     LIVERPOOL_ECHO_LIVERPOOLECHO_NEWS = "liverpoolecho-news"
     LIVERPOOL_ECHO_LIVERPOOLECHO_SECTIONS = "liverpoolecho-sections"
+    LO_LESPORTS_LOLESPORTS_COMPLETED_EVENTS = "lolesports-completed-events"
+    LO_LESPORTS_LOLESPORTS_EVENT = "lolesports-event"
+    LO_LESPORTS_LOLESPORTS_GAME_DETAILS = "lolesports-game-details"
+    LO_LESPORTS_LOLESPORTS_GAME_WINDOW = "lolesports-game-window"
+    LO_LESPORTS_LOLESPORTS_GPR = "lolesports-gpr"
+    LO_LESPORTS_LOLESPORTS_LEAGUES = "lolesports-leagues"
+    LO_LESPORTS_LOLESPORTS_LIVE = "lolesports-live"
+    LO_LESPORTS_LOLESPORTS_NEWS = "lolesports-news"
+    LO_LESPORTS_LOLESPORTS_SCHEDULE = "lolesports-schedule"
+    LO_LESPORTS_LOLESPORTS_SEASONS = "lolesports-seasons"
+    LO_LESPORTS_LOLESPORTS_STANDINGS = "lolesports-standings"
+    LO_LESPORTS_LOLESPORTS_TEAMS = "lolesports-teams"
+    LO_LESPORTS_LOLESPORTS_TOURNAMENTS = "lolesports-tournaments"
     LOS_ANGELES_TIMES_LATIMES_ARTICLE = "latimes-article"
     LOS_ANGELES_TIMES_LATIMES_AUTHOR = "latimes-author"
     LOS_ANGELES_TIMES_LATIMES_HEADLINES = "latimes-headlines"
@@ -160992,6 +166268,32 @@ module Crawlora
     OLD_NAVY_OLDNAVY_PRODUCT_REVIEWS = "oldnavy-product-reviews"
     OLD_NAVY_OLDNAVY_SEARCH = "oldnavy-search"
     OLD_NAVY_OLDNAVY_STORES = "oldnavy-stores"
+    OPEN_DOTA_OPENDOTA_ABILITIES = "opendota-abilities"
+    OPEN_DOTA_OPENDOTA_BENCHMARKS = "opendota-benchmarks"
+    OPEN_DOTA_OPENDOTA_CONSTANTS = "opendota-constants"
+    OPEN_DOTA_OPENDOTA_HERO_DURATIONS = "opendota-hero-durations"
+    OPEN_DOTA_OPENDOTA_HERO_ITEMS = "opendota-hero-items"
+    OPEN_DOTA_OPENDOTA_HERO_MATCHUPS = "opendota-hero-matchups"
+    OPEN_DOTA_OPENDOTA_HERO_STATS = "opendota-hero-stats"
+    OPEN_DOTA_OPENDOTA_HEROES = "opendota-heroes"
+    OPEN_DOTA_OPENDOTA_ITEMS = "opendota-items"
+    OPEN_DOTA_OPENDOTA_LEAGUE = "opendota-league"
+    OPEN_DOTA_OPENDOTA_LEAGUE_MATCH_IDS = "opendota-league-match-ids"
+    OPEN_DOTA_OPENDOTA_LEAGUE_MATCHES = "opendota-league-matches"
+    OPEN_DOTA_OPENDOTA_LEAGUES = "opendota-leagues"
+    OPEN_DOTA_OPENDOTA_LIVE = "opendota-live"
+    OPEN_DOTA_OPENDOTA_MATCH = "opendota-match"
+    OPEN_DOTA_OPENDOTA_PATCH_NOTES = "opendota-patch-notes"
+    OPEN_DOTA_OPENDOTA_PRO_MATCHES = "opendota-pro-matches"
+    OPEN_DOTA_OPENDOTA_PRO_PLAYERS = "opendota-pro-players"
+    OPEN_DOTA_OPENDOTA_RANK_DISTRIBUTION = "opendota-rank-distribution"
+    OPEN_DOTA_OPENDOTA_RECORDS = "opendota-records"
+    OPEN_DOTA_OPENDOTA_SCENARIOS = "opendota-scenarios"
+    OPEN_DOTA_OPENDOTA_TEAM = "opendota-team"
+    OPEN_DOTA_OPENDOTA_TEAM_HEROES = "opendota-team-heroes"
+    OPEN_DOTA_OPENDOTA_TEAM_MATCHES = "opendota-team-matches"
+    OPEN_DOTA_OPENDOTA_TEAM_PLAYERS = "opendota-team-players"
+    OPEN_DOTA_OPENDOTA_TEAMS = "opendota-teams"
     OPEN_SEA_OPENSEA_ACTIVITY = "opensea-activity"
     OPEN_SEA_OPENSEA_CATEGORIES = "opensea-categories"
     OPEN_SEA_OPENSEA_CHAINS = "opensea-chains"
@@ -161388,6 +166690,10 @@ module Crawlora
     REDFIN_REGION_TRENDS = "redfin-region-trends"
     REDFIN_SEARCH = "redfin-search"
     REDFIN_SIMILAR = "redfin-similar"
+    REDNOTE_EXPLORE = "rednote-explore"
+    REDNOTE_NOTE = "rednote-note"
+    REDNOTE_NOTE_COMMENTS = "rednote-note-comments"
+    REDNOTE_SEARCH_SUGGEST = "rednote-search-suggest"
     REEL_SHORT_REELSHORT_FANDOM_CATEGORIES = "reelshort-fandom-categories"
     REEL_SHORT_REELSHORT_FANDOM_POST = "reelshort-fandom-post"
     REEL_SHORT_REELSHORT_FANDOM_POSTS = "reelshort-fandom-posts"
@@ -161640,6 +166946,21 @@ module Crawlora
     SHOP_APP_SHOP_REVIEWS = "shop-app-shop-reviews"
     SHOP_APP_SHOP_TYPEAHEAD = "shop-app-shop-typeahead"
     SHOP_APP_SUGGESTIONS = "shop-app-suggestions"
+    SHOPEE_BANNERS = "shopee-banners"
+    SHOPEE_CATEGORIES = "shopee-categories"
+    SHOPEE_CATEGORY_DETAIL = "shopee-category-detail"
+    SHOPEE_FLASH_SALE = "shopee-flash-sale"
+    SHOPEE_FOOTER = "shopee-footer"
+    SHOPEE_HOME = "shopee-home"
+    SHOPEE_HOME_CATEGORIES = "shopee-home-categories"
+    SHOPEE_LOCATION_FILTERS = "shopee-location-filters"
+    SHOPEE_MALL_CATEGORIES = "shopee-mall-categories"
+    SHOPEE_PREFILLS = "shopee-prefills"
+    SHOPEE_SEARCH_FILTERS = "shopee-search-filters"
+    SHOPEE_SEARCH_HINTS = "shopee-search-hints"
+    SHOPEE_SHOP_INFO = "shopee-shop-info"
+    SHOPEE_SHOPS = "shopee-shops"
+    SHOPEE_SUGGEST = "shopee-suggest"
     SHOPIFY_COLLECTION_PRODUCTS = "shopify-collection-products"
     SHOPIFY_COLLECTIONS = "shopify-collections"
     SHOPIFY_PAGE = "shopify-page"
@@ -162500,6 +167821,29 @@ module Crawlora
     VINTED_CATEGORY = "vinted-category"
     VINTED_ITEM = "vinted-item"
     VINTED_MEMBER = "vinted-member"
+    VLR_EVENT = "vlr-event"
+    VLR_EVENT_AGENTS = "vlr-event-agents"
+    VLR_EVENT_MATCHES = "vlr-event-matches"
+    VLR_EVENT_STATS = "vlr-event-stats"
+    VLR_EVENTS = "vlr-events"
+    VLR_FORUM_CATEGORIES = "vlr-forum-categories"
+    VLR_FORUM_THREADS = "vlr-forum-threads"
+    VLR_MATCH = "vlr-match"
+    VLR_MATCH_ECONOMY = "vlr-match-economy"
+    VLR_MATCH_PERFORMANCE = "vlr-match-performance"
+    VLR_MATCH_ROUNDS = "vlr-match-rounds"
+    VLR_MATCHES = "vlr-matches"
+    VLR_NEWS = "vlr-news"
+    VLR_NEWS_ARTICLE = "vlr-news-article"
+    VLR_PLAYER = "vlr-player"
+    VLR_PLAYER_MATCHES = "vlr-player-matches"
+    VLR_RANKINGS = "vlr-rankings"
+    VLR_RESULTS = "vlr-results"
+    VLR_SEARCH = "vlr-search"
+    VLR_STATS = "vlr-stats"
+    VLR_TEAM = "vlr-team"
+    VLR_TEAM_MAPS = "vlr-team-maps"
+    VLR_TEAM_MATCHES = "vlr-team-matches"
     VOX_ARTICLE = "vox-article"
     VOX_AUTHOR = "vox-author"
     VOX_HEADLINES = "vox-headlines"
@@ -162612,6 +167956,10 @@ module Crawlora
     XDA_HEADLINES = "xda-headlines"
     XDA_NEWS = "xda-news"
     XDA_SECTIONS = "xda-sections"
+    XIAOHONGSHU_EXPLORE = "xiaohongshu-explore"
+    XIAOHONGSHU_NOTE = "xiaohongshu-note"
+    XIAOHONGSHU_NOTE_COMMENTS = "xiaohongshu-note-comments"
+    XIAOHONGSHU_SEARCH_SUGGEST = "xiaohongshu-search-suggest"
     YAHOO_AUTOS_ARTICLE = "yahoo-autos-article"
     YAHOO_AUTOS_CATEGORY = "yahoo-autos-category"
     YAHOO_AUTOS_HOME = "yahoo-autos-home"
