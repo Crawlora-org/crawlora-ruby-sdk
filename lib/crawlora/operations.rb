@@ -45988,6 +45988,41 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "epicgames-free-promotions" => {
+      "id" => "epicgames-free-promotions",
+      "method" => "GET",
+      "path" => "/epicgames/free-promotions",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "locale",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "allowCountries",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "espn-athlete" => {
       "id" => "espn-athlete",
       "method" => "GET",
@@ -75567,6 +75602,279 @@ module Crawlora
       "id" => "healthgrades-top-searches",
       "method" => "GET",
       "path" => "/healthgrades/top-searches",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "hearthstone-card" => {
+      "id" => "hearthstone-card",
+      "method" => "GET",
+      "path" => "/hearthstone/card",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "hearthstone-cards" => {
+      "id" => "hearthstone-cards",
+      "method" => "GET",
+      "path" => "/hearthstone/cards",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "pageSize",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "locale",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "class",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "set",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "order",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "gameMode",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "collectible",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "name" => "textFilter",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "filterLocale",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "deckcode",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "cardSetId",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "spellSchoolId",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "rarityId",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "cardTypeId",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "manaCost",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "attack",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "health",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "armor",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "rarity",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array"
+        },
+        {
+          "name" => "bgCardType",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "keyword",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "minionType",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "deckFormat",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tier",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+          ]
+        },
+        {
+          "name" => "mercenaryRole",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "mercenaryFaction",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "viewMode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "grid",
+            "table"
+          ]
+        },
+        {
+          "name" => "cardBackCategory",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "spellSchool",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "faction",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "bgGameMode",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "zilliaxMod",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "hearthstone-filters" => {
+      "id" => "hearthstone-filters",
+      "method" => "GET",
+      "path" => "/hearthstone/filters",
       "pathParams" => [],
       "queryParams" => [],
       "formParams" => [],
@@ -108562,6 +108870,64 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "nba-hustle-team" => {
+      "id" => "nba-hustle-team",
+      "method" => "GET",
+      "path" => "/nba/hustle-team",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season",
+            "Playoffs",
+            "Pre Season",
+            "All Star"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame",
+            "Totals",
+            "Per36",
+            "Per48",
+            "Per100Possessions",
+            "MinutesPer",
+            "PerPossession"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "nba-league-game-log" => {
       "id" => "nba-league-game-log",
       "method" => "GET",
@@ -108698,6 +109064,64 @@ module Crawlora
       "path" => "/nba/news",
       "pathParams" => [],
       "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-opp-pt-shot" => {
+      "id" => "nba-opp-pt-shot",
+      "method" => "GET",
+      "path" => "/nba/opp-pt-shot",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season",
+            "Playoffs",
+            "Pre Season",
+            "All Star"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame",
+            "Totals",
+            "Per36",
+            "Per48",
+            "Per100Possessions",
+            "MinutesPer",
+            "PerPossession"
+          ]
+        }
+      ],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -108864,6 +109288,101 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "nba-player-clutch" => {
+      "id" => "nba-player-clutch",
+      "method" => "GET",
+      "path" => "/nba/player-clutch",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season",
+            "Playoffs",
+            "Pre Season",
+            "All Star"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame",
+            "Totals",
+            "Per36",
+            "Per48",
+            "Per100Possessions",
+            "MinutesPer",
+            "PerPossession"
+          ]
+        },
+        {
+          "name" => "measure_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Base",
+            "Advanced",
+            "Misc",
+            "Scoring",
+            "Defense",
+            "Opponent"
+          ]
+        },
+        {
+          "name" => "clutch_time",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Last 5 Minutes"
+          ]
+        },
+        {
+          "name" => "ahead_behind",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Ahead or Behind"
+          ]
+        },
+        {
+          "name" => "point_diff",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "5"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "nba-player-dash-pt-shots" => {
       "id" => "nba-player-dash-pt-shots",
       "method" => "GET",
@@ -108919,6 +109438,56 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "nba-player-game-logs" => {
+      "id" => "nba-player-game-logs",
+      "method" => "GET",
+      "path" => "/nba/player-game-logs",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season",
+            "Playoffs",
+            "Pre Season",
+            "All Star"
+          ]
+        },
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "nba-player-info" => {
       "id" => "nba-player-info",
       "method" => "GET",
@@ -108937,6 +109506,104 @@ module Crawlora
           "type" => "string",
           "enum" => [
             "00"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-player-profile-v2" => {
+      "id" => "nba-player-profile-v2",
+      "method" => "GET",
+      "path" => "/nba/player-profile-v2",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame",
+            "Totals",
+            "Per36",
+            "Per48",
+            "Per100Possessions",
+            "MinutesPer",
+            "PerPossession"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-player-pt-shot" => {
+      "id" => "nba-player-pt-shot",
+      "method" => "GET",
+      "path" => "/nba/player-pt-shot",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season",
+            "Playoffs",
+            "Pre Season",
+            "All Star"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame",
+            "Totals",
+            "Per36",
+            "Per48",
+            "Per100Possessions",
+            "MinutesPer",
+            "PerPossession"
           ]
         }
       ],
@@ -109009,6 +109676,60 @@ module Crawlora
             "MinutesPer",
             "PerPossession"
           ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-player-streak-finder" => {
+      "id" => "nba-player-streak-finder",
+      "method" => "GET",
+      "path" => "/nba/player-streak-finder",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season",
+            "Playoffs",
+            "Pre Season",
+            "All Star"
+          ]
+        },
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_games",
+          "in" => "query",
+          "type" => "integer"
         }
       ],
       "formParams" => [],
@@ -109370,6 +110091,134 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "nba-team-dash-pt-pass" => {
+      "id" => "nba-team-dash-pt-pass",
+      "method" => "GET",
+      "path" => "/nba/team-dash-pt-pass",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season",
+            "Playoffs",
+            "Pre Season",
+            "All Star"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame",
+            "Totals",
+            "Per36",
+            "Per48",
+            "Per100Possessions",
+            "MinutesPer",
+            "PerPossession"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-team-dash-pt-shots" => {
+      "id" => "nba-team-dash-pt-shots",
+      "method" => "GET",
+      "path" => "/nba/team-dash-pt-shots",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season",
+            "Playoffs",
+            "Pre Season",
+            "All Star"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame",
+            "Totals",
+            "Per36",
+            "Per48",
+            "Per100Possessions",
+            "MinutesPer",
+            "PerPossession"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "nba-team-details" => {
       "id" => "nba-team-details",
       "method" => "GET",
@@ -109388,6 +110237,241 @@ module Crawlora
           "type" => "string",
           "enum" => [
             "00"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-team-game-logs" => {
+      "id" => "nba-team-game-logs",
+      "method" => "GET",
+      "path" => "/nba/team-game-logs",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season",
+            "Playoffs",
+            "Pre Season",
+            "All Star"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-team-info-common" => {
+      "id" => "nba-team-info-common",
+      "method" => "GET",
+      "path" => "/nba/team-info-common",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season",
+            "Playoffs",
+            "Pre Season",
+            "All Star"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-team-on-off" => {
+      "id" => "nba-team-on-off",
+      "method" => "GET",
+      "path" => "/nba/team-on-off",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season",
+            "Playoffs",
+            "Pre Season",
+            "All Star"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame",
+            "Totals",
+            "Per36",
+            "Per48",
+            "Per100Possessions",
+            "MinutesPer",
+            "PerPossession"
+          ]
+        },
+        {
+          "name" => "measure_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Base",
+            "Advanced",
+            "Misc",
+            "Scoring",
+            "Defense",
+            "Opponent"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-team-pt-shot" => {
+      "id" => "nba-team-pt-shot",
+      "method" => "GET",
+      "path" => "/nba/team-pt-shot",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season",
+            "Playoffs",
+            "Pre Season",
+            "All Star"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame",
+            "Totals",
+            "Per36",
+            "Per48",
+            "Per100Possessions",
+            "MinutesPer",
+            "PerPossession"
           ]
         }
       ],
@@ -109640,6 +110724,34 @@ module Crawlora
           "type" => "string",
           "enum" => [
             "S"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-team-years" => {
+      "id" => "nba-team-years",
+      "method" => "GET",
+      "path" => "/nba/team-years",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
           ]
         }
       ],
@@ -111876,6 +112988,127 @@ module Crawlora
           "name" => "size",
           "in" => "query",
           "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nhl-gamecenter-boxscore" => {
+      "id" => "nhl-gamecenter-boxscore",
+      "method" => "GET",
+      "path" => "/nhl/gamecenter/boxscore",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nhl-gamecenter-play-by-play" => {
+      "id" => "nhl-gamecenter-play-by-play",
+      "method" => "GET",
+      "path" => "/nhl/gamecenter/play-by-play",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nhl-schedule" => {
+      "id" => "nhl-schedule",
+      "method" => "GET",
+      "path" => "/nhl/schedule",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nhl-seasons" => {
+      "id" => "nhl-seasons",
+      "method" => "GET",
+      "path" => "/nhl/seasons",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nhl-standings" => {
+      "id" => "nhl-standings",
+      "method" => "GET",
+      "path" => "/nhl/standings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
         }
       ],
       "formParams" => [],
@@ -138538,6 +139771,297 @@ module Crawlora
       "consumes" => [
         "application/json"
       ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "serebii-pokemongo-event-detail-community-day" => {
+      "id" => "serebii-pokemongo-event-detail-community-day",
+      "method" => "GET",
+      "path" => "/serebii/pokemongo/communityday/{filename}",
+      "pathParams" => [
+        "filename"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "serebii-pokemongo-event-categories" => {
+      "id" => "serebii-pokemongo-event-categories",
+      "method" => "GET",
+      "path" => "/serebii/pokemongo/event-categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "serebii-pokemongo-event-only-moves" => {
+      "id" => "serebii-pokemongo-event-only-moves",
+      "method" => "GET",
+      "path" => "/serebii/pokemongo/event-only-moves",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "serebii-pokemongo-event-only-research" => {
+      "id" => "serebii-pokemongo-event-only-research",
+      "method" => "GET",
+      "path" => "/serebii/pokemongo/event-only-research",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "serebii-pokemongo-events" => {
+      "id" => "serebii-pokemongo-events",
+      "method" => "GET",
+      "path" => "/serebii/pokemongo/events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "events.shtml",
+            "reallifeevents.shtml",
+            "ticketevents.shtml",
+            "communityday.shtml",
+            "raidday.shtml",
+            "maxbattleday.shtml",
+            "incenseday.shtml",
+            "limitedresearchday.shtml",
+            "hatchday.shtml"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "serebii-pokemongo-event-detail-global" => {
+      "id" => "serebii-pokemongo-event-detail-global",
+      "method" => "GET",
+      "path" => "/serebii/pokemongo/events/{filename}",
+      "pathParams" => [
+        "filename"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "serebii-pokemongo-event-detail-hatch-day" => {
+      "id" => "serebii-pokemongo-event-detail-hatch-day",
+      "method" => "GET",
+      "path" => "/serebii/pokemongo/hatchday/{filename}",
+      "pathParams" => [
+        "filename"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "serebii-pokemongo-event-detail-incense-day" => {
+      "id" => "serebii-pokemongo-event-detail-incense-day",
+      "method" => "GET",
+      "path" => "/serebii/pokemongo/incenseday/{filename}",
+      "pathParams" => [
+        "filename"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "serebii-pokemongo-event-detail-research-day" => {
+      "id" => "serebii-pokemongo-event-detail-research-day",
+      "method" => "GET",
+      "path" => "/serebii/pokemongo/limitedresearchday/{filename}",
+      "pathParams" => [
+        "filename"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "serebii-pokemongo-event-detail-max-battle-day" => {
+      "id" => "serebii-pokemongo-event-detail-max-battle-day",
+      "method" => "GET",
+      "path" => "/serebii/pokemongo/maxbattleday/{filename}",
+      "pathParams" => [
+        "filename"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "serebii-pokemongo-event-detail-raid-day" => {
+      "id" => "serebii-pokemongo-event-detail-raid-day",
+      "method" => "GET",
+      "path" => "/serebii/pokemongo/raidday/{filename}",
+      "pathParams" => [
+        "filename"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "serebii-pokemongo-event-detail-real-life" => {
+      "id" => "serebii-pokemongo-event-detail-real-life",
+      "method" => "GET",
+      "path" => "/serebii/pokemongo/reallifeevents/{filename}",
+      "pathParams" => [
+        "filename"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "serebii-pokemongo-spotlight-hours" => {
+      "id" => "serebii-pokemongo-spotlight-hours",
+      "method" => "GET",
+      "path" => "/serebii/pokemongo/spotlight-hours",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "serebii-pokemongo-event-detail-ticket" => {
+      "id" => "serebii-pokemongo-event-detail-ticket",
+      "method" => "GET",
+      "path" => "/serebii/pokemongo/ticketevents/{filename}",
+      "pathParams" => [
+        "filename"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "serebii-pokemongo-unown-events" => {
+      "id" => "serebii-pokemongo-unown-events",
+      "method" => "GET",
+      "path" => "/serebii/pokemongo/unown-events",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
       "produces" => [
         "application/json"
       ],
@@ -183282,6 +184806,9 @@ module Crawlora
       "eonline_news" => "eonline-news",
       "eonline_sections" => "eonline-sections"
     },
+    "epic_games_store" => {
+      "epicgames_free_promotions" => "epicgames-free-promotions"
+    },
     "espn" => {
       "athlete" => "espn-athlete",
       "game_summary" => "espn-game-summary",
@@ -184176,6 +185703,11 @@ module Crawlora
       "physicians_search" => "healthgrades-physicians-search",
       "specialties" => "healthgrades-specialties",
       "top_searches" => "healthgrades-top-searches"
+    },
+    "hearthstone" => {
+      "card" => "hearthstone-card",
+      "cards" => "hearthstone-cards",
+      "filters" => "hearthstone-filters"
     },
     "hermes" => {
       "categories" => "hermes-categories",
@@ -185124,16 +186656,23 @@ module Crawlora
       "games" => "nba-games",
       "homepage_leaders" => "nba-homepage-leaders",
       "hustle_stats" => "nba-hustle-stats",
+      "hustle_team" => "nba-hustle-team",
       "league_game_log" => "nba-league-game-log",
       "lineups" => "nba-lineups",
       "news" => "nba-news",
+      "opp_pt_shot" => "nba-opp-pt-shot",
       "play_by_play" => "nba-play-by-play",
       "player_awards" => "nba-player-awards",
       "player_bio_stats" => "nba-player-bio-stats",
       "player_career_stats" => "nba-player-career-stats",
+      "player_clutch" => "nba-player-clutch",
       "player_dash_pt_shots" => "nba-player-dash-pt-shots",
+      "player_game_logs" => "nba-player-game-logs",
       "player_info" => "nba-player-info",
+      "player_profile_v2" => "nba-player-profile-v2",
+      "player_pt_shot" => "nba-player-pt-shot",
       "player_stats" => "nba-player-stats",
+      "player_streak_finder" => "nba-player-streak-finder",
       "players" => "nba-players",
       "playoff_picture" => "nba-playoff-picture",
       "pt_defend" => "nba-pt-defend",
@@ -185141,11 +186680,18 @@ module Crawlora
       "scoreboard" => "nba-scoreboard",
       "standings" => "nba-standings",
       "synergy_play_types" => "nba-synergy-play-types",
+      "team_dash_pt_pass" => "nba-team-dash-pt-pass",
+      "team_dash_pt_shots" => "nba-team-dash-pt-shots",
       "team_details" => "nba-team-details",
+      "team_game_logs" => "nba-team-game-logs",
+      "team_info_common" => "nba-team-info-common",
+      "team_on_off" => "nba-team-on-off",
+      "team_pt_shot" => "nba-team-pt-shot",
       "team_roster" => "nba-team-roster",
       "team_shot_locations" => "nba-team-shot-locations",
       "team_stats" => "nba-team-stats",
-      "team_stats_leaders" => "nba-team-stats-leaders"
+      "team_stats_leaders" => "nba-team-stats-leaders",
+      "team_years" => "nba-team-years"
     },
     "nbc_news" => {
       "nbc_article" => "nbc-article",
@@ -185237,6 +186783,13 @@ module Crawlora
       "sports" => "nfhs-sports",
       "states" => "nfhs-states",
       "suggest" => "nfhs-suggest"
+    },
+    "nhl" => {
+      "gamecenter_boxscore" => "nhl-gamecenter-boxscore",
+      "gamecenter_play_by_play" => "nhl-gamecenter-play-by-play",
+      "schedule" => "nhl-schedule",
+      "seasons" => "nhl-seasons",
+      "standings" => "nhl-standings"
     },
     "nike" => {
       "categories" => "nike-categories",
@@ -186176,6 +187729,23 @@ module Crawlora
       "search" => "sephora-search",
       "stores" => "sephora-stores",
       "suggest" => "sephora-suggest"
+    },
+    "serebii" => {
+      "pokemongo_event_detail_community_day" => "serebii-pokemongo-event-detail-community-day",
+      "pokemongo_event_categories" => "serebii-pokemongo-event-categories",
+      "pokemongo_event_only_moves" => "serebii-pokemongo-event-only-moves",
+      "pokemongo_event_only_research" => "serebii-pokemongo-event-only-research",
+      "pokemongo_events" => "serebii-pokemongo-events",
+      "pokemongo_event_detail_global" => "serebii-pokemongo-event-detail-global",
+      "pokemongo_event_detail_hatch_day" => "serebii-pokemongo-event-detail-hatch-day",
+      "pokemongo_event_detail_incense_day" => "serebii-pokemongo-event-detail-incense-day",
+      "pokemongo_event_detail_research_day" => "serebii-pokemongo-event-detail-research-day",
+      "pokemongo_event_detail_max_battle_day" => "serebii-pokemongo-event-detail-max-battle-day",
+      "pokemongo_event_detail_raid_day" => "serebii-pokemongo-event-detail-raid-day",
+      "pokemongo_event_detail_real_life" => "serebii-pokemongo-event-detail-real-life",
+      "pokemongo_spotlight_hours" => "serebii-pokemongo-spotlight-hours",
+      "pokemongo_event_detail_ticket" => "serebii-pokemongo-event-detail-ticket",
+      "pokemongo_unown_events" => "serebii-pokemongo-unown-events"
     },
     "seven_news_australia" => {
       "article" => "sevennewsau-article",
@@ -187729,7 +189299,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 4731
+  OPERATION_COUNT = 4769
 
   module OperationId
     ABC_NEWS_ABCNEWS_ARTICLE = "abcnews-article"
@@ -188792,6 +190362,7 @@ module Crawlora
     ENTERTAINMENT_WEEKLY_EW_HEADLINES = "ew-headlines"
     ENTERTAINMENT_WEEKLY_EW_NEWS = "ew-news"
     ENTERTAINMENT_WEEKLY_EW_SECTIONS = "ew-sections"
+    EPIC_GAMES_STORE_EPICGAMES_FREE_PROMOTIONS = "epicgames-free-promotions"
     ESPN_ATHLETE = "espn-athlete"
     ESPN_GAME_SUMMARY = "espn-game-summary"
     ESPN_NEWS = "espn-news"
@@ -189557,6 +191128,9 @@ module Crawlora
     HEALTHGRADES_PHYSICIANS_SEARCH = "healthgrades-physicians-search"
     HEALTHGRADES_SPECIALTIES = "healthgrades-specialties"
     HEALTHGRADES_TOP_SEARCHES = "healthgrades-top-searches"
+    HEARTHSTONE_CARD = "hearthstone-card"
+    HEARTHSTONE_CARDS = "hearthstone-cards"
+    HEARTHSTONE_FILTERS = "hearthstone-filters"
     HERMES_CATEGORIES = "hermes-categories"
     HERMES_CATEGORY = "hermes-category"
     HERMES_PRODUCT = "hermes-product"
@@ -190294,16 +191868,23 @@ module Crawlora
     NBA_GAMES = "nba-games"
     NBA_HOMEPAGE_LEADERS = "nba-homepage-leaders"
     NBA_HUSTLE_STATS = "nba-hustle-stats"
+    NBA_HUSTLE_TEAM = "nba-hustle-team"
     NBA_LEAGUE_GAME_LOG = "nba-league-game-log"
     NBA_LINEUPS = "nba-lineups"
     NBA_NEWS = "nba-news"
+    NBA_OPP_PT_SHOT = "nba-opp-pt-shot"
     NBA_PLAY_BY_PLAY = "nba-play-by-play"
     NBA_PLAYER_AWARDS = "nba-player-awards"
     NBA_PLAYER_BIO_STATS = "nba-player-bio-stats"
     NBA_PLAYER_CAREER_STATS = "nba-player-career-stats"
+    NBA_PLAYER_CLUTCH = "nba-player-clutch"
     NBA_PLAYER_DASH_PT_SHOTS = "nba-player-dash-pt-shots"
+    NBA_PLAYER_GAME_LOGS = "nba-player-game-logs"
     NBA_PLAYER_INFO = "nba-player-info"
+    NBA_PLAYER_PROFILE_V2 = "nba-player-profile-v2"
+    NBA_PLAYER_PT_SHOT = "nba-player-pt-shot"
     NBA_PLAYER_STATS = "nba-player-stats"
+    NBA_PLAYER_STREAK_FINDER = "nba-player-streak-finder"
     NBA_PLAYERS = "nba-players"
     NBA_PLAYOFF_PICTURE = "nba-playoff-picture"
     NBA_PT_DEFEND = "nba-pt-defend"
@@ -190311,11 +191892,18 @@ module Crawlora
     NBA_SCOREBOARD = "nba-scoreboard"
     NBA_STANDINGS = "nba-standings"
     NBA_SYNERGY_PLAY_TYPES = "nba-synergy-play-types"
+    NBA_TEAM_DASH_PT_PASS = "nba-team-dash-pt-pass"
+    NBA_TEAM_DASH_PT_SHOTS = "nba-team-dash-pt-shots"
     NBA_TEAM_DETAILS = "nba-team-details"
+    NBA_TEAM_GAME_LOGS = "nba-team-game-logs"
+    NBA_TEAM_INFO_COMMON = "nba-team-info-common"
+    NBA_TEAM_ON_OFF = "nba-team-on-off"
+    NBA_TEAM_PT_SHOT = "nba-team-pt-shot"
     NBA_TEAM_ROSTER = "nba-team-roster"
     NBA_TEAM_SHOT_LOCATIONS = "nba-team-shot-locations"
     NBA_TEAM_STATS = "nba-team-stats"
     NBA_TEAM_STATS_LEADERS = "nba-team-stats-leaders"
+    NBA_TEAM_YEARS = "nba-team-years"
     NBC_NEWS_CALL = "nbc-news"
     NBC_NEWS_NBC_ARTICLE = "nbc-article"
     NBC_NEWS_NBC_AUTHOR = "nbc-author"
@@ -190402,6 +191990,11 @@ module Crawlora
     NFHS_SPORTS = "nfhs-sports"
     NFHS_STATES = "nfhs-states"
     NFHS_SUGGEST = "nfhs-suggest"
+    NHL_GAMECENTER_BOXSCORE = "nhl-gamecenter-boxscore"
+    NHL_GAMECENTER_PLAY_BY_PLAY = "nhl-gamecenter-play-by-play"
+    NHL_SCHEDULE = "nhl-schedule"
+    NHL_SEASONS = "nhl-seasons"
+    NHL_STANDINGS = "nhl-standings"
     NIKE_CATEGORIES = "nike-categories"
     NIKE_PRODUCT = "nike-product"
     NIKE_PRODUCT_AVAILABILITY = "nike-product-availability"
@@ -191155,6 +192748,21 @@ module Crawlora
     SEPHORA_SEARCH = "sephora-search"
     SEPHORA_STORES = "sephora-stores"
     SEPHORA_SUGGEST = "sephora-suggest"
+    SEREBII_POKEMONGO_EVENT_CATEGORIES = "serebii-pokemongo-event-categories"
+    SEREBII_POKEMONGO_EVENT_DETAIL_COMMUNITY_DAY = "serebii-pokemongo-event-detail-community-day"
+    SEREBII_POKEMONGO_EVENT_DETAIL_GLOBAL = "serebii-pokemongo-event-detail-global"
+    SEREBII_POKEMONGO_EVENT_DETAIL_HATCH_DAY = "serebii-pokemongo-event-detail-hatch-day"
+    SEREBII_POKEMONGO_EVENT_DETAIL_INCENSE_DAY = "serebii-pokemongo-event-detail-incense-day"
+    SEREBII_POKEMONGO_EVENT_DETAIL_MAX_BATTLE_DAY = "serebii-pokemongo-event-detail-max-battle-day"
+    SEREBII_POKEMONGO_EVENT_DETAIL_RAID_DAY = "serebii-pokemongo-event-detail-raid-day"
+    SEREBII_POKEMONGO_EVENT_DETAIL_REAL_LIFE = "serebii-pokemongo-event-detail-real-life"
+    SEREBII_POKEMONGO_EVENT_DETAIL_RESEARCH_DAY = "serebii-pokemongo-event-detail-research-day"
+    SEREBII_POKEMONGO_EVENT_DETAIL_TICKET = "serebii-pokemongo-event-detail-ticket"
+    SEREBII_POKEMONGO_EVENT_ONLY_MOVES = "serebii-pokemongo-event-only-moves"
+    SEREBII_POKEMONGO_EVENT_ONLY_RESEARCH = "serebii-pokemongo-event-only-research"
+    SEREBII_POKEMONGO_EVENTS = "serebii-pokemongo-events"
+    SEREBII_POKEMONGO_SPOTLIGHT_HOURS = "serebii-pokemongo-spotlight-hours"
+    SEREBII_POKEMONGO_UNOWN_EVENTS = "serebii-pokemongo-unown-events"
     SEVEN_NEWS_AUSTRALIA_ARTICLE = "sevennewsau-article"
     SEVEN_NEWS_AUSTRALIA_AUTHOR = "sevennewsau-author"
     SEVEN_NEWS_AUSTRALIA_HEADLINES = "sevennewsau-headlines"
