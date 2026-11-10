@@ -3226,6 +3226,144 @@ module Crawlora
           ]
         },
         {
+          "name" => "listing_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "AUCTION",
+            "FIXED_PRICE",
+            "EXTERNAL_AUCTION",
+            "EXTERNAL_FIXED_PRICE"
+          ]
+        },
+        {
+          "name" => "grade",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "1",
+            "1.5",
+            "2",
+            "2.5",
+            "3",
+            "3.5",
+            "4",
+            "4.5",
+            "5",
+            "5.5",
+            "6",
+            "6.5",
+            "7",
+            "7.5",
+            "8",
+            "8.5",
+            "9",
+            "9.5",
+            "10",
+            "Auth",
+            "PRI",
+            "BL"
+          ]
+        },
+        {
+          "name" => "subject",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "brand",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "card_number",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sold_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sold_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "added_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "added_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "year_min",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "year_max",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "price_min",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "price_max",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "pop_min",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "pop_max",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "has_serial",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_print_run",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "rookie_year_card",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "recommended",
+            "sold_date_desc",
+            "sold_date_asc",
+            "added_desc",
+            "added_asc",
+            "price_desc",
+            "price_asc",
+            "pop_desc",
+            "pop_asc",
+            "year_desc",
+            "year_asc"
+          ]
+        },
+        {
           "name" => "page",
           "in" => "query",
           "type" => "integer"
@@ -4550,6 +4688,50 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "apple-books-audiobook-charts" => {
+      "id" => "apple-books-audiobook-charts",
+      "method" => "GET",
+      "path" => "/apple-books/audiobook/charts",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "genre_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "50000042",
+            "50000043",
+            "50000040",
+            "50000049",
+            "50000044",
+            "50000051",
+            "50000052",
+            "50000053",
+            "50000069",
+            "50000055",
+            "50000054",
+            "50000056"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "apple-books-audiobook-search" => {
       "id" => "apple-books-audiobook-search",
       "method" => "GET",
@@ -4861,7 +5043,26 @@ module Crawlora
         {
           "name" => "genre",
           "in" => "query",
-          "type" => "integer"
+          "type" => "integer",
+          "enum" => [
+            "9008",
+            "9009",
+            "9026",
+            "9027",
+            "9028",
+            "9031",
+            "9025",
+            "9015",
+            "11086",
+            "9032",
+            "9002",
+            "9034",
+            "9018",
+            "9003",
+            "9020",
+            "9035",
+            "11165"
+          ]
         },
         {
           "name" => "country",
@@ -4872,6 +5073,41 @@ module Crawlora
           "name" => "limit",
           "in" => "query",
           "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "apple-books-genres" => {
+      "id" => "apple-books-genres",
+      "method" => "GET",
+      "path" => "/apple-books/genres",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "media",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "book",
+            "audiobook"
+          ]
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
         }
       ],
       "formParams" => [],
@@ -8083,6 +8319,203 @@ module Crawlora
       "consumes" => [
         "application/json"
       ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bandcamp-artist" => {
+      "id" => "bandcamp-artist",
+      "method" => "GET",
+      "path" => "/bandcamp/artist",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "artist",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bandcamp-discover" => {
+      "id" => "bandcamp-discover",
+      "method" => "GET",
+      "path" => "/bandcamp/discover",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tags",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "format",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "vinyl",
+            "cd",
+            "cassette"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "best_selling",
+            "new",
+            "random"
+          ]
+        },
+        {
+          "name" => "time_facet",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "geoname_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "bandcamp-filters" => {
+      "id" => "bandcamp-filters",
+      "method" => "GET",
+      "path" => "/bandcamp/filters",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bandcamp-related-tags" => {
+      "id" => "bandcamp-related-tags",
+      "method" => "GET",
+      "path" => "/bandcamp/related-tags",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tag",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bandcamp-release" => {
+      "id" => "bandcamp-release",
+      "method" => "GET",
+      "path" => "/bandcamp/release",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bandcamp-search" => {
+      "id" => "bandcamp-search",
+      "method" => "GET",
+      "path" => "/bandcamp/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "artists",
+            "albums",
+            "tracks"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
       "produces" => [
         "application/json"
       ],
@@ -11412,7 +11845,9 @@ module Crawlora
             "finished",
             "defwin",
             "upcoming",
-            "current"
+            "current",
+            "canceled",
+            "postponed"
           ]
         },
         {
@@ -11532,7 +11967,8 @@ module Crawlora
             "lol",
             "dota2",
             "r6siege",
-            "mlbb"
+            "mlbb",
+            "games"
           ]
         },
         {
@@ -11543,7 +11979,36 @@ module Crawlora
             "news",
             "article",
             "wiki",
-            "predictions"
+            "predictions",
+            "reviews"
+          ]
+        },
+        {
+          "name" => "tag",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "locale",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "en",
+            "ru",
+            "pt",
+            "es",
+            "de",
+            "fr",
+            "tr",
+            "pl",
+            "id",
+            "vi",
+            "ja",
+            "ko",
+            "ua",
+            "ms",
+            "tl",
+            "da"
           ]
         },
         {
@@ -12332,7 +12797,9 @@ module Crawlora
           "enum" => [
             "current",
             "upcoming",
-            "finished"
+            "finished",
+            "canceled",
+            "postponed"
           ]
         },
         {
@@ -12526,6 +12993,602 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "boardgamegeek-cardsets" => {
+      "id" => "boardgamegeek-cardsets",
+      "method" => "GET",
+      "path" => "/boardgamegeek/cardsets/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boardgamegeek-entity" => {
+      "id" => "boardgamegeek-entity",
+      "method" => "GET",
+      "path" => "/boardgamegeek/entity/{type}/{id}",
+      "pathParams" => [
+        "type",
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boardgamegeek-game" => {
+      "id" => "boardgamegeek-game",
+      "method" => "GET",
+      "path" => "/boardgamegeek/game/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boardgamegeek-geeklist" => {
+      "id" => "boardgamegeek-geeklist",
+      "method" => "GET",
+      "path" => "/boardgamegeek/geeklist/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boardgamegeek-geeklist-items" => {
+      "id" => "boardgamegeek-geeklist-items",
+      "method" => "GET",
+      "path" => "/boardgamegeek/geeklist/{id}/items",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "boardgamegeek-geeklists" => {
+      "id" => "boardgamegeek-geeklists",
+      "method" => "GET",
+      "path" => "/boardgamegeek/geeklists",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "objecttype",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "thing",
+            "family",
+            "person",
+            "company",
+            "property",
+            "version"
+          ]
+        },
+        {
+          "name" => "objectid",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "trade",
+            "general"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "hot",
+            "recent"
+          ]
+        },
+        {
+          "name" => "showcount",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "pageid",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boardgamegeek-hotness" => {
+      "id" => "boardgamegeek-hotness",
+      "method" => "GET",
+      "path" => "/boardgamegeek/hotness",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "objecttype",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "thing",
+            "person",
+            "company"
+          ]
+        },
+        {
+          "name" => "showcount",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boardgamegeek-links" => {
+      "id" => "boardgamegeek-links",
+      "method" => "GET",
+      "path" => "/boardgamegeek/links",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "objecttype",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "thing",
+            "family",
+            "person",
+            "company",
+            "property",
+            "version"
+          ]
+        },
+        {
+          "name" => "objectid",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "linktype",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "boardgame",
+            "boardgameaccessory",
+            "boardgameaccessoryartist",
+            "boardgameaccessorydesigner",
+            "boardgameartist",
+            "boardgamecategory",
+            "boardgamedesigner",
+            "boardgamedeveloper",
+            "boardgameeditor",
+            "boardgameexpansion",
+            "boardgamefamily",
+            "boardgamegraphicdesigner",
+            "boardgamehonor",
+            "boardgameinsertdesigner",
+            "boardgameintegration",
+            "boardgameissue",
+            "boardgameissueartist",
+            "boardgameissueauthor",
+            "boardgamemechanic",
+            "boardgamepublisher",
+            "boardgamesculptor",
+            "boardgamesolodesigner",
+            "boardgamesubdomain",
+            "boardgameversion",
+            "boardgameversionartist",
+            "boardgamewriter",
+            "cardset",
+            "containedin",
+            "contains",
+            "expandsboardgame",
+            "expandsvideogame",
+            "languages",
+            "reimplementation",
+            "reimplements",
+            "rpgartist",
+            "rpgdesigner",
+            "rpghonor",
+            "rpgissuearticleauthor",
+            "rpgissueartist",
+            "rpgissuedesigner",
+            "rpgissueproducer",
+            "rpgproducer",
+            "videogamebg",
+            "videogamedeveloper",
+            "videogameexpansion",
+            "videogamefranchise",
+            "videogamegenre",
+            "videogamemode",
+            "videogameplatform",
+            "videogamepublisher",
+            "videogameseries",
+            "videogametheme"
+          ]
+        },
+        {
+          "name" => "showcount",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "pageid",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boardgamegeek-media" => {
+      "id" => "boardgamegeek-media",
+      "method" => "GET",
+      "path" => "/boardgamegeek/media/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "image",
+            "video",
+            "file"
+          ]
+        },
+        {
+          "name" => "showcount",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "pageid",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "hot",
+            "recent"
+          ]
+        },
+        {
+          "name" => "interval",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "alltime",
+            "today",
+            "twodays",
+            "last7",
+            "last30",
+            "year"
+          ]
+        },
+        {
+          "name" => "gallery",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "game",
+            "person",
+            "creative",
+            "review",
+            "session",
+            "instructional",
+            "interview",
+            "unboxing",
+            "humor",
+            "other"
+          ]
+        },
+        {
+          "name" => "tag",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "BoxFront",
+            "BoxBack",
+            "Components",
+            "Customized",
+            "Play",
+            "Miscellaneous",
+            "uncat"
+          ]
+        },
+        {
+          "name" => "license",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "reuse",
+            "commercial",
+            "modify"
+          ]
+        },
+        {
+          "name" => "languageid",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boardgamegeek-recommendations" => {
+      "id" => "boardgamegeek-recommendations",
+      "method" => "GET",
+      "path" => "/boardgamegeek/recommendations/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "showcount",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boardgamegeek-reviews" => {
+      "id" => "boardgamegeek-reviews",
+      "method" => "GET",
+      "path" => "/boardgamegeek/reviews/{type}/{id}",
+      "pathParams" => [
+        "type",
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boardgamegeek-taxonomy" => {
+      "id" => "boardgamegeek-taxonomy",
+      "method" => "GET",
+      "path" => "/boardgamegeek/taxonomy",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boardgamegeek-thread" => {
+      "id" => "boardgamegeek-thread",
+      "method" => "GET",
+      "path" => "/boardgamegeek/thread/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "pageid",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "boardgamegeek-threads" => {
+      "id" => "boardgamegeek-threads",
+      "method" => "GET",
+      "path" => "/boardgamegeek/threads",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "objecttype",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "thing",
+            "family",
+            "person",
+            "company",
+            "property",
+            "version"
+          ]
+        },
+        {
+          "name" => "objectid",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "forumid",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "hot",
+            "recent",
+            "active"
+          ]
+        },
+        {
+          "name" => "showcount",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "pageid",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "bonhams-auction-search" => {
       "id" => "bonhams-auction-search",
@@ -13143,6 +14206,270 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "booksy-business" => {
+      "id" => "booksy-business",
+      "method" => "GET",
+      "path" => "/booksy/business",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "ar",
+            "au",
+            "br",
+            "ca",
+            "cl",
+            "co",
+            "de",
+            "es",
+            "fr",
+            "gb",
+            "ie",
+            "it",
+            "mx",
+            "nl",
+            "pl",
+            "pt",
+            "us",
+            "za"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "booksy-businesses" => {
+      "id" => "booksy-businesses",
+      "method" => "GET",
+      "path" => "/booksy/businesses",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "ar",
+            "au",
+            "br",
+            "ca",
+            "cl",
+            "co",
+            "de",
+            "es",
+            "fr",
+            "gb",
+            "ie",
+            "it",
+            "mx",
+            "nl",
+            "pl",
+            "pt",
+            "us",
+            "za"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "treatment",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "location_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "location_name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort_order",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "distance",
+            "score",
+            "top_rated",
+            "by_ids"
+          ]
+        },
+        {
+          "name" => "gender",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "M",
+            "F",
+            "R"
+          ]
+        },
+        {
+          "name" => "open_now",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "has_special_offers",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "business_ids",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "booksy-categories" => {
+      "id" => "booksy-categories",
+      "method" => "GET",
+      "path" => "/booksy/categories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "ar",
+            "au",
+            "br",
+            "ca",
+            "cl",
+            "co",
+            "de",
+            "es",
+            "fr",
+            "gb",
+            "ie",
+            "it",
+            "mx",
+            "nl",
+            "pl",
+            "pt",
+            "us",
+            "za"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "booksy-treatment-hints" => {
+      "id" => "booksy-treatment-hints",
+      "method" => "GET",
+      "path" => "/booksy/treatment-hints",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "ar",
+            "au",
+            "br",
+            "ca",
+            "cl",
+            "co",
+            "de",
+            "es",
+            "fr",
+            "gb",
+            "ie",
+            "it",
+            "mx",
+            "nl",
+            "pl",
+            "pt",
+            "us",
+            "za"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "boots-search" => {
       "id" => "boots-search",
@@ -14777,6 +16104,462 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "bringatrailer-filters" => {
+      "id" => "bringatrailer-filters",
+      "method" => "GET",
+      "path" => "/bringatrailer/filters",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bringatrailer-listing" => {
+      "id" => "bringatrailer-listing",
+      "method" => "GET",
+      "path" => "/bringatrailer/listing",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "bid_history",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bringatrailer-live" => {
+      "id" => "bringatrailer-live",
+      "method" => "GET",
+      "path" => "/bringatrailer/live",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "era",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "ending_within",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "1",
+            "4",
+            "24",
+            "120",
+            "168"
+          ]
+        },
+        {
+          "name" => "max_bid",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "no_reserve",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "premium",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "ending_soon",
+            "highest_bid",
+            "lowest_bid"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "bringatrailer-makes" => {
+      "id" => "bringatrailer-makes",
+      "method" => "GET",
+      "path" => "/bringatrailer/makes",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "make",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bringatrailer-price-history" => {
+      "id" => "bringatrailer-price-history",
+      "method" => "GET",
+      "path" => "/bringatrailer/price-history",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "make",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "model_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "exclude",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "era",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "origin",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "premium",
+            "noreserve"
+          ]
+        },
+        {
+          "name" => "recency",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "7D",
+            "30D",
+            "1Y",
+            "2Y",
+            "5Y"
+          ]
+        },
+        {
+          "name" => "min_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_bid",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "points_limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "bringatrailer-results" => {
+      "id" => "bringatrailer-results",
+      "method" => "GET",
+      "path" => "/bringatrailer/results",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "make",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "model_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "exclude",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "era",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "origin",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "result",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "sold",
+            "unsold"
+          ]
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "premium",
+            "noreserve"
+          ]
+        },
+        {
+          "name" => "recency",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "7D",
+            "30D",
+            "1Y",
+            "2Y",
+            "5Y"
+          ]
+        },
+        {
+          "name" => "min_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_bid",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "recent",
+            "oldest",
+            "popular",
+            "highest_bid"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "bringatrailer-search" => {
+      "id" => "bringatrailer-search",
+      "method" => "GET",
+      "path" => "/bringatrailer/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "phrase",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "live_listings",
+            "models",
+            "previous_auctions",
+            "events",
+            "stories"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "bringatrailer-suggest" => {
+      "id" => "bringatrailer-suggest",
+      "method" => "GET",
+      "path" => "/bringatrailer/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "term",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "brisbanetimes-article" => {
       "id" => "brisbanetimes-article",
       "method" => "GET",
@@ -15997,6 +17780,316 @@ module Crawlora
       "consumes" => [
         "application/json"
       ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cardmarket-catalog" => {
+      "id" => "cardmarket-catalog",
+      "method" => "GET",
+      "path" => "/cardmarket/catalog",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "kind",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "singles",
+            "nonsingles",
+            "accessories"
+          ]
+        },
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "1",
+            "2",
+            "3",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25"
+          ]
+        },
+        {
+          "name" => "category_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "expansion_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "cardmarket-catalog-categories" => {
+      "id" => "cardmarket-catalog-categories",
+      "method" => "GET",
+      "path" => "/cardmarket/catalog/categories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "kind",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "singles",
+            "nonsingles",
+            "accessories"
+          ]
+        },
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "1",
+            "2",
+            "3",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cardmarket-games" => {
+      "id" => "cardmarket-games",
+      "method" => "GET",
+      "path" => "/cardmarket/games",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cardmarket-price-guide" => {
+      "id" => "cardmarket-price-guide",
+      "method" => "GET",
+      "path" => "/cardmarket/price-guide",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "kind",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "game",
+            "accessories"
+          ]
+        },
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "1",
+            "2",
+            "3",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33"
+          ]
+        },
+        {
+          "name" => "category_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "product_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "cardmarket-price-guide-categories" => {
+      "id" => "cardmarket-price-guide-categories",
+      "method" => "GET",
+      "path" => "/cardmarket/price-guide/categories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "kind",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "game",
+            "accessories"
+          ]
+        },
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "1",
+            "2",
+            "3",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
       "produces" => [
         "application/json"
       ],
@@ -22448,6 +24541,1215 @@ module Crawlora
         "cursor"
       ]
     },
+    "cricbuzz-archives" => {
+      "id" => "cricbuzz-archives",
+      "method" => "GET",
+      "path" => "/cricbuzz/archives",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "international",
+            "league",
+            "domestic",
+            "women"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-auction-info" => {
+      "id" => "cricbuzz-auction-info",
+      "method" => "GET",
+      "path" => "/cricbuzz/auction/info",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tournament",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-auction-live" => {
+      "id" => "cricbuzz-auction-live",
+      "method" => "GET",
+      "path" => "/cricbuzz/auction/live",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tournament",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "currency",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-auction-live-blog" => {
+      "id" => "cricbuzz-auction-live-blog",
+      "method" => "GET",
+      "path" => "/cricbuzz/auction/live-blog",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tournament",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-auction-news" => {
+      "id" => "cricbuzz-auction-news",
+      "method" => "GET",
+      "path" => "/cricbuzz/auction/news",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tournament",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-auction-options" => {
+      "id" => "cricbuzz-auction-options",
+      "method" => "GET",
+      "path" => "/cricbuzz/auction/options",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tournament",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-auction-player-detail" => {
+      "id" => "cricbuzz-auction-player-detail",
+      "method" => "GET",
+      "path" => "/cricbuzz/auction/player",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tournament",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "currency",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-auction-player-search" => {
+      "id" => "cricbuzz-auction-player-search",
+      "method" => "GET",
+      "path" => "/cricbuzz/auction/player-search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tournament",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-auction-results" => {
+      "id" => "cricbuzz-auction-results",
+      "method" => "GET",
+      "path" => "/cricbuzz/auction/results",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tournament",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "currency",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country_ids",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "statuses",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "role",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "cap",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "cricbuzz-auction-seasons" => {
+      "id" => "cricbuzz-auction-seasons",
+      "method" => "GET",
+      "path" => "/cricbuzz/auction/seasons",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-auction-team-detail" => {
+      "id" => "cricbuzz-auction-team-detail",
+      "method" => "GET",
+      "path" => "/cricbuzz/auction/team",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tournament",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "currency",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-auction-teams" => {
+      "id" => "cricbuzz-auction-teams",
+      "method" => "GET",
+      "path" => "/cricbuzz/auction/teams",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tournament",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "currency",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-auction-teams-options" => {
+      "id" => "cricbuzz-auction-teams-options",
+      "method" => "GET",
+      "path" => "/cricbuzz/auction/teams/options",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tournament",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-auction-upcoming" => {
+      "id" => "cricbuzz-auction-upcoming",
+      "method" => "GET",
+      "path" => "/cricbuzz/auction/upcoming",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tournament",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "currency",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country_ids",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "role",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "cap",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "cricbuzz-auction-upcoming-options" => {
+      "id" => "cricbuzz-auction-upcoming-options",
+      "method" => "GET",
+      "path" => "/cricbuzz/auction/upcoming/options",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tournament",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-auction-videos" => {
+      "id" => "cricbuzz-auction-videos",
+      "method" => "GET",
+      "path" => "/cricbuzz/auction/videos",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tournament",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-match-facts" => {
+      "id" => "cricbuzz-match-facts",
+      "method" => "GET",
+      "path" => "/cricbuzz/match-facts",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "match_url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-match-graphs" => {
+      "id" => "cricbuzz-match-graphs",
+      "method" => "GET",
+      "path" => "/cricbuzz/match-graphs",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "match_url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-match-overs" => {
+      "id" => "cricbuzz-match-overs",
+      "method" => "GET",
+      "path" => "/cricbuzz/match-overs",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "match_url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-matches" => {
+      "id" => "cricbuzz-matches",
+      "method" => "GET",
+      "path" => "/cricbuzz/matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "live",
+            "recent",
+            "upcoming"
+          ]
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "international",
+            "league",
+            "domestic",
+            "women"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-navigation" => {
+      "id" => "cricbuzz-navigation",
+      "method" => "GET",
+      "path" => "/cricbuzz/navigation",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-news-story" => {
+      "id" => "cricbuzz-news-story",
+      "method" => "GET",
+      "path" => "/cricbuzz/news/story",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-news-topics" => {
+      "id" => "cricbuzz-news-topics",
+      "method" => "GET",
+      "path" => "/cricbuzz/news/topics",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-rankings" => {
+      "id" => "cricbuzz-rankings",
+      "method" => "GET",
+      "path" => "/cricbuzz/rankings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "gender",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "men",
+            "women"
+          ]
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "batting",
+            "bowling",
+            "all-rounder",
+            "teams"
+          ]
+        },
+        {
+          "name" => "format",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "test",
+            "odi",
+            "t20"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-records" => {
+      "id" => "cricbuzz-records",
+      "method" => "GET",
+      "path" => "/cricbuzz/records",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "stat",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "mostRuns",
+            "highestScore",
+            "highestAvg",
+            "highestSr",
+            "mostHundreds",
+            "mostFifties",
+            "mostFours",
+            "mostSixes",
+            "mostNineties",
+            "mostWickets",
+            "lowestAvg",
+            "bestBowlingInnings",
+            "mostFiveWickets",
+            "lowestEcon",
+            "lowestSr"
+          ]
+        },
+        {
+          "name" => "format",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "test",
+            "odi",
+            "t20"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "opponent",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-schedule" => {
+      "id" => "cricbuzz-schedule",
+      "method" => "GET",
+      "path" => "/cricbuzz/schedule",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "international",
+            "league",
+            "domestic",
+            "women"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-scorecard" => {
+      "id" => "cricbuzz-scorecard",
+      "method" => "GET",
+      "path" => "/cricbuzz/scorecard",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "match_url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-series" => {
+      "id" => "cricbuzz-series",
+      "method" => "GET",
+      "path" => "/cricbuzz/series",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "international",
+            "domestic",
+            "league",
+            "women"
+          ]
+        },
+        {
+          "name" => "live_stream",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-series-stats" => {
+      "id" => "cricbuzz-series-stats",
+      "method" => "GET",
+      "path" => "/cricbuzz/series/stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "series_url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "stat",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "mostRuns",
+            "highestScore",
+            "highestAvg",
+            "highestSr",
+            "mostHundreds",
+            "mostFifties",
+            "mostFours",
+            "mostSixes",
+            "mostNineties",
+            "mostWickets",
+            "lowestAvg",
+            "bestBowlingInnings",
+            "mostFiveWickets",
+            "lowestEcon",
+            "lowestSr"
+          ]
+        },
+        {
+          "name" => "format",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-team-stats" => {
+      "id" => "cricbuzz-team-stats",
+      "method" => "GET",
+      "path" => "/cricbuzz/team/stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "international",
+            "domestic",
+            "league",
+            "women"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "stat",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "format_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "opponent_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-team-stats-options" => {
+      "id" => "cricbuzz-team-stats-options",
+      "method" => "GET",
+      "path" => "/cricbuzz/team/stats/options",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "international",
+            "domestic",
+            "league",
+            "women"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-teams" => {
+      "id" => "cricbuzz-teams",
+      "method" => "GET",
+      "path" => "/cricbuzz/teams",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "international",
+            "domestic",
+            "league",
+            "women"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-video-categories" => {
+      "id" => "cricbuzz-video-categories",
+      "method" => "GET",
+      "path" => "/cricbuzz/videos/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-video-playlists" => {
+      "id" => "cricbuzz-video-playlists",
+      "method" => "GET",
+      "path" => "/cricbuzz/videos/playlists",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "cricbuzz-wtc" => {
+      "id" => "cricbuzz-wtc",
+      "method" => "GET",
+      "path" => "/cricbuzz/wtc",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "cricinfo-calendar" => {
       "id" => "cricinfo-calendar",
       "method" => "GET",
@@ -24698,6 +28000,214 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "datasets-airbnb-hosts-facets" => {
+      "id" => "datasets-airbnb-hosts-facets",
+      "method" => "GET",
+      "path" => "/datasets/airbnb-hosts/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "superhost",
+            "identity_verified",
+            "listing_count_band",
+            "hosting_years_band",
+            "interest",
+            "verification",
+            "location"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "interest",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "verification",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "is_superhost",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "is_home_host",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "identity_verified",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_listings",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_listings",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_reviews",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_hosting_years",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-airbnb-hosts-item" => {
+      "id" => "datasets-airbnb-hosts-item",
+      "method" => "GET",
+      "path" => "/datasets/airbnb-hosts/items/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-airbnb-hosts-search" => {
+      "id" => "datasets-airbnb-hosts-search",
+      "method" => "GET",
+      "path" => "/datasets/airbnb-hosts/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "interest",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "verification",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "is_superhost",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "is_home_host",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "identity_verified",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_listings",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "max_listings",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_reviews",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_hosting_years",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "review_count_desc",
+            "listing_count_desc",
+            "hosting_years_desc",
+            "relevance"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "datasets-airbnb-markets-facets" => {
       "id" => "datasets-airbnb-markets-facets",
       "method" => "GET",
@@ -24948,6 +28458,275 @@ module Crawlora
             "superhost_pct_desc",
             "rating_desc",
             "key_asc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-apple-books-facets" => {
+      "id" => "datasets-apple-books-facets",
+      "method" => "GET",
+      "path" => "/datasets/apple-books/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "kind",
+            "genres",
+            "artist_name",
+            "publisher",
+            "series_name",
+            "narrator",
+            "provider",
+            "currency",
+            "discovery_country",
+            "discovery_source",
+            "free"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "kind",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "book",
+            "audiobook",
+            "author",
+            "series",
+            "audiobook_series"
+          ]
+        },
+        {
+          "name" => "genre",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "artist",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "artist_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "publisher",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "series",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "narrator",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "provider",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "currency",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "discovery_source",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "free",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_rating_count",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-apple-books-item" => {
+      "id" => "datasets-apple-books-item",
+      "method" => "GET",
+      "path" => "/datasets/apple-books/items/{kind}/{id}",
+      "pathParams" => [
+        "kind",
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-apple-books-search" => {
+      "id" => "datasets-apple-books-search",
+      "method" => "GET",
+      "path" => "/datasets/apple-books/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "kind",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "book",
+            "audiobook",
+            "author",
+            "series",
+            "audiobook_series"
+          ]
+        },
+        {
+          "name" => "genre",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "artist",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "artist_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "publisher",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "series",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "narrator",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "provider",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "currency",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "discovery_source",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "free",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_rating_count",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "rating_count_desc",
+            "rating_desc",
+            "release_date_desc",
+            "name_asc",
+            "crawled_at_desc"
           ]
         },
         {
@@ -25434,6 +29213,150 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "datasets-apps-charts-facets" => {
+      "id" => "datasets-apps-charts-facets",
+      "method" => "GET",
+      "path" => "/datasets/apps-charts/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "store",
+            "collection",
+            "chart_type",
+            "platform",
+            "category",
+            "country",
+            "app_id",
+            "snapshot_date",
+            "free"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "store",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "ios",
+            "android"
+          ]
+        },
+        {
+          "name" => "collection",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "chart_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "top_free",
+            "top_paid",
+            "top_grossing",
+            "new"
+          ]
+        },
+        {
+          "name" => "platform",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "phone",
+            "pad",
+            "mac"
+          ]
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "app_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "free",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "rank",
+            "rank_desc",
+            "date_desc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-apps-charts-item" => {
+      "id" => "datasets-apps-charts-item",
+      "method" => "GET",
+      "path" => "/datasets/apps-charts/items/{chart_uid}",
+      "pathParams" => [
+        "chart_uid"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "datasets-apps-charts-search" => {
       "id" => "datasets-apps-charts-search",
       "method" => "GET",
@@ -25530,6 +29453,110 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "datasets-apps-reviews-facets" => {
+      "id" => "datasets-apps-reviews-facets",
+      "method" => "GET",
+      "path" => "/datasets/apps-reviews/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "store",
+            "app_id",
+            "country",
+            "score"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "store",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "ios",
+            "android"
+          ]
+        },
+        {
+          "name" => "app_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_score",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "recent",
+            "score_desc",
+            "score_asc",
+            "helpful_desc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-apps-reviews-item" => {
+      "id" => "datasets-apps-reviews-item",
+      "method" => "GET",
+      "path" => "/datasets/apps-reviews/items/{review_uid}",
+      "pathParams" => [
+        "review_uid"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "datasets-apps-reviews-search" => {
       "id" => "datasets-apps-reviews-search",
       "method" => "GET",
@@ -25601,6 +29628,149 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "datasets-apps-facets" => {
+      "id" => "datasets-apps-facets",
+      "method" => "GET",
+      "path" => "/datasets/apps/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "store",
+            "platforms",
+            "category",
+            "country",
+            "developer",
+            "free"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "store",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "ios",
+            "android",
+            "both"
+          ]
+        },
+        {
+          "name" => "platforms",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "phone",
+            "pad",
+            "tablet",
+            "mac",
+            "tv",
+            "chromebook",
+            "watch",
+            "vision",
+            "xr",
+            "car",
+            "windows"
+          ]
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "developer",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "free",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_reviews",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "rating_desc",
+            "reviews_desc",
+            "installs_desc",
+            "updated_at_desc",
+            "popularity_desc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-apps-item" => {
+      "id" => "datasets-apps-item",
+      "method" => "GET",
+      "path" => "/datasets/apps/items/{app_uid}",
+      "pathParams" => [
+        "app_uid"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "datasets-apps-search" => {
       "id" => "datasets-apps-search",
       "method" => "GET",
@@ -25626,7 +29796,20 @@ module Crawlora
           "name" => "platforms",
           "in" => "query",
           "collectionFormat" => "csv",
-          "type" => "array"
+          "type" => "array",
+          "enum" => [
+            "phone",
+            "pad",
+            "tablet",
+            "mac",
+            "tv",
+            "chromebook",
+            "watch",
+            "vision",
+            "xr",
+            "car",
+            "windows"
+          ]
         },
         {
           "name" => "category",
@@ -26931,6 +31114,132 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "datasets-creators-facets" => {
+      "id" => "datasets-creators-facets",
+      "method" => "GET",
+      "path" => "/datasets/creators/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "niche",
+            "country",
+            "verified"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "handle",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "niche",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "verified",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "min_followers",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "has_email",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "include_inactive",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "followers_desc",
+            "engagement_desc",
+            "engagement_qualified_desc",
+            "likes_desc",
+            "relevance"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-creators-item" => {
+      "id" => "datasets-creators-item",
+      "method" => "GET",
+      "path" => "/datasets/creators/items/{creator_uid}",
+      "pathParams" => [
+        "creator_uid"
+      ],
+      "queryParams" => [
+        {
+          "name" => "include_inactive",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "include_email",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "datasets-creators-search" => {
       "id" => "datasets-creators-search",
@@ -32796,6 +37105,93 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "datasets-reddit-trending-facets" => {
+      "id" => "datasets-reddit-trending-facets",
+      "method" => "GET",
+      "path" => "/datasets/reddit-trending/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "subreddit",
+            "domain",
+            "snapshot_date"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "subreddit",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "rank",
+            "date_desc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-reddit-trending-item" => {
+      "id" => "datasets-reddit-trending-item",
+      "method" => "GET",
+      "path" => "/datasets/reddit-trending/items/{post_uid}",
+      "pathParams" => [
+        "post_uid"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "datasets-reddit-trending-search" => {
       "id" => "datasets-reddit-trending-search",
       "method" => "GET",
@@ -33517,6 +37913,83 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "datasets-steam-achievements-facets" => {
+      "id" => "datasets-steam-achievements-facets",
+      "method" => "GET",
+      "path" => "/datasets/steam-achievements/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "app_id"
+          ]
+        },
+        {
+          "name" => "app_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "percent_desc",
+            "percent_asc",
+            "rank_asc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-steam-achievements-item" => {
+      "id" => "datasets-steam-achievements-item",
+      "method" => "GET",
+      "path" => "/datasets/steam-achievements/items/{app_id}/{name}",
+      "pathParams" => [
+        "app_id",
+        "name"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "datasets-steam-achievements-search" => {
       "id" => "datasets-steam-achievements-search",
       "method" => "GET",
@@ -33562,6 +38035,110 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "datasets-steam-charts-facets" => {
+      "id" => "datasets-steam-charts-facets",
+      "method" => "GET",
+      "path" => "/datasets/steam-charts/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "chart",
+            "country",
+            "app_id",
+            "snapshot_date"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "chart",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "most_played",
+            "concurrent",
+            "top_sellers"
+          ]
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "app_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "rank",
+            "rank_desc",
+            "date_desc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-steam-charts-item" => {
+      "id" => "datasets-steam-charts-item",
+      "method" => "GET",
+      "path" => "/datasets/steam-charts/items/{chart_uid}",
+      "pathParams" => [
+        "chart_uid"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "datasets-steam-charts-search" => {
       "id" => "datasets-steam-charts-search",
@@ -34048,6 +38625,87 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "datasets-steam-news-facets" => {
+      "id" => "datasets-steam-news-facets",
+      "method" => "GET",
+      "path" => "/datasets/steam-news/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "app_id"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "app_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "date_desc",
+            "date_asc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-steam-news-item" => {
+      "id" => "datasets-steam-news-item",
+      "method" => "GET",
+      "path" => "/datasets/steam-news/items/{app_id}/{gid}",
+      "pathParams" => [
+        "app_id",
+        "gid"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "datasets-steam-news-search" => {
       "id" => "datasets-steam-news-search",
       "method" => "GET",
@@ -34097,6 +38755,89 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "datasets-steam-playercounts-facets" => {
+      "id" => "datasets-steam-playercounts-facets",
+      "method" => "GET",
+      "path" => "/datasets/steam-playercounts/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "app_id",
+            "snapshot_date"
+          ]
+        },
+        {
+          "name" => "app_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "date_desc",
+            "date_asc",
+            "players_desc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-steam-playercounts-item" => {
+      "id" => "datasets-steam-playercounts-item",
+      "method" => "GET",
+      "path" => "/datasets/steam-playercounts/items/{app_id}/{snapshot_date}",
+      "pathParams" => [
+        "app_id",
+        "snapshot_date"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "datasets-steam-playercounts-search" => {
       "id" => "datasets-steam-playercounts-search",
@@ -34148,6 +38889,91 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "datasets-steam-prices-facets" => {
+      "id" => "datasets-steam-prices-facets",
+      "method" => "GET",
+      "path" => "/datasets/steam-prices/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "app_id",
+            "snapshot_date"
+          ]
+        },
+        {
+          "name" => "app_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "date_desc",
+            "date_asc",
+            "price_asc",
+            "price_desc",
+            "discount_desc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-steam-prices-item" => {
+      "id" => "datasets-steam-prices-item",
+      "method" => "GET",
+      "path" => "/datasets/steam-prices/items/{app_id}/{snapshot_date}",
+      "pathParams" => [
+        "app_id",
+        "snapshot_date"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "datasets-steam-prices-search" => {
       "id" => "datasets-steam-prices-search",
@@ -34202,6 +39028,100 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "datasets-steam-reviews-facets" => {
+      "id" => "datasets-steam-reviews-facets",
+      "method" => "GET",
+      "path" => "/datasets/steam-reviews/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "app_id",
+            "language",
+            "voted_up"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "app_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "voted_up",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "votes_desc",
+            "weighted_desc",
+            "date_desc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-steam-reviews-item" => {
+      "id" => "datasets-steam-reviews-item",
+      "method" => "GET",
+      "path" => "/datasets/steam-reviews/items/{app_id}/{recommendation_id}",
+      "pathParams" => [
+        "app_id",
+        "recommendation_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "datasets-steam-reviews-search" => {
       "id" => "datasets-steam-reviews-search",
       "method" => "GET",
@@ -34236,6 +39156,169 @@ module Crawlora
             "votes_desc",
             "weighted_desc",
             "date_desc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-substack-facets" => {
+      "id" => "datasets-substack-facets",
+      "method" => "GET",
+      "path" => "/datasets/substack/facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "kind",
+            "language"
+          ]
+        },
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "kind",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "user",
+            "publication"
+          ]
+        },
+        {
+          "name" => "identifier",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "name_asc",
+            "hydrated_at_desc",
+            "hydrated_at_asc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "datasets-substack-item" => {
+      "id" => "datasets-substack-item",
+      "method" => "GET",
+      "path" => "/datasets/substack/items/{uid}",
+      "pathParams" => [
+        "uid"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "datasets-substack-search" => {
+      "id" => "datasets-substack-search",
+      "method" => "GET",
+      "path" => "/datasets/substack/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "kind",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "user",
+            "publication"
+          ]
+        },
+        {
+          "name" => "identifier",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "name_asc",
+            "hydrated_at_desc",
+            "hydrated_at_asc"
           ]
         },
         {
@@ -37133,6 +42216,504 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "dollartree-blog-article" => {
+      "id" => "dollartree-blog-article",
+      "method" => "GET",
+      "path" => "/dollartree/blog/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "article_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "dollartree-categories" => {
+      "id" => "dollartree-categories",
+      "method" => "GET",
+      "path" => "/dollartree/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "dollartree-price" => {
+      "id" => "dollartree-price",
+      "method" => "GET",
+      "path" => "/dollartree/price",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "product_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "dollartree-product" => {
+      "id" => "dollartree-product",
+      "method" => "GET",
+      "path" => "/dollartree/product",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "product_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "dollartree-products" => {
+      "id" => "dollartree-products",
+      "method" => "GET",
+      "path" => "/dollartree/products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "product_ids",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "dollartree-search" => {
+      "id" => "dollartree-search",
+      "method" => "GET",
+      "path" => "/dollartree/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "navigation_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "navigation_state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "48",
+            "72",
+            "96"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "product.x_unitPriceNumeric|0",
+            "product.x_unitPriceNumeric|1",
+            "DollarProductType.new|1",
+            "DollarProductType.averageRating|1",
+            "product.displayName|0",
+            "product.displayName|1",
+            "product.casePrice|1",
+            "DollarProductType.numberOfReviews|1"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "dollartree-stock-status" => {
+      "id" => "dollartree-stock-status",
+      "method" => "GET",
+      "path" => "/dollartree/stock-status",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "product_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "sku_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "dollartree-keyword-typeahead" => {
+      "id" => "dollartree-keyword-typeahead",
+      "method" => "GET",
+      "path" => "/dollartree/typeahead/keywords",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "viewport",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "xs",
+            "sm",
+            "md",
+            "lg"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "dollartree-product-typeahead" => {
+      "id" => "dollartree-product-typeahead",
+      "method" => "GET",
+      "path" => "/dollartree/typeahead/products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "viewport",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "xs",
+            "sm",
+            "md",
+            "lg"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "domain-dns-record-types" => {
+      "id" => "domain-dns-record-types",
+      "method" => "GET",
+      "path" => "/domain/dns/record-types",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "domain-dns-resolve" => {
+      "id" => "domain-dns-resolve",
+      "method" => "GET",
+      "path" => "/domain/dns/resolve",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "name",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "A",
+            "AAAA",
+            "CAA",
+            "CNAME",
+            "DS",
+            "HTTPS",
+            "MX",
+            "NS",
+            "SOA",
+            "TXT"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "domain-rdap-domain" => {
+      "id" => "domain-rdap-domain",
+      "method" => "GET",
+      "path" => "/domain/rdap/domain/{domain}",
+      "pathParams" => [
+        "domain"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "domain-rdap-ip" => {
+      "id" => "domain-rdap-ip",
+      "method" => "GET",
+      "path" => "/domain/rdap/ip",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "ip",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "domain-robots" => {
+      "id" => "domain-robots",
+      "method" => "GET",
+      "path" => "/domain/robots/{domain}",
+      "pathParams" => [
+        "domain"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "domain-site" => {
+      "id" => "domain-site",
+      "method" => "GET",
+      "path" => "/domain/site/{domain}",
+      "pathParams" => [
+        "domain"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "domain-subdomains" => {
+      "id" => "domain-subdomains",
+      "method" => "GET",
+      "path" => "/domain/subdomains/{domain}",
+      "pathParams" => [
+        "domain"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "domain-wayback-availability" => {
+      "id" => "domain-wayback-availability",
+      "method" => "GET",
+      "path" => "/domain/wayback/availability/{domain}",
+      "pathParams" => [
+        "domain"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "domain-wayback-cdx" => {
+      "id" => "domain-wayback-cdx",
+      "method" => "GET",
+      "path" => "/domain/wayback/cdx/{domain}",
+      "pathParams" => [
+        "domain"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "dominos-coupons" => {
       "id" => "dominos-coupons",
@@ -42180,6 +47761,1391 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "faceit-ban-reasons" => {
+      "id" => "faceit-ban-reasons",
+      "method" => "GET",
+      "path" => "/faceit/ban-reasons",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-banlist" => {
+      "id" => "faceit-banlist",
+      "method" => "GET",
+      "path" => "/faceit/banlist",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "size",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "reason",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "faceit-banlist-stats" => {
+      "id" => "faceit-banlist-stats",
+      "method" => "GET",
+      "path" => "/faceit/banlist-stats",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-best-clips" => {
+      "id" => "faceit-best-clips",
+      "method" => "GET",
+      "path" => "/faceit/best-clips",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "cs2"
+          ]
+        },
+        {
+          "name" => "user_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-championship" => {
+      "id" => "faceit-championship",
+      "method" => "GET",
+      "path" => "/faceit/championship",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-championship-bracket" => {
+      "id" => "faceit-championship-bracket",
+      "method" => "GET",
+      "path" => "/faceit/championship-bracket",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "group",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "round",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "start",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "start"
+      ]
+    },
+    "faceit-championship-participants" => {
+      "id" => "faceit-championship-participants",
+      "method" => "GET",
+      "path" => "/faceit/championship-participants",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "faceit-championship-search" => {
+      "id" => "faceit-championship-search",
+      "method" => "GET",
+      "path" => "/faceit/championship-search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "entity_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "status",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "ONGOING",
+            "UPCOMING",
+            "FINISHED"
+          ]
+        },
+        {
+          "name" => "subtype",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ]
+        },
+        {
+          "name" => "has_drops",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "faceit-clip" => {
+      "id" => "faceit-clip",
+      "method" => "GET",
+      "path" => "/faceit/clip",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-clips" => {
+      "id" => "faceit-clips",
+      "method" => "GET",
+      "path" => "/faceit/clips",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "cs2"
+          ]
+        },
+        {
+          "name" => "user_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "faceit-competition-matches" => {
+      "id" => "faceit-competition-matches",
+      "method" => "GET",
+      "path" => "/faceit/competition-matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "faceit-fpl" => {
+      "id" => "faceit-fpl",
+      "method" => "GET",
+      "path" => "/faceit/fpl",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "faceit-game-modes" => {
+      "id" => "faceit-game-modes",
+      "method" => "GET",
+      "path" => "/faceit/game-modes",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ]
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-games" => {
+      "id" => "faceit-games",
+      "method" => "GET",
+      "path" => "/faceit/games",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-hub" => {
+      "id" => "faceit-hub",
+      "method" => "GET",
+      "path" => "/faceit/hub",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-hub-categories" => {
+      "id" => "faceit-hub-categories",
+      "method" => "GET",
+      "path" => "/faceit/hub-categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-hub-memberships" => {
+      "id" => "faceit-hub-memberships",
+      "method" => "GET",
+      "path" => "/faceit/hub-memberships",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "user_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "community",
+            "chat",
+            "ihl"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "faceit-hubs" => {
+      "id" => "faceit-hubs",
+      "method" => "GET",
+      "path" => "/faceit/hubs",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "ids",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-hubs-detailed" => {
+      "id" => "faceit-hubs-detailed",
+      "method" => "GET",
+      "path" => "/faceit/hubs-detailed",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "ids",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-leaderboard" => {
+      "id" => "faceit-leaderboard",
+      "method" => "GET",
+      "path" => "/faceit/leaderboard",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ]
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "faceit-leaderboard-detail" => {
+      "id" => "faceit-leaderboard-detail",
+      "method" => "GET",
+      "path" => "/faceit/leaderboard-detail",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-leaderboard-statuses" => {
+      "id" => "faceit-leaderboard-statuses",
+      "method" => "GET",
+      "path" => "/faceit/leaderboard-statuses",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-maps" => {
+      "id" => "faceit-maps",
+      "method" => "GET",
+      "path" => "/faceit/maps",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-match-clips" => {
+      "id" => "faceit-match-clips",
+      "method" => "GET",
+      "path" => "/faceit/match-clips",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "cs2"
+          ]
+        },
+        {
+          "name" => "match_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "faceit-organizer" => {
+      "id" => "faceit-organizer",
+      "method" => "GET",
+      "path" => "/faceit/organizer",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-player" => {
+      "id" => "faceit-player",
+      "method" => "GET",
+      "path" => "/faceit/player",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "nickname",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "user_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-player-rank" => {
+      "id" => "faceit-player-rank",
+      "method" => "GET",
+      "path" => "/faceit/player-rank",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ]
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "nickname",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "user_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-regions" => {
+      "id" => "faceit-regions",
+      "method" => "GET",
+      "path" => "/faceit/regions",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-rule" => {
+      "id" => "faceit-rule",
+      "method" => "GET",
+      "path" => "/faceit/rule",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-rules" => {
+      "id" => "faceit-rules",
+      "method" => "GET",
+      "path" => "/faceit/rules",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "faceit-skill-levels" => {
+      "id" => "faceit-skill-levels",
+      "method" => "GET",
+      "path" => "/faceit/skill-levels",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-standings" => {
+      "id" => "faceit-standings",
+      "method" => "GET",
+      "path" => "/faceit/standings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "entity_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "group",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "round",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "segment",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "match",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-team" => {
+      "id" => "faceit-team",
+      "method" => "GET",
+      "path" => "/faceit/team",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-tournaments-past" => {
+      "id" => "faceit-tournaments-past",
+      "method" => "GET",
+      "path" => "/faceit/tournaments-past",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "nickname",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "faceit-user-skills" => {
+      "id" => "faceit-user-skills",
+      "method" => "GET",
+      "path" => "/faceit/user-skills",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "user_ids",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array",
+          "required" => true
+        },
+        {
+          "name" => "game",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "fanatics-categories" => {
       "id" => "fanatics-categories",
       "method" => "GET",
@@ -42345,12 +49311,172 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "fanaticscollect-instant-pack-release" => {
+      "id" => "fanaticscollect-instant-pack-release",
+      "method" => "GET",
+      "path" => "/fanaticscollect/instant-packs/release",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "checklist_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fanaticscollect-instant-pack-releases" => {
+      "id" => "fanaticscollect-instant-pack-releases",
+      "method" => "GET",
+      "path" => "/fanaticscollect/instant-packs/releases",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "fanaticscollect-instant-rips-categories" => {
       "id" => "fanaticscollect-instant-rips-categories",
       "method" => "GET",
       "path" => "/fanaticscollect/instant-rips/categories",
       "pathParams" => [],
       "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fanaticscollect-instant-rips-pack-categories" => {
+      "id" => "fanaticscollect-instant-rips-pack-categories",
+      "method" => "GET",
+      "path" => "/fanaticscollect/instant-rips/pack-categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fanaticscollect-instant-rips-pack-checklist" => {
+      "id" => "fanaticscollect-instant-rips-pack-checklist",
+      "method" => "GET",
+      "path" => "/fanaticscollect/instant-rips/pack-checklist",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "checklist_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "tier",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "BASE",
+            "CHASE",
+            "GRAIL"
+          ]
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "fanaticscollect-instant-rips-packs" => {
+      "id" => "fanaticscollect-instant-rips-packs",
+      "method" => "GET",
+      "path" => "/fanaticscollect/instant-rips/packs",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fanaticscollect-recently-ripped" => {
+      "id" => "fanaticscollect-recently-ripped",
+      "method" => "GET",
+      "path" => "/fanaticscollect/instant-rips/recently-ripped",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "checklist_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -42383,6 +49509,70 @@ module Crawlora
           ]
         }
       ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fanaticscollect-newsroom" => {
+      "id" => "fanaticscollect-newsroom",
+      "method" => "GET",
+      "path" => "/fanaticscollect/newsroom",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tags",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort_by",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "newest",
+            "oldest"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "fanaticscollect-newsroom-filters" => {
+      "id" => "fanaticscollect-newsroom-filters",
+      "method" => "GET",
+      "path" => "/fanaticscollect/newsroom/filters",
+      "pathParams" => [],
+      "queryParams" => [],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -47480,6 +54670,225 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "fever-cities" => {
+      "id" => "fever-cities",
+      "method" => "GET",
+      "path" => "/fever/cities",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "locale",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fever-feed" => {
+      "id" => "fever-feed",
+      "method" => "GET",
+      "path" => "/fever/feed",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "city_code",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "pill_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fever-filters" => {
+      "id" => "fever-filters",
+      "method" => "GET",
+      "path" => "/fever/filters",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "city_code",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fever-plan" => {
+      "id" => "fever-plan",
+      "method" => "GET",
+      "path" => "/fever/plan",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "plan_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fever-plans" => {
+      "id" => "fever-plans",
+      "method" => "GET",
+      "path" => "/fever/plans",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "city_code",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "locale",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "whatplanfilter_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_start",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "date_end",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "popularity",
+            "price",
+            "rating",
+            "closest_session",
+            "distance",
+            "random",
+            "id"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "fever-top-cities" => {
+      "id" => "fever-top-cities",
+      "method" => "GET",
+      "path" => "/fever/top-cities",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "fiveguys-directory" => {
       "id" => "fiveguys-directory",
       "method" => "GET",
@@ -48095,6 +55504,32 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "flashscore-match-commentary" => {
+      "id" => "flashscore-match-commentary",
+      "method" => "GET",
+      "path" => "/flashscore/match-commentary",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "flashscore-match-darts" => {
       "id" => "flashscore-match-darts",
       "method" => "GET",
@@ -48151,6 +55586,32 @@ module Crawlora
       "id" => "flashscore-match-highlights",
       "method" => "GET",
       "path" => "/flashscore/match-highlights",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "flashscore-match-incidents" => {
+      "id" => "flashscore-match-incidents",
+      "method" => "GET",
+      "path" => "/flashscore/match-incidents",
       "pathParams" => [],
       "queryParams" => [
         {
@@ -48638,6 +56099,32 @@ module Crawlora
       "id" => "flashscore-match-predicted-lineups",
       "method" => "GET",
       "path" => "/flashscore/match-predicted-lineups",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "flashscore-match-prematch-scorers" => {
+      "id" => "flashscore-match-prematch-scorers",
+      "method" => "GET",
+      "path" => "/flashscore/match-prematch-scorers",
       "pathParams" => [],
       "queryParams" => [
         {
@@ -49993,6 +57480,38 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "flashscore-tournament-draw" => {
+      "id" => "flashscore-tournament-draw",
+      "method" => "GET",
+      "path" => "/flashscore/tournament-draw",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tournament_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "stage_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "flashscore-tournament-events" => {
       "id" => "flashscore-tournament-events",
       "method" => "GET",
@@ -50344,6 +57863,238 @@ module Crawlora
       "security" => [
         "ApiKeyAuth"
       ]
+    },
+    "flickreels-classify" => {
+      "id" => "flickreels-classify",
+      "method" => "GET",
+      "path" => "/flickreels/classify",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tag_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "en",
+            "ja",
+            "ko",
+            "tc",
+            "es",
+            "id",
+            "th",
+            "de",
+            "pt",
+            "fr"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "flickreels-genres" => {
+      "id" => "flickreels-genres",
+      "method" => "GET",
+      "path" => "/flickreels/genres",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "en",
+            "ja",
+            "ko",
+            "tc",
+            "es",
+            "id",
+            "th",
+            "de",
+            "pt",
+            "fr"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "flickreels-home" => {
+      "id" => "flickreels-home",
+      "method" => "GET",
+      "path" => "/flickreels/home",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "en",
+            "ja",
+            "ko",
+            "tc",
+            "es",
+            "id",
+            "th",
+            "de",
+            "pt",
+            "fr"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "flickreels-movie" => {
+      "id" => "flickreels-movie",
+      "method" => "GET",
+      "path" => "/flickreels/movie",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "title_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "en",
+            "ja",
+            "ko",
+            "tc",
+            "es",
+            "id",
+            "th",
+            "de",
+            "pt",
+            "fr"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "flickreels-shelf" => {
+      "id" => "flickreels-shelf",
+      "method" => "GET",
+      "path" => "/flickreels/shelf",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "shelf_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "en",
+            "ja",
+            "ko",
+            "tc",
+            "es",
+            "id",
+            "th",
+            "de",
+            "pt",
+            "fr"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
     },
     "foodpanda-restaurant" => {
       "id" => "foodpanda-restaurant",
@@ -51058,6 +58809,823 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "formula1-driver" => {
+      "id" => "formula1-driver",
+      "method" => "GET",
+      "path" => "/formula1/driver",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "driver_slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-driver-grid" => {
+      "id" => "formula1-driver-grid",
+      "method" => "GET",
+      "path" => "/formula1/driver-grid",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-driver-season-results" => {
+      "id" => "formula1-driver-season-results",
+      "method" => "GET",
+      "path" => "/formula1/driver-season-results",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "driver_code",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "driver_slug",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-driver-standings" => {
+      "id" => "formula1-driver-standings",
+      "method" => "GET",
+      "path" => "/formula1/driver-standings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-filters" => {
+      "id" => "formula1-filters",
+      "method" => "GET",
+      "path" => "/formula1/filters",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-json-awards" => {
+      "id" => "formula1-json-awards",
+      "method" => "GET",
+      "path" => "/formula1/json/awards",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-json-constructors" => {
+      "id" => "formula1-json-constructors",
+      "method" => "GET",
+      "path" => "/formula1/json/constructors",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-json-driver-assembly" => {
+      "id" => "formula1-json-driver-assembly",
+      "method" => "GET",
+      "path" => "/formula1/json/driver-assembly",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "reference",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "identifier",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-json-drivers" => {
+      "id" => "formula1-json-drivers",
+      "method" => "GET",
+      "path" => "/formula1/json/drivers",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-json-editorial" => {
+      "id" => "formula1-json-editorial",
+      "method" => "GET",
+      "path" => "/formula1/json/editorial",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "resource",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "events",
+            "driver-listing",
+            "constructor-listing",
+            "race-calendar",
+            "results-archive"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-json-event-tracker" => {
+      "id" => "formula1-json-event-tracker",
+      "method" => "GET",
+      "path" => "/formula1/json/event-tracker",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-json-meeting-datasets" => {
+      "id" => "formula1-json-meeting-datasets",
+      "method" => "GET",
+      "path" => "/formula1/json/meeting-datasets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "meeting",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-json-meetings" => {
+      "id" => "formula1-json-meetings",
+      "method" => "GET",
+      "path" => "/formula1/json/meetings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-json-race-assembly" => {
+      "id" => "formula1-json-race-assembly",
+      "method" => "GET",
+      "path" => "/formula1/json/race-assembly",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "meeting",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "identifier",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-json-results" => {
+      "id" => "formula1-json-results",
+      "method" => "GET",
+      "path" => "/formula1/json/results",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "meeting",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "dataset",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "race",
+            "qualifying",
+            "starting-grid",
+            "pitstops",
+            "fastestlaps",
+            "sprint",
+            "sprint-grid",
+            "sprint-shootout",
+            "practice"
+          ]
+        },
+        {
+          "name" => "session",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-json-season-award" => {
+      "id" => "formula1-json-season-award",
+      "method" => "GET",
+      "path" => "/formula1/json/season-award",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "award",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "fastest-laps",
+            "pole-positions",
+            "fastest-pit-stops",
+            "driver-of-the-day"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-json-team-assembly" => {
+      "id" => "formula1-json-team-assembly",
+      "method" => "GET",
+      "path" => "/formula1/json/team-assembly",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "identifier",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-meetings" => {
+      "id" => "formula1-meetings",
+      "method" => "GET",
+      "path" => "/formula1/meetings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-race-calendar" => {
+      "id" => "formula1-race-calendar",
+      "method" => "GET",
+      "path" => "/formula1/race-calendar",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-race-hub" => {
+      "id" => "formula1-race-hub",
+      "method" => "GET",
+      "path" => "/formula1/race-hub",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "event_slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-season-awards" => {
+      "id" => "formula1-season-awards",
+      "method" => "GET",
+      "path" => "/formula1/season-awards",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "award",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "fastest-laps",
+            "pole-positions",
+            "fastest-pit-stops",
+            "driver-of-the-day"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-season-results" => {
+      "id" => "formula1-season-results",
+      "method" => "GET",
+      "path" => "/formula1/season-results",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-seasons" => {
+      "id" => "formula1-seasons",
+      "method" => "GET",
+      "path" => "/formula1/seasons",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-session-results" => {
+      "id" => "formula1-session-results",
+      "method" => "GET",
+      "path" => "/formula1/session-results",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "meeting_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "session",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "race-result",
+            "qualifying",
+            "starting-grid",
+            "practice-1",
+            "practice-2",
+            "practice-3",
+            "pit-stop-summary",
+            "fastest-laps",
+            "sprint-results",
+            "sprint-grid",
+            "sprint-qualifying"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "meeting_slug",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-team" => {
+      "id" => "formula1-team",
+      "method" => "GET",
+      "path" => "/formula1/team",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-team-grid" => {
+      "id" => "formula1-team-grid",
+      "method" => "GET",
+      "path" => "/formula1/team-grid",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-team-season-results" => {
+      "id" => "formula1-team-season-results",
+      "method" => "GET",
+      "path" => "/formula1/team-season-results",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "formula1-team-standings" => {
+      "id" => "formula1-team-standings",
+      "method" => "GET",
+      "path" => "/formula1/team-standings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "fortune-article" => {
       "id" => "fortune-article",
@@ -53058,6 +61626,201 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "fresha-landing-venues" => {
+      "id" => "fresha-landing-venues",
+      "method" => "GET",
+      "path" => "/fresha/landing-venues",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "business_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "treatment_type",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fresha-search-venues" => {
+      "id" => "fresha-search-venues",
+      "method" => "GET",
+      "path" => "/fresha/search-venues",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "DISTANCE",
+            "RATING",
+            "RECOMMENDED"
+          ]
+        },
+        {
+          "name" => "min_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "service_gender",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "EVERYONE",
+            "MALE",
+            "FEMALE"
+          ]
+        },
+        {
+          "name" => "awards",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "BEST_IN_CLASS",
+            "HIGHLY_RECOMMENDED"
+          ]
+        },
+        {
+          "name" => "treatment_category_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "treatment_tag_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "treatment_type_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "first",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "fresha-taxonomy" => {
+      "id" => "fresha-taxonomy",
+      "method" => "GET",
+      "path" => "/fresha/taxonomy",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "first",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "start",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "start"
+      ]
+    },
+    "fresha-venue" => {
+      "id" => "fresha-venue",
+      "method" => "GET",
+      "path" => "/fresha/venue",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "ft-article" => {
       "id" => "ft-article",
       "method" => "GET",
@@ -54516,6 +63279,1005 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "futgg-fc27-catalog" => {
+      "id" => "futgg-fc27-catalog",
+      "method" => "GET",
+      "path" => "/futgg/fc27/catalog",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "futgg-fc27-definitions" => {
+      "id" => "futgg-fc27-definitions",
+      "method" => "GET",
+      "path" => "/futgg/fc27/definitions",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "ids",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "futgg-fc27-evolutions" => {
+      "id" => "futgg-fc27-evolutions",
+      "method" => "GET",
+      "path" => "/futgg/fc27/evolutions",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "only_expired",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "include_cosmetics",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "no_pagination",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "futgg-fc27-evolution" => {
+      "id" => "futgg-fc27-evolution",
+      "method" => "GET",
+      "path" => "/futgg/fc27/evolutions/{slug}",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "futgg-fc27-gg-rating-ranks" => {
+      "id" => "futgg-fc27-gg-rating-ranks",
+      "method" => "GET",
+      "path" => "/futgg/fc27/gg-rating-ranks",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "futgg-fc27-gg-ratings" => {
+      "id" => "futgg-fc27-gg-ratings",
+      "method" => "GET",
+      "path" => "/futgg/fc27/gg-ratings",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "futgg-fc27-objective-categories" => {
+      "id" => "futgg-fc27-objective-categories",
+      "method" => "GET",
+      "path" => "/futgg/fc27/objective-categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "futgg-fc27-objective-groups" => {
+      "id" => "futgg-fc27-objective-groups",
+      "method" => "GET",
+      "path" => "/futgg/fc27/objectives",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "category_slug",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "coming-soon",
+            "foundations",
+            "seasonal",
+            "campaigns",
+            "live-events",
+            "milestones",
+            "mastery",
+            "fc-pro"
+          ]
+        },
+        {
+          "name" => "no_pagination",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "hide_expired",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "include_unreleased",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "futgg-fc27-objective-group-by-ea" => {
+      "id" => "futgg-fc27-objective-group-by-ea",
+      "method" => "GET",
+      "path" => "/futgg/fc27/objectives/by-ea/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "futgg-fc27-objective-group-by-objective" => {
+      "id" => "futgg-fc27-objective-group-by-objective",
+      "method" => "GET",
+      "path" => "/futgg/fc27/objectives/by-objective/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "futgg-fc27-objective-group" => {
+      "id" => "futgg-fc27-objective-group",
+      "method" => "GET",
+      "path" => "/futgg/fc27/objectives/{slug}",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "futgg-fc27-player-sorts" => {
+      "id" => "futgg-fc27-player-sorts",
+      "method" => "GET",
+      "path" => "/futgg/fc27/player-sorts",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "platform",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "console",
+            "pc"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "futgg-fc27-players" => {
+      "id" => "futgg-fc27-players",
+      "method" => "GET",
+      "path" => "/futgg/fc27/players",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "nation_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "club_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "rarity_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "positions",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "0",
+            "3",
+            "5",
+            "7",
+            "10",
+            "12",
+            "14",
+            "16",
+            "18",
+            "23",
+            "25",
+            "27"
+          ]
+        },
+        {
+          "name" => "foot",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "1",
+            "2"
+          ]
+        },
+        {
+          "name" => "gender",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "1",
+            "2"
+          ]
+        },
+        {
+          "name" => "body_types",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ]
+        },
+        {
+          "name" => "accelerate_types",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "1",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "name" => "name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "skill_moves",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        },
+        {
+          "name" => "weak_foot",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        },
+        {
+          "name" => "holographic_type",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "1",
+            "2"
+          ]
+        },
+        {
+          "name" => "show_holographics",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "true",
+            "only"
+          ]
+        },
+        {
+          "name" => "overall__gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "overall__lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "grading_score__gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "grading_score__lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "price__gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "price__lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "number_of_positions__gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "number_of_positions__lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "playstyles_count__gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "playstyles_count__lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "playstyles_plus_count__gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "playstyles_plus_count__lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "role_plus_count__gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "role_plus_count__lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "role_plus_plus_count__gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "role_plus_plus_count__lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "pc_price__gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "pc_price__lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "count",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sorts",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "-attribute_acceleration",
+            "-attribute_aggression",
+            "-attribute_agility",
+            "-attribute_balance",
+            "-attribute_ball_control",
+            "-attribute_composure",
+            "-attribute_crossing",
+            "-attribute_curve",
+            "-attribute_defensive_awareness",
+            "-attribute_dribbling",
+            "-attribute_finishing",
+            "-attribute_fk_accuracy",
+            "-attribute_gk_diving",
+            "-attribute_gk_handling",
+            "-attribute_gk_kicking",
+            "-attribute_gk_positioning",
+            "-attribute_gk_reflexes",
+            "-attribute_heading_accuracy",
+            "-attribute_interceptions",
+            "-attribute_jumping",
+            "-attribute_long_passing",
+            "-attribute_long_shots",
+            "-attribute_penalties",
+            "-attribute_positioning",
+            "-attribute_reactions",
+            "-attribute_short_passing",
+            "-attribute_shot_power",
+            "-attribute_sliding_tackle",
+            "-attribute_sprint_speed",
+            "-attribute_stamina",
+            "-attribute_standing_tackle",
+            "-attribute_strength",
+            "-attribute_vision",
+            "-attribute_volleys",
+            "-created_at",
+            "-current_price",
+            "-face_defending",
+            "-face_dribbling",
+            "-face_pace",
+            "-face_passing",
+            "-face_physicality",
+            "-face_shooting",
+            "-gg_rating",
+            "-gk_face_diving",
+            "-gk_face_handling",
+            "-gk_face_kicking",
+            "-gk_face_positioning",
+            "-gk_face_reflexes",
+            "-gk_face_speed",
+            "-grading_score",
+            "-number_of_all_playstyles",
+            "-number_of_playstyles",
+            "-number_of_playstyles_plus",
+            "-overall",
+            "-pc_current_price",
+            "-pos_0_gg_rating",
+            "-pos_10_gg_rating",
+            "-pos_12_gg_rating",
+            "-pos_14_gg_rating",
+            "-pos_16_gg_rating",
+            "-pos_18_gg_rating",
+            "-pos_23_gg_rating",
+            "-pos_25_gg_rating",
+            "-pos_27_gg_rating",
+            "-pos_3_gg_rating",
+            "-pos_5_gg_rating",
+            "-pos_7_gg_rating",
+            "-role_10_gg_rating",
+            "-role_11_gg_rating",
+            "-role_12_gg_rating",
+            "-role_13_gg_rating",
+            "-role_14_gg_rating",
+            "-role_15_gg_rating",
+            "-role_16_gg_rating",
+            "-role_17_gg_rating",
+            "-role_1_gg_rating",
+            "-role_23_gg_rating",
+            "-role_24_gg_rating",
+            "-role_25_gg_rating",
+            "-role_26_gg_rating",
+            "-role_27_gg_rating",
+            "-role_2_gg_rating",
+            "-role_37_gg_rating",
+            "-role_38_gg_rating",
+            "-role_39_gg_rating",
+            "-role_3_gg_rating",
+            "-role_40_gg_rating",
+            "-role_45_gg_rating",
+            "-role_46_gg_rating",
+            "-role_47_gg_rating",
+            "-role_48_gg_rating",
+            "-role_49_gg_rating",
+            "-role_4_gg_rating",
+            "-role_50_gg_rating",
+            "-role_51_gg_rating",
+            "-role_52_gg_rating",
+            "-role_53_gg_rating",
+            "-role_54_gg_rating",
+            "-role_55_gg_rating",
+            "-role_56_gg_rating",
+            "-role_57_gg_rating",
+            "-role_58_gg_rating",
+            "-role_5_gg_rating",
+            "-role_63_gg_rating",
+            "-role_64_gg_rating",
+            "-role_65_gg_rating",
+            "-role_66_gg_rating",
+            "-role_6_gg_rating",
+            "-role_71_gg_rating",
+            "-role_72_gg_rating",
+            "-role_74_gg_rating",
+            "-role_75_gg_rating",
+            "-role_7_gg_rating",
+            "-role_8_gg_rating",
+            "-role_9_gg_rating",
+            "-total_face_stats",
+            "-total_igs",
+            "attribute_acceleration",
+            "attribute_aggression",
+            "attribute_agility",
+            "attribute_balance",
+            "attribute_ball_control",
+            "attribute_composure",
+            "attribute_crossing",
+            "attribute_curve",
+            "attribute_defensive_awareness",
+            "attribute_dribbling",
+            "attribute_finishing",
+            "attribute_fk_accuracy",
+            "attribute_gk_diving",
+            "attribute_gk_handling",
+            "attribute_gk_kicking",
+            "attribute_gk_positioning",
+            "attribute_gk_reflexes",
+            "attribute_heading_accuracy",
+            "attribute_interceptions",
+            "attribute_jumping",
+            "attribute_long_passing",
+            "attribute_long_shots",
+            "attribute_penalties",
+            "attribute_positioning",
+            "attribute_reactions",
+            "attribute_short_passing",
+            "attribute_shot_power",
+            "attribute_sliding_tackle",
+            "attribute_sprint_speed",
+            "attribute_stamina",
+            "attribute_standing_tackle",
+            "attribute_strength",
+            "attribute_vision",
+            "attribute_volleys",
+            "created_at",
+            "current_price",
+            "face_defending",
+            "face_dribbling",
+            "face_pace",
+            "face_passing",
+            "face_physicality",
+            "face_shooting",
+            "gg_rating",
+            "gk_face_diving",
+            "gk_face_handling",
+            "gk_face_kicking",
+            "gk_face_positioning",
+            "gk_face_reflexes",
+            "gk_face_speed",
+            "grading_score",
+            "number_of_all_playstyles",
+            "number_of_playstyles",
+            "number_of_playstyles_plus",
+            "overall",
+            "pc_current_price",
+            "pos_0_gg_rating",
+            "pos_10_gg_rating",
+            "pos_12_gg_rating",
+            "pos_14_gg_rating",
+            "pos_16_gg_rating",
+            "pos_18_gg_rating",
+            "pos_23_gg_rating",
+            "pos_25_gg_rating",
+            "pos_27_gg_rating",
+            "pos_3_gg_rating",
+            "pos_5_gg_rating",
+            "pos_7_gg_rating",
+            "role_10_gg_rating",
+            "role_11_gg_rating",
+            "role_12_gg_rating",
+            "role_13_gg_rating",
+            "role_14_gg_rating",
+            "role_15_gg_rating",
+            "role_16_gg_rating",
+            "role_17_gg_rating",
+            "role_1_gg_rating",
+            "role_23_gg_rating",
+            "role_24_gg_rating",
+            "role_25_gg_rating",
+            "role_26_gg_rating",
+            "role_27_gg_rating",
+            "role_2_gg_rating",
+            "role_37_gg_rating",
+            "role_38_gg_rating",
+            "role_39_gg_rating",
+            "role_3_gg_rating",
+            "role_40_gg_rating",
+            "role_45_gg_rating",
+            "role_46_gg_rating",
+            "role_47_gg_rating",
+            "role_48_gg_rating",
+            "role_49_gg_rating",
+            "role_4_gg_rating",
+            "role_50_gg_rating",
+            "role_51_gg_rating",
+            "role_52_gg_rating",
+            "role_53_gg_rating",
+            "role_54_gg_rating",
+            "role_55_gg_rating",
+            "role_56_gg_rating",
+            "role_57_gg_rating",
+            "role_58_gg_rating",
+            "role_5_gg_rating",
+            "role_63_gg_rating",
+            "role_64_gg_rating",
+            "role_65_gg_rating",
+            "role_66_gg_rating",
+            "role_6_gg_rating",
+            "role_71_gg_rating",
+            "role_72_gg_rating",
+            "role_74_gg_rating",
+            "role_75_gg_rating",
+            "role_7_gg_rating",
+            "role_8_gg_rating",
+            "role_9_gg_rating",
+            "total_face_stats",
+            "total_igs"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "futgg-fc27-price-index" => {
+      "id" => "futgg-fc27-price-index",
+      "method" => "GET",
+      "path" => "/futgg/fc27/price-index",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "futgg-fc27-prices" => {
+      "id" => "futgg-fc27-prices",
+      "method" => "GET",
+      "path" => "/futgg/fc27/prices",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "dataset",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "player-prices-ps5",
+            "player-prices-pc",
+            "player-prices-ps5-dyn",
+            "player-prices-pc-dyn"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "futgg-fc27-sbc-categories" => {
+      "id" => "futgg-fc27-sbc-categories",
+      "method" => "GET",
+      "path" => "/futgg/fc27/sbc/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "futgg-fc27-sbc-sets" => {
+      "id" => "futgg-fc27-sbc-sets",
+      "method" => "GET",
+      "path" => "/futgg/fc27/sbc/sets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "category_slug",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "players",
+            "upgrades",
+            "challenges",
+            "foundations"
+          ]
+        },
+        {
+          "name" => "search",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "expired_only",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "expiring_soon",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "no_pagination",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "futgg-fc27-sbc-set-by-challenge" => {
+      "id" => "futgg-fc27-sbc-set-by-challenge",
+      "method" => "GET",
+      "path" => "/futgg/fc27/sbc/sets/by-challenge/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "futgg-fc27-sbc-set-by-ea" => {
+      "id" => "futgg-fc27-sbc-set-by-ea",
+      "method" => "GET",
+      "path" => "/futgg/fc27/sbc/sets/by-ea/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "futgg-fc27-sbc-set" => {
+      "id" => "futgg-fc27-sbc-set",
+      "method" => "GET",
+      "path" => "/futgg/fc27/sbc/sets/{slug}",
+      "pathParams" => [
+        "slug"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "futgg-fc27-season-pass" => {
+      "id" => "futgg-fc27-season-pass",
+      "method" => "GET",
+      "path" => "/futgg/fc27/season-pass",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "gamerant-article" => {
       "id" => "gamerant-article",
@@ -57852,6 +67614,457 @@ module Crawlora
       "bodyParam" => nil,
       "bodyRequired" => false,
       "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "glovo-categories" => {
+      "id" => "glovo-categories",
+      "method" => "GET",
+      "path" => "/glovo/categories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "glovo-cities" => {
+      "id" => "glovo-cities",
+      "method" => "GET",
+      "path" => "/glovo/cities",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "glovo-city" => {
+      "id" => "glovo-city",
+      "method" => "GET",
+      "path" => "/glovo/city",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "glovo-store" => {
+      "id" => "glovo-store",
+      "method" => "GET",
+      "path" => "/glovo/store",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "store_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "glovo-store-fees" => {
+      "id" => "glovo-store-fees",
+      "method" => "GET",
+      "path" => "/glovo/store/fees",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "store_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "address_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "glovo-store-menu" => {
+      "id" => "glovo-store-menu",
+      "method" => "GET",
+      "path" => "/glovo/store/menu",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "store_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "address_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "glovo-store-products" => {
+      "id" => "glovo-store-products",
+      "method" => "GET",
+      "path" => "/glovo/store/products",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "store_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "address_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "collection",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "glovo-store-search" => {
+      "id" => "glovo-store-search",
+      "method" => "GET",
+      "path" => "/glovo/store/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "store_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "address_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "glovo-stores" => {
+      "id" => "glovo-stores",
+      "method" => "GET",
+      "path" => "/glovo/stores",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "category_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "filter_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "glovo-stores-filters" => {
+      "id" => "glovo-stores-filters",
+      "method" => "GET",
+      "path" => "/glovo/stores/filters",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "city",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "category_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
       "produces" => [
         "application/json"
       ],
@@ -61602,6 +71815,94 @@ module Crawlora
       "security" => [
         "ApiKeyAuth"
       ]
+    },
+    "gosugamers-article" => {
+      "id" => "gosugamers-article",
+      "method" => "GET",
+      "path" => "/gosugamers/article",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "gosugamers-articles" => {
+      "id" => "gosugamers-articles",
+      "method" => "GET",
+      "path" => "/gosugamers/articles",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "dota2",
+            "counterstrike",
+            "lol",
+            "valorant",
+            "mobile-legends",
+            "pubg-mobile",
+            "wild-rift",
+            "free-fire",
+            "battlegrounds-mobile-india",
+            "entertainment",
+            "genshin-impact",
+            "honkai-star-rail",
+            "zenless-zone-zero",
+            "honor-of-kings",
+            "umamusume-pretty-derby"
+          ]
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "news",
+            "features"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
     },
     "gosugamers-encounters" => {
       "id" => "gosugamers-encounters",
@@ -65991,6 +76292,237 @@ module Crawlora
       "path" => "/hindustantimes/sections",
       "pathParams" => [],
       "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "hltv-event" => {
+      "id" => "hltv-event",
+      "method" => "GET",
+      "path" => "/hltv/event",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "hltv-events" => {
+      "id" => "hltv-events",
+      "method" => "GET",
+      "path" => "/hltv/events",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "hltv-match" => {
+      "id" => "hltv-match",
+      "method" => "GET",
+      "path" => "/hltv/match",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "hltv-matches" => {
+      "id" => "hltv-matches",
+      "method" => "GET",
+      "path" => "/hltv/matches",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "hltv-player" => {
+      "id" => "hltv-player",
+      "method" => "GET",
+      "path" => "/hltv/player",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "hltv-rankings" => {
+      "id" => "hltv-rankings",
+      "method" => "GET",
+      "path" => "/hltv/rankings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "hltv-results" => {
+      "id" => "hltv-results",
+      "method" => "GET",
+      "path" => "/hltv/results",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "event",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "hltv-search" => {
+      "id" => "hltv-search",
+      "method" => "GET",
+      "path" => "/hltv/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "hltv-team" => {
+      "id" => "hltv-team",
+      "method" => "GET",
+      "path" => "/hltv/team",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -70657,6 +81189,341 @@ module Crawlora
       "method" => "GET",
       "path" => "/irishtimes/sections",
       "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "itchio-browse" => {
+      "id" => "itchio-browse",
+      "method" => "GET",
+      "path" => "/itchio/browse",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "itchio-browse-options" => {
+      "id" => "itchio-browse-options",
+      "method" => "GET",
+      "path" => "/itchio/browse/options",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "itchio-catalog" => {
+      "id" => "itchio-catalog",
+      "method" => "GET",
+      "path" => "/itchio/catalogs/{classification}",
+      "pathParams" => [
+        "classification"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "itchio-top-rated" => {
+      "id" => "itchio-top-rated",
+      "method" => "GET",
+      "path" => "/itchio/games/top-rated",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "itchio-jams-browse" => {
+      "id" => "itchio-jams-browse",
+      "method" => "GET",
+      "path" => "/itchio/jams/browse",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "itchio-jam-calendar" => {
+      "id" => "itchio-jam-calendar",
+      "method" => "GET",
+      "path" => "/itchio/jams/calendar",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "itchio-jams-entries" => {
+      "id" => "itchio-jams-entries",
+      "method" => "GET",
+      "path" => "/itchio/jams/entries",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "itchio-jams-options" => {
+      "id" => "itchio-jams-options",
+      "method" => "GET",
+      "path" => "/itchio/jams/options",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "itchio-jams-overview" => {
+      "id" => "itchio-jams-overview",
+      "method" => "GET",
+      "path" => "/itchio/jams/overview",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "itchio-jams-results" => {
+      "id" => "itchio-jams-results",
+      "method" => "GET",
+      "path" => "/itchio/jams/results",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "itchio-jams-results-options" => {
+      "id" => "itchio-jams-results-options",
+      "method" => "GET",
+      "path" => "/itchio/jams/results/options",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "itchio-jams-submission" => {
+      "id" => "itchio-jams-submission",
+      "method" => "GET",
+      "path" => "/itchio/jams/submission",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "itchio-project" => {
+      "id" => "itchio-project",
+      "method" => "GET",
+      "path" => "/itchio/project",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "itchio-tags" => {
+      "id" => "itchio-tags",
+      "method" => "GET",
+      "path" => "/itchio/tags/{classification}",
+      "pathParams" => [
+        "classification"
+      ],
       "queryParams" => [],
       "formParams" => [],
       "bodyParam" => nil,
@@ -76049,6 +86916,557 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "klook-activity" => {
+      "id" => "klook-activity",
+      "method" => "GET",
+      "path" => "/klook/activities/{activity_id}",
+      "pathParams" => [
+        "activity_id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "klook-attractions-categories" => {
+      "id" => "klook-attractions-categories",
+      "method" => "GET",
+      "path" => "/klook/attractions/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "klook-attractions-destinations" => {
+      "id" => "klook-attractions-destinations",
+      "method" => "GET",
+      "path" => "/klook/attractions/destinations",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "city_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country_id",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "klook-attractions-highlights" => {
+      "id" => "klook-attractions-highlights",
+      "method" => "GET",
+      "path" => "/klook/attractions/highlights",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "city_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "city",
+            "country"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "klook-attractions-search" => {
+      "id" => "klook-attractions-search",
+      "method" => "GET",
+      "path" => "/klook/attractions/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "city_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "category_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "recommended",
+            "bestselling",
+            "top_rated",
+            "price_low_to_high",
+            "newest"
+          ]
+        },
+        {
+          "name" => "price_min",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "price_max",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "service_lang_tag",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "duration_tag",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "other_filters_tag",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "klook-attractions-suggest" => {
+      "id" => "klook-attractions-suggest",
+      "method" => "GET",
+      "path" => "/klook/attractions/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "klook-categories" => {
+      "id" => "klook-categories",
+      "method" => "GET",
+      "path" => "/klook/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "klook-destinations" => {
+      "id" => "klook-destinations",
+      "method" => "GET",
+      "path" => "/klook/destinations",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "klook-hot" => {
+      "id" => "klook-hot",
+      "method" => "GET",
+      "path" => "/klook/hot",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "klook-interests" => {
+      "id" => "klook-interests",
+      "method" => "GET",
+      "path" => "/klook/interests",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "klook-recommendations" => {
+      "id" => "klook-recommendations",
+      "method" => "GET",
+      "path" => "/klook/recommendations",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "city_id",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "klook-reviews" => {
+      "id" => "klook-reviews",
+      "method" => "GET",
+      "path" => "/klook/reviews",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "city_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "vertical",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "experiences",
+            "attractions"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "klook-search" => {
+      "id" => "klook-search",
+      "method" => "GET",
+      "path" => "/klook/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "city_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "category_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "recommended",
+            "bestselling",
+            "top_rated",
+            "price_low_to_high",
+            "newest"
+          ]
+        },
+        {
+          "name" => "price_min",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "price_max",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "interest_tag",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "service_lang_tag",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "duration_tag",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "other_filters_tag",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "per_page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "klook-search-filters" => {
+      "id" => "klook-search-filters",
+      "method" => "GET",
+      "path" => "/klook/search/filters",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "vertical",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "experiences",
+            "attractions"
+          ]
+        },
+        {
+          "name" => "city_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "category_id",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "klook-search-hot-keywords" => {
+      "id" => "klook-search-hot-keywords",
+      "method" => "GET",
+      "path" => "/klook/search/hot-keywords",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "city_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country_id",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "klook-search-unified" => {
+      "id" => "klook-search-unified",
+      "method" => "GET",
+      "path" => "/klook/search/unified",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "klook-suggest" => {
+      "id" => "klook-suggest",
+      "method" => "GET",
+      "path" => "/klook/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "klook-verticals" => {
+      "id" => "klook-verticals",
+      "method" => "GET",
+      "path" => "/klook/verticals",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "kohls-category" => {
       "id" => "kohls-category",
       "method" => "GET",
@@ -78859,12 +90277,7 @@ module Crawlora
         {
           "name" => "season",
           "in" => "query",
-          "type" => "string",
-          "enum" => [
-            "current",
-            "2025",
-            "2024"
-          ]
+          "type" => "string"
         },
         {
           "name" => "league",
@@ -79181,6 +90594,15 @@ module Crawlora
           "in" => "query",
           "type" => "string",
           "required" => true
+        },
+        {
+          "name" => "rounds",
+          "in" => "query",
+          "type" => "boolean",
+          "enum" => [
+            "True",
+            "False"
+          ]
         }
       ],
       "formParams" => [],
@@ -79484,6 +90906,313 @@ module Crawlora
       "consumes" => [
         "application/json"
       ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "luma-calendar" => {
+      "id" => "luma-calendar",
+      "method" => "GET",
+      "path" => "/luma/calendar",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "luma-calendar-events" => {
+      "id" => "luma-calendar-events",
+      "method" => "GET",
+      "path" => "/luma/calendar-events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "calendar_api_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "period",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "future",
+            "past",
+            "specific"
+          ]
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "before",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "pagination_limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "pagination_cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "luma-categories" => {
+      "id" => "luma-categories",
+      "method" => "GET",
+      "path" => "/luma/categories",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "luma-category" => {
+      "id" => "luma-category",
+      "method" => "GET",
+      "path" => "/luma/category",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "family",
+            "books",
+            "games",
+            "tech",
+            "food",
+            "ai",
+            "running",
+            "arts",
+            "climate",
+            "fitness",
+            "wellness",
+            "crypto"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "luma-category-events" => {
+      "id" => "luma-category-events",
+      "method" => "GET",
+      "path" => "/luma/category-events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "family",
+            "books",
+            "games",
+            "tech",
+            "food",
+            "ai",
+            "running",
+            "arts",
+            "climate",
+            "fitness",
+            "wellness",
+            "crypto"
+          ]
+        },
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "pagination_limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "pagination_cursor",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "latitude",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "longitude",
+          "in" => "query",
+          "type" => "number"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "luma-event" => {
+      "id" => "luma-event",
+      "method" => "GET",
+      "path" => "/luma/event",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "event_api_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "luma-place" => {
+      "id" => "luma-place",
+      "method" => "GET",
+      "path" => "/luma/place",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "luma-place-calendars" => {
+      "id" => "luma-place-calendars",
+      "method" => "GET",
+      "path" => "/luma/place-calendars",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "luma-place-events" => {
+      "id" => "luma-place-events",
+      "method" => "GET",
+      "path" => "/luma/place-events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "place_slug",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "pagination_limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "pagination_cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
       "produces" => [
         "application/json"
       ],
@@ -80423,6 +92152,968 @@ module Crawlora
       "bodyParam" => nil,
       "bodyRequired" => false,
       "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-rankings-groupings" => {
+      "id" => "maxpreps-rankings-groupings",
+      "method" => "GET",
+      "path" => "/maxpreps/rankings-groupings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "stateCode",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "AL",
+            "AK",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "FL",
+            "GA",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MA",
+            "MI",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "OH",
+            "OK",
+            "OR",
+            "PA",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VA",
+            "WA",
+            "DC",
+            "WV",
+            "WI",
+            "WY",
+            "NN",
+            "PS"
+          ]
+        },
+        {
+          "name" => "sportSeasonId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-request-enums" => {
+      "id" => "maxpreps-request-enums",
+      "method" => "GET",
+      "path" => "/maxpreps/request-enums",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-school" => {
+      "id" => "maxpreps-school",
+      "method" => "GET",
+      "path" => "/maxpreps/school",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "schoolId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-school-contests" => {
+      "id" => "maxpreps-school-contests",
+      "method" => "GET",
+      "path" => "/maxpreps/school-contests",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "schoolId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "maxLimit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-school-proximal" => {
+      "id" => "maxpreps-school-proximal",
+      "method" => "GET",
+      "path" => "/maxpreps/school-proximal",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "schoolId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "searchText",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "maxDistance",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sortOrder",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Distance",
+            "Name"
+          ]
+        },
+        {
+          "name" => "allSeasonId",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sportSeasonId",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "zipCode",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "byState",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "includeDeleted",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "historicalOnly",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "publishedOnly",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "maxResults",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "startFrom",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-school-search" => {
+      "id" => "maxpreps-school-search",
+      "method" => "GET",
+      "path" => "/maxpreps/school-search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "sortOrder",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Distance",
+            "Name"
+          ]
+        },
+        {
+          "name" => "schoolId",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "allSeasonId",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "zipCode",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "includeDeleted",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "historicalOnly",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "publishedOnly",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "maxResults",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "startFrom",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-school-seasons" => {
+      "id" => "maxpreps-school-seasons",
+      "method" => "GET",
+      "path" => "/maxpreps/school-seasons",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "schoolId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-school-zip-search" => {
+      "id" => "maxpreps-school-zip-search",
+      "method" => "GET",
+      "path" => "/maxpreps/school-zip-search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "zipCode",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "searchText",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "maxDistance",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "allSeasonId",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sportSeasonId",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "searchByState",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "searchCity",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "includeDeleted",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "historicalOnly",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "publishedOnly",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "startFrom",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-scoreboard" => {
+      "id" => "maxpreps-scoreboard",
+      "method" => "GET",
+      "path" => "/maxpreps/scoreboard",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "context",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "National",
+            "State",
+            "Section",
+            "StateDivision",
+            "Association",
+            "League",
+            "DMA"
+          ]
+        },
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "genderSport",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "level",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "Varsity",
+            "JV",
+            "Freshman"
+          ]
+        },
+        {
+          "name" => "excludeTbaDate",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "nationalTeamCount",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-season-navigation" => {
+      "id" => "maxpreps-season-navigation",
+      "method" => "GET",
+      "path" => "/maxpreps/season-navigation",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "allSeasonId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-sports" => {
+      "id" => "maxpreps-sports",
+      "method" => "GET",
+      "path" => "/maxpreps/sports",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-states" => {
+      "id" => "maxpreps-states",
+      "method" => "GET",
+      "path" => "/maxpreps/states",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-team" => {
+      "id" => "maxpreps-team",
+      "method" => "GET",
+      "path" => "/maxpreps/team",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "teamId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "sportSeasonId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-team-context" => {
+      "id" => "maxpreps-team-context",
+      "method" => "GET",
+      "path" => "/maxpreps/team-context",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "teamId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "sportSeasonId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-team-next-contest" => {
+      "id" => "maxpreps-team-next-contest",
+      "method" => "GET",
+      "path" => "/maxpreps/team-next-contest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "teamId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "sportSeasonId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-team-rankings" => {
+      "id" => "maxpreps-team-rankings",
+      "method" => "GET",
+      "path" => "/maxpreps/team-rankings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "national",
+            "state",
+            "section"
+          ]
+        },
+        {
+          "name" => "allSeasonId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "sportSeasonId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "stateCode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "AL",
+            "AK",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "FL",
+            "GA",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MA",
+            "MI",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "OH",
+            "OK",
+            "OR",
+            "PA",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VA",
+            "WA",
+            "DC",
+            "WV",
+            "WI",
+            "WY",
+            "NN",
+            "PS"
+          ]
+        },
+        {
+          "name" => "sectionId",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "count",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "teamSize",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "maxpreps-team-roster-summary" => {
+      "id" => "maxpreps-team-roster-summary",
+      "method" => "GET",
+      "path" => "/maxpreps/team-roster-summary",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "teamId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "sportSeasonId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-team-schedule" => {
+      "id" => "maxpreps-team-schedule",
+      "method" => "GET",
+      "path" => "/maxpreps/team-schedule",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "teamId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "sportSeasonId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-team-stat-leaders" => {
+      "id" => "maxpreps-team-stat-leaders",
+      "method" => "GET",
+      "path" => "/maxpreps/team-stat-leaders",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "teamId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "sportSeasonId",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "maxpreps-tournament-sports" => {
+      "id" => "maxpreps-tournament-sports",
+      "method" => "GET",
+      "path" => "/maxpreps/tournament-sports",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "stateCode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "AL",
+            "AK",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "FL",
+            "GA",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MA",
+            "MI",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "OH",
+            "OK",
+            "OR",
+            "PA",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VA",
+            "WA",
+            "DC",
+            "WV",
+            "WI",
+            "WY",
+            "NN",
+            "PS"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
       "produces" => [
         "application/json"
       ],
@@ -92752,6 +105443,834 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "modrinth-collection" => {
+      "id" => "modrinth-collection",
+      "method" => "GET",
+      "path" => "/modrinth/collection/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-collections" => {
+      "id" => "modrinth-collections",
+      "method" => "GET",
+      "path" => "/modrinth/collections",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "ids",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-metadata-link-platforms" => {
+      "id" => "modrinth-metadata-link-platforms",
+      "method" => "GET",
+      "path" => "/modrinth/metadata/link-platforms",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-metadata-loader-fields" => {
+      "id" => "modrinth-metadata-loader-fields",
+      "method" => "GET",
+      "path" => "/modrinth/metadata/loader-fields",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-metadata-loader-field-values" => {
+      "id" => "modrinth-metadata-loader-field-values",
+      "method" => "GET",
+      "path" => "/modrinth/metadata/loader-fields/{field}",
+      "pathParams" => [
+        "field"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-metadata-loaders" => {
+      "id" => "modrinth-metadata-loaders",
+      "method" => "GET",
+      "path" => "/modrinth/metadata/loaders",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-organization" => {
+      "id" => "modrinth-organization",
+      "method" => "GET",
+      "path" => "/modrinth/organization/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-organization-projects" => {
+      "id" => "modrinth-organization-projects",
+      "method" => "GET",
+      "path" => "/modrinth/organization/{id}/projects",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-organizations" => {
+      "id" => "modrinth-organizations",
+      "method" => "GET",
+      "path" => "/modrinth/organizations",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "ids",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-project" => {
+      "id" => "modrinth-project",
+      "method" => "GET",
+      "path" => "/modrinth/project/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-check-project" => {
+      "id" => "modrinth-check-project",
+      "method" => "GET",
+      "path" => "/modrinth/project/{id}/check",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-dependencies" => {
+      "id" => "modrinth-dependencies",
+      "method" => "GET",
+      "path" => "/modrinth/project/{id}/dependencies",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-project-disclosures" => {
+      "id" => "modrinth-project-disclosures",
+      "method" => "GET",
+      "path" => "/modrinth/project/{id}/disclosures",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-project-versions" => {
+      "id" => "modrinth-project-versions",
+      "method" => "GET",
+      "path" => "/modrinth/project/{id}/version",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "loaders",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "game_versions",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "featured",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "include_changelog",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-project-version" => {
+      "id" => "modrinth-project-version",
+      "method" => "GET",
+      "path" => "/modrinth/project/{id}/version/{number}",
+      "pathParams" => [
+        "id",
+        "number"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-projects" => {
+      "id" => "modrinth-projects",
+      "method" => "GET",
+      "path" => "/modrinth/projects",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "ids",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-random-projects" => {
+      "id" => "modrinth-random-projects",
+      "method" => "GET",
+      "path" => "/modrinth/projects_random",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "count",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-search" => {
+      "id" => "modrinth-search",
+      "method" => "GET",
+      "path" => "/modrinth/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "facets",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "index",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "downloads",
+            "follows",
+            "newest",
+            "updated"
+          ]
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "modrinth-statistics" => {
+      "id" => "modrinth-statistics",
+      "method" => "GET",
+      "path" => "/modrinth/statistics",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-license" => {
+      "id" => "modrinth-license",
+      "method" => "GET",
+      "path" => "/modrinth/tag/license/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-tags" => {
+      "id" => "modrinth-tags",
+      "method" => "GET",
+      "path" => "/modrinth/tag/{type}",
+      "pathParams" => [
+        "type"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-forge-updates" => {
+      "id" => "modrinth-forge-updates",
+      "method" => "GET",
+      "path" => "/modrinth/updates/{id}/forge_updates.json",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "neoforge",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "include",
+            "only"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-search-v3" => {
+      "id" => "modrinth-search-v3",
+      "method" => "GET",
+      "path" => "/modrinth/v3/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "index",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "downloads",
+            "follows",
+            "newest",
+            "updated",
+            "date_created",
+            "date_modified",
+            "minecraft_java_server.verified_plays_2w",
+            "minecraft_java_server.ping.data.players_online"
+          ]
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "new_filters",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "facets",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "filters",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "version",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "modrinth-search-v3-body" => {
+      "id" => "modrinth-search-v3-body",
+      "method" => "POST",
+      "path" => "/modrinth/v3/search",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "body",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-search-v3-options" => {
+      "id" => "modrinth-search-v3-options",
+      "method" => "GET",
+      "path" => "/modrinth/v3/search/options",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-version" => {
+      "id" => "modrinth-version",
+      "method" => "GET",
+      "path" => "/modrinth/version/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-file-projects" => {
+      "id" => "modrinth-file-projects",
+      "method" => "POST",
+      "path" => "/modrinth/version_file/project",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "body",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-file-version" => {
+      "id" => "modrinth-file-version",
+      "method" => "GET",
+      "path" => "/modrinth/version_file/{hash}",
+      "pathParams" => [
+        "hash"
+      ],
+      "queryParams" => [
+        {
+          "name" => "algorithm",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "sha1",
+            "sha512"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-file-update" => {
+      "id" => "modrinth-file-update",
+      "method" => "POST",
+      "path" => "/modrinth/version_file/{hash}/update",
+      "pathParams" => [
+        "hash"
+      ],
+      "queryParams" => [
+        {
+          "name" => "algorithm",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "sha1",
+            "sha512"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => "body",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-file-versions" => {
+      "id" => "modrinth-file-versions",
+      "method" => "POST",
+      "path" => "/modrinth/version_files",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "body",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-files-update" => {
+      "id" => "modrinth-files-update",
+      "method" => "POST",
+      "path" => "/modrinth/version_files/update",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "body",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-files-update-individual" => {
+      "id" => "modrinth-files-update-individual",
+      "method" => "POST",
+      "path" => "/modrinth/version_files/update_individual",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "body",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-files-update-many" => {
+      "id" => "modrinth-files-update-many",
+      "method" => "POST",
+      "path" => "/modrinth/version_files/update_many",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => "body",
+      "bodyRequired" => true,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "modrinth-versions" => {
+      "id" => "modrinth-versions",
+      "method" => "GET",
+      "path" => "/modrinth/versions",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "ids",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "moncler-categories" => {
       "id" => "moncler-categories",
       "method" => "GET",
@@ -93352,6 +106871,669 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "motogp-bmw-award" => {
+      "id" => "motogp-bmw-award",
+      "method" => "GET",
+      "path" => "/motogp/bmw-award",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season_year",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-categories" => {
+      "id" => "motogp-categories",
+      "method" => "GET",
+      "path" => "/motogp/categories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season_uuid",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "event_uuid",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-circuit-poles" => {
+      "id" => "motogp-circuit-poles",
+      "method" => "GET",
+      "path" => "/motogp/circuit-poles",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "circuit_uuid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "category_name",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "motogp",
+            "moto2",
+            "moto3",
+            "motoe"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-circuit-records" => {
+      "id" => "motogp-circuit-records",
+      "method" => "GET",
+      "path" => "/motogp/circuit-records",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "circuit_uuid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-circuit-wins" => {
+      "id" => "motogp-circuit-wins",
+      "method" => "GET",
+      "path" => "/motogp/circuit-wins",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "circuit_uuid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "category_name",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "motogp",
+            "moto2",
+            "moto3",
+            "motoe"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-classifications" => {
+      "id" => "motogp-classifications",
+      "method" => "GET",
+      "path" => "/motogp/classifications",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "session_uuid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "test",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-content-categories" => {
+      "id" => "motogp-content-categories",
+      "method" => "GET",
+      "path" => "/motogp/content/categories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season_year",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-content-events" => {
+      "id" => "motogp-content-events",
+      "method" => "GET",
+      "path" => "/motogp/content/events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season_year",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-content-event" => {
+      "id" => "motogp-content-event",
+      "method" => "GET",
+      "path" => "/motogp/content/events/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-latest-session" => {
+      "id" => "motogp-latest-session",
+      "method" => "GET",
+      "path" => "/motogp/content/sessions/latest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category_legacy_id",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "-1",
+            "1",
+            "2",
+            "3",
+            "5",
+            "7",
+            "8",
+            "9",
+            "10",
+            "19"
+          ]
+        },
+        {
+          "name" => "event_kind",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "gp",
+            "test"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-next-live-session" => {
+      "id" => "motogp-next-live-session",
+      "method" => "GET",
+      "path" => "/motogp/content/sessions/next-live",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-entry-list" => {
+      "id" => "motogp-entry-list",
+      "method" => "GET",
+      "path" => "/motogp/entries",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "event_uuid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "category_uuid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-entry-grid-options" => {
+      "id" => "motogp-entry-grid-options",
+      "method" => "GET",
+      "path" => "/motogp/entry-grid-options/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-event-files" => {
+      "id" => "motogp-event-files",
+      "method" => "GET",
+      "path" => "/motogp/event-files",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "event_uuid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "category_uuid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-events" => {
+      "id" => "motogp-events",
+      "method" => "GET",
+      "path" => "/motogp/events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season_uuid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "is_finished",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-seasons" => {
+      "id" => "motogp-seasons",
+      "method" => "GET",
+      "path" => "/motogp/seasons",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-sessions" => {
+      "id" => "motogp-sessions",
+      "method" => "GET",
+      "path" => "/motogp/sessions",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "event_uuid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "category_uuid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-standings" => {
+      "id" => "motogp-standings",
+      "method" => "GET",
+      "path" => "/motogp/standings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season_uuid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "category_uuid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-standings-files" => {
+      "id" => "motogp-standings-files",
+      "method" => "GET",
+      "path" => "/motogp/standings-files",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season_uuid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "category_uuid",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "motogp-starting-grid" => {
+      "id" => "motogp-starting-grid",
+      "method" => "GET",
+      "path" => "/motogp/starting-grid",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season_year",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "shortname",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "category_name",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nascar-live-feed" => {
+      "id" => "nascar-live-feed",
+      "method" => "GET",
+      "path" => "/nascar/live-feed",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nascar-races" => {
+      "id" => "nascar-races",
+      "method" => "GET",
+      "path" => "/nascar/races",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nascar-season-races" => {
+      "id" => "nascar-season-races",
+      "method" => "GET",
+      "path" => "/nascar/races/{season}",
+      "pathParams" => [
+        "season"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nascar-series" => {
+      "id" => "nascar-series",
+      "method" => "GET",
+      "path" => "/nascar/series",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nascar-race-weekend" => {
+      "id" => "nascar-race-weekend",
+      "method" => "GET",
+      "path" => "/nascar/weekend/{season}/{series}/{race}",
+      "pathParams" => [
+        "season",
+        "series",
+        "race"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "nationafrica-article" => {
       "id" => "nationafrica-article",
       "method" => "GET",
@@ -93837,6 +108019,1643 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "nba-box-score" => {
+      "id" => "nba-box-score",
+      "method" => "GET",
+      "path" => "/nba/box-score",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "start_period",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end_period",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-box-score-advanced" => {
+      "id" => "nba-box-score-advanced",
+      "method" => "GET",
+      "path" => "/nba/box-score-advanced",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "start_period",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end_period",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-box-score-four-factors" => {
+      "id" => "nba-box-score-four-factors",
+      "method" => "GET",
+      "path" => "/nba/box-score-four-factors",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "start_period",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end_period",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-box-score-misc" => {
+      "id" => "nba-box-score-misc",
+      "method" => "GET",
+      "path" => "/nba/box-score-misc",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "start_period",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end_period",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-box-score-player-track" => {
+      "id" => "nba-box-score-player-track",
+      "method" => "GET",
+      "path" => "/nba/box-score-player-track",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-box-score-scoring" => {
+      "id" => "nba-box-score-scoring",
+      "method" => "GET",
+      "path" => "/nba/box-score-scoring",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "start_period",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end_period",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-box-score-usage" => {
+      "id" => "nba-box-score-usage",
+      "method" => "GET",
+      "path" => "/nba/box-score-usage",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "start_period",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end_period",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-common-all-players" => {
+      "id" => "nba-common-all-players",
+      "method" => "GET",
+      "path" => "/nba/common-all-players",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "is_only_current_season",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-draft-combine-anthro" => {
+      "id" => "nba-draft-combine-anthro",
+      "method" => "GET",
+      "path" => "/nba/draft-combine-anthro",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season_year",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-enums" => {
+      "id" => "nba-enums",
+      "method" => "GET",
+      "path" => "/nba/enums",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-franchise-history" => {
+      "id" => "nba-franchise-history",
+      "method" => "GET",
+      "path" => "/nba/franchise-history",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-game-detail" => {
+      "id" => "nba-game-detail",
+      "method" => "GET",
+      "path" => "/nba/game-detail",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-games" => {
+      "id" => "nba-games",
+      "method" => "GET",
+      "path" => "/nba/games",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-homepage-leaders" => {
+      "id" => "nba-homepage-leaders",
+      "method" => "GET",
+      "path" => "/nba/homepage-leaders",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "stat_category",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Points",
+            "Rebounds"
+          ]
+        },
+        {
+          "name" => "player_or_team",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Team"
+          ]
+        },
+        {
+          "name" => "player_scope",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "game_scope",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Season"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-hustle-stats" => {
+      "id" => "nba-hustle-stats",
+      "method" => "GET",
+      "path" => "/nba/hustle-stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-league-game-log" => {
+      "id" => "nba-league-game-log",
+      "method" => "GET",
+      "path" => "/nba/league-game-log",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season"
+          ]
+        },
+        {
+          "name" => "direction",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "DESC"
+          ]
+        },
+        {
+          "name" => "player_or_team",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "T"
+          ]
+        },
+        {
+          "name" => "sorter",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "DATE"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-lineups" => {
+      "id" => "nba-lineups",
+      "method" => "GET",
+      "path" => "/nba/lineups",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season"
+          ]
+        },
+        {
+          "name" => "measure_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Base"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame"
+          ]
+        },
+        {
+          "name" => "group_quantity",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "5"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-news" => {
+      "id" => "nba-news",
+      "method" => "GET",
+      "path" => "/nba/news",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-play-by-play" => {
+      "id" => "nba-play-by-play",
+      "method" => "GET",
+      "path" => "/nba/play-by-play",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "start_period",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "end_period",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-player-awards" => {
+      "id" => "nba-player-awards",
+      "method" => "GET",
+      "path" => "/nba/player-awards",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-player-bio-stats" => {
+      "id" => "nba-player-bio-stats",
+      "method" => "GET",
+      "path" => "/nba/player-bio-stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-player-career-stats" => {
+      "id" => "nba-player-career-stats",
+      "method" => "GET",
+      "path" => "/nba/player-career-stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame"
+          ]
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-player-dash-pt-shots" => {
+      "id" => "nba-player-dash-pt-shots",
+      "method" => "GET",
+      "path" => "/nba/player-dash-pt-shots",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-player-info" => {
+      "id" => "nba-player-info",
+      "method" => "GET",
+      "path" => "/nba/player-info",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-player-stats" => {
+      "id" => "nba-player-stats",
+      "method" => "GET",
+      "path" => "/nba/player-stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season",
+            "Playoffs",
+            "Pre Season",
+            "All Star"
+          ]
+        },
+        {
+          "name" => "measure_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Base",
+            "Advanced",
+            "Misc",
+            "Scoring",
+            "Defense",
+            "Opponent"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame",
+            "Totals",
+            "Per36",
+            "Per48",
+            "Per100Possessions",
+            "MinutesPer",
+            "PerPossession"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-players" => {
+      "id" => "nba-players",
+      "method" => "GET",
+      "path" => "/nba/players",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "active",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-playoff-picture" => {
+      "id" => "nba-playoff-picture",
+      "method" => "GET",
+      "path" => "/nba/playoff-picture",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-pt-defend" => {
+      "id" => "nba-pt-defend",
+      "method" => "GET",
+      "path" => "/nba/pt-defend",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame"
+          ]
+        },
+        {
+          "name" => "defense_category",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Overall",
+            "3 Pointers"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-pt-stats" => {
+      "id" => "nba-pt-stats",
+      "method" => "GET",
+      "path" => "/nba/pt-stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame"
+          ]
+        },
+        {
+          "name" => "pt_measure_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "SpeedDistance"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-scoreboard" => {
+      "id" => "nba-scoreboard",
+      "method" => "GET",
+      "path" => "/nba/scoreboard",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "game_date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "day_offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-standings" => {
+      "id" => "nba-standings",
+      "method" => "GET",
+      "path" => "/nba/standings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season",
+            "Playoffs",
+            "Pre Season",
+            "All Star"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-synergy-play-types" => {
+      "id" => "nba-synergy-play-types",
+      "method" => "GET",
+      "path" => "/nba/synergy-play-types",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season_year",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season"
+          ]
+        },
+        {
+          "name" => "play_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Isolation"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame"
+          ]
+        },
+        {
+          "name" => "player_or_team",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "T"
+          ]
+        },
+        {
+          "name" => "type_grouping",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "offensive"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-team-details" => {
+      "id" => "nba-team-details",
+      "method" => "GET",
+      "path" => "/nba/team-details",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-team-roster" => {
+      "id" => "nba-team-roster",
+      "method" => "GET",
+      "path" => "/nba/team-roster",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-team-shot-locations" => {
+      "id" => "nba-team-shot-locations",
+      "method" => "GET",
+      "path" => "/nba/team-shot-locations",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season"
+          ]
+        },
+        {
+          "name" => "measure_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Base"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame"
+          ]
+        },
+        {
+          "name" => "distance_range",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-team-stats" => {
+      "id" => "nba-team-stats",
+      "method" => "GET",
+      "path" => "/nba/team-stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season",
+            "Playoffs",
+            "Pre Season",
+            "All Star"
+          ]
+        },
+        {
+          "name" => "measure_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Base",
+            "Advanced",
+            "Misc",
+            "Scoring",
+            "Defense",
+            "Opponent"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame",
+            "Totals",
+            "Per36",
+            "Per48",
+            "Per100Possessions",
+            "MinutesPer",
+            "PerPossession"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nba-team-stats-leaders" => {
+      "id" => "nba-team-stats-leaders",
+      "method" => "GET",
+      "path" => "/nba/team-stats-leaders",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "stat_category",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "PTS",
+            "REB",
+            "AST",
+            "BLK",
+            "STL",
+            "TOV"
+          ]
+        },
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "00"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Regular Season",
+            "Playoffs",
+            "Pre Season",
+            "All Star"
+          ]
+        },
+        {
+          "name" => "per_mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PerGame",
+            "Totals",
+            "Per36",
+            "Per48",
+            "Per100Possessions",
+            "MinutesPer",
+            "PerPossession"
+          ]
+        },
+        {
+          "name" => "scope",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "S"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "nbc-article" => {
       "id" => "nbc-article",
       "method" => "GET",
@@ -94312,6 +110131,341 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "netshort-browse" => {
+      "id" => "netshort-browse",
+      "method" => "GET",
+      "path" => "/netshort/browse",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "en",
+            "ar",
+            "cn",
+            "de",
+            "es",
+            "fr",
+            "hi",
+            "id",
+            "it",
+            "ja",
+            "ko",
+            "ms",
+            "pt",
+            "th",
+            "tr",
+            "vi",
+            "zh"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "netshort-genres" => {
+      "id" => "netshort-genres",
+      "method" => "GET",
+      "path" => "/netshort/genres",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "en",
+            "ar",
+            "cn",
+            "de",
+            "es",
+            "fr",
+            "hi",
+            "id",
+            "it",
+            "ja",
+            "ko",
+            "ms",
+            "pt",
+            "th",
+            "tr",
+            "vi",
+            "zh"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "netshort-home" => {
+      "id" => "netshort-home",
+      "method" => "GET",
+      "path" => "/netshort/home",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "en",
+            "ar",
+            "cn",
+            "de",
+            "es",
+            "fr",
+            "hi",
+            "id",
+            "it",
+            "ja",
+            "ko",
+            "ms",
+            "pt",
+            "th",
+            "tr",
+            "vi",
+            "zh"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "netshort-label" => {
+      "id" => "netshort-label",
+      "method" => "GET",
+      "path" => "/netshort/label",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "label_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "name",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "netshort-plots" => {
+      "id" => "netshort-plots",
+      "method" => "GET",
+      "path" => "/netshort/plots",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "en",
+            "ar",
+            "cn",
+            "de",
+            "es",
+            "fr",
+            "hi",
+            "id",
+            "it",
+            "ja",
+            "ko",
+            "ms",
+            "pt",
+            "th",
+            "tr",
+            "vi",
+            "zh"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "netshort-search" => {
+      "id" => "netshort-search",
+      "method" => "GET",
+      "path" => "/netshort/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "language",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "en_US",
+            "ja_JP"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "netshort-title" => {
+      "id" => "netshort-title",
+      "method" => "GET",
+      "path" => "/netshort/title",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "title_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "slug",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "netshort-toplist" => {
+      "id" => "netshort-toplist",
+      "method" => "GET",
+      "path" => "/netshort/toplist",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "board",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "trending-short-dramas",
+            "new-short-drama-releases",
+            "recommended-short-dramas",
+            "exclusive-original-short-dramas"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "news18-article" => {
       "id" => "news18-article",
@@ -95083,6 +111237,653 @@ module Crawlora
       "bodyParam" => nil,
       "bodyRequired" => false,
       "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nfhs-activities" => {
+      "id" => "nfhs-activities",
+      "method" => "GET",
+      "path" => "/nfhs/activities",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "is_sport",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "is_top_sport",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nfhs-affiliates" => {
+      "id" => "nfhs-affiliates",
+      "method" => "GET",
+      "path" => "/nfhs/affiliates",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "search_term",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "is_network",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "start",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "start"
+      ]
+    },
+    "nfhs-affiliate" => {
+      "id" => "nfhs-affiliate",
+      "method" => "GET",
+      "path" => "/nfhs/affiliates/{key}",
+      "pathParams" => [
+        "key"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nfhs-associations" => {
+      "id" => "nfhs-associations",
+      "method" => "GET",
+      "path" => "/nfhs/associations",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "search_term",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "is_network",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "start",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "start"
+      ]
+    },
+    "nfhs-association" => {
+      "id" => "nfhs-association",
+      "method" => "GET",
+      "path" => "/nfhs/associations/{key}",
+      "pathParams" => [
+        "key"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nfhs-events" => {
+      "id" => "nfhs-events",
+      "method" => "GET",
+      "path" => "/nfhs/events",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "activity",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "gender",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "level",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "school_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "publisher_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "is_postseason",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "download_to_own",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "search_term",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "start",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "size",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "start",
+        "cursor"
+      ]
+    },
+    "nfhs-event" => {
+      "id" => "nfhs-event",
+      "method" => "GET",
+      "path" => "/nfhs/events/{key}",
+      "pathParams" => [
+        "key"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nfhs-filters" => {
+      "id" => "nfhs-filters",
+      "method" => "GET",
+      "path" => "/nfhs/filters",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nfhs-highlights" => {
+      "id" => "nfhs-highlights",
+      "method" => "GET",
+      "path" => "/nfhs/highlights",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "activity",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "gender",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "level",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "school_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "search_term",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "start",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "size",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "start",
+        "cursor"
+      ]
+    },
+    "nfhs-producer" => {
+      "id" => "nfhs-producer",
+      "method" => "GET",
+      "path" => "/nfhs/producers/{key}",
+      "pathParams" => [
+        "key"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nfhs-publisher" => {
+      "id" => "nfhs-publisher",
+      "method" => "GET",
+      "path" => "/nfhs/publishers/{key}",
+      "pathParams" => [
+        "key"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nfhs-schools" => {
+      "id" => "nfhs-schools",
+      "method" => "GET",
+      "path" => "/nfhs/schools",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "search_term",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "is_network",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "start",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "start"
+      ]
+    },
+    "nfhs-school" => {
+      "id" => "nfhs-school",
+      "method" => "GET",
+      "path" => "/nfhs/schools/{key}",
+      "pathParams" => [
+        "key"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nfhs-search" => {
+      "id" => "nfhs-search",
+      "method" => "GET",
+      "path" => "/nfhs/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "search_term",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "state",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "activity",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "start",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "size",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "start",
+        "cursor"
+      ]
+    },
+    "nfhs-sports" => {
+      "id" => "nfhs-sports",
+      "method" => "GET",
+      "path" => "/nfhs/sports",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nfhs-states" => {
+      "id" => "nfhs-states",
+      "method" => "GET",
+      "path" => "/nfhs/states",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "nfhs-suggest" => {
+      "id" => "nfhs-suggest",
+      "method" => "GET",
+      "path" => "/nfhs/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "search_term",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "scope",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
       "produces" => [
         "application/json"
       ],
@@ -97402,6 +114203,20 @@ module Crawlora
           "in" => "query",
           "type" => "integer",
           "required" => true
+        },
+        {
+          "name" => "bracket",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "role",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "core",
+            "support"
+          ]
         }
       ],
       "formParams" => [],
@@ -97440,8 +114255,72 @@ module Crawlora
             "xp_level",
             "countries",
             "order_types",
-            "player_colors"
+            "player_colors",
+            "chat_wheel",
+            "item_colors",
+            "ancients",
+            "skillshots"
           ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-find-matches" => {
+      "id" => "opendota-find-matches",
+      "method" => "GET",
+      "path" => "/opendota/find-matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_a",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "team_b",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-hero-descriptions" => {
+      "id" => "opendota-hero-descriptions",
+      "method" => "GET",
+      "path" => "/opendota/hero-descriptions",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "hero_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "include_lore",
+          "in" => "query",
+          "type" => "boolean"
         }
       ],
       "formParams" => [],
@@ -97487,6 +114366,32 @@ module Crawlora
       "id" => "opendota-hero-items",
       "method" => "GET",
       "path" => "/opendota/hero-items",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "hero_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "opendota-hero-matches" => {
+      "id" => "opendota-hero-matches",
+      "method" => "GET",
+      "path" => "/opendota/hero-matches",
       "pathParams" => [],
       "queryParams" => [
         {
@@ -97923,6 +114828,125 @@ module Crawlora
       ],
       "paginatable" => true
     },
+    "opendota-public-matches" => {
+      "id" => "opendota-public-matches",
+      "method" => "GET",
+      "path" => "/opendota/public-matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "min_rank",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85"
+          ]
+        },
+        {
+          "name" => "max_rank",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85"
+          ]
+        },
+        {
+          "name" => "less_than_match_id",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "opendota-rank-distribution" => {
       "id" => "opendota-rank-distribution",
       "method" => "GET",
@@ -98172,6 +115196,1939 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "openf1-car-data" => {
+      "id" => "openf1-car-data",
+      "method" => "GET",
+      "path" => "/openf1/car-data",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "session_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "meeting_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "driver_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "date_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "speed_gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "speed_lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "rpm_gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "rpm_lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "throttle_gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "throttle_lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "n_gear",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "drs",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "brake",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openf1-championship-drivers" => {
+      "id" => "openf1-championship-drivers",
+      "method" => "GET",
+      "path" => "/openf1/championship-drivers",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "session_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "meeting_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "driver_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openf1-championship-teams" => {
+      "id" => "openf1-championship-teams",
+      "method" => "GET",
+      "path" => "/openf1/championship-teams",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "session_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "meeting_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "team_name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openf1-drivers" => {
+      "id" => "openf1-drivers",
+      "method" => "GET",
+      "path" => "/openf1/drivers",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "session_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "meeting_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "driver_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "team_name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "name_acronym",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "full_name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country_code",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openf1-intervals" => {
+      "id" => "openf1-intervals",
+      "method" => "GET",
+      "path" => "/openf1/intervals",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "session_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "meeting_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "driver_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "date_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "interval_gt",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "interval_lt",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "gap_to_leader_gt",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "gap_to_leader_lt",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openf1-laps" => {
+      "id" => "openf1-laps",
+      "method" => "GET",
+      "path" => "/openf1/laps",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "session_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "meeting_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "driver_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "lap_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "is_pit_out_lap",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "lap_duration_gte",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "lap_duration_lte",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "date_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openf1-location" => {
+      "id" => "openf1-location",
+      "method" => "GET",
+      "path" => "/openf1/location",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "session_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "meeting_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "driver_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "date_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openf1-meetings" => {
+      "id" => "openf1-meetings",
+      "method" => "GET",
+      "path" => "/openf1/meetings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country_name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country_code",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "meeting_name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "circuit_key",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "circuit_short_name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "circuit_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Permanent",
+            "Temporary - Road",
+            "Temporary - Street"
+          ]
+        },
+        {
+          "name" => "location",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "is_cancelled",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "date_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openf1-overtakes" => {
+      "id" => "openf1-overtakes",
+      "method" => "GET",
+      "path" => "/openf1/overtakes",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "session_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "meeting_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "overtaking_driver_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "overtaken_driver_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "position",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "date_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openf1-pit" => {
+      "id" => "openf1-pit",
+      "method" => "GET",
+      "path" => "/openf1/pit",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "session_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "meeting_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "driver_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "lap_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "date_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "stop_duration_lt",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "stop_duration_lte",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "lane_duration_gte",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "lane_duration_lte",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openf1-position" => {
+      "id" => "openf1-position",
+      "method" => "GET",
+      "path" => "/openf1/position",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "session_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "meeting_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "driver_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "position_gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "position_lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "date_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openf1-race-control" => {
+      "id" => "openf1-race-control",
+      "method" => "GET",
+      "path" => "/openf1/race-control",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "session_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "meeting_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "driver_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "CarEvent",
+            "Drs",
+            "Flag",
+            "Other",
+            "SafetyCar",
+            "SessionStatus"
+          ]
+        },
+        {
+          "name" => "flag",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "BLACK AND WHITE",
+            "BLUE",
+            "CHEQUERED",
+            "CLEAR",
+            "DOUBLE YELLOW",
+            "GREEN",
+            "RED",
+            "YELLOW"
+          ]
+        },
+        {
+          "name" => "scope",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Track",
+            "Driver",
+            "Sector"
+          ]
+        },
+        {
+          "name" => "sector",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "lap_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "qualifying_phase",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "date_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openf1-session-result" => {
+      "id" => "openf1-session-result",
+      "method" => "GET",
+      "path" => "/openf1/session-result",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "session_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "meeting_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "driver_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "position_gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "position_lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "dnf",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "dns",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "dsq",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openf1-sessions" => {
+      "id" => "openf1-sessions",
+      "method" => "GET",
+      "path" => "/openf1/sessions",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "country_name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "country_code",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "session_name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "session_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "Practice",
+            "Qualifying",
+            "Race"
+          ]
+        },
+        {
+          "name" => "meeting_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "circuit_key",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "is_cancelled",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "date_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openf1-starting-grid" => {
+      "id" => "openf1-starting-grid",
+      "method" => "GET",
+      "path" => "/openf1/starting-grid",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "session_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "meeting_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "driver_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "position_gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "position_lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openf1-stints" => {
+      "id" => "openf1-stints",
+      "method" => "GET",
+      "path" => "/openf1/stints",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "session_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "meeting_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "driver_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "compound",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "SOFT",
+            "MEDIUM",
+            "HARD",
+            "INTERMEDIATE",
+            "WET"
+          ]
+        },
+        {
+          "name" => "stint_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "tyre_age_at_start_gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "tyre_age_at_start_lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "lap_start_gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "lap_start_lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "lap_end_gte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "lap_end_lte",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openf1-team-radio" => {
+      "id" => "openf1-team-radio",
+      "method" => "GET",
+      "path" => "/openf1/team-radio",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "session_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "meeting_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "driver_number",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "date_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openf1-weather" => {
+      "id" => "openf1-weather",
+      "method" => "GET",
+      "path" => "/openf1/weather",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "session_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "meeting_key",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date_to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "air_temperature_gte",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "air_temperature_lte",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "track_temperature_gte",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "track_temperature_lte",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "humidity_gte",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "humidity_lte",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "pressure_gte",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "pressure_lte",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "wind_direction_gte",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "wind_direction_lte",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "wind_speed_gte",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "wind_speed_lte",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "rainfall",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "collectionFormat" => "multi",
+          "type" => "array"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-current-group" => {
+      "id" => "openligadb-current-group",
+      "method" => "GET",
+      "path" => "/openligadb/current-group",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_shortcut",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-current-matchday" => {
+      "id" => "openligadb-current-matchday",
+      "method" => "GET",
+      "path" => "/openligadb/current-matchday",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_shortcut",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-goal-getters" => {
+      "id" => "openligadb-goal-getters",
+      "method" => "GET",
+      "path" => "/openligadb/goal-getters",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_shortcut",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-groups" => {
+      "id" => "openligadb-groups",
+      "method" => "GET",
+      "path" => "/openligadb/groups",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_shortcut",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-last-changed" => {
+      "id" => "openligadb-last-changed",
+      "method" => "GET",
+      "path" => "/openligadb/last-changed",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_shortcut",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "group_order_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-last-match" => {
+      "id" => "openligadb-last-match",
+      "method" => "GET",
+      "path" => "/openligadb/last-match",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_shortcut",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-last-team-match" => {
+      "id" => "openligadb-last-team-match",
+      "method" => "GET",
+      "path" => "/openligadb/last-team-match",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-league-team-matches" => {
+      "id" => "openligadb-league-team-matches",
+      "method" => "GET",
+      "path" => "/openligadb/league-team-matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_shortcut",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "team_filter",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-leagues" => {
+      "id" => "openligadb-leagues",
+      "method" => "GET",
+      "path" => "/openligadb/leagues",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-match" => {
+      "id" => "openligadb-match",
+      "method" => "GET",
+      "path" => "/openligadb/match",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "match_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-matchday-matches" => {
+      "id" => "openligadb-matchday-matches",
+      "method" => "GET",
+      "path" => "/openligadb/matchday-matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_shortcut",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "group_order_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-league-matches" => {
+      "id" => "openligadb-league-matches",
+      "method" => "GET",
+      "path" => "/openligadb/matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_shortcut",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-matches-by-team" => {
+      "id" => "openligadb-matches-by-team",
+      "method" => "GET",
+      "path" => "/openligadb/matches-by-team",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_filter",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "weeks_past",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "weeks_future",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-matches-by-team-id" => {
+      "id" => "openligadb-matches-by-team-id",
+      "method" => "GET",
+      "path" => "/openligadb/matches-by-team-id",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "weeks_past",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "weeks_future",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-next-match" => {
+      "id" => "openligadb-next-match",
+      "method" => "GET",
+      "path" => "/openligadb/next-match",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_shortcut",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-next-team-match" => {
+      "id" => "openligadb-next-team-match",
+      "method" => "GET",
+      "path" => "/openligadb/next-team-match",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-result-infos" => {
+      "id" => "openligadb-result-infos",
+      "method" => "GET",
+      "path" => "/openligadb/result-infos",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-result-types" => {
+      "id" => "openligadb-result-types",
+      "method" => "GET",
+      "path" => "/openligadb/result-types",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-sports" => {
+      "id" => "openligadb-sports",
+      "method" => "GET",
+      "path" => "/openligadb/sports",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-table" => {
+      "id" => "openligadb-table",
+      "method" => "GET",
+      "path" => "/openligadb/table",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_shortcut",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-team-pair-matches" => {
+      "id" => "openligadb-team-pair-matches",
+      "method" => "GET",
+      "path" => "/openligadb/team-pair-matches",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "team_id_1",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "team_id_2",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "openligadb-teams" => {
+      "id" => "openligadb-teams",
+      "method" => "GET",
+      "path" => "/openligadb/teams",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league_shortcut",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "opensea-activity" => {
       "id" => "opensea-activity",
@@ -101227,6 +120184,148 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "partiful-city-facets" => {
+      "id" => "partiful-city-facets",
+      "method" => "GET",
+      "path" => "/partiful/city-facets",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "NYC",
+            "LA",
+            "SF",
+            "CHI",
+            "ATX",
+            "BOS",
+            "DC",
+            "MIA",
+            "LON"
+          ]
+        },
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "events",
+            "today",
+            "tomorrow",
+            "this-week",
+            "this-weekend",
+            "thanksgiving",
+            "fall",
+            "popups",
+            "food",
+            "free-events",
+            "live-music",
+            "parties",
+            "run-clubs",
+            "trivia",
+            "lgbtq"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "partiful-city-feed" => {
+      "id" => "partiful-city-feed",
+      "method" => "GET",
+      "path" => "/partiful/city-feed",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "NYC",
+            "LA",
+            "SF",
+            "CHI",
+            "ATX",
+            "BOS",
+            "DC",
+            "MIA",
+            "LON"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "partiful-event" => {
+      "id" => "partiful-event",
+      "method" => "GET",
+      "path" => "/partiful/event",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "event_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "partiful-explore-cities" => {
+      "id" => "partiful-explore-cities",
+      "method" => "GET",
+      "path" => "/partiful/explore-cities",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "patreon-creator" => {
       "id" => "patreon-creator",
       "method" => "GET",
@@ -101913,6 +121012,744 @@ module Crawlora
       "method" => "GET",
       "path" => "/people/sections",
       "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "petsmart-categories" => {
+      "id" => "petsmart-categories",
+      "method" => "GET",
+      "path" => "/petsmart/categories",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "us",
+            "ca"
+          ]
+        },
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "parent",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "depth",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "petsmart-product" => {
+      "id" => "petsmart-product",
+      "method" => "GET",
+      "path" => "/petsmart/product",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "us",
+            "ca"
+          ]
+        },
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "petsmart-product-inventory" => {
+      "id" => "petsmart-product-inventory",
+      "method" => "GET",
+      "path" => "/petsmart/product/inventory",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "store_id",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "min_quantity",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "petsmart-search" => {
+      "id" => "petsmart-search",
+      "method" => "GET",
+      "path" => "/petsmart/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "us",
+            "ca"
+          ]
+        },
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "brand",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "relevance",
+            "price_asc",
+            "price_desc",
+            "best_sellers",
+            "top_rated",
+            "new_arrivals"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "petsmart-search-filters" => {
+      "id" => "petsmart-search-filters",
+      "method" => "GET",
+      "path" => "/petsmart/search/filters",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "us",
+            "ca"
+          ]
+        },
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "brand",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "filter",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "max_price",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "min_rating",
+          "in" => "query",
+          "type" => "number"
+        },
+        {
+          "name" => "facet",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "facet_query",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "petsmart-suggest" => {
+      "id" => "petsmart-suggest",
+      "method" => "GET",
+      "path" => "/petsmart/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "us",
+            "ca"
+          ]
+        },
+        {
+          "name" => "query",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pgatour-leaderboard" => {
+      "id" => "pgatour-leaderboard",
+      "method" => "GET",
+      "path" => "/pgatour/leaderboard",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tour",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "R",
+            "S",
+            "H",
+            "Y"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pgatour-players" => {
+      "id" => "pgatour-players",
+      "method" => "GET",
+      "path" => "/pgatour/players",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tour",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "R",
+            "S",
+            "H",
+            "Y"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pgatour-schedule" => {
+      "id" => "pgatour-schedule",
+      "method" => "GET",
+      "path" => "/pgatour/schedule",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tour",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "R",
+            "S",
+            "H",
+            "Y"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pgatour-schedule-seasons" => {
+      "id" => "pgatour-schedule-seasons",
+      "method" => "GET",
+      "path" => "/pgatour/schedule/seasons",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tour",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "R",
+            "S",
+            "H",
+            "Y"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pgatour-stats" => {
+      "id" => "pgatour-stats",
+      "method" => "GET",
+      "path" => "/pgatour/stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tour",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "R",
+            "S",
+            "H",
+            "Y"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pgatour-stat-detail" => {
+      "id" => "pgatour-stat-detail",
+      "method" => "GET",
+      "path" => "/pgatour/stats/{stat_id}",
+      "pathParams" => [
+        "stat_id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "tour",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "R",
+            "S",
+            "H",
+            "Y"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "query_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "THROUGH_EVENT",
+            "EVENT_ONLY"
+          ]
+        },
+        {
+          "name" => "tournament_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pgatour-stat-options" => {
+      "id" => "pgatour-stat-options",
+      "method" => "GET",
+      "path" => "/pgatour/stats/{stat_id}/options",
+      "pathParams" => [
+        "stat_id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "tour",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "R",
+            "S",
+            "H",
+            "Y"
+          ]
+        },
+        {
+          "name" => "year",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pgatour-tournament-links" => {
+      "id" => "pgatour-tournament-links",
+      "method" => "GET",
+      "path" => "/pgatour/tournament-links",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pgatour-tournament-broadcast" => {
+      "id" => "pgatour-tournament-broadcast",
+      "method" => "GET",
+      "path" => "/pgatour/tournaments/{year}/{slug}/{id}/broadcast",
+      "pathParams" => [
+        "year",
+        "slug",
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pgatour-tournament-course-stats" => {
+      "id" => "pgatour-tournament-course-stats",
+      "method" => "GET",
+      "path" => "/pgatour/tournaments/{year}/{slug}/{id}/course-stats",
+      "pathParams" => [
+        "year",
+        "slug",
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pgatour-tournament-field" => {
+      "id" => "pgatour-tournament-field",
+      "method" => "GET",
+      "path" => "/pgatour/tournaments/{year}/{slug}/{id}/field",
+      "pathParams" => [
+        "year",
+        "slug",
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pgatour-tournament-overview" => {
+      "id" => "pgatour-tournament-overview",
+      "method" => "GET",
+      "path" => "/pgatour/tournaments/{year}/{slug}/{id}/overview",
+      "pathParams" => [
+        "year",
+        "slug",
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pgatour-tournament-past-results" => {
+      "id" => "pgatour-tournament-past-results",
+      "method" => "GET",
+      "path" => "/pgatour/tournaments/{year}/{slug}/{id}/past-results",
+      "pathParams" => [
+        "year",
+        "slug",
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pgatour-tournament-tee-times" => {
+      "id" => "pgatour-tournament-tee-times",
+      "method" => "GET",
+      "path" => "/pgatour/tournaments/{year}/{slug}/{id}/tee-times",
+      "pathParams" => [
+        "year",
+        "slug",
+        "id"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "pgatour-tournament-weather" => {
+      "id" => "pgatour-tournament-weather",
+      "method" => "GET",
+      "path" => "/pgatour/tournaments/{year}/{slug}/{id}/weather",
+      "pathParams" => [
+        "year",
+        "slug",
+        "id"
+      ],
       "queryParams" => [],
       "formParams" => [],
       "bodyParam" => nil,
@@ -115196,6 +135033,106 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "rottentomatoes-critic" => {
+      "id" => "rottentomatoes-critic",
+      "method" => "GET",
+      "path" => "/rottentomatoes/critic",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rottentomatoes-critic-publications" => {
+      "id" => "rottentomatoes-critic-publications",
+      "method" => "GET",
+      "path" => "/rottentomatoes/critic/publications",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rottentomatoes-critic-reviews" => {
+      "id" => "rottentomatoes-critic-reviews",
+      "method" => "GET",
+      "path" => "/rottentomatoes/critic/reviews",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "rottentomatoes-critics-authors" => {
       "id" => "rottentomatoes-critics-authors",
       "method" => "GET",
@@ -115642,6 +135579,56 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "rottentomatoes-episode-reviews" => {
+      "id" => "rottentomatoes-episode-reviews",
+      "method" => "GET",
+      "path" => "/rottentomatoes/episode/reviews",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "critics",
+            "top-critics",
+            "audience"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "rottentomatoes-movie" => {
       "id" => "rottentomatoes-movie",
       "method" => "GET",
@@ -115723,6 +135710,66 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "rottentomatoes-movie-videos" => {
+      "id" => "rottentomatoes-movie-videos",
+      "method" => "GET",
+      "path" => "/rottentomatoes/movie/videos",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rottentomatoes-movies" => {
+      "id" => "rottentomatoes-movies",
+      "method" => "GET",
+      "path" => "/rottentomatoes/movies",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "ids",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "paths",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "rottentomatoes-person" => {
       "id" => "rottentomatoes-person",
       "method" => "GET",
@@ -115736,6 +135783,100 @@ module Crawlora
         },
         {
           "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "media_type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "movie",
+            "tv"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "newest",
+            "oldest",
+            "audience_highest",
+            "audience_lowest",
+            "critic_highest",
+            "critic_lowest"
+          ]
+        },
+        {
+          "name" => "after",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rottentomatoes-publication" => {
+      "id" => "rottentomatoes-publication",
+      "method" => "GET",
+      "path" => "/rottentomatoes/publication",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rottentomatoes-publication-reviews" => {
+      "id" => "rottentomatoes-publication-reviews",
+      "method" => "GET",
+      "path" => "/rottentomatoes/publication/reviews",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "after",
           "in" => "query",
           "type" => "string"
         }
@@ -115797,6 +135938,56 @@ module Crawlora
         },
         {
           "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "rottentomatoes-season-reviews" => {
+      "id" => "rottentomatoes-season-reviews",
+      "method" => "GET",
+      "path" => "/rottentomatoes/season/reviews",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "path",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "critics",
+            "top-critics",
+            "audience"
+          ]
+        },
+        {
+          "name" => "limit",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "after",
           "in" => "query",
           "type" => "string"
         }
@@ -122946,6 +143137,38 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "sofascore-event-player-actions" => {
+      "id" => "sofascore-event-player-actions",
+      "method" => "GET",
+      "path" => "/sofascore/event-player-actions",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "player_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "sofascore-event-player-heatmap" => {
       "id" => "sofascore-event-player-heatmap",
       "method" => "GET",
@@ -123118,6 +143341,38 @@ module Crawlora
       "id" => "sofascore-event-team-heatmap",
       "method" => "GET",
       "path" => "/sofascore/event-team-heatmap",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "sofascore-event-team-shotmap" => {
+      "id" => "sofascore-event-team-shotmap",
+      "method" => "GET",
+      "path" => "/sofascore/event-team-shotmap",
       "pathParams" => [],
       "queryParams" => [
         {
@@ -126895,6 +147150,910 @@ module Crawlora
         "ApiKeyAuth"
       ],
       "paginatable" => true
+    },
+    "speedrun-catalog" => {
+      "id" => "speedrun-catalog",
+      "method" => "GET",
+      "path" => "/speedrun/catalogs/{kind}",
+      "pathParams" => [
+        "kind"
+      ],
+      "queryParams" => [
+        {
+          "name" => "max",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "speedrun-category-detail" => {
+      "id" => "speedrun-category-detail",
+      "method" => "GET",
+      "path" => "/speedrun/categories/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "embed",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "game",
+            "variables"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "speedrun-category-records" => {
+      "id" => "speedrun-category-records",
+      "method" => "GET",
+      "path" => "/speedrun/categories/{id}/records",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "embed",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "game",
+            "category",
+            "level",
+            "platforms",
+            "regions",
+            "variables"
+          ]
+        },
+        {
+          "name" => "top",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "skip_empty",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "max",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "speedrun-category-variables" => {
+      "id" => "speedrun-category-variables",
+      "method" => "GET",
+      "path" => "/speedrun/categories/{id}/variables",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "embed",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "game"
+          ]
+        },
+        {
+          "name" => "orderby",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "name",
+            "mandatory",
+            "user-defined",
+            "pos"
+          ]
+        },
+        {
+          "name" => "direction",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "speedrun-games" => {
+      "id" => "speedrun-games",
+      "method" => "GET",
+      "path" => "/speedrun/games",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "name",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "platform",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "gametype",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "max",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "abbreviation",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "released",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "genre",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "engine",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "developer",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "publisher",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "orderby",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "name.int",
+            "name.jap",
+            "abbreviation",
+            "released",
+            "created",
+            "similarity"
+          ]
+        },
+        {
+          "name" => "direction",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "_bulk",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "romhack",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "embed",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "categories",
+            "levels",
+            "variables",
+            "platforms",
+            "regions",
+            "gametypes",
+            "genres",
+            "engines",
+            "developers",
+            "publishers"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "speedrun-game-detail" => {
+      "id" => "speedrun-game-detail",
+      "method" => "GET",
+      "path" => "/speedrun/games/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "embed",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "categories",
+            "levels",
+            "variables",
+            "platforms",
+            "regions",
+            "gametypes",
+            "genres",
+            "engines",
+            "developers",
+            "publishers"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "speedrun-categories" => {
+      "id" => "speedrun-categories",
+      "method" => "GET",
+      "path" => "/speedrun/games/{id}/categories",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "miscellaneous",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "orderby",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "name",
+            "miscellaneous",
+            "pos"
+          ]
+        },
+        {
+          "name" => "direction",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "embed",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "game",
+            "variables"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "speedrun-levels" => {
+      "id" => "speedrun-levels",
+      "method" => "GET",
+      "path" => "/speedrun/games/{id}/levels",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "orderby",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "name",
+            "pos"
+          ]
+        },
+        {
+          "name" => "direction",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "embed",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "categories",
+            "variables"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "speedrun-records" => {
+      "id" => "speedrun-records",
+      "method" => "GET",
+      "path" => "/speedrun/games/{id}/records",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "max",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "top",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "skip_empty",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "embed",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "game",
+            "category",
+            "level",
+            "platforms",
+            "regions",
+            "variables"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "speedrun-variables" => {
+      "id" => "speedrun-variables",
+      "method" => "GET",
+      "path" => "/speedrun/games/{id}/variables",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "orderby",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "name",
+            "mandatory",
+            "user-defined",
+            "pos"
+          ]
+        },
+        {
+          "name" => "direction",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "embed",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "game"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "speedrun-game-leaderboard" => {
+      "id" => "speedrun-game-leaderboard",
+      "method" => "GET",
+      "path" => "/speedrun/leaderboards/{game}/category/{category}",
+      "pathParams" => [
+        "game",
+        "category"
+      ],
+      "queryParams" => [
+        {
+          "name" => "embed",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "game",
+            "category",
+            "level",
+            "platforms",
+            "regions",
+            "variables"
+          ]
+        },
+        {
+          "name" => "top",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "platform",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "emulators",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "video_only",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "timing",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "realtime",
+            "realtime_noloads",
+            "ingame"
+          ]
+        },
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "variables",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "speedrun-level-leaderboard" => {
+      "id" => "speedrun-level-leaderboard",
+      "method" => "GET",
+      "path" => "/speedrun/leaderboards/{game}/level/{level}/{category}",
+      "pathParams" => [
+        "game",
+        "category",
+        "level"
+      ],
+      "queryParams" => [
+        {
+          "name" => "embed",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "game",
+            "category",
+            "level",
+            "platforms",
+            "regions",
+            "variables"
+          ]
+        },
+        {
+          "name" => "top",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "platform",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "region",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "emulators",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "video_only",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "timing",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "realtime",
+            "realtime_noloads",
+            "ingame"
+          ]
+        },
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "variables",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "speedrun-level-detail" => {
+      "id" => "speedrun-level-detail",
+      "method" => "GET",
+      "path" => "/speedrun/levels/{id}",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "embed",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "categories",
+            "variables"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "speedrun-level-categories" => {
+      "id" => "speedrun-level-categories",
+      "method" => "GET",
+      "path" => "/speedrun/levels/{id}/categories",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "embed",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "game",
+            "variables"
+          ]
+        },
+        {
+          "name" => "orderby",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "name",
+            "miscellaneous",
+            "pos"
+          ]
+        },
+        {
+          "name" => "direction",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "miscellaneous",
+          "in" => "query",
+          "type" => "boolean"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "speedrun-level-records" => {
+      "id" => "speedrun-level-records",
+      "method" => "GET",
+      "path" => "/speedrun/levels/{id}/records",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "embed",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "game",
+            "category",
+            "level",
+            "platforms",
+            "regions",
+            "variables"
+          ]
+        },
+        {
+          "name" => "top",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "skip_empty",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "max",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "speedrun-level-variables" => {
+      "id" => "speedrun-level-variables",
+      "method" => "GET",
+      "path" => "/speedrun/levels/{id}/variables",
+      "pathParams" => [
+        "id"
+      ],
+      "queryParams" => [
+        {
+          "name" => "embed",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "game"
+          ]
+        },
+        {
+          "name" => "orderby",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "name",
+            "mandatory",
+            "user-defined",
+            "pos"
+          ]
+        },
+        {
+          "name" => "direction",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "speedrun-resource-options" => {
+      "id" => "speedrun-resource-options",
+      "method" => "GET",
+      "path" => "/speedrun/options",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
     },
     "sportingnews-article" => {
       "id" => "sportingnews-article",
@@ -148943,6 +170102,20 @@ module Crawlora
           "in" => "query",
           "type" => "string",
           "required" => true
+        },
+        {
+          "name" => "series_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "group",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "completed",
+            "upcoming"
+          ]
         }
       ],
       "formParams" => [],
@@ -148978,6 +170151,45 @@ module Crawlora
             "all",
             "t",
             "ct"
+          ]
+        },
+        {
+          "name" => "role",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "agent",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "map",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "stage",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "min_rounds",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "dir",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "desc",
+            "asc"
           ]
         }
       ],
@@ -149085,6 +170297,16 @@ module Crawlora
           "name" => "page",
           "in" => "query",
           "type" => "integer"
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "hot",
+            "new",
+            "top"
+          ]
         }
       ],
       "formParams" => [],
@@ -149294,6 +170516,17 @@ module Crawlora
           "in" => "query",
           "type" => "string",
           "required" => true
+        },
+        {
+          "name" => "timespan",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "30d",
+            "60d",
+            "90d"
+          ]
         }
       ],
       "formParams" => [],
@@ -149468,20 +170701,7 @@ module Crawlora
         {
           "name" => "timespan",
           "in" => "query",
-          "type" => "string",
-          "enum" => [
-            "all",
-            "30d",
-            "60d",
-            "90d",
-            "2026",
-            "2025",
-            "2024",
-            "2023",
-            "2022",
-            "2021",
-            "2020"
-          ]
+          "type" => "string"
         },
         {
           "name" => "side",
@@ -149663,6 +170883,15 @@ module Crawlora
           "name" => "page",
           "in" => "query",
           "type" => "integer"
+        },
+        {
+          "name" => "group",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "completed",
+            "upcoming"
+          ]
         }
       ],
       "formParams" => [],
@@ -151385,6 +172614,231 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "webtoon-genre" => {
+      "id" => "webtoon-genre",
+      "method" => "GET",
+      "path" => "/webtoon/genre",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "genre",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "action",
+            "comedy",
+            "drama",
+            "fantasy",
+            "graphic_novel",
+            "heartwarming",
+            "historical",
+            "horror",
+            "mystery",
+            "romance",
+            "sf",
+            "slice_of_life",
+            "super_hero",
+            "sports",
+            "supernatural",
+            "thriller",
+            "tiptoon"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "MANA",
+            "LIKEIT",
+            "UPDATE"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "webtoon-genres" => {
+      "id" => "webtoon-genres",
+      "method" => "GET",
+      "path" => "/webtoon/genres",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "webtoon-originals" => {
+      "id" => "webtoon-originals",
+      "method" => "GET",
+      "path" => "/webtoon/originals",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "day",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday",
+            "complete"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "MANA",
+            "LIKEIT",
+            "UPDATE"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "webtoon-rankings" => {
+      "id" => "webtoon-rankings",
+      "method" => "GET",
+      "path" => "/webtoon/rankings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "tab",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "trending",
+            "popular",
+            "originals",
+            "canvas"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "webtoon-search" => {
+      "id" => "webtoon-search",
+      "method" => "GET",
+      "path" => "/webtoon/search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "keyword",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "scope",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "all",
+            "originals",
+            "canvas"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "webtoon-series" => {
+      "id" => "webtoon-series",
+      "method" => "GET",
+      "path" => "/webtoon/series",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "title_no",
+          "in" => "query",
+          "type" => "integer",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
     "wendys-categories" => {
       "id" => "wendys-categories",
       "method" => "GET",
@@ -152654,6 +174108,308 @@ module Crawlora
           "type" => "string"
         }
       ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "wta-countries" => {
+      "id" => "wta-countries",
+      "method" => "GET",
+      "path" => "/wta/countries",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "wta-match-states" => {
+      "id" => "wta-match-states",
+      "method" => "GET",
+      "path" => "/wta/match-states",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "wta-rankings" => {
+      "id" => "wta-rankings",
+      "method" => "GET",
+      "path" => "/wta/rankings/{view}",
+      "pathParams" => [
+        "view"
+      ],
+      "queryParams" => [
+        {
+          "name" => "country",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "at",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "type",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "rankSingles",
+            "rankDoubles",
+            "RankChampSingles",
+            "LastName",
+            "BirthDate",
+            "TournCountSingles",
+            "TournCountDoubles",
+            "TournCountChamps",
+            "PointsSingles",
+            "PointsDoubles",
+            "PointsChamps",
+            "rank",
+            "points"
+          ]
+        },
+        {
+          "name" => "sort",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "wta-tournament-seasons" => {
+      "id" => "wta-tournament-seasons",
+      "method" => "GET",
+      "path" => "/wta/tournament-seasons",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "wta-tournaments" => {
+      "id" => "wta-tournaments",
+      "method" => "GET",
+      "path" => "/wta/tournaments",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "from",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "to",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page_size",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "level",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "WTA 500",
+            "WTA 250",
+            "Grand Slam",
+            "WTA 1000",
+            "Finals",
+            "International",
+            "Premier",
+            "Premier 5",
+            "Premier Mandatory",
+            "ITF",
+            "WTA 125"
+          ]
+        },
+        {
+          "name" => "surface",
+          "in" => "query",
+          "collectionFormat" => "csv",
+          "type" => "array",
+          "enum" => [
+            "Hard",
+            "Clay",
+            "Grass",
+            "Carpet"
+          ]
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "wta-tournament" => {
+      "id" => "wta-tournament",
+      "method" => "GET",
+      "path" => "/wta/tournaments/{group_id}/{year}",
+      "pathParams" => [
+        "group_id",
+        "year"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "wta-tournament-draws" => {
+      "id" => "wta-tournament-draws",
+      "method" => "GET",
+      "path" => "/wta/tournaments/{group_id}/{year}/draws",
+      "pathParams" => [
+        "group_id",
+        "year"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "wta-tournament-matches" => {
+      "id" => "wta-tournament-matches",
+      "method" => "GET",
+      "path" => "/wta/tournaments/{group_id}/{year}/matches",
+      "pathParams" => [
+        "group_id",
+        "year"
+      ],
+      "queryParams" => [
+        {
+          "name" => "states",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "wta-tournament-order-of-play" => {
+      "id" => "wta-tournament-order-of-play",
+      "method" => "GET",
+      "path" => "/wta/tournaments/{group_id}/{year}/order-of-play",
+      "pathParams" => [
+        "group_id",
+        "year"
+      ],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "wta-tournament-players" => {
+      "id" => "wta-tournament-players",
+      "method" => "GET",
+      "path" => "/wta/tournaments/{group_id}/{year}/players",
+      "pathParams" => [
+        "group_id",
+        "year"
+      ],
+      "queryParams" => [],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -155510,25 +177266,17 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
-    "yahoo-shopping-category" => {
-      "id" => "yahoo-shopping-category",
+    "yahoo-shopping-author" => {
+      "id" => "yahoo-shopping-author",
       "method" => "GET",
-      "path" => "/yahoo-shopping/category",
+      "path" => "/yahoo-shopping/author",
       "pathParams" => [],
       "queryParams" => [
         {
-          "name" => "category",
+          "name" => "author",
           "in" => "query",
           "type" => "string",
-          "required" => true,
-          "enum" => [
-            "beauty",
-            "deals",
-            "general",
-            "gift-ideas",
-            "home-garden",
-            "style"
-          ]
+          "required" => true
         },
         {
           "name" => "page",
@@ -155550,10 +177298,10 @@ module Crawlora
       ],
       "paginatable" => true
     },
-    "yahoo-shopping-home" => {
-      "id" => "yahoo-shopping-home",
+    "yahoo-shopping-categories" => {
+      "id" => "yahoo-shopping-categories",
       "method" => "GET",
-      "path" => "/yahoo-shopping/home",
+      "path" => "/yahoo-shopping/categories",
       "pathParams" => [],
       "queryParams" => [],
       "formParams" => [],
@@ -155568,6 +177316,102 @@ module Crawlora
       "security" => [
         "ApiKeyAuth"
       ]
+    },
+    "yahoo-shopping-category" => {
+      "id" => "yahoo-shopping-category",
+      "method" => "GET",
+      "path" => "/yahoo-shopping/category",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "category",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "style",
+            "beauty",
+            "health",
+            "home-garden",
+            "tech",
+            "gift-ideas",
+            "guides",
+            "code-orange",
+            "deals",
+            "toys-games",
+            "general",
+            "pets"
+          ]
+        },
+        {
+          "name" => "subcategory",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "yahoo-shopping-experts" => {
+      "id" => "yahoo-shopping-experts",
+      "method" => "GET",
+      "path" => "/yahoo-shopping/experts",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-shopping-home" => {
+      "id" => "yahoo-shopping-home",
+      "method" => "GET",
+      "path" => "/yahoo-shopping/home",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
     },
     "yahoo-shopping-shopping-list" => {
       "id" => "yahoo-shopping-shopping-list",
@@ -155599,6 +177443,51 @@ module Crawlora
       "id" => "yahoo-shopping-shopping-lists",
       "method" => "GET",
       "path" => "/yahoo-shopping/shopping-lists",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-shopping-sitemap" => {
+      "id" => "yahoo-shopping-sitemap",
+      "method" => "GET",
+      "path" => "/yahoo-shopping/sitemap",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-shopping-sitemaps" => {
+      "id" => "yahoo-shopping-sitemaps",
+      "method" => "GET",
+      "path" => "/yahoo-shopping/sitemaps",
       "pathParams" => [],
       "queryParams" => [],
       "formParams" => [],
@@ -155659,6 +177548,143 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "yahoo-shopping-suggest" => {
+      "id" => "yahoo-shopping-suggest",
+      "method" => "GET",
+      "path" => "/yahoo-shopping/suggest",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "q",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "count",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-college-rankings" => {
+      "id" => "yahoo-sports-college-rankings",
+      "method" => "GET",
+      "path" => "/yahoo-sports/college-rankings",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "college-football",
+            "college-basketball",
+            "college-womens-basketball"
+          ]
+        },
+        {
+          "name" => "poll_type",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "tz",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-draft" => {
+      "id" => "yahoo-sports-draft",
+      "method" => "GET",
+      "path" => "/yahoo-sports/draft",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "nba"
+          ]
+        },
+        {
+          "name" => "view",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "results",
+            "mock",
+            "big-board",
+            "news"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-dropdown-catalog" => {
+      "id" => "yahoo-sports-dropdown-catalog",
+      "method" => "GET",
+      "path" => "/yahoo-sports/dropdown-catalog",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "yahoo-sports-game" => {
       "id" => "yahoo-sports-game",
       "method" => "GET",
@@ -155679,6 +177705,7 @@ module Crawlora
             "college-football",
             "college-basketball",
             "college-womens-basketball",
+            "soccer",
             "mls",
             "premier-league",
             "la-liga",
@@ -155694,14 +177721,21 @@ module Crawlora
             "world-cup",
             "concacaf-champions-cup",
             "concacaf-gold-cup",
-            "concacaf-league"
+            "concacaf-league",
+            "womens-world-cup",
+            "europa-league",
+            "euro-championship"
           ]
         },
         {
           "name" => "game",
           "in" => "query",
-          "type" => "string",
-          "required" => true
+          "type" => "string"
+        },
+        {
+          "name" => "game_url",
+          "in" => "query",
+          "type" => "string"
         }
       ],
       "formParams" => [],
@@ -155748,6 +177782,95 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "yahoo-sports-golf-player" => {
+      "id" => "yahoo-sports-golf-player",
+      "method" => "GET",
+      "path" => "/yahoo-sports/golf-player",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "player_url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-golf-player-news" => {
+      "id" => "yahoo-sports-golf-player-news",
+      "method" => "GET",
+      "path" => "/yahoo-sports/golf-player-news",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "player_url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "mode",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "top",
+            "latest"
+          ]
+        },
+        {
+          "name" => "cursor",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true,
+      "cursorParams" => [
+        "cursor"
+      ]
+    },
+    "yahoo-sports-golf-players" => {
+      "id" => "yahoo-sports-golf-players",
+      "method" => "GET",
+      "path" => "/yahoo-sports/golf-players",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "yahoo-sports-golf-schedule" => {
       "id" => "yahoo-sports-golf-schedule",
       "method" => "GET",
@@ -155764,7 +177887,8 @@ module Crawlora
             "pga-european-tours",
             "lpga-tour",
             "champions-tour",
-            "european-tour"
+            "european-tour",
+            "korn-ferry-tour"
           ]
         },
         {
@@ -155773,6 +177897,147 @@ module Crawlora
           "type" => "integer"
         }
       ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-home" => {
+      "id" => "yahoo-sports-home",
+      "method" => "GET",
+      "path" => "/yahoo-sports/home",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-injury-report" => {
+      "id" => "yahoo-sports-injury-report",
+      "method" => "GET",
+      "path" => "/yahoo-sports/injury-report",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "nba",
+            "mlb",
+            "nhl"
+          ]
+        },
+        {
+          "name" => "team_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-league-schedule" => {
+      "id" => "yahoo-sports-league-schedule",
+      "method" => "GET",
+      "path" => "/yahoo-sports/league-schedule",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "nba",
+            "mlb",
+            "nhl",
+            "wnba",
+            "college-football",
+            "college-basketball",
+            "college-womens-basketball"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "week",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "seasonPhase",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "PRESEASON",
+            "REGULAR_SEASON",
+            "POSTSEASON"
+          ]
+        },
+        {
+          "name" => "leagueFilter",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-leagues" => {
+      "id" => "yahoo-sports-leagues",
+      "method" => "GET",
+      "path" => "/yahoo-sports/leagues",
+      "pathParams" => [],
+      "queryParams" => [],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -155823,6 +178088,32 @@ module Crawlora
       "security" => [
         "ApiKeyAuth"
       ]
+    },
+    "yahoo-sports-more-news" => {
+      "id" => "yahoo-sports-more-news",
+      "method" => "GET",
+      "path" => "/yahoo-sports/more-news",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
     },
     "yahoo-sports-motorsports-race" => {
       "id" => "yahoo-sports-motorsports-race",
@@ -155895,6 +178186,50 @@ module Crawlora
         "ApiKeyAuth"
       ]
     },
+    "yahoo-sports-navigation" => {
+      "id" => "yahoo-sports-navigation",
+      "method" => "GET",
+      "path" => "/yahoo-sports/navigation",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section_url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-network-catalog" => {
+      "id" => "yahoo-sports-network-catalog",
+      "method" => "GET",
+      "path" => "/yahoo-sports/network-catalog",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
     "yahoo-sports-news" => {
       "id" => "yahoo-sports-news",
       "method" => "GET",
@@ -155915,6 +178250,7 @@ module Crawlora
             "college-football",
             "college-basketball",
             "college-womens-basketball",
+            "soccer",
             "mls",
             "premier-league",
             "la-liga",
@@ -155930,10 +178266,176 @@ module Crawlora
             "world-cup",
             "concacaf-champions-cup",
             "concacaf-gold-cup",
-            "concacaf-league"
+            "concacaf-league",
+            "womens-world-cup",
+            "europa-league",
+            "euro-championship"
           ]
         }
       ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-newsletter-archive" => {
+      "id" => "yahoo-sports-newsletter-archive",
+      "method" => "GET",
+      "path" => "/yahoo-sports/newsletter-archive",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "newsletter",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ],
+      "paginatable" => true
+    },
+    "yahoo-sports-newsletters" => {
+      "id" => "yahoo-sports-newsletters",
+      "method" => "GET",
+      "path" => "/yahoo-sports/newsletters",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-odds-featured" => {
+      "id" => "yahoo-sports-odds-featured",
+      "method" => "GET",
+      "path" => "/yahoo-sports/odds-featured",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-odds-game" => {
+      "id" => "yahoo-sports-odds-game",
+      "method" => "GET",
+      "path" => "/yahoo-sports/odds-game",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "game_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "tz",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-odds-games" => {
+      "id" => "yahoo-sports-odds-games",
+      "method" => "GET",
+      "path" => "/yahoo-sports/odds-games",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "ncaaf",
+            "nba",
+            "mlb",
+            "nhl",
+            "ncaab",
+            "ncaaw",
+            "wnba",
+            "soccer.l.fbgb",
+            "soccer.l.fbchampions",
+            "soccer.l.mls",
+            "soccer.l.fbes",
+            "soccer.l.fbwcup",
+            "golf",
+            "ten"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-odds-trending" => {
+      "id" => "yahoo-sports-odds-trending",
+      "method" => "GET",
+      "path" => "/yahoo-sports/odds-trending",
+      "pathParams" => [],
+      "queryParams" => [],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -155986,6 +178488,7 @@ module Crawlora
             "college-football",
             "college-basketball",
             "college-womens-basketball",
+            "soccer",
             "mls",
             "premier-league",
             "la-liga",
@@ -156001,7 +178504,10 @@ module Crawlora
             "world-cup",
             "concacaf-champions-cup",
             "concacaf-gold-cup",
-            "concacaf-league"
+            "concacaf-league",
+            "womens-world-cup",
+            "europa-league",
+            "euro-championship"
           ]
         },
         {
@@ -156009,6 +178515,200 @@ module Crawlora
           "in" => "query",
           "type" => "string",
           "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-player-search" => {
+      "id" => "yahoo-sports-player-search",
+      "method" => "GET",
+      "path" => "/yahoo-sports/player-search",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "nba",
+            "mlb",
+            "golf"
+          ]
+        },
+        {
+          "name" => "name",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-playoff-bracket" => {
+      "id" => "yahoo-sports-playoff-bracket",
+      "method" => "GET",
+      "path" => "/yahoo-sports/playoff-bracket",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "nba",
+            "mlb",
+            "wnba",
+            "college-football",
+            "college-basketball",
+            "college-womens-basketball"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-playoff-bracket-catalog" => {
+      "id" => "yahoo-sports-playoff-bracket-catalog",
+      "method" => "GET",
+      "path" => "/yahoo-sports/playoff-bracket-catalog",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "nba",
+            "mlb",
+            "wnba",
+            "college-football",
+            "college-basketball",
+            "college-womens-basketball"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-rss-catalog" => {
+      "id" => "yahoo-sports-rss-catalog",
+      "method" => "GET",
+      "path" => "/yahoo-sports/rss-catalog",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-rss-feed" => {
+      "id" => "yahoo-sports-rss-feed",
+      "method" => "GET",
+      "path" => "/yahoo-sports/rss-feed",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "feed",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-schedule-catalog" => {
+      "id" => "yahoo-sports-schedule-catalog",
+      "method" => "GET",
+      "path" => "/yahoo-sports/schedule-catalog",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "nba",
+            "mlb",
+            "nhl",
+            "wnba",
+            "college-football",
+            "college-basketball",
+            "college-womens-basketball"
+          ]
         }
       ],
       "formParams" => [],
@@ -156044,6 +178744,7 @@ module Crawlora
             "college-football",
             "college-basketball",
             "college-womens-basketball",
+            "soccer",
             "mls",
             "premier-league",
             "la-liga",
@@ -156059,15 +178760,118 @@ module Crawlora
             "world-cup",
             "concacaf-champions-cup",
             "concacaf-gold-cup",
-            "concacaf-league"
+            "concacaf-league",
+            "womens-world-cup",
+            "europa-league",
+            "euro-championship"
           ]
         },
         {
           "name" => "date",
           "in" => "query",
           "type" => "string"
+        },
+        {
+          "name" => "month",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "competition_id",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
         }
       ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-section-stream" => {
+      "id" => "yahoo-sports-section-stream",
+      "method" => "GET",
+      "path" => "/yahoo-sports/section-stream",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "section_url",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "page_offset",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-soccer-scoreboard" => {
+      "id" => "yahoo-sports-soccer-scoreboard",
+      "method" => "GET",
+      "path" => "/yahoo-sports/soccer-scoreboard",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "date",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "month",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "competition_id",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-sportsbook-catalog" => {
+      "id" => "yahoo-sports-sportsbook-catalog",
+      "method" => "GET",
+      "path" => "/yahoo-sports/sportsbook-catalog",
+      "pathParams" => [],
+      "queryParams" => [],
       "formParams" => [],
       "bodyParam" => nil,
       "bodyRequired" => false,
@@ -156110,7 +178914,182 @@ module Crawlora
             "nwsl",
             "ligamx-apertura",
             "ligamx-clausura",
-            "world-cup"
+            "world-cup",
+            "europa-league"
+          ]
+        },
+        {
+          "name" => "season",
+          "in" => "query",
+          "type" => "integer"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-stats" => {
+      "id" => "yahoo-sports-stats",
+      "method" => "GET",
+      "path" => "/yahoo-sports/stats",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "nba",
+            "mlb",
+            "nhl",
+            "wnba",
+            "college-football",
+            "college-basketball",
+            "mls",
+            "premier-league",
+            "la-liga",
+            "serie-a",
+            "bundesliga",
+            "ligue-1",
+            "ligamx-clausura",
+            "world-cup",
+            "concacaf-gold-cup",
+            "golf"
+          ]
+        },
+        {
+          "name" => "pageType",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "individual",
+            "weekly",
+            "team"
+          ]
+        },
+        {
+          "name" => "selectedTable",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "qualified",
+          "in" => "query",
+          "type" => "boolean"
+        },
+        {
+          "name" => "leagueStructure",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "positionIds",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "cutTypeIds",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "sortStatId",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "week",
+          "in" => "query",
+          "type" => "integer"
+        },
+        {
+          "name" => "weekSeasonPhase",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-stats-catalog" => {
+      "id" => "yahoo-sports-stats-catalog",
+      "method" => "GET",
+      "path" => "/yahoo-sports/stats-catalog",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-stats-discovery" => {
+      "id" => "yahoo-sports-stats-discovery",
+      "method" => "GET",
+      "path" => "/yahoo-sports/stats-discovery",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "league",
+          "in" => "query",
+          "type" => "string",
+          "required" => true,
+          "enum" => [
+            "nfl",
+            "nba",
+            "mlb",
+            "nhl",
+            "wnba",
+            "college-football",
+            "college-basketball",
+            "mls",
+            "premier-league",
+            "la-liga",
+            "serie-a",
+            "bundesliga",
+            "ligue-1",
+            "ligamx-clausura",
+            "world-cup",
+            "concacaf-gold-cup",
+            "golf"
+          ]
+        },
+        {
+          "name" => "pageType",
+          "in" => "query",
+          "type" => "string",
+          "enum" => [
+            "individual",
+            "weekly",
+            "team"
           ]
         }
       ],
@@ -156147,6 +179126,7 @@ module Crawlora
             "college-football",
             "college-basketball",
             "college-womens-basketball",
+            "soccer",
             "mls",
             "premier-league",
             "la-liga",
@@ -156162,7 +179142,10 @@ module Crawlora
             "world-cup",
             "concacaf-champions-cup",
             "concacaf-gold-cup",
-            "concacaf-league"
+            "concacaf-league",
+            "womens-world-cup",
+            "europa-league",
+            "euro-championship"
           ]
         },
         {
@@ -156205,6 +179188,7 @@ module Crawlora
             "college-football",
             "college-basketball",
             "college-womens-basketball",
+            "soccer",
             "mls",
             "premier-league",
             "la-liga",
@@ -156220,7 +179204,10 @@ module Crawlora
             "world-cup",
             "concacaf-champions-cup",
             "concacaf-gold-cup",
-            "concacaf-league"
+            "concacaf-league",
+            "womens-world-cup",
+            "europa-league",
+            "euro-championship"
           ]
         },
         {
@@ -156263,6 +179250,7 @@ module Crawlora
             "college-football",
             "college-basketball",
             "college-womens-basketball",
+            "soccer",
             "mls",
             "premier-league",
             "la-liga",
@@ -156278,7 +179266,10 @@ module Crawlora
             "world-cup",
             "concacaf-champions-cup",
             "concacaf-gold-cup",
-            "concacaf-league"
+            "concacaf-league",
+            "womens-world-cup",
+            "europa-league",
+            "euro-championship"
           ]
         },
         {
@@ -156356,6 +179347,109 @@ module Crawlora
       "id" => "yahoo-sports-tennis-scoreboard",
       "method" => "GET",
       "path" => "/yahoo-sports/tennis-scoreboard",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-topic-news" => {
+      "id" => "yahoo-sports-topic-news",
+      "method" => "GET",
+      "path" => "/yahoo-sports/topic-news",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "topic",
+          "in" => "query",
+          "type" => "string"
+        },
+        {
+          "name" => "topic_url",
+          "in" => "query",
+          "type" => "string"
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-video-headlines" => {
+      "id" => "yahoo-sports-video-headlines",
+      "method" => "GET",
+      "path" => "/yahoo-sports/video-headlines",
+      "pathParams" => [],
+      "queryParams" => [
+        {
+          "name" => "list_id",
+          "in" => "query",
+          "type" => "string",
+          "required" => true
+        },
+        {
+          "name" => "count",
+          "in" => "query",
+          "type" => "integer",
+          "enum" => [
+            "1",
+            "6"
+          ]
+        }
+      ],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-video-list-catalog" => {
+      "id" => "yahoo-sports-video-list-catalog",
+      "method" => "GET",
+      "path" => "/yahoo-sports/video-list-catalog",
+      "pathParams" => [],
+      "queryParams" => [],
+      "formParams" => [],
+      "bodyParam" => nil,
+      "bodyRequired" => false,
+      "consumes" => [
+        "application/json"
+      ],
+      "produces" => [
+        "application/json"
+      ],
+      "security" => [
+        "ApiKeyAuth"
+      ]
+    },
+    "yahoo-sports-watch-schedule" => {
+      "id" => "yahoo-sports-watch-schedule",
+      "method" => "GET",
+      "path" => "/yahoo-sports/watch-schedule",
       "pathParams" => [],
       "queryParams" => [],
       "formParams" => [],
@@ -159005,6 +182099,7 @@ module Crawlora
     },
     "apple_books" => {
       "audiobook_series" => "apple-books-audiobook-series",
+      "audiobook_charts" => "apple-books-audiobook-charts",
       "audiobook_search" => "apple-books-audiobook-search",
       "audiobook" => "apple-books-audiobook",
       "audiobook_reviews" => "apple-books-audiobook-reviews",
@@ -159014,6 +182109,7 @@ module Crawlora
       "book_reviews" => "apple-books-book-reviews",
       "book_similar" => "apple-books-book-similar",
       "charts" => "apple-books-charts",
+      "genres" => "apple-books-genres",
       "search" => "apple-books-search",
       "series" => "apple-books-series"
     },
@@ -159119,6 +182215,14 @@ module Crawlora
       "search" => "balenciaga-search",
       "store_countries" => "balenciaga-store-countries",
       "stores" => "balenciaga-stores"
+    },
+    "bandcamp" => {
+      "artist" => "bandcamp-artist",
+      "discover" => "bandcamp-discover",
+      "filters" => "bandcamp-filters",
+      "related_tags" => "bandcamp-related-tags",
+      "release" => "bandcamp-release",
+      "search" => "bandcamp-search"
     },
     "barrons" => {
       "article" => "barrons-article",
@@ -159280,6 +182384,22 @@ module Crawlora
       "transfers" => "bo3-transfers",
       "valorant_leaderboard" => "bo3-valorant-leaderboard"
     },
+    "board_game_geek" => {
+      "boardgamegeek_cardsets" => "boardgamegeek-cardsets",
+      "boardgamegeek_entity" => "boardgamegeek-entity",
+      "boardgamegeek_game" => "boardgamegeek-game",
+      "boardgamegeek_geeklist" => "boardgamegeek-geeklist",
+      "boardgamegeek_geeklist_items" => "boardgamegeek-geeklist-items",
+      "boardgamegeek_geeklists" => "boardgamegeek-geeklists",
+      "boardgamegeek_hotness" => "boardgamegeek-hotness",
+      "boardgamegeek_links" => "boardgamegeek-links",
+      "boardgamegeek_media" => "boardgamegeek-media",
+      "boardgamegeek_recommendations" => "boardgamegeek-recommendations",
+      "boardgamegeek_reviews" => "boardgamegeek-reviews",
+      "boardgamegeek_taxonomy" => "boardgamegeek-taxonomy",
+      "boardgamegeek_thread" => "boardgamegeek-thread",
+      "boardgamegeek_threads" => "boardgamegeek-threads"
+    },
     "bonhams" => {
       "auction_search" => "bonhams-auction-search",
       "auction_detail" => "bonhams-auction-detail",
@@ -159296,6 +182416,12 @@ module Crawlora
       "hotel_detail" => "booking-hotel-detail",
       "reviews" => "booking-reviews",
       "search" => "booking-search"
+    },
+    "booksy" => {
+      "business" => "booksy-business",
+      "businesses" => "booksy-businesses",
+      "categories" => "booksy-categories",
+      "treatment_hints" => "booksy-treatment-hints"
     },
     "boots" => {
       "search" => "boots-search",
@@ -159343,6 +182469,16 @@ module Crawlora
       "headlines" => "breitbart-headlines",
       "news" => "breitbart-news",
       "sections" => "breitbart-sections"
+    },
+    "bring_a_trailer" => {
+      "bringatrailer_filters" => "bringatrailer-filters",
+      "bringatrailer_listing" => "bringatrailer-listing",
+      "bringatrailer_live" => "bringatrailer-live",
+      "bringatrailer_makes" => "bringatrailer-makes",
+      "bringatrailer_price_history" => "bringatrailer-price-history",
+      "bringatrailer_results" => "bringatrailer-results",
+      "bringatrailer_search" => "bringatrailer-search",
+      "bringatrailer_suggest" => "bringatrailer-suggest"
     },
     "brisbane_times" => {
       "brisbanetimes_article" => "brisbanetimes-article",
@@ -159396,6 +182532,13 @@ module Crawlora
       "product" => "capterra-product",
       "reviews" => "capterra-reviews",
       "search" => "capterra-search"
+    },
+    "cardmarket" => {
+      "catalog" => "cardmarket-catalog",
+      "catalog_categories" => "cardmarket-catalog-categories",
+      "games" => "cardmarket-games",
+      "price_guide" => "cardmarket-price-guide",
+      "price_guide_categories" => "cardmarket-price-guide-categories"
     },
     "car_max" => {
       "carmax_search" => "carmax-search",
@@ -159607,6 +182750,43 @@ module Crawlora
       "courtlistener_people" => "courtlistener-people",
       "courtlistener_search" => "courtlistener-search"
     },
+    "cricbuzz" => {
+      "archives" => "cricbuzz-archives",
+      "auction_info" => "cricbuzz-auction-info",
+      "auction_live" => "cricbuzz-auction-live",
+      "auction_live_blog" => "cricbuzz-auction-live-blog",
+      "auction_news" => "cricbuzz-auction-news",
+      "auction_options" => "cricbuzz-auction-options",
+      "auction_player_detail" => "cricbuzz-auction-player-detail",
+      "auction_player_search" => "cricbuzz-auction-player-search",
+      "auction_results" => "cricbuzz-auction-results",
+      "auction_seasons" => "cricbuzz-auction-seasons",
+      "auction_team_detail" => "cricbuzz-auction-team-detail",
+      "auction_teams" => "cricbuzz-auction-teams",
+      "auction_teams_options" => "cricbuzz-auction-teams-options",
+      "auction_upcoming" => "cricbuzz-auction-upcoming",
+      "auction_upcoming_options" => "cricbuzz-auction-upcoming-options",
+      "auction_videos" => "cricbuzz-auction-videos",
+      "match_facts" => "cricbuzz-match-facts",
+      "match_graphs" => "cricbuzz-match-graphs",
+      "match_overs" => "cricbuzz-match-overs",
+      "matches" => "cricbuzz-matches",
+      "navigation" => "cricbuzz-navigation",
+      "news_story" => "cricbuzz-news-story",
+      "news_topics" => "cricbuzz-news-topics",
+      "rankings" => "cricbuzz-rankings",
+      "records" => "cricbuzz-records",
+      "schedule" => "cricbuzz-schedule",
+      "scorecard" => "cricbuzz-scorecard",
+      "series" => "cricbuzz-series",
+      "series_stats" => "cricbuzz-series-stats",
+      "team_stats" => "cricbuzz-team-stats",
+      "team_stats_options" => "cricbuzz-team-stats-options",
+      "teams" => "cricbuzz-teams",
+      "video_categories" => "cricbuzz-video-categories",
+      "video_playlists" => "cricbuzz-video-playlists",
+      "wtc" => "cricbuzz-wtc"
+    },
     "cricinfo" => {
       "calendar" => "cricinfo-calendar",
       "commentary" => "cricinfo-commentary",
@@ -159712,10 +182892,16 @@ module Crawlora
     },
     "datasets" => {
       "list" => "datasets-list",
+      "airbnb_hosts_facets" => "datasets-airbnb-hosts-facets",
+      "airbnb_hosts_item" => "datasets-airbnb-hosts-item",
+      "airbnb_hosts_search" => "datasets-airbnb-hosts-search",
       "airbnb_markets_facets" => "datasets-airbnb-markets-facets",
       "airbnb_markets_item" => "datasets-airbnb-markets-item",
       "airbnb_markets_nearby" => "datasets-airbnb-markets-nearby",
       "airbnb_markets_search" => "datasets-airbnb-markets-search",
+      "apple_books_facets" => "datasets-apple-books-facets",
+      "apple_books_item" => "datasets-apple-books-item",
+      "apple_books_search" => "datasets-apple-books-search",
       "apple_maps_places_facets" => "datasets-apple-maps-places-facets",
       "apple_maps_places_item" => "datasets-apple-maps-places-item",
       "apple_maps_places_nearby" => "datasets-apple-maps-places-nearby",
@@ -159723,8 +182909,14 @@ module Crawlora
       "apple_podcasts_shows_facets" => "datasets-apple-podcasts-shows-facets",
       "apple_podcasts_shows_item" => "datasets-apple-podcasts-shows-item",
       "apple_podcasts_shows_search" => "datasets-apple-podcasts-shows-search",
+      "apps_charts_facets" => "datasets-apps-charts-facets",
+      "apps_charts_item" => "datasets-apps-charts-item",
       "apps_charts_search" => "datasets-apps-charts-search",
+      "apps_reviews_facets" => "datasets-apps-reviews-facets",
+      "apps_reviews_item" => "datasets-apps-reviews-item",
       "apps_reviews_search" => "datasets-apps-reviews-search",
+      "apps_facets" => "datasets-apps-facets",
+      "apps_item" => "datasets-apps-item",
       "apps_search" => "datasets-apps-search",
       "bbb_businesses_facets" => "datasets-bbb-businesses-facets",
       "bbb_businesses_item" => "datasets-bbb-businesses-item",
@@ -159742,6 +182934,8 @@ module Crawlora
       "chrome_extensions_metrics" => "datasets-chrome-extensions-metrics",
       "chrome_extensions_search" => "datasets-chrome-extensions-search",
       "chrome_extensions_trending" => "datasets-chrome-extensions-trending",
+      "creators_facets" => "datasets-creators-facets",
+      "creators_item" => "datasets-creators-item",
       "creators_search" => "datasets-creators-search",
       "doordash_stores_facets" => "datasets-doordash-stores-facets",
       "doordash_stores_item" => "datasets-doordash-stores-item",
@@ -159813,6 +183007,8 @@ module Crawlora
       "producthunt_products_search" => "datasets-producthunt-products-search",
       "producthunt_trends_facets" => "datasets-producthunt-trends-facets",
       "producthunt_trends_search" => "datasets-producthunt-trends-search",
+      "reddit_trending_facets" => "datasets-reddit-trending-facets",
+      "reddit_trending_item" => "datasets-reddit-trending-item",
       "reddit_trending_search" => "datasets-reddit-trending-search",
       "sec_companies_facets" => "datasets-sec-companies-facets",
       "sec_companies_financials" => "datasets-sec-companies-financials",
@@ -159825,15 +183021,30 @@ module Crawlora
       "starbucks_stores_item" => "datasets-starbucks-stores-item",
       "starbucks_stores_nearby" => "datasets-starbucks-stores-nearby",
       "starbucks_stores_search" => "datasets-starbucks-stores-search",
+      "steam_achievements_facets" => "datasets-steam-achievements-facets",
+      "steam_achievements_item" => "datasets-steam-achievements-item",
       "steam_achievements_search" => "datasets-steam-achievements-search",
+      "steam_charts_facets" => "datasets-steam-charts-facets",
+      "steam_charts_item" => "datasets-steam-charts-item",
       "steam_charts_search" => "datasets-steam-charts-search",
       "steam_games_facets" => "datasets-steam-games-facets",
       "steam_games_item" => "datasets-steam-games-item",
       "steam_games_search" => "datasets-steam-games-search",
+      "steam_news_facets" => "datasets-steam-news-facets",
+      "steam_news_item" => "datasets-steam-news-item",
       "steam_news_search" => "datasets-steam-news-search",
+      "steam_playercounts_facets" => "datasets-steam-playercounts-facets",
+      "steam_playercounts_item" => "datasets-steam-playercounts-item",
       "steam_playercounts_search" => "datasets-steam-playercounts-search",
+      "steam_prices_facets" => "datasets-steam-prices-facets",
+      "steam_prices_item" => "datasets-steam-prices-item",
       "steam_prices_search" => "datasets-steam-prices-search",
+      "steam_reviews_facets" => "datasets-steam-reviews-facets",
+      "steam_reviews_item" => "datasets-steam-reviews-item",
       "steam_reviews_search" => "datasets-steam-reviews-search",
+      "substack_facets" => "datasets-substack-facets",
+      "substack_item" => "datasets-substack-item",
+      "substack_search" => "datasets-substack-search",
       "techstack_facets" => "datasets-techstack-facets",
       "techstack_item" => "datasets-techstack-item",
       "techstack_search" => "datasets-techstack-search",
@@ -159911,6 +183122,28 @@ module Crawlora
       "master" => "discogs-master",
       "release" => "discogs-release",
       "search" => "discogs-search"
+    },
+    "dollar_tree" => {
+      "dollartree_blog_article" => "dollartree-blog-article",
+      "dollartree_categories" => "dollartree-categories",
+      "dollartree_price" => "dollartree-price",
+      "dollartree_product" => "dollartree-product",
+      "dollartree_products" => "dollartree-products",
+      "dollartree_search" => "dollartree-search",
+      "dollartree_stock_status" => "dollartree-stock-status",
+      "dollartree_keyword_typeahead" => "dollartree-keyword-typeahead",
+      "dollartree_product_typeahead" => "dollartree-product-typeahead"
+    },
+    "domain" => {
+      "dns_record_types" => "domain-dns-record-types",
+      "dns_resolve" => "domain-dns-resolve",
+      "rdap_domain" => "domain-rdap-domain",
+      "rdap_ip" => "domain-rdap-ip",
+      "robots" => "domain-robots",
+      "site" => "domain-site",
+      "subdomains" => "domain-subdomains",
+      "wayback_availability" => "domain-wayback-availability",
+      "wayback_cdx" => "domain-wayback-cdx"
     },
     "dominos" => {
       "coupons" => "dominos-coupons",
@@ -160116,6 +183349,43 @@ module Crawlora
       "marketplace_search" => "facebook-marketplace-search",
       "page" => "facebook-page"
     },
+    "faceit" => {
+      "ban_reasons" => "faceit-ban-reasons",
+      "banlist" => "faceit-banlist",
+      "banlist_stats" => "faceit-banlist-stats",
+      "best_clips" => "faceit-best-clips",
+      "championship" => "faceit-championship",
+      "championship_bracket" => "faceit-championship-bracket",
+      "championship_participants" => "faceit-championship-participants",
+      "championship_search" => "faceit-championship-search",
+      "clip" => "faceit-clip",
+      "clips" => "faceit-clips",
+      "competition_matches" => "faceit-competition-matches",
+      "fpl" => "faceit-fpl",
+      "game_modes" => "faceit-game-modes",
+      "games" => "faceit-games",
+      "hub" => "faceit-hub",
+      "hub_categories" => "faceit-hub-categories",
+      "hub_memberships" => "faceit-hub-memberships",
+      "hubs" => "faceit-hubs",
+      "hubs_detailed" => "faceit-hubs-detailed",
+      "leaderboard" => "faceit-leaderboard",
+      "leaderboard_detail" => "faceit-leaderboard-detail",
+      "leaderboard_statuses" => "faceit-leaderboard-statuses",
+      "maps" => "faceit-maps",
+      "match_clips" => "faceit-match-clips",
+      "organizer" => "faceit-organizer",
+      "player" => "faceit-player",
+      "player_rank" => "faceit-player-rank",
+      "regions" => "faceit-regions",
+      "rule" => "faceit-rule",
+      "rules" => "faceit-rules",
+      "skill_levels" => "faceit-skill-levels",
+      "standings" => "faceit-standings",
+      "team" => "faceit-team",
+      "tournaments_past" => "faceit-tournaments-past",
+      "user_skills" => "faceit-user-skills"
+    },
     "fanatics" => {
       "categories" => "fanatics-categories",
       "category" => "fanatics-category",
@@ -160125,8 +183395,16 @@ module Crawlora
     "fanatics_collect" => {
       "fanaticscollect_auctions" => "fanaticscollect-auctions",
       "fanaticscollect_categories" => "fanaticscollect-categories",
+      "fanaticscollect_instant_pack_release" => "fanaticscollect-instant-pack-release",
+      "fanaticscollect_instant_pack_releases" => "fanaticscollect-instant-pack-releases",
       "fanaticscollect_instant_rips_categories" => "fanaticscollect-instant-rips-categories",
+      "fanaticscollect_instant_rips_pack_categories" => "fanaticscollect-instant-rips-pack-categories",
+      "fanaticscollect_instant_rips_pack_checklist" => "fanaticscollect-instant-rips-pack-checklist",
+      "fanaticscollect_instant_rips_packs" => "fanaticscollect-instant-rips-packs",
+      "fanaticscollect_recently_ripped" => "fanaticscollect-recently-ripped",
       "fanaticscollect_listing" => "fanaticscollect-listing",
+      "fanaticscollect_newsroom" => "fanaticscollect-newsroom",
+      "fanaticscollect_newsroom_filters" => "fanaticscollect-newsroom-filters",
       "fanaticscollect_search" => "fanaticscollect-search",
       "fanaticscollect_sold_items" => "fanaticscollect-sold-items",
       "fanaticscollect_trending_searches" => "fanaticscollect-trending-searches"
@@ -160255,6 +183533,14 @@ module Crawlora
       "fastcompany_news" => "fastcompany-news",
       "fastcompany_sections" => "fastcompany-sections"
     },
+    "fever" => {
+      "cities" => "fever-cities",
+      "feed" => "fever-feed",
+      "filters" => "fever-filters",
+      "plan" => "fever-plan",
+      "plans" => "fever-plans",
+      "top_cities" => "fever-top-cities"
+    },
     "five_guys" => {
       "fiveguys_directory" => "fiveguys-directory",
       "fiveguys_faq" => "fiveguys-faq",
@@ -160278,9 +183564,11 @@ module Crawlora
       "competitions" => "flashscore-competitions",
       "entity_news" => "flashscore-entity-news",
       "match_box_score" => "flashscore-match-box-score",
+      "match_commentary" => "flashscore-match-commentary",
       "match_darts" => "flashscore-match-darts",
       "match_h2h" => "flashscore-match-h2h",
       "match_highlights" => "flashscore-match-highlights",
+      "match_incidents" => "flashscore-match-incidents",
       "match_info" => "flashscore-match-info",
       "match_lineups" => "flashscore-match-lineups",
       "match_missing_players" => "flashscore-match-missing-players",
@@ -160290,6 +183578,7 @@ module Crawlora
       "match_player_stats" => "flashscore-match-player-stats",
       "match_point_by_point" => "flashscore-match-point-by-point",
       "match_predicted_lineups" => "flashscore-match-predicted-lineups",
+      "match_prematch_scorers" => "flashscore-match-prematch-scorers",
       "match_report" => "flashscore-match-report",
       "match_standings" => "flashscore-match-standings",
       "match_stats" => "flashscore-match-stats",
@@ -160322,11 +183611,19 @@ module Crawlora
       "team_transfers" => "flashscore-team-transfers",
       "top_search" => "flashscore-top-search",
       "tournament_archive_seasons" => "flashscore-tournament-archive-seasons",
+      "tournament_draw" => "flashscore-tournament-draw",
       "tournament_events" => "flashscore-tournament-events",
       "tournament_outright_odds" => "flashscore-tournament-outright-odds",
       "tournament_seasons" => "flashscore-tournament-seasons",
       "tournament_standings" => "flashscore-tournament-standings",
       "tournament_standings_views" => "flashscore-tournament-standings-views"
+    },
+    "flick_reels" => {
+      "flickreels_classify" => "flickreels-classify",
+      "flickreels_genres" => "flickreels-genres",
+      "flickreels_home" => "flickreels-home",
+      "flickreels_movie" => "flickreels-movie",
+      "flickreels_shelf" => "flickreels-shelf"
     },
     "foodpanda" => {
       "restaurant" => "foodpanda-restaurant",
@@ -160359,6 +183656,36 @@ module Crawlora
       "foreignpolicy_project" => "foreignpolicy-project",
       "foreignpolicy_projects" => "foreignpolicy-projects",
       "foreignpolicy_topic" => "foreignpolicy-topic"
+    },
+    "formula1" => {
+      "driver" => "formula1-driver",
+      "driver_grid" => "formula1-driver-grid",
+      "driver_season_results" => "formula1-driver-season-results",
+      "driver_standings" => "formula1-driver-standings",
+      "filters" => "formula1-filters",
+      "json_awards" => "formula1-json-awards",
+      "json_constructors" => "formula1-json-constructors",
+      "json_driver_assembly" => "formula1-json-driver-assembly",
+      "json_drivers" => "formula1-json-drivers",
+      "json_editorial" => "formula1-json-editorial",
+      "json_event_tracker" => "formula1-json-event-tracker",
+      "json_meeting_datasets" => "formula1-json-meeting-datasets",
+      "json_meetings" => "formula1-json-meetings",
+      "json_race_assembly" => "formula1-json-race-assembly",
+      "json_results" => "formula1-json-results",
+      "json_season_award" => "formula1-json-season-award",
+      "json_team_assembly" => "formula1-json-team-assembly",
+      "meetings" => "formula1-meetings",
+      "race_calendar" => "formula1-race-calendar",
+      "race_hub" => "formula1-race-hub",
+      "season_awards" => "formula1-season-awards",
+      "season_results" => "formula1-season-results",
+      "seasons" => "formula1-seasons",
+      "session_results" => "formula1-session-results",
+      "team" => "formula1-team",
+      "team_grid" => "formula1-team-grid",
+      "team_season_results" => "formula1-team-season-results",
+      "team_standings" => "formula1-team-standings"
     },
     "fortune" => {
       "article" => "fortune-article",
@@ -160432,6 +183759,12 @@ module Crawlora
       "freemalaysiatoday_news" => "freemalaysiatoday-news",
       "freemalaysiatoday_sections" => "freemalaysiatoday-sections"
     },
+    "fresha" => {
+      "landing_venues" => "fresha-landing-venues",
+      "search_venues" => "fresha-search-venues",
+      "taxonomy" => "fresha-taxonomy",
+      "venue" => "fresha-venue"
+    },
     "ft" => {
       "article" => "ft-article",
       "author" => "ft-author",
@@ -160468,6 +183801,29 @@ module Crawlora
       "fussballde_team_matches" => "fussballde-team-matches",
       "fussballde_team_squad" => "fussballde-team-squad",
       "fussballde_top_scorers" => "fussballde-top-scorers"
+    },
+    "fut_gg" => {
+      "futgg_fc27_catalog" => "futgg-fc27-catalog",
+      "futgg_fc27_definitions" => "futgg-fc27-definitions",
+      "futgg_fc27_evolutions" => "futgg-fc27-evolutions",
+      "futgg_fc27_evolution" => "futgg-fc27-evolution",
+      "futgg_fc27_gg_rating_ranks" => "futgg-fc27-gg-rating-ranks",
+      "futgg_fc27_gg_ratings" => "futgg-fc27-gg-ratings",
+      "futgg_fc27_objective_categories" => "futgg-fc27-objective-categories",
+      "futgg_fc27_objective_groups" => "futgg-fc27-objective-groups",
+      "futgg_fc27_objective_group_by_ea" => "futgg-fc27-objective-group-by-ea",
+      "futgg_fc27_objective_group_by_objective" => "futgg-fc27-objective-group-by-objective",
+      "futgg_fc27_objective_group" => "futgg-fc27-objective-group",
+      "futgg_fc27_player_sorts" => "futgg-fc27-player-sorts",
+      "futgg_fc27_players" => "futgg-fc27-players",
+      "futgg_fc27_price_index" => "futgg-fc27-price-index",
+      "futgg_fc27_prices" => "futgg-fc27-prices",
+      "futgg_fc27_sbc_categories" => "futgg-fc27-sbc-categories",
+      "futgg_fc27_sbc_sets" => "futgg-fc27-sbc-sets",
+      "futgg_fc27_sbc_set_by_challenge" => "futgg-fc27-sbc-set-by-challenge",
+      "futgg_fc27_sbc_set_by_ea" => "futgg-fc27-sbc-set-by-ea",
+      "futgg_fc27_sbc_set" => "futgg-fc27-sbc-set",
+      "futgg_fc27_season_pass" => "futgg-fc27-season-pass"
     },
     "game_rant" => {
       "gamerant_article" => "gamerant-article",
@@ -160559,6 +183915,18 @@ module Crawlora
       "globeandmail_headlines" => "globeandmail-headlines",
       "globeandmail_news" => "globeandmail-news",
       "globeandmail_sections" => "globeandmail-sections"
+    },
+    "glovo" => {
+      "categories" => "glovo-categories",
+      "cities" => "glovo-cities",
+      "city" => "glovo-city",
+      "store" => "glovo-store",
+      "store_fees" => "glovo-store-fees",
+      "store_menu" => "glovo-store-menu",
+      "store_products" => "glovo-store-products",
+      "store_search" => "glovo-store-search",
+      "stores" => "glovo-stores",
+      "stores_filters" => "glovo-stores-filters"
     },
     "gma_news" => {
       "gmanews_article" => "gmanews-article",
@@ -160687,6 +184055,8 @@ module Crawlora
       "suggest" => "googleplay-suggest"
     },
     "gosu_gamers" => {
+      "gosugamers_article" => "gosugamers-article",
+      "gosugamers_articles" => "gosugamers-articles",
       "gosugamers_encounters" => "gosugamers-encounters",
       "gosugamers_games" => "gosugamers-games",
       "gosugamers_match" => "gosugamers-match",
@@ -160823,6 +184193,17 @@ module Crawlora
       "hindustantimes_headlines" => "hindustantimes-headlines",
       "hindustantimes_news" => "hindustantimes-news",
       "hindustantimes_sections" => "hindustantimes-sections"
+    },
+    "hltv" => {
+      "event" => "hltv-event",
+      "events" => "hltv-events",
+      "match" => "hltv-match",
+      "matches" => "hltv-matches",
+      "player" => "hltv-player",
+      "rankings" => "hltv-rankings",
+      "results" => "hltv-results",
+      "search" => "hltv-search",
+      "team" => "hltv-team"
     },
     "h_m" => {
       "hm_categories" => "hm-categories",
@@ -161018,6 +184399,22 @@ module Crawlora
       "irishtimes_news" => "irishtimes-news",
       "irishtimes_sections" => "irishtimes-sections"
     },
+    "itch_io" => {
+      "itchio_browse" => "itchio-browse",
+      "itchio_browse_options" => "itchio-browse-options",
+      "itchio_catalog" => "itchio-catalog",
+      "itchio_top_rated" => "itchio-top-rated",
+      "itchio_jams_browse" => "itchio-jams-browse",
+      "itchio_jam_calendar" => "itchio-jam-calendar",
+      "itchio_jams_entries" => "itchio-jams-entries",
+      "itchio_jams_options" => "itchio-jams-options",
+      "itchio_jams_overview" => "itchio-jams-overview",
+      "itchio_jams_results" => "itchio-jams-results",
+      "itchio_jams_results_options" => "itchio-jams-results-options",
+      "itchio_jams_submission" => "itchio-jams-submission",
+      "itchio_project" => "itchio-project",
+      "itchio_tags" => "itchio-tags"
+    },
     "the_japan_times" => {
       "japantimes_article" => "japantimes-article",
       "japantimes_author" => "japantimes-author",
@@ -161189,6 +184586,26 @@ module Crawlora
       "project" => "kickstarter-project",
       "updates" => "kickstarter-updates"
     },
+    "klook" => {
+      "activity" => "klook-activity",
+      "attractions_categories" => "klook-attractions-categories",
+      "attractions_destinations" => "klook-attractions-destinations",
+      "attractions_highlights" => "klook-attractions-highlights",
+      "attractions_search" => "klook-attractions-search",
+      "attractions_suggest" => "klook-attractions-suggest",
+      "categories" => "klook-categories",
+      "destinations" => "klook-destinations",
+      "hot" => "klook-hot",
+      "interests" => "klook-interests",
+      "recommendations" => "klook-recommendations",
+      "reviews" => "klook-reviews",
+      "search" => "klook-search",
+      "search_filters" => "klook-search-filters",
+      "search_hot_keywords" => "klook-search-hot-keywords",
+      "search_unified" => "klook-search-unified",
+      "suggest" => "klook-suggest",
+      "verticals" => "klook-verticals"
+    },
     "kohl_s" => {
       "kohls_category" => "kohls-category",
       "kohls_product_reviews" => "kohls-product-reviews",
@@ -161322,6 +184739,17 @@ module Crawlora
       "product" => "lululemon-product",
       "stores" => "lululemon-stores"
     },
+    "luma" => {
+      "calendar" => "luma-calendar",
+      "calendar_events" => "luma-calendar-events",
+      "categories" => "luma-categories",
+      "category" => "luma-category",
+      "category_events" => "luma-category-events",
+      "event" => "luma-event",
+      "place" => "luma-place",
+      "place_calendars" => "luma-place-calendars",
+      "place_events" => "luma-place-events"
+    },
     "mac_rumors" => {
       "macrumors_article" => "macrumors-article",
       "macrumors_author" => "macrumors-author",
@@ -161368,6 +184796,28 @@ module Crawlora
       "headlines" => "mashable-headlines",
       "news" => "mashable-news",
       "sections" => "mashable-sections"
+    },
+    "max_preps" => {
+      "maxpreps_rankings_groupings" => "maxpreps-rankings-groupings",
+      "maxpreps_request_enums" => "maxpreps-request-enums",
+      "maxpreps_school" => "maxpreps-school",
+      "maxpreps_school_contests" => "maxpreps-school-contests",
+      "maxpreps_school_proximal" => "maxpreps-school-proximal",
+      "maxpreps_school_search" => "maxpreps-school-search",
+      "maxpreps_school_seasons" => "maxpreps-school-seasons",
+      "maxpreps_school_zip_search" => "maxpreps-school-zip-search",
+      "maxpreps_scoreboard" => "maxpreps-scoreboard",
+      "maxpreps_season_navigation" => "maxpreps-season-navigation",
+      "maxpreps_sports" => "maxpreps-sports",
+      "maxpreps_states" => "maxpreps-states",
+      "maxpreps_team" => "maxpreps-team",
+      "maxpreps_team_context" => "maxpreps-team-context",
+      "maxpreps_team_next_contest" => "maxpreps-team-next-contest",
+      "maxpreps_team_rankings" => "maxpreps-team-rankings",
+      "maxpreps_team_roster_summary" => "maxpreps-team-roster-summary",
+      "maxpreps_team_schedule" => "maxpreps-team-schedule",
+      "maxpreps_team_stat_leaders" => "maxpreps-team-stat-leaders",
+      "maxpreps_tournament_sports" => "maxpreps-tournament-sports"
     },
     "mc_donalds" => {
       "mcdonalds_categories" => "mcdonalds-categories",
@@ -161542,6 +184992,42 @@ module Crawlora
       "modaoperandi_product" => "modaoperandi-product",
       "modaoperandi_search" => "modaoperandi-search"
     },
+    "modrinth" => {
+      "collection" => "modrinth-collection",
+      "collections" => "modrinth-collections",
+      "metadata_link_platforms" => "modrinth-metadata-link-platforms",
+      "metadata_loader_fields" => "modrinth-metadata-loader-fields",
+      "metadata_loader_field_values" => "modrinth-metadata-loader-field-values",
+      "metadata_loaders" => "modrinth-metadata-loaders",
+      "organization" => "modrinth-organization",
+      "organization_projects" => "modrinth-organization-projects",
+      "organizations" => "modrinth-organizations",
+      "project" => "modrinth-project",
+      "check_project" => "modrinth-check-project",
+      "dependencies" => "modrinth-dependencies",
+      "project_disclosures" => "modrinth-project-disclosures",
+      "project_versions" => "modrinth-project-versions",
+      "project_version" => "modrinth-project-version",
+      "projects" => "modrinth-projects",
+      "random_projects" => "modrinth-random-projects",
+      "search" => "modrinth-search",
+      "statistics" => "modrinth-statistics",
+      "license" => "modrinth-license",
+      "tags" => "modrinth-tags",
+      "forge_updates" => "modrinth-forge-updates",
+      "search_v3" => "modrinth-search-v3",
+      "search_v3_body" => "modrinth-search-v3-body",
+      "search_v3_options" => "modrinth-search-v3-options",
+      "version" => "modrinth-version",
+      "file_projects" => "modrinth-file-projects",
+      "file_version" => "modrinth-file-version",
+      "file_update" => "modrinth-file-update",
+      "file_versions" => "modrinth-file-versions",
+      "files_update" => "modrinth-files-update",
+      "files_update_individual" => "modrinth-files-update-individual",
+      "files_update_many" => "modrinth-files-update-many",
+      "versions" => "modrinth-versions"
+    },
     "moncler" => {
       "categories" => "moncler-categories",
       "category" => "moncler-category",
@@ -161572,6 +185058,35 @@ module Crawlora
       "motleyfool_news" => "motleyfool-news",
       "motleyfool_sections" => "motleyfool-sections"
     },
+    "moto_gp" => {
+      "motogp_bmw_award" => "motogp-bmw-award",
+      "motogp_categories" => "motogp-categories",
+      "motogp_circuit_poles" => "motogp-circuit-poles",
+      "motogp_circuit_records" => "motogp-circuit-records",
+      "motogp_circuit_wins" => "motogp-circuit-wins",
+      "motogp_classifications" => "motogp-classifications",
+      "motogp_content_categories" => "motogp-content-categories",
+      "motogp_content_events" => "motogp-content-events",
+      "motogp_content_event" => "motogp-content-event",
+      "motogp_latest_session" => "motogp-latest-session",
+      "motogp_next_live_session" => "motogp-next-live-session",
+      "motogp_entry_list" => "motogp-entry-list",
+      "motogp_entry_grid_options" => "motogp-entry-grid-options",
+      "motogp_event_files" => "motogp-event-files",
+      "motogp_events" => "motogp-events",
+      "motogp_seasons" => "motogp-seasons",
+      "motogp_sessions" => "motogp-sessions",
+      "motogp_standings" => "motogp-standings",
+      "motogp_standings_files" => "motogp-standings-files",
+      "motogp_starting_grid" => "motogp-starting-grid"
+    },
+    "nascar" => {
+      "live_feed" => "nascar-live-feed",
+      "races" => "nascar-races",
+      "season_races" => "nascar-season-races",
+      "series" => "nascar-series",
+      "race_weekend" => "nascar-race-weekend"
+    },
     "nation_africa" => {
       "nationafrica_article" => "nationafrica-article",
       "nationafrica_author" => "nationafrica-author",
@@ -161593,6 +185108,45 @@ module Crawlora
       "nationalpost_news" => "nationalpost-news",
       "nationalpost_sections" => "nationalpost-sections"
     },
+    "nba" => {
+      "box_score" => "nba-box-score",
+      "box_score_advanced" => "nba-box-score-advanced",
+      "box_score_four_factors" => "nba-box-score-four-factors",
+      "box_score_misc" => "nba-box-score-misc",
+      "box_score_player_track" => "nba-box-score-player-track",
+      "box_score_scoring" => "nba-box-score-scoring",
+      "box_score_usage" => "nba-box-score-usage",
+      "common_all_players" => "nba-common-all-players",
+      "draft_combine_anthro" => "nba-draft-combine-anthro",
+      "enums" => "nba-enums",
+      "franchise_history" => "nba-franchise-history",
+      "game_detail" => "nba-game-detail",
+      "games" => "nba-games",
+      "homepage_leaders" => "nba-homepage-leaders",
+      "hustle_stats" => "nba-hustle-stats",
+      "league_game_log" => "nba-league-game-log",
+      "lineups" => "nba-lineups",
+      "news" => "nba-news",
+      "play_by_play" => "nba-play-by-play",
+      "player_awards" => "nba-player-awards",
+      "player_bio_stats" => "nba-player-bio-stats",
+      "player_career_stats" => "nba-player-career-stats",
+      "player_dash_pt_shots" => "nba-player-dash-pt-shots",
+      "player_info" => "nba-player-info",
+      "player_stats" => "nba-player-stats",
+      "players" => "nba-players",
+      "playoff_picture" => "nba-playoff-picture",
+      "pt_defend" => "nba-pt-defend",
+      "pt_stats" => "nba-pt-stats",
+      "scoreboard" => "nba-scoreboard",
+      "standings" => "nba-standings",
+      "synergy_play_types" => "nba-synergy-play-types",
+      "team_details" => "nba-team-details",
+      "team_roster" => "nba-team-roster",
+      "team_shot_locations" => "nba-team-shot-locations",
+      "team_stats" => "nba-team-stats",
+      "team_stats_leaders" => "nba-team-stats-leaders"
+    },
     "nbc_news" => {
       "nbc_article" => "nbc-article",
       "nbc_author" => "nbc-author",
@@ -161613,6 +185167,16 @@ module Crawlora
       "video" => "ndtv-video",
       "video_categories" => "ndtv-video-categories",
       "videos" => "ndtv-videos"
+    },
+    "net_short" => {
+      "netshort_browse" => "netshort-browse",
+      "netshort_genres" => "netshort-genres",
+      "netshort_home" => "netshort-home",
+      "netshort_label" => "netshort-label",
+      "netshort_plots" => "netshort-plots",
+      "netshort_search" => "netshort-search",
+      "netshort_title" => "netshort-title",
+      "netshort_toplist" => "netshort-toplist"
     },
     "news18" => {
       "article" => "news18-article",
@@ -161654,6 +185218,25 @@ module Crawlora
       "newyorker_headlines" => "newyorker-headlines",
       "newyorker_news" => "newyorker-news",
       "newyorker_sections" => "newyorker-sections"
+    },
+    "nfhs" => {
+      "activities" => "nfhs-activities",
+      "affiliates" => "nfhs-affiliates",
+      "affiliate" => "nfhs-affiliate",
+      "associations" => "nfhs-associations",
+      "association" => "nfhs-association",
+      "events" => "nfhs-events",
+      "event" => "nfhs-event",
+      "filters" => "nfhs-filters",
+      "highlights" => "nfhs-highlights",
+      "producer" => "nfhs-producer",
+      "publisher" => "nfhs-publisher",
+      "schools" => "nfhs-schools",
+      "school" => "nfhs-school",
+      "search" => "nfhs-search",
+      "sports" => "nfhs-sports",
+      "states" => "nfhs-states",
+      "suggest" => "nfhs-suggest"
     },
     "nike" => {
       "categories" => "nike-categories",
@@ -161761,8 +185344,11 @@ module Crawlora
       "opendota_abilities" => "opendota-abilities",
       "opendota_benchmarks" => "opendota-benchmarks",
       "opendota_constants" => "opendota-constants",
+      "opendota_find_matches" => "opendota-find-matches",
+      "opendota_hero_descriptions" => "opendota-hero-descriptions",
       "opendota_hero_durations" => "opendota-hero-durations",
       "opendota_hero_items" => "opendota-hero-items",
+      "opendota_hero_matches" => "opendota-hero-matches",
       "opendota_hero_matchups" => "opendota-hero-matchups",
       "opendota_hero_stats" => "opendota-hero-stats",
       "opendota_heroes" => "opendota-heroes",
@@ -161776,6 +185362,7 @@ module Crawlora
       "opendota_patch_notes" => "opendota-patch-notes",
       "opendota_pro_matches" => "opendota-pro-matches",
       "opendota_pro_players" => "opendota-pro-players",
+      "opendota_public_matches" => "opendota-public-matches",
       "opendota_rank_distribution" => "opendota-rank-distribution",
       "opendota_records" => "opendota-records",
       "opendota_scenarios" => "opendota-scenarios",
@@ -161784,6 +185371,50 @@ module Crawlora
       "opendota_team_matches" => "opendota-team-matches",
       "opendota_team_players" => "opendota-team-players",
       "opendota_teams" => "opendota-teams"
+    },
+    "open_f1" => {
+      "openf1_car_data" => "openf1-car-data",
+      "openf1_championship_drivers" => "openf1-championship-drivers",
+      "openf1_championship_teams" => "openf1-championship-teams",
+      "openf1_drivers" => "openf1-drivers",
+      "openf1_intervals" => "openf1-intervals",
+      "openf1_laps" => "openf1-laps",
+      "openf1_location" => "openf1-location",
+      "openf1_meetings" => "openf1-meetings",
+      "openf1_overtakes" => "openf1-overtakes",
+      "openf1_pit" => "openf1-pit",
+      "openf1_position" => "openf1-position",
+      "openf1_race_control" => "openf1-race-control",
+      "openf1_session_result" => "openf1-session-result",
+      "openf1_sessions" => "openf1-sessions",
+      "openf1_starting_grid" => "openf1-starting-grid",
+      "openf1_stints" => "openf1-stints",
+      "openf1_team_radio" => "openf1-team-radio",
+      "openf1_weather" => "openf1-weather"
+    },
+    "open_liga_db" => {
+      "openligadb_current_group" => "openligadb-current-group",
+      "openligadb_current_matchday" => "openligadb-current-matchday",
+      "openligadb_goal_getters" => "openligadb-goal-getters",
+      "openligadb_groups" => "openligadb-groups",
+      "openligadb_last_changed" => "openligadb-last-changed",
+      "openligadb_last_match" => "openligadb-last-match",
+      "openligadb_last_team_match" => "openligadb-last-team-match",
+      "openligadb_league_team_matches" => "openligadb-league-team-matches",
+      "openligadb_leagues" => "openligadb-leagues",
+      "openligadb_match" => "openligadb-match",
+      "openligadb_matchday_matches" => "openligadb-matchday-matches",
+      "openligadb_league_matches" => "openligadb-league-matches",
+      "openligadb_matches_by_team" => "openligadb-matches-by-team",
+      "openligadb_matches_by_team_id" => "openligadb-matches-by-team-id",
+      "openligadb_next_match" => "openligadb-next-match",
+      "openligadb_next_team_match" => "openligadb-next-team-match",
+      "openligadb_result_infos" => "openligadb-result-infos",
+      "openligadb_result_types" => "openligadb-result-types",
+      "openligadb_sports" => "openligadb-sports",
+      "openligadb_table" => "openligadb-table",
+      "openligadb_team_pair_matches" => "openligadb-team-pair-matches",
+      "openligadb_teams" => "openligadb-teams"
     },
     "open_sea" => {
       "opensea_activity" => "opensea-activity",
@@ -161889,6 +185520,12 @@ module Crawlora
       "papajohns_russia_menu" => "papajohns-russia-menu",
       "papajohns_store" => "papajohns-store"
     },
+    "partiful" => {
+      "city_facets" => "partiful-city-facets",
+      "city_feed" => "partiful-city-feed",
+      "event" => "partiful-event",
+      "explore_cities" => "partiful-explore-cities"
+    },
     "patreon" => {
       "creator" => "patreon-creator",
       "creator_tiers" => "patreon-creator-tiers",
@@ -161915,6 +185552,31 @@ module Crawlora
       "headlines" => "people-headlines",
       "news" => "people-news",
       "sections" => "people-sections"
+    },
+    "pet_smart" => {
+      "petsmart_categories" => "petsmart-categories",
+      "petsmart_product" => "petsmart-product",
+      "petsmart_product_inventory" => "petsmart-product-inventory",
+      "petsmart_search" => "petsmart-search",
+      "petsmart_search_filters" => "petsmart-search-filters",
+      "petsmart_suggest" => "petsmart-suggest"
+    },
+    "pga_tour" => {
+      "pgatour_leaderboard" => "pgatour-leaderboard",
+      "pgatour_players" => "pgatour-players",
+      "pgatour_schedule" => "pgatour-schedule",
+      "pgatour_schedule_seasons" => "pgatour-schedule-seasons",
+      "pgatour_stats" => "pgatour-stats",
+      "pgatour_stat_detail" => "pgatour-stat-detail",
+      "pgatour_stat_options" => "pgatour-stat-options",
+      "pgatour_tournament_links" => "pgatour-tournament-links",
+      "pgatour_tournament_broadcast" => "pgatour-tournament-broadcast",
+      "pgatour_tournament_course_stats" => "pgatour-tournament-course-stats",
+      "pgatour_tournament_field" => "pgatour-tournament-field",
+      "pgatour_tournament_overview" => "pgatour-tournament-overview",
+      "pgatour_tournament_past_results" => "pgatour-tournament-past-results",
+      "pgatour_tournament_tee_times" => "pgatour-tournament-tee-times",
+      "pgatour_tournament_weather" => "pgatour-tournament-weather"
     },
     "philadelphia_inquirer" => {
       "phillyinquirer_article" => "phillyinquirer-article",
@@ -162391,6 +186053,9 @@ module Crawlora
       "rottentomatoes_browse_filters" => "rottentomatoes-browse-filters",
       "rottentomatoes_browse_movies" => "rottentomatoes-browse-movies",
       "rottentomatoes_browse_tv" => "rottentomatoes-browse-tv",
+      "rottentomatoes_critic" => "rottentomatoes-critic",
+      "rottentomatoes_critic_publications" => "rottentomatoes-critic-publications",
+      "rottentomatoes_critic_reviews" => "rottentomatoes-critic-reviews",
       "rottentomatoes_critics_authors" => "rottentomatoes-critics-authors",
       "rottentomatoes_editorial_content" => "rottentomatoes-editorial-content",
       "rottentomatoes_editorial_detail" => "rottentomatoes-editorial-detail",
@@ -162400,11 +186065,17 @@ module Crawlora
       "rottentomatoes_editorial_terms" => "rottentomatoes-editorial-terms",
       "rottentomatoes_editorial_types" => "rottentomatoes-editorial-types",
       "rottentomatoes_episode" => "rottentomatoes-episode",
+      "rottentomatoes_episode_reviews" => "rottentomatoes-episode-reviews",
       "rottentomatoes_movie" => "rottentomatoes-movie",
       "rottentomatoes_movie_reviews" => "rottentomatoes-movie-reviews",
+      "rottentomatoes_movie_videos" => "rottentomatoes-movie-videos",
+      "rottentomatoes_movies" => "rottentomatoes-movies",
       "rottentomatoes_person" => "rottentomatoes-person",
+      "rottentomatoes_publication" => "rottentomatoes-publication",
+      "rottentomatoes_publication_reviews" => "rottentomatoes-publication-reviews",
       "rottentomatoes_search" => "rottentomatoes-search",
       "rottentomatoes_season" => "rottentomatoes-season",
+      "rottentomatoes_season_reviews" => "rottentomatoes-season-reviews",
       "rottentomatoes_series" => "rottentomatoes-series",
       "rottentomatoes_sitemap_urls" => "rottentomatoes-sitemap-urls",
       "rottentomatoes_sitemaps" => "rottentomatoes-sitemaps"
@@ -162679,6 +186350,7 @@ module Crawlora
       "sofascore_event_lineups" => "sofascore-event-lineups",
       "sofascore_event_managers" => "sofascore-event-managers",
       "sofascore_event_odds" => "sofascore-event-odds",
+      "sofascore_event_player_actions" => "sofascore-event-player-actions",
       "sofascore_event_player_heatmap" => "sofascore-event-player-heatmap",
       "sofascore_event_player_statistics" => "sofascore-event-player-statistics",
       "sofascore_event_point_by_point" => "sofascore-event-point-by-point",
@@ -162686,6 +186358,7 @@ module Crawlora
       "sofascore_event_shotmap" => "sofascore-event-shotmap",
       "sofascore_event_statistics" => "sofascore-event-statistics",
       "sofascore_event_team_heatmap" => "sofascore-event-team-heatmap",
+      "sofascore_event_team_shotmap" => "sofascore-event-team-shotmap",
       "sofascore_event_team_streaks" => "sofascore-event-team-streaks",
       "sofascore_event_tennis_power" => "sofascore-event-tennis-power",
       "sofascore_event_tv_channels" => "sofascore-event-tv-channels",
@@ -162801,6 +186474,25 @@ module Crawlora
       "sparkfun_category" => "sparkfun-category",
       "sparkfun_product" => "sparkfun-product",
       "sparkfun_search" => "sparkfun-search"
+    },
+    "speedrun_com" => {
+      "speedrun_catalog" => "speedrun-catalog",
+      "speedrun_category_detail" => "speedrun-category-detail",
+      "speedrun_category_records" => "speedrun-category-records",
+      "speedrun_category_variables" => "speedrun-category-variables",
+      "speedrun_games" => "speedrun-games",
+      "speedrun_game_detail" => "speedrun-game-detail",
+      "speedrun_categories" => "speedrun-categories",
+      "speedrun_levels" => "speedrun-levels",
+      "speedrun_records" => "speedrun-records",
+      "speedrun_variables" => "speedrun-variables",
+      "speedrun_game_leaderboard" => "speedrun-game-leaderboard",
+      "speedrun_level_leaderboard" => "speedrun-level-leaderboard",
+      "speedrun_level_detail" => "speedrun-level-detail",
+      "speedrun_level_categories" => "speedrun-level-categories",
+      "speedrun_level_records" => "speedrun-level-records",
+      "speedrun_level_variables" => "speedrun-level-variables",
+      "speedrun_resource_options" => "speedrun-resource-options"
     },
     "sporting_news" => {
       "sportingnews_article" => "sportingnews-article",
@@ -163687,6 +187379,14 @@ module Crawlora
       "news" => "wccftech-news",
       "sections" => "wccftech-sections"
     },
+    "webtoon" => {
+      "genre" => "webtoon-genre",
+      "genres" => "webtoon-genres",
+      "originals" => "webtoon-originals",
+      "rankings" => "webtoon-rankings",
+      "search" => "webtoon-search",
+      "series" => "webtoon-series"
+    },
     "wendys" => {
       "categories" => "wendys-categories",
       "directory" => "wendys-directory",
@@ -163745,6 +187445,18 @@ module Crawlora
     "wall_street_journal" => {
       "wsj_article" => "wsj-article",
       "wsj_author" => "wsj-author"
+    },
+    "wta" => {
+      "countries" => "wta-countries",
+      "match_states" => "wta-match-states",
+      "rankings" => "wta-rankings",
+      "tournament_seasons" => "wta-tournament-seasons",
+      "tournaments" => "wta-tournaments",
+      "tournament" => "wta-tournament",
+      "tournament_draws" => "wta-tournament-draws",
+      "tournament_matches" => "wta-tournament-matches",
+      "tournament_order_of_play" => "wta-tournament-order-of-play",
+      "tournament_players" => "wta-tournament-players"
     },
     "x" => {
       "post" => "x-post",
@@ -163850,32 +187562,73 @@ module Crawlora
     },
     "yahoo_shopping" => {
       "article" => "yahoo-shopping-article",
+      "author" => "yahoo-shopping-author",
+      "categories" => "yahoo-shopping-categories",
       "category" => "yahoo-shopping-category",
+      "experts" => "yahoo-shopping-experts",
       "home" => "yahoo-shopping-home",
       "shopping_list" => "yahoo-shopping-shopping-list",
       "shopping_lists" => "yahoo-shopping-shopping-lists",
+      "sitemap" => "yahoo-shopping-sitemap",
+      "sitemaps" => "yahoo-shopping-sitemaps",
       "store" => "yahoo-shopping-store",
-      "stores" => "yahoo-shopping-stores"
+      "stores" => "yahoo-shopping-stores",
+      "suggest" => "yahoo-shopping-suggest"
     },
     "yahoo_sports" => {
+      "college_rankings" => "yahoo-sports-college-rankings",
+      "draft" => "yahoo-sports-draft",
+      "dropdown_catalog" => "yahoo-sports-dropdown-catalog",
       "game" => "yahoo-sports-game",
       "golf_leaderboard" => "yahoo-sports-golf-leaderboard",
+      "golf_player" => "yahoo-sports-golf-player",
+      "golf_player_news" => "yahoo-sports-golf-player-news",
+      "golf_players" => "yahoo-sports-golf-players",
       "golf_schedule" => "yahoo-sports-golf-schedule",
+      "home" => "yahoo-sports-home",
+      "injury_report" => "yahoo-sports-injury-report",
+      "league_schedule" => "yahoo-sports-league-schedule",
+      "leagues" => "yahoo-sports-leagues",
       "mma_fight_card" => "yahoo-sports-mma-fight-card",
       "mma_schedule" => "yahoo-sports-mma-schedule",
+      "more_news" => "yahoo-sports-more-news",
       "motorsports_race" => "yahoo-sports-motorsports-race",
       "motorsports_schedule" => "yahoo-sports-motorsports-schedule",
+      "navigation" => "yahoo-sports-navigation",
+      "network_catalog" => "yahoo-sports-network-catalog",
       "news" => "yahoo-sports-news",
+      "newsletter_archive" => "yahoo-sports-newsletter-archive",
+      "newsletters" => "yahoo-sports-newsletters",
+      "odds_featured" => "yahoo-sports-odds-featured",
+      "odds_game" => "yahoo-sports-odds-game",
+      "odds_games" => "yahoo-sports-odds-games",
+      "odds_trending" => "yahoo-sports-odds-trending",
       "olympics_medals" => "yahoo-sports-olympics-medals",
       "player" => "yahoo-sports-player",
+      "player_search" => "yahoo-sports-player-search",
+      "playoff_bracket" => "yahoo-sports-playoff-bracket",
+      "playoff_bracket_catalog" => "yahoo-sports-playoff-bracket-catalog",
+      "rss_catalog" => "yahoo-sports-rss-catalog",
+      "rss_feed" => "yahoo-sports-rss-feed",
+      "schedule_catalog" => "yahoo-sports-schedule-catalog",
       "scoreboard" => "yahoo-sports-scoreboard",
+      "section_stream" => "yahoo-sports-section-stream",
+      "soccer_scoreboard" => "yahoo-sports-soccer-scoreboard",
+      "sportsbook_catalog" => "yahoo-sports-sportsbook-catalog",
       "standings" => "yahoo-sports-standings",
+      "stats" => "yahoo-sports-stats",
+      "stats_catalog" => "yahoo-sports-stats-catalog",
+      "stats_discovery" => "yahoo-sports-stats-discovery",
       "team" => "yahoo-sports-team",
       "team_roster" => "yahoo-sports-team-roster",
       "team_schedule" => "yahoo-sports-team-schedule",
       "tennis_rankings" => "yahoo-sports-tennis-rankings",
       "tennis_schedule" => "yahoo-sports-tennis-schedule",
-      "tennis_scoreboard" => "yahoo-sports-tennis-scoreboard"
+      "tennis_scoreboard" => "yahoo-sports-tennis-scoreboard",
+      "topic_news" => "yahoo-sports-topic-news",
+      "video_headlines" => "yahoo-sports-video-headlines",
+      "video_list_catalog" => "yahoo-sports-video-list-catalog",
+      "watch_schedule" => "yahoo-sports-watch-schedule"
     },
     "yahoo_tech" => {
       "article" => "yahoo-tech-article",
@@ -163976,7 +187729,7 @@ module Crawlora
     }
   }.freeze
 
-  OPERATION_COUNT = 4140
+  OPERATION_COUNT = 4731
 
   module OperationId
     ABC_NEWS_ABCNEWS_ARTICLE = "abcnews-article"
@@ -164112,6 +187865,7 @@ module Crawlora
     APP_STORE_SUGGEST = "appstore-suggest"
     APP_STORE_VERSION_HISTORY = "appstore-version-history"
     APPLE_BOOKS_AUDIOBOOK = "apple-books-audiobook"
+    APPLE_BOOKS_AUDIOBOOK_CHARTS = "apple-books-audiobook-charts"
     APPLE_BOOKS_AUDIOBOOK_REVIEWS = "apple-books-audiobook-reviews"
     APPLE_BOOKS_AUDIOBOOK_SEARCH = "apple-books-audiobook-search"
     APPLE_BOOKS_AUDIOBOOK_SERIES = "apple-books-audiobook-series"
@@ -164121,6 +187875,7 @@ module Crawlora
     APPLE_BOOKS_BOOK_REVIEWS = "apple-books-book-reviews"
     APPLE_BOOKS_BOOK_SIMILAR = "apple-books-book-similar"
     APPLE_BOOKS_CHARTS = "apple-books-charts"
+    APPLE_BOOKS_GENRES = "apple-books-genres"
     APPLE_BOOKS_SEARCH = "apple-books-search"
     APPLE_BOOKS_SERIES = "apple-books-series"
     APPLE_JOBS_JOB = "apple-jobs-job"
@@ -164189,6 +187944,12 @@ module Crawlora
     BALENCIAGA_SEARCH = "balenciaga-search"
     BALENCIAGA_STORE_COUNTRIES = "balenciaga-store-countries"
     BALENCIAGA_STORES = "balenciaga-stores"
+    BANDCAMP_ARTIST = "bandcamp-artist"
+    BANDCAMP_DISCOVER = "bandcamp-discover"
+    BANDCAMP_FILTERS = "bandcamp-filters"
+    BANDCAMP_RELATED_TAGS = "bandcamp-related-tags"
+    BANDCAMP_RELEASE = "bandcamp-release"
+    BANDCAMP_SEARCH = "bandcamp-search"
     BARRONS_ARTICLE = "barrons-article"
     BARRONS_HEADLINES = "barrons-headlines"
     BARRONS_NEWS = "barrons-news"
@@ -164319,6 +188080,20 @@ module Crawlora
     BO3_TOURNAMENTS = "bo3-tournaments"
     BO3_TRANSFERS = "bo3-transfers"
     BO3_VALORANT_LEADERBOARD = "bo3-valorant-leaderboard"
+    BOARD_GAME_GEEK_BOARDGAMEGEEK_CARDSETS = "boardgamegeek-cardsets"
+    BOARD_GAME_GEEK_BOARDGAMEGEEK_ENTITY = "boardgamegeek-entity"
+    BOARD_GAME_GEEK_BOARDGAMEGEEK_GAME = "boardgamegeek-game"
+    BOARD_GAME_GEEK_BOARDGAMEGEEK_GEEKLIST = "boardgamegeek-geeklist"
+    BOARD_GAME_GEEK_BOARDGAMEGEEK_GEEKLIST_ITEMS = "boardgamegeek-geeklist-items"
+    BOARD_GAME_GEEK_BOARDGAMEGEEK_GEEKLISTS = "boardgamegeek-geeklists"
+    BOARD_GAME_GEEK_BOARDGAMEGEEK_HOTNESS = "boardgamegeek-hotness"
+    BOARD_GAME_GEEK_BOARDGAMEGEEK_LINKS = "boardgamegeek-links"
+    BOARD_GAME_GEEK_BOARDGAMEGEEK_MEDIA = "boardgamegeek-media"
+    BOARD_GAME_GEEK_BOARDGAMEGEEK_RECOMMENDATIONS = "boardgamegeek-recommendations"
+    BOARD_GAME_GEEK_BOARDGAMEGEEK_REVIEWS = "boardgamegeek-reviews"
+    BOARD_GAME_GEEK_BOARDGAMEGEEK_TAXONOMY = "boardgamegeek-taxonomy"
+    BOARD_GAME_GEEK_BOARDGAMEGEEK_THREAD = "boardgamegeek-thread"
+    BOARD_GAME_GEEK_BOARDGAMEGEEK_THREADS = "boardgamegeek-threads"
     BONHAMS_AUCTION_DETAIL = "bonhams-auction-detail"
     BONHAMS_AUCTION_LOTS = "bonhams-auction-lots"
     BONHAMS_AUCTION_SEARCH = "bonhams-auction-search"
@@ -164332,6 +188107,10 @@ module Crawlora
     BOOKING_HOTEL_DETAIL = "booking-hotel-detail"
     BOOKING_REVIEWS = "booking-reviews"
     BOOKING_SEARCH = "booking-search"
+    BOOKSY_BUSINESS = "booksy-business"
+    BOOKSY_BUSINESSES = "booksy-businesses"
+    BOOKSY_CATEGORIES = "booksy-categories"
+    BOOKSY_TREATMENT_HINTS = "booksy-treatment-hints"
     BOOTS_SEARCH = "boots-search"
     BOOTS_SUGGEST = "boots-suggest"
     BOSTON_GLOBE_BOSTONGLOBE_NEWS = "bostonglobe-news"
@@ -164367,6 +188146,14 @@ module Crawlora
     BREITBART_HEADLINES = "breitbart-headlines"
     BREITBART_NEWS = "breitbart-news"
     BREITBART_SECTIONS = "breitbart-sections"
+    BRING_ATRAILER_BRINGATRAILER_FILTERS = "bringatrailer-filters"
+    BRING_ATRAILER_BRINGATRAILER_LISTING = "bringatrailer-listing"
+    BRING_ATRAILER_BRINGATRAILER_LIVE = "bringatrailer-live"
+    BRING_ATRAILER_BRINGATRAILER_MAKES = "bringatrailer-makes"
+    BRING_ATRAILER_BRINGATRAILER_PRICE_HISTORY = "bringatrailer-price-history"
+    BRING_ATRAILER_BRINGATRAILER_RESULTS = "bringatrailer-results"
+    BRING_ATRAILER_BRINGATRAILER_SEARCH = "bringatrailer-search"
+    BRING_ATRAILER_BRINGATRAILER_SUGGEST = "bringatrailer-suggest"
     BRISBANE_TIMES_BRISBANETIMES_ARTICLE = "brisbanetimes-article"
     BRISBANE_TIMES_BRISBANETIMES_AUTHOR = "brisbanetimes-author"
     BRISBANE_TIMES_BRISBANETIMES_HEADLINES = "brisbanetimes-headlines"
@@ -164413,6 +188200,11 @@ module Crawlora
     CAR_MAX_CARMAX_STORES = "carmax-stores"
     CAR_MAX_CARMAX_VEHICLE = "carmax-vehicle"
     CAR_MAX_CARMAX_VEHICLE_RECOMMENDATIONS = "carmax-vehicle-recommendations"
+    CARDMARKET_CATALOG = "cardmarket-catalog"
+    CARDMARKET_CATALOG_CATEGORIES = "cardmarket-catalog-categories"
+    CARDMARKET_GAMES = "cardmarket-games"
+    CARDMARKET_PRICE_GUIDE = "cardmarket-price-guide"
+    CARDMARKET_PRICE_GUIDE_CATEGORIES = "cardmarket-price-guide-categories"
     CARS_COM_CARSDOTCOM_SEARCH = "carsdotcom-search"
     CARS_COM_CARSDOTCOM_VEHICLE = "carsdotcom-vehicle"
     CBC_NEWS_CALL = "cbc-news"
@@ -164560,6 +188352,41 @@ module Crawlora
     COURT_LISTENER_COURTLISTENER_COURTS = "courtlistener-courts"
     COURT_LISTENER_COURTLISTENER_PEOPLE = "courtlistener-people"
     COURT_LISTENER_COURTLISTENER_SEARCH = "courtlistener-search"
+    CRICBUZZ_ARCHIVES = "cricbuzz-archives"
+    CRICBUZZ_AUCTION_INFO = "cricbuzz-auction-info"
+    CRICBUZZ_AUCTION_LIVE = "cricbuzz-auction-live"
+    CRICBUZZ_AUCTION_LIVE_BLOG = "cricbuzz-auction-live-blog"
+    CRICBUZZ_AUCTION_NEWS = "cricbuzz-auction-news"
+    CRICBUZZ_AUCTION_OPTIONS = "cricbuzz-auction-options"
+    CRICBUZZ_AUCTION_PLAYER_DETAIL = "cricbuzz-auction-player-detail"
+    CRICBUZZ_AUCTION_PLAYER_SEARCH = "cricbuzz-auction-player-search"
+    CRICBUZZ_AUCTION_RESULTS = "cricbuzz-auction-results"
+    CRICBUZZ_AUCTION_SEASONS = "cricbuzz-auction-seasons"
+    CRICBUZZ_AUCTION_TEAM_DETAIL = "cricbuzz-auction-team-detail"
+    CRICBUZZ_AUCTION_TEAMS = "cricbuzz-auction-teams"
+    CRICBUZZ_AUCTION_TEAMS_OPTIONS = "cricbuzz-auction-teams-options"
+    CRICBUZZ_AUCTION_UPCOMING = "cricbuzz-auction-upcoming"
+    CRICBUZZ_AUCTION_UPCOMING_OPTIONS = "cricbuzz-auction-upcoming-options"
+    CRICBUZZ_AUCTION_VIDEOS = "cricbuzz-auction-videos"
+    CRICBUZZ_MATCH_FACTS = "cricbuzz-match-facts"
+    CRICBUZZ_MATCH_GRAPHS = "cricbuzz-match-graphs"
+    CRICBUZZ_MATCH_OVERS = "cricbuzz-match-overs"
+    CRICBUZZ_MATCHES = "cricbuzz-matches"
+    CRICBUZZ_NAVIGATION = "cricbuzz-navigation"
+    CRICBUZZ_NEWS_STORY = "cricbuzz-news-story"
+    CRICBUZZ_NEWS_TOPICS = "cricbuzz-news-topics"
+    CRICBUZZ_RANKINGS = "cricbuzz-rankings"
+    CRICBUZZ_RECORDS = "cricbuzz-records"
+    CRICBUZZ_SCHEDULE = "cricbuzz-schedule"
+    CRICBUZZ_SCORECARD = "cricbuzz-scorecard"
+    CRICBUZZ_SERIES = "cricbuzz-series"
+    CRICBUZZ_SERIES_STATS = "cricbuzz-series-stats"
+    CRICBUZZ_TEAM_STATS = "cricbuzz-team-stats"
+    CRICBUZZ_TEAM_STATS_OPTIONS = "cricbuzz-team-stats-options"
+    CRICBUZZ_TEAMS = "cricbuzz-teams"
+    CRICBUZZ_VIDEO_CATEGORIES = "cricbuzz-video-categories"
+    CRICBUZZ_VIDEO_PLAYLISTS = "cricbuzz-video-playlists"
+    CRICBUZZ_WTC = "cricbuzz-wtc"
     CRICINFO_CALENDAR = "cricinfo-calendar"
     CRICINFO_COMMENTARY = "cricinfo-commentary"
     CRICINFO_GROUNDS = "cricinfo-grounds"
@@ -164634,10 +188461,16 @@ module Crawlora
     DAILY_WIRE_DAILYWIRE_HEADLINES = "dailywire-headlines"
     DAILY_WIRE_DAILYWIRE_NEWS = "dailywire-news"
     DAILY_WIRE_DAILYWIRE_SECTIONS = "dailywire-sections"
+    DATASETS_AIRBNB_HOSTS_FACETS = "datasets-airbnb-hosts-facets"
+    DATASETS_AIRBNB_HOSTS_ITEM = "datasets-airbnb-hosts-item"
+    DATASETS_AIRBNB_HOSTS_SEARCH = "datasets-airbnb-hosts-search"
     DATASETS_AIRBNB_MARKETS_FACETS = "datasets-airbnb-markets-facets"
     DATASETS_AIRBNB_MARKETS_ITEM = "datasets-airbnb-markets-item"
     DATASETS_AIRBNB_MARKETS_NEARBY = "datasets-airbnb-markets-nearby"
     DATASETS_AIRBNB_MARKETS_SEARCH = "datasets-airbnb-markets-search"
+    DATASETS_APPLE_BOOKS_FACETS = "datasets-apple-books-facets"
+    DATASETS_APPLE_BOOKS_ITEM = "datasets-apple-books-item"
+    DATASETS_APPLE_BOOKS_SEARCH = "datasets-apple-books-search"
     DATASETS_APPLE_MAPS_PLACES_FACETS = "datasets-apple-maps-places-facets"
     DATASETS_APPLE_MAPS_PLACES_ITEM = "datasets-apple-maps-places-item"
     DATASETS_APPLE_MAPS_PLACES_NEARBY = "datasets-apple-maps-places-nearby"
@@ -164645,7 +188478,13 @@ module Crawlora
     DATASETS_APPLE_PODCASTS_SHOWS_FACETS = "datasets-apple-podcasts-shows-facets"
     DATASETS_APPLE_PODCASTS_SHOWS_ITEM = "datasets-apple-podcasts-shows-item"
     DATASETS_APPLE_PODCASTS_SHOWS_SEARCH = "datasets-apple-podcasts-shows-search"
+    DATASETS_APPS_CHARTS_FACETS = "datasets-apps-charts-facets"
+    DATASETS_APPS_CHARTS_ITEM = "datasets-apps-charts-item"
     DATASETS_APPS_CHARTS_SEARCH = "datasets-apps-charts-search"
+    DATASETS_APPS_FACETS = "datasets-apps-facets"
+    DATASETS_APPS_ITEM = "datasets-apps-item"
+    DATASETS_APPS_REVIEWS_FACETS = "datasets-apps-reviews-facets"
+    DATASETS_APPS_REVIEWS_ITEM = "datasets-apps-reviews-item"
     DATASETS_APPS_REVIEWS_SEARCH = "datasets-apps-reviews-search"
     DATASETS_APPS_SEARCH = "datasets-apps-search"
     DATASETS_BBB_BUSINESSES_FACETS = "datasets-bbb-businesses-facets"
@@ -164664,6 +188503,8 @@ module Crawlora
     DATASETS_CHROME_EXTENSIONS_METRICS = "datasets-chrome-extensions-metrics"
     DATASETS_CHROME_EXTENSIONS_SEARCH = "datasets-chrome-extensions-search"
     DATASETS_CHROME_EXTENSIONS_TRENDING = "datasets-chrome-extensions-trending"
+    DATASETS_CREATORS_FACETS = "datasets-creators-facets"
+    DATASETS_CREATORS_ITEM = "datasets-creators-item"
     DATASETS_CREATORS_SEARCH = "datasets-creators-search"
     DATASETS_DOORDASH_STORES_FACETS = "datasets-doordash-stores-facets"
     DATASETS_DOORDASH_STORES_ITEM = "datasets-doordash-stores-item"
@@ -164736,6 +188577,8 @@ module Crawlora
     DATASETS_PRODUCTHUNT_PRODUCTS_SEARCH = "datasets-producthunt-products-search"
     DATASETS_PRODUCTHUNT_TRENDS_FACETS = "datasets-producthunt-trends-facets"
     DATASETS_PRODUCTHUNT_TRENDS_SEARCH = "datasets-producthunt-trends-search"
+    DATASETS_REDDIT_TRENDING_FACETS = "datasets-reddit-trending-facets"
+    DATASETS_REDDIT_TRENDING_ITEM = "datasets-reddit-trending-item"
     DATASETS_REDDIT_TRENDING_SEARCH = "datasets-reddit-trending-search"
     DATASETS_SEC_COMPANIES_FACETS = "datasets-sec-companies-facets"
     DATASETS_SEC_COMPANIES_FINANCIALS = "datasets-sec-companies-financials"
@@ -164748,15 +188591,30 @@ module Crawlora
     DATASETS_STARBUCKS_STORES_ITEM = "datasets-starbucks-stores-item"
     DATASETS_STARBUCKS_STORES_NEARBY = "datasets-starbucks-stores-nearby"
     DATASETS_STARBUCKS_STORES_SEARCH = "datasets-starbucks-stores-search"
+    DATASETS_STEAM_ACHIEVEMENTS_FACETS = "datasets-steam-achievements-facets"
+    DATASETS_STEAM_ACHIEVEMENTS_ITEM = "datasets-steam-achievements-item"
     DATASETS_STEAM_ACHIEVEMENTS_SEARCH = "datasets-steam-achievements-search"
+    DATASETS_STEAM_CHARTS_FACETS = "datasets-steam-charts-facets"
+    DATASETS_STEAM_CHARTS_ITEM = "datasets-steam-charts-item"
     DATASETS_STEAM_CHARTS_SEARCH = "datasets-steam-charts-search"
     DATASETS_STEAM_GAMES_FACETS = "datasets-steam-games-facets"
     DATASETS_STEAM_GAMES_ITEM = "datasets-steam-games-item"
     DATASETS_STEAM_GAMES_SEARCH = "datasets-steam-games-search"
+    DATASETS_STEAM_NEWS_FACETS = "datasets-steam-news-facets"
+    DATASETS_STEAM_NEWS_ITEM = "datasets-steam-news-item"
     DATASETS_STEAM_NEWS_SEARCH = "datasets-steam-news-search"
+    DATASETS_STEAM_PLAYERCOUNTS_FACETS = "datasets-steam-playercounts-facets"
+    DATASETS_STEAM_PLAYERCOUNTS_ITEM = "datasets-steam-playercounts-item"
     DATASETS_STEAM_PLAYERCOUNTS_SEARCH = "datasets-steam-playercounts-search"
+    DATASETS_STEAM_PRICES_FACETS = "datasets-steam-prices-facets"
+    DATASETS_STEAM_PRICES_ITEM = "datasets-steam-prices-item"
     DATASETS_STEAM_PRICES_SEARCH = "datasets-steam-prices-search"
+    DATASETS_STEAM_REVIEWS_FACETS = "datasets-steam-reviews-facets"
+    DATASETS_STEAM_REVIEWS_ITEM = "datasets-steam-reviews-item"
     DATASETS_STEAM_REVIEWS_SEARCH = "datasets-steam-reviews-search"
+    DATASETS_SUBSTACK_FACETS = "datasets-substack-facets"
+    DATASETS_SUBSTACK_ITEM = "datasets-substack-item"
+    DATASETS_SUBSTACK_SEARCH = "datasets-substack-search"
     DATASETS_TECHSTACK_FACETS = "datasets-techstack-facets"
     DATASETS_TECHSTACK_ITEM = "datasets-techstack-item"
     DATASETS_TECHSTACK_SEARCH = "datasets-techstack-search"
@@ -164806,6 +188664,24 @@ module Crawlora
     DISCOGS_MASTER = "discogs-master"
     DISCOGS_RELEASE = "discogs-release"
     DISCOGS_SEARCH = "discogs-search"
+    DOLLAR_TREE_DOLLARTREE_BLOG_ARTICLE = "dollartree-blog-article"
+    DOLLAR_TREE_DOLLARTREE_CATEGORIES = "dollartree-categories"
+    DOLLAR_TREE_DOLLARTREE_KEYWORD_TYPEAHEAD = "dollartree-keyword-typeahead"
+    DOLLAR_TREE_DOLLARTREE_PRICE = "dollartree-price"
+    DOLLAR_TREE_DOLLARTREE_PRODUCT = "dollartree-product"
+    DOLLAR_TREE_DOLLARTREE_PRODUCT_TYPEAHEAD = "dollartree-product-typeahead"
+    DOLLAR_TREE_DOLLARTREE_PRODUCTS = "dollartree-products"
+    DOLLAR_TREE_DOLLARTREE_SEARCH = "dollartree-search"
+    DOLLAR_TREE_DOLLARTREE_STOCK_STATUS = "dollartree-stock-status"
+    DOMAIN_DNS_RECORD_TYPES = "domain-dns-record-types"
+    DOMAIN_DNS_RESOLVE = "domain-dns-resolve"
+    DOMAIN_RDAP_DOMAIN = "domain-rdap-domain"
+    DOMAIN_RDAP_IP = "domain-rdap-ip"
+    DOMAIN_ROBOTS = "domain-robots"
+    DOMAIN_SITE = "domain-site"
+    DOMAIN_SUBDOMAINS = "domain-subdomains"
+    DOMAIN_WAYBACK_AVAILABILITY = "domain-wayback-availability"
+    DOMAIN_WAYBACK_CDX = "domain-wayback-cdx"
     DOMINOS_COUPONS = "dominos-coupons"
     DOMINOS_CUSTOMIZATION = "dominos-customization"
     DOMINOS_MENU = "dominos-menu"
@@ -164962,6 +188838,41 @@ module Crawlora
     EXPEDIA_PROPERTIES_SEARCH = "expedia-properties-search"
     FACEBOOK_MARKETPLACE_SEARCH = "facebook-marketplace-search"
     FACEBOOK_PAGE = "facebook-page"
+    FACEIT_BAN_REASONS = "faceit-ban-reasons"
+    FACEIT_BANLIST = "faceit-banlist"
+    FACEIT_BANLIST_STATS = "faceit-banlist-stats"
+    FACEIT_BEST_CLIPS = "faceit-best-clips"
+    FACEIT_CHAMPIONSHIP = "faceit-championship"
+    FACEIT_CHAMPIONSHIP_BRACKET = "faceit-championship-bracket"
+    FACEIT_CHAMPIONSHIP_PARTICIPANTS = "faceit-championship-participants"
+    FACEIT_CHAMPIONSHIP_SEARCH = "faceit-championship-search"
+    FACEIT_CLIP = "faceit-clip"
+    FACEIT_CLIPS = "faceit-clips"
+    FACEIT_COMPETITION_MATCHES = "faceit-competition-matches"
+    FACEIT_FPL = "faceit-fpl"
+    FACEIT_GAME_MODES = "faceit-game-modes"
+    FACEIT_GAMES = "faceit-games"
+    FACEIT_HUB = "faceit-hub"
+    FACEIT_HUB_CATEGORIES = "faceit-hub-categories"
+    FACEIT_HUB_MEMBERSHIPS = "faceit-hub-memberships"
+    FACEIT_HUBS = "faceit-hubs"
+    FACEIT_HUBS_DETAILED = "faceit-hubs-detailed"
+    FACEIT_LEADERBOARD = "faceit-leaderboard"
+    FACEIT_LEADERBOARD_DETAIL = "faceit-leaderboard-detail"
+    FACEIT_LEADERBOARD_STATUSES = "faceit-leaderboard-statuses"
+    FACEIT_MAPS = "faceit-maps"
+    FACEIT_MATCH_CLIPS = "faceit-match-clips"
+    FACEIT_ORGANIZER = "faceit-organizer"
+    FACEIT_PLAYER = "faceit-player"
+    FACEIT_PLAYER_RANK = "faceit-player-rank"
+    FACEIT_REGIONS = "faceit-regions"
+    FACEIT_RULE = "faceit-rule"
+    FACEIT_RULES = "faceit-rules"
+    FACEIT_SKILL_LEVELS = "faceit-skill-levels"
+    FACEIT_STANDINGS = "faceit-standings"
+    FACEIT_TEAM = "faceit-team"
+    FACEIT_TOURNAMENTS_PAST = "faceit-tournaments-past"
+    FACEIT_USER_SKILLS = "faceit-user-skills"
     FAN_DUEL_FANDUEL_CASINO_CATEGORIES = "fanduel-casino-categories"
     FAN_DUEL_FANDUEL_CASINO_CATEGORY = "fanduel-casino-category"
     FAN_DUEL_FANDUEL_CASINO_GAME = "fanduel-casino-game"
@@ -165038,8 +188949,16 @@ module Crawlora
     FANATICS_CATEGORY = "fanatics-category"
     FANATICS_COLLECT_FANATICSCOLLECT_AUCTIONS = "fanaticscollect-auctions"
     FANATICS_COLLECT_FANATICSCOLLECT_CATEGORIES = "fanaticscollect-categories"
+    FANATICS_COLLECT_FANATICSCOLLECT_INSTANT_PACK_RELEASE = "fanaticscollect-instant-pack-release"
+    FANATICS_COLLECT_FANATICSCOLLECT_INSTANT_PACK_RELEASES = "fanaticscollect-instant-pack-releases"
     FANATICS_COLLECT_FANATICSCOLLECT_INSTANT_RIPS_CATEGORIES = "fanaticscollect-instant-rips-categories"
+    FANATICS_COLLECT_FANATICSCOLLECT_INSTANT_RIPS_PACK_CATEGORIES = "fanaticscollect-instant-rips-pack-categories"
+    FANATICS_COLLECT_FANATICSCOLLECT_INSTANT_RIPS_PACK_CHECKLIST = "fanaticscollect-instant-rips-pack-checklist"
+    FANATICS_COLLECT_FANATICSCOLLECT_INSTANT_RIPS_PACKS = "fanaticscollect-instant-rips-packs"
     FANATICS_COLLECT_FANATICSCOLLECT_LISTING = "fanaticscollect-listing"
+    FANATICS_COLLECT_FANATICSCOLLECT_NEWSROOM = "fanaticscollect-newsroom"
+    FANATICS_COLLECT_FANATICSCOLLECT_NEWSROOM_FILTERS = "fanaticscollect-newsroom-filters"
+    FANATICS_COLLECT_FANATICSCOLLECT_RECENTLY_RIPPED = "fanaticscollect-recently-ripped"
     FANATICS_COLLECT_FANATICSCOLLECT_SEARCH = "fanaticscollect-search"
     FANATICS_COLLECT_FANATICSCOLLECT_SOLD_ITEMS = "fanaticscollect-sold-items"
     FANATICS_COLLECT_FANATICSCOLLECT_TRENDING_SEARCHES = "fanaticscollect-trending-searches"
@@ -165085,6 +189004,12 @@ module Crawlora
     FAST_COMPANY_FASTCOMPANY_HEADLINES = "fastcompany-headlines"
     FAST_COMPANY_FASTCOMPANY_NEWS = "fastcompany-news"
     FAST_COMPANY_FASTCOMPANY_SECTIONS = "fastcompany-sections"
+    FEVER_CITIES = "fever-cities"
+    FEVER_FEED = "fever-feed"
+    FEVER_FILTERS = "fever-filters"
+    FEVER_PLAN = "fever-plan"
+    FEVER_PLANS = "fever-plans"
+    FEVER_TOP_CITIES = "fever-top-cities"
     FIRST_DIBS_CATEGORIES = "firstdibs-categories"
     FIRST_DIBS_DESIGNERS = "firstdibs-designers"
     FIRST_DIBS_PRODUCT = "firstdibs-product"
@@ -165107,9 +189032,11 @@ module Crawlora
     FLASHSCORE_COMPETITIONS = "flashscore-competitions"
     FLASHSCORE_ENTITY_NEWS = "flashscore-entity-news"
     FLASHSCORE_MATCH_BOX_SCORE = "flashscore-match-box-score"
+    FLASHSCORE_MATCH_COMMENTARY = "flashscore-match-commentary"
     FLASHSCORE_MATCH_DARTS = "flashscore-match-darts"
     FLASHSCORE_MATCH_H2H = "flashscore-match-h2h"
     FLASHSCORE_MATCH_HIGHLIGHTS = "flashscore-match-highlights"
+    FLASHSCORE_MATCH_INCIDENTS = "flashscore-match-incidents"
     FLASHSCORE_MATCH_INFO = "flashscore-match-info"
     FLASHSCORE_MATCH_LINEUPS = "flashscore-match-lineups"
     FLASHSCORE_MATCH_MISSING_PLAYERS = "flashscore-match-missing-players"
@@ -165119,6 +189046,7 @@ module Crawlora
     FLASHSCORE_MATCH_PLAYER_STATS = "flashscore-match-player-stats"
     FLASHSCORE_MATCH_POINT_BY_POINT = "flashscore-match-point-by-point"
     FLASHSCORE_MATCH_PREDICTED_LINEUPS = "flashscore-match-predicted-lineups"
+    FLASHSCORE_MATCH_PREMATCH_SCORERS = "flashscore-match-prematch-scorers"
     FLASHSCORE_MATCH_REPORT = "flashscore-match-report"
     FLASHSCORE_MATCH_STANDINGS = "flashscore-match-standings"
     FLASHSCORE_MATCH_STATS = "flashscore-match-stats"
@@ -165151,11 +189079,17 @@ module Crawlora
     FLASHSCORE_TEAM_TRANSFERS = "flashscore-team-transfers"
     FLASHSCORE_TOP_SEARCH = "flashscore-top-search"
     FLASHSCORE_TOURNAMENT_ARCHIVE_SEASONS = "flashscore-tournament-archive-seasons"
+    FLASHSCORE_TOURNAMENT_DRAW = "flashscore-tournament-draw"
     FLASHSCORE_TOURNAMENT_EVENTS = "flashscore-tournament-events"
     FLASHSCORE_TOURNAMENT_OUTRIGHT_ODDS = "flashscore-tournament-outright-odds"
     FLASHSCORE_TOURNAMENT_SEASONS = "flashscore-tournament-seasons"
     FLASHSCORE_TOURNAMENT_STANDINGS = "flashscore-tournament-standings"
     FLASHSCORE_TOURNAMENT_STANDINGS_VIEWS = "flashscore-tournament-standings-views"
+    FLICK_REELS_FLICKREELS_CLASSIFY = "flickreels-classify"
+    FLICK_REELS_FLICKREELS_GENRES = "flickreels-genres"
+    FLICK_REELS_FLICKREELS_HOME = "flickreels-home"
+    FLICK_REELS_FLICKREELS_MOVIE = "flickreels-movie"
+    FLICK_REELS_FLICKREELS_SHELF = "flickreels-shelf"
     FOODPANDA_RESTAURANT = "foodpanda-restaurant"
     FOODPANDA_RESTAURANT_MENU = "foodpanda-restaurant-menu"
     FOODPANDA_RESTAURANT_REVIEWS = "foodpanda-restaurant-reviews"
@@ -165180,6 +189114,34 @@ module Crawlora
     FOREIGN_POLICY_FOREIGNPOLICY_PROJECT = "foreignpolicy-project"
     FOREIGN_POLICY_FOREIGNPOLICY_PROJECTS = "foreignpolicy-projects"
     FOREIGN_POLICY_FOREIGNPOLICY_TOPIC = "foreignpolicy-topic"
+    FORMULA1_DRIVER = "formula1-driver"
+    FORMULA1_DRIVER_GRID = "formula1-driver-grid"
+    FORMULA1_DRIVER_SEASON_RESULTS = "formula1-driver-season-results"
+    FORMULA1_DRIVER_STANDINGS = "formula1-driver-standings"
+    FORMULA1_FILTERS = "formula1-filters"
+    FORMULA1_JSON_AWARDS = "formula1-json-awards"
+    FORMULA1_JSON_CONSTRUCTORS = "formula1-json-constructors"
+    FORMULA1_JSON_DRIVER_ASSEMBLY = "formula1-json-driver-assembly"
+    FORMULA1_JSON_DRIVERS = "formula1-json-drivers"
+    FORMULA1_JSON_EDITORIAL = "formula1-json-editorial"
+    FORMULA1_JSON_EVENT_TRACKER = "formula1-json-event-tracker"
+    FORMULA1_JSON_MEETING_DATASETS = "formula1-json-meeting-datasets"
+    FORMULA1_JSON_MEETINGS = "formula1-json-meetings"
+    FORMULA1_JSON_RACE_ASSEMBLY = "formula1-json-race-assembly"
+    FORMULA1_JSON_RESULTS = "formula1-json-results"
+    FORMULA1_JSON_SEASON_AWARD = "formula1-json-season-award"
+    FORMULA1_JSON_TEAM_ASSEMBLY = "formula1-json-team-assembly"
+    FORMULA1_MEETINGS = "formula1-meetings"
+    FORMULA1_RACE_CALENDAR = "formula1-race-calendar"
+    FORMULA1_RACE_HUB = "formula1-race-hub"
+    FORMULA1_SEASON_AWARDS = "formula1-season-awards"
+    FORMULA1_SEASON_RESULTS = "formula1-season-results"
+    FORMULA1_SEASONS = "formula1-seasons"
+    FORMULA1_SESSION_RESULTS = "formula1-session-results"
+    FORMULA1_TEAM = "formula1-team"
+    FORMULA1_TEAM_GRID = "formula1-team-grid"
+    FORMULA1_TEAM_SEASON_RESULTS = "formula1-team-season-results"
+    FORMULA1_TEAM_STANDINGS = "formula1-team-standings"
     FORTUNE_ARTICLE = "fortune-article"
     FORTUNE_AUTHOR = "fortune-author"
     FORTUNE_COMPANIES = "fortune-companies"
@@ -165240,6 +189202,10 @@ module Crawlora
     FRANCE24_FRANCE24_SECTIONS = "france24-sections"
     FREE_MALAYSIA_TODAY_FREEMALAYSIATODAY_NEWS = "freemalaysiatoday-news"
     FREE_MALAYSIA_TODAY_FREEMALAYSIATODAY_SECTIONS = "freemalaysiatoday-sections"
+    FRESHA_LANDING_VENUES = "fresha-landing-venues"
+    FRESHA_SEARCH_VENUES = "fresha-search-venues"
+    FRESHA_TAXONOMY = "fresha-taxonomy"
+    FRESHA_VENUE = "fresha-venue"
     FT_ARTICLE = "ft-article"
     FT_AUTHOR = "ft-author"
     FT_CATEGORIES = "ft-categories"
@@ -165273,6 +189239,27 @@ module Crawlora
     FUSSBALL_DE_FUSSBALLDE_TEAM_MATCHES = "fussballde-team-matches"
     FUSSBALL_DE_FUSSBALLDE_TEAM_SQUAD = "fussballde-team-squad"
     FUSSBALL_DE_FUSSBALLDE_TOP_SCORERS = "fussballde-top-scorers"
+    FUT_GG_FUTGG_FC27_CATALOG = "futgg-fc27-catalog"
+    FUT_GG_FUTGG_FC27_DEFINITIONS = "futgg-fc27-definitions"
+    FUT_GG_FUTGG_FC27_EVOLUTION = "futgg-fc27-evolution"
+    FUT_GG_FUTGG_FC27_EVOLUTIONS = "futgg-fc27-evolutions"
+    FUT_GG_FUTGG_FC27_GG_RATING_RANKS = "futgg-fc27-gg-rating-ranks"
+    FUT_GG_FUTGG_FC27_GG_RATINGS = "futgg-fc27-gg-ratings"
+    FUT_GG_FUTGG_FC27_OBJECTIVE_CATEGORIES = "futgg-fc27-objective-categories"
+    FUT_GG_FUTGG_FC27_OBJECTIVE_GROUP = "futgg-fc27-objective-group"
+    FUT_GG_FUTGG_FC27_OBJECTIVE_GROUP_BY_EA = "futgg-fc27-objective-group-by-ea"
+    FUT_GG_FUTGG_FC27_OBJECTIVE_GROUP_BY_OBJECTIVE = "futgg-fc27-objective-group-by-objective"
+    FUT_GG_FUTGG_FC27_OBJECTIVE_GROUPS = "futgg-fc27-objective-groups"
+    FUT_GG_FUTGG_FC27_PLAYER_SORTS = "futgg-fc27-player-sorts"
+    FUT_GG_FUTGG_FC27_PLAYERS = "futgg-fc27-players"
+    FUT_GG_FUTGG_FC27_PRICE_INDEX = "futgg-fc27-price-index"
+    FUT_GG_FUTGG_FC27_PRICES = "futgg-fc27-prices"
+    FUT_GG_FUTGG_FC27_SBC_CATEGORIES = "futgg-fc27-sbc-categories"
+    FUT_GG_FUTGG_FC27_SBC_SET = "futgg-fc27-sbc-set"
+    FUT_GG_FUTGG_FC27_SBC_SET_BY_CHALLENGE = "futgg-fc27-sbc-set-by-challenge"
+    FUT_GG_FUTGG_FC27_SBC_SET_BY_EA = "futgg-fc27-sbc-set-by-ea"
+    FUT_GG_FUTGG_FC27_SBC_SETS = "futgg-fc27-sbc-sets"
+    FUT_GG_FUTGG_FC27_SEASON_PASS = "futgg-fc27-season-pass"
     GAME_RANT_GAMERANT_ARTICLE = "gamerant-article"
     GAME_RANT_GAMERANT_AUTHOR = "gamerant-author"
     GAME_RANT_GAMERANT_HEADLINES = "gamerant-headlines"
@@ -165344,6 +189331,16 @@ module Crawlora
     GLOBE_AND_MAIL_GLOBEANDMAIL_HEADLINES = "globeandmail-headlines"
     GLOBE_AND_MAIL_GLOBEANDMAIL_NEWS = "globeandmail-news"
     GLOBE_AND_MAIL_GLOBEANDMAIL_SECTIONS = "globeandmail-sections"
+    GLOVO_CATEGORIES = "glovo-categories"
+    GLOVO_CITIES = "glovo-cities"
+    GLOVO_CITY = "glovo-city"
+    GLOVO_STORE = "glovo-store"
+    GLOVO_STORE_FEES = "glovo-store-fees"
+    GLOVO_STORE_MENU = "glovo-store-menu"
+    GLOVO_STORE_PRODUCTS = "glovo-store-products"
+    GLOVO_STORE_SEARCH = "glovo-store-search"
+    GLOVO_STORES = "glovo-stores"
+    GLOVO_STORES_FILTERS = "glovo-stores-filters"
     GMA_NEWS_GMANEWS_ARTICLE = "gmanews-article"
     GMA_NEWS_GMANEWS_HEADLINES = "gmanews-headlines"
     GMA_NEWS_GMANEWS_NEWS = "gmanews-news"
@@ -165452,6 +189449,8 @@ module Crawlora
     GOOGLE_TRENDS_TRENDING = "google-trends-trending"
     GOOGLE_TRENDS_TRENDING_DETAIL = "google-trends-trending-detail"
     GOOGLE_VIDEOS = "google-videos"
+    GOSU_GAMERS_GOSUGAMERS_ARTICLE = "gosugamers-article"
+    GOSU_GAMERS_GOSUGAMERS_ARTICLES = "gosugamers-articles"
     GOSU_GAMERS_GOSUGAMERS_ENCOUNTERS = "gosugamers-encounters"
     GOSU_GAMERS_GOSUGAMERS_GAMES = "gosugamers-games"
     GOSU_GAMERS_GOSUGAMERS_MATCH = "gosugamers-match"
@@ -165571,6 +189570,15 @@ module Crawlora
     HINDUSTAN_TIMES_HINDUSTANTIMES_HEADLINES = "hindustantimes-headlines"
     HINDUSTAN_TIMES_HINDUSTANTIMES_NEWS = "hindustantimes-news"
     HINDUSTAN_TIMES_HINDUSTANTIMES_SECTIONS = "hindustantimes-sections"
+    HLTV_EVENT = "hltv-event"
+    HLTV_EVENTS = "hltv-events"
+    HLTV_MATCH = "hltv-match"
+    HLTV_MATCHES = "hltv-matches"
+    HLTV_PLAYER = "hltv-player"
+    HLTV_RANKINGS = "hltv-rankings"
+    HLTV_RESULTS = "hltv-results"
+    HLTV_SEARCH = "hltv-search"
+    HLTV_TEAM = "hltv-team"
     HOLLYWOOD_REPORTER_HOLLYWOODREPORTER_ARTICLE = "hollywoodreporter-article"
     HOLLYWOOD_REPORTER_HOLLYWOODREPORTER_AUTHOR = "hollywoodreporter-author"
     HOLLYWOOD_REPORTER_HOLLYWOODREPORTER_HEADLINES = "hollywoodreporter-headlines"
@@ -165695,6 +189703,20 @@ module Crawlora
     IRISH_TIMES_IRISHTIMES_HEADLINES = "irishtimes-headlines"
     IRISH_TIMES_IRISHTIMES_NEWS = "irishtimes-news"
     IRISH_TIMES_IRISHTIMES_SECTIONS = "irishtimes-sections"
+    ITCH_IO_ITCHIO_BROWSE = "itchio-browse"
+    ITCH_IO_ITCHIO_BROWSE_OPTIONS = "itchio-browse-options"
+    ITCH_IO_ITCHIO_CATALOG = "itchio-catalog"
+    ITCH_IO_ITCHIO_JAM_CALENDAR = "itchio-jam-calendar"
+    ITCH_IO_ITCHIO_JAMS_BROWSE = "itchio-jams-browse"
+    ITCH_IO_ITCHIO_JAMS_ENTRIES = "itchio-jams-entries"
+    ITCH_IO_ITCHIO_JAMS_OPTIONS = "itchio-jams-options"
+    ITCH_IO_ITCHIO_JAMS_OVERVIEW = "itchio-jams-overview"
+    ITCH_IO_ITCHIO_JAMS_RESULTS = "itchio-jams-results"
+    ITCH_IO_ITCHIO_JAMS_RESULTS_OPTIONS = "itchio-jams-results-options"
+    ITCH_IO_ITCHIO_JAMS_SUBMISSION = "itchio-jams-submission"
+    ITCH_IO_ITCHIO_PROJECT = "itchio-project"
+    ITCH_IO_ITCHIO_TAGS = "itchio-tags"
+    ITCH_IO_ITCHIO_TOP_RATED = "itchio-top-rated"
     JCREW_JCREW_CATEGORIES = "jcrew-categories"
     JCREW_JCREW_CATEGORY = "jcrew-category"
     JCREW_JCREW_PRODUCT = "jcrew-product"
@@ -165835,6 +189857,24 @@ module Crawlora
     KICKSTARTER_DISCOVER = "kickstarter-discover"
     KICKSTARTER_PROJECT = "kickstarter-project"
     KICKSTARTER_UPDATES = "kickstarter-updates"
+    KLOOK_ACTIVITY = "klook-activity"
+    KLOOK_ATTRACTIONS_CATEGORIES = "klook-attractions-categories"
+    KLOOK_ATTRACTIONS_DESTINATIONS = "klook-attractions-destinations"
+    KLOOK_ATTRACTIONS_HIGHLIGHTS = "klook-attractions-highlights"
+    KLOOK_ATTRACTIONS_SEARCH = "klook-attractions-search"
+    KLOOK_ATTRACTIONS_SUGGEST = "klook-attractions-suggest"
+    KLOOK_CATEGORIES = "klook-categories"
+    KLOOK_DESTINATIONS = "klook-destinations"
+    KLOOK_HOT = "klook-hot"
+    KLOOK_INTERESTS = "klook-interests"
+    KLOOK_RECOMMENDATIONS = "klook-recommendations"
+    KLOOK_REVIEWS = "klook-reviews"
+    KLOOK_SEARCH = "klook-search"
+    KLOOK_SEARCH_FILTERS = "klook-search-filters"
+    KLOOK_SEARCH_HOT_KEYWORDS = "klook-search-hot-keywords"
+    KLOOK_SEARCH_UNIFIED = "klook-search-unified"
+    KLOOK_SUGGEST = "klook-suggest"
+    KLOOK_VERTICALS = "klook-verticals"
     KOHL_SKOHLS_CATEGORY = "kohls-category"
     KOHL_SKOHLS_PRODUCT_REVIEWS = "kohls-product-reviews"
     KOHL_SKOHLS_STORES = "kohls-stores"
@@ -165933,6 +189973,15 @@ module Crawlora
     LULULEMON_OUTFIT = "lululemon-outfit"
     LULULEMON_PRODUCT = "lululemon-product"
     LULULEMON_STORES = "lululemon-stores"
+    LUMA_CALENDAR = "luma-calendar"
+    LUMA_CALENDAR_EVENTS = "luma-calendar-events"
+    LUMA_CATEGORIES = "luma-categories"
+    LUMA_CATEGORY = "luma-category"
+    LUMA_CATEGORY_EVENTS = "luma-category-events"
+    LUMA_EVENT = "luma-event"
+    LUMA_PLACE = "luma-place"
+    LUMA_PLACE_CALENDARS = "luma-place-calendars"
+    LUMA_PLACE_EVENTS = "luma-place-events"
     MAC_RUMORS_MACRUMORS_ARTICLE = "macrumors-article"
     MAC_RUMORS_MACRUMORS_AUTHOR = "macrumors-author"
     MAC_RUMORS_MACRUMORS_HEADLINES = "macrumors-headlines"
@@ -165971,6 +190020,26 @@ module Crawlora
     MASHABLE_HEADLINES = "mashable-headlines"
     MASHABLE_NEWS = "mashable-news"
     MASHABLE_SECTIONS = "mashable-sections"
+    MAX_PREPS_MAXPREPS_RANKINGS_GROUPINGS = "maxpreps-rankings-groupings"
+    MAX_PREPS_MAXPREPS_REQUEST_ENUMS = "maxpreps-request-enums"
+    MAX_PREPS_MAXPREPS_SCHOOL = "maxpreps-school"
+    MAX_PREPS_MAXPREPS_SCHOOL_CONTESTS = "maxpreps-school-contests"
+    MAX_PREPS_MAXPREPS_SCHOOL_PROXIMAL = "maxpreps-school-proximal"
+    MAX_PREPS_MAXPREPS_SCHOOL_SEARCH = "maxpreps-school-search"
+    MAX_PREPS_MAXPREPS_SCHOOL_SEASONS = "maxpreps-school-seasons"
+    MAX_PREPS_MAXPREPS_SCHOOL_ZIP_SEARCH = "maxpreps-school-zip-search"
+    MAX_PREPS_MAXPREPS_SCOREBOARD = "maxpreps-scoreboard"
+    MAX_PREPS_MAXPREPS_SEASON_NAVIGATION = "maxpreps-season-navigation"
+    MAX_PREPS_MAXPREPS_SPORTS = "maxpreps-sports"
+    MAX_PREPS_MAXPREPS_STATES = "maxpreps-states"
+    MAX_PREPS_MAXPREPS_TEAM = "maxpreps-team"
+    MAX_PREPS_MAXPREPS_TEAM_CONTEXT = "maxpreps-team-context"
+    MAX_PREPS_MAXPREPS_TEAM_NEXT_CONTEST = "maxpreps-team-next-contest"
+    MAX_PREPS_MAXPREPS_TEAM_RANKINGS = "maxpreps-team-rankings"
+    MAX_PREPS_MAXPREPS_TEAM_ROSTER_SUMMARY = "maxpreps-team-roster-summary"
+    MAX_PREPS_MAXPREPS_TEAM_SCHEDULE = "maxpreps-team-schedule"
+    MAX_PREPS_MAXPREPS_TEAM_STAT_LEADERS = "maxpreps-team-stat-leaders"
+    MAX_PREPS_MAXPREPS_TOURNAMENT_SPORTS = "maxpreps-tournament-sports"
     MC_DONALDS_MCDONALDS_CATEGORIES = "mcdonalds-categories"
     MC_DONALDS_MCDONALDS_ITEM = "mcdonalds-item"
     MC_DONALDS_MCDONALDS_ITEM_LIST = "mcdonalds-item-list"
@@ -166124,6 +190193,40 @@ module Crawlora
     MODA_OPERANDI_MODAOPERANDI_DESIGNERS = "modaoperandi-designers"
     MODA_OPERANDI_MODAOPERANDI_PRODUCT = "modaoperandi-product"
     MODA_OPERANDI_MODAOPERANDI_SEARCH = "modaoperandi-search"
+    MODRINTH_CHECK_PROJECT = "modrinth-check-project"
+    MODRINTH_COLLECTION = "modrinth-collection"
+    MODRINTH_COLLECTIONS = "modrinth-collections"
+    MODRINTH_DEPENDENCIES = "modrinth-dependencies"
+    MODRINTH_FILE_PROJECTS = "modrinth-file-projects"
+    MODRINTH_FILE_UPDATE = "modrinth-file-update"
+    MODRINTH_FILE_VERSION = "modrinth-file-version"
+    MODRINTH_FILE_VERSIONS = "modrinth-file-versions"
+    MODRINTH_FILES_UPDATE = "modrinth-files-update"
+    MODRINTH_FILES_UPDATE_INDIVIDUAL = "modrinth-files-update-individual"
+    MODRINTH_FILES_UPDATE_MANY = "modrinth-files-update-many"
+    MODRINTH_FORGE_UPDATES = "modrinth-forge-updates"
+    MODRINTH_LICENSE = "modrinth-license"
+    MODRINTH_METADATA_LINK_PLATFORMS = "modrinth-metadata-link-platforms"
+    MODRINTH_METADATA_LOADER_FIELD_VALUES = "modrinth-metadata-loader-field-values"
+    MODRINTH_METADATA_LOADER_FIELDS = "modrinth-metadata-loader-fields"
+    MODRINTH_METADATA_LOADERS = "modrinth-metadata-loaders"
+    MODRINTH_ORGANIZATION = "modrinth-organization"
+    MODRINTH_ORGANIZATION_PROJECTS = "modrinth-organization-projects"
+    MODRINTH_ORGANIZATIONS = "modrinth-organizations"
+    MODRINTH_PROJECT = "modrinth-project"
+    MODRINTH_PROJECT_DISCLOSURES = "modrinth-project-disclosures"
+    MODRINTH_PROJECT_VERSION = "modrinth-project-version"
+    MODRINTH_PROJECT_VERSIONS = "modrinth-project-versions"
+    MODRINTH_PROJECTS = "modrinth-projects"
+    MODRINTH_RANDOM_PROJECTS = "modrinth-random-projects"
+    MODRINTH_SEARCH = "modrinth-search"
+    MODRINTH_SEARCH_V3 = "modrinth-search-v3"
+    MODRINTH_SEARCH_V3_BODY = "modrinth-search-v3-body"
+    MODRINTH_SEARCH_V3_OPTIONS = "modrinth-search-v3-options"
+    MODRINTH_STATISTICS = "modrinth-statistics"
+    MODRINTH_TAGS = "modrinth-tags"
+    MODRINTH_VERSION = "modrinth-version"
+    MODRINTH_VERSIONS = "modrinth-versions"
     MONCLER_CATEGORIES = "moncler-categories"
     MONCLER_CATEGORY = "moncler-category"
     MONCLER_PRODUCT = "moncler-product"
@@ -166141,6 +190244,31 @@ module Crawlora
     MONITORS_GET = "monitors-get"
     MONITORS_LIST = "monitors-list"
     MONITORS_UPDATE = "monitors-update"
+    MOTO_GP_MOTOGP_BMW_AWARD = "motogp-bmw-award"
+    MOTO_GP_MOTOGP_CATEGORIES = "motogp-categories"
+    MOTO_GP_MOTOGP_CIRCUIT_POLES = "motogp-circuit-poles"
+    MOTO_GP_MOTOGP_CIRCUIT_RECORDS = "motogp-circuit-records"
+    MOTO_GP_MOTOGP_CIRCUIT_WINS = "motogp-circuit-wins"
+    MOTO_GP_MOTOGP_CLASSIFICATIONS = "motogp-classifications"
+    MOTO_GP_MOTOGP_CONTENT_CATEGORIES = "motogp-content-categories"
+    MOTO_GP_MOTOGP_CONTENT_EVENT = "motogp-content-event"
+    MOTO_GP_MOTOGP_CONTENT_EVENTS = "motogp-content-events"
+    MOTO_GP_MOTOGP_ENTRY_GRID_OPTIONS = "motogp-entry-grid-options"
+    MOTO_GP_MOTOGP_ENTRY_LIST = "motogp-entry-list"
+    MOTO_GP_MOTOGP_EVENT_FILES = "motogp-event-files"
+    MOTO_GP_MOTOGP_EVENTS = "motogp-events"
+    MOTO_GP_MOTOGP_LATEST_SESSION = "motogp-latest-session"
+    MOTO_GP_MOTOGP_NEXT_LIVE_SESSION = "motogp-next-live-session"
+    MOTO_GP_MOTOGP_SEASONS = "motogp-seasons"
+    MOTO_GP_MOTOGP_SESSIONS = "motogp-sessions"
+    MOTO_GP_MOTOGP_STANDINGS = "motogp-standings"
+    MOTO_GP_MOTOGP_STANDINGS_FILES = "motogp-standings-files"
+    MOTO_GP_MOTOGP_STARTING_GRID = "motogp-starting-grid"
+    NASCAR_LIVE_FEED = "nascar-live-feed"
+    NASCAR_RACE_WEEKEND = "nascar-race-weekend"
+    NASCAR_RACES = "nascar-races"
+    NASCAR_SEASON_RACES = "nascar-season-races"
+    NASCAR_SERIES = "nascar-series"
     NATION_AFRICA_NATIONAFRICA_ARTICLE = "nationafrica-article"
     NATION_AFRICA_NATIONAFRICA_AUTHOR = "nationafrica-author"
     NATION_AFRICA_NATIONAFRICA_HEADLINES = "nationafrica-headlines"
@@ -166151,6 +190279,43 @@ module Crawlora
     NATIONAL_POST_NATIONALPOST_HEADLINES = "nationalpost-headlines"
     NATIONAL_POST_NATIONALPOST_NEWS = "nationalpost-news"
     NATIONAL_POST_NATIONALPOST_SECTIONS = "nationalpost-sections"
+    NBA_BOX_SCORE = "nba-box-score"
+    NBA_BOX_SCORE_ADVANCED = "nba-box-score-advanced"
+    NBA_BOX_SCORE_FOUR_FACTORS = "nba-box-score-four-factors"
+    NBA_BOX_SCORE_MISC = "nba-box-score-misc"
+    NBA_BOX_SCORE_PLAYER_TRACK = "nba-box-score-player-track"
+    NBA_BOX_SCORE_SCORING = "nba-box-score-scoring"
+    NBA_BOX_SCORE_USAGE = "nba-box-score-usage"
+    NBA_COMMON_ALL_PLAYERS = "nba-common-all-players"
+    NBA_DRAFT_COMBINE_ANTHRO = "nba-draft-combine-anthro"
+    NBA_ENUMS = "nba-enums"
+    NBA_FRANCHISE_HISTORY = "nba-franchise-history"
+    NBA_GAME_DETAIL = "nba-game-detail"
+    NBA_GAMES = "nba-games"
+    NBA_HOMEPAGE_LEADERS = "nba-homepage-leaders"
+    NBA_HUSTLE_STATS = "nba-hustle-stats"
+    NBA_LEAGUE_GAME_LOG = "nba-league-game-log"
+    NBA_LINEUPS = "nba-lineups"
+    NBA_NEWS = "nba-news"
+    NBA_PLAY_BY_PLAY = "nba-play-by-play"
+    NBA_PLAYER_AWARDS = "nba-player-awards"
+    NBA_PLAYER_BIO_STATS = "nba-player-bio-stats"
+    NBA_PLAYER_CAREER_STATS = "nba-player-career-stats"
+    NBA_PLAYER_DASH_PT_SHOTS = "nba-player-dash-pt-shots"
+    NBA_PLAYER_INFO = "nba-player-info"
+    NBA_PLAYER_STATS = "nba-player-stats"
+    NBA_PLAYERS = "nba-players"
+    NBA_PLAYOFF_PICTURE = "nba-playoff-picture"
+    NBA_PT_DEFEND = "nba-pt-defend"
+    NBA_PT_STATS = "nba-pt-stats"
+    NBA_SCOREBOARD = "nba-scoreboard"
+    NBA_STANDINGS = "nba-standings"
+    NBA_SYNERGY_PLAY_TYPES = "nba-synergy-play-types"
+    NBA_TEAM_DETAILS = "nba-team-details"
+    NBA_TEAM_ROSTER = "nba-team-roster"
+    NBA_TEAM_SHOT_LOCATIONS = "nba-team-shot-locations"
+    NBA_TEAM_STATS = "nba-team-stats"
+    NBA_TEAM_STATS_LEADERS = "nba-team-stats-leaders"
     NBC_NEWS_CALL = "nbc-news"
     NBC_NEWS_NBC_ARTICLE = "nbc-article"
     NBC_NEWS_NBC_AUTHOR = "nbc-author"
@@ -166168,6 +190333,14 @@ module Crawlora
     NDTV_VIDEO = "ndtv-video"
     NDTV_VIDEO_CATEGORIES = "ndtv-video-categories"
     NDTV_VIDEOS = "ndtv-videos"
+    NET_SHORT_NETSHORT_BROWSE = "netshort-browse"
+    NET_SHORT_NETSHORT_GENRES = "netshort-genres"
+    NET_SHORT_NETSHORT_HOME = "netshort-home"
+    NET_SHORT_NETSHORT_LABEL = "netshort-label"
+    NET_SHORT_NETSHORT_PLOTS = "netshort-plots"
+    NET_SHORT_NETSHORT_SEARCH = "netshort-search"
+    NET_SHORT_NETSHORT_TITLE = "netshort-title"
+    NET_SHORT_NETSHORT_TOPLIST = "netshort-toplist"
     NEW_YORK_DAILY_NEWS_NYDAILYNEWS_ARTICLE = "nydailynews-article"
     NEW_YORK_DAILY_NEWS_NYDAILYNEWS_AUTHOR = "nydailynews-author"
     NEW_YORK_DAILY_NEWS_NYDAILYNEWS_HEADLINES = "nydailynews-headlines"
@@ -166212,6 +190385,23 @@ module Crawlora
     NEWSWEEK_HEADLINES = "newsweek-headlines"
     NEWSWEEK_NEWS = "newsweek-news"
     NEWSWEEK_SECTIONS = "newsweek-sections"
+    NFHS_ACTIVITIES = "nfhs-activities"
+    NFHS_AFFILIATE = "nfhs-affiliate"
+    NFHS_AFFILIATES = "nfhs-affiliates"
+    NFHS_ASSOCIATION = "nfhs-association"
+    NFHS_ASSOCIATIONS = "nfhs-associations"
+    NFHS_EVENT = "nfhs-event"
+    NFHS_EVENTS = "nfhs-events"
+    NFHS_FILTERS = "nfhs-filters"
+    NFHS_HIGHLIGHTS = "nfhs-highlights"
+    NFHS_PRODUCER = "nfhs-producer"
+    NFHS_PUBLISHER = "nfhs-publisher"
+    NFHS_SCHOOL = "nfhs-school"
+    NFHS_SCHOOLS = "nfhs-schools"
+    NFHS_SEARCH = "nfhs-search"
+    NFHS_SPORTS = "nfhs-sports"
+    NFHS_STATES = "nfhs-states"
+    NFHS_SUGGEST = "nfhs-suggest"
     NIKE_CATEGORIES = "nike-categories"
     NIKE_PRODUCT = "nike-product"
     NIKE_PRODUCT_AVAILABILITY = "nike-product-availability"
@@ -166271,8 +190461,11 @@ module Crawlora
     OPEN_DOTA_OPENDOTA_ABILITIES = "opendota-abilities"
     OPEN_DOTA_OPENDOTA_BENCHMARKS = "opendota-benchmarks"
     OPEN_DOTA_OPENDOTA_CONSTANTS = "opendota-constants"
+    OPEN_DOTA_OPENDOTA_FIND_MATCHES = "opendota-find-matches"
+    OPEN_DOTA_OPENDOTA_HERO_DESCRIPTIONS = "opendota-hero-descriptions"
     OPEN_DOTA_OPENDOTA_HERO_DURATIONS = "opendota-hero-durations"
     OPEN_DOTA_OPENDOTA_HERO_ITEMS = "opendota-hero-items"
+    OPEN_DOTA_OPENDOTA_HERO_MATCHES = "opendota-hero-matches"
     OPEN_DOTA_OPENDOTA_HERO_MATCHUPS = "opendota-hero-matchups"
     OPEN_DOTA_OPENDOTA_HERO_STATS = "opendota-hero-stats"
     OPEN_DOTA_OPENDOTA_HEROES = "opendota-heroes"
@@ -166286,6 +190479,7 @@ module Crawlora
     OPEN_DOTA_OPENDOTA_PATCH_NOTES = "opendota-patch-notes"
     OPEN_DOTA_OPENDOTA_PRO_MATCHES = "opendota-pro-matches"
     OPEN_DOTA_OPENDOTA_PRO_PLAYERS = "opendota-pro-players"
+    OPEN_DOTA_OPENDOTA_PUBLIC_MATCHES = "opendota-public-matches"
     OPEN_DOTA_OPENDOTA_RANK_DISTRIBUTION = "opendota-rank-distribution"
     OPEN_DOTA_OPENDOTA_RECORDS = "opendota-records"
     OPEN_DOTA_OPENDOTA_SCENARIOS = "opendota-scenarios"
@@ -166294,6 +190488,46 @@ module Crawlora
     OPEN_DOTA_OPENDOTA_TEAM_MATCHES = "opendota-team-matches"
     OPEN_DOTA_OPENDOTA_TEAM_PLAYERS = "opendota-team-players"
     OPEN_DOTA_OPENDOTA_TEAMS = "opendota-teams"
+    OPEN_F1_OPENF1_CAR_DATA = "openf1-car-data"
+    OPEN_F1_OPENF1_CHAMPIONSHIP_DRIVERS = "openf1-championship-drivers"
+    OPEN_F1_OPENF1_CHAMPIONSHIP_TEAMS = "openf1-championship-teams"
+    OPEN_F1_OPENF1_DRIVERS = "openf1-drivers"
+    OPEN_F1_OPENF1_INTERVALS = "openf1-intervals"
+    OPEN_F1_OPENF1_LAPS = "openf1-laps"
+    OPEN_F1_OPENF1_LOCATION = "openf1-location"
+    OPEN_F1_OPENF1_MEETINGS = "openf1-meetings"
+    OPEN_F1_OPENF1_OVERTAKES = "openf1-overtakes"
+    OPEN_F1_OPENF1_PIT = "openf1-pit"
+    OPEN_F1_OPENF1_POSITION = "openf1-position"
+    OPEN_F1_OPENF1_RACE_CONTROL = "openf1-race-control"
+    OPEN_F1_OPENF1_SESSION_RESULT = "openf1-session-result"
+    OPEN_F1_OPENF1_SESSIONS = "openf1-sessions"
+    OPEN_F1_OPENF1_STARTING_GRID = "openf1-starting-grid"
+    OPEN_F1_OPENF1_STINTS = "openf1-stints"
+    OPEN_F1_OPENF1_TEAM_RADIO = "openf1-team-radio"
+    OPEN_F1_OPENF1_WEATHER = "openf1-weather"
+    OPEN_LIGA_DB_OPENLIGADB_CURRENT_GROUP = "openligadb-current-group"
+    OPEN_LIGA_DB_OPENLIGADB_CURRENT_MATCHDAY = "openligadb-current-matchday"
+    OPEN_LIGA_DB_OPENLIGADB_GOAL_GETTERS = "openligadb-goal-getters"
+    OPEN_LIGA_DB_OPENLIGADB_GROUPS = "openligadb-groups"
+    OPEN_LIGA_DB_OPENLIGADB_LAST_CHANGED = "openligadb-last-changed"
+    OPEN_LIGA_DB_OPENLIGADB_LAST_MATCH = "openligadb-last-match"
+    OPEN_LIGA_DB_OPENLIGADB_LAST_TEAM_MATCH = "openligadb-last-team-match"
+    OPEN_LIGA_DB_OPENLIGADB_LEAGUE_MATCHES = "openligadb-league-matches"
+    OPEN_LIGA_DB_OPENLIGADB_LEAGUE_TEAM_MATCHES = "openligadb-league-team-matches"
+    OPEN_LIGA_DB_OPENLIGADB_LEAGUES = "openligadb-leagues"
+    OPEN_LIGA_DB_OPENLIGADB_MATCH = "openligadb-match"
+    OPEN_LIGA_DB_OPENLIGADB_MATCHDAY_MATCHES = "openligadb-matchday-matches"
+    OPEN_LIGA_DB_OPENLIGADB_MATCHES_BY_TEAM = "openligadb-matches-by-team"
+    OPEN_LIGA_DB_OPENLIGADB_MATCHES_BY_TEAM_ID = "openligadb-matches-by-team-id"
+    OPEN_LIGA_DB_OPENLIGADB_NEXT_MATCH = "openligadb-next-match"
+    OPEN_LIGA_DB_OPENLIGADB_NEXT_TEAM_MATCH = "openligadb-next-team-match"
+    OPEN_LIGA_DB_OPENLIGADB_RESULT_INFOS = "openligadb-result-infos"
+    OPEN_LIGA_DB_OPENLIGADB_RESULT_TYPES = "openligadb-result-types"
+    OPEN_LIGA_DB_OPENLIGADB_SPORTS = "openligadb-sports"
+    OPEN_LIGA_DB_OPENLIGADB_TABLE = "openligadb-table"
+    OPEN_LIGA_DB_OPENLIGADB_TEAM_PAIR_MATCHES = "openligadb-team-pair-matches"
+    OPEN_LIGA_DB_OPENLIGADB_TEAMS = "openligadb-teams"
     OPEN_SEA_OPENSEA_ACTIVITY = "opensea-activity"
     OPEN_SEA_OPENSEA_CATEGORIES = "opensea-categories"
     OPEN_SEA_OPENSEA_CHAINS = "opensea-chains"
@@ -166384,6 +190618,10 @@ module Crawlora
     PAPA_JOHN_SPAPAJOHNS_POLAND_MENU = "papajohns-poland-menu"
     PAPA_JOHN_SPAPAJOHNS_RUSSIA_MENU = "papajohns-russia-menu"
     PAPA_JOHN_SPAPAJOHNS_STORE = "papajohns-store"
+    PARTIFUL_CITY_FACETS = "partiful-city-facets"
+    PARTIFUL_CITY_FEED = "partiful-city-feed"
+    PARTIFUL_EVENT = "partiful-event"
+    PARTIFUL_EXPLORE_CITIES = "partiful-explore-cities"
     PATREON_CREATOR = "patreon-creator"
     PATREON_CREATOR_TIERS = "patreon-creator-tiers"
     PATREON_EXPLORE = "patreon-explore"
@@ -166403,6 +190641,27 @@ module Crawlora
     PEOPLE_HEADLINES = "people-headlines"
     PEOPLE_NEWS = "people-news"
     PEOPLE_SECTIONS = "people-sections"
+    PET_SMART_PETSMART_CATEGORIES = "petsmart-categories"
+    PET_SMART_PETSMART_PRODUCT = "petsmart-product"
+    PET_SMART_PETSMART_PRODUCT_INVENTORY = "petsmart-product-inventory"
+    PET_SMART_PETSMART_SEARCH = "petsmart-search"
+    PET_SMART_PETSMART_SEARCH_FILTERS = "petsmart-search-filters"
+    PET_SMART_PETSMART_SUGGEST = "petsmart-suggest"
+    PGA_TOUR_PGATOUR_LEADERBOARD = "pgatour-leaderboard"
+    PGA_TOUR_PGATOUR_PLAYERS = "pgatour-players"
+    PGA_TOUR_PGATOUR_SCHEDULE = "pgatour-schedule"
+    PGA_TOUR_PGATOUR_SCHEDULE_SEASONS = "pgatour-schedule-seasons"
+    PGA_TOUR_PGATOUR_STAT_DETAIL = "pgatour-stat-detail"
+    PGA_TOUR_PGATOUR_STAT_OPTIONS = "pgatour-stat-options"
+    PGA_TOUR_PGATOUR_STATS = "pgatour-stats"
+    PGA_TOUR_PGATOUR_TOURNAMENT_BROADCAST = "pgatour-tournament-broadcast"
+    PGA_TOUR_PGATOUR_TOURNAMENT_COURSE_STATS = "pgatour-tournament-course-stats"
+    PGA_TOUR_PGATOUR_TOURNAMENT_FIELD = "pgatour-tournament-field"
+    PGA_TOUR_PGATOUR_TOURNAMENT_LINKS = "pgatour-tournament-links"
+    PGA_TOUR_PGATOUR_TOURNAMENT_OVERVIEW = "pgatour-tournament-overview"
+    PGA_TOUR_PGATOUR_TOURNAMENT_PAST_RESULTS = "pgatour-tournament-past-results"
+    PGA_TOUR_PGATOUR_TOURNAMENT_TEE_TIMES = "pgatour-tournament-tee-times"
+    PGA_TOUR_PGATOUR_TOURNAMENT_WEATHER = "pgatour-tournament-weather"
     PHILADELPHIA_INQUIRER_PHILLYINQUIRER_ARTICLE = "phillyinquirer-article"
     PHILADELPHIA_INQUIRER_PHILLYINQUIRER_AUTHOR = "phillyinquirer-author"
     PHILADELPHIA_INQUIRER_PHILLYINQUIRER_HEADLINES = "phillyinquirer-headlines"
@@ -166797,6 +191056,9 @@ module Crawlora
     ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_FILTERS = "rottentomatoes-browse-filters"
     ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_MOVIES = "rottentomatoes-browse-movies"
     ROTTEN_TOMATOES_ROTTENTOMATOES_BROWSE_TV = "rottentomatoes-browse-tv"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_CRITIC = "rottentomatoes-critic"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_CRITIC_PUBLICATIONS = "rottentomatoes-critic-publications"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_CRITIC_REVIEWS = "rottentomatoes-critic-reviews"
     ROTTEN_TOMATOES_ROTTENTOMATOES_CRITICS_AUTHORS = "rottentomatoes-critics-authors"
     ROTTEN_TOMATOES_ROTTENTOMATOES_EDITORIAL_CONTENT = "rottentomatoes-editorial-content"
     ROTTEN_TOMATOES_ROTTENTOMATOES_EDITORIAL_DETAIL = "rottentomatoes-editorial-detail"
@@ -166806,11 +191068,17 @@ module Crawlora
     ROTTEN_TOMATOES_ROTTENTOMATOES_EDITORIAL_TERMS = "rottentomatoes-editorial-terms"
     ROTTEN_TOMATOES_ROTTENTOMATOES_EDITORIAL_TYPES = "rottentomatoes-editorial-types"
     ROTTEN_TOMATOES_ROTTENTOMATOES_EPISODE = "rottentomatoes-episode"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_EPISODE_REVIEWS = "rottentomatoes-episode-reviews"
     ROTTEN_TOMATOES_ROTTENTOMATOES_MOVIE = "rottentomatoes-movie"
     ROTTEN_TOMATOES_ROTTENTOMATOES_MOVIE_REVIEWS = "rottentomatoes-movie-reviews"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_MOVIE_VIDEOS = "rottentomatoes-movie-videos"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_MOVIES = "rottentomatoes-movies"
     ROTTEN_TOMATOES_ROTTENTOMATOES_PERSON = "rottentomatoes-person"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_PUBLICATION = "rottentomatoes-publication"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_PUBLICATION_REVIEWS = "rottentomatoes-publication-reviews"
     ROTTEN_TOMATOES_ROTTENTOMATOES_SEARCH = "rottentomatoes-search"
     ROTTEN_TOMATOES_ROTTENTOMATOES_SEASON = "rottentomatoes-season"
+    ROTTEN_TOMATOES_ROTTENTOMATOES_SEASON_REVIEWS = "rottentomatoes-season-reviews"
     ROTTEN_TOMATOES_ROTTENTOMATOES_SERIES = "rottentomatoes-series"
     ROTTEN_TOMATOES_ROTTENTOMATOES_SITEMAP_URLS = "rottentomatoes-sitemap-urls"
     ROTTEN_TOMATOES_ROTTENTOMATOES_SITEMAPS = "rottentomatoes-sitemaps"
@@ -167032,6 +191300,7 @@ module Crawlora
     SOFA_SCORE_SOFASCORE_EVENT_LINEUPS = "sofascore-event-lineups"
     SOFA_SCORE_SOFASCORE_EVENT_MANAGERS = "sofascore-event-managers"
     SOFA_SCORE_SOFASCORE_EVENT_ODDS = "sofascore-event-odds"
+    SOFA_SCORE_SOFASCORE_EVENT_PLAYER_ACTIONS = "sofascore-event-player-actions"
     SOFA_SCORE_SOFASCORE_EVENT_PLAYER_HEATMAP = "sofascore-event-player-heatmap"
     SOFA_SCORE_SOFASCORE_EVENT_PLAYER_STATISTICS = "sofascore-event-player-statistics"
     SOFA_SCORE_SOFASCORE_EVENT_POINT_BY_POINT = "sofascore-event-point-by-point"
@@ -167039,6 +191308,7 @@ module Crawlora
     SOFA_SCORE_SOFASCORE_EVENT_SHOTMAP = "sofascore-event-shotmap"
     SOFA_SCORE_SOFASCORE_EVENT_STATISTICS = "sofascore-event-statistics"
     SOFA_SCORE_SOFASCORE_EVENT_TEAM_HEATMAP = "sofascore-event-team-heatmap"
+    SOFA_SCORE_SOFASCORE_EVENT_TEAM_SHOTMAP = "sofascore-event-team-shotmap"
     SOFA_SCORE_SOFASCORE_EVENT_TEAM_STREAKS = "sofascore-event-team-streaks"
     SOFA_SCORE_SOFASCORE_EVENT_TENNIS_POWER = "sofascore-event-tennis-power"
     SOFA_SCORE_SOFASCORE_EVENT_TV_CHANNELS = "sofascore-event-tv-channels"
@@ -167146,6 +191416,23 @@ module Crawlora
     SPARK_FUN_SPARKFUN_CATEGORY = "sparkfun-category"
     SPARK_FUN_SPARKFUN_PRODUCT = "sparkfun-product"
     SPARK_FUN_SPARKFUN_SEARCH = "sparkfun-search"
+    SPEEDRUN_COM_SPEEDRUN_CATALOG = "speedrun-catalog"
+    SPEEDRUN_COM_SPEEDRUN_CATEGORIES = "speedrun-categories"
+    SPEEDRUN_COM_SPEEDRUN_CATEGORY_DETAIL = "speedrun-category-detail"
+    SPEEDRUN_COM_SPEEDRUN_CATEGORY_RECORDS = "speedrun-category-records"
+    SPEEDRUN_COM_SPEEDRUN_CATEGORY_VARIABLES = "speedrun-category-variables"
+    SPEEDRUN_COM_SPEEDRUN_GAME_DETAIL = "speedrun-game-detail"
+    SPEEDRUN_COM_SPEEDRUN_GAME_LEADERBOARD = "speedrun-game-leaderboard"
+    SPEEDRUN_COM_SPEEDRUN_GAMES = "speedrun-games"
+    SPEEDRUN_COM_SPEEDRUN_LEVEL_CATEGORIES = "speedrun-level-categories"
+    SPEEDRUN_COM_SPEEDRUN_LEVEL_DETAIL = "speedrun-level-detail"
+    SPEEDRUN_COM_SPEEDRUN_LEVEL_LEADERBOARD = "speedrun-level-leaderboard"
+    SPEEDRUN_COM_SPEEDRUN_LEVEL_RECORDS = "speedrun-level-records"
+    SPEEDRUN_COM_SPEEDRUN_LEVEL_VARIABLES = "speedrun-level-variables"
+    SPEEDRUN_COM_SPEEDRUN_LEVELS = "speedrun-levels"
+    SPEEDRUN_COM_SPEEDRUN_RECORDS = "speedrun-records"
+    SPEEDRUN_COM_SPEEDRUN_RESOURCE_OPTIONS = "speedrun-resource-options"
+    SPEEDRUN_COM_SPEEDRUN_VARIABLES = "speedrun-variables"
     SPORTING_NEWS_SPORTINGNEWS_ARTICLE = "sportingnews-article"
     SPORTING_NEWS_SPORTINGNEWS_AUTHOR = "sportingnews-author"
     SPORTING_NEWS_SPORTINGNEWS_HEADLINES = "sportingnews-headlines"
@@ -167902,6 +192189,12 @@ module Crawlora
     WEB_EXTRACT = "extract"
     WEB_SCRAPE = "web-scrape"
     WEB_TECHSTACK = "web-techstack"
+    WEBTOON_GENRE = "webtoon-genre"
+    WEBTOON_GENRES = "webtoon-genres"
+    WEBTOON_ORIGINALS = "webtoon-originals"
+    WEBTOON_RANKINGS = "webtoon-rankings"
+    WEBTOON_SEARCH = "webtoon-search"
+    WEBTOON_SERIES = "webtoon-series"
     WENDYS_CATEGORIES = "wendys-categories"
     WENDYS_DIRECTORY = "wendys-directory"
     WENDYS_ITEM = "wendys-item"
@@ -167943,6 +192236,16 @@ module Crawlora
     WOLT_RESTAURANT_MENU_SEARCH = "wolt-restaurant-menu-search"
     WOLT_SEARCH = "wolt-search"
     WOLT_SEARCH_FILTERS = "wolt-search-filters"
+    WTA_COUNTRIES = "wta-countries"
+    WTA_MATCH_STATES = "wta-match-states"
+    WTA_RANKINGS = "wta-rankings"
+    WTA_TOURNAMENT = "wta-tournament"
+    WTA_TOURNAMENT_DRAWS = "wta-tournament-draws"
+    WTA_TOURNAMENT_MATCHES = "wta-tournament-matches"
+    WTA_TOURNAMENT_ORDER_OF_PLAY = "wta-tournament-order-of-play"
+    WTA_TOURNAMENT_PLAYERS = "wta-tournament-players"
+    WTA_TOURNAMENT_SEASONS = "wta-tournament-seasons"
+    WTA_TOURNAMENTS = "wta-tournaments"
     XPOST = "x-post"
     XPROFILE = "x-profile"
     XPROFILE_POSTS = "x-profile-posts"
@@ -168024,30 +192327,71 @@ module Crawlora
     YAHOO_SEARCH_SUGGEST = "yahoo-search-suggest"
     YAHOO_SEARCH_VIDEOS = "yahoo-search-videos"
     YAHOO_SHOPPING_ARTICLE = "yahoo-shopping-article"
+    YAHOO_SHOPPING_AUTHOR = "yahoo-shopping-author"
+    YAHOO_SHOPPING_CATEGORIES = "yahoo-shopping-categories"
     YAHOO_SHOPPING_CATEGORY = "yahoo-shopping-category"
+    YAHOO_SHOPPING_EXPERTS = "yahoo-shopping-experts"
     YAHOO_SHOPPING_HOME = "yahoo-shopping-home"
     YAHOO_SHOPPING_SHOPPING_LIST = "yahoo-shopping-shopping-list"
     YAHOO_SHOPPING_SHOPPING_LISTS = "yahoo-shopping-shopping-lists"
+    YAHOO_SHOPPING_SITEMAP = "yahoo-shopping-sitemap"
+    YAHOO_SHOPPING_SITEMAPS = "yahoo-shopping-sitemaps"
     YAHOO_SHOPPING_STORE = "yahoo-shopping-store"
     YAHOO_SHOPPING_STORES = "yahoo-shopping-stores"
+    YAHOO_SHOPPING_SUGGEST = "yahoo-shopping-suggest"
+    YAHOO_SPORTS_COLLEGE_RANKINGS = "yahoo-sports-college-rankings"
+    YAHOO_SPORTS_DRAFT = "yahoo-sports-draft"
+    YAHOO_SPORTS_DROPDOWN_CATALOG = "yahoo-sports-dropdown-catalog"
     YAHOO_SPORTS_GAME = "yahoo-sports-game"
     YAHOO_SPORTS_GOLF_LEADERBOARD = "yahoo-sports-golf-leaderboard"
+    YAHOO_SPORTS_GOLF_PLAYER = "yahoo-sports-golf-player"
+    YAHOO_SPORTS_GOLF_PLAYER_NEWS = "yahoo-sports-golf-player-news"
+    YAHOO_SPORTS_GOLF_PLAYERS = "yahoo-sports-golf-players"
     YAHOO_SPORTS_GOLF_SCHEDULE = "yahoo-sports-golf-schedule"
+    YAHOO_SPORTS_HOME = "yahoo-sports-home"
+    YAHOO_SPORTS_INJURY_REPORT = "yahoo-sports-injury-report"
+    YAHOO_SPORTS_LEAGUE_SCHEDULE = "yahoo-sports-league-schedule"
+    YAHOO_SPORTS_LEAGUES = "yahoo-sports-leagues"
     YAHOO_SPORTS_MMA_FIGHT_CARD = "yahoo-sports-mma-fight-card"
     YAHOO_SPORTS_MMA_SCHEDULE = "yahoo-sports-mma-schedule"
+    YAHOO_SPORTS_MORE_NEWS = "yahoo-sports-more-news"
     YAHOO_SPORTS_MOTORSPORTS_RACE = "yahoo-sports-motorsports-race"
     YAHOO_SPORTS_MOTORSPORTS_SCHEDULE = "yahoo-sports-motorsports-schedule"
+    YAHOO_SPORTS_NAVIGATION = "yahoo-sports-navigation"
+    YAHOO_SPORTS_NETWORK_CATALOG = "yahoo-sports-network-catalog"
     YAHOO_SPORTS_NEWS = "yahoo-sports-news"
+    YAHOO_SPORTS_NEWSLETTER_ARCHIVE = "yahoo-sports-newsletter-archive"
+    YAHOO_SPORTS_NEWSLETTERS = "yahoo-sports-newsletters"
+    YAHOO_SPORTS_ODDS_FEATURED = "yahoo-sports-odds-featured"
+    YAHOO_SPORTS_ODDS_GAME = "yahoo-sports-odds-game"
+    YAHOO_SPORTS_ODDS_GAMES = "yahoo-sports-odds-games"
+    YAHOO_SPORTS_ODDS_TRENDING = "yahoo-sports-odds-trending"
     YAHOO_SPORTS_OLYMPICS_MEDALS = "yahoo-sports-olympics-medals"
     YAHOO_SPORTS_PLAYER = "yahoo-sports-player"
+    YAHOO_SPORTS_PLAYER_SEARCH = "yahoo-sports-player-search"
+    YAHOO_SPORTS_PLAYOFF_BRACKET = "yahoo-sports-playoff-bracket"
+    YAHOO_SPORTS_PLAYOFF_BRACKET_CATALOG = "yahoo-sports-playoff-bracket-catalog"
+    YAHOO_SPORTS_RSS_CATALOG = "yahoo-sports-rss-catalog"
+    YAHOO_SPORTS_RSS_FEED = "yahoo-sports-rss-feed"
+    YAHOO_SPORTS_SCHEDULE_CATALOG = "yahoo-sports-schedule-catalog"
     YAHOO_SPORTS_SCOREBOARD = "yahoo-sports-scoreboard"
+    YAHOO_SPORTS_SECTION_STREAM = "yahoo-sports-section-stream"
+    YAHOO_SPORTS_SOCCER_SCOREBOARD = "yahoo-sports-soccer-scoreboard"
+    YAHOO_SPORTS_SPORTSBOOK_CATALOG = "yahoo-sports-sportsbook-catalog"
     YAHOO_SPORTS_STANDINGS = "yahoo-sports-standings"
+    YAHOO_SPORTS_STATS = "yahoo-sports-stats"
+    YAHOO_SPORTS_STATS_CATALOG = "yahoo-sports-stats-catalog"
+    YAHOO_SPORTS_STATS_DISCOVERY = "yahoo-sports-stats-discovery"
     YAHOO_SPORTS_TEAM = "yahoo-sports-team"
     YAHOO_SPORTS_TEAM_ROSTER = "yahoo-sports-team-roster"
     YAHOO_SPORTS_TEAM_SCHEDULE = "yahoo-sports-team-schedule"
     YAHOO_SPORTS_TENNIS_RANKINGS = "yahoo-sports-tennis-rankings"
     YAHOO_SPORTS_TENNIS_SCHEDULE = "yahoo-sports-tennis-schedule"
     YAHOO_SPORTS_TENNIS_SCOREBOARD = "yahoo-sports-tennis-scoreboard"
+    YAHOO_SPORTS_TOPIC_NEWS = "yahoo-sports-topic-news"
+    YAHOO_SPORTS_VIDEO_HEADLINES = "yahoo-sports-video-headlines"
+    YAHOO_SPORTS_VIDEO_LIST_CATALOG = "yahoo-sports-video-list-catalog"
+    YAHOO_SPORTS_WATCH_SCHEDULE = "yahoo-sports-watch-schedule"
     YAHOO_TECH_ARTICLE = "yahoo-tech-article"
     YAHOO_TECH_CATEGORY = "yahoo-tech-category"
     YAHOO_TECH_HOME = "yahoo-tech-home"
