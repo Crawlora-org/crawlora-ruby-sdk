@@ -14,7 +14,7 @@ Published on [RubyGems](https://rubygems.org/gems/crawlora). Install the stable 
 
 ```ruby
 # Gemfile
-gem "crawlora", "1.50.0"
+gem "crawlora", "1.51.0"
 ```
 
 ```sh
