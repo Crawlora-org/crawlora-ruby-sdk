@@ -1622,6 +1622,11 @@ module Crawlora
     def eonline_sections: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
+  class EpicGamesStoreGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def epicgames_free_promotions: (?locale: String, ?country: String, ?allowCountries: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
   class EspnGroup
     def initialize: (Client, Hash[String, String]) -> void
     def athlete: (?sport: "football" | "basketball" | "baseball" | "hockey" | "soccer", ?league: "nfl" | "college-football" | "nba" | "wnba" | "mens-college-basketball" | "womens-college-basketball" | "mlb" | "nhl" | "eng.1" | "esp.1" | "ita.1" | "ger.1" | "fra.1" | "usa.1" | "uefa.champions", ?athlete: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -2651,6 +2656,13 @@ module Crawlora
     def physicians_search: (?query: String, ?where: String, ?page: Integer, ?sort: "bestmatch" | "distance" | "ratings", ?gender: "F" | "M", ?distance: "1" | "5" | "10" | "25" | "50" | "100" | "national", ?age: "*-40" | "41-50" | "51-60" | "61-70" | "71-*", ?availability: "today" | "tomorrow" | "nextTwoWeeks" | "online" | "acceptsNewPatients" | "telehealth", ?rating: "1" | "2" | "3" | "4" | "5", ?insurance: String, ?insurance_plan: String, ?language: String, ?clinical_focus: String, ?affiliated_hospital: String, ?specialty: String, ?affirming_care: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def specialties: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def top_searches: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class HearthstoneGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def card: (?id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def cards: (?page: Integer, ?pageSize: Integer, ?locale: String, ?class: String, ?set: String, ?sort: String, ?order: "asc" | "desc", ?gameMode: String, ?collectible: Array["0" | "1"], ?textFilter: String, ?filterLocale: String, ?deckcode: String, ?cardSetId: Array[Integer], ?spellSchoolId: Array[Integer], ?rarityId: Array[Integer], ?cardTypeId: Array[Integer], ?manaCost: Array[String], ?attack: Array[String], ?health: Array[String], ?armor: Array[String], ?rarity: String, ?type: Array[String], ?bgCardType: String, ?keyword: String, ?minionType: String, ?deckFormat: String, ?tier: Array["1" | "2" | "3" | "4" | "5" | "6" | "7"], ?mercenaryRole: String, ?mercenaryFaction: String, ?viewMode: "grid" | "table", ?cardBackCategory: String, ?spellSchool: String, ?faction: String, ?bgGameMode: String, ?zilliaxMod: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def filters: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class HermesGroup
@@ -3781,16 +3793,23 @@ module Crawlora
     def games: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def homepage_leaders: (?league_id: "00", ?stat_category: "Points" | "Rebounds", ?player_or_team: "Team", ?player_scope: String, ?game_scope: "Season", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def hustle_stats: (?game_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def hustle_team: (?league_id: "00", ?season: String, ?season_type: "Regular Season" | "Playoffs" | "Pre Season" | "All Star", ?per_mode: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def league_game_log: (?league_id: "00", ?season: String, ?season_type: "Regular Season", ?direction: "DESC", ?player_or_team: "T", ?sorter: "DATE", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def lineups: (?league_id: "00", ?season: String, ?season_type: "Regular Season", ?measure_type: "Base", ?per_mode: "PerGame", ?group_quantity: "5", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def news: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def opp_pt_shot: (?league_id: "00", ?season: String, ?season_type: "Regular Season" | "Playoffs" | "Pre Season" | "All Star", ?per_mode: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def play_by_play: (?game_id: String, ?start_period: Integer, ?end_period: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def player_awards: (?player_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def player_bio_stats: (?league_id: "00", ?season: String, ?season_type: "Regular Season", ?per_mode: "PerGame", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def player_career_stats: (?player_id: Integer, ?per_mode: "PerGame", ?league_id: "00", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def player_clutch: (?league_id: "00", ?season: String, ?season_type: "Regular Season" | "Playoffs" | "Pre Season" | "All Star", ?per_mode: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession", ?measure_type: "Base" | "Advanced" | "Misc" | "Scoring" | "Defense" | "Opponent", ?clutch_time: "Last 5 Minutes", ?ahead_behind: "Ahead or Behind", ?point_diff: "5", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def player_dash_pt_shots: (?player_id: Integer, ?league_id: "00", ?season: String, ?season_type: "Regular Season", ?per_mode: "PerGame", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def player_game_logs: (?league_id: "00", ?season: String, ?season_type: "Regular Season" | "Playoffs" | "Pre Season" | "All Star", ?player_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def player_info: (?player_id: Integer, ?league_id: "00", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def player_profile_v2: (?player_id: Integer, ?per_mode: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def player_pt_shot: (?league_id: "00", ?season: String, ?season_type: "Regular Season" | "Playoffs" | "Pre Season" | "All Star", ?per_mode: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def player_stats: (?league_id: "00", ?season: String, ?season_type: "Regular Season" | "Playoffs" | "Pre Season" | "All Star", ?measure_type: "Base" | "Advanced" | "Misc" | "Scoring" | "Defense" | "Opponent", ?per_mode: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def player_streak_finder: (?league_id: "00", ?season: String, ?season_type: "Regular Season" | "Playoffs" | "Pre Season" | "All Star", ?player_id: Integer, ?min_games: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def players: (?league_id: "00", ?season: String, ?team_id: Integer, ?active: bool, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def playoff_picture: (?league_id: "00", ?season_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def pt_defend: (?league_id: "00", ?season: String, ?season_type: "Regular Season", ?per_mode: "PerGame", ?defense_category: "Overall" | "3 Pointers", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
@@ -3798,11 +3817,18 @@ module Crawlora
     def scoreboard: (?league_id: "00", ?game_date: String, ?day_offset: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def standings: (?league_id: "00", ?season: String, ?season_type: "Regular Season" | "Playoffs" | "Pre Season" | "All Star", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def synergy_play_types: (?league_id: "00", ?season_year: String, ?season_type: "Regular Season", ?play_type: "Isolation", ?per_mode: "PerGame", ?player_or_team: "T", ?type_grouping: "offensive", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team_dash_pt_pass: (?league_id: "00", ?season: String, ?season_type: "Regular Season" | "Playoffs" | "Pre Season" | "All Star", ?per_mode: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession", ?team_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team_dash_pt_shots: (?league_id: "00", ?season: String, ?season_type: "Regular Season" | "Playoffs" | "Pre Season" | "All Star", ?per_mode: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession", ?team_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def team_details: (?team_id: Integer, ?league_id: "00", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team_game_logs: (?league_id: "00", ?season: String, ?season_type: "Regular Season" | "Playoffs" | "Pre Season" | "All Star", ?team_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team_info_common: (?league_id: "00", ?season: String, ?season_type: "Regular Season" | "Playoffs" | "Pre Season" | "All Star", ?team_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team_on_off: (?league_id: "00", ?season: String, ?season_type: "Regular Season" | "Playoffs" | "Pre Season" | "All Star", ?per_mode: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession", ?measure_type: "Base" | "Advanced" | "Misc" | "Scoring" | "Defense" | "Opponent", ?team_id: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team_pt_shot: (?league_id: "00", ?season: String, ?season_type: "Regular Season" | "Playoffs" | "Pre Season" | "All Star", ?per_mode: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def team_roster: (?team_id: Integer, ?league_id: "00", ?season: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def team_shot_locations: (?league_id: "00", ?season: String, ?season_type: "Regular Season", ?measure_type: "Base", ?per_mode: "PerGame", ?distance_range: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def team_stats: (?league_id: "00", ?season: String, ?season_type: "Regular Season" | "Playoffs" | "Pre Season" | "All Star", ?measure_type: "Base" | "Advanced" | "Misc" | "Scoring" | "Defense" | "Opponent", ?per_mode: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def team_stats_leaders: (?stat_category: "PTS" | "REB" | "AST" | "BLK" | "STL" | "TOV", ?league_id: "00", ?season: String, ?season_type: "Regular Season" | "Playoffs" | "Pre Season" | "All Star", ?per_mode: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession", ?scope: "S", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def team_years: (?league_id: "00", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class NbcNewsGroup
@@ -3914,6 +3940,15 @@ module Crawlora
     def sports: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def states: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def suggest: (?search_term: String, ?scope: String, ?size: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class NhlGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def gamecenter_boxscore: (?game_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def gamecenter_play_by_play: (?game_id: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def schedule: (?date: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def seasons: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def standings: (?date: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class NikeGroup
@@ -5031,6 +5066,25 @@ module Crawlora
     def search: (?query: String, ?page: Integer, ?page_size: Integer, ?sort_by: "featured" | "top_rated" | "new" | "best_selling" | "price_low_to_high" | "price_high_to_low", ?price_min: Integer, ?price_max: Integer, ?brand: Array[String], ?rating_min: Integer, ?is_new: bool, ?filter: Array[String], ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def stores: (?latitude: Float, ?longitude: Float, ?radius: Integer, ?limit: Integer, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
     def suggest: (?query: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+  end
+
+  class SerebiiGroup
+    def initialize: (Client, Hash[String, String]) -> void
+    def pokemongo_event_detail_community_day: (?filename: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pokemongo_event_categories: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pokemongo_event_only_moves: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pokemongo_event_only_research: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pokemongo_events: (?category: "events.shtml" | "reallifeevents.shtml" | "ticketevents.shtml" | "communityday.shtml" | "raidday.shtml" | "maxbattleday.shtml" | "incenseday.shtml" | "limitedresearchday.shtml" | "hatchday.shtml", ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pokemongo_event_detail_global: (?filename: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pokemongo_event_detail_hatch_day: (?filename: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pokemongo_event_detail_incense_day: (?filename: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pokemongo_event_detail_research_day: (?filename: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pokemongo_event_detail_max_battle_day: (?filename: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pokemongo_event_detail_raid_day: (?filename: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pokemongo_event_detail_real_life: (?filename: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pokemongo_spotlight_hours: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pokemongo_event_detail_ticket: (?filename: String, ?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
+    def pokemongo_unown_events: (?_response_type: ("auto" | "json" | "text" | "stream"), ?_timeout: Float, ?_headers: Hash[String, String], **untyped) -> untyped
   end
 
   class SevenNewsAustraliaGroup
